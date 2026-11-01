@@ -420,5 +420,56 @@
     "done": "Eliminado",
     "pending": "A eliminar… pode demorar um minuto a desaparecer de todo o lado.",
     "failed": "Não foi possível eliminar este resultado. Tente novamente."
+  },
+  "history": {
+    "title": "Histórico",
+    "today": "Hoje",
+    "yesterday": "Ontem",
+    "inProgress": "Em curso",
+    "deletesOn": "Será eliminado em {{date}}",
+    "keptLonger": "Mantido por mais tempo",
+    "expired": "Expirado",
+    "status": {
+      "processing": "A processar",
+      "failed": "Falhou"
+    },
+    "empty": {
+      "title": "Ainda sem resultados",
+      "body": "Execute uma ferramenta e os seus resultados aparecerão aqui durante {{retention}}.",
+      "bodyShort": "Execute uma ferramenta e os seus resultados aparecerão aqui.",
+      "cta": "Abrir Ferramentas"
+    },
+    "loadFailed": "Não foi possível carregar o seu histórico.",
+    "retry": "Tentar novamente",
+    "keep": {
+      "title": "Manter este resultado por mais tempo",
+      "week": "1 semana",
+      "month": "1 mês",
+      "sixMonths": "6 meses",
+      "year": "1 ano",
+      "done": "Mantido até {{date}}",
+      "gone": "Este resultado já foi eliminado.",
+      "failed": "Não foi possível prolongar este resultado. Tente novamente."
+    },
+    "actions": {
+      "title": "Ações para {{name}}",
+      "delete": "Eliminar",
+      "keepLonger": "Manter por mais tempo"
+    },
+    "tool": {
+      "convert": "Conversão",
+      "caption_translator": "Tradução de legendas",
+      "stitch_audio_to_video": "Junção de áudio",
+      "video_transcode": "Pacote HLS / DASH",
+      "document_scan": "Digitalização de documento",
+      "image_restore": "Restauro de imagem",
+      "video_restore": "Restauro de vídeo",
+      "studio_derive": "Limpeza de áudio do Studio",
+      "studio_captions": "Legendas do Studio",
+      "studio_export": "Exportação do Studio",
+      "video_summary": "Resumo de vídeo",
+      "vector_vectorize": "Vetorizar",
+      "studio_reverse_proxy": "Proxy de pré-visualização do Studio"
+    }
   }
 }

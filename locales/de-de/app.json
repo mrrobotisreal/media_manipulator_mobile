@@ -420,5 +420,56 @@
     "done": "Gelöscht",
     "pending": "Wird gelöscht… Es kann eine Minute dauern, bis es überall verschwunden ist.",
     "failed": "Dieses Ergebnis konnte nicht gelöscht werden. Versuche es erneut."
+  },
+  "history": {
+    "title": "Verlauf",
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "inProgress": "In Bearbeitung",
+    "deletesOn": "Wird am {{date}} gelöscht",
+    "keptLonger": "Länger aufbewahrt",
+    "expired": "Abgelaufen",
+    "status": {
+      "processing": "Wird verarbeitet",
+      "failed": "Fehlgeschlagen"
+    },
+    "empty": {
+      "title": "Noch keine Ergebnisse",
+      "body": "Führe ein Tool aus, und deine Ergebnisse erscheinen hier für {{retention}}.",
+      "bodyShort": "Führe ein Tool aus, und deine Ergebnisse erscheinen hier.",
+      "cta": "Tools öffnen"
+    },
+    "loadFailed": "Dein Verlauf konnte nicht geladen werden.",
+    "retry": "Erneut versuchen",
+    "keep": {
+      "title": "Dieses Ergebnis länger aufbewahren",
+      "week": "1 Woche",
+      "month": "1 Monat",
+      "sixMonths": "6 Monate",
+      "year": "1 Jahr",
+      "done": "Aufbewahrt bis {{date}}",
+      "gone": "Dieses Ergebnis wurde bereits gelöscht.",
+      "failed": "Aufbewahrung konnte nicht verlängert werden. Versuche es erneut."
+    },
+    "actions": {
+      "title": "Aktionen für {{name}}",
+      "delete": "Löschen",
+      "keepLonger": "Länger aufbewahren"
+    },
+    "tool": {
+      "convert": "Konvertierung",
+      "caption_translator": "Untertitel-Übersetzung",
+      "stitch_audio_to_video": "Audio einfügen",
+      "video_transcode": "HLS-/DASH-Paket",
+      "document_scan": "Dokumentenscan",
+      "image_restore": "Bildwiederherstellung",
+      "video_restore": "Videowiederherstellung",
+      "studio_derive": "Studio-Audiobereinigung",
+      "studio_captions": "Studio-Untertitel",
+      "studio_export": "Studio-Export",
+      "video_summary": "Video-Zusammenfassung",
+      "vector_vectorize": "Vektorisieren",
+      "studio_reverse_proxy": "Studio-Vorschau-Proxy"
+    }
   }
 }

@@ -420,5 +420,56 @@
     "done": "已刪除",
     "pending": "正在刪除… 可能需要一分鐘才會在所有位置消失。",
     "failed": "無法刪除此結果。請再試一次。"
+  },
+  "history": {
+    "title": "紀錄",
+    "today": "今天",
+    "yesterday": "昨天",
+    "inProgress": "進行中",
+    "deletesOn": "將於{{date}}刪除",
+    "keptLonger": "已延長保留",
+    "expired": "已過期",
+    "status": {
+      "processing": "處理中",
+      "failed": "失敗"
+    },
+    "empty": {
+      "title": "尚無結果",
+      "body": "執行工具後，結果會在此保留{{retention}}。",
+      "bodyShort": "執行工具後，結果會顯示在這裡。",
+      "cta": "開啟工具"
+    },
+    "loadFailed": "無法載入你的紀錄。",
+    "retry": "重試",
+    "keep": {
+      "title": "延長此結果的保留時間",
+      "week": "1 週",
+      "month": "1 個月",
+      "sixMonths": "6 個月",
+      "year": "1 年",
+      "done": "保留至{{date}}",
+      "gone": "此結果已被刪除。",
+      "failed": "無法延長此結果的保留時間，請再試一次。"
+    },
+    "actions": {
+      "title": "{{name}}的操作",
+      "delete": "刪除",
+      "keepLonger": "延長保留"
+    },
+    "tool": {
+      "convert": "轉換",
+      "caption_translator": "字幕翻譯",
+      "stitch_audio_to_video": "音訊合併",
+      "video_transcode": "HLS / DASH 封裝",
+      "document_scan": "文件掃描",
+      "image_restore": "影像修復",
+      "video_restore": "影片修復",
+      "studio_derive": "Studio 音訊清理",
+      "studio_captions": "Studio 字幕",
+      "studio_export": "Studio 匯出",
+      "video_summary": "影片摘要",
+      "vector_vectorize": "向量化",
+      "studio_reverse_proxy": "Studio 預覽代理"
+    }
   }
 }

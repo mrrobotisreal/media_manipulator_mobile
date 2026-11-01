@@ -39,7 +39,9 @@ export type StubEventName =
   | 'download_failed'
   | 'media_saved'
   | 'share_link_copied'
-  | 'data_deleted';
+  | 'data_deleted'
+  // History (MA15).
+  | 'history_item_reopened';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 

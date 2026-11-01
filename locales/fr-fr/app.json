@@ -420,5 +420,56 @@
     "done": "Supprimé",
     "pending": "Suppression… cela peut prendre une minute avant qu’il disparaisse partout.",
     "failed": "Impossible de supprimer ce résultat. Réessayez."
+  },
+  "history": {
+    "title": "Historique",
+    "today": "Aujourd’hui",
+    "yesterday": "Hier",
+    "inProgress": "En cours",
+    "deletesOn": "Suppression le {{date}}",
+    "keptLonger": "Conservé plus longtemps",
+    "expired": "Expiré",
+    "status": {
+      "processing": "Traitement en cours",
+      "failed": "Échec"
+    },
+    "empty": {
+      "title": "Aucun résultat pour le moment",
+      "body": "Lancez un outil et vos résultats apparaîtront ici pendant {{retention}}.",
+      "bodyShort": "Lancez un outil et vos résultats apparaîtront ici.",
+      "cta": "Ouvrir Outils"
+    },
+    "loadFailed": "Impossible de charger votre historique.",
+    "retry": "Réessayer",
+    "keep": {
+      "title": "Conserver ce résultat plus longtemps",
+      "week": "1 semaine",
+      "month": "1 mois",
+      "sixMonths": "6 mois",
+      "year": "1 an",
+      "done": "Conservé jusqu’au {{date}}",
+      "gone": "Ce résultat a déjà été supprimé.",
+      "failed": "Impossible de prolonger ce résultat. Réessayez."
+    },
+    "actions": {
+      "title": "Actions pour {{name}}",
+      "delete": "Supprimer",
+      "keepLonger": "Conserver plus longtemps"
+    },
+    "tool": {
+      "convert": "Conversion",
+      "caption_translator": "Traduction de sous-titres",
+      "stitch_audio_to_video": "Fusion audio",
+      "video_transcode": "Package HLS / DASH",
+      "document_scan": "Scan de document",
+      "image_restore": "Restauration d’image",
+      "video_restore": "Restauration vidéo",
+      "studio_derive": "Nettoyage audio Studio",
+      "studio_captions": "Sous-titres Studio",
+      "studio_export": "Export Studio",
+      "video_summary": "Résumé vidéo",
+      "vector_vectorize": "Vectorisation",
+      "studio_reverse_proxy": "Proxy d’aperçu Studio"
+    }
   }
 }

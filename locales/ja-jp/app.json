@@ -420,5 +420,56 @@
     "done": "削除しました",
     "pending": "削除中… すべての場所から消えるまで1分ほどかかることがあります。",
     "failed": "この結果を削除できませんでした。もう一度お試しください。"
+  },
+  "history": {
+    "title": "履歴",
+    "today": "今日",
+    "yesterday": "昨日",
+    "inProgress": "処理中",
+    "deletesOn": "{{date}}に削除",
+    "keptLonger": "延長保存中",
+    "expired": "期限切れ",
+    "status": {
+      "processing": "処理中",
+      "failed": "失敗"
+    },
+    "empty": {
+      "title": "まだ結果がありません",
+      "body": "ツールを実行すると、結果が{{retention}}間ここに表示されます。",
+      "bodyShort": "ツールを実行すると、結果がここに表示されます。",
+      "cta": "ツールを開く"
+    },
+    "loadFailed": "履歴を読み込めませんでした。",
+    "retry": "もう一度試す",
+    "keep": {
+      "title": "この結果をさらに長く保存",
+      "week": "1週間",
+      "month": "1か月",
+      "sixMonths": "6か月",
+      "year": "1年",
+      "done": "{{date}}まで保存",
+      "gone": "この結果はすでに削除されています。",
+      "failed": "保存期間を延長できませんでした。もう一度お試しください。"
+    },
+    "actions": {
+      "title": "{{name}}の操作",
+      "delete": "削除",
+      "keepLonger": "さらに長く保存"
+    },
+    "tool": {
+      "convert": "変換",
+      "caption_translator": "字幕翻訳",
+      "stitch_audio_to_video": "音声の結合",
+      "video_transcode": "HLS / DASHパッケージ",
+      "document_scan": "ドキュメントスキャン",
+      "image_restore": "画像の復元",
+      "video_restore": "動画の復元",
+      "studio_derive": "Studio音声クリーンアップ",
+      "studio_captions": "Studio字幕",
+      "studio_export": "Studioエクスポート",
+      "video_summary": "動画の要約",
+      "vector_vectorize": "ベクター化",
+      "studio_reverse_proxy": "Studioプレビュープロキシ"
+    }
   }
 }

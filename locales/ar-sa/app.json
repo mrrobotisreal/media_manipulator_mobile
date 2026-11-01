@@ -420,5 +420,56 @@
     "done": "تم الحذف",
     "pending": "جارٍ الحذف… قد يستغرق اختفاؤها من كل مكان دقيقة.",
     "failed": "تعذّر حذف هذه النتيجة. حاول مرة أخرى."
+  },
+  "history": {
+    "title": "السجل",
+    "today": "اليوم",
+    "yesterday": "أمس",
+    "inProgress": "قيد التنفيذ",
+    "deletesOn": "يُحذف في {{date}}",
+    "keptLonger": "محفوظ لفترة أطول",
+    "expired": "منتهي الصلاحية",
+    "status": {
+      "processing": "قيد المعالجة",
+      "failed": "فشل"
+    },
+    "empty": {
+      "title": "لا توجد نتائج بعد",
+      "body": "شغّل أداة وستظهر نتائجك هنا لمدة {{retention}}.",
+      "bodyShort": "شغّل أداة وستظهر نتائجك هنا.",
+      "cta": "افتح الأدوات"
+    },
+    "loadFailed": "تعذّر تحميل السجل.",
+    "retry": "حاول مرة أخرى",
+    "keep": {
+      "title": "احتفظ بهذه النتيجة لفترة أطول",
+      "week": "أسبوع واحد",
+      "month": "شهر واحد",
+      "sixMonths": "6 أشهر",
+      "year": "سنة واحدة",
+      "done": "محفوظ حتى {{date}}",
+      "gone": "تم حذف هذه النتيجة بالفعل.",
+      "failed": "تعذّر تمديد هذه النتيجة. حاول مرة أخرى."
+    },
+    "actions": {
+      "title": "إجراءات {{name}}",
+      "delete": "حذف",
+      "keepLonger": "الاحتفاظ لفترة أطول"
+    },
+    "tool": {
+      "convert": "تحويل",
+      "caption_translator": "ترجمة الترجمات",
+      "stitch_audio_to_video": "دمج الصوت",
+      "video_transcode": "حزمة HLS / DASH",
+      "document_scan": "مسح مستند",
+      "image_restore": "استعادة الصورة",
+      "video_restore": "استعادة الفيديو",
+      "studio_derive": "تنظيف صوت الاستوديو",
+      "studio_captions": "ترجمات الاستوديو",
+      "studio_export": "تصدير الاستوديو",
+      "video_summary": "ملخص الفيديو",
+      "vector_vectorize": "تحويل إلى متجه",
+      "studio_reverse_proxy": "وسيط معاينة الاستوديو"
+    }
   }
 }

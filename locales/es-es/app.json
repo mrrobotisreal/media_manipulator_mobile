@@ -420,5 +420,56 @@
     "done": "Eliminado",
     "pending": "Eliminando… puede tardar un minuto en desaparecer de todas partes.",
     "failed": "No se pudo eliminar este resultado. Inténtalo de nuevo."
+  },
+  "history": {
+    "title": "Historial",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "inProgress": "En curso",
+    "deletesOn": "Se eliminará el {{date}}",
+    "keptLonger": "Conservado más tiempo",
+    "expired": "Caducado",
+    "status": {
+      "processing": "Procesando",
+      "failed": "Error"
+    },
+    "empty": {
+      "title": "Aún no hay resultados",
+      "body": "Ejecuta una herramienta y tus resultados aparecerán aquí durante {{retention}}.",
+      "bodyShort": "Ejecuta una herramienta y tus resultados aparecerán aquí.",
+      "cta": "Abrir Herramientas"
+    },
+    "loadFailed": "No se pudo cargar tu historial.",
+    "retry": "Reintentar",
+    "keep": {
+      "title": "Conservar este resultado más tiempo",
+      "week": "1 semana",
+      "month": "1 mes",
+      "sixMonths": "6 meses",
+      "year": "1 año",
+      "done": "Conservado hasta el {{date}}",
+      "gone": "Este resultado ya se ha eliminado.",
+      "failed": "No se pudo ampliar este resultado. Inténtalo de nuevo."
+    },
+    "actions": {
+      "title": "Acciones para {{name}}",
+      "delete": "Eliminar",
+      "keepLonger": "Conservar más tiempo"
+    },
+    "tool": {
+      "convert": "Conversión",
+      "caption_translator": "Traducción de subtítulos",
+      "stitch_audio_to_video": "Unión de audio",
+      "video_transcode": "Paquete HLS / DASH",
+      "document_scan": "Escaneo de documento",
+      "image_restore": "Restauración de imagen",
+      "video_restore": "Restauración de vídeo",
+      "studio_derive": "Limpieza de audio de Studio",
+      "studio_captions": "Subtítulos de Studio",
+      "studio_export": "Exportación de Studio",
+      "video_summary": "Resumen de vídeo",
+      "vector_vectorize": "Vectorizar",
+      "studio_reverse_proxy": "Proxy de vista previa de Studio"
+    }
   }
 }

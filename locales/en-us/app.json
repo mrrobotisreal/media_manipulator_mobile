@@ -420,5 +420,56 @@
     "done": "Deleted",
     "pending": "Deleting… it may take a minute to disappear everywhere.",
     "failed": "Couldn't delete this result. Try again."
+  },
+  "history": {
+    "title": "History",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "inProgress": "In progress",
+    "deletesOn": "Deletes on {{date}}",
+    "keptLonger": "Kept longer",
+    "expired": "Expired",
+    "status": {
+      "processing": "Processing",
+      "failed": "Failed"
+    },
+    "empty": {
+      "title": "No results yet",
+      "body": "Run a tool and your results appear here for {{retention}}.",
+      "bodyShort": "Run a tool and your results appear here.",
+      "cta": "Open Tools"
+    },
+    "loadFailed": "Couldn't load your history.",
+    "retry": "Try again",
+    "keep": {
+      "title": "Keep this result longer",
+      "week": "1 week",
+      "month": "1 month",
+      "sixMonths": "6 months",
+      "year": "1 year",
+      "done": "Kept until {{date}}",
+      "gone": "This result has already been deleted.",
+      "failed": "Couldn't extend this result. Try again."
+    },
+    "actions": {
+      "title": "Actions for {{name}}",
+      "delete": "Delete",
+      "keepLonger": "Keep longer"
+    },
+    "tool": {
+      "convert": "Conversion",
+      "caption_translator": "Caption translation",
+      "stitch_audio_to_video": "Audio stitch",
+      "video_transcode": "HLS / DASH package",
+      "document_scan": "Document scan",
+      "image_restore": "Image restoration",
+      "video_restore": "Video restoration",
+      "studio_derive": "Studio audio cleanup",
+      "studio_captions": "Studio captions",
+      "studio_export": "Studio export",
+      "video_summary": "Video summary",
+      "vector_vectorize": "Vectorize",
+      "studio_reverse_proxy": "Studio preview proxy"
+    }
   }
 }

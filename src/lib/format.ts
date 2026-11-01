@@ -105,3 +105,18 @@ export function formatCountdown(
     ? rtf.format(minutes, 'minute')
     : rtf.format(Math.round(minutes / 60), 'hour');
 }
+
+/** Retention window: whole days from 24 h up ("7 days"), else hours. */
+export function formatRetention(hours: number, locale?: string): string {
+  if (!Number.isFinite(hours) || hours <= 0) return '—';
+  const days = hours >= 24 ? Math.round(hours / 24) : 0;
+  try {
+    return new Intl.NumberFormat(loc(locale), {
+      style: 'unit',
+      unit: days > 0 ? 'day' : 'hour',
+      unitDisplay: 'long',
+    }).format(days > 0 ? days : Math.round(hours));
+  } catch {
+    return `${days > 0 ? days : Math.round(hours)} ${days > 0 ? 'd' : 'h'}`;
+  }
+}
