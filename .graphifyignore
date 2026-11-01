@@ -1,0 +1,28 @@
+# graphify: kept out of the knowledge graph (on top of .gitignore and graphify's own skips)
+graphify-out/
+# Generated native projects (CNG) and Expo/Metro output
+android/
+ios/
+.expo/
+.expo-shared/
+web-build/
+coverage/
+# Binary assets — no code structure
+assets/**/*.png
+assets/**/*.jpg
+assets/**/*.webp
+assets/**/*.ttf
+assets/**/*.otf
+assets/**/*.mp3
+assets/**/*.mp4
+# Generated or copied data (pure translation strings / synced web shards / fixtures)
+src/i18n/generated/
+locales/**/*.json
+**/__fixtures__/
+**/__golden__/
+# Maestro screenshots / reports
+maestro/**/*.png
+maestro/out/
+# Tooling
+.claude/
+*.log
