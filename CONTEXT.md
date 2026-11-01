@@ -25,10 +25,14 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Re-auth**: `reauthenticate({kind})` in `src/auth/reauth.ts` returns a fresh ID token (`auth_time` < 5 min) for account deletion (MA22).
 - **Session expired**: MA03's `auth/sessionExpired` action; `src/auth/gate.ts` signs the user out and the sign-in screen shows a notice.
 - **Firebase boundary**: only `src/auth/*` imports `@react-native-firebase/auth` and google-signin (lint-enforced); the jest manual mocks live in `__mocks__/`.
+- **Tool row** (MA10): one `ToolDefinition` in `src/tools/registry.ts` (38 in v1), built in `src/tools/families/{image,video,audio,ai,metadata}.ts`. A **family** is one of those five groups (Tools tab sections, route segment `tool/<family>/<toolId>`).
+- **Preset** (MA10 type only): a named `Partial<defaults>` variant of a tool for a folded web page, with its own analytics slug.
+- **Analytics slug**: the web tool slug a row reports as `context.tool_slug` (first folded slug, never an alias in the web's `TOOL_ALIAS_OF`); keeps web and app funnels comparable.
+- **Endpoint `auto`**: presign for a video file, multipart upload otherwise (`resolveTransport`).
 
 ## Layout
 
-`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`.
+`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`; `src/tools` registry, search, recents (MA10).
 
 ## Ids
 

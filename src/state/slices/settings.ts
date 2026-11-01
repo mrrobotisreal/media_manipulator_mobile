@@ -7,6 +7,13 @@ export interface SettingsState {
   lastToolIds: string[];
 }
 
+export const MAX_RECENT_TOOLS = 6;
+
+/** Most recent first, de-duplicated, capped. Pure so the reducer and tests share it. */
+export function pushRecentTool(list: string[], id: string): string[] {
+  return [id, ...list.filter((x) => x !== id)].slice(0, MAX_RECENT_TOOLS);
+}
+
 const settingsSlice = createSlice({
   name: 'settings',
   initialState: {
@@ -22,11 +29,14 @@ const settingsSlice = createSlice({
     analyticsOptOutSet(state, action: PayloadAction<boolean>) {
       state.analyticsOptOut = action.payload;
     },
+    toolOpened(state, action: PayloadAction<string>) {
+      state.lastToolIds = pushRecentTool(state.lastToolIds, action.payload);
+    },
     localeSet(state, action: PayloadAction<string | null>) {
       state.locale = action.payload;
     },
   },
 });
 
-export const { hapticsSet, analyticsOptOutSet, localeSet } = settingsSlice.actions;
+export const { hapticsSet, analyticsOptOutSet, localeSet, toolOpened } = settingsSlice.actions;
 export default settingsSlice.reducer;

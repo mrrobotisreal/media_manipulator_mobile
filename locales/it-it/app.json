@@ -16,6 +16,195 @@
     "history": "Cronologia",
     "account": "Account"
   },
+  "tools": {
+    "title": "Strumenti",
+    "search": {
+      "placeholder": "Cerca strumenti",
+      "empty": "Nessuno strumento corrisponde a «{{query}}».",
+      "clear": "Cancella ricerca"
+    },
+    "recents": "Recenti",
+    "families": {
+      "image": "Immagini",
+      "video": "Video",
+      "audio": "Audio",
+      "ai": "IA",
+      "metadata": "Metadati"
+    },
+    "badge": {
+      "ai": "IA"
+    },
+    "quotaSlot": "Il tuo limite giornaliero appare qui",
+    "items": {
+      "image-convert": {
+        "title": "Converti immagine",
+        "description": "Cambia un'immagine in JPG, PNG, WebP, GIF, AVIF o ICO."
+      },
+      "image-to-svg": {
+        "title": "Immagine in SVG",
+        "description": "Trasforma un'immagine in vettoriale scalabile."
+      },
+      "image-resize": {
+        "title": "Ridimensiona immagine",
+        "description": "Imposta nuova larghezza e altezza."
+      },
+      "image-compress": {
+        "title": "Comprimi immagine",
+        "description": "Riduci il peso di un'immagine con poca perdita."
+      },
+      "image-crop": {
+        "title": "Ritaglia immagine",
+        "description": "Taglia l'immagine sulla parte che ti serve."
+      },
+      "image-filter": {
+        "title": "Filtri immagine",
+        "description": "Scala di grigi, seppia, sfocatura, nitidezza e altro."
+      },
+      "image-rotate": {
+        "title": "Ruota immagine",
+        "description": "Ruota un'immagine di 90, 180 o 270 gradi."
+      },
+      "image-text": {
+        "title": "Aggiungi testo all'immagine",
+        "description": "Metti una didascalia o una filigrana sull'immagine."
+      },
+      "image-to-pdf": {
+        "title": "Immagine in PDF",
+        "description": "Trasforma un'immagine in un documento PDF."
+      },
+      "pdf-to-image": {
+        "title": "PDF in immagine",
+        "description": "Trasforma le pagine PDF in immagini JPG o PNG."
+      },
+      "video-convert": {
+        "title": "Converti video",
+        "description": "Cambia un video in MP4, WebM, MOV, MKV e altro."
+      },
+      "video-compress": {
+        "title": "Comprimi video",
+        "description": "Riduci un video per condividerlo."
+      },
+      "video-trim": {
+        "title": "Taglia video",
+        "description": "Tieni solo la parte del video che vuoi."
+      },
+      "video-to-gif": {
+        "title": "Video in GIF",
+        "description": "Trasforma una clip in una GIF animata."
+      },
+      "video-extract-audio": {
+        "title": "Estrai audio",
+        "description": "Estrai l'audio da un video in MP3 o altro formato."
+      },
+      "video-remove-audio": {
+        "title": "Rimuovi audio",
+        "description": "Crea una copia muta di un video."
+      },
+      "video-extract-frames": {
+        "title": "Estrai fotogrammi",
+        "description": "Salva i fotogrammi di un video come immagini."
+      },
+      "video-transform": {
+        "title": "Ritaglia, ridimensiona, ruota",
+        "description": "Cambia forma e orientamento di un video."
+      },
+      "video-speed": {
+        "title": "Cambia velocità video",
+        "description": "Accelera, rallenta o inverti un video."
+      },
+      "video-adjust": {
+        "title": "Stabilizza e regola video",
+        "description": "Correggi clip mosse, cambia fps o colore."
+      },
+      "audio-convert": {
+        "title": "Converti audio",
+        "description": "Cambia l'audio in MP3, WAV, AAC, FLAC e altro."
+      },
+      "audio-trim": {
+        "title": "Taglia audio",
+        "description": "Tieni solo la parte di registrazione che vuoi."
+      },
+      "audio-effects": {
+        "title": "Effetti audio",
+        "description": "Cambia velocità, tono o volume; normalizza o aggiungi riverbero."
+      },
+      "audio-waveform": {
+        "title": "Forma d'onda audio",
+        "description": "Disegna un'immagine dell'onda sonora."
+      },
+      "remove-background": {
+        "title": "Rimuovi sfondo",
+        "description": "Ritaglia il soggetto di una foto come PNG trasparente."
+      },
+      "upscale": {
+        "title": "Upscaler immagini IA",
+        "description": "Ingrandisci e rendi più nitida una piccola immagine."
+      },
+      "blur-faces": {
+        "title": "Sfoca volti",
+        "description": "Nascondi i volti in una foto per tutelare la privacy."
+      },
+      "redact-text": {
+        "title": "Oscura testo nell'immagine",
+        "description": "Copri il testo personale o tutto il testo."
+      },
+      "remove-object": {
+        "title": "Rimuovi oggetto",
+        "description": "Cancella da una foto ciò che non vuoi."
+      },
+      "clean-voice": {
+        "title": "Voce più chiara",
+        "description": "Rendi più chiaro il parlato in una registrazione."
+      },
+      "remove-noise": {
+        "title": "Rimuovi rumore di fondo",
+        "description": "Riduci fruscio, ronzio e rumore ambientale."
+      },
+      "isolate-vocals": {
+        "title": "Isola voci",
+        "description": "Estrai la voce cantata da un brano."
+      },
+      "remove-vocals": {
+        "title": "Rimuovi voci",
+        "description": "Crea una versione strumentale di un brano."
+      },
+      "frame-interpolation": {
+        "title": "Video fluido (più FPS)",
+        "description": "Aggiungi fotogrammi per un movimento più fluido."
+      },
+      "transcribe": {
+        "title": "Trascrivi",
+        "description": "Trasforma il parlato di audio o video in testo e sottotitoli."
+      },
+      "inspect-metadata": {
+        "title": "Ispeziona metadati",
+        "description": "Scopri quali dettagli nascosti contiene un file."
+      },
+      "strip-metadata": {
+        "title": "Rimuovi metadati",
+        "description": "Elimina posizione e dati della fotocamera da un'immagine."
+      },
+      "edit-metadata": {
+        "title": "Modifica metadati",
+        "description": "Cambia i dettagli salvati in un'immagine."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "Formati accettati: {{kinds}}",
+    "kinds": {
+      "image": "Immagini",
+      "video": "Video",
+      "audio": "Audio",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "Impostazioni predefinite",
+      "body": "Per ora questo strumento usa le impostazioni predefinite."
+    },
+    "fileArea": "Scegli un file per iniziare",
+    "start": "Avvia"
+  },
   "placeholders": {
     "toolsBody": "Gli strumenti arrivano con MA10.",
     "historyBody": "I tuoi lavori appariranno qui.",

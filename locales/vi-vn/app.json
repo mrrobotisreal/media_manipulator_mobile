@@ -16,6 +16,195 @@
     "history": "Lịch sử",
     "account": "Tài khoản"
   },
+  "tools": {
+    "title": "Công cụ",
+    "search": {
+      "placeholder": "Tìm công cụ",
+      "empty": "Không có công cụ nào khớp với “{{query}}”.",
+      "clear": "Xóa tìm kiếm"
+    },
+    "recents": "Gần đây",
+    "families": {
+      "image": "Ảnh",
+      "video": "Video",
+      "audio": "Âm thanh",
+      "ai": "AI",
+      "metadata": "Metadata"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "Hạn mức hằng ngày của bạn hiển thị ở đây",
+    "items": {
+      "image-convert": {
+        "title": "Chuyển đổi ảnh",
+        "description": "Đổi ảnh sang JPG, PNG, WebP, GIF, AVIF hoặc ICO."
+      },
+      "image-to-svg": {
+        "title": "Ảnh sang SVG",
+        "description": "Chuyển ảnh thành vector có thể phóng to."
+      },
+      "image-resize": {
+        "title": "Đổi kích thước ảnh",
+        "description": "Đặt chiều rộng và chiều cao mới."
+      },
+      "image-compress": {
+        "title": "Nén ảnh",
+        "description": "Giảm dung lượng ảnh, ít mất chất lượng."
+      },
+      "image-crop": {
+        "title": "Cắt ảnh",
+        "description": "Cắt ảnh chỉ còn phần bạn muốn."
+      },
+      "image-filter": {
+        "title": "Bộ lọc ảnh",
+        "description": "Trắng đen, nâu đỏ, làm mờ, làm nét và hơn thế."
+      },
+      "image-rotate": {
+        "title": "Xoay ảnh",
+        "description": "Xoay ảnh 90, 180 hoặc 270 độ."
+      },
+      "image-text": {
+        "title": "Thêm chữ vào ảnh",
+        "description": "Thêm chú thích hoặc hình mờ lên ảnh."
+      },
+      "image-to-pdf": {
+        "title": "Ảnh sang PDF",
+        "description": "Chuyển ảnh thành tài liệu PDF."
+      },
+      "pdf-to-image": {
+        "title": "PDF sang ảnh",
+        "description": "Chuyển các trang PDF thành ảnh JPG hoặc PNG."
+      },
+      "video-convert": {
+        "title": "Chuyển đổi video",
+        "description": "Đổi video sang MP4, WebM, MOV, MKV và hơn thế."
+      },
+      "video-compress": {
+        "title": "Nén video",
+        "description": "Thu nhỏ video để chia sẻ."
+      },
+      "video-trim": {
+        "title": "Cắt video",
+        "description": "Chỉ giữ phần video bạn muốn."
+      },
+      "video-to-gif": {
+        "title": "Video sang GIF",
+        "description": "Chuyển một đoạn clip thành GIF động."
+      },
+      "video-extract-audio": {
+        "title": "Tách âm thanh",
+        "description": "Lấy âm thanh từ video ra MP3 hoặc định dạng khác."
+      },
+      "video-remove-audio": {
+        "title": "Xóa âm thanh",
+        "description": "Tạo bản sao không tiếng của video."
+      },
+      "video-extract-frames": {
+        "title": "Tách khung hình",
+        "description": "Lưu các khung hình của video thành ảnh."
+      },
+      "video-transform": {
+        "title": "Cắt, đổi cỡ, xoay, lật",
+        "description": "Đổi hình dạng và hướng của video."
+      },
+      "video-speed": {
+        "title": "Đổi tốc độ video",
+        "description": "Tua nhanh, làm chậm hoặc đảo ngược video."
+      },
+      "video-adjust": {
+        "title": "Chống rung và chỉnh video",
+        "description": "Làm ổn định clip rung, đổi FPS hoặc màu."
+      },
+      "audio-convert": {
+        "title": "Chuyển đổi âm thanh",
+        "description": "Đổi âm thanh sang MP3, WAV, AAC, FLAC và hơn thế."
+      },
+      "audio-trim": {
+        "title": "Cắt âm thanh",
+        "description": "Chỉ giữ phần bản ghi bạn muốn."
+      },
+      "audio-effects": {
+        "title": "Hiệu ứng âm thanh",
+        "description": "Đổi tốc độ, cao độ, âm lượng; chuẩn hóa hoặc thêm vang."
+      },
+      "audio-waveform": {
+        "title": "Dạng sóng âm thanh",
+        "description": "Vẽ hình ảnh của sóng âm."
+      },
+      "remove-background": {
+        "title": "Xóa nền",
+        "description": "Tách chủ thể khỏi ảnh thành PNG trong suốt."
+      },
+      "upscale": {
+        "title": "Phóng to ảnh bằng AI",
+        "description": "Làm ảnh nhỏ to hơn và sắc nét hơn."
+      },
+      "blur-faces": {
+        "title": "Làm mờ khuôn mặt",
+        "description": "Ẩn khuôn mặt trong ảnh để bảo vệ quyền riêng tư."
+      },
+      "redact-text": {
+        "title": "Che chữ trong ảnh",
+        "description": "Che chữ cá nhân hoặc toàn bộ chữ trong ảnh."
+      },
+      "remove-object": {
+        "title": "Xóa vật thể",
+        "description": "Xóa thứ bạn không muốn khỏi ảnh."
+      },
+      "clean-voice": {
+        "title": "Làm rõ giọng nói",
+        "description": "Làm lời nói rõ hơn trong bản ghi."
+      },
+      "remove-noise": {
+        "title": "Khử tiếng ồn nền",
+        "description": "Giảm tiếng rít, tiếng ù và tiếng ồn phòng."
+      },
+      "isolate-vocals": {
+        "title": "Tách giọng hát",
+        "description": "Lấy giọng hát ra khỏi bài hát."
+      },
+      "remove-vocals": {
+        "title": "Xóa giọng hát",
+        "description": "Tạo bản nhạc nền của bài hát."
+      },
+      "frame-interpolation": {
+        "title": "Video mượt hơn (thêm FPS)",
+        "description": "Thêm khung hình để chuyển động mượt hơn."
+      },
+      "transcribe": {
+        "title": "Chép lời",
+        "description": "Chuyển lời nói trong âm thanh hoặc video thành văn bản và phụ đề."
+      },
+      "inspect-metadata": {
+        "title": "Xem metadata",
+        "description": "Xem tệp chứa những thông tin ẩn nào."
+      },
+      "strip-metadata": {
+        "title": "Xóa metadata",
+        "description": "Xóa vị trí và thông tin máy ảnh khỏi ảnh."
+      },
+      "edit-metadata": {
+        "title": "Sửa metadata",
+        "description": "Thay đổi thông tin lưu trong ảnh."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "Hỗ trợ: {{kinds}}",
+    "kinds": {
+      "image": "Ảnh",
+      "video": "Video",
+      "audio": "Âm thanh",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "Cài đặt mặc định",
+      "body": "Hiện tại công cụ này chạy với cài đặt mặc định."
+    },
+    "fileArea": "Chọn tệp để bắt đầu",
+    "start": "Bắt đầu"
+  },
   "placeholders": {
     "toolsBody": "Công cụ sẽ có trong MA10.",
     "historyBody": "Các tác vụ của bạn sẽ hiển thị ở đây.",

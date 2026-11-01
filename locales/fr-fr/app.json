@@ -16,6 +16,195 @@
     "history": "Historique",
     "account": "Compte"
   },
+  "tools": {
+    "title": "Outils",
+    "search": {
+      "placeholder": "Rechercher des outils",
+      "empty": "Aucun outil ne correspond à « {{query}} ».",
+      "clear": "Effacer la recherche"
+    },
+    "recents": "Récents",
+    "families": {
+      "image": "Image",
+      "video": "Vidéo",
+      "audio": "Audio",
+      "ai": "IA",
+      "metadata": "Métadonnées"
+    },
+    "badge": {
+      "ai": "IA"
+    },
+    "quotaSlot": "Votre quota quotidien s’affichera ici",
+    "items": {
+      "image-convert": {
+        "title": "Convertir une image",
+        "description": "Passez une image en JPG, PNG, WebP, GIF, AVIF ou ICO."
+      },
+      "image-to-svg": {
+        "title": "Image en SVG",
+        "description": "Transformez une image en vecteur redimensionnable."
+      },
+      "image-resize": {
+        "title": "Redimensionner l’image",
+        "description": "Définissez une nouvelle largeur et hauteur."
+      },
+      "image-compress": {
+        "title": "Compresser l’image",
+        "description": "Allégez une image sans grande perte de qualité."
+      },
+      "image-crop": {
+        "title": "Rogner l’image",
+        "description": "Ne gardez que la partie voulue de l’image."
+      },
+      "image-filter": {
+        "title": "Filtres d’image",
+        "description": "Niveaux de gris, sépia, flou, netteté et plus."
+      },
+      "image-rotate": {
+        "title": "Pivoter l’image",
+        "description": "Tournez une image de 90, 180 ou 270 degrés."
+      },
+      "image-text": {
+        "title": "Ajouter du texte à l’image",
+        "description": "Ajoutez une légende ou un filigrane."
+      },
+      "image-to-pdf": {
+        "title": "Image en PDF",
+        "description": "Transformez une image en document PDF."
+      },
+      "pdf-to-image": {
+        "title": "PDF en image",
+        "description": "Transformez des pages PDF en images JPG ou PNG."
+      },
+      "video-convert": {
+        "title": "Convertir une vidéo",
+        "description": "Passez une vidéo en MP4, WebM, MOV, MKV et plus."
+      },
+      "video-compress": {
+        "title": "Compresser la vidéo",
+        "description": "Réduisez une vidéo pour la partager."
+      },
+      "video-trim": {
+        "title": "Couper la vidéo",
+        "description": "Ne gardez que la partie voulue d’une vidéo."
+      },
+      "video-to-gif": {
+        "title": "Vidéo en GIF",
+        "description": "Transformez un clip en GIF animé."
+      },
+      "video-extract-audio": {
+        "title": "Extraire l’audio",
+        "description": "Récupérez le son d’une vidéo en MP3 ou autre."
+      },
+      "video-remove-audio": {
+        "title": "Supprimer l’audio",
+        "description": "Créez une copie muette d’une vidéo."
+      },
+      "video-extract-frames": {
+        "title": "Extraire des images",
+        "description": "Enregistrez les images d’une vidéo."
+      },
+      "video-transform": {
+        "title": "Rogner, redimensionner, pivoter",
+        "description": "Changez la forme et l’orientation d’une vidéo."
+      },
+      "video-speed": {
+        "title": "Changer la vitesse",
+        "description": "Accélérez, ralentissez ou inversez une vidéo."
+      },
+      "video-adjust": {
+        "title": "Stabiliser et ajuster la vidéo",
+        "description": "Lissez les clips tremblants, changez fréquence ou couleur."
+      },
+      "audio-convert": {
+        "title": "Convertir l’audio",
+        "description": "Passez un son en MP3, WAV, AAC, FLAC et plus."
+      },
+      "audio-trim": {
+        "title": "Couper l’audio",
+        "description": "Ne gardez que la partie voulue d’un enregistrement."
+      },
+      "audio-effects": {
+        "title": "Effets audio",
+        "description": "Vitesse, hauteur, volume ; normalisation ou réverbération."
+      },
+      "audio-waveform": {
+        "title": "Forme d’onde audio",
+        "description": "Dessinez une image de l’onde sonore."
+      },
+      "remove-background": {
+        "title": "Supprimer l’arrière-plan",
+        "description": "Détourez le sujet d’une photo en PNG transparent."
+      },
+      "upscale": {
+        "title": "Agrandir l’image par IA",
+        "description": "Agrandissez une petite image et rendez-la plus nette."
+      },
+      "blur-faces": {
+        "title": "Flouter les visages",
+        "description": "Masquez les visages d’une photo pour protéger la vie privée."
+      },
+      "redact-text": {
+        "title": "Masquer le texte d’une image",
+        "description": "Cachez le texte personnel ou tout le texte d’une image."
+      },
+      "remove-object": {
+        "title": "Supprimer un objet",
+        "description": "Effacez d’une photo ce que vous ne voulez pas."
+      },
+      "clean-voice": {
+        "title": "Nettoyer la voix",
+        "description": "Rendez la parole plus claire dans un enregistrement."
+      },
+      "remove-noise": {
+        "title": "Supprimer le bruit de fond",
+        "description": "Réduisez souffle, bourdonnement et bruit ambiant."
+      },
+      "isolate-vocals": {
+        "title": "Isoler la voix",
+        "description": "Extrayez la voix chantée d’une chanson."
+      },
+      "remove-vocals": {
+        "title": "Supprimer la voix",
+        "description": "Créez une version instrumentale d’une chanson."
+      },
+      "frame-interpolation": {
+        "title": "Vidéo fluide (plus de FPS)",
+        "description": "Ajoutez des images pour des mouvements plus fluides."
+      },
+      "transcribe": {
+        "title": "Transcrire",
+        "description": "Transformez la parole d’un audio ou d’une vidéo en texte et sous-titres."
+      },
+      "inspect-metadata": {
+        "title": "Inspecter les métadonnées",
+        "description": "Voyez les détails cachés d’un fichier."
+      },
+      "strip-metadata": {
+        "title": "Supprimer les métadonnées",
+        "description": "Retirez position et infos d’appareil d’une image."
+      },
+      "edit-metadata": {
+        "title": "Modifier les métadonnées",
+        "description": "Changez les détails enregistrés dans une image."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "Formats acceptés : {{kinds}}",
+    "kinds": {
+      "image": "Images",
+      "video": "Vidéos",
+      "audio": "Fichiers audio",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "Réglages par défaut",
+      "body": "Pour l’instant, cet outil utilise ses réglages par défaut."
+    },
+    "fileArea": "Choisissez un fichier pour commencer",
+    "start": "Démarrer"
+  },
   "placeholders": {
     "toolsBody": "Les outils arrivent avec MA10.",
     "historyBody": "Vos tâches apparaîtront ici.",

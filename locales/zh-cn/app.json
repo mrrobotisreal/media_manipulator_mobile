@@ -16,6 +16,195 @@
     "history": "历史记录",
     "account": "账户"
   },
+  "tools": {
+    "title": "工具",
+    "search": {
+      "placeholder": "搜索工具",
+      "empty": "没有与“{{query}}”匹配的工具。",
+      "clear": "清除搜索"
+    },
+    "recents": "最近使用",
+    "families": {
+      "image": "图片",
+      "video": "视频",
+      "audio": "音频",
+      "ai": "AI",
+      "metadata": "元数据"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "您的每日额度将显示在这里",
+    "items": {
+      "image-convert": {
+        "title": "转换图片",
+        "description": "将图片转换为 JPG、PNG、WebP、GIF、AVIF 或 ICO。"
+      },
+      "image-to-svg": {
+        "title": "图片转 SVG",
+        "description": "将图片描摹为可缩放矢量图。"
+      },
+      "image-resize": {
+        "title": "调整图片大小",
+        "description": "设置新的宽度和高度。"
+      },
+      "image-compress": {
+        "title": "压缩图片",
+        "description": "缩小图片体积，画质几乎无损。"
+      },
+      "image-crop": {
+        "title": "裁剪图片",
+        "description": "裁出您想要的部分。"
+      },
+      "image-filter": {
+        "title": "图片滤镜",
+        "description": "灰度、复古、模糊、锐化等。"
+      },
+      "image-rotate": {
+        "title": "旋转图片",
+        "description": "将图片旋转 90、180 或 270 度。"
+      },
+      "image-text": {
+        "title": "为图片添加文字",
+        "description": "在图片上添加说明或水印。"
+      },
+      "image-to-pdf": {
+        "title": "图片转 PDF",
+        "description": "将图片转为 PDF 文档。"
+      },
+      "pdf-to-image": {
+        "title": "PDF 转图片",
+        "description": "将 PDF 页面转为 JPG 或 PNG 图片。"
+      },
+      "video-convert": {
+        "title": "转换视频",
+        "description": "将视频转换为 MP4、WebM、MOV、MKV 等格式。"
+      },
+      "video-compress": {
+        "title": "压缩视频",
+        "description": "缩小视频以便分享。"
+      },
+      "video-trim": {
+        "title": "剪切视频",
+        "description": "只保留视频中想要的部分。"
+      },
+      "video-to-gif": {
+        "title": "视频转 GIF",
+        "description": "将片段转为 GIF 动图。"
+      },
+      "video-extract-audio": {
+        "title": "提取音频",
+        "description": "将视频中的声音提取为 MP3 或其他音频。"
+      },
+      "video-remove-audio": {
+        "title": "移除音频",
+        "description": "生成视频的无声副本。"
+      },
+      "video-extract-frames": {
+        "title": "提取帧",
+        "description": "将视频的帧保存为图片。"
+      },
+      "video-transform": {
+        "title": "裁剪、缩放、旋转、翻转",
+        "description": "更改视频的形状和方向。"
+      },
+      "video-speed": {
+        "title": "更改视频速度",
+        "description": "加速、减速或倒放视频。"
+      },
+      "video-adjust": {
+        "title": "视频防抖与调整",
+        "description": "稳定抖动画面，调整帧率或色彩。"
+      },
+      "audio-convert": {
+        "title": "转换音频",
+        "description": "将音频转换为 MP3、WAV、AAC、FLAC 等格式。"
+      },
+      "audio-trim": {
+        "title": "剪切音频",
+        "description": "只保留录音中想要的部分。"
+      },
+      "audio-effects": {
+        "title": "音频效果",
+        "description": "调整速度、音调或音量；标准化或添加混响。"
+      },
+      "audio-waveform": {
+        "title": "音频波形",
+        "description": "绘制声波图。"
+      },
+      "remove-background": {
+        "title": "移除背景",
+        "description": "将照片主体抠出，保存为透明 PNG。"
+      },
+      "upscale": {
+        "title": "AI 图片放大",
+        "description": "将小图放大并变得更清晰。"
+      },
+      "blur-faces": {
+        "title": "模糊人脸",
+        "description": "隐藏照片中的人脸以保护隐私。"
+      },
+      "redact-text": {
+        "title": "涂抹图片中的文字",
+        "description": "遮盖个人文字或图片中的所有文字。"
+      },
+      "remove-object": {
+        "title": "移除物体",
+        "description": "从照片中擦除不想要的内容。"
+      },
+      "clean-voice": {
+        "title": "人声净化",
+        "description": "让录音中的语音更清晰。"
+      },
+      "remove-noise": {
+        "title": "去除背景噪音",
+        "description": "减少嘶嘶声、嗡嗡声和室内噪音。"
+      },
+      "isolate-vocals": {
+        "title": "提取人声",
+        "description": "从歌曲中提取歌声。"
+      },
+      "remove-vocals": {
+        "title": "移除人声",
+        "description": "制作歌曲的伴奏版本。"
+      },
+      "frame-interpolation": {
+        "title": "视频补帧(提高 FPS)",
+        "description": "增加帧数，让动作更流畅。"
+      },
+      "transcribe": {
+        "title": "转录",
+        "description": "将音频或视频中的语音转为文字和字幕。"
+      },
+      "inspect-metadata": {
+        "title": "查看元数据",
+        "description": "查看文件中隐藏的详细信息。"
+      },
+      "strip-metadata": {
+        "title": "移除元数据",
+        "description": "清除图片中的位置和相机信息。"
+      },
+      "edit-metadata": {
+        "title": "编辑元数据",
+        "description": "更改图片中存储的信息。"
+      }
+    }
+  },
+  "tool": {
+    "accepts": "支持：{{kinds}}",
+    "kinds": {
+      "image": "图片",
+      "video": "视频",
+      "audio": "音频",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "默认设置",
+      "body": "此工具目前使用默认设置运行。"
+    },
+    "fileArea": "选择文件开始",
+    "start": "开始"
+  },
   "placeholders": {
     "toolsBody": "工具将在 MA10 中推出。",
     "historyBody": "您的任务将显示在这里。",

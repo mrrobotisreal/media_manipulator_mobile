@@ -16,6 +16,195 @@
     "history": "기록",
     "account": "계정"
   },
+  "tools": {
+    "title": "도구",
+    "search": {
+      "placeholder": "도구 검색",
+      "empty": "“{{query}}”와(과) 일치하는 도구가 없습니다.",
+      "clear": "검색어 지우기"
+    },
+    "recents": "최근",
+    "families": {
+      "image": "이미지",
+      "video": "비디오",
+      "audio": "오디오",
+      "ai": "AI",
+      "metadata": "메타데이터"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "오늘의 사용 한도가 여기에 표시됩니다",
+    "items": {
+      "image-convert": {
+        "title": "이미지 변환",
+        "description": "이미지를 JPG, PNG, WebP, GIF, AVIF, ICO로 바꿉니다."
+      },
+      "image-to-svg": {
+        "title": "이미지를 SVG로",
+        "description": "이미지를 확대해도 깨지지 않는 벡터로 변환합니다."
+      },
+      "image-resize": {
+        "title": "이미지 크기 조절",
+        "description": "새 가로·세로 크기를 설정합니다."
+      },
+      "image-compress": {
+        "title": "이미지 압축",
+        "description": "화질 손실을 줄이며 용량을 줄입니다."
+      },
+      "image-crop": {
+        "title": "이미지 자르기",
+        "description": "원하는 부분만 남기고 자릅니다."
+      },
+      "image-filter": {
+        "title": "이미지 필터",
+        "description": "흑백, 세피아, 흐림, 선명도 등."
+      },
+      "image-rotate": {
+        "title": "이미지 회전",
+        "description": "이미지를 90, 180, 270도 회전합니다."
+      },
+      "image-text": {
+        "title": "이미지에 텍스트 추가",
+        "description": "이미지에 캡션이나 워터마크를 넣습니다."
+      },
+      "image-to-pdf": {
+        "title": "이미지를 PDF로",
+        "description": "이미지를 PDF 문서로 만듭니다."
+      },
+      "pdf-to-image": {
+        "title": "PDF를 이미지로",
+        "description": "PDF 페이지를 JPG 또는 PNG 이미지로 만듭니다."
+      },
+      "video-convert": {
+        "title": "비디오 변환",
+        "description": "비디오를 MP4, WebM, MOV, MKV 등으로 바꿉니다."
+      },
+      "video-compress": {
+        "title": "비디오 압축",
+        "description": "공유하기 좋게 비디오 용량을 줄입니다."
+      },
+      "video-trim": {
+        "title": "비디오 자르기",
+        "description": "원하는 구간만 남깁니다."
+      },
+      "video-to-gif": {
+        "title": "비디오를 GIF로",
+        "description": "클립을 움직이는 GIF로 만듭니다."
+      },
+      "video-extract-audio": {
+        "title": "오디오 추출",
+        "description": "비디오의 소리를 MP3 등으로 추출합니다."
+      },
+      "video-remove-audio": {
+        "title": "오디오 제거",
+        "description": "소리 없는 비디오 사본을 만듭니다."
+      },
+      "video-extract-frames": {
+        "title": "프레임 추출",
+        "description": "비디오의 프레임을 이미지로 저장합니다."
+      },
+      "video-transform": {
+        "title": "자르기, 크기, 회전, 뒤집기",
+        "description": "비디오의 모양과 방향을 바꿉니다."
+      },
+      "video-speed": {
+        "title": "비디오 속도 변경",
+        "description": "비디오를 빠르게, 느리게 또는 거꾸로 재생합니다."
+      },
+      "video-adjust": {
+        "title": "비디오 흔들림 보정·조정",
+        "description": "흔들린 영상을 보정하고 FPS나 색을 바꿉니다."
+      },
+      "audio-convert": {
+        "title": "오디오 변환",
+        "description": "오디오를 MP3, WAV, AAC, FLAC 등으로 바꿉니다."
+      },
+      "audio-trim": {
+        "title": "오디오 자르기",
+        "description": "녹음에서 원하는 구간만 남깁니다."
+      },
+      "audio-effects": {
+        "title": "오디오 효과",
+        "description": "속도, 음높이, 볼륨 변경, 노멀라이즈, 리버브 추가."
+      },
+      "audio-waveform": {
+        "title": "오디오 파형",
+        "description": "음파를 이미지로 그립니다."
+      },
+      "remove-background": {
+        "title": "배경 제거",
+        "description": "사진의 피사체를 투명 PNG로 오려냅니다."
+      },
+      "upscale": {
+        "title": "AI 이미지 업스케일러",
+        "description": "작은 이미지를 더 크고 선명하게 만듭니다."
+      },
+      "blur-faces": {
+        "title": "얼굴 흐리게",
+        "description": "개인정보 보호를 위해 사진 속 얼굴을 가립니다."
+      },
+      "redact-text": {
+        "title": "이미지 속 텍스트 가리기",
+        "description": "개인 정보 텍스트나 모든 텍스트를 가립니다."
+      },
+      "remove-object": {
+        "title": "개체 제거",
+        "description": "사진에서 원하지 않는 것을 지웁니다."
+      },
+      "clean-voice": {
+        "title": "음성 선명하게",
+        "description": "녹음 속 말소리를 더 또렷하게 만듭니다."
+      },
+      "remove-noise": {
+        "title": "배경 소음 제거",
+        "description": "잡음, 웅웅거림, 실내 소음을 줄입니다."
+      },
+      "isolate-vocals": {
+        "title": "보컬 분리",
+        "description": "노래에서 보컬만 분리합니다."
+      },
+      "remove-vocals": {
+        "title": "보컬 제거",
+        "description": "노래의 반주 버전을 만듭니다."
+      },
+      "frame-interpolation": {
+        "title": "부드러운 비디오(FPS 높이기)",
+        "description": "프레임을 추가해 움직임을 부드럽게 합니다."
+      },
+      "transcribe": {
+        "title": "받아쓰기",
+        "description": "오디오나 비디오의 음성을 텍스트와 자막으로 바꿉니다."
+      },
+      "inspect-metadata": {
+        "title": "메타데이터 보기",
+        "description": "파일에 숨겨진 정보를 확인합니다."
+      },
+      "strip-metadata": {
+        "title": "메타데이터 제거",
+        "description": "이미지에서 위치와 카메라 정보를 지웁니다."
+      },
+      "edit-metadata": {
+        "title": "메타데이터 편집",
+        "description": "이미지에 저장된 정보를 변경합니다."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "지원 형식: {{kinds}}",
+    "kinds": {
+      "image": "이미지",
+      "video": "비디오",
+      "audio": "오디오",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "기본 설정",
+      "body": "이 도구는 지금은 기본 설정으로 실행됩니다."
+    },
+    "fileArea": "시작할 파일을 선택하세요",
+    "start": "시작"
+  },
   "placeholders": {
     "toolsBody": "도구는 MA10에서 제공됩니다.",
     "historyBody": "작업이 여기에 표시됩니다.",

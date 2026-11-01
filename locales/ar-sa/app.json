@@ -16,6 +16,195 @@
     "history": "السجل",
     "account": "الحساب"
   },
+  "tools": {
+    "title": "الأدوات",
+    "search": {
+      "placeholder": "ابحث في الأدوات",
+      "empty": "لا توجد أدوات مطابقة لـ «{{query}}».",
+      "clear": "مسح البحث"
+    },
+    "recents": "الأحدث",
+    "families": {
+      "image": "صورة",
+      "video": "فيديو",
+      "audio": "صوت",
+      "ai": "ذكاء اصطناعي",
+      "metadata": "بيانات وصفية"
+    },
+    "badge": {
+      "ai": "ذكاء اصطناعي"
+    },
+    "quotaSlot": "ستظهر حصتك اليومية هنا",
+    "items": {
+      "image-convert": {
+        "title": "تحويل الصورة",
+        "description": "حوّل الصورة إلى JPG أو PNG أو WebP أو GIF أو AVIF أو ICO."
+      },
+      "image-to-svg": {
+        "title": "صورة إلى SVG",
+        "description": "حوّل الصورة إلى رسم متجهي قابل للتكبير."
+      },
+      "image-resize": {
+        "title": "تغيير حجم الصورة",
+        "description": "حدّد عرضًا وارتفاعًا جديدين."
+      },
+      "image-compress": {
+        "title": "ضغط الصورة",
+        "description": "صغّر حجم الصورة مع فقدان بسيط في الجودة."
+      },
+      "image-crop": {
+        "title": "اقتصاص الصورة",
+        "description": "اقتطع الجزء الذي تريده من الصورة."
+      },
+      "image-filter": {
+        "title": "فلاتر الصور",
+        "description": "تدرج رمادي وبني داكن وتمويه وتحديد والمزيد."
+      },
+      "image-rotate": {
+        "title": "تدوير الصورة",
+        "description": "دوّر الصورة بزاوية 90 أو 180 أو 270 درجة."
+      },
+      "image-text": {
+        "title": "إضافة نص إلى الصورة",
+        "description": "أضف تعليقًا أو علامة مائية إلى الصورة."
+      },
+      "image-to-pdf": {
+        "title": "صورة إلى PDF",
+        "description": "حوّل الصورة إلى مستند PDF."
+      },
+      "pdf-to-image": {
+        "title": "PDF إلى صورة",
+        "description": "حوّل صفحات PDF إلى صور JPG أو PNG."
+      },
+      "video-convert": {
+        "title": "تحويل الفيديو",
+        "description": "حوّل الفيديو إلى MP4 أو WebM أو MOV أو MKV وغيرها."
+      },
+      "video-compress": {
+        "title": "ضغط الفيديو",
+        "description": "صغّر حجم الفيديو لمشاركته."
+      },
+      "video-trim": {
+        "title": "قص الفيديو",
+        "description": "احتفظ بالجزء الذي تريده فقط من الفيديو."
+      },
+      "video-to-gif": {
+        "title": "فيديو إلى GIF",
+        "description": "حوّل المقطع إلى GIF متحرك."
+      },
+      "video-extract-audio": {
+        "title": "استخراج الصوت",
+        "description": "استخرج الصوت من الفيديو بصيغة MP3 أو غيرها."
+      },
+      "video-remove-audio": {
+        "title": "إزالة الصوت",
+        "description": "أنشئ نسخة صامتة من الفيديو."
+      },
+      "video-extract-frames": {
+        "title": "استخراج الإطارات",
+        "description": "احفظ إطارات الفيديو كصور."
+      },
+      "video-transform": {
+        "title": "اقتصاص وتغيير حجم وتدوير وقلب",
+        "description": "غيّر شكل الفيديو واتجاهه."
+      },
+      "video-speed": {
+        "title": "تغيير سرعة الفيديو",
+        "description": "سرّع الفيديو أو أبطئه أو اعكسه."
+      },
+      "video-adjust": {
+        "title": "تثبيت الفيديو وضبطه",
+        "description": "ثبّت المقاطع المهتزة وعدّل معدل الإطارات أو اللون."
+      },
+      "audio-convert": {
+        "title": "تحويل الصوت",
+        "description": "حوّل الصوت إلى MP3 أو WAV أو AAC أو FLAC وغيرها."
+      },
+      "audio-trim": {
+        "title": "قص الصوت",
+        "description": "احتفظ بالجزء الذي تريده فقط من التسجيل."
+      },
+      "audio-effects": {
+        "title": "المؤثرات الصوتية",
+        "description": "غيّر السرعة أو درجة الصوت أو مستواه؛ طبّع الصوت أو أضف صدى."
+      },
+      "audio-waveform": {
+        "title": "الموجة الصوتية",
+        "description": "ارسم صورة للموجة الصوتية."
+      },
+      "remove-background": {
+        "title": "إزالة الخلفية",
+        "description": "اقتطع العنصر الرئيسي من الصورة بصيغة PNG شفافة."
+      },
+      "upscale": {
+        "title": "تكبير الصور بالذكاء الاصطناعي",
+        "description": "كبّر الصورة الصغيرة وزد وضوحها."
+      },
+      "blur-faces": {
+        "title": "تمويه الوجوه",
+        "description": "أخفِ الوجوه في الصورة لحماية الخصوصية."
+      },
+      "redact-text": {
+        "title": "حجب النص في الصورة",
+        "description": "غطِّ النص الشخصي أو كل النص في الصورة."
+      },
+      "remove-object": {
+        "title": "إزالة عنصر",
+        "description": "امسح من الصورة ما لا تريده."
+      },
+      "clean-voice": {
+        "title": "تنقية الصوت",
+        "description": "اجعل الكلام أوضح في التسجيل."
+      },
+      "remove-noise": {
+        "title": "إزالة ضوضاء الخلفية",
+        "description": "قلّل الفحيح والطنين وضوضاء الغرفة."
+      },
+      "isolate-vocals": {
+        "title": "عزل الغناء",
+        "description": "استخرج صوت المغني من الأغنية."
+      },
+      "remove-vocals": {
+        "title": "إزالة الغناء",
+        "description": "أنشئ نسخة موسيقية فقط من الأغنية."
+      },
+      "frame-interpolation": {
+        "title": "تسلسل الفيديو (معدل FPS أعلى)",
+        "description": "أضف إطارات لتبدو الحركة أكثر سلاسة."
+      },
+      "transcribe": {
+        "title": "تفريغ نصي",
+        "description": "حوّل الكلام في الصوت أو الفيديو إلى نص وترجمات."
+      },
+      "inspect-metadata": {
+        "title": "فحص البيانات الوصفية",
+        "description": "اطّلع على التفاصيل المخفية في الملف."
+      },
+      "strip-metadata": {
+        "title": "إزالة البيانات الوصفية",
+        "description": "أزل معلومات الموقع والكاميرا من الصورة."
+      },
+      "edit-metadata": {
+        "title": "تعديل البيانات الوصفية",
+        "description": "غيّر التفاصيل المخزنة في الصورة."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "الأنواع المدعومة: {{kinds}}",
+    "kinds": {
+      "image": "صور",
+      "video": "مقاطع فيديو",
+      "audio": "صوت",
+      "pdf": "ملفات PDF"
+    },
+    "defaultsForm": {
+      "title": "الإعدادات الافتراضية",
+      "body": "تعمل هذه الأداة حاليًا بإعداداتها الافتراضية."
+    },
+    "fileArea": "اختر ملفًا للبدء",
+    "start": "ابدأ"
+  },
   "placeholders": {
     "toolsBody": "ستتوفر الأدوات في MA10.",
     "historyBody": "ستظهر مهامك هنا.",

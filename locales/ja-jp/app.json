@@ -16,6 +16,195 @@
     "history": "履歴",
     "account": "アカウント"
   },
+  "tools": {
+    "title": "ツール",
+    "search": {
+      "placeholder": "ツールを検索",
+      "empty": "「{{query}}」に一致するツールはありません。",
+      "clear": "検索をクリア"
+    },
+    "recents": "最近使用",
+    "families": {
+      "image": "画像",
+      "video": "動画",
+      "audio": "音声",
+      "ai": "AI",
+      "metadata": "メタデータ"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "1日の利用枠がここに表示されます",
+    "items": {
+      "image-convert": {
+        "title": "画像を変換",
+        "description": "画像をJPG、PNG、WebP、GIF、AVIF、ICOに変換します。"
+      },
+      "image-to-svg": {
+        "title": "画像をSVGに",
+        "description": "画像をスケーラブルなベクターにトレースします。"
+      },
+      "image-resize": {
+        "title": "画像をリサイズ",
+        "description": "新しい幅と高さを設定します。"
+      },
+      "image-compress": {
+        "title": "画像を圧縮",
+        "description": "画質をほぼ保ったままサイズを小さくします。"
+      },
+      "image-crop": {
+        "title": "画像をトリミング",
+        "description": "必要な部分だけを切り抜きます。"
+      },
+      "image-filter": {
+        "title": "画像フィルター",
+        "description": "グレースケール、セピア、ぼかし、シャープなど。"
+      },
+      "image-rotate": {
+        "title": "画像を回転",
+        "description": "画像を90度、180度、270度回転します。"
+      },
+      "image-text": {
+        "title": "画像にテキストを追加",
+        "description": "キャプションや透かしを画像に入れます。"
+      },
+      "image-to-pdf": {
+        "title": "画像をPDFに",
+        "description": "画像をPDFドキュメントにします。"
+      },
+      "pdf-to-image": {
+        "title": "PDFを画像に",
+        "description": "PDFのページをJPGまたはPNG画像にします。"
+      },
+      "video-convert": {
+        "title": "動画を変換",
+        "description": "動画をMP4、WebM、MOV、MKVなどに変換します。"
+      },
+      "video-compress": {
+        "title": "動画を圧縮",
+        "description": "共有しやすいように動画を小さくします。"
+      },
+      "video-trim": {
+        "title": "動画をトリミング",
+        "description": "動画の必要な部分だけを残します。"
+      },
+      "video-to-gif": {
+        "title": "動画をGIFに",
+        "description": "クリップをアニメーションGIFにします。"
+      },
+      "video-extract-audio": {
+        "title": "音声を抽出",
+        "description": "動画の音声をMP3などで取り出します。"
+      },
+      "video-remove-audio": {
+        "title": "音声を削除",
+        "description": "無音の動画コピーを作成します。"
+      },
+      "video-extract-frames": {
+        "title": "フレームを抽出",
+        "description": "動画のフレームを画像として保存します。"
+      },
+      "video-transform": {
+        "title": "切り抜き・リサイズ・回転・反転",
+        "description": "動画の形や向きを変更します。"
+      },
+      "video-speed": {
+        "title": "動画の速度を変更",
+        "description": "動画を早送り、スロー、逆再生にします。"
+      },
+      "video-adjust": {
+        "title": "動画の手ぶれ補正と調整",
+        "description": "手ぶれを抑え、フレームレートや色を調整します。"
+      },
+      "audio-convert": {
+        "title": "音声を変換",
+        "description": "音声をMP3、WAV、AAC、FLACなどに変換します。"
+      },
+      "audio-trim": {
+        "title": "音声をトリミング",
+        "description": "録音の必要な部分だけを残します。"
+      },
+      "audio-effects": {
+        "title": "音声エフェクト",
+        "description": "速度、ピッチ、音量の変更、ノーマライズ、リバーブ追加。"
+      },
+      "audio-waveform": {
+        "title": "音声波形",
+        "description": "音の波形を画像として描画します。"
+      },
+      "remove-background": {
+        "title": "背景を削除",
+        "description": "写真の被写体を透明なPNGとして切り抜きます。"
+      },
+      "upscale": {
+        "title": "AI画像アップスケーラー",
+        "description": "小さな画像を大きく、鮮明にします。"
+      },
+      "blur-faces": {
+        "title": "顔をぼかす",
+        "description": "プライバシー保護のため写真の顔を隠します。"
+      },
+      "redact-text": {
+        "title": "画像内のテキストを隠す",
+        "description": "個人情報や全てのテキストを覆い隠します。"
+      },
+      "remove-object": {
+        "title": "オブジェクトを削除",
+        "description": "写真から不要なものを消去します。"
+      },
+      "clean-voice": {
+        "title": "音声をクリアに",
+        "description": "録音内の話し声を聞き取りやすくします。"
+      },
+      "remove-noise": {
+        "title": "背景ノイズを除去",
+        "description": "ヒスノイズ、ハム、室内ノイズを低減します。"
+      },
+      "isolate-vocals": {
+        "title": "ボーカルを抽出",
+        "description": "曲から歌声を取り出します。"
+      },
+      "remove-vocals": {
+        "title": "ボーカルを除去",
+        "description": "曲のインストゥルメンタル版を作成します。"
+      },
+      "frame-interpolation": {
+        "title": "動画をなめらかに(FPS向上)",
+        "description": "フレームを追加して動きをなめらかにします。"
+      },
+      "transcribe": {
+        "title": "文字起こし",
+        "description": "音声や動画の話し言葉をテキストと字幕にします。"
+      },
+      "inspect-metadata": {
+        "title": "メタデータを確認",
+        "description": "ファイルに隠れている情報を確認します。"
+      },
+      "strip-metadata": {
+        "title": "メタデータを削除",
+        "description": "画像から位置情報やカメラ情報を取り除きます。"
+      },
+      "edit-metadata": {
+        "title": "メタデータを編集",
+        "description": "画像に保存されている情報を変更します。"
+      }
+    }
+  },
+  "tool": {
+    "accepts": "対応形式:{{kinds}}",
+    "kinds": {
+      "image": "画像",
+      "video": "動画",
+      "audio": "音声",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "デフォルト設定",
+      "body": "このツールは現在、デフォルト設定で実行されます。"
+    },
+    "fileArea": "ファイルを選択して開始",
+    "start": "開始"
+  },
   "placeholders": {
     "toolsBody": "ツールはMA10で登場します。",
     "historyBody": "ジョブはここに表示されます。",
