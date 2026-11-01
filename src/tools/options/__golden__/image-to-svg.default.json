@@ -1,0 +1,9 @@
+{
+  "format": "svg",
+  "quality": 85,
+  "filter": "none",
+  "vectorize": {
+    "threshold": 50,
+    "turdSize": 2
+  }
+}
