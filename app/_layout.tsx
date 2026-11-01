@@ -15,6 +15,7 @@ import { getJobEngine } from '@/jobs/runtime';
 import { isTerminal } from '@/jobs/types';
 import { startAuth } from '@/auth/gate';
 import { cleanupIntakeCache } from '@/files/intake';
+import { sweepResultCache } from '@/results/cache';
 import { useShareIntentRouting } from '@/files/share-intent';
 import { SyncLoading } from '@/auth/ui/SyncLoading';
 import { useAppSelector } from '@/state/hooks';
@@ -78,6 +79,7 @@ function IntakeCacheSweeper() {
       }
       try {
         cleanupIntakeCache({ referencedIds: referenced });
+        sweepResultCache();
       } catch {
         // best effort
       }

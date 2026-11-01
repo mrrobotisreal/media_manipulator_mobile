@@ -9,6 +9,7 @@ export const audioTools = [
     icon: 'Music',
     defaults: audioBase(),
     analyticsSlug: 'audio-converter',
+    webTask: 'audio_converter',
     resultHint: 'audio',
     keywords: [
       'audio-converter',
@@ -26,6 +27,7 @@ export const audioTools = [
     icon: 'Scissors',
     defaults: audioBase({ trim: { startTime: 0, endTime: 30 } }),
     analyticsSlug: 'trim-audio',
+    webTask: 'trim_audio',
     resultHint: 'audio',
     keywords: ['trim-audio', 'cut', 'clip'],
   }),
@@ -34,6 +36,7 @@ export const audioTools = [
     icon: 'Sliders',
     defaults: audioBase({ basicProcessing: { normalize: true } }),
     analyticsSlug: 'change-audio-speed',
+    webTask: 'change_audio_speed',
     resultHint: 'audio',
     keywords: [
       'change-audio-speed',
@@ -63,6 +66,7 @@ export const audioTools = [
       },
     },
     analyticsSlug: 'audio-waveform-generator',
+    webTask: 'audio_waveform',
     resultHint: 'video',
     keywords: ['audio-waveform-generator', 'visualizer', 'sound-wave'],
   }),

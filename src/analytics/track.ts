@@ -26,7 +26,12 @@ export type StubEventName =
   | 'job_started'
   | 'job_completed'
   | 'job_failed'
-  | 'activation_first_job_completed';
+  | 'activation_first_job_completed'
+  // Results (MA13).
+  | 'result_viewed'
+  | 'result_previewed'
+  | 'result_compare_used'
+  | 'result_archive_entry_opened';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 

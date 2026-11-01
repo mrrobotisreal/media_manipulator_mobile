@@ -37,6 +37,10 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Job state** (MA12): `queued -> uploading -> (finalizing) -> pending | processing -> completed | failed`; side exits `rejected` (API refused the upload; MA16 renders it), `upload_failed` (retryable), `lost`, `cancelled`, `stopped`. Only `transition()` moves a record.
 - **Lost job** (MA12): a persisted `pending`/`processing` job whose `GET /job/:id` is 404 (the API's job map is in memory). `lostReason` `server_restarted` (< 24 h since accepted) or `expired`.
 - **Stop watching** (MA12): after acceptance there is no server cancel; the app drops tracking (`stopped`), the job still runs and counts. Before acceptance, Cancel aborts the upload (no job, no charge).
+- **Result descriptor** (MA13): `describe()` in `src/results/describe.ts`, the pure answer to "what did this job produce?": kind from the result file extension first, then the registry row's `webTask`, then `resultHint`; never from Content-Type. Port of the web file.
+- **Result kind** (MA13): the descriptor's `ResultKind` (`image|gif|video|audio|pdf|archive|transcript|captions|metadata|summary|hls|dash|unknown`); it picks the viewer.
+- **Viewer** (MA13): a component in `src/results/viewers/` chosen by `viewerFor(kind)`; unregistered or not-yet-built kinds render `UnknownViewer`. Image/gif/pdf/archive download into `cache/results/<jobId>/`; video/audio stream `GET /result/:id` with owner headers when the API sniffed a MIME.
+- **Compare** (MA13): image-only wipe/toggle of the result against the original copy kept in `cache/originals/<jobId>/`; wipe values are logical percentages (0 = start edge).
 - **Job engine** (MA12): `src/jobs/jobEngine.ts`, plain TypeScript over an injected `JobTransport`; one upload at a time, SSE for the watched job (fallback 2 s poll after an error or 60 s silence), 5 s poll for the rest, nothing while backgrounded. `runtime.ts` wires the real store/native modules; `useJob(id)` watches while a screen is mounted.
 
 ## Layout

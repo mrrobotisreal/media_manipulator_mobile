@@ -139,6 +139,7 @@ interface RowInput {
   defaults: ToolOptions;
   metric: 'ops' | 'ai_ops' | null;
   analyticsSlug: string;
+  webTask: string;
   /** Extra search words; the folded web slugs are added by the caller as hyphen-split words. */
   keywords: string[];
   resultHint: ResultKind;

@@ -1,5 +1,10 @@
 import { mmApi } from '../mmApi';
-import { conversionJobSchema, type ConversionJob } from '../schemas/job';
+import {
+  conversionJobSchema,
+  downloadLinkSchema,
+  type ConversionJob,
+  type DownloadLink,
+} from '../schemas/job';
 import {
   uploadResponseSchema,
   videoUploadTargetSchema,
@@ -20,6 +25,18 @@ export const jobsApi = mmApi.injectEndpoints({
       }),
       providesTags: (_r, _e, jobId) => [{ type: 'Job', id: jobId }],
       keepUnusedDataFor: 1,
+    }),
+    /**
+     * `POST /download/:jobId/link`: a fresh 300 s signed URL per download (never cached). Owner headers
+     * come from `buildHeaders()`; the minted token is the only credential the download itself needs.
+     */
+    createDownloadLink: build.mutation<DownloadLink, string>({
+      query: (jobId) => ({
+        url: `/download/${encodeURIComponent(jobId)}/link`,
+        method: 'POST',
+        schema: downloadLinkSchema,
+        skipAccountInvalidation: true,
+      }),
     }),
     /** `POST /video-upload/presign` (201). Non-2xx invalidates Account like every mutation. */
     presignVideoUpload: build.mutation<VideoUploadTarget, PresignRequest>({
@@ -43,4 +60,4 @@ export const jobsApi = mmApi.injectEndpoints({
   }),
 });
 
-export const { useGetJobQuery } = jobsApi;
+export const { useGetJobQuery, useCreateDownloadLinkMutation } = jobsApi;

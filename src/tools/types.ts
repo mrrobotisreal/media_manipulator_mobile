@@ -53,6 +53,8 @@ export interface ToolDefinition<F = ToolOptions> {
   metric: QuotaMetric | null;
   gpu: boolean;
   analyticsSlug: string;
+  /** The web `EmbeddedTask` (`embed.defaultTask`) of the row's slug; keys the result descriptor's `KIND_BY_TASK`. */
+  webTask: string;
   keywords: string[];
   resultHint: ResultKind;
   minTier?: never;

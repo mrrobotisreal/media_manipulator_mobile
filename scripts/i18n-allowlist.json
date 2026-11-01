@@ -56,6 +56,7 @@
     "fr-FR:files.kinds.audio",
     "it-IT:files.kinds.video",
     "it-IT:files.kinds.audio",
-    "vi-VN:files.kinds.video"
+    "vi-VN:files.kinds.video",
+    "de-DE:result.details"
   ]
 }

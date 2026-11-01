@@ -70,6 +70,8 @@ export function buildConfig(
       { photosPermission: false, cameraPermission: false, microphonePermission: false },
     ],
     'expo-document-picker',
+    // Result PDF open on iOS and MA14 Share (MA13).
+    'expo-sharing',
     'expo-video',
     [
       'expo-audio',
