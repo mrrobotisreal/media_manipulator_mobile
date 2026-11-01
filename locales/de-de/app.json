@@ -20,8 +20,6 @@
     "toolsBody": "Werkzeuge kommen mit MA10.",
     "historyBody": "Deine Aufträge erscheinen hier.",
     "accountBody": "Das Konto kommt mit MA15.",
-    "signInBody": "Die Anmeldung kommt mit MA04",
-    "openShell": "App-Oberfläche öffnen",
     "errorBoundary": "Etwas ist schiefgelaufen. Starte die App neu."
   },
   "language": {
@@ -31,5 +29,56 @@
     "rtlReloadBody": "Die App muss neu gestartet werden, um diese Sprache von rechts nach links anzuzeigen.",
     "rtlReloadBodyLtr": "Die App muss neu gestartet werden, um diese Sprache von links nach rechts anzuzeigen.",
     "rtlReloadConfirm": "Jetzt neu starten"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Bei Media Manipulator anmelden",
+      "subtitle": "Nutze dasselbe Konto wie auf media-manipulator.com.",
+      "email": "Mit E-Mail anmelden",
+      "createAccount": "Konto erstellen",
+      "legal": "Wenn du fortfährst, stimmst du den {{terms}} und der {{privacy}} zu.",
+      "terms": "Nutzungsbedingungen",
+      "privacy": "Datenschutzerklärung",
+      "unavailable": "Die Anmeldung ist in dieser Version nicht verfügbar.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
+    },
+    "signUp": {
+      "title": "Konto erstellen",
+      "name": "Name",
+      "passwordHelper": "Mindestens 8 Zeichen",
+      "submit": "Konto erstellen",
+      "haveAccount": "Du hast schon ein Konto? Anmelden"
+    },
+    "errors": {
+      "nameRequired": "Gib deinen Namen ein (maximal 80 Zeichen).",
+      "emailInUse": "Mit dieser E-Mail-Adresse existiert bereits ein Konto. Melde dich stattdessen an.",
+      "weakPassword": "Wähle ein stärkeres Passwort (mindestens 8 Zeichen).",
+      "generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    },
+    "link": {
+      "title": "Konten verknüpfen",
+      "linkApple": "Apple verknüpfen",
+      "linkAppleBody": "Verknüpfe deine Apple-ID, um dich beim nächsten Mal damit anzumelden."
+    },
+    "verify": {
+      "banner": "Bestätige deine E-Mail-Adresse, um dein Konto zu schützen.",
+      "send": "Link senden",
+      "sent": "Link gesendet. Prüfe deinen Posteingang."
+    },
+    "sync": {
+      "failedTitle": "Wir konnten dein Konto nicht erreichen",
+      "failedBody": "Prüfe deine Verbindung und versuche es erneut. Deine Dateien und dein Tarif sind sicher."
+    },
+    "signOut": {
+      "confirmTitle": "Abmelden?",
+      "confirmBody": "Du kannst dich jederzeit wieder anmelden."
+    },
+    "reauth": {
+      "title": "Bestätige, dass du es bist",
+      "body": "Melde dich zu deiner Sicherheit erneut an, um fortzufahren.",
+      "withPassword": "Mit Passwort bestätigen",
+      "withGoogle": "Mit Google bestätigen",
+      "withApple": "Mit Apple bestätigen"
+    }
   }
 }

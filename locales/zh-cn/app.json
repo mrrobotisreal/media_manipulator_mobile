@@ -20,8 +20,6 @@
     "toolsBody": "工具将在 MA10 中推出。",
     "historyBody": "您的任务将显示在这里。",
     "accountBody": "账户将在 MA15 中推出。",
-    "signInBody": "登录将在 MA04 中推出",
-    "openShell": "打开应用外壳",
     "errorBoundary": "出了点问题。请重新启动应用。"
   },
   "language": {
@@ -31,5 +29,56 @@
     "rtlReloadBody": "应用需要重启才能以从右到左的方向显示此语言。",
     "rtlReloadBodyLtr": "应用需要重启才能以从左到右的方向显示此语言。",
     "rtlReloadConfirm": "立即重启"
+  },
+  "auth": {
+    "signIn": {
+      "title": "登录 Media Manipulator",
+      "subtitle": "使用与 media-manipulator.com 相同的账号。",
+      "email": "使用邮箱登录",
+      "createAccount": "创建账号",
+      "legal": "继续即表示你同意{{terms}}和{{privacy}}。",
+      "terms": "服务条款",
+      "privacy": "隐私政策",
+      "unavailable": "此版本暂不支持登录。",
+      "sessionExpired": "登录已过期，请重新登录。"
+    },
+    "signUp": {
+      "title": "创建你的账号",
+      "name": "姓名",
+      "passwordHelper": "至少 8 个字符",
+      "submit": "创建账号",
+      "haveAccount": "已有账号？去登录"
+    },
+    "errors": {
+      "nameRequired": "请输入你的姓名（最多 80 个字符）。",
+      "emailInUse": "该邮箱已注册账号，请直接登录。",
+      "weakPassword": "请设置更强的密码（至少 8 个字符）。",
+      "generic": "出了点问题，请重试。"
+    },
+    "link": {
+      "title": "关联你的账号",
+      "linkApple": "关联 Apple",
+      "linkAppleBody": "关联你的 Apple ID，下次即可用它登录。"
+    },
+    "verify": {
+      "banner": "请验证邮箱，以保障账号安全。",
+      "send": "发送链接",
+      "sent": "链接已发送，请查看收件箱。"
+    },
+    "sync": {
+      "failedTitle": "无法连接到你的账号",
+      "failedBody": "请检查网络后重试。你的文件和套餐都很安全。"
+    },
+    "signOut": {
+      "confirmTitle": "退出登录？",
+      "confirmBody": "你可以随时重新登录。"
+    },
+    "reauth": {
+      "title": "确认是你本人",
+      "body": "为了你的安全，请重新登录以继续。",
+      "withPassword": "使用密码确认",
+      "withGoogle": "使用 Google 确认",
+      "withApple": "使用 Apple 确认"
+    }
   }
 }

@@ -1,13 +1,18 @@
 import { useRouter } from 'expo-router';
 import { ChevronLeft, ChevronRight, CircleUser, Languages } from 'lucide-react-native';
+import { useState } from 'react';
 import { I18nManager, Pressable, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { EmptyState, Screen, Text } from '@/ui/components';
+import { performSignOut } from '@/auth/signOut';
+import { useAppDispatch } from '@/state/hooks';
+import { Button, EmptyState, Screen, Sheet, Text } from '@/ui/components';
 import { colors } from '@/ui/tokens';
 
 export default function AccountTab() {
   const { t } = useTranslation();
   const router = useRouter();
+  const dispatch = useAppDispatch();
+  const [confirming, setConfirming] = useState(false);
   return (
     <Screen>
       <EmptyState
@@ -15,7 +20,7 @@ export default function AccountTab() {
         title={t('tabs.account')}
         body={t('placeholders.accountBody')}
       />
-      <View className="px-4 pb-6">
+      <View className="gap-3 px-4 pb-6">
         <Pressable
           accessibilityRole="button"
           className="min-h-[48px] flex-row items-center gap-3 rounded-lg border border-edge bg-surface-1 px-4"
@@ -29,7 +34,27 @@ export default function AccountTab() {
             <ChevronRight size={20} color={colors.mutedFg} />
           )}
         </Pressable>
+        <Button
+          label={t('common.signOut')}
+          variant="secondary"
+          onPress={() => setConfirming(true)}
+        />
       </View>
+      <Sheet visible={confirming} onClose={() => setConfirming(false)}>
+        <View className="gap-3">
+          <Text className="text-lg font-semibold">{t('auth.signOut.confirmTitle')}</Text>
+          <Text className="text-muted-fg">{t('auth.signOut.confirmBody')}</Text>
+          <Button
+            label={t('common.signOut')}
+            variant="danger"
+            onPress={() => {
+              setConfirming(false);
+              void performSignOut(dispatch);
+            }}
+          />
+          <Button label={t('common.cancel')} variant="ghost" onPress={() => setConfirming(false)} />
+        </View>
+      </Sheet>
     </Screen>
   );
 }

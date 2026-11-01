@@ -20,8 +20,6 @@
     "toolsBody": "工具將於 MA10 推出。",
     "historyBody": "您的任務會顯示在這裡。",
     "accountBody": "帳號功能將於 MA15 推出。",
-    "signInBody": "登入功能將於 MA04 推出",
-    "openShell": "開啟應用程式外殼",
     "errorBoundary": "發生錯誤。請重新啟動應用程式。"
   },
   "language": {
@@ -31,5 +29,56 @@
     "rtlReloadBody": "應用程式需要重新啟動，才能以由右至左的方向顯示此語言。",
     "rtlReloadBodyLtr": "應用程式需要重新啟動，才能以由左至右的方向顯示此語言。",
     "rtlReloadConfirm": "立即重新啟動"
+  },
+  "auth": {
+    "signIn": {
+      "title": "登入 Media Manipulator",
+      "subtitle": "請使用與 media-manipulator.com 相同的帳號。",
+      "email": "使用電子郵件登入",
+      "createAccount": "建立帳號",
+      "legal": "繼續即表示你同意{{terms}}和{{privacy}}。",
+      "terms": "服務條款",
+      "privacy": "隱私權政策",
+      "unavailable": "此版本暫不支援登入。",
+      "sessionExpired": "登入已過期，請重新登入。"
+    },
+    "signUp": {
+      "title": "建立你的帳號",
+      "name": "姓名",
+      "passwordHelper": "至少 8 個字元",
+      "submit": "建立帳號",
+      "haveAccount": "已經有帳號？前往登入"
+    },
+    "errors": {
+      "nameRequired": "請輸入你的姓名（最多 80 個字元）。",
+      "emailInUse": "此電子郵件已註冊帳號，請直接登入。",
+      "weakPassword": "請設定更強的密碼（至少 8 個字元）。",
+      "generic": "發生錯誤，請再試一次。"
+    },
+    "link": {
+      "title": "連結你的帳號",
+      "linkApple": "連結 Apple",
+      "linkAppleBody": "連結你的 Apple ID，下次即可用它登入。"
+    },
+    "verify": {
+      "banner": "請驗證電子郵件，以確保帳號安全。",
+      "send": "傳送連結",
+      "sent": "連結已傳送，請查看收件匣。"
+    },
+    "sync": {
+      "failedTitle": "無法連線到你的帳號",
+      "failedBody": "請檢查網路連線後再試一次。你的檔案和方案都很安全。"
+    },
+    "signOut": {
+      "confirmTitle": "登出？",
+      "confirmBody": "你隨時可以重新登入。"
+    },
+    "reauth": {
+      "title": "確認是你本人",
+      "body": "為了你的安全，請重新登入以繼續。",
+      "withPassword": "使用密碼確認",
+      "withGoogle": "使用 Google 確認",
+      "withApple": "使用 Apple 確認"
+    }
   }
 }

@@ -20,8 +20,6 @@
     "toolsBody": "Công cụ sẽ có trong MA10.",
     "historyBody": "Các tác vụ của bạn sẽ hiển thị ở đây.",
     "accountBody": "Tài khoản sẽ có trong MA15.",
-    "signInBody": "Đăng nhập sẽ có trong MA04",
-    "openShell": "Mở khung ứng dụng",
     "errorBoundary": "Đã xảy ra lỗi. Hãy khởi động lại ứng dụng."
   },
   "language": {
@@ -31,5 +29,56 @@
     "rtlReloadBody": "Ứng dụng cần khởi động lại để hiển thị ngôn ngữ này từ phải sang trái.",
     "rtlReloadBodyLtr": "Ứng dụng cần khởi động lại để hiển thị ngôn ngữ này từ trái sang phải.",
     "rtlReloadConfirm": "Khởi động lại ngay"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Đăng nhập vào Media Manipulator",
+      "subtitle": "Dùng cùng tài khoản như trên media-manipulator.com.",
+      "email": "Đăng nhập bằng email",
+      "createAccount": "Tạo tài khoản",
+      "legal": "Khi tiếp tục, bạn đồng ý với {{terms}} và {{privacy}}.",
+      "terms": "Điều khoản",
+      "privacy": "Chính sách quyền riêng tư",
+      "unavailable": "Bản dựng này không hỗ trợ đăng nhập.",
+      "sessionExpired": "Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại."
+    },
+    "signUp": {
+      "title": "Tạo tài khoản của bạn",
+      "name": "Tên",
+      "passwordHelper": "Ít nhất 8 ký tự",
+      "submit": "Tạo tài khoản",
+      "haveAccount": "Đã có tài khoản? Đăng nhập"
+    },
+    "errors": {
+      "nameRequired": "Nhập tên của bạn (tối đa 80 ký tự).",
+      "emailInUse": "Đã có tài khoản dùng email này. Hãy đăng nhập.",
+      "weakPassword": "Hãy chọn mật khẩu mạnh hơn (ít nhất 8 ký tự).",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+    },
+    "link": {
+      "title": "Liên kết các tài khoản",
+      "linkApple": "Liên kết Apple",
+      "linkAppleBody": "Liên kết Apple ID của bạn để lần sau đăng nhập bằng nó."
+    },
+    "verify": {
+      "banner": "Hãy xác minh email để giữ an toàn cho tài khoản.",
+      "send": "Gửi liên kết",
+      "sent": "Đã gửi liên kết. Hãy kiểm tra hộp thư đến."
+    },
+    "sync": {
+      "failedTitle": "Không thể kết nối với tài khoản của bạn",
+      "failedBody": "Hãy kiểm tra kết nối và thử lại. Tệp và gói của bạn vẫn an toàn."
+    },
+    "signOut": {
+      "confirmTitle": "Đăng xuất?",
+      "confirmBody": "Bạn có thể đăng nhập lại bất cứ lúc nào."
+    },
+    "reauth": {
+      "title": "Xác nhận là bạn",
+      "body": "Để bảo mật, hãy đăng nhập lại để tiếp tục.",
+      "withPassword": "Xác nhận bằng mật khẩu",
+      "withGoogle": "Xác nhận bằng Google",
+      "withApple": "Xác nhận bằng Apple"
+    }
   }
 }

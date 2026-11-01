@@ -24,13 +24,18 @@ async function renderWith(status: AuthStatus) {
 }
 
 describe('(app) gating', () => {
-  it.each<AuthStatus>(['unknown', 'signedOut', 'syncing', 'syncFailed'])(
+  it.each<AuthStatus>(['unknown', 'signedOut', 'syncing'])(
     'redirects to sign-in when %s',
     async (status) => {
       await renderWith(status);
       expect(screen.getByTestId('redirect').props.children).toBe('/(auth)/sign-in');
     },
   );
+
+  it('goes to the sync-failed screen when the sync failed', async () => {
+    await renderWith('syncFailed');
+    expect(screen.getByTestId('redirect').props.children).toBe('/(auth)/sync-failed');
+  });
 
   it('renders the app when ready', async () => {
     await renderWith('ready');

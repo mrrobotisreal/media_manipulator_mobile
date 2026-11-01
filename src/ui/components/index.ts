@@ -11,3 +11,4 @@ export * from './Sheet';
 export * from './Stat';
 export * from './Text';
 export * from './Wordmark';
+export * from './TextField';

@@ -12,5 +12,5 @@
     "PDF",
     "EXIF"
   ],
-  "keys": ["it-IT:tabs.account"]
+  "keys": ["it-IT:tabs.account", "de-DE:auth.signUp.name"]
 }
