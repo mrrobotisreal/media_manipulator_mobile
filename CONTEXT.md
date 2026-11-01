@@ -13,10 +13,13 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Visitor id**: per-install UUIDv4 (persisted). **Session id**: UUIDv4 created at cold start.
 - **Dev shell**: the `__DEV__`-only "Open app shell" button on the sign-in placeholder; removed by MA04.
 - The word "Darkroom" never appears in the app UI. `Darkroom Instrument` is only the name of the design-token system (`src/ui/tokens.ts`), ported from the web.
+- **MmError**: the one error shape from `src/api/errors.ts` (`{status, code, message?, details}`); every API failure is normalised to it. Screens switch on **error code** (`MmErrorCode`: client codes like `network`, `rate_limited`, `contract_mismatch`, the API's snake_case codes, or `api:<code>` for ones this build does not know), never on English text.
+- **Quota observation**: on every 2xx the baseQuery reads `X-MM-Tier` / `X-MM-Quota-*` and dispatches `quota/observed`; on other failures it invalidates the `Account` tag instead.
+- **Token provider**: `setIdTokenProvider(fn)` in `src/api/authToken.ts`; MA04 registers Firebase's `getIdToken`. `buildHeaders()` (in `baseQuery.ts`) is the only place request headers are built, including for uploads, SSE and downloads.
 
 ## Layout
 
-`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, Firebase availability.
+`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`.
 
 ## Ids
 
