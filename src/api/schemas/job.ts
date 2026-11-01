@@ -31,3 +31,13 @@ export const conversionJobSchema = z.object({
 
 export type ConversionJob = z.infer<typeof conversionJobSchema>;
 export type JobStatus = z.infer<typeof jobStatusSchema>;
+
+/** `POST /download/:jobId/link` (MM80 + MA08 `absoluteUrl`). */
+export const downloadLinkSchema = z.object({
+  url: z.string().min(1),
+  absoluteUrl: z.string().min(1).optional(),
+  expiresAt: z.string().optional(),
+  sizeBytes: z.number().optional(),
+  fileName: z.string().optional(),
+});
+export type DownloadLink = z.infer<typeof downloadLinkSchema>;
