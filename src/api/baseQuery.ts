@@ -1,4 +1,6 @@
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
+import type { ZodTypeAny } from 'zod';
+import { track } from '@/analytics/track';
 import { uuidv4 } from '@/lib/ids';
 import { getRequestLocale } from '@/lib/locale';
 import { userAgent } from '@/lib/userAgent';
@@ -6,7 +8,13 @@ import { observed } from '@/state/slices/quota';
 import { sessionExpired } from '@/state/slices/auth';
 import { API_BASE_URL, JSON_TIMEOUT_MS } from './config';
 import { getIdToken } from './authToken';
-import { networkError, normaliseError, timeoutError, type MmError } from './errors';
+import {
+  contractMismatch,
+  networkError,
+  normaliseError,
+  timeoutError,
+  type MmError,
+} from './errors';
 import { getAppState } from './stateRef';
 
 export interface BuildHeadersOptions {
@@ -55,6 +63,8 @@ export interface MmRequest {
   auth?: boolean;
   /** Skip the `Account` invalidation on non-2xx (set by the endpoints that provide `Account`). */
   skipAccountInvalidation?: boolean;
+  /** Zod schema for a 2xx body; a failure becomes `contract_mismatch` (never a crash). */
+  schema?: ZodTypeAny;
 }
 
 export interface MmMeta {
@@ -188,6 +198,20 @@ export const mmBaseQuery: BaseQueryFn<
   if (status >= 200 && status < 300) {
     const q = parseQuota(headers);
     if (q) api.dispatch(observed(q));
+    if (req.schema) {
+      const parsed = req.schema.safeParse(body);
+      if (!parsed.success) {
+        const issues = [...new Set(parsed.error.issues.map((i) => i.path.join('.') || '(root)'))];
+        track('client_error', {
+          message: 'contract_mismatch',
+          stage: api.endpoint,
+          error_type: 'contract_mismatch',
+          source: 'manual',
+        });
+        return { error: contractMismatch(api.endpoint, issues), meta };
+      }
+      return { data: parsed.data, meta };
+    }
     return { data: body ?? null, meta };
   }
 
