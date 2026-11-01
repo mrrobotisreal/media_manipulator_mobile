@@ -1,0 +1,25 @@
+# knowledge graph output (local tooling)
+graphify-out/
+node_modules/
+# CNG: generated native projects are never committed (ADR MA-0001)
+android/
+ios/
+.expo/
+dist/
+web-build/
+coverage/
+# Firebase config files (EAS file variables)
+google-services.json
+GoogleService-Info.plist
+# signing material
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+# env
+.env*
+!.env.example
+.DS_Store
+._*
+*.log
