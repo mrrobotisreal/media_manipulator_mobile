@@ -4,6 +4,8 @@ export interface QuotaMetricState {
   limit: number;
   remaining: number;
   resetAt: string | null;
+  /** Epoch ms the headers were read; MA16 compares it with the /account/me fetch time. */
+  observedAt: number;
 }
 
 export interface QuotaState {
@@ -30,7 +32,12 @@ const quotaSlice = createSlice({
       const { tier, metric, limit, remaining, resetAt } = action.payload;
       if (tier) state.tier = tier;
       if (metric && limit !== undefined && remaining !== undefined) {
-        state.metrics[metric] = { limit, remaining, resetAt: resetAt ?? null };
+        state.metrics[metric] = {
+          limit,
+          remaining,
+          resetAt: resetAt ?? null,
+          observedAt: Date.now(),
+        };
       }
     },
     reset() {

@@ -167,6 +167,7 @@ describe('account and tiers endpoints (fake fetch)', () => {
       limit: 50,
       remaining: 47,
       resetAt: '2026-11-02T00:00:00Z',
+      observedAt: expect.any(Number),
     });
   });
 

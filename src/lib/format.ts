@@ -120,3 +120,43 @@ export function formatRetention(hours: number, locale?: string): string {
     return `${days > 0 ? days : Math.round(hours)} ${days > 0 ? 'd' : 'h'}`;
   }
 }
+
+function unitFormat(value: number, unit: 'hour' | 'minute', locale?: string): string {
+  try {
+    return new Intl.NumberFormat(loc(locale), {
+      style: 'unit',
+      unit,
+      unitDisplay: 'short',
+    }).format(value);
+  } catch {
+    return `${value}${unit === 'hour' ? 'h' : 'm'}`;
+  }
+}
+
+/** Time left as hours + minutes, never seconds ("4 hr 12 min"); the quota reset countdown. */
+export function formatTimeLeft(
+  resetAt: string | number | Date,
+  locale?: string,
+  now: number = Date.now(),
+): string {
+  const at = resetAt instanceof Date ? resetAt.getTime() : new Date(resetAt).getTime();
+  if (Number.isNaN(at)) return '';
+  const minutes = Math.max(1, Math.ceil((at - now) / 60_000));
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  if (h === 0) return unitFormat(m, 'minute', locale);
+  return m === 0
+    ? unitFormat(h, 'hour', locale)
+    : `${unitFormat(h, 'hour', locale)} ${unitFormat(m, 'minute', locale)}`;
+}
+
+/** A length of time for plan facts: "20 min" under two hours, else "2 hr". */
+export function formatSpan(seconds: number, locale?: string): string {
+  if (!Number.isFinite(seconds) || seconds <= 0) return '—';
+  const minutes = Math.round(seconds / 60);
+  return minutes >= 120 && minutes % 60 === 0
+    ? unitFormat(minutes / 60, 'hour', locale)
+    : minutes < 120
+      ? unitFormat(minutes, 'minute', locale)
+      : `${unitFormat(Math.floor(minutes / 60), 'hour', locale)} ${unitFormat(minutes % 60, 'minute', locale)}`;
+}
