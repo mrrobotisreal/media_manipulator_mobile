@@ -308,5 +308,36 @@
       "empty": "This file is empty.",
       "tooMany": "Pick up to {{count}} files at a time."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "Waiting to upload",
+      "uploading": "Uploading",
+      "finalizing": "Finishing upload",
+      "pending": "Waiting on the server",
+      "processing": "Processing",
+      "completed": "Completed",
+      "failed": "Failed",
+      "rejected": "Not accepted",
+      "upload_failed": "Upload failed",
+      "lost": "Job lost",
+      "cancelled": "Cancelled",
+      "stopped": "Stopped watching"
+    },
+    "uploading": "Uploading… {{percent}}",
+    "processing": "Processing… {{percent}}",
+    "continuingInBackground": "Continuing in the background",
+    "gpuNote": "AI jobs can take a few minutes. You can leave this screen.",
+    "cancel": "Cancel upload",
+    "stopWatching": "Stop watching",
+    "stopWatchingBody": "The job keeps running and still counts toward today's limit. You'll find the result in History.",
+    "retry": "Try again",
+    "fileGone": "The file is no longer on this device. Pick it again to retry.",
+    "lost": "The server restarted and lost this job. Run it again.",
+    "interrupted": "The upload was interrupted.",
+    "queuePosition": "{{index}} of {{count}}",
+    "completedPlaceholder": "Your file is ready. The result viewer arrives in the next update.",
+    "notFound": "This job is no longer tracked on this device.",
+    "rejectedBody": "The server did not accept this file."
   }
 }
