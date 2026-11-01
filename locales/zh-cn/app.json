@@ -269,5 +269,44 @@
       "withGoogle": "使用 Google 确认",
       "withApple": "使用 Apple 确认"
     }
+  },
+  "files": {
+    "pick": {
+      "media": "照片和视频",
+      "files": "文件"
+    },
+    "change": "更改",
+    "remove": "移除",
+    "copying": "正在准备文件…",
+    "kinds": {
+      "image": "图片",
+      "video": "视频",
+      "audio": "音频",
+      "pdf": "PDF"
+    },
+    "error": {
+      "lowSpace": "可用存储空间不足，无法打开此文件。请释放一些空间后重试。",
+      "copyFailed": "无法打开此文件。请重试。"
+    }
+  },
+  "intake": {
+    "title": "打开方式",
+    "toolsFor": "适用于此文件的工具",
+    "toolsForMany": "适用于这 {{count}} 个文件的工具",
+    "mixedKinds": "这些文件需要不同的工具。请每次只分享一种类型。",
+    "unsupported": {
+      "title": "Media Manipulator 无法打开此类文件",
+      "body": "请分享图片、视频、音频或 PDF 文件。",
+      "back": "返回工具"
+    },
+    "rejected": {
+      "tooLarge": "此文件大小为 {{size}}。你的套餐支持的文件最大为 {{limit}}。",
+      "tooLong": "此视频时长为 {{duration}}。你的套餐最长支持 {{limit}}。",
+      "unsupported": "{{tool}}不支持此类文件。",
+      "unsupportedAny": "Media Manipulator 无法打开此类文件。",
+      "videoFormat": "不支持此视频格式。请使用以下格式之一：{{formats}}。",
+      "empty": "此文件是空的。",
+      "tooMany": "一次最多选择 {{count}} 个文件。"
+    }
   }
 }

@@ -1,11 +1,11 @@
 import { Redirect, useRouter, type Href } from 'expo-router';
 import { ChevronRight, FileQuestion } from 'lucide-react-native';
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { I18nManager, Pressable, ScrollView, View } from 'react-native';
 import { FileCard, RejectionCard } from '@/files/components/FileCard';
 import { toolsForKinds } from '@/files/intakeTools';
 import { getIntakeBatch } from '@/files/session';
+import type { IntakeFile, Rejection } from '@/files/types';
 import { useAppSelector } from '@/state/hooks';
 import { ToolIcon } from '@/tools/icons';
 import type { AnyToolDefinition } from '@/tools/types';
@@ -16,16 +16,19 @@ import { colors, hitTarget } from '@/ui/tokens';
 
 const TOOLS_TAB = '/(app)/(tabs)' as Href;
 
+const NONE_FILES: IntakeFile[] = [];
+const NONE_REJECTED: Rejection[] = [];
+
 export default function IntakeScreen() {
   const { t } = useTranslation();
   const router = useRouter();
   const lastToolIds = useAppSelector((s) => s.settings.lastToolIds);
   const batch = getIntakeBatch();
-  const files = batch?.files ?? [];
-  const rejected = batch?.rejected ?? [];
+  const files = batch?.files ?? NONE_FILES;
+  const rejected = batch?.rejected ?? NONE_REJECTED;
 
-  const kinds = useMemo(() => files.map((f) => f.mediaKind), [files]);
-  const tools = useMemo(() => toolsForKinds(kinds, lastToolIds), [kinds, lastToolIds]);
+  const kinds = files.map((f) => f.mediaKind);
+  const tools = toolsForKinds(kinds, lastToolIds);
   // Inspect metadata accepts every kind, so the intersection is never empty; still say why the list is short.
   const mixed = new Set(kinds).size > 1;
   const back = () => router.replace(TOOLS_TAB);

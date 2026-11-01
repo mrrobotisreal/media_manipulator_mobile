@@ -269,5 +269,44 @@
       "withGoogle": "אישור עם Google",
       "withApple": "אישור עם Apple"
     }
+  },
+  "files": {
+    "pick": {
+      "media": "תמונות וסרטונים",
+      "files": "קבצים"
+    },
+    "change": "שינוי",
+    "remove": "הסרה",
+    "copying": "מכין את הקובץ…",
+    "kinds": {
+      "image": "תמונה",
+      "video": "וידאו",
+      "audio": "אודיו",
+      "pdf": "PDF"
+    },
+    "error": {
+      "lowSpace": "אין מספיק מקום פנוי לפתיחת הקובץ. פנו מקום ונסו שוב.",
+      "copyFailed": "לא ניתן לפתוח את הקובץ. נסו שוב."
+    }
+  },
+  "intake": {
+    "title": "פתיחה באמצעות",
+    "toolsFor": "כלים לקובץ הזה",
+    "toolsForMany": "כלים ל-{{count}} הקבצים האלה",
+    "mixedKinds": "הקבצים האלה דורשים כלים שונים. שתפו אותם סוג אחד בכל פעם.",
+    "unsupported": {
+      "title": "Media Manipulator לא יכול לפתוח סוג קובץ זה",
+      "body": "שתפו תמונות, סרטונים, קובצי אודיו או קובצי PDF.",
+      "back": "חזרה לכלים"
+    },
+    "rejected": {
+      "tooLarge": "גודל הקובץ הוא {{size}}. החבילה שלכם מאפשרת קבצים עד {{limit}}.",
+      "tooLong": "אורך הסרטון הוא {{duration}}. החבילה שלכם מאפשרת עד {{limit}}.",
+      "unsupported": "{{tool}} לא תומך בסוג קובץ זה.",
+      "unsupportedAny": "Media Manipulator לא יכול לפתוח סוג קובץ זה.",
+      "videoFormat": "פורמט הווידאו אינו נתמך. השתמשו באחד מהבאים: {{formats}}.",
+      "empty": "הקובץ ריק.",
+      "tooMany": "אפשר לבחור עד {{count}} קבצים בכל פעם."
+    }
   }
 }

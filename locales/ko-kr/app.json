@@ -269,5 +269,44 @@
       "withGoogle": "Google로 확인",
       "withApple": "Apple로 확인"
     }
+  },
+  "files": {
+    "pick": {
+      "media": "사진 및 동영상",
+      "files": "파일"
+    },
+    "change": "변경",
+    "remove": "삭제",
+    "copying": "파일 준비 중…",
+    "kinds": {
+      "image": "이미지",
+      "video": "동영상",
+      "audio": "오디오",
+      "pdf": "PDF"
+    },
+    "error": {
+      "lowSpace": "이 파일을 열 저장 공간이 부족합니다. 공간을 확보한 후 다시 시도하세요.",
+      "copyFailed": "이 파일을 열 수 없습니다. 다시 시도하세요."
+    }
+  },
+  "intake": {
+    "title": "다음으로 열기",
+    "toolsFor": "이 파일용 도구",
+    "toolsForMany": "이 파일 {{count}}개용 도구",
+    "mixedKinds": "이 파일들은 서로 다른 도구가 필요합니다. 한 종류씩 공유하세요.",
+    "unsupported": {
+      "title": "Media Manipulator에서 열 수 없는 파일 형식입니다",
+      "body": "이미지, 동영상, 오디오 또는 PDF 파일을 공유하세요.",
+      "back": "도구로 돌아가기"
+    },
+    "rejected": {
+      "tooLarge": "이 파일은 {{size}}입니다. 요금제에서는 최대 {{limit}}까지 지원됩니다.",
+      "tooLong": "이 동영상은 길이가 {{duration}}입니다. 요금제에서는 최대 {{limit}}까지 가능합니다.",
+      "unsupported": "{{tool}}은(는) 이 형식의 파일을 지원하지 않습니다.",
+      "unsupportedAny": "Media Manipulator에서 열 수 없는 파일 형식입니다.",
+      "videoFormat": "지원하지 않는 동영상 형식입니다. 다음 중 하나를 사용하세요: {{formats}}.",
+      "empty": "이 파일은 비어 있습니다.",
+      "tooMany": "한 번에 최대 {{count}}개의 파일을 선택할 수 있습니다."
+    }
   }
 }

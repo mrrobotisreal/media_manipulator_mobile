@@ -269,5 +269,44 @@
       "withGoogle": "Conferma con Google",
       "withApple": "Conferma con Apple"
     }
+  },
+  "files": {
+    "pick": {
+      "media": "Foto e video",
+      "files": "File"
+    },
+    "change": "Cambia",
+    "remove": "Rimuovi",
+    "copying": "Preparazione del file…",
+    "kinds": {
+      "image": "Immagine",
+      "video": "Video",
+      "audio": "Audio",
+      "pdf": "PDF"
+    },
+    "error": {
+      "lowSpace": "Spazio di archiviazione insufficiente per aprire questo file. Libera spazio e riprova.",
+      "copyFailed": "Impossibile aprire questo file. Riprova."
+    }
+  },
+  "intake": {
+    "title": "Apri con",
+    "toolsFor": "Strumenti per questo file",
+    "toolsForMany": "Strumenti per questi {{count}} file",
+    "mixedKinds": "Questi file richiedono strumenti diversi. Condividili un tipo alla volta.",
+    "unsupported": {
+      "title": "Media Manipulator non può aprire questo tipo di file",
+      "body": "Condividi immagini, video, audio o file PDF.",
+      "back": "Torna agli strumenti"
+    },
+    "rejected": {
+      "tooLarge": "Questo file pesa {{size}}. Il tuo piano accetta file fino a {{limit}}.",
+      "tooLong": "Questo video dura {{duration}}. Il tuo piano consente fino a {{limit}}.",
+      "unsupported": "{{tool}} non accetta questo tipo di file.",
+      "unsupportedAny": "Media Manipulator non può aprire questo tipo di file.",
+      "videoFormat": "Questo formato video non è supportato. Usa uno tra: {{formats}}.",
+      "empty": "Questo file è vuoto.",
+      "tooMany": "Scegli fino a {{count}} file alla volta."
+    }
   }
 }
