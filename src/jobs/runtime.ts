@@ -13,6 +13,7 @@ import { makeUploadTask } from './fsTask';
 import { createJobEngine, type JobEngine, type JobEngineDeps } from './jobEngine';
 import { createJobTransport, type StreamFetch } from './transport';
 import { uuidv4 } from '@/lib/ids';
+import { makeBeforeUpload } from '@/quota/quotaGuard';
 
 const KEEP_AWAKE_TAG = 'mm-upload';
 /** MMKV list of Firebase uids already counted (`activation_first_job_completed` once per uid). */
@@ -123,6 +124,7 @@ export function getJobEngine(): JobEngine {
       },
       claim: claimActivation,
     },
+    beforeUpload: makeBeforeUpload(store.getState),
     newId: uuidv4,
   };
   engine = createJobEngine(deps);

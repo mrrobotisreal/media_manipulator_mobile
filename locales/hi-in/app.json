@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "आपकी दैनिक सीमा यहाँ दिखेगी",
     "items": {
       "image-convert": {
         "title": "इमेज कन्वर्ट करें",
@@ -471,5 +470,69 @@
       "vector_vectorize": "वेक्टराइज़",
       "studio_reverse_proxy": "Studio प्रीव्यू प्रॉक्सी"
     }
+  },
+  "quota": {
+    "resetsIn": "{{time}} में रीसेट होगा",
+    "planSheet": {
+      "title": "प्लान और सीमाएँ",
+      "current": "आपका प्लान",
+      "managed": "प्लान आपके Media Manipulator खाते में प्रबंधित किए जाते हैं।",
+      "loading": "प्लान का विवरण लोड हो रहा है",
+      "loadFailed": "प्लान का विवरण अभी उपलब्ध नहीं है।"
+    },
+    "rows": {
+      "ops": "प्रतिदिन ऑपरेशन",
+      "aiOps": "प्रतिदिन AI ऑपरेशन",
+      "fileSize": "सबसे बड़ी फ़ाइल",
+      "videoLength": "सबसे लंबा वीडियो",
+      "outputHeight": "सर्वोच्च आउटपुट",
+      "retention": "परिणाम रखे जाते हैं"
+    },
+    "tiers": {
+      "free": "मुफ़्त",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "ऑपरेटर"
+    },
+    "tierNames": {
+      "both": "Premium और Pro"
+    },
+    "metricName": {
+      "ops": "ऑपरेशन",
+      "ai_ops": "AI ऑपरेशन"
+    },
+    "exceeded": {
+      "title": "आपने आज के सभी {{limit}} {{metricName}} इस्तेमाल कर लिए हैं।",
+      "body": "{{time}} में रीसेट होगा।",
+      "bodyNoTime": "आपकी सीमा हर दिन रीसेट होती है।"
+    },
+    "compareRow": "{{tier}}: प्रतिदिन {{value}}",
+    "rateLimited": {
+      "title": "बहुत अधिक अनुरोध",
+      "body": "{{seconds}} से. बाद फिर कोशिश करें।",
+      "ready": "अब आप फिर कोशिश कर सकते हैं।"
+    },
+    "tryAgain": "फिर कोशिश करें",
+    "heightLimited": {
+      "lower": "जारी रखने के लिए सेटिंग घटाएँ।"
+    },
+    "tooLong": {
+      "title": "यह आपके प्लान की अनुमति से अधिक लंबा है",
+      "body": "आपका प्लान {{limit}} तक की अनुमति देता है।"
+    },
+    "deploymentCap": {
+      "title": "यह फ़ाइल सेवा की स्वीकार्य सीमा से बड़ी है",
+      "body": "इसका रेज़ोल्यूशन, फ़्रेम रेट या लंबाई सेवा की सीमा से अधिक है। छोटा संस्करण आज़माएँ।"
+    },
+    "fact": {
+      "fileSize": "{{tiers}} में {{value}} तक की फ़ाइलें स्वीकार की जाती हैं।",
+      "videoLength": "{{tiers}} में {{value}} तक के वीडियो की अनुमति है।",
+      "outputHeight": "{{tiers}}: {{value}}p तक।",
+      "ops": "{{tiers}}: प्रतिदिन {{value}}।",
+      "aiOps": "{{tiers}}: प्रतिदिन {{value}}।",
+      "retention": "{{tiers}} में परिणाम {{value}} तक रखे जाते हैं।"
+    },
+    "ok": "OK",
+    "seeAll": "सभी सीमाएँ देखें"
   }
 }

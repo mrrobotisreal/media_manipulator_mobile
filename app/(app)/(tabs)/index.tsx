@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { I18nManager, Pressable, ScrollView, SectionList, TextInput, View } from 'react-native';
 import { AuthBanners } from '@/auth/ui/AuthBanners';
 import { useAppSelector } from '@/state/hooks';
-import { QuotaHeaderSlot } from '@/tools/components/QuotaHeaderSlot';
+import { QuotaHeader } from '@/quota/QuotaHeader';
 import { ToolIcon } from '@/tools/icons';
 import { recentTools } from '@/tools/recents';
 import { searchTools, type SearchableTool } from '@/tools/search';
@@ -43,7 +43,7 @@ export default function ToolsTab() {
   const header = (
     <View>
       <AuthBanners />
-      <QuotaHeaderSlot />
+      <QuotaHeader />
       <View
         className="mx-4 mt-3 flex-row items-center rounded-md border border-edge-control bg-surface-1 px-3"
         style={{ minHeight: hitTarget }}

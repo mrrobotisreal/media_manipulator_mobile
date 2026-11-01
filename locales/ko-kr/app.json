@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "오늘의 사용 한도가 여기에 표시됩니다",
     "items": {
       "image-convert": {
         "title": "이미지 변환",
@@ -471,5 +470,69 @@
       "vector_vectorize": "벡터화",
       "studio_reverse_proxy": "Studio 미리보기 프록시"
     }
+  },
+  "quota": {
+    "resetsIn": "{{time}}후 초기화",
+    "planSheet": {
+      "title": "플랜 및 한도",
+      "current": "내 플랜",
+      "managed": "플랜은 Media Manipulator 계정에서 관리됩니다.",
+      "loading": "플랜 정보를 불러오는 중",
+      "loadFailed": "지금은 플랜 정보를 사용할 수 없습니다."
+    },
+    "rows": {
+      "ops": "하루 작업 수",
+      "aiOps": "하루 AI 작업 수",
+      "fileSize": "최대 파일 크기",
+      "videoLength": "최대 영상 길이",
+      "outputHeight": "최대 출력 해상도",
+      "retention": "결과 보관 기간"
+    },
+    "tiers": {
+      "free": "무료",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "운영자"
+    },
+    "tierNames": {
+      "both": "Premium 및 Pro"
+    },
+    "metricName": {
+      "ops": "작업",
+      "ai_ops": "AI 작업"
+    },
+    "exceeded": {
+      "title": "오늘 {{metricName}} {{limit}}회를 모두 사용했습니다.",
+      "body": "{{time}} 후 초기화됩니다.",
+      "bodyNoTime": "한도는 매일 초기화됩니다."
+    },
+    "compareRow": "{{tier}}: 하루 {{value}}",
+    "rateLimited": {
+      "title": "요청이 너무 많습니다",
+      "body": "{{seconds}}초 후에 다시 시도하세요.",
+      "ready": "지금 다시 시도할 수 있습니다."
+    },
+    "tryAgain": "다시 시도",
+    "heightLimited": {
+      "lower": "계속하려면 설정을 낮추세요."
+    },
+    "tooLong": {
+      "title": "플랜에서 허용하는 길이를 초과합니다",
+      "body": "현재 플랜은 최대 {{limit}}까지 허용합니다."
+    },
+    "deploymentCap": {
+      "title": "서비스에서 허용하는 범위를 초과한 파일입니다",
+      "body": "해상도, 프레임 속도 또는 길이가 서비스 한도를 초과합니다. 더 작은 버전으로 시도하세요."
+    },
+    "fact": {
+      "fileSize": "{{tiers}}: 최대 {{value}}까지의 파일",
+      "videoLength": "{{tiers}}: 최대 {{value}}까지의 영상",
+      "outputHeight": "{{tiers}}: 최대 {{value}}p",
+      "ops": "{{tiers}}: 하루 {{value}}",
+      "aiOps": "{{tiers}}: 하루 {{value}}",
+      "retention": "{{tiers}}: 결과 {{value}} 보관"
+    },
+    "ok": "OK",
+    "seeAll": "모든 한도 보기"
   }
 }

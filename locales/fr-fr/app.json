@@ -34,7 +34,6 @@
     "badge": {
       "ai": "IA"
     },
-    "quotaSlot": "Votre quota quotidien s’affichera ici",
     "items": {
       "image-convert": {
         "title": "Convertir une image",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Vectorisation",
       "studio_reverse_proxy": "Proxy d’aperçu Studio"
     }
+  },
+  "quota": {
+    "resetsIn": "Réinitialisation dans {{time}}",
+    "planSheet": {
+      "title": "Offre et limites",
+      "current": "Votre offre",
+      "managed": "Les offres sont gérées depuis votre compte Media Manipulator.",
+      "loading": "Chargement des détails de l'offre",
+      "loadFailed": "Les détails de l'offre sont indisponibles pour le moment."
+    },
+    "rows": {
+      "ops": "Opérations par jour",
+      "aiOps": "Opérations IA par jour",
+      "fileSize": "Fichier le plus volumineux",
+      "videoLength": "Vidéo la plus longue",
+      "outputHeight": "Sortie la plus élevée",
+      "retention": "Résultats conservés"
+    },
+    "tiers": {
+      "free": "Gratuit",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Opérateur"
+    },
+    "tierNames": {
+      "both": "Premium et Pro"
+    },
+    "metricName": {
+      "ops": "opérations",
+      "ai_ops": "opérations IA"
+    },
+    "exceeded": {
+      "title": "Vous avez utilisé les {{limit}} {{metricName}} d'aujourd'hui.",
+      "body": "Réinitialisation dans {{time}}.",
+      "bodyNoTime": "Votre quota est réinitialisé chaque jour."
+    },
+    "compareRow": "{{tier}} : {{value}} par jour",
+    "rateLimited": {
+      "title": "Trop de requêtes",
+      "body": "Réessayez dans {{seconds}} s.",
+      "ready": "Vous pouvez réessayer maintenant."
+    },
+    "tryAgain": "Réessayer",
+    "heightLimited": {
+      "lower": "Réduisez le réglage pour continuer."
+    },
+    "tooLong": {
+      "title": "Ce contenu dépasse la durée autorisée par votre offre",
+      "body": "Votre offre autorise jusqu'à {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "Ce fichier dépasse ce que le service accepte",
+      "body": "Sa résolution, sa fréquence d'images ou sa durée dépasse la limite du service. Essayez une version plus petite."
+    },
+    "fact": {
+      "fileSize": "{{tiers}} acceptent les fichiers jusqu'à {{value}}.",
+      "videoLength": "{{tiers}} autorisent les vidéos jusqu'à {{value}}.",
+      "outputHeight": "{{tiers}} : jusqu'à {{value}}p.",
+      "ops": "{{tiers}} : {{value}} par jour.",
+      "aiOps": "{{tiers}} : {{value}} par jour.",
+      "retention": "{{tiers}} conservent les résultats pendant {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "Voir toutes les limites"
   }
 }

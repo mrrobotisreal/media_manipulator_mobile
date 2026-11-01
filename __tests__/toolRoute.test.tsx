@@ -21,7 +21,6 @@ jest.mock('lucide-react-native', () => {
 });
 jest.mock('@/ui/components/ProcessingIndicator', () => ({}));
 jest.mock('@/ui/components/ProgressBar', () => ({}));
-jest.mock('@/ui/components/QuotaMeter', () => ({}));
 jest.mock('@/analytics/track', () => {
   const actual = jest.requireActual('@/analytics/track');
   return { ...actual, track: jest.fn() };

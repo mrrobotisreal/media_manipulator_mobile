@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "המכסה היומית שלך תופיע כאן",
     "items": {
       "image-convert": {
         "title": "המרת תמונה",
@@ -471,5 +470,69 @@
       "vector_vectorize": "וקטוריזציה",
       "studio_reverse_proxy": "פרוקסי תצוגה מקדימה ב-Studio"
     }
+  },
+  "quota": {
+    "resetsIn": "יתאפס בעוד {{time}}",
+    "planSheet": {
+      "title": "חבילה ומגבלות",
+      "current": "החבילה שלכם",
+      "managed": "החבילות מנוהלות בחשבון Media Manipulator שלכם.",
+      "loading": "טוען את פרטי החבילה",
+      "loadFailed": "פרטי החבילה אינם זמינים כרגע."
+    },
+    "rows": {
+      "ops": "פעולות ליום",
+      "aiOps": "פעולות בינה מלאכותית ליום",
+      "fileSize": "הקובץ הגדול ביותר",
+      "videoLength": "הסרטון הארוך ביותר",
+      "outputHeight": "הפלט הגבוה ביותר",
+      "retention": "משך שמירת התוצאות"
+    },
+    "tiers": {
+      "free": "חינם",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "מפעיל"
+    },
+    "tierNames": {
+      "both": "Premium ו-Pro"
+    },
+    "metricName": {
+      "ops": "פעולות",
+      "ai_ops": "פעולות בינה מלאכותית"
+    },
+    "exceeded": {
+      "title": "השתמשתם בכל {{limit}} ה{{metricName}} להיום.",
+      "body": "יתאפס בעוד {{time}}.",
+      "bodyNoTime": "המכסה שלכם מתאפסת מדי יום."
+    },
+    "compareRow": "{{tier}}: {{value}} ליום",
+    "rateLimited": {
+      "title": "יותר מדי בקשות",
+      "body": "נסו שוב בעוד {{seconds}} שנ׳.",
+      "ready": "אפשר לנסות שוב עכשיו."
+    },
+    "tryAgain": "נסו שוב",
+    "heightLimited": {
+      "lower": "הורידו את ההגדרה כדי להמשיך."
+    },
+    "tooLong": {
+      "title": "זה ארוך יותר ממה שהחבילה שלכם מאפשרת",
+      "body": "החבילה שלכם מאפשרת עד {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "הקובץ חורג ממה שהשירות מקבל",
+      "body": "הרזולוציה, קצב הפריימים או האורך חורגים ממגבלת השירות. נסו גרסה קטנה יותר."
+    },
+    "fact": {
+      "fileSize": "{{tiers}} מקבלות קבצים עד {{value}}.",
+      "videoLength": "{{tiers}} מאפשרות סרטונים עד {{value}}.",
+      "outputHeight": "{{tiers}}: עד {{value}}p.",
+      "ops": "{{tiers}}: {{value}} ליום.",
+      "aiOps": "{{tiers}}: {{value}} ליום.",
+      "retention": "{{tiers}} שומרות תוצאות למשך {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "הצגת כל המגבלות"
   }
 }

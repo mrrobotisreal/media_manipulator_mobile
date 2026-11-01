@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "Your daily allowance appears here",
     "items": {
       "image-convert": {
         "title": "Convert image",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Vectorize",
       "studio_reverse_proxy": "Studio preview proxy"
     }
+  },
+  "quota": {
+    "resetsIn": "Resets in {{time}}",
+    "planSheet": {
+      "title": "Plan & limits",
+      "current": "Your plan",
+      "managed": "Plans are managed on your Media Manipulator account.",
+      "loading": "Loading plan details",
+      "loadFailed": "Plan details are unavailable right now."
+    },
+    "rows": {
+      "ops": "Operations per day",
+      "aiOps": "AI operations per day",
+      "fileSize": "Largest file",
+      "videoLength": "Longest video",
+      "outputHeight": "Highest output",
+      "retention": "Results kept"
+    },
+    "tiers": {
+      "free": "Free",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Operator"
+    },
+    "tierNames": {
+      "both": "Premium and Pro"
+    },
+    "metricName": {
+      "ops": "operations",
+      "ai_ops": "AI operations"
+    },
+    "exceeded": {
+      "title": "You've used all {{limit}} {{metricName}} for today.",
+      "body": "Resets in {{time}}.",
+      "bodyNoTime": "Your allowance resets every day."
+    },
+    "compareRow": "{{tier}}: {{value}} a day",
+    "rateLimited": {
+      "title": "Too many requests",
+      "body": "Try again in {{seconds}} s.",
+      "ready": "You can try again now."
+    },
+    "tryAgain": "Try again",
+    "heightLimited": {
+      "lower": "Lower the setting to continue."
+    },
+    "tooLong": {
+      "title": "This is longer than your plan allows",
+      "body": "Your plan allows up to {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "This file is above what the service accepts",
+      "body": "Its resolution, frame rate or length is over the service's limit. Try a smaller version."
+    },
+    "fact": {
+      "fileSize": "{{tiers}} accept files up to {{value}}.",
+      "videoLength": "{{tiers}} allow videos up to {{value}}.",
+      "outputHeight": "{{tiers}}: up to {{value}}p.",
+      "ops": "{{tiers}}: {{value}} a day.",
+      "aiOps": "{{tiers}}: {{value}} a day.",
+      "retention": "{{tiers}} keep results for {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "See all limits"
   }
 }

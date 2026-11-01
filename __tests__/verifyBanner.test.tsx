@@ -15,7 +15,6 @@ jest.mock('lucide-react-native', () => {
 });
 jest.mock('@/ui/components/ProcessingIndicator', () => ({}));
 jest.mock('@/ui/components/ProgressBar', () => ({}));
-jest.mock('@/ui/components/QuotaMeter', () => ({}));
 
 const identity = (over: Partial<Parameters<typeof identityChanged>[0] & object> = {}) => ({
   uid: 'u1',

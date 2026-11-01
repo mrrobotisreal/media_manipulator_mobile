@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "Hạn mức hằng ngày của bạn hiển thị ở đây",
     "items": {
       "image-convert": {
         "title": "Chuyển đổi ảnh",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Vector hóa",
       "studio_reverse_proxy": "Proxy xem trước Studio"
     }
+  },
+  "quota": {
+    "resetsIn": "Đặt lại sau {{time}}",
+    "planSheet": {
+      "title": "Gói và giới hạn",
+      "current": "Gói của bạn",
+      "managed": "Gói được quản lý trong tài khoản Media Manipulator của bạn.",
+      "loading": "Đang tải chi tiết gói",
+      "loadFailed": "Hiện không có chi tiết gói."
+    },
+    "rows": {
+      "ops": "Số thao tác mỗi ngày",
+      "aiOps": "Số thao tác AI mỗi ngày",
+      "fileSize": "Tệp lớn nhất",
+      "videoLength": "Video dài nhất",
+      "outputHeight": "Đầu ra cao nhất",
+      "retention": "Thời gian lưu kết quả"
+    },
+    "tiers": {
+      "free": "Miễn phí",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Quản trị viên"
+    },
+    "tierNames": {
+      "both": "Premium và Pro"
+    },
+    "metricName": {
+      "ops": "thao tác",
+      "ai_ops": "thao tác AI"
+    },
+    "exceeded": {
+      "title": "Bạn đã dùng hết {{limit}} {{metricName}} trong hôm nay.",
+      "body": "Đặt lại sau {{time}}.",
+      "bodyNoTime": "Hạn mức được đặt lại mỗi ngày."
+    },
+    "compareRow": "{{tier}}: {{value}} mỗi ngày",
+    "rateLimited": {
+      "title": "Quá nhiều yêu cầu",
+      "body": "Hãy thử lại sau {{seconds}} giây.",
+      "ready": "Bạn có thể thử lại ngay bây giờ."
+    },
+    "tryAgain": "Thử lại",
+    "heightLimited": {
+      "lower": "Hãy giảm cài đặt để tiếp tục."
+    },
+    "tooLong": {
+      "title": "Nội dung này dài hơn mức gói của bạn cho phép",
+      "body": "Gói của bạn cho phép tối đa {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "Tệp này vượt quá mức dịch vụ chấp nhận",
+      "body": "Độ phân giải, tốc độ khung hình hoặc độ dài vượt quá giới hạn của dịch vụ. Hãy thử phiên bản nhỏ hơn."
+    },
+    "fact": {
+      "fileSize": "{{tiers}}: tệp tối đa {{value}}.",
+      "videoLength": "{{tiers}}: video tối đa {{value}}.",
+      "outputHeight": "{{tiers}}: tối đa {{value}}p.",
+      "ops": "{{tiers}}: {{value}} mỗi ngày.",
+      "aiOps": "{{tiers}}: {{value}} mỗi ngày.",
+      "retention": "{{tiers}}: kết quả được lưu {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "Xem tất cả giới hạn"
   }
 }
