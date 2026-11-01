@@ -29,6 +29,8 @@ describe('app.config', () => {
   it('omits the Firebase plugin when the file is missing', () => {
     const c = buildConfig({}, none);
     expect(c.plugins).not.toContain('@react-native-firebase/app');
+    expect(c.plugins).not.toContain('@react-native-firebase/auth');
+    expect(c.plugins).not.toContain('@react-native-google-signin/google-signin');
     expect(c.android?.googleServicesFile).toBeUndefined();
     expect(console.warn).toHaveBeenCalledTimes(1);
   });
@@ -36,6 +38,9 @@ describe('app.config', () => {
   it('includes the Firebase plugin when GOOGLE_SERVICES_JSON points at a fixture', () => {
     const c = buildConfig({ GOOGLE_SERVICES_JSON: fixture });
     expect(c.plugins).toContain('@react-native-firebase/app');
+    expect(c.plugins).toContain('@react-native-firebase/auth');
+    expect(c.plugins).toContain('@react-native-google-signin/google-signin');
+    expect(c.ios?.usesAppleSignIn).toBe(true);
     expect(c.android?.googleServicesFile).toBe(fixture);
   });
 });

@@ -11,7 +11,6 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Quota metric**: what the API meters, `ops` or `ai_ops`. **Tier**: the account plan reported in `X-MM-Tier`.
 - **Sync gate**: after Firebase sign-in the app calls `POST /api/account/sync`; `(app)` routes render only when `auth.status === 'ready'`.
 - **Visitor id**: per-install UUIDv4 (persisted). **Session id**: UUIDv4 created at cold start.
-- **Dev shell**: the `__DEV__`-only "Open app shell" button on the sign-in placeholder; removed by MA04.
 - The word "Darkroom" never appears in the app UI. `Darkroom Instrument` is only the name of the design-token system (`src/ui/tokens.ts`), ported from the web.
 - **MmError**: the one error shape from `src/api/errors.ts` (`{status, code, message?, details}`); every API failure is normalised to it. Screens switch on **error code** (`MmErrorCode`: client codes like `network`, `rate_limited`, `contract_mismatch`, the API's snake_case codes, or `api:<code>` for ones this build does not know), never on English text.
 - **Quota observation**: on every 2xx the baseQuery reads `X-MM-Tier` / `X-MM-Quota-*` and dispatches `quota/observed`; on other failures it invalidates the `Account` tag instead.
@@ -21,6 +20,11 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **App shard**: `locales/<code>/app.json`, namespace `app` (default); app-only strings, keys grouped by screen, present in all 18 locales.
 - **Locale override**: `settings.locale` (null = follow the system); resolved by `resolveLocale` and applied by `setAppLocale`.
 - **RTL reload**: switching to or from he-IL / ar-SA flips layout direction, which needs a confirm sheet, `I18nManager.forceRTL` and `Updates.reloadAsync()`; same-direction switches are live.
+- **Sync gate** (MA04): `src/auth/syncGate.ts` follows Firebase auth state: `unknown -> signedOut | syncing -> ready | syncFailed`. Sync retries 1 s, 3 s, 9 s; a 401 fails immediately. `signupSource` is the method just used, else the first `providerData` entry (`methods.ts`).
+- **Linking**: on `auth/account-exists-with-different-credential` the pending credential is held in memory in `src/auth/linking.ts`; after the user signs in with the other method it is linked. Android Apple (web flow) has no credential, so a "Link Apple" offer appears instead.
+- **Re-auth**: `reauthenticate({kind})` in `src/auth/reauth.ts` returns a fresh ID token (`auth_time` < 5 min) for account deletion (MA22).
+- **Session expired**: MA03's `auth/sessionExpired` action; `src/auth/gate.ts` signs the user out and the sign-in screen shows a notice.
+- **Firebase boundary**: only `src/auth/*` imports `@react-native-firebase/auth` and google-signin (lint-enforced); the jest manual mocks live in `__mocks__/`.
 
 ## Layout
 
