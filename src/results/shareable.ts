@@ -26,7 +26,7 @@ const METADATA_LABELS = new Set([
 
 export function isShareable(
   kind: ResultKind,
-  ...toolOrMode: Array<string | null | undefined>
+  ...toolOrMode: (string | null | undefined)[]
 ): boolean {
   if (!SHAREABLE_KINDS.has(kind)) return false;
   for (const raw of toolOrMode) {
