@@ -1,0 +1,25 @@
+{
+  "bitrate": "192",
+  "sampleRate": "44100",
+  "channels": "stereo",
+  "speed": 1,
+  "volume": 1,
+  "format": "flac",
+  "basicProcessing": {
+    "normalize": true,
+    "equalizer": {
+      "enabled": true,
+      "preset": "vocal"
+    }
+  },
+  "timeBasedEffects": {
+    "reverb": {
+      "enabled": true,
+      "type": "plate",
+      "roomSize": 50,
+      "damping": 50,
+      "wetLevel": 30,
+      "dryLevel": 70
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "bitrate": "128",
+  "sampleRate": "48000",
+  "channels": "mono",
+  "speed": 1,
+  "volume": 1,
+  "format": "opus"
+}
