@@ -55,6 +55,8 @@ async function setup(toolId: string, withLimits = true) {
     await store.dispatch(
       accountApi.util.upsertQueryData('getAccountMe', undefined, {
         tier: 'free',
+        emailVerified: true,
+        anonymous: false,
         limits,
         usage: {},
         resetsAt: '2026-11-02T00:00:00Z',

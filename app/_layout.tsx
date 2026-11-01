@@ -6,14 +6,17 @@ import {
   JetBrainsMono_500Medium,
 } from '@expo-google-fonts/jetbrains-mono';
 import { useFonts } from 'expo-font';
+import { ShareIntentProvider } from 'expo-share-intent';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Component, useEffect, type ReactNode } from 'react';
 import { startAuth } from '@/auth/gate';
+import { cleanupIntakeCache } from '@/files/intake';
+import { useShareIntentRouting } from '@/files/share-intent';
 import { SyncLoading } from '@/auth/ui/SyncLoading';
 import { useAppSelector } from '@/state/hooks';
-import { View } from 'react-native';
+import { AppState, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { I18nextProvider, useTranslation } from 'react-i18next';
@@ -55,6 +58,36 @@ function AuthGate({ children }: { children: ReactNode }) {
   return children;
 }
 
+/** Routes a shared file to the intake screen once signed in (MA11). */
+function ShareIntentRouter() {
+  useShareIntentRouting();
+  return null;
+}
+
+/** Sweeps the intake cache on start and on every foreground (24 h TTL; referenced jobs survive). */
+function IntakeCacheSweeper() {
+  useEffect(() => {
+    const sweep = () => {
+      const jobs = store.getState().jobs;
+      const referenced = new Set<string>();
+      for (const j of Object.values(jobs.byId)) {
+        if (j.intakeId && j.status !== 'completed' && j.status !== 'failed') {
+          referenced.add(j.intakeId);
+        }
+      }
+      try {
+        cleanupIntakeCache({ referencedIds: referenced });
+      } catch {
+        // best effort
+      }
+    };
+    sweep();
+    const sub = AppState.addEventListener('change', (s) => s === 'active' && sweep());
+    return () => sub.remove();
+  }, []);
+  return null;
+}
+
 /** Applies `settings.locale` once persisted settings are rehydrated. */
 function LocaleApplier() {
   useApplyLocale();
@@ -81,20 +114,24 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <Provider store={store}>
           <I18nextProvider i18n={i18n}>
-            <PersistGate loading={null} persistor={persistor}>
-              <LocaleApplier />
-              <StatusBar style="light" />
-              <ErrorBoundary>
-                <AuthGate>
-                  <Stack
-                    screenOptions={{
-                      headerShown: false,
-                      contentStyle: { backgroundColor: colors.surface0 },
-                    }}
-                  />
-                </AuthGate>
-              </ErrorBoundary>
-            </PersistGate>
+            <ShareIntentProvider options={{ resetOnBackground: false }}>
+              <PersistGate loading={null} persistor={persistor}>
+                <LocaleApplier />
+                <StatusBar style="light" />
+                <ErrorBoundary>
+                  <AuthGate>
+                    <ShareIntentRouter />
+                    <IntakeCacheSweeper />
+                    <Stack
+                      screenOptions={{
+                        headerShown: false,
+                        contentStyle: { backgroundColor: colors.surface0 },
+                      }}
+                    />
+                  </AuthGate>
+                </ErrorBoundary>
+              </PersistGate>
+            </ShareIntentProvider>
           </I18nextProvider>
         </Provider>
       </SafeAreaProvider>
