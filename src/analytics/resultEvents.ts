@@ -103,3 +103,6 @@ export function trackResultArchiveEntry(c: ResultContext, entryKind: ResultKind)
     ctx(c),
   );
 }
+
+/** True once `result_viewed` fired for the job this app session (`viewed_first` on download clicks). */
+export const hasViewedResult = (jobId: string): boolean => viewed.has(jobId);

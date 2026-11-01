@@ -74,6 +74,29 @@ export async function fetchResultFile(args: FetchResultArgs, deps: FetchResultDe
   const hit = cachedResult(args.jobId, args.fileName, args.sizeBytes);
   if (hit) return hit;
 
+  // The viewer and Save/Share (MA14) may ask for the same file at once: join the running download
+  // instead of racing two writers onto one path. A joiner whose host download was cancelled retries itself.
+  const key = resultFile(args.jobId, args.fileName).uri;
+  const running = inflight.get(key);
+  if (running) {
+    try {
+      return await running;
+    } catch (e) {
+      if (args.signal?.aborted || e instanceof ResultGoneError) throw e;
+    }
+  }
+  const own = downloadFresh(args, deps);
+  inflight.set(key, own);
+  try {
+    return await own;
+  } finally {
+    if (inflight.get(key) === own) inflight.delete(key);
+  }
+}
+
+const inflight = new Map<string, Promise<File>>();
+
+async function downloadFresh(args: FetchResultArgs, deps: FetchResultDeps): Promise<File> {
   let link: DownloadLink;
   try {
     link = await deps.mintLink(args.jobId);

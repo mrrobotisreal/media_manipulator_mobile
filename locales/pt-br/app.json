@@ -381,5 +381,44 @@
       "stopped": "Você parou de acompanhar esta tarefa. O resultado estará em Histórico."
     },
     "entryFailed": "Não foi possível abrir este arquivo."
+  },
+  "actions": {
+    "save": "Salvar",
+    "share": "Compartilhar",
+    "more": "Mais",
+    "moreTitle": "Mais ações",
+    "shareLink": "Copiar link de compartilhamento",
+    "downloadMp3": "Baixar como MP3",
+    "runAnother": "Executar outro",
+    "delete": "Excluir"
+  },
+  "save": {
+    "toPhotos": "Salvo em Fotos",
+    "toFolder": "Salvo em {{folder}}",
+    "toFiles": "Salvo em Arquivos",
+    "permissionTitle": "Permitir que o Media Manipulator adicione fotos",
+    "permissionBody": "O Media Manipulator precisa de permissão para colocar este arquivo na sua biblioteca de fotos. Ele nunca lê suas outras fotos.",
+    "openSettings": "Abrir ajustes",
+    "filesInstead": "Salvar em Arquivos",
+    "failed": "Não foi possível salvar o arquivo. Tente novamente.",
+    "shareFailed": "Não foi possível abrir a folha de compartilhamento. Tente novamente."
+  },
+  "download": {
+    "progress": "Baixando… {{percent}}",
+    "failed": "O download não foi concluído. Verifique sua conexão e tente novamente.",
+    "gone": "Este resultado não está mais disponível para download."
+  },
+  "mp3": {
+    "converting": "Convertendo para MP3…",
+    "stillConverting": "Ainda convertendo — tente novamente mais tarde.",
+    "failed": "Não foi possível converter este arquivo para MP3."
+  },
+  "delete": {
+    "title": "Excluir este resultado?",
+    "body": "Ele é removido do servidor e do Histórico. Isso não pode ser desfeito.",
+    "confirm": "Excluir",
+    "done": "Excluído",
+    "pending": "Excluindo… pode levar um minuto para sumir de todos os lugares.",
+    "failed": "Não foi possível excluir este resultado. Tente novamente."
   }
 }

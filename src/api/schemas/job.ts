@@ -41,3 +41,33 @@ export const downloadLinkSchema = z.object({
   fileName: z.string().optional(),
 });
 export type DownloadLink = z.infer<typeof downloadLinkSchema>;
+
+/** `POST /download/:jobId/mp3` and `GET` (MM81): 202 `{status:'processing'}` / 200 ready, failed, none. */
+export const mp3StatusSchema = z.object({
+  status: z.enum(['none', 'processing', 'ready', 'failed']),
+  url: z.string().optional(),
+  absoluteUrl: z.string().optional(),
+  expiresAt: z.string().optional(),
+  sizeBytes: z.number().optional(),
+  fileName: z.string().optional(),
+  error: z.string().optional(),
+});
+export type Mp3Status = z.infer<typeof mp3StatusSchema>;
+
+/** `POST /jobs/:jobId/share` (201, MM32). The plaintext token is returned once. */
+export const createdShareSchema = z.object({
+  token: z.string().optional(),
+  url: z.string().min(1),
+  expiresAt: z.string(),
+});
+export type CreatedShare = z.infer<typeof createdShareSchema>;
+
+/** `DELETE /jobs/:jobId/share` -> `{revoked: n}`. */
+export const revokedSharesSchema = z.object({ revoked: z.number().optional() });
+
+/** `DELETE /jobs/:jobId` -> `{deleted:{objects,bytes}, pending}`. */
+export const deletedJobSchema = z.object({
+  deleted: z.object({ objects: z.number().optional(), bytes: z.number().optional() }).optional(),
+  pending: z.number().optional(),
+});
+export type DeletedJob = z.infer<typeof deletedJobSchema>;

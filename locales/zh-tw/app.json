@@ -381,5 +381,44 @@
       "stopped": "你已停止關注此工作。其結果將顯示在歷史記錄中。"
     },
     "entryFailed": "無法開啟此檔案。"
+  },
+  "actions": {
+    "save": "儲存",
+    "share": "分享",
+    "more": "更多",
+    "moreTitle": "更多操作",
+    "shareLink": "複製分享連結",
+    "downloadMp3": "下載為 MP3",
+    "runAnother": "再執行一次",
+    "delete": "刪除"
+  },
+  "save": {
+    "toPhotos": "已儲存到「照片」",
+    "toFolder": "已儲存到 {{folder}}",
+    "toFiles": "已儲存到「檔案」",
+    "permissionTitle": "允許 Media Manipulator 新增照片",
+    "permissionBody": "Media Manipulator 需要權限才能將此檔案放入你的相簿。它絕不會讀取你的其他照片。",
+    "openSettings": "開啟設定",
+    "filesInstead": "改為儲存到「檔案」",
+    "failed": "無法儲存檔案。請再試一次。",
+    "shareFailed": "無法開啟分享面板。請再試一次。"
+  },
+  "download": {
+    "progress": "正在下載… {{percent}}",
+    "failed": "下載未完成。請檢查網路連線後再試一次。",
+    "gone": "此結果已無法下載。"
+  },
+  "mp3": {
+    "converting": "正在轉換為 MP3…",
+    "stillConverting": "仍在轉換中，請稍後再試。",
+    "failed": "無法將此檔案轉換為 MP3。"
+  },
+  "delete": {
+    "title": "刪除此結果？",
+    "body": "它將從伺服器和「記錄」中移除，且無法復原。",
+    "confirm": "刪除",
+    "done": "已刪除",
+    "pending": "正在刪除… 可能需要一分鐘才會在所有位置消失。",
+    "failed": "無法刪除此結果。請再試一次。"
   }
 }

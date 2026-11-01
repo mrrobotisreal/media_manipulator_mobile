@@ -381,5 +381,44 @@
       "stopped": "Deixou de acompanhar esta tarefa. O resultado estará em Histórico."
     },
     "entryFailed": "Não foi possível abrir este ficheiro."
+  },
+  "actions": {
+    "save": "Guardar",
+    "share": "Partilhar",
+    "more": "Mais",
+    "moreTitle": "Mais ações",
+    "shareLink": "Copiar ligação de partilha",
+    "downloadMp3": "Transferir como MP3",
+    "runAnother": "Executar outra",
+    "delete": "Eliminar"
+  },
+  "save": {
+    "toPhotos": "Guardado em Fotos",
+    "toFolder": "Guardado em {{folder}}",
+    "toFiles": "Guardado em Ficheiros",
+    "permissionTitle": "Permitir que o Media Manipulator adicione fotos",
+    "permissionBody": "O Media Manipulator precisa de autorização para colocar este ficheiro na sua biblioteca de fotos. Nunca lê as suas outras fotos.",
+    "openSettings": "Abrir definições",
+    "filesInstead": "Guardar em Ficheiros",
+    "failed": "Não foi possível guardar o ficheiro. Tente novamente.",
+    "shareFailed": "Não foi possível abrir a folha de partilha. Tente novamente."
+  },
+  "download": {
+    "progress": "A transferir… {{percent}}",
+    "failed": "A transferência não foi concluída. Verifique a ligação e tente novamente.",
+    "gone": "Este resultado já não está disponível para transferir."
+  },
+  "mp3": {
+    "converting": "A converter para MP3…",
+    "stillConverting": "Ainda a converter — tente novamente mais tarde.",
+    "failed": "Não foi possível converter este ficheiro para MP3."
+  },
+  "delete": {
+    "title": "Eliminar este resultado?",
+    "body": "É removido do servidor e do Histórico. Não pode ser anulado.",
+    "confirm": "Eliminar",
+    "done": "Eliminado",
+    "pending": "A eliminar… pode demorar um minuto a desaparecer de todo o lado.",
+    "failed": "Não foi possível eliminar este resultado. Tente novamente."
   }
 }

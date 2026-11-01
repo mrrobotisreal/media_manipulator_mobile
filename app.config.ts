@@ -18,7 +18,8 @@ export const BLOCKED_ANDROID_PERMISSIONS = [
   'android.permission.READ_MEDIA_AUDIO',
   'android.permission.READ_MEDIA_VISUAL_USER_SELECTED',
   'android.permission.READ_EXTERNAL_STORAGE',
-  'android.permission.WRITE_EXTERNAL_STORAGE',
+  // WRITE_EXTERNAL_STORAGE is NOT blocked: MediaStore inserts on Android 8-9 (minSdk 26) need it. It is
+  // capped to API <= 28 by `withWriteStorageMaxSdk28` below, so it is absent on Android 10+ (MA14).
   'android.permission.CAMERA',
   'android.permission.RECORD_AUDIO',
 ];
@@ -72,6 +73,20 @@ export function buildConfig(
     'expo-document-picker',
     // Result PDF open on iOS and MA14 Share (MA13).
     'expo-sharing',
+    // Registered BEFORE expo-media-library: Expo runs later plugins' manifest mods first, so this one sees
+    // the plugin's output. Caps WRITE_EXTERNAL_STORAGE to API <= 28 and drops requestLegacyExternalStorage.
+    './plugins/withWriteStorageMaxSdk28',
+    // Save to Photos (MA14): add-only. No READ_MEDIA_* (granularPermissions: []), no media-location, and the
+    // legacy storage permissions are blocked or capped to API <= 28 (ARCHITECTURE section 11).
+    [
+      'expo-media-library',
+      {
+        savePhotosPermission: 'Allow $(PRODUCT_NAME) to save your results to your photo library.',
+        photosPermission: false,
+        granularPermissions: [],
+        isAccessMediaLocationEnabled: false,
+      },
+    ],
     'expo-video',
     [
       'expo-audio',

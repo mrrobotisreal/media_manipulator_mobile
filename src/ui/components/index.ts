@@ -12,3 +12,4 @@ export * from './Stat';
 export * from './Text';
 export * from './Wordmark';
 export * from './TextField';
+export * from './NoticeHost';

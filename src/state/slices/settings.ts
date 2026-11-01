@@ -5,6 +5,8 @@ export interface SettingsState {
   analyticsOptOut: boolean;
   haptics: boolean;
   lastToolIds: string[];
+  /** Android Save to Files: the SAF folder the user picked last (MA14); reused until a write fails. */
+  lastSaveDirUri: string | null;
 }
 
 export const MAX_RECENT_TOOLS = 6;
@@ -21,6 +23,7 @@ const settingsSlice = createSlice({
     analyticsOptOut: false,
     haptics: true,
     lastToolIds: [],
+    lastSaveDirUri: null,
   } as SettingsState,
   reducers: {
     hapticsSet(state, action: PayloadAction<boolean>) {
@@ -32,11 +35,15 @@ const settingsSlice = createSlice({
     toolOpened(state, action: PayloadAction<string>) {
       state.lastToolIds = pushRecentTool(state.lastToolIds, action.payload);
     },
+    saveDirSet(state, action: PayloadAction<string | null>) {
+      state.lastSaveDirUri = action.payload;
+    },
     localeSet(state, action: PayloadAction<string | null>) {
       state.locale = action.payload;
     },
   },
 });
 
-export const { hapticsSet, analyticsOptOutSet, localeSet, toolOpened } = settingsSlice.actions;
+export const { hapticsSet, analyticsOptOutSet, localeSet, saveDirSet, toolOpened } =
+  settingsSlice.actions;
 export default settingsSlice.reducer;

@@ -31,7 +31,15 @@ export type StubEventName =
   | 'result_viewed'
   | 'result_previewed'
   | 'result_compare_used'
-  | 'result_archive_entry_opened';
+  | 'result_archive_entry_opened'
+  // Save / share / download (MA14).
+  | 'result_download_clicked'
+  | 'download_started'
+  | 'download_completed'
+  | 'download_failed'
+  | 'media_saved'
+  | 'share_link_copied'
+  | 'data_deleted';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 

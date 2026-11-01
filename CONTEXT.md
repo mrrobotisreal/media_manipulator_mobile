@@ -50,3 +50,7 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 ## Ids
 
 Android package and iOS bundle id are both `com.mediamanipulator.app`; the `development` and `preview` variants append `.dev` / `.preview` (`com.mediamanipulator.app.dev`, `com.mediamanipulator.app.preview`). Slug `media-manipulator`, scheme `mediamanipulator`. Both are single constants (`ANDROID_PACKAGE`, `IOS_BUNDLE_ID`) in `app.config.ts`.
+- **Save to Photos** (MA14): image/gif/video results go to the gallery via `expo-media-library` (add-only permission asked at the first save; Android album "Media Manipulator"). Denied: a sheet offers Open settings or Save to Files instead.
+- **Save to Files** (MA14): everything else. Android picks a Storage Access Framework folder once (`settings.lastSaveDirUri`) and writes into it; iOS opens the share sheet. Pure logic in `src/files/save.ts`, native bindings in `src/files/saveDeps.ts`.
+- **Share link** (MM32, MA14): "Copy share link" mints a public expiring `/r/<token>` URL (`POST /jobs/:id/share`, 5 live per job, revoke all with `DELETE`); only the URL is copied, never the file name. Distinct from the **share sheet** (shares the file itself).
+- **Notice** (MA14): the app's toast: `showNotice(text, tone)` in `src/ui/notice.ts`, rendered by `NoticeHost` in the signed-in layout.

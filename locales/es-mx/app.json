@@ -381,5 +381,44 @@
       "stopped": "Dejaste de seguir este trabajo. Su resultado estará en Historial."
     },
     "entryFailed": "No se pudo abrir este archivo."
+  },
+  "actions": {
+    "save": "Guardar",
+    "share": "Compartir",
+    "more": "Más",
+    "moreTitle": "Más acciones",
+    "shareLink": "Copiar enlace para compartir",
+    "downloadMp3": "Descargar como MP3",
+    "runAnother": "Ejecutar otra",
+    "delete": "Eliminar"
+  },
+  "save": {
+    "toPhotos": "Guardado en Fotos",
+    "toFolder": "Guardado en {{folder}}",
+    "toFiles": "Guardado en Archivos",
+    "permissionTitle": "Permitir que Media Manipulator agregue fotos",
+    "permissionBody": "Media Manipulator necesita permiso para guardar este archivo en tu fototeca. Nunca lee tus otras fotos.",
+    "openSettings": "Abrir configuración",
+    "filesInstead": "Guardar en Archivos en su lugar",
+    "failed": "No se pudo guardar el archivo. Inténtalo de nuevo.",
+    "shareFailed": "No se pudo abrir el menú de compartir. Inténtalo de nuevo."
+  },
+  "download": {
+    "progress": "Descargando… {{percent}}",
+    "failed": "La descarga no se completó. Revisa tu conexión e inténtalo de nuevo.",
+    "gone": "Este resultado ya no está disponible para descargar."
+  },
+  "mp3": {
+    "converting": "Convirtiendo a MP3…",
+    "stillConverting": "Todavía se está convirtiendo; inténtalo de nuevo más tarde.",
+    "failed": "No se pudo convertir este archivo a MP3."
+  },
+  "delete": {
+    "title": "¿Eliminar este resultado?",
+    "body": "Se borra del servidor y del historial. Esta acción no se puede deshacer.",
+    "confirm": "Eliminar",
+    "done": "Eliminado",
+    "pending": "Eliminando… puede tardar un minuto en desaparecer de todas partes.",
+    "failed": "No se pudo eliminar este resultado. Inténtalo de nuevo."
   }
 }

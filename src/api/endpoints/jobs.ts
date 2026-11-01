@@ -1,9 +1,16 @@
 import { mmApi } from '../mmApi';
 import {
   conversionJobSchema,
+  createdShareSchema,
+  deletedJobSchema,
   downloadLinkSchema,
+  mp3StatusSchema,
+  revokedSharesSchema,
   type ConversionJob,
+  type CreatedShare,
+  type DeletedJob,
   type DownloadLink,
+  type Mp3Status,
 } from '../schemas/job';
 import {
   uploadResponseSchema,
@@ -35,6 +42,52 @@ export const jobsApi = mmApi.injectEndpoints({
         url: `/download/${encodeURIComponent(jobId)}/link`,
         method: 'POST',
         schema: downloadLinkSchema,
+        skipAccountInvalidation: true,
+      }),
+    }),
+    /** `POST /download/:jobId/mp3` (MM81): starts (or joins) the WAV -> MP3 transcode. 202 processing / 200 ready. */
+    startMp3: build.mutation<Mp3Status, string>({
+      query: (jobId) => ({
+        url: `/download/${encodeURIComponent(jobId)}/mp3`,
+        method: 'POST',
+        body: {},
+        schema: mp3StatusSchema,
+        skipAccountInvalidation: true,
+      }),
+    }),
+    /** `GET /download/:jobId/mp3`: poll target (a mutation so nothing is cached between polls). */
+    pollMp3: build.mutation<Mp3Status, string>({
+      query: (jobId) => ({
+        url: `/download/${encodeURIComponent(jobId)}/mp3`,
+        schema: mp3StatusSchema,
+        skipAccountInvalidation: true,
+      }),
+    }),
+    /** `POST /jobs/:jobId/share` (MM32): every call mints a new public link (not idempotent). */
+    createShare: build.mutation<CreatedShare, string>({
+      query: (jobId) => ({
+        url: `/jobs/${encodeURIComponent(jobId)}/share`,
+        method: 'POST',
+        body: {},
+        schema: createdShareSchema,
+        skipAccountInvalidation: true,
+      }),
+    }),
+    /** `DELETE /jobs/:jobId/share`: revokes every live link of the job. */
+    revokeShares: build.mutation<{ revoked?: number }, string>({
+      query: (jobId) => ({
+        url: `/jobs/${encodeURIComponent(jobId)}/share`,
+        method: 'DELETE',
+        schema: revokedSharesSchema,
+        skipAccountInvalidation: true,
+      }),
+    }),
+    /** `DELETE /jobs/:jobId`: removes the result everywhere. Tag invalidation is done by the caller. */
+    deleteJob: build.mutation<DeletedJob, string>({
+      query: (jobId) => ({
+        url: `/jobs/${encodeURIComponent(jobId)}`,
+        method: 'DELETE',
+        schema: deletedJobSchema,
         skipAccountInvalidation: true,
       }),
     }),

@@ -381,5 +381,44 @@
       "stopped": "이 작업 관찰을 중지했어요. 결과는 기록에서 확인할 수 있어요."
     },
     "entryFailed": "이 파일을 열 수 없어요."
+  },
+  "actions": {
+    "save": "저장",
+    "share": "공유",
+    "more": "더보기",
+    "moreTitle": "추가 작업",
+    "shareLink": "공유 링크 복사",
+    "downloadMp3": "MP3로 다운로드",
+    "runAnother": "다시 실행",
+    "delete": "삭제"
+  },
+  "save": {
+    "toPhotos": "사진에 저장했어요",
+    "toFolder": "{{folder}}에 저장했어요",
+    "toFiles": "파일에 저장했어요",
+    "permissionTitle": "Media Manipulator의 사진 추가 허용",
+    "permissionBody": "이 파일을 사진 보관함에 넣으려면 Media Manipulator에 권한이 필요해요. 다른 사진은 절대 읽지 않아요.",
+    "openSettings": "설정 열기",
+    "filesInstead": "대신 파일에 저장",
+    "failed": "파일을 저장하지 못했어요. 다시 시도해 주세요.",
+    "shareFailed": "공유 시트를 열지 못했어요. 다시 시도해 주세요."
+  },
+  "download": {
+    "progress": "다운로드 중… {{percent}}",
+    "failed": "다운로드가 완료되지 않았어요. 연결을 확인하고 다시 시도해 주세요.",
+    "gone": "이 결과는 더 이상 다운로드할 수 없어요."
+  },
+  "mp3": {
+    "converting": "MP3로 변환하는 중…",
+    "stillConverting": "아직 변환 중이에요. 나중에 다시 시도해 주세요.",
+    "failed": "이 파일을 MP3로 변환하지 못했어요."
+  },
+  "delete": {
+    "title": "이 결과를 삭제할까요?",
+    "body": "서버와 기록에서 삭제돼요. 되돌릴 수 없어요.",
+    "confirm": "삭제",
+    "done": "삭제했어요",
+    "pending": "삭제하는 중… 모든 곳에서 사라지기까지 1분 정도 걸릴 수 있어요.",
+    "failed": "이 결과를 삭제하지 못했어요. 다시 시도해 주세요."
   }
 }

@@ -381,5 +381,44 @@
       "stopped": "このジョブの監視を停止しました。結果は履歴で確認できます。"
     },
     "entryFailed": "このファイルを開けませんでした。"
+  },
+  "actions": {
+    "save": "保存",
+    "share": "共有",
+    "more": "その他",
+    "moreTitle": "その他の操作",
+    "shareLink": "共有リンクをコピー",
+    "downloadMp3": "MP3としてダウンロード",
+    "runAnother": "もう一度実行",
+    "delete": "削除"
+  },
+  "save": {
+    "toPhotos": "写真に保存しました",
+    "toFolder": "{{folder}}に保存しました",
+    "toFiles": "ファイルに保存しました",
+    "permissionTitle": "Media Manipulatorに写真の追加を許可",
+    "permissionBody": "このファイルをフォトライブラリに追加するには、Media Manipulatorの許可が必要です。ほかの写真は一切読み取りません。",
+    "openSettings": "設定を開く",
+    "filesInstead": "代わりにファイルに保存",
+    "failed": "ファイルを保存できませんでした。もう一度お試しください。",
+    "shareFailed": "共有シートを開けませんでした。もう一度お試しください。"
+  },
+  "download": {
+    "progress": "ダウンロード中… {{percent}}",
+    "failed": "ダウンロードが完了しませんでした。接続を確認してもう一度お試しください。",
+    "gone": "この結果はダウンロードできなくなりました。"
+  },
+  "mp3": {
+    "converting": "MP3に変換中…",
+    "stillConverting": "まだ変換中です。しばらくしてからもう一度お試しください。",
+    "failed": "このファイルをMP3に変換できませんでした。"
+  },
+  "delete": {
+    "title": "この結果を削除しますか？",
+    "body": "サーバーと履歴から削除されます。この操作は元に戻せません。",
+    "confirm": "削除",
+    "done": "削除しました",
+    "pending": "削除中… すべての場所から消えるまで1分ほどかかることがあります。",
+    "failed": "この結果を削除できませんでした。もう一度お試しください。"
   }
 }

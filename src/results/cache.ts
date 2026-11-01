@@ -73,3 +73,13 @@ export function findOriginal(jobId: string, name: string, mime: string): Origina
     return undefined;
   }
 }
+
+/** Deletes MA12's kept original copy (`cache/originals/<jobId>/`) when the job is deleted. */
+export function evictOriginal(jobId: string): void {
+  try {
+    const d = new Directory(Paths.cache, ORIGINALS_DIR, jobId);
+    if (d.exists) d.delete();
+  } catch {
+    // best effort
+  }
+}

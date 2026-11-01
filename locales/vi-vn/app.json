@@ -381,5 +381,44 @@
       "stopped": "Bạn đã ngừng theo dõi tác vụ này. Kết quả sẽ có trong Lịch sử."
     },
     "entryFailed": "Không mở được tệp này."
+  },
+  "actions": {
+    "save": "Lưu",
+    "share": "Chia sẻ",
+    "more": "Thêm",
+    "moreTitle": "Thao tác khác",
+    "shareLink": "Sao chép liên kết chia sẻ",
+    "downloadMp3": "Tải xuống dạng MP3",
+    "runAnother": "Chạy lại lần nữa",
+    "delete": "Xóa"
+  },
+  "save": {
+    "toPhotos": "Đã lưu vào Ảnh",
+    "toFolder": "Đã lưu vào {{folder}}",
+    "toFiles": "Đã lưu vào Tệp",
+    "permissionTitle": "Cho phép Media Manipulator thêm ảnh",
+    "permissionBody": "Media Manipulator cần quyền để đưa tệp này vào thư viện ảnh của bạn. Ứng dụng không bao giờ đọc các ảnh khác của bạn.",
+    "openSettings": "Mở cài đặt",
+    "filesInstead": "Lưu vào Tệp thay thế",
+    "failed": "Không thể lưu tệp. Hãy thử lại.",
+    "shareFailed": "Không thể mở bảng chia sẻ. Hãy thử lại."
+  },
+  "download": {
+    "progress": "Đang tải xuống… {{percent}}",
+    "failed": "Quá trình tải xuống chưa hoàn tất. Hãy kiểm tra kết nối rồi thử lại.",
+    "gone": "Kết quả này không còn để tải xuống nữa."
+  },
+  "mp3": {
+    "converting": "Đang chuyển sang MP3…",
+    "stillConverting": "Vẫn đang chuyển đổi — hãy thử lại sau.",
+    "failed": "Không thể chuyển tệp này sang MP3."
+  },
+  "delete": {
+    "title": "Xóa kết quả này?",
+    "body": "Kết quả sẽ bị xóa khỏi máy chủ và Lịch sử. Không thể hoàn tác.",
+    "confirm": "Xóa",
+    "done": "Đã xóa",
+    "pending": "Đang xóa… có thể mất một phút để biến mất khỏi mọi nơi.",
+    "failed": "Không thể xóa kết quả này. Hãy thử lại."
   }
 }
