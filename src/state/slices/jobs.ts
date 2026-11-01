@@ -9,6 +9,8 @@ export interface JobEntry {
   status: string;
   progress: number;
   createdAt: number;
+  /** IntakeFile id whose cache copy this job still needs (MA12 sets it; MA11's sweep reads it). */
+  intakeId?: string;
 }
 
 export interface JobsState {
