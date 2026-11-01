@@ -71,7 +71,10 @@ export function buildConfig(
     ],
     'expo-document-picker',
     'expo-video',
-    ['expo-audio', { microphonePermission: false, recordAudioAndroid: false }],
+    [
+      'expo-audio',
+      { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false },
+    ],
     // Android share-into only; the iOS share extension is MA36 (ADR MA-0002). The plugin's typed MIME list
     // has no audio/pdf, so `*/*` receives everything and src/files/share-intent.ts filters by MIME in JS.
     [
