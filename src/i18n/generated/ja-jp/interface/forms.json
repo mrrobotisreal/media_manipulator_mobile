@@ -1,0 +1,751 @@
+{
+  "transcribeForm": {
+    "outputFormatTitle": "文字起こしの出力形式",
+    "intro": "{{mediaKind}}は当社自身のGPUサーバー上でwhisper-ctranslate2を使って文字起こしします。文字起こしが完成すると、要約と安全性レビューが自動的に実行されます。",
+    "mediaKind": {
+      "video": "動画",
+      "audio": "音声"
+    },
+    "languageLabel": "言語ヒント（任意）",
+    "languagePlaceholder": "例：en、es、ja（空欄で自動検出）",
+    "languageHint": "BCP-47の短い言語コードです。空欄にするとwhisperが話されている言語を自動検出します。",
+    "languageTooltip": "BCP-47の短い言語コード（例：en、es、ja、de、fr）です。空欄にするとwhisperが話されている言語を自動検出します。正しいヒントを指定すると、短いクリップの文字起こし精度が向上することがあります。",
+    "transcribing": "文字起こし中...",
+    "submit": "ファイルを文字起こし",
+    "format": {
+      "vtt": {
+        "label": "字幕（VTT）",
+        "description": "動画プレーヤーやアクセシビリティツール向けのタイムコード付き字幕です。"
+      },
+      "srt": {
+        "label": "字幕（SRT）",
+        "description": "YouTube、Premiere、DaVinci Resolveなど、ほとんどの動画編集ソフトに対応したSubRip字幕です。"
+      },
+      "txt": {
+        "label": "プレーンテキスト",
+        "description": "読んだり編集したりするのに適した、連続した文字起こしテキストです。"
+      },
+      "json": {
+        "label": "構造化JSON",
+        "description": "後続の処理向けに、タイミングデータ付きでセグメント化された文字起こしです。"
+      }
+    },
+    "formatTooltip": {
+      "vtt": "<strong>VTT</strong> — HTML5動画プレーヤーやアクセシビリティツール向けのタイムコード付き字幕です。",
+      "txt": "<strong>プレーンテキスト</strong> — 読んだり編集したりするための連続した文字起こしテキストです。",
+      "json": "<strong>構造化JSON</strong> — 後続のパイプライン向けに、タイミングデータ付きでセグメント化された文字起こしです。"
+    }
+  },
+  "audioForm": {
+    "converting": "変換中...",
+    "submit": "ファイルを変換",
+    "trimStatus": "トリミング：{{start}} - {{end}}（{{duration}}）",
+    "ai": {
+      "title": "AI音声ツール",
+      "tooltipIntro": "1つのジョブにつき1つのAI処理が、当社のローカルGPUサーバーで実行されます。そのジョブでは標準のFFmpeg処理チェーンはスキップされます。",
+      "tooltipCleanVoice": "<strong>音声クリーンアップ</strong> — DeepFilterNetによるノイズ除去と放送品質の仕上げチェーン（ハイパス／ローパス、ラウドネス、リミッター）。",
+      "tooltipRemoveNoise": "<strong>背景ノイズを除去</strong> — 仕上げチェーンなしのDeepFilterNetノイズ除去。",
+      "tooltipIsolateVocals": "<strong>ボーカルを分離</strong> — Demucs htdemucsのボーカルステム（デフォルトでは元のファイルと同じ形式）。",
+      "tooltipRemoveVocals": "<strong>ボーカルを除去／カラオケ</strong> — Demucsのインストゥルメンタルステム。",
+      "intro": "AI音声ツールはGPUジョブとして実行されるため、基本的な変換より時間がかかることがあります。",
+      "operationLabel": "処理",
+      "operations": {
+        "none": "なし（標準変換）",
+        "clean_voice": "音声クリーンアップ",
+        "remove_background_noise": "背景ノイズを除去",
+        "isolate_vocals": "ボーカルを分離",
+        "remove_vocals": "ボーカルを除去／カラオケ"
+      },
+      "aiActiveNote": "AI処理を選択すると、ビットレート、EQ、その他の標準音声オプションはスキップされます。",
+      "presetLocked": "このツールのプリセット"
+    },
+    "stemFormat": {
+      "label": "出力形式",
+      "options": {
+        "auto": "入力と同じ（推奨）",
+        "autoWithFormat": "入力と同じ：{{format}}（推奨）",
+        "mp3": "MP3（320 kbps）",
+        "flac": "FLAC（ロスレス）",
+        "wav": "WAV（ロスレス、最大サイズ）"
+      },
+      "withEstimate": "{{label}} · 約{{size}}",
+      "help": "サイズは目安です。MP3はMP3のまま、ロスレスファイル（WAV、FLAC、AIFF）はFLACで返されます。",
+      "helpNoEstimate": "MP3はMP3のまま、ロスレスファイル（WAV、FLAC、AIFF）はFLACで返されます。ロスレスにするにはFLACまたはWAVを選んでください。",
+      "wavHint": "WAVは約{{size}}になります。非常に大きなダウンロードです。FLACはロスレスで、サイズは約半分です。"
+    }
+  },
+  "videoForm": {
+    "converting": "変換中...",
+    "submit": "ファイルを変換",
+    "trimStatus": "トリミング：{{start}} - {{end}}（{{duration}}）"
+  },
+  "imageForm": {
+    "converting": "変換中...",
+    "submit": "ファイルを変換",
+    "cropStatus": "切り抜き範囲：{{width}}×{{height}}ピクセル、位置（{{x}}, {{y}}）",
+    "vectorize": {
+      "title": "ベクター化（PNG → SVG）",
+      "note": "ベクター化は画像をトレースして実際のベクターパスに変換します。ロゴ、アイコン、署名、白黒の線画に最適で、写真には向きません。",
+      "thresholdLabel": "白黒のしきい値",
+      "thresholdTooltip": "この値より暗いピクセルが塗りつぶし図形としてトレースされます。上げるとより多くのディテールを拾い、下げると最も濃い図形だけが残ります。"
+    },
+    "ico": {
+      "note": "16、32、48、64、128、256 pxのアイコンを含むマルチサイズの.icoが生成されます。ファビコンやWindowsアプリのアイコンに最適です。"
+    },
+    "ai": {
+      "title": "AI画像ツール",
+      "tooltipIntro": "1つのジョブにつき1つのAI処理が、当社のローカルGPUサーバーで実行されます。そのジョブでは標準のImageMagickパイプラインはスキップされます。",
+      "tooltipFacePrivacy": "<strong>顔のプライバシー</strong> — 顔を検出して隠します（ぼかし、モザイク、黒塗り）。",
+      "tooltipRemoveBackground": "<strong>背景を除去</strong> — rembg + BiRefNet/ISNet/U2Netで透過PNGを出力します。",
+      "tooltipAiUpscale": "<strong>AIアップスケール</strong> — Real-ESRGAN ncnn Vulkanによる2倍または4倍。",
+      "tooltipRedactText": "<strong>テキスト／個人情報をマスキング</strong> — OCRベースのマスキング。",
+      "tooltipRemoveObject": "<strong>オブジェクトを除去</strong> — 不要なオブジェクトの上に長方形を描くと、LaMaインペインティングがその背後の領域を再構成します。",
+      "intro": "AIツールは1回の変換につき1つの処理を実行します。センシティブなメディアを公開する前に、出力をプレビューして確認することをおすすめします。",
+      "operationLabel": "処理",
+      "operations": {
+        "none": "なし（標準変換）",
+        "face_privacy": "顔のぼかし／モザイク",
+        "remove_background": "背景を除去",
+        "ai_upscale": "AIアップスケール",
+        "redact_text": "テキスト／個人情報をマスキング",
+        "remove_object": "オブジェクトを除去（LaMaインペインティング）"
+      },
+      "faceMode": {
+        "label": "顔の処理モード",
+        "blur": "ぼかし",
+        "pixelate": "モザイク",
+        "blackbox": "黒塗り"
+      },
+      "selectiveFaces": {
+        "title": "顔を選んで処理",
+        "tooltipDefault": "デフォルトでは、検出されたすべての顔に選択した効果を適用します。",
+        "tooltipDetect": "<strong>顔を検出</strong>を使うと、枠をプレビューして、隠す顔とそのままにする顔を選べます。",
+        "tooltipExpire": "顔の枠は選択のために一時的に保存され、自動的に期限切れになります。",
+        "selectionModeLabel": "選択モード",
+        "selectionMode": {
+          "all": "検出されたすべての顔",
+          "only_selected": "選択した顔のみ",
+          "all_except_selected": "選択した顔以外すべて"
+        },
+        "detecting": "検出中…",
+        "reDetect": "顔を再検出",
+        "detect": "顔を検出",
+        "selectAll": "すべて選択",
+        "clearSelection": "選択を解除",
+        "chooseFile": "顔を検出するには、まず画像を選択してください。",
+        "noFaces": "顔が検出されませんでした。変換時にデフォルトの顔プライバシー処理を実行するか、別の画像をお試しください。",
+        "detected_other": "{{count}}人の顔を検出しました。選択済み：{{selected}}。",
+        "defaultNote": "デフォルト：検出されたすべての顔に適用します。特定の顔を選ぶには「顔を検出」を使ってください。"
+      },
+      "background": {
+        "modelLabel": "背景モデル",
+        "models": {
+          "birefnet-general": "BiRefNet General（推奨）",
+          "birefnet-general-lite": "BiRefNet General Lite",
+          "birefnet-portrait": "BiRefNet Portrait",
+          "isnet-general-use": "ISNet General Use",
+          "u2net": "U2Net",
+          "u2netp": "U2Net Lite",
+          "u2net_human_seg": "U2Net Human Segmentation"
+        },
+        "pngNote": "透明度を保持するため、出力は常にPNGです。"
+      },
+      "upscale": {
+        "scaleLabel": "倍率",
+        "scale4x": "4倍",
+        "scale2x": "2倍",
+        "modelLabel": "モデル",
+        "models": {
+          "realesrgan-x4plus": "realesrgan-x4plus（写真向け）",
+          "realesrgan-x4plus-anime": "realesrgan-x4plus-anime",
+          "realesr-animevideov3": "realesr-animevideov3"
+        },
+        "experimentalNote": "4倍がデフォルトで、最も安定した結果が得られます。2倍は同じモデルを半分のスケールで実行するため、一部の画像では少し切り取られたように見えることがあります。",
+        "pngNote": "出力はデフォルトでPNGです。"
+      },
+      "removeObject": {
+        "title": "除去するオブジェクトを指定",
+        "tooltipDraw": "画像上でクリック＆ドラッグして、消したいオブジェクトごとに長方形を追加します。長方形の本体をドラッグすると移動、ハンドルをドラッグするとサイズ変更できます。",
+        "tooltipResult": "LaMaインペインティングが各長方形の背後の領域を再構成します。最良の結果を得るには、オブジェクトにぴったり沿って枠を描いてください。大きな長方形ほど、モデルが推測で生成する背景が増えます。",
+        "tooltipTip": "ヒント：1つの巨大な長方形より、小さな長方形を複数使うほうがきれいに仕上がることが多いです。",
+        "clearAll": "すべてクリア",
+        "chooseFile": "オブジェクトの指定を始めるには、まず画像を選択してください。",
+        "atLeastOne": "除去したいオブジェクトを覆う長方形を1つ以上追加してください。",
+        "readyToInpaint_other": "{{count}}個の長方形がインペインティング待ちです。",
+        "formatNote": "LaMaの出力は選択した出力形式（JPG、PNG、WebP、GIF）を維持します。この処理ではフィルター、テキストオーバーレイ、色合いはスキップされます。"
+      },
+      "redact": {
+        "detectLabel": "検出対象",
+        "detect": {
+          "pii": "個人情報のみ",
+          "all-text": "すべてのテキスト"
+        },
+        "redactionLabel": "マスキングのスタイル",
+        "redaction": {
+          "blackbox": "黒塗り",
+          "blur": "ぼかし",
+          "pixelate": "モザイク"
+        },
+        "ocrNote": "OCRによるマスキングはベストエフォートです。共有する前に出力をご確認ください。"
+      },
+      "aiActiveNote": "AI処理を選択すると、形式、フィルター、その他の標準画像オプションはスキップされます。",
+      "operationLocked": "このツールのプリセット"
+    },
+    "textOverlay": {
+      "title": "テキストオーバーレイ",
+      "tooltipAria": "テキストオーバーレイについて",
+      "tooltip": "出力画像に透かしやキャプションを焼き込みます。テキストを入力し、サイズ（8〜512 px）、配置位置（角／辺／中央のアンカー）、文字色と縁取り色、縁取りの太さ、アンカーからのピクセル単位のオフセットを指定します。テキストを空欄にするとオーバーレイはスキップされます。",
+      "overlayText": "オーバーレイテキスト",
+      "overlayPlaceholder": "画像に描画するテキスト（任意）",
+      "size": "文字サイズ",
+      "position": "位置",
+      "textColor": "文字色",
+      "strokeColor": "縁取り色",
+      "strokeWidth": "縁取りの太さ",
+      "xOffset": "Xオフセット",
+      "yOffset": "Yオフセット",
+      "gravity": {
+        "NorthWest": "左上",
+        "North": "上",
+        "NorthEast": "右上",
+        "West": "左",
+        "Center": "中央",
+        "East": "右",
+        "SouthWest": "左下",
+        "South": "下",
+        "SouthEast": "右下"
+      }
+    },
+    "metadata": {
+      "title": "メタデータ",
+      "intro": "画像のメタデータを保持するか、削除するか、書き換えるかを選択します。",
+      "tooltipKeep": "<strong>すべてのメタデータを保持</strong> — オリジナルのEXIF/IPTC/XMP/GPSフィールドをすべて保持します。",
+      "tooltipStrip": "<strong>すべてのメタデータを削除</strong> — カメラ、GPS、ソフトウェア、タイムスタンプのフィールドを削除します。写真をオンラインで共有する前におすすめです。",
+      "tooltipCustom": "<strong>カスタムメタデータ</strong> — まず削除してから、指定したフィールド（タイトル、作者、著作権、IPTCキーワード、GPSフィールドなど）だけを書き込みます。",
+      "modeLabel": "メタデータモード",
+      "modes": {
+        "keep": "すべてのメタデータを保持",
+        "strip": "すべてのメタデータを削除",
+        "custom": "カスタムメタデータ"
+      },
+      "fields": {
+        "title": "タイトル",
+        "author": "アーティスト／作者",
+        "description": "説明",
+        "copyright": "著作権",
+        "comment": "ユーザーコメント",
+        "keywords": "キーワード"
+      },
+      "exifFields": "EXIF / TIFFフィールド",
+      "gpsFields": "GPS / 位置情報フィールド",
+      "showAdvanced": "詳細／デバイスメタデータを表示",
+      "hideAdvanced": "詳細／デバイスメタデータを隠す",
+      "gps": {
+        "title": "GPS / 位置情報オプション",
+        "tooltipAria": "GPS / 位置情報オプションについて",
+        "tooltip": "カメラやスマートフォンが保存したGPSメタデータを削除または置き換えます。撮影方向、GPSタイムスタンプ、高度、目的地フィールドだけを削除することもできます。置き換えモードでは別の緯度／経度／高度を指定でき、プライバシーのために精度を丸めることもできます。",
+        "removeLocationData": "位置情報を削除",
+        "replaceLocationData": "位置情報を置き換え",
+        "roundPrecision": "位置情報の精度を丸める",
+        "removeCaptureDirection": "撮影方向／方位を削除",
+        "removeTimestamp": "GPSタイムスタンプを削除",
+        "removeAltitude": "高度を削除",
+        "removeDestination": "目的地フィールドを削除",
+        "latitude": "緯度",
+        "longitude": "経度",
+        "altitude": "高度",
+        "precisionDecimals": "精度（小数点以下の桁数）"
+      }
+    },
+    "_obsoletePlaceholder": ""
+  },
+  "videoTranscodeForm": {
+    "premiumTooltip": "トランスコードのフル機能を使うには、Premiumアカウントに登録してください。",
+    "premiumBadge": "Premium",
+    "tooSmallBadge": "小さすぎます",
+    "protocol": {
+      "title": "プロトコル",
+      "tooltipAria": "トランスコードのプロトコルについて",
+      "tooltipHls": "<strong>HLS</strong> — Apple HTTP Live Streaming。H.264/AAC、master.m3u8 + レンディションごとのバリアント + .tsセグメント。あらゆる環境で再生できます。",
+      "tooltipDash": "<strong>DASH</strong> — MPEG-DASHアダプティブストリーミング。AV1（最小で最新）またはVP9（より広い対応）。manifest.mpd + .m4sセグメント。",
+      "hlsSub": "H.264 / AAC · .m3u8 · どこでも再生可能",
+      "dashSub": "AV1またはVP9 · .mpd · モダンウェブ向け",
+      "av1Sub": "推奨 · ファイルがより小さい",
+      "vp9Sub": "より幅広い再生対応"
+    },
+    "analyze": {
+      "intro": "動画をアップロードし、<code>ffprobe</code>を実行して解像度、コーデック、音声、ソースが対応する画質段階を検出します。",
+      "uploadingPercent": "アップロード中 {{percent}}%",
+      "analyzingSource": "ソースを解析中...",
+      "preparingUpload": "アップロードを準備中...",
+      "analyzeVideo": "動画を解析"
+    },
+    "report": {
+      "title": "ソース動画レポート",
+      "resolution": "解像度",
+      "maxQuality": "最大画質",
+      "fps": "FPS",
+      "duration": "長さ",
+      "audio": "音声",
+      "videoCodec": "動画コーデック",
+      "audioCodec": "音声コーデック",
+      "container": "コンテナ",
+      "fileSize": "ファイルサイズ",
+      "yes": "あり",
+      "no": "なし"
+    },
+    "rungs": {
+      "title": "画質段階",
+      "tooltipAria": "画質段階について",
+      "tooltip": "選択した各段階が、最終的なHLS/DASHパッケージ内の1つのレンディションになります。Premium段階（144p/240p/1080p/2160p）はPremiumで利用できます。",
+      "defaultsNote": "デフォルト：ソース動画が対応していれば360p + 480p + 720p。"
+    },
+    "captions": {
+      "disabledTooltip": "字幕には音声トラックが必要です。この動画には音声がないようです。",
+      "enabledTooltip": "whisper-ctranslate2を使って音声トラックからVTT字幕を生成します。デフォルトはオフです。",
+      "generateCaptions": "字幕を生成",
+      "captionsSub": "音声トラックから自動生成されるVTT字幕。デフォルトはオフです。",
+      "generateStoryboards": "ストーリーボードを生成",
+      "storyboardsSub": "スプライトシート形式のスクラブ用サムネイル + WebVTTインデックス。デフォルトはオフです。"
+    },
+    "translations": {
+      "title": "追加の字幕翻訳",
+      "tooltipAria": "追加の字幕翻訳について",
+      "tooltip1": "メインの字幕トラックは、自動検出されたソース言語でのwhisperによる文字起こしです。最大{{max}}言語まで追加でき、お使いのOllamaテキストモデルでセグメントを翻訳します。",
+      "tooltip2": "各翻訳はそれぞれ独立したVTTになり、HLS字幕レンディション（EXT-X-MEDIA）とDASHのテキストAdaptationSetが追加されるため、プレーヤーにトラック選択が表示されます。",
+      "primaryNote": "メイントラック：自動検出されたソース言語。翻訳トラックは最大{{max}}件まで追加できます。",
+      "backendUnreachable": "翻訳バックエンド（Ollama）に接続できません。選択した言語はジョブ実行時にスキップされます。",
+      "removeLanguage": "言語を削除",
+      "addLanguage": "+ 翻訳言語を追加（{{count}}/{{max}}）"
+    },
+    "bundle": {
+      "title": "ダウンロード形式",
+      "tooltipAria": "ダウンロード形式について",
+      "tooltipTargz": "<strong>.tar.gz</strong> — テキストの多いプレイリストでは小さく、macOS/Linuxで標準対応、Windows 10以降でも組み込みの<code>tar</code>コマンドでそのまま展開できます。",
+      "tooltipZip": "<strong>.zip</strong> — 古いWindowsを使っている場合や、何も考えずにダブルクリックで展開したい場合の安全なデフォルトです。やや大きくなりますが、中身はまったく同じです。",
+      "defaultBadge": "デフォルト",
+      "targzSub": "より小さい · macOS/Linux/Win 10以降で標準対応",
+      "zipSub": "Windowsで扱いやすい · ダブルクリックで展開"
+    },
+    "start": {
+      "starting": "トランスコードを開始中...",
+      "startButton": "{{protocol}}トランスコードを開始（出力：{{format}}）"
+    },
+    "tooSmall": "この動画は無料トランスコードの最低解像度360pを下回っています。360p以上の動画を読み込んでください。",
+    "progress": {
+      "title": "パイプラインの進行状況",
+      "failed": "トランスコードに失敗しました。"
+    },
+    "downloadPackage": "{{filename}}をダウンロード"
+  },
+  "pdfForm": {
+    "outputFormat": {
+      "label": "出力画像形式",
+      "tooltip": "写真向けの小さなファイルにはJPGを、くっきりしたロスレスのページ（テキストや線画に最適）にはPNGを選んでください。",
+      "locked": "このツールでは{{format}}に固定"
+    },
+    "dpi": {
+      "label": "レンダリング品質（DPI）",
+      "tooltip": "DPIが高いほど、より鮮明で大きな画像になります。150 DPIが適切なデフォルトで、印刷品質には300を使ってください。"
+    },
+    "pages": {
+      "label": "変換するページ",
+      "tooltip": "すべてのページ（画像のZIPとしてダウンロード）、または最初のページだけ（1枚の画像としてダウンロード）を変換します。",
+      "all": "すべてのページ（ZIP）",
+      "allHint": "1ページにつき1枚の画像を、1つの.zipにまとめてダウンロードします。",
+      "first": "最初のページのみ",
+      "firstHint": "1ページ目だけを1枚の画像としてレンダリングします。"
+    },
+    "quality": {
+      "label": "JPG品質（%）",
+      "tooltip": "JPEG圧縮品質（1〜100）。90がバランスの取れたデフォルトで、値を下げるとディテールと引き換えにファイルが小さくなります。"
+    },
+    "submit": "PDFを変換",
+    "converting": "変換中…"
+  },
+  "conversionOptions": {
+    "image": {
+      "cropping": {
+        "title": "画像の切り抜き",
+        "tooltipAria": "画像の切り抜きについて",
+        "tooltip": "画像の一部だけを残すための視覚的な切り抜きセレクターを開きます。切り抜きはリサイズやフィルターより前に実行されるため、以下で設定する寸法は切り抜いた領域に適用されます。画像全体を使う場合はスキップしてください。",
+        "selectPortion": "残したい画像の範囲を選択してください",
+        "editCrop": "切り抜きを編集",
+        "cropImage": "画像を切り抜く"
+      },
+      "format": {
+        "label": "形式",
+        "tooltipAria": "画像形式について",
+        "tooltip": "出力ファイルの種類です。JPGは写真に最適、PNGは透明度を保持しグラフィックに向いており、WebPはより小さいモダンな形式、GIFはレガシー用途やアニメーション向けです。",
+        "locked": "このツールでは{{format}}に固定"
+      },
+      "resizeEmphasis": "以下で目標の幅や高さを設定してください。片方を空欄にすると、元の縦横比を保ったまま比例して拡大縮小されます。",
+      "quality": {
+        "label": "品質（%）",
+        "tooltipAria": "画像品質について",
+        "tooltip": "JPGおよびWebP出力の圧縮品質（1〜100）です。85がバランスの取れたデフォルトです。値を下げるとアーティファクトと引き換えにファイルサイズが小さくなり、95を超えても見た目の違いはほとんどありません。PNGとGIFでは無視されます。"
+      },
+      "width": {
+        "label": "幅（px）",
+        "tooltipAria": "画像の幅について",
+        "tooltip": "目標の幅（ピクセル）です。空欄にすると元の幅を保つか、高さの項目に基づいて比例して拡大縮小されます。プレビューで見たとおりの寸法になるよう、リサイズ前にEXIFに基づいて画像の向きが自動補正されます。",
+        "placeholder": "自動"
+      },
+      "height": {
+        "label": "高さ（px）",
+        "tooltipAria": "画像の高さについて",
+        "tooltip": "目標の高さ（ピクセル）です。空欄にすると元の高さを保つか、幅の項目に基づいて比例して拡大縮小されます。幅と高さの両方を設定すると正確なサイズが強制され、画像が引き伸ばされることがあります。",
+        "placeholder": "自動"
+      },
+      "filter": {
+        "label": "フィルター",
+        "tooltipAria": "画像フィルターについて",
+        "tooltip": "出力に1つのImageMagick効果を適用します：グレースケール、セピア、ぼかし／シャープ、渦巻き、樽型歪み、油絵、ヴィンテージ、エンボス、木炭画、スケッチ、または固定角度の回転。フィルターをスキップするには「なし」を選んでください。",
+        "options": {
+          "none": "なし",
+          "grayscale": "グレースケール",
+          "sepia": "セピア",
+          "blur": "ぼかし",
+          "sharpen": "シャープ",
+          "swirl": "渦巻き",
+          "barrel-distortion": "樽型歪み",
+          "oil-painting": "油絵",
+          "vintage": "ヴィンテージ",
+          "emboss": "エンボス",
+          "charcoal": "木炭画",
+          "sketch": "スケッチ",
+          "rotate-45º": "45º回転",
+          "rotate-90º": "90º回転",
+          "rotate-180º": "180º回転",
+          "rotate-270º": "270º回転"
+        }
+      },
+      "tint": {
+        "label": "色合い",
+        "tooltipAria": "色合いについて",
+        "tooltip": "画像に30%の色付きの色合いを重ねます。ブランド向けサムネイルやデュオトーンに便利です。色合いをスキップするには、カラーピッカーを黒（#000000）のままにしてください。"
+      }
+    },
+    "audio": {
+      "trimming": {
+        "title": "音声のトリミング",
+        "tooltipAria": "音声のトリミングについて",
+        "tooltip": "波形プレーヤーを開いて開始時間と終了時間を選びます。選択した区間だけが出力ファイルにエンコードされます。",
+        "selectPortion": "残したい音声の範囲を選択してください",
+        "editTrim": "トリミングを編集",
+        "trimAudio": "音声をトリミング"
+      },
+      "format": {
+        "label": "形式",
+        "tooltipAria": "音声形式について",
+        "tooltip": "出力のコーデック／コンテナです。MP3は汎用性が高く、WAV/FLAC/ALACはロスレス、AACはストリーミングに効率的、OGG、Opus、AC3、DTSは特定のワークフロー向けです。"
+      },
+      "bitrate": {
+        "label": "ビットレート（kbps）",
+        "tooltipAria": "音声ビットレートについて",
+        "tooltip": "非可逆形式での圧縮品質とファイルサイズのバランスを決めます。ポッドキャストなら128 kbpsで十分、音楽なら192〜256 kbpsが堅実なデフォルト、320 kbpsがMP3の最高品質です。WAV、FLAC、ALAC（ロスレス）では無視されます。"
+      },
+      "speed": {
+        "label": "速度倍率",
+        "tooltipAria": "音声の速度倍率について",
+        "tooltip": "再生テンポを0.25倍（遅い）から4倍（速い）まで変更します。ピッチはFFmpegのatempoフィルターで保持され、極端な値では自動的に連結されます。"
+      },
+      "volume": {
+        "label": "音量倍率",
+        "tooltipAria": "音量倍率について",
+        "tooltip": "0.1倍から2倍までの線形ゲイン係数です。1.0ではレベルは変わりません。dB単位の細かい調整には、高度な音声エフェクトの「増幅」スライダーを使ってください。"
+      }
+    },
+    "video": {
+      "trimming": {
+        "title": "動画のトリミング",
+        "tooltipAria": "動画のトリミングについて",
+        "tooltip": "プレーヤーを開いて動画をスクラブし、開始／終了時間を選びます。その区間だけが出力にエンコードされます。トリミングはアニメーションGIFを含め、出力コーデックに関係なく機能します。",
+        "selectPortion": "残したい動画の範囲を選択してください",
+        "editTrim": "トリミングを編集",
+        "trimVideo": "動画をトリミング"
+      },
+      "format": {
+        "label": "形式",
+        "tooltipAria": "動画形式について",
+        "tooltip": "出力のコンテナとコーデックです。MP4（H.264+AAC）がウェブ向けの最も安全なデフォルトです。WebMはVP9+Opusを使い、オープンウェブでの埋め込みに最適です。MOV/MKV/AVI/WMV/FLVは特定のワークフロー向け、ProRes/DNxHDは高ビットレートの編集用コーデックです。GIF（アニメーション）はffmpeg + gifsicleでクリップを縮小しパレット化します。短い無音のループに最適です。",
+        "locked": "このツールでは{{format}}に固定",
+        "options": {
+          "mp4": "MP4",
+          "webm": "WebM",
+          "avi": "AVI",
+          "mov": "MOV",
+          "mkv": "MKV",
+          "flv": "FLV",
+          "wmv": "WMV",
+          "prores": "ProRes（MOV）",
+          "dnxhd": "DNxHR（MOV）",
+          "gif": "GIF（アニメーション）"
+        }
+      },
+      "quality": {
+        "label": "品質",
+        "tooltipAria": "動画品質について",
+        "tooltip": "内部でx264のCRFプリセットを選択します。低 ≈ CRF 30（小さなファイル）、中 ≈ CRF 23（バランスの取れたデフォルト）、高 ≈ CRF 18（ほとんどの映像で視覚的に劣化なし）。GIF出力では無視されるため、代わりに下のGIFパネルでパレットサイズとフレームレートを調整してください。",
+        "options": {
+          "low": "低",
+          "medium": "中",
+          "high": "高"
+        }
+      },
+      "width": {
+        "label": "幅（px）",
+        "tooltipAria": "動画の幅について",
+        "tooltip": "目標の出力幅（ピクセル）です。空欄にすると元のサイズを保つか、高さから比例して拡大縮小されます。引き伸ばしを避けるには「縦横比を保持」と組み合わせてください。形式がGIFの場合、空欄にすると下のアニメーションGIFパネルの幅が使われます。",
+        "placeholder": "自動"
+      },
+      "height": {
+        "label": "高さ（px）",
+        "tooltipAria": "動画の高さについて",
+        "tooltip": "目標の出力高さ（ピクセル）です。空欄にすると元のサイズを保つか、幅から比例して拡大縮小されます。GIF出力では無視され、縦横比を保つために幅から高さが計算されます（4の倍数に丸められます）。",
+        "placeholder": "自動",
+        "placeholderGif": "自動（幅から計算）"
+      },
+      "speed": {
+        "label": "速度倍率",
+        "tooltipAria": "速度倍率について",
+        "tooltip": "再生速度を0.25倍（スローモーション）から4倍（高速）まで変更します。動画のPTSと音声のテンポが一緒に調整されるため、結果は同期したままです。GIF出力では、アニメーションGIFパネルのフレームレートとフレーム遅延で再生の感触を調整してください。"
+      },
+      "preserveAspectRatio": {
+        "label": "縦横比を保持",
+        "tooltipAria": "縦横比の保持について",
+        "tooltip": "幅と高さの両方を設定した場合、FFmpegのforce_original_aspect_ratio=decreaseスケールを使って、引き伸ばさずに動画を枠内に収めます。オフにすると正確な（引き伸ばされる可能性のある）サイズが強制されます。GIF出力は常に縦横比を保持します。"
+      },
+      "gif": {
+        "title": "アニメーションGIF設定",
+        "tooltipAria": "アニメーションGIF設定について",
+        "tooltip": "GIF変換は2段階で実行されます。ffmpegが動画を縮小して選択したフレームレートでサンプリングし、次にgifsicleがパレットを量子化して出力を最適化します。このパネルが優先されるため、上の変換／文字起こしコントロールの品質、高さ、速度はGIFではスキップされます。",
+        "subtitle": "ffmpeg → gifsicleパイプラインを調整します。デフォルトは優れたスクリーンキャスト向けプリセット（幅900px、12 fps、128色）です。",
+        "width": {
+          "label": "幅（px）",
+          "tooltipAria": "GIFの幅について",
+          "tooltip": "出力幅（ピクセル）です。縦横比を保つために高さは自動計算されます（ffmpegのために4の倍数に丸められます）。スクリーンキャストには480〜900が適した範囲で、小さくするほどファイルは急速に小さくなります。"
+        },
+        "fps": {
+          "label": "フレームレート（fps）",
+          "tooltipAria": "GIFのフレームレートについて",
+          "tooltip": "gifsicleに渡す前に、ffmpegがソース動画から1秒あたり何フレームをサンプリングするかです。画面録画なら12 fpsで滑らかに見えます。動きの多いクリップでは18〜24に上げ、ファイルを小さくするには8〜10に下げてください。"
+        },
+        "colors": {
+          "label": "色数",
+          "tooltipAria": "GIFの色数について",
+          "tooltip": "gifsicleが量子化するパレットの最大サイズ（2〜256）です。128が堅実なデフォルトで、平坦なUI映像では64に下げてファイルを小さくし、滑らかなグラデーションのある写真的なクリップでは256に上げてください。"
+        },
+        "delay": {
+          "label": "フレーム遅延",
+          "tooltipAria": "GIFのフレーム遅延について",
+          "tooltip": "gifsicleのフレーム間遅延（1/100秒単位）です。小さいほど再生が速くなります。3（= 30ms）はきびきびしたスクリーンキャストの感触で、6〜10はよりゆっくりした落ち着いたループになります。上のffmpegサンプリングレートとは独立しています。"
+        },
+        "optimize": {
+          "label": "最適化レベル",
+          "tooltipAria": "GIFの最適化レベルについて",
+          "tooltip": "gifsicleの--optimizeレベルです。1は最速で出力が最大、3は最も遅く出力が最小です。長いクリップを試行錯誤していて素早く下書きが欲しい場合を除き、3のままにしてください。",
+          "options": {
+            "1": "1 — 高速、ファイルは大きめ",
+            "2": "2 — バランス",
+            "3": "3 — 最小、低速"
+          }
+        }
+      }
+    }
+  },
+  "advancedAudioEffects": {
+    "title": "高度な音声エフェクト",
+    "tooltipAria": "高度な音声エフェクトについて",
+    "tooltipIntro": "手動の音声処理チェーンを、4つの展開可能なセクションにまとめています：",
+    "tooltipBasic": "<strong>基本的な音声処理</strong> — ノーマライズ、増幅、フェードイン／アウト、EQプリセット、ステレオ幅／パン／バランス。",
+    "tooltipTime": "<strong>時間系エフェクト</strong> — リバーブ、ディレイ、モジュレーション（コーラス、フランジャー、トレモロ、ビブラート）。",
+    "tooltipRestoration": "<strong>復元とクリーンアップ</strong> — ノイズリダクション、ハム除去、デクリップ、無音除去。",
+    "tooltipAdvanced": "<strong>高度な音声処理</strong> — ピッチシフト、タイムストレッチ、空間オーディオ。",
+    "sections": {
+      "basic": {
+        "title": "基本的な音声処理",
+        "description": "音量調整、EQ、ダイナミクス、ステレオ処理"
+      },
+      "time": {
+        "title": "時間系エフェクト",
+        "description": "リバーブ、ディレイ、エコー、モジュレーションエフェクト"
+      },
+      "restoration": {
+        "title": "復元とクリーンアップ",
+        "description": "ノイズリダクション、ハム除去、デクリップ、無音検出"
+      },
+      "advanced": {
+        "title": "高度な処理",
+        "description": "ピッチシフト、タイムストレッチ、空間オーディオ、スペクトル処理"
+      }
+    },
+    "volumeDynamics": {
+      "title": "音量とダイナミクス",
+      "tooltip": "デシベル単位で増幅（-60〜+60）し、フェードイン／アウトの長さを適用し、ラウドネスノーマライズを切り替えます。レベル合わせには「増幅」を、一定の知覚ラウドネスにしたい場合は「ノーマライズ」を使ってください。"
+    },
+    "equalizer": {
+      "title": "イコライザー",
+      "tooltip": "マルチバンドのFFmpegイコライザーフィルターチェーンに対応するプリセットを選びます：低音強調、高音強調、ボーカル、クラシック、ロック、ジャズ。EQをそのままにするには「なし」を選んでください。",
+      "enable": "EQを有効にする",
+      "presetLabel": "EQプリセット",
+      "presets": {
+        "none": "なし",
+        "bass-boost": "低音強調",
+        "treble-boost": "高音強調",
+        "vocal": "ボーカル強調",
+        "classical": "クラシック",
+        "rock": "ロック",
+        "jazz": "ジャズ"
+      }
+    },
+    "stereo": {
+      "title": "ステレオ処理",
+      "tooltip": "パン（-100の左から+100の右まで）、ステレオ幅（0 = モノラル、100 = オリジナル、最大200 = より広く）を調整し、モノラル変換を切り替え、必要に応じて左右のチャンネルを入れ替えます。",
+      "pan": "パン",
+      "leftRight": "左 ← → 右",
+      "stereoWidth": "ステレオ幅",
+      "widthRange": "0%〜200%"
+    },
+    "reverb": {
+      "title": "リバーブ",
+      "tooltip": "音声に空間の響きを加えます。ルーム（小）、ホール（大）、プレート（ヴィンテージスタジオ）、スプリング（ギターアンプ風）から選びます。ルームサイズ、ダンピング、ウェット／ドライのレベルで効果を微調整します。",
+      "enable": "リバーブを有効にする",
+      "typeLabel": "リバーブの種類",
+      "types": {
+        "none": "なし",
+        "room": "ルーム",
+        "hall": "ホール",
+        "plate": "プレート",
+        "spring": "スプリング"
+      },
+      "roomSize": "ルームサイズ",
+      "roomRange": "0%〜100%",
+      "wetDry": "ウェット／ドライミックス",
+      "dryWet": "ドライ ← → ウェット"
+    },
+    "delay": {
+      "title": "ディレイとエコー",
+      "tooltip": "信号の遅延コピーを加えます。エコーは単一タップ、マルチタップは複数のずれたエコーを追加、ピンポンは左右の間を行き来します。時間（ms）、フィードバック%、ウェットレベルで繰り返しの形を決めます。",
+      "enable": "ディレイを有効にする",
+      "typeLabel": "ディレイの種類",
+      "types": {
+        "none": "なし",
+        "echo": "シンプルエコー",
+        "multi-tap": "マルチタップ",
+        "ping-pong": "ピンポン"
+      },
+      "delayTime": "ディレイ時間（ms）",
+      "feedback": "フィードバック（%）",
+      "feedbackRange": "0%〜95%"
+    },
+    "restoration": {
+      "noiseReduction": "ノイズリダクション",
+      "deHum": "ハム除去（50/60Hz）",
+      "declip": "音声のデクリップ",
+      "silenceDetection": "無音検出"
+    },
+    "advanced": {
+      "pitchShift": "ピッチシフト（半音）",
+      "pitchValue": "{{value}}半音",
+      "pitchRange": "-24〜+24半音",
+      "timeStretch": "タイムストレッチ係数",
+      "timeStretchValue": "{{value}}倍速",
+      "timeStretchRange": "0.25倍速〜4倍速",
+      "spatialAudio": "空間オーディオ",
+      "spatial": {
+        "none": "なし",
+        "binaural": "バイノーラル",
+        "surround": "サラウンド",
+        "3d": "3Dオーディオ"
+      },
+      "spectral": "スペクトル処理",
+      "spectralOptions": {
+        "none": "なし",
+        "vocoder": "ボコーダー",
+        "formant": "フォルマントフィルター",
+        "convolution": "コンボリューション"
+      }
+    },
+    "labels": {
+      "amplify": "増幅（dB）",
+      "amplifyRange": "-60dB〜+60dB",
+      "normalize": "音声をノーマライズ",
+      "fadeIn": "フェードイン（秒）",
+      "fadeOut": "フェードアウト（秒）"
+    }
+  },
+  "advancedVideoEffects": {
+    "title": "高度な動画エフェクト",
+    "tooltipAria": "高度な動画エフェクトについて",
+    "tooltipIntro": "手動の動画フィルターチェーンを、4つの展開可能なセクションにまとめています：",
+    "tooltipVisual": "<strong>視覚効果</strong> — 色補正、ぼかし／シャープ、ノイズ、アーティスティックフィルター。",
+    "tooltipTransform": "<strong>変形</strong> — 回転、反転、カスタム切り抜き、パディング／レターボックス。",
+    "tooltipTemporal": "<strong>時間系エフェクト</strong> — 逆再生、ピンポン、フレームレート変換、手ぶれ補正。",
+    "tooltipAdvanced": "<strong>高度な処理</strong> — インターレース解除、HDRトーンマッピング、色空間変換。",
+    "sections": {
+      "visual": {
+        "title": "視覚効果",
+        "description": "色補正、ぼかし／シャープ、アーティスティック効果、ノイズ制御"
+      },
+      "transform": {
+        "title": "幾何学的変形",
+        "description": "回転、反転、切り抜き、パディング"
+      },
+      "temporal": {
+        "title": "時間系エフェクト",
+        "description": "速度制御、逆再生、フレームレート、手ぶれ補正"
+      },
+      "advanced": {
+        "title": "高度な処理",
+        "description": "インターレース解除、HDR処理、色空間変換"
+      }
+    },
+    "colorExposure": {
+      "title": "色と露出",
+      "tooltip": "明るさ、コントラスト、彩度、色相、ガンマ、露出、シャドウ／ハイライトの復元を調整します。これらはFFmpegのeqおよびcurvesフィルターに対応し、1回の色補正パスにまとめられます。"
+    },
+    "blurSharpen": {
+      "title": "ぼかしとシャープ",
+      "tooltip": "ガウスぼかし（シグマ0〜50）、角度と距離を指定するモーションブラー、または半径・量・しきい値を調整できるアンシャープマスクによるシャープ化を追加します。"
+    },
+    "labels": {
+      "brightness": "明るさ",
+      "contrast": "コントラスト",
+      "saturation": "彩度",
+      "hue": "色相",
+      "gaussianBlur": "ガウスぼかし",
+      "artisticEffect": "アーティスティック効果",
+      "rotation": "回転（度）",
+      "flipHorizontal": "左右反転",
+      "flipVertical": "上下反転",
+      "reverseVideo": "動画を逆再生",
+      "pingPong": "ピンポンループ",
+      "targetFrameRate": "目標フレームレート",
+      "stabilization": "動画の手ぶれ補正",
+      "deinterlace": "動画のインターレース解除",
+      "outputColorSpace": "出力色空間"
+    },
+    "ranges": {
+      "hundred": "-100〜+100",
+      "hue": "-180°〜+180°",
+      "blur": "0〜50px"
+    },
+    "artistic": {
+      "none": "なし",
+      "oil-painting": "油絵",
+      "watercolor": "水彩",
+      "sketch": "スケッチ",
+      "emboss": "エンボス",
+      "edge-detection": "エッジ検出",
+      "posterize": "ポスタリゼーション"
+    },
+    "colorSpace": {
+      "rec709": "Rec.709（標準）",
+      "rec2020": "Rec.2020（HDR）",
+      "srgb": "sRGB",
+      "p3": "Display P3"
+    },
+    "autoPlaceholder": "自動"
+  }
+}

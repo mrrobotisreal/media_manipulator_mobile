@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Media Manipulator 홈",
+    "openMenu": "메뉴 열기",
+    "github": "GitHub에서 보기",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "테마 전환",
+    "languageMenu": "언어 변경",
+    "navIcon": "Media Manipulator 아이콘",
+    "winappsLogo": "WinApps 로고",
+    "creatvLogo": "CreaTV 로고",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "본문으로 건너뛰기",
+  "footer": {
+    "homeLink": "Media Manipulator 홈",
+    "navIcon": "Media Manipulator 아이콘"
+  },
+  "home": {
+    "popularTools": "인기 도구",
+    "closePreview": "미리보기 닫기"
+  },
+  "notFound": {
+    "recoveryRoutes": "복구 경로"
+  },
+  "loading": {
+    "label": "불러오는 중"
+  },
+  "languageSelector": {
+    "trigger": "언어 변경",
+    "icon": "번역 아이콘"
+  },
+  "common": {
+    "close": "닫기",
+    "open": "열기",
+    "loading": "불러오는 중",
+    "moreOptions": "옵션 더 보기"
+  },
+  "transcribeForm": {
+    "formatTooltip": "전사본 출력 형식 안내",
+    "languageTooltip": "언어 힌트 안내"
+  },
+  "audioForm": {
+    "aiTooltip": "AI 오디오 도구 안내"
+  },
+  "videoForm": {
+    "aiTooltip": "AI 동영상 도구 안내"
+  },
+  "imageForm": {
+    "aiTooltip": "AI 이미지 도구 안내",
+    "selectiveFacesTooltip": "선택적 얼굴 보호 안내",
+    "removeObjectTooltip": "개체 제거 안내",
+    "metadataTooltip": "메타데이터 처리 안내",
+    "vectorizeThresholdTooltip": "벡터화 임계값 안내"
+  }
+}

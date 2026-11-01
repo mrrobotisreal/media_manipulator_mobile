@@ -1,0 +1,780 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "Пов'язані інструменти та посібники"
+  },
+  "filePreview": {
+    "showResult": "Показати результат"
+  },
+  "authModal": {
+    "defaultTitle": "Створіть безкоштовний акаунт",
+    "defaultDescription": "Зберігайте історію, проєкти Darkroom і отримайте більший денний ліміт.",
+    "signInTitle": "З поверненням",
+    "signInDescription": "Ваша історія, збережені проєкти Studio та денний ліміт залишилися там, де ви їх залишили.",
+    "tabs": {
+      "signup": "Створити акаунт",
+      "signin": "Увійти"
+    },
+    "fields": {
+      "fullName": "Повне ім'я",
+      "fullNamePlaceholder": "Іван Іваненко",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "password": "Пароль",
+      "passwordPlaceholderSignup": "Щонайменше 6 символів",
+      "passwordPlaceholderSignin": "Ваш пароль"
+    },
+    "actions": {
+      "createAccount": "Створити безкоштовний акаунт",
+      "creatingAccount": "Створення акаунта...",
+      "signIn": "Увійти",
+      "signingIn": "Виконується вхід..."
+    },
+    "googleSignIn": "Продовжити з Google",
+    "orDivider": "АБО",
+    "terms": "Реєструючись, ви погоджуєтеся з нашими <tos>Умовами використання</tos> та <privacy>Політикою конфіденційності</privacy>",
+    "toast": {
+      "welcome": "Ласкаво просимо!",
+      "welcomeBack": "З поверненням!",
+      "welcomeMM": "Ласкаво просимо до Media Manipulator!",
+      "accountCreated": "Акаунт створено!",
+      "signedIn": "Вхід виконано успішно.",
+      "googleSuccess": "Вхід через Google виконано успішно.",
+      "authFailed": "Не вдалося виконати автентифікацію",
+      "nameRequired": "Потрібне ім'я",
+      "nameRequiredDesc": "Будь ласка, введіть ваше ім'я.",
+      "appleSuccess": "Вхід через Apple виконано успішно."
+    },
+    "contextual": {
+      "signupTitle": "Ви використали свої {{limit}} безкоштовних конвертацій сьогодні",
+      "signupBody": "Безкоштовний акаунт збільшує денний ліміт, зберігає історію конвертацій і проєкти Darkroom.",
+      "premiumTitle": "Ви досягли сьогоднішнього ліміту в {{limit}}",
+      "premiumBody": "Premium збільшує денний ліміт, відкриває експорт у 4K і пріоритетну обробку, а також прибирає рекламу.",
+      "resets": "Ваш поточний ліміт оновиться {{when}}."
+    },
+    "plans": {
+      "freeTitle": "Що дає безкоштовний акаунт",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/міс",
+      "premiumUpgrade": "Перейти на Premium",
+      "comparePlans": "Порівняти всі тарифи",
+      "opsPerDay": "{{count}} операцій на день",
+      "opsPerDayUnlimited": "Операції без обмежень на день",
+      "maxFileSize": "Файли до {{size}}",
+      "maxVideoLength": "Відео до {{duration}}",
+      "maxOutput": "Вивід до {{height}}p",
+      "studioProjects": "{{count}} збережених проєктів Studio",
+      "studioProjectsUnlimited": "Необмежена кількість збережених проєктів Studio",
+      "retention": "Строк зберігання файлів обираєте ви: від 24 годин до 2 років",
+      "priorityGpu": "Пріоритетна обробка",
+      "noAds": "Без реклами",
+      "retentionGuest": "Файли зберігаються 24 години"
+    },
+    "loadingPlans": "Завантаження тарифів…",
+    "appleSignIn": "Продовжити через Apple",
+    "forgotPassword": "Забули пароль?",
+    "reset": {
+      "title": "Скидання пароля",
+      "body": "Введіть адресу електронної пошти вашого облікового запису, і ми надішлемо вам посилання.",
+      "submit": "Надіслати посилання для скидання",
+      "sending": "Надсилання...",
+      "sent": "Якщо обліковий запис із такою адресою існує, ми надіслали посилання для скидання пароля.",
+      "back": "Назад до входу"
+    },
+    "link": {
+      "notice": "Цю адресу електронної пошти вже зареєстровано з іншим способом входу. Увійдіть цим способом, щоб зв'язати їх.",
+      "linked": "Облікові записи зв'язано. Тепер ви можете входити будь-яким зі способів."
+    }
+  },
+  "imageCropModal": {
+    "title": "Кадрування зображення",
+    "subtitle": "Перетягніть, щоб налаштувати область кадрування, потім натисніть «Застосувати».",
+    "instructions": "Перетягніть область кадрування, щоб розташувати її, або потягніть за нижній правий кут, щоб змінити розмір. Затемнена область буде видалена.",
+    "previewAlt": "Попередній перегляд кадрування",
+    "cropArea": "Область кадрування: {{width}} × {{height}} пікселів",
+    "apply": "Застосувати кадрування",
+    "cancel": "Скасувати",
+    "reset": "Скинути"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "Обрізка відео",
+    "titleAudio": "Обрізка аудіо",
+    "instructions": "Перетягніть маркери на таймлайні, щоб вибрати фрагмент, який потрібно залишити. Затемнені області будуть видалені.",
+    "audioFile": "Аудіофайл",
+    "startLabel": "Час початку",
+    "endLabel": "Час завершення",
+    "durationLabel": "Тривалість",
+    "finalDuration": "Підсумкова тривалість: {{duration}}",
+    "apply": "Застосувати обрізку",
+    "cancel": "Скасувати",
+    "reset": "Скинути",
+    "playPreview": "Відтворити попередній перегляд",
+    "pausePreview": "Пауза"
+  },
+  "removeObjectOverlay": {
+    "title": "Видалення об'єкта",
+    "instructions": "Намалюйте прямокутники поверх об'єктів, які потрібно видалити. LaMa inpainting відновить фон.",
+    "rectangleCount_one": "Вибрано {{count}} область",
+    "rectangleCount_few": "Вибрано {{count}} області",
+    "rectangleCount_many": "Вибрано {{count}} областей",
+    "rectangleCount_other": "Вибрано {{count}} області",
+    "addRegion": "Додати область",
+    "clearRegions": "Очистити все",
+    "apply": "Видалити об'єкти",
+    "cancel": "Скасувати",
+    "undo": "Скасувати дію",
+    "previewAlt": "Позначте області для видалення",
+    "dragHint": "Перетягніть, щоб задати розмір, потім відпустіть. Використовуйте маркери для точного налаштування.",
+    "removeRectangle": "Видалити прямокутник {{number}}"
+  },
+  "faceSelectionOverlay": {
+    "title": "Виберіть обличчя для розмиття",
+    "instructions": "Торкніться кожного обличчя, до якого потрібно застосувати ефект приховування. Торкніться ще раз, щоб скасувати вибір.",
+    "selectAll": "Вибрати всі",
+    "clearSelection": "Очистити вибір",
+    "apply": "Застосувати",
+    "cancel": "Скасувати",
+    "selectedCount_one": "Вибрано {{count}} обличчя",
+    "selectedCount_few": "Вибрано {{count}} обличчя",
+    "selectedCount_many": "Вибрано {{count}} облич",
+    "selectedCount_other": "Вибрано {{count}} обличчя",
+    "noFacesDetected": "На цьому зображенні обличчя не виявлено.",
+    "previewAlt": "Попередній перегляд виявлених облич",
+    "faceAria": "Обличчя {{label}}",
+    "faceSelectedAria": "Обличчя {{label}} (вибрано)"
+  },
+  "mobileAnchorAd": {
+    "label": "Реклама"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV — втілюйте ідеї в життя",
+    "creatvCreativeAlt": "Загляньте на CreaTV! Місце, де ідеї втілюються в життя."
+  },
+  "alternativeAdBanner": {
+    "placeholder": "Рекламне місце {{network}} — {{position}}",
+    "placeholderFormat": "Формат: {{format}} | Слот: {{slot}}",
+    "placeholderProduction": "Реклама {{network}} відображатиметься тут у робочій версії"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "Крок {{number}}",
+    "defaultTitle": "Як це працює"
+  },
+  "privacyPolicyComponent": {
+    "title": "Конфіденційність коротко",
+    "summary": "Файли обробляються на наших серверах і ніколи не передаються стороннім AI-провайдерам. Без облікового запису вони зберігаються 24 години; з безкоштовним обліковим записом ви обираєте строк від 24 годин до 2 років.",
+    "learnMore": "Ознайомтеся з повною Політикою конфіденційності"
+  },
+  "quotaMeter": {
+    "label": "Сьогодні",
+    "aiLabel": "ШІ",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "Залишилося {{remaining}} із {{limit}} на сьогодні",
+    "atLimit": "Досягнуто денний ліміт",
+    "unlimited": "Для цього акаунта немає денного ліміту",
+    "resets": "Оновиться {{when}}",
+    "moreCta": "Отримати більше"
+  },
+  "accountMenu": {
+    "signIn": "Увійти",
+    "account": "Акаунт",
+    "signOut": "Вийти",
+    "signOutFailed": "Не вдалося виконати вихід",
+    "tier": {
+      "anonymous": "Гість",
+      "free": "Безкоштовно",
+      "premium": "Premium",
+      "operator": "Оператор",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · до {{date}}",
+    "tierEndsPro": "Pro · до {{date}}"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "Файли до {{size}}",
+    "fileLimitMoreFree": "Для більших файлів потрібен безкоштовний акаунт",
+    "fileLimitMorePremium": "Для більших файлів потрібен Premium",
+    "nudgeTitle": "Готово",
+    "nudgeBodyFree": "Безкоштовний акаунт дає більший денний ліміт і зберігає вашу історію.",
+    "nudgeBodyPremium": "Premium додає експорт у 4K, пріоритетну обробку та прибирає рекламу.",
+    "nudgeAction": "Дізнатися, що ви отримаєте"
+  },
+  "consentBanner": {
+    "label": "Налаштування файлів cookie та аналітики",
+    "body": "Ми використовуємо аналітику першої сторони, що поважає конфіденційність, щоб бачити, які інструменти використовуються і де виникають збої. Ваші файли ніколи не беруть у цьому участі, і ви можете змінити це в будь-який час.",
+    "bodyGdpr": "Перш ніж ми щось вимірюватимемо, нам потрібна ваша згода. Ми використовуємо аналітику першої сторони, щоб бачити, які інструменти використовуються і де виникають збої — нічого не збирається, доки ви не зробите вибір, і ваші файли ніколи не беруть у цьому участі.",
+    "privacyLink": "Ознайомитися з політикою конфіденційності",
+    "more": "Докладніше",
+    "customize": "Налаштувати",
+    "accept": "Прийняти",
+    "decline": "Відхилити"
+  },
+  "consentPrefs": {
+    "title": "Налаштування конфіденційності",
+    "subtitle": "Виберіть, що Media Manipulator може вимірювати. Зміни застосовуються одразу після збереження.",
+    "necessary": {
+      "title": "Строго необхідні",
+      "body": "Ваш вибір теми оформлення, а також анонімний ідентифікатор пристрою та візиту, який дозволяє нам застосовувати ліміти безкоштовного тарифу та блокувати зловживання. Без файлів cookie, без використання в рекламі, і це не можна вимкнути без порушення роботи інструментів.",
+      "always": "Завжди увімкнено"
+    },
+    "analytics": {
+      "title": "Аналітика",
+      "body": "Які інструменти ви використовуєте, чи успішно пройшла конвертація, як швидко завантажуються сторінки, і помилки, які нам потрібно виправити. Дані першої сторони, зберігаються 13 місяців, ніколи не продаються. Без назв файлів і без вмісту файлів."
+    },
+    "advertising": {
+      "title": "Реклама",
+      "body": "Дозволяє Google персоналізувати рекламу, яка показується на деяких сторінках інструментів безкоштовним відвідувачам і тим, хто не ввійшов в обліковий запис. Поява реклами від цього перемикача не залежить; якщо його вимкнено, реклама не персоналізується. Premium і Pro реклами не бачать.",
+      "bodyGdpr": "У вашому регіоні вибір щодо реклами робиться в повідомленні про згоду Google, а не тут; ця панель стосується нашої власної аналітики. Доки ви не зробите вибір там, реклама на сторінках інструментів не персоналізується. Premium і Pro реклами не бачать.",
+      "bodyGpc": "Для персоналізованої реклами. Ваш браузер надсилає сигнал Global Privacy Control, тому цей параметр залишається вимкненим — ми дотримуємося цього сигналу, і натискання тут не може його скасувати.",
+      "managedByGoogle": "Керується повідомленням про згоду Google",
+      "openGoogleMessage": "Змінити вибір щодо реклами"
+    },
+    "gpcDetected": "Виявлено сигнал Global Privacy Control. Ми автоматично виключили вас із будь-якого продажу чи передавання ваших персональних даних і зафіксували це.",
+    "doNotSell": {
+      "title": "Не продавати і не передавати мої персональні дані",
+      "body": "Ми не продаємо ваші персональні дані. Це виключає вас із будь-якого передавання даних у рекламних цілях, зараз і в майбутньому. Аналітика першої сторони — це окремий вибір, зазначений вище.",
+      "action": "Відмовитися",
+      "done": "Ви відмовилися"
+    },
+    "yourData": {
+      "title": "Ваші дані",
+      "body": "Завантажте копію всіх даних, які наша аналітика зберігає про цей браузер, або видаліть їх безповоротно. Якщо ви увійшли в акаунт, обидві дії охоплюють усі пристрої, пов'язані з вашим акаунтом; інакше — лише цей браузер.",
+      "export": "Експортувати мої дані",
+      "exporting": "Підготовка експорту…",
+      "delete": "Видалити мої дані",
+      "deleting": "Видалення…",
+      "deleteConfirmBody": "Це безповоротно видалить історію вашої аналітики — події, візити та профіль відвідувача — і не може бути скасовано. Записи про ваші рішення щодо згоди зберігаються, оскільки закон вимагає, щоб ми могли їх підтвердити. Введіть DELETE для підтвердження.",
+      "deleteConfirmPlaceholder": "Введіть DELETE для підтвердження",
+      "deleteConfirmAction": "Видалити безповоротно",
+      "deletedSummary": "Готово. Ми видалили {{events}} подій за {{sessions}} візитів, і цьому браузеру присвоєно новий анонімний ідентифікатор.",
+      "deletedNote": "Записи про ваші рішення щодо згоди зберігаються як юридично необхідне підтвердження. Сама настройка згоди не змінилася — якщо аналітика увімкнена, нова активність збирається під новим ідентифікатором; ви можете вимкнути її вище в будь-який час.",
+      "error": "Щось пішло не так. Будь ласка, спробуйте ще раз за мить — якщо ви не побачили підтвердження, нічого не було змінено."
+    },
+    "policyPrefix": "Повна інформація про те, що ми збираємо, навіщо і як довго зберігаємо:",
+    "policyLink": "політика конфіденційності",
+    "cancel": "Скасувати",
+    "save": "Зберегти налаштування"
+  },
+  "toasts": {
+    "conversionStarted": "Конвертацію запущено",
+    "conversionStartedDescription": "ID завдання: {{jobId}} — файл обробляється",
+    "transcriptionStarted": "Транскрибацію запущено",
+    "transcriptionStartedDescription": "ID завдання: {{jobId}} — створюємо транскрипт",
+    "transcodeStarted": "Транскодування запущено",
+    "translationStarted": "Переклад субтитрів запущено",
+    "jobStarted": "Завдання запущено",
+    "stitchStarted": "Завдання зведення доріжок запущено",
+    "jobIdDescription": "ID завдання: {{jobId}}",
+    "conversionCompleted": "Конвертацію успішно завершено!",
+    "readyForDownload": "Ваш файл готовий до завантаження",
+    "uploadingFile": "Завантажуємо {{fileName}}…",
+    "uploadingFileProgress": "Завантажуємо {{fileName}}… {{percent}}%",
+    "processingFile": "Обробляємо {{fileName}}…",
+    "buildingPreview": "Створюємо прев'ю…",
+    "assetAdded": "{{fileName}} додано",
+    "audioAdded": "Аудіо додано",
+    "processingAudio": "Обробляємо аудіо…",
+    "captionsReady": "Субтитри готові",
+    "binUpdateFailed": "Couldn't update the media bin",
+    "assetDeleteFailed": "Couldn't delete that media"
+  },
+  "resultPanel": {
+    "ariaLabel": "Result",
+    "download": "Download",
+    "downloadFailed": "Download failed. Try again.",
+    "downloadStatus": {
+      "preparing": "Готуємо завантаження…",
+      "started": "Завантаження почалося — перевірте завантаження браузера.",
+      "startedWithSize": "Завантаження почалося ({{size}}) — перевірте завантаження браузера.",
+      "failed": "Не вдалося почати завантаження.",
+      "gone": "Цей результат більше не доступний для завантаження.",
+      "retry": "Спробувати ще раз",
+      "noRecharge": "Повторне завантаження не запускає завдання знову й нічого не списує."
+    },
+    "compare": "Compare",
+    "original": "Original",
+    "result": "Result",
+    "runAnother": "Run another",
+    "size": "Size",
+    "keepsUntil": "Keeps until",
+    "loading": "Loading preview…",
+    "loadFailed": "Could not load the result.",
+    "retry": "Try again",
+    "kind": {
+      "image": "Image",
+      "gif": "Animated GIF",
+      "video": "Video",
+      "audio": "Audio",
+      "transcript": "Transcript",
+      "captions": "Captions",
+      "pdf": "PDF document",
+      "archive": "Archive",
+      "hls": "HLS package",
+      "dash": "DASH package",
+      "metadata": "Metadata",
+      "unknown": "File",
+      "summary": "Зведення"
+    },
+    "image": {
+      "zoom": "Zoom",
+      "fit": "Fit",
+      "transparencyGrid": "Transparency grid",
+      "dimensions": "Dimensions",
+      "originalAlt": "Original image {{fileName}}",
+      "resultAlt": "Result image {{fileName}}"
+    },
+    "gif": {
+      "alt": "Animated GIF {{fileName}}"
+    },
+    "audio": {
+      "waveform": "Audio waveform"
+    },
+    "unknown": {
+      "body": "This result has no in-browser preview yet. Download it to open it.",
+      "type": "Type",
+      "size": "Size"
+    },
+    "transcript": {
+      "search": "Search transcript",
+      "searchPlaceholder": "Search…",
+      "matchCount": "{{current}} of {{total}}",
+      "noMatches": "No matches",
+      "prevMatch": "Previous match",
+      "nextMatch": "Next match",
+      "copyAll": "Copy all",
+      "copied": "Copied",
+      "format": "Format",
+      "rawPreview": "Raw text",
+      "seekTo": "Jump to {{time}}",
+      "showMore": "Show more ({{count}} left)",
+      "details": "Language, audio description and AI review"
+    },
+    "captions": {
+      "cues": "Cues",
+      "sourceCues": "Source cues",
+      "skipped": "Skipped blocks",
+      "countMismatch": "The source has {{source}} cues but the translation has {{translated}}. Extra rows are shown against an empty cell.",
+      "source": "Source",
+      "translated": "Translated",
+      "timingDiffers": "timing differs",
+      "empty": "(none)"
+    },
+    "compareModes": {
+      "label": "Compare view",
+      "slider": "Comparison position",
+      "sliderValue": "{{before}} {{beforePct}}%, {{after}} {{afterPct}}%",
+      "wipe": "Wipe",
+      "side_by_side": "Side by side",
+      "toggle": "Toggle",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "Playback controls",
+      "play": "Play",
+      "pause": "Pause",
+      "seek": "Seek",
+      "rate": "Speed",
+      "mute": "Mute",
+      "unmute": "Unmute result sound",
+      "prevFrame": "Previous frame",
+      "nextFrame": "Next frame",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps (target)",
+      "largeNotice": "Preview is capped at the container width; very large videos may play slowly.",
+      "videoOriginal": "Original video",
+      "videoResult": "Result video",
+      "audibleLabel": "Audible side",
+      "audioOriginal": "Original audio",
+      "audioResult": "Result audio",
+      "otherPeaks": "Other side waveform",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_one": "{{count}} file",
+      "summary_other": "{{count}} files",
+      "truncated": "The archive is cut short; showing what could be read.",
+      "search": "Search files",
+      "view": "View",
+      "gallery": "Gallery",
+      "list": "List",
+      "noMatches": "No files match.",
+      "play": "Play {{name}}",
+      "open": "Open",
+      "downloadEntry": "Download {{name}}",
+      "lightbox": "Image preview",
+      "previous": "Previous",
+      "next": "Next",
+      "tooLarge": "Too large to preview in the browser.",
+      "unreadable": "This archive could not be read in the browser.",
+      "noSingleEntry": "Single files cannot be downloaded from the server, so download the whole archive."
+    },
+    "pdf": {
+      "title": "PDF preview",
+      "openInNewTab": "Open in new tab",
+      "fallback": "Your browser cannot show this PDF inline."
+    },
+    "stream": {
+      "rung": "Quality",
+      "auto": "Auto",
+      "rungLabel": "{{height}}p, {{bitrate}} kbps",
+      "unsupported": "This stream cannot be played in the browser, so here is its report.",
+      "loading": "Preparing the stream",
+      "av1": "This browser cannot decode AV1."
+    },
+    "restore": {
+      "picker": "Model",
+      "original": "Original",
+      "modelOption": "{{name}}, {{duration}}s, {{size}}",
+      "failedTitle": "Models that failed",
+      "failedItem": "{{name}}: {{error}}",
+      "loading": "Loading the restored clips",
+      "download": "Download all results"
+    },
+    "summary": {
+      "loading": "Завантаження зведення",
+      "loadFailed": "Не вдалося завантажити зведення.",
+      "untitled": "Зведення",
+      "language": "Мова: {{language}}",
+      "chapters": "Розділи",
+      "seekTo": "Перейти до {{time}}",
+      "topics": "Теми",
+      "onScreenText": "Текст на екрані",
+      "visual": "Зображення",
+      "speech": "Мовлення",
+      "notes": "Примітки",
+      "copyMarkdown": "Копіювати як Markdown",
+      "copied": "Скопійовано",
+      "downloadMd": "Завантажити .md",
+      "downloadJson": "Завантажити .json",
+      "showAll": "Показати все ({{count}})",
+      "showLess": "Показати менше"
+    },
+    "mp3": {
+      "button": "Завантажити як MP3",
+      "converting": "Конвертація в MP3…",
+      "hint": "Менший файл, конвертується на нашому сервері. Безкоштовно й ніколи не вважається ШІ-завданням.",
+      "started": "Завантаження MP3 почалося — перевірте завантаження браузера.",
+      "startedWithSize": "Завантаження MP3 почалося ({{size}}) — перевірте завантаження браузера.",
+      "failed": "Не вдалося підготувати MP3. Спробуйте ще раз трохи згодом."
+    }
+  },
+  "billing": {
+    "intervalLabel": "Період оплати",
+    "monthly": "Щомісяця",
+    "yearly": "Щороку",
+    "perMonth": "/міс",
+    "perYear": "/рік",
+    "currency": {
+      "label": "Валюта",
+      "panelLabel": "Валюта",
+      "lockedNote": "Ваша підписка оплачується в {{currency}}. Це не можна змінити, поки підписка активна."
+    },
+    "yearlyBonus": "{{months}} міс. безкоштовно",
+    "cancelAnytime": "Скасування будь-коли",
+    "refund": "Повернення коштів протягом 14 днів після першого платежу",
+    "taxNote": "Податок зверху не додається",
+    "upgrade": "Перейти на Premium",
+    "manage": "Керування підпискою",
+    "operator": "Без обмежень (оператор)",
+    "unavailable": "Premium поки недоступний",
+    "busy": "Відкриваємо оплату…",
+    "cancelledNote": "Оплату скасовано. Кошти не списано.",
+    "dismiss": "Закрити",
+    "errors": {
+      "unavailable": "Premium поки недоступний.",
+      "operator": "Облікові записи операторів уже мають необмежений доступ.",
+      "generic": "Не вдалося почати оплату. Спробуйте ще раз трохи згодом.",
+      "alreadyOnPlan": "У вас уже є цей тариф або вищий.",
+      "currencyLocked": "Ваш платіжний обліковий запис прив’язано до {{currency}}, тож ціни тепер показано в {{currency}}. Щоб продовжити, оберіть тариф ще раз."
+    },
+    "panel": {
+      "title": "Оплата",
+      "loading": "Завантажуємо дані про оплату…",
+      "loadFailed": "Не вдалося завантажити дані про оплату. Перезавантажте сторінку.",
+      "operator": "Доступ оператора. Підписка не потрібна.",
+      "unavailable": "Підписки поки недоступні.",
+      "grantUntil": "Premium надано командою до {{date}}.",
+      "grantOpen": "Premium надано командою без терміну завершення.",
+      "freeBody": "У вас безкоштовний тариф. Premium підвищує ліміти та прибирає рекламу.",
+      "upgrade": "Перейти на Premium",
+      "pastDueTitle": "Останній платіж не пройшов",
+      "pastDueBody": "Доступ до Premium зберігається до 7 днів, поки ми повторюємо спробу. Оновіть спосіб оплати, щоб зберегти його.",
+      "intervalLabel": "Період",
+      "endsLabel": "Premium закінчується",
+      "renewsLabel": "Поновлюється",
+      "endsOn": "Підписка закінчується {{date}}.",
+      "resumeHint": "Відкрийте «Керування підпискою», щоб відновити її.",
+      "renewsOn": "Поновлюється {{date}}.",
+      "updatePayment": "Оновити спосіб оплати",
+      "cancelledTitle": "Вашу підписку Premium скасовано",
+      "cancelledBody": "Premium діє до {{date}}. Після цього акаунт перейде на Free, і більше нічого не списуватиметься.",
+      "cancelledBodyNoDate": "Premium діє до кінця поточного розрахункового періоду. Після цього акаунт перейде на Free, і більше нічого не списуватиметься.",
+      "planLabel": "Тариф",
+      "pro": {
+        "grantUntil": "Pro надано командою до {{date}}.",
+        "grantOpen": "Pro надано командою без терміну завершення.",
+        "pastDueBody": "Доступ до Pro зберігається до 7 днів, поки ми повторюємо спробу. Оновіть спосіб оплати, щоб зберегти його.",
+        "endsLabel": "Pro закінчується",
+        "cancelledTitle": "Ваш тариф Pro скасовано",
+        "cancelledBody": "Pro діє до {{date}}. Після цього акаунт перейде на Free, і більше нічого не списуватиметься.",
+        "cancelledBodyNoDate": "Pro діє до кінця поточного розрахункового періоду. Після цього акаунт перейде на Free, і більше нічого не списуватиметься."
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "Підтверджуємо платіж…",
+        "body": "Зазвичай це займає кілька секунд."
+      },
+      "confirmed": {
+        "title": "Вітаємо в Premium",
+        "body": "Платіж пройшов, ваш тариф тепер Premium."
+      },
+      "shortly": {
+        "title": "Платіж отримано",
+        "body": "Тариф незабаром оновиться. Якщо за хвилину досі вказано безкоштовний, натисніть кнопку нижче."
+      },
+      "foreign": {
+        "title": "Не вдалося зіставити платіж із вашим обліковим записом",
+        "body": "Якщо ви щойно заплатили, увійдіть в обліковий запис, який використовували під час оплати."
+      },
+      "failed": {
+        "title": "Поки не вдалося підтвердити платіж",
+        "body": "Тариф оновиться автоматично після підтвердження платежу. Спробуйте ще раз трохи згодом."
+      },
+      "refresh": "Оновити мій тариф",
+      "confirmedPro": {
+        "title": "Вітаємо в Pro",
+        "body": "Платіж пройшов, ваш тариф тепер Pro: найвищі денні ліміти та найбільша квота Motion, поки редактор Motion поступово запускається."
+      }
+    },
+    "offer": {
+      "title": "Передумали? Залиште Premium за {{price}}/місяць",
+      "resumeTitle": "Передумали? Залиште Premium за вашою поточною ціною",
+      "fineprint": "Сьогодні нічого не списується. З {{date}} ви платите {{price}}/місяць замість {{current}}/місяць, щомісяця, доки не скасуєте підписку.",
+      "cta": "Залишити Premium за {{price}}/місяць",
+      "resumeCta": "Залишити Premium за {{price}}{{unit}}",
+      "keepAtCurrent": "Залишити Premium за {{price}}/місяць",
+      "keepAtCurrentNoPrice": "Залишити Premium за звичайною ціною",
+      "working": "Виконується…",
+      "renewed": "Premium продовжиться {{date}} за {{price}}/місяць",
+      "renewedNoPrice": "Premium продовжиться {{date}}",
+      "renewedBare": "Premium продовжуватиметься",
+      "changed": "Пропозицію змінено, ось актуальна.",
+      "failed": "Не вдалося оновити підписку. Спробуйте ще раз.",
+      "resumePrice": "Зараз ви платите {{price}}{{unit}}, і ця ціна збережеться.",
+      "resumeCtaNoPrice": "Залишити Premium",
+      "fineprintNoCurrent": "Сьогодні нічого не списується. З {{date}} ви платите {{price}}/місяць, щомісяця, доки не скасуєте підписку.",
+      "resumeFineprint": "Сьогодні нічого не списується. Наступний платіж — {{date}}, за тією ж ціною, і підписка подовжується як зазвичай, доки ви її не скасуєте.",
+      "unitMonth": "/місяць",
+      "unitYear": "/рік"
+    },
+    "upgradePro": "Перейти на Pro",
+    "unavailablePro": "Pro поки недоступний",
+    "switchToPremium": "Перейти на Premium",
+    "planChange": {
+      "cancel": "Не зараз",
+      "upgrade": {
+        "title": "Перейти на Pro зараз?",
+        "body": "Сьогодні ви сплачуєте пропорційну різницю за решту цього розрахункового періоду. Дата поновлення залишається {{date}}, а далі Pro коштує {{price}}{{unit}}.",
+        "bodyNoPrice": "Сьогодні ви сплачуєте пропорційну різницю за решту цього розрахункового періоду. Дата поновлення залишається {{date}}.",
+        "bodyNoDate": "Сьогодні ви сплачуєте пропорційну різницю за решту цього розрахункового періоду. Дата поновлення не змінюється.",
+        "fineprint": "Pro починає діяти, щойно платіж пройде. 14-денне повернення коштів стосується лише першого платежу.",
+        "confirm": "Перейти на Pro"
+      },
+      "downgrade": {
+        "title": "Перейти на Premium наприкінці цього періоду?",
+        "body": "Pro зберігається до {{date}}. Після цього ваш тариф — Premium за {{price}}{{unit}}.",
+        "bodyNoPrice": "Pro зберігається до {{date}}. Після цього ваш тариф — Premium.",
+        "bodyNoDate": "Pro зберігається до кінця поточного розрахункового періоду. Після цього ваш тариф — Premium.",
+        "fineprint": "За решту цього періоду кошти не повертаються. Ви можете залишити Pro в будь-який момент до переходу.",
+        "confirm": "Перейти на Premium"
+      },
+      "upgraded": "Тепер у вас Pro.",
+      "scheduled": "Ваш тариф зміниться на Premium {{date}}.",
+      "scheduledNoDate": "Ваш тариф зміниться на Premium наприкінці цього розрахункового періоду.",
+      "kept": "Ви залишаєте Pro.",
+      "pendingBody": "Premium з {{date}}. До того часу Pro зберігається.",
+      "keepPro": "Залишити Pro",
+      "dropTitle": "Перейдіть на Premium і продовжуйте",
+      "dropBody": "Замість того щоб утратити все, ви можете залишитися на Premium за його звичайною ціною. Відновіть підписку в розділі «Керування підпискою», а потім тут виберіть «Перейти на Premium».",
+      "dropCta": "Відновити в «Керуванні підпискою»",
+      "errors": {
+        "notSubscription": "Змінювати тариф можна лише для платної підписки. Тариф, наданий командою, тут змінити не можна.",
+        "samePlan": "Цей тариф у вас уже є.",
+        "notAvailable": "Ця зміна зараз недоступна. Якщо вашу підписку скасовано, спершу відновіть її в розділі «Керування підпискою».",
+        "generic": "Не вдалося змінити тариф. Спробуйте ще раз за мить."
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "Ви досягли сьогоднішнього ліміту: {{limit}}",
+      "body": "Premium збільшує денний ліміт і прибирає рекламу."
+    },
+    "outputHeight": {
+      "title": "Ця роздільна здатність вища, ніж дозволяє ваш тариф",
+      "body": "Ви запросили {{requested}}p; ваш тариф допускає до {{limit}}p."
+    },
+    "projects": {
+      "title": "Ви досягли ліміту збережених проєктів",
+      "body": "Ваш тариф зберігає до {{limit}} збережених проєктів Darkroom."
+    },
+    "topTier": "У вас уже найвищий тариф. Зменште значення, щоб продовжити.",
+    "close": "Можливо, пізніше",
+    "signup": "Створити безкоштовний обліковий запис",
+    "upgrade": "Перейти на Premium",
+    "fileSize": {
+      "title": "Цей файл більший, ніж дозволяє ваш тариф",
+      "body": "Ваш тариф приймає файли до {{limit}}."
+    },
+    "premiumChange": {
+      "fileSize": "Premium приймає файли до {{value}}.",
+      "ops": "Premium дозволяє {{value}} конвертацій на день.",
+      "opsUnlimited": "У Premium немає денного ліміту конвертацій.",
+      "aiOps": "Premium дозволяє {{value}} ШІ-завдань на день.",
+      "aiOpsUnlimited": "У Premium немає денного ліміту ШІ-завдань.",
+      "exports": "Premium дозволяє {{value}} експортів на день.",
+      "exportsUnlimited": "У Premium немає денного ліміту експортів.",
+      "height": "Premium видає до {{value}}p.",
+      "projects": "Premium зберігає до {{value}} проєктів.",
+      "projectsUnlimited": "У Premium немає ліміту збережених проєктів."
+    },
+    "noHigherPlan": "Жоден тариф не підвищує цей ліміт. Зменште значення, щоб продовжити.",
+    "proNote": "Під час переходу сьогодні списується пропорційна різниця; дата поновлення залишається тією самою.",
+    "proChange": {
+      "ops": "Pro дозволяє {{value}} конвертацій на день.",
+      "opsUnlimited": "У Pro немає денного ліміту конвертацій.",
+      "aiOps": "Pro дозволяє {{value}} ШІ-завдань на день.",
+      "aiOpsUnlimited": "У Pro немає денного ліміту ШІ-завдань.",
+      "exports": "Pro дозволяє {{value}} експортів на день.",
+      "exportsUnlimited": "У Pro немає денного ліміту експортів."
+    }
+  },
+  "recentStrip": {
+    "title": "Нещодавні",
+    "clear": "Очистити нещодавні",
+    "open": "Відкрити {{name}}",
+    "converter": "Конвертер",
+    "expiresInHours": "Спливає через {{hours}} год",
+    "expiresInMinutes": "Спливає через {{minutes}} хв",
+    "expired": "Термін зберігання цього файлу минув",
+    "openFailed": "Не вдалося відкрити файл. Спробуйте ще раз.",
+    "signupCta": "Файли гостей видаляються через 24 години. Зареєструйтеся, щоб зберігати їх 6 місяців.",
+    "signupAction": "Безкоштовна реєстрація"
+  },
+  "quotaChip": {
+    "title": "Тарифи Premium",
+    "ops": {
+      "remaining": "Залишилося {{remaining}} із {{limit}} конвертацій на сьогодні",
+      "empty": "Усі {{limit}} конвертацій на сьогодні використано"
+    },
+    "ai_ops": {
+      "remaining": "Залишилося {{remaining}} із {{limit}} ШІ-завдань на сьогодні",
+      "empty": "Усі {{limit}} ШІ-завдань на сьогодні використано"
+    },
+    "export": {
+      "remaining": "Залишилося {{remaining}} із {{limit}} експортів на сьогодні",
+      "empty": "Усі {{limit}} експортів на сьогодні використано"
+    },
+    "titlePro": "Тарифи Pro"
+  },
+  "queueLine": {
+    "text": "Завдання чекало {{time}} у спільній черзі. Завдання Premium йдуть першими.",
+    "cta": "Про Premium"
+  },
+  "yearlyNudge": {
+    "title": "Перейдіть на річний тариф і отримайте {{months}} місяці безкоштовно",
+    "body": "Ви платите вже кілька місяців поспіль. Річний тариф дешевший за дванадцять щомісячних платежів. Перейти можна будь-коли в платіжному порталі.",
+    "cta": "Перейти на річний",
+    "dismiss": "Ні, дякую"
+  },
+  "accountTour": {
+    "title": "Ласкаво просимо до Media Manipulator",
+    "step": "Крок {{current}} з {{total}}",
+    "next": "Далі",
+    "back": "Назад",
+    "skip": "Пропустити",
+    "notNow": "Не зараз",
+    "setRetention": "Налаштувати зберігання",
+    "keepResults": {
+      "title": "Зберігайте результати",
+      "body": "Усе, що ви конвертуєте після входу в акаунт, потрапляє в Історію: файл можна відкрити або завантажити пізніше. Ми зберігаємо його стільки, скільки ви оберете."
+    },
+    "darkroomProjects": {
+      "title": "Проєкти Darkroom",
+      "body": "Проєкти Darkroom зберігаються у вашому акаунті й відображаються в розділі «Проєкти», тож редагування можна продовжити на будь-якому пристрої."
+    },
+    "retention": {
+      "title": "Оберіть термін зберігання",
+      "body": "Ми радимо 6 місяців. Можна обрати будь-який термін від 24 годин до 2 років і в будь-який момент змінити його в розділі «Конфіденційність і дані»."
+    },
+    "replay": "Показати огляд знову",
+    "replayHint": "Ще раз переглянути коротке знайомство з акаунтом."
+  },
+  "status": {
+    "title": "Стан сервісу",
+    "intro": "Поточний стан сервісу Media Manipulator. Оновлюється кожні 10 секунд.",
+    "operational": "Працює",
+    "degraded": "Збої",
+    "down": "Недоступний",
+    "unknown": "Стан невідомий",
+    "checking": "Перевірка...",
+    "operationalDetail": "Усі системи працюють у штатному режимі.",
+    "degradedDetail": "Частина сервісу працює з перебоями. Конвертація може бути повільною або завершуватися помилкою.",
+    "downDetail": "Сервіс не відповідає. Спробуйте ще раз через кілька хвилин.",
+    "unknownDetail": "Ця сторінка щойно не змогла зв’язатися зі службою стану з вашого браузера. Це не означає, що інструменти не працюють. За кілька секунд вона спробує ще раз.",
+    "queueTitle": "Черга ШІ-обробки",
+    "running": "Виконується",
+    "waiting": "В очікуванні",
+    "gpuOff": "ШІ-обробку на цьому сервері не ввімкнено.",
+    "checksTitle": "Компоненти",
+    "database": "База даних",
+    "storage": "Сховище",
+    "cache": "Кеш",
+    "ok": "Усе гаразд",
+    "fail": "Проблема",
+    "basicOnly": "Наразі доступний лише загальний стан.",
+    "lastChecked": "Перевірено {{time}}",
+    "metaTitle": "Стан | Media Manipulator"
+  },
+  "share": {
+    "button": "Поділитися",
+    "revokeLinks": "Відкликати посилання",
+    "copied": "Посилання скопійовано. Воно діє до {{when}}.",
+    "copyManually": "Не вдалося скопіювати автоматично. Скопіюйте посилання: {{url}}",
+    "notAllowed": "Цим типом результату не можна поділитися.",
+    "expired": "Термін зберігання цього файлу минув.",
+    "limitTitle": "Досягнуто ліміт посилань",
+    "limitBody": "У цього результату вже 5 діючих посилань, це максимум. Відкличте їх, щоб створити нове.",
+    "revokeConfirm": "Відкликати посилання",
+    "cancel": "Скасувати",
+    "signIn": "Увійдіть знову, щоб поділитися цим результатом.",
+    "failed": "Не вдалося створити посилання. Спробуйте ще раз.",
+    "revoked": "Усі посилання на цей результат відкликано.",
+    "revokeNone": "Діючих посилань для відкликання не було.",
+    "revokeFailed": "Не вдалося відкликати посилання. Спробуйте ще раз.",
+    "revokeTitle": "Відкликати всі посилання?",
+    "revokeBody": "Усі, хто має посилання на цей результат, одразу втратять доступ. Після цього ви зможете створити нове посилання."
+  },
+  "sharedResult": {
+    "metaTitle": "Спільний результат | Media Manipulator",
+    "metaDescription": "Файл, створений у Media Manipulator і доступний за посиланням.",
+    "ogTitle": "{{fileName}}, створено в Media Manipulator",
+    "goneTitle": "Термін дії посилання минув або його видалено",
+    "goneBody": "Посилання перестають працювати, коли минає термін, власник їх відкликає або файл видаляється.",
+    "goneCta": "Перейти до Media Manipulator",
+    "madeWith": "Створено в Media Manipulator",
+    "tryIt": "Спробуйте на своєму файлі",
+    "expires": "Це посилання діє до {{when}}."
+  },
+  "planSummary": {
+    "title": "Тарифи коротко",
+    "current": "Ваш тариф",
+    "free": "Безкоштовно",
+    "ops": "{{value}} операцій на день",
+    "opsUnlimited": "Необмежено операцій на день",
+    "aiOps": "{{value}} ШІ-завдань на день",
+    "aiOpsUnlimited": "Необмежено ШІ-завдань на день",
+    "fileSize": "Файли до {{value}}",
+    "compare": "Порівняти всі тарифи"
+  }
+}

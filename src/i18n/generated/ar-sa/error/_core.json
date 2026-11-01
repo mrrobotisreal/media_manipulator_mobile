@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "حدث خطأ غير معروف. يرجى المحاولة مرة أخرى.",
+    "unexpected": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "networkOffline": "يبدو أنك غير متصل بالإنترنت. تحقق من الاتصال وحاول مرة أخرى.",
+    "tryAgainLater": "يرجى المحاولة مرة أخرى بعد قليل.",
+    "missingFile": "لم يتم اختيار أي ملف.",
+    "missingField": "هذا الحقل مطلوب."
+  },
+  "upload": {
+    "fileTooLarge": "حجم الملف كبير جدًا.",
+    "unsupportedFormat": "تنسيق الملف غير مدعوم.",
+    "uploadFailed": "فشل الرفع. يرجى المحاولة مرة أخرى.",
+    "missingFile": "يرجى اختيار ملف أولًا."
+  },
+  "conversion": {
+    "failed": "فشل التحويل.",
+    "failedTryAgain": "فشل التحويل. يرجى المحاولة مرة أخرى.",
+    "previewFailed": "تعذّر تحميل معاينة الصورة المحوّلة",
+    "downloadFailed": "فشل التنزيل. يرجى المحاولة مرة أخرى."
+  },
+  "transcribe": {
+    "failed": "فشل التفريغ النصي.",
+    "failedTryAgain": "فشل التفريغ النصي. يرجى المحاولة مرة أخرى."
+  },
+  "transcode": {
+    "failed": "فشل تحويل الترميز.",
+    "failedTryAgain": "فشل تحويل الترميز. يرجى المحاولة مرة أخرى."
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب.",
+    "invalidNumber": "أدخل رقمًا صالحًا.",
+    "outOfRange": "يجب أن تكون القيمة بين {{min}} و{{max}}.",
+    "tooShort": "يجب ألا يقل الطول عن {{count}} من الأحرف.",
+    "tooLong": "يجب ألا يزيد الطول عن {{count}} من الأحرف.",
+    "invalidEmail": "أدخل عنوان بريد إلكتروني صالحًا.",
+    "invalidUrl": "أدخل عنوان URL صالحًا."
+  },
+  "auth": {
+    "signInFailed": "فشل تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+    "signUpFailed": "فشل إنشاء الحساب. يرجى المحاولة مرة أخرى.",
+    "passwordTooShort": "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+    "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين.",
+    "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    "emailRequired": "البريد الإلكتروني مطلوب.",
+    "passwordRequired": "كلمة المرور مطلوبة.",
+    "tryAgain": "يرجى المحاولة مرة أخرى.",
+    "userNotFound": "لا يوجد حساب مرتبط بهذا البريد الإلكتروني.",
+    "wrongPassword": "كلمة المرور غير صحيحة.",
+    "emailAlreadyInUse": "يوجد حساب مسجّل بهذا البريد الإلكتروني بالفعل.",
+    "weakPassword": "يجب ألا تقل كلمة المرور عن 6 أحرف.",
+    "invalidEmail": "أدخل عنوان بريد إلكتروني صالحًا.",
+    "tooManyRequests": "محاولات كثيرة جدًا. انتظر بضع دقائق ثم حاول مرة أخرى.",
+    "network": "خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى."
+  },
+  "ad": {
+    "loadFailed": "تعذّر تحميل الإعلان."
+  },
+  "forms": {
+    "fixErrors": "يرجى تصحيح الأخطاء التالية:",
+    "invalidValue": "قيمة غير صالحة",
+    "fieldRequired": "هذا الحقل مطلوب.",
+    "invalidNumber": "أدخل رقمًا صالحًا.",
+    "outOfRange": "يجب أن تكون القيمة بين {{min}} و{{max}}.",
+    "faceDetectFailed": "فشل اكتشاف الوجوه. يرجى المحاولة مرة أخرى.",
+    "removeObjectFailed": "فشلت إزالة العنصر. يرجى المحاولة مرة أخرى.",
+    "imageForm": {
+      "noFile": "اختر صورة أولًا.",
+      "exifLoadFailed": "تعذّرت قراءة بيانات EXIF الوصفية لهذا الملف."
+    },
+    "videoForm": {
+      "noFile": "اختر مقطع فيديو أولًا."
+    },
+    "audioForm": {
+      "noFile": "اختر ملفًا صوتيًا أولًا."
+    },
+    "transcribe": {
+      "noFile": "اختر ملف وسائط أولًا.",
+      "invalidLanguage": "أدخل رمز لغة صالحًا بصيغة BCP-47."
+    },
+    "transcode": {
+      "probeFailed": "فشل فحص الملف المصدر. جرّب ملفًا آخر."
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "فشلت ترجمة ملف الترجمة النصية.",
+      "missingFile": "ارفع ملف ترجمة نصية أولًا."
+    },
+    "stitchAudioToVideo": {
+      "failed": "فشل دمج الصوت مع الفيديو.",
+      "missingTracks": "أضف مسارًا صوتيًا واحدًا على الأقل."
+    },
+    "extract": {
+      "failed": "فشل الاستخراج.",
+      "noStreams": "لم يتم العثور على مسارات مطابقة في هذا الملف."
+    }
+  },
+  "errorBoundary": {
+    "title": "حدث خطأ ما",
+    "body": "تسبب خطأ غير متوقع في تعطّل هذه الصفحة. ملفاتك لم تُفقد، ويمكنك المحاولة مرة أخرى، وإذا استمرت المشكلة فأعد تحميل الصفحة.",
+    "tryAgain": "حاول مرة أخرى",
+    "goHome": "الانتقال إلى الصفحة الرئيسية"
+  },
+  "toasts": {
+    "conversionStartFailed": "تعذّر بدء التحويل.",
+    "transcriptionStartFailed": "تعذّر بدء التفريغ النصي.",
+    "transcodeStartFailed": "تعذّر بدء تحويل الترميز.",
+    "videoAnalysisFailed": "تعذّر تحليل الفيديو.",
+    "translationStartFailed": "تعذّر بدء الترجمة.",
+    "scanStartFailed": "تعذّر بدء المسح.",
+    "jobStartFailed": "تعذّر بدء المهمة.",
+    "stitchStartFailed": "تعذّر بدء مهمة الدمج.",
+    "restorationStartFailed": "تعذّر بدء الاستعادة.",
+    "identificationFailed": "تعذّر التعرّف على الملف.",
+    "jobStatusCheckFailed": "تعذّر التحقق من حالة المهمة.",
+    "exportStartFailed": "تعذّر بدء التصدير.",
+    "exportFailed": "فشل التصدير.",
+    "saveProjectFailed": "تعذّر حفظ المشروع.",
+    "createProjectFailed": "تعذّر إنشاء المشروع.",
+    "uploadFailed": "فشل الرفع.",
+    "audioProcessingFailed": "فشلت معالجة الصوت.",
+    "unexpectedFallback": "حدث خطأ غير متوقع.",
+    "conversionFailedFallback": "واجهت عملية التحويل خطأ.",
+    "unableToGetProgress": "تعذّر الحصول على تقدّم التحويل."
+  }
+}

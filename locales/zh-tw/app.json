@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "確定",
+    "cancel": "取消",
+    "retry": "重試",
+    "close": "關閉",
+    "continue": "繼續",
+    "done": "完成",
+    "loading": "載入中",
+    "processing": "處理中",
+    "signOut": "登出",
+    "back": "返回"
+  },
+  "tabs": {
+    "tools": "工具",
+    "history": "歷史記錄",
+    "account": "帳號"
+  },
+  "placeholders": {
+    "toolsBody": "工具將於 MA10 推出。",
+    "historyBody": "您的任務會顯示在這裡。",
+    "accountBody": "帳號功能將於 MA15 推出。",
+    "signInBody": "登入功能將於 MA04 推出",
+    "openShell": "開啟應用程式外殼",
+    "errorBoundary": "發生錯誤。請重新啟動應用程式。"
+  },
+  "language": {
+    "title": "語言",
+    "system": "系統預設",
+    "rtlReloadTitle": "重新啟動以切換版面方向",
+    "rtlReloadBody": "應用程式需要重新啟動，才能以由右至左的方向顯示此語言。",
+    "rtlReloadBodyLtr": "應用程式需要重新啟動，才能以由左至右的方向顯示此語言。",
+    "rtlReloadConfirm": "立即重新啟動"
+  }
+}

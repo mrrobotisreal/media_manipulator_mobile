@@ -23,6 +23,15 @@ npx eas-cli@latest build --platform android --profile development --local
 
 Install the resulting APK, then `npm start` (dev client).
 
+## Translations
+
+18 locales (the web's). Two sources feed `t()`:
+
+- **Web shards** (`interface:`, `error:`, `accessibility:`) are copied byte-for-byte from `../media-manipulator-ui/i18n/locales/<code>/` into `src/i18n/generated/` (committed; `SOURCE.json` records the web commit). Run `npm run i18n:sync` after web shard changes are merged to web `main`; the npm scripts (sync and the gate check) read the web's committed `main` via `--ref main`, so a web checkout on another branch or with uncommitted work never breaks the gate. `--ref <branch>` (or `MM_WEB_REF`) on the raw script reads another ref. Never edit `src/i18n/generated/`.
+- **App strings** live in `locales/<code>/app.json` (namespace `app`, the default), keys grouped by screen. Add a key to all 18 files in the same commit; reuse a web key before adding an app key.
+
+`npm run gates` ends with `node scripts/check-i18n.mjs` (missing/extra keys, placeholders, plural categories, empty values, English-identical values in non-English locales unless listed in `scripts/i18n-allowlist.json`, unknown literal `t()` keys) and `node scripts/sync-web-i18n.mjs --check` (stale copy or registry drift; a clone without the web repo only warns). Dynamic keys must be declared with a `// i18n-keys: a.b, c.d` comment. Non-English app strings are model-written; review state is in `locales/REVIEW.md`.
+
 ## Environment
 
 Set as EAS environment variables per profile; never committed. Public defaults are in `.env.example`.

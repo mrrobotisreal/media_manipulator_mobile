@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "發生未知錯誤，請再試一次。",
+    "unexpected": "發生問題，請再試一次。",
+    "networkOffline": "你似乎已離線。請檢查網路連線後再試一次。",
+    "tryAgainLater": "請稍後再試。",
+    "missingFile": "尚未選擇檔案。",
+    "missingField": "此欄位為必填。"
+  },
+  "upload": {
+    "fileTooLarge": "檔案太大。",
+    "unsupportedFormat": "不支援的檔案格式。",
+    "uploadFailed": "上傳失敗，請再試一次。",
+    "missingFile": "請先選擇一個檔案。"
+  },
+  "conversion": {
+    "failed": "轉換失敗。",
+    "failedTryAgain": "轉換失敗，請再試一次。",
+    "previewFailed": "無法載入轉換後的圖片預覽",
+    "downloadFailed": "下載失敗，請再試一次。"
+  },
+  "transcribe": {
+    "failed": "轉錄失敗。",
+    "failedTryAgain": "轉錄失敗，請再試一次。"
+  },
+  "transcode": {
+    "failed": "轉碼失敗。",
+    "failedTryAgain": "轉碼失敗，請再試一次。"
+  },
+  "validation": {
+    "required": "此欄位為必填。",
+    "invalidNumber": "請輸入有效的數字。",
+    "outOfRange": "數值必須介於 {{min}} 和 {{max}} 之間。",
+    "tooShort": "至少需要 {{count}} 個字元。",
+    "tooLong": "最多只能有 {{count}} 個字元。",
+    "invalidEmail": "請輸入有效的電子郵件地址。",
+    "invalidUrl": "請輸入有效的網址。"
+  },
+  "auth": {
+    "signInFailed": "登入失敗，請再試一次。",
+    "signUpFailed": "註冊失敗，請再試一次。",
+    "passwordTooShort": "密碼至少需要 8 個字元。",
+    "passwordsDoNotMatch": "兩次輸入的密碼不一致。",
+    "invalidCredentials": "電子郵件或密碼不正確。",
+    "emailRequired": "請輸入電子郵件。",
+    "passwordRequired": "請輸入密碼。",
+    "tryAgain": "請再試一次。",
+    "userNotFound": "找不到使用此電子郵件的帳號。",
+    "wrongPassword": "密碼不正確。",
+    "emailAlreadyInUse": "此電子郵件已有帳號。",
+    "weakPassword": "密碼至少需要 6 個字元。",
+    "invalidEmail": "請輸入有效的電子郵件地址。",
+    "tooManyRequests": "嘗試次數過多。請等待幾分鐘後再試一次。",
+    "network": "網路錯誤。請檢查連線後再試一次。"
+  },
+  "ad": {
+    "loadFailed": "廣告載入失敗。"
+  },
+  "forms": {
+    "fixErrors": "請修正以下錯誤：",
+    "invalidValue": "無效的值",
+    "fieldRequired": "此欄位為必填。",
+    "invalidNumber": "請輸入有效的數字。",
+    "outOfRange": "數值必須介於 {{min}} 和 {{max}} 之間。",
+    "faceDetectFailed": "臉部偵測失敗，請再試一次。",
+    "removeObjectFailed": "物件移除失敗，請再試一次。",
+    "imageForm": {
+      "noFile": "請先選擇一張圖片。",
+      "exifLoadFailed": "無法讀取此檔案的 EXIF 中繼資料。"
+    },
+    "videoForm": {
+      "noFile": "請先選擇一部影片。"
+    },
+    "audioForm": {
+      "noFile": "請先選擇一個音訊檔案。"
+    },
+    "transcribe": {
+      "noFile": "請先選擇一個媒體檔案。",
+      "invalidLanguage": "請輸入有效的 BCP-47 語言代碼。"
+    },
+    "transcode": {
+      "probeFailed": "無法探測來源檔案，請改用其他檔案。"
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "字幕翻譯失敗。",
+      "missingFile": "請先上傳字幕檔案。"
+    },
+    "stitchAudioToVideo": {
+      "failed": "音訊與影片合併失敗。",
+      "missingTracks": "請至少新增一條音軌。"
+    },
+    "extract": {
+      "failed": "擷取失敗。",
+      "noStreams": "在此檔案中找不到符合的串流。"
+    }
+  },
+  "errorBoundary": {
+    "title": "發生問題",
+    "body": "發生未預期的錯誤，中斷了此頁面。你的檔案並未遺失，你可以再試一次；如果問題持續發生，請重新載入頁面。",
+    "tryAgain": "再試一次",
+    "goHome": "前往首頁"
+  },
+  "toasts": {
+    "conversionStartFailed": "無法開始轉換。",
+    "transcriptionStartFailed": "無法開始轉錄。",
+    "transcodeStartFailed": "無法開始轉碼。",
+    "videoAnalysisFailed": "無法分析影片。",
+    "translationStartFailed": "無法開始翻譯。",
+    "scanStartFailed": "無法開始掃描。",
+    "jobStartFailed": "無法開始工作。",
+    "stitchStartFailed": "無法開始合併工作。",
+    "restorationStartFailed": "無法開始修復。",
+    "identificationFailed": "無法識別檔案。",
+    "jobStatusCheckFailed": "無法檢查工作狀態。",
+    "exportStartFailed": "無法開始匯出。",
+    "exportFailed": "匯出失敗。",
+    "saveProjectFailed": "無法儲存專案。",
+    "createProjectFailed": "無法建立專案。",
+    "uploadFailed": "上傳失敗。",
+    "audioProcessingFailed": "音訊處理失敗。",
+    "unexpectedFallback": "發生未預期的錯誤。",
+    "conversionFailedFallback": "轉換過程發生錯誤。",
+    "unableToGetProgress": "無法取得轉換進度。"
+  }
+}

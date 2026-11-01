@@ -1,0 +1,251 @@
+{
+  "common": {
+    "brand": "Media Manipulator",
+    "brandTagline": "Converti immagini, video e file audio in tutta semplicità",
+    "loading": "Caricamento…",
+    "loadingShort": "Caricamento...",
+    "tryAgain": "Riprova",
+    "cancel": "Annulla",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "save": "Salva",
+    "saving": "Salvataggio...",
+    "submit": "Invia",
+    "submitting": "Invio...",
+    "download": "Scarica",
+    "preview": "Anteprima",
+    "remove": "Rimuovi",
+    "clear": "Svuota",
+    "reset": "Ripristina",
+    "apply": "Applica",
+    "enable": "Attiva",
+    "disable": "Disattiva",
+    "yes": "Sì",
+    "no": "No",
+    "more": "Altro",
+    "less": "Meno",
+    "and": "e",
+    "or": "o",
+    "of": "di",
+    "to": "a",
+    "from": "da",
+    "by": "di",
+    "in": "in",
+    "with": "con",
+    "all": "Tutto",
+    "none": "Nessuno",
+    "off": "Off",
+    "on": "On",
+    "optional": "Facoltativo",
+    "required": "Obbligatorio",
+    "auto": "Auto",
+    "manual": "Manuale",
+    "default": "Predefinito",
+    "advanced": "Avanzate",
+    "basic": "Base",
+    "settings": "Impostazioni",
+    "options": "Opzioni",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "selected": "Selezionato",
+    "step": "Passaggio",
+    "minutes": "minuti",
+    "seconds": "secondi",
+    "items": "elementi",
+    "showAll": "Mostra tutto",
+    "showMore": "Mostra di più",
+    "showLess": "Mostra meno",
+    "retentionPromise": "Decidi tu per quanto tempo conserviamo i tuoi file: 24 ore di default per gli ospiti, fino a 2 anni con un account gratuito",
+    "retentionPromiseShort": "I file degli ospiti restano 24 ore; con un account gratuito scegli tu da 24 ore a 2 anni"
+  },
+  "units": {
+    "bytes": "B",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "pixels": "px",
+    "percent": "%",
+    "kbps": "kbps",
+    "fps": "fps",
+    "hz": "Hz",
+    "khz": "kHz"
+  },
+  "duration": {
+    "zero": "0 s",
+    "hours_one": "{{count}} h",
+    "hours_other": "{{count}} h",
+    "minutes_one": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "seconds_one": "{{count}} s",
+    "seconds_other": "{{count}} s"
+  },
+  "topNav": {
+    "home": "Home",
+    "tools": "Strumenti",
+    "about": "Chi siamo",
+    "howItWorks": "Come funziona",
+    "tutorials": "Tutorial",
+    "privacyPolicy": "Informativa sulla privacy",
+    "termsOfService": "Termini di servizio",
+    "blog": "Blog",
+    "links": {
+      "homeDescription": "Pagina iniziale dove puoi convertire i tuoi file",
+      "toolsDescription": "Strumenti online gratuiti per convertire, comprimere, trascrivere e ripulire file multimediali",
+      "aboutDescription": "Pagina dove puoi scoprire di più sul progetto e su chi lo ha creato",
+      "howItWorksDescription": "Pagina dove puoi scoprire come funziona il processo di conversione",
+      "tutorialsDescription": "Tutorial passo passo per i convertitori audio, video e immagini e i loro strumenti IA",
+      "privacyPolicyDescription": "Pagina dove puoi leggere l'informativa sulla privacy del progetto",
+      "termsOfServiceDescription": "Pagina dove puoi leggere i termini di servizio del progetto",
+      "blogDescription": "Pagina del blog dove puoi leggere le ultime novità e gli aggiornamenti sul progetto"
+    },
+    "navigationLabel": "Navigazione",
+    "language": "Lingua",
+    "selectLanguage": "Seleziona la lingua",
+    "voices": "Voci",
+    "contact": "Contatti",
+    "pricing": "Prezzi"
+  },
+  "footer": {
+    "tagline": "Strumenti nel browser e assistiti dal server per modificare, convertire, comprimere, analizzare, trascrivere, riassumere ed elaborare in ogni modo file immagine, video e audio.",
+    "contact": "Contatti:",
+    "explore": "Esplora",
+    "legal": "Note legali",
+    "doNotSell": "Non vendere né condividere le mie informazioni personali",
+    "cookieSettings": "Impostazioni cookie",
+    "copyright": "© {{year}} Media Manipulator, un prodotto di CreaTV Ltd. Tutti i diritti riservati.",
+    "operatedBy": "Gestito da CreaTV Ltd. · Colorado, USA",
+    "changelog": "Changelog",
+    "status": "Stato",
+    "licenses": "Licenze open source"
+  },
+  "languageSelector": {
+    "label": "Lingua",
+    "current": "Lingua attuale: {{language}}",
+    "select": "Seleziona una lingua"
+  },
+  "home": {
+    "contentStudioCta": {
+      "title": "Darkroom",
+      "badge": "Novità",
+      "body": "Monta, sovrapponi e mixa video e audio su una timeline multitraccia, poi esporta in MP4: un editor in stile Premiere Pro, direttamente nel browser.",
+      "cta": "Prova Darkroom"
+    },
+    "hero": {
+      "title": "Convertitore, editor, trascrittore e strumento per metadati online gratuito",
+      "subtitle": "Converti, comprimi, modifica, trascrivi, riassumi, ispeziona i metadati e ripulisci file immagine, video e audio direttamente dal browser.",
+      "popularLabel": "Strumenti più usati",
+      "allTools": "Tutti gli strumenti",
+      "removeExif": "Rimuovi EXIF",
+      "compressVideo": "Comprimi video",
+      "transcribeVideo": "Trascrivi video",
+      "transcodeHls": "Transcodifica → HLS",
+      "transcodeDash": "Transcodifica → DASH",
+      "webpToJpg": "WebP → JPG",
+      "wavToMp3": "WAV → MP3",
+      "compressImage": "Comprimi immagine",
+      "resizeImage": "Ridimensiona immagine",
+      "extractAudio": "Estrai audio"
+    },
+    "upload": {
+      "title": "Carica file",
+      "dragDrop": "Trascina qui il tuo file",
+      "orClickSelect": "oppure clicca per sceglierlo dal computer",
+      "chooseFile": "Scegli file",
+      "unsupportedFile": "Tipo di file non supportato. Seleziona un file immagine, video o audio."
+    },
+    "options": {
+      "transcriptionOptions": "Opzioni di trascrizione",
+      "transcodeOptions": "Opzioni di transcodifica",
+      "conversionOptions": "Opzioni di conversione",
+      "documentScanOptions": "Opzioni di scansione documenti",
+      "convert": "Converti",
+      "transcribe": "Trascrivi",
+      "transcode": "Transcodifica",
+      "scanDocument": "Scansiona in PDF / Word (IA)"
+    },
+    "history": {
+      "title": "Cronologia conversioni",
+      "subtitle": "Riapri o scarica qualsiasi risultato immagine, video o audio di questa sessione.",
+      "newConversion": "Nuova conversione",
+      "transcriptBadge": "Trascrizione",
+      "preview": "Anteprima",
+      "download": "Scarica",
+      "itemLabel": "#{{number}} {{filename}}",
+      "startedProcessing": "Avviata {{time}}, ancora in elaborazione",
+      "completedAt": "Completata {{time}}",
+      "transcriptionFailed": "Trascrizione non riuscita",
+      "conversionFailed": "Conversione non riuscita"
+    },
+    "result": {
+      "transcriptResult": "Risultato della trascrizione",
+      "convertedPreview": "Anteprima del file convertito",
+      "transcriptSubtitle": "Trascrizione e revisione IA di {{filename}}.",
+      "convertedSubtitle": "Passa dall'originale alla versione modificata finale di {{filename}} e viceversa.",
+      "original": "Originale",
+      "final": "Finale"
+    },
+    "progress": {
+      "preparingUpload": "Preparazione del caricamento sicuro...",
+      "uploadingToS3": "Caricamento del file direttamente su S3...",
+      "finalizing": "Preparazione del file caricato sul server...",
+      "startingTranscription": "Avvio della trascrizione...",
+      "startingConversion": "Avvio della conversione...",
+      "converting": "Conversione in corso...",
+      "percentComplete": "{{percent}}% completato",
+      "conversionFailed": "Conversione non riuscita. Riprova."
+    },
+    "download": {
+      "downloadAs": "Scarica {{filename}}",
+      "fileWillBeDownloaded": "Il file verrà scaricato come: {{filename}}"
+    },
+    "fileLoadingConverter": "Caricamento del convertitore…",
+    "gettingStarted": {
+      "title": "Inizia in 4 passaggi",
+      "step1": {
+        "title": "Carica un file",
+        "body": "Trascina un file immagine, video o audio nell'area di caricamento a sinistra, oppure clicca su <em>Scegli file</em>. I file degli ospiti restano 24 ore; con un account gratuito scegli tu da 24 ore a 2 anni."
+      },
+      "step2": {
+        "title": "Scegli qui le impostazioni",
+        "body": "Appena selezioni un file, il pannello di destra passa al convertitore giusto: immagine, video o audio. Scegli un formato, regola i filtri o attiva un'operazione IA."
+      },
+      "step3": {
+        "title": "Converti",
+        "body": "Clicca su <em>Converti file</em>. Segui la barra di avanzamento: i lavori girano in tempo reale sul nostro server GPU."
+      },
+      "step4": {
+        "title": "Guarda l'anteprima e scarica",
+        "body": "Appena pronto, il risultato compare in anteprima. Passa da Originale a Finale, poi clicca su Scarica."
+      }
+    },
+    "localAi": {
+      "title": "Include strumenti IA locali",
+      "body": "Sfocatura dei volti, rimozione dello sfondo, upscaling IA, oscuramento di testo e dati personali tramite OCR, pulizia della voce, isolamento della voce e rimozione della voce per il karaoke girano tutti sul nostro server GPU. Nessun fornitore di IA di terze parti vede i tuoi file."
+    },
+    "notSure": {
+      "title": "Non sai da dove iniziare?",
+      "body": "I nostri tutorial passo passo spiegano ogni impostazione dei convertitori audio, video e immagini, strumenti IA compresi.",
+      "cta": "Sfoglia i tutorial"
+    },
+    "howItWorks": {
+      "title": "Come funziona",
+      "body": "Media Manipulator usa FFmpeg e ImageMagick per le conversioni standard e modelli IA dedicati sulla nostra GPU locale per le operazioni IA facoltative. Tutta l'elaborazione avviene su server che controlliamo: leggi la spiegazione completa per i dettagli.",
+      "cta": "Leggi Come funziona"
+    }
+  },
+  "notFound": {
+    "preTitle": "Telemetria persa",
+    "title": "Questo settore della nave non esiste",
+    "body": "Le coordinate che hai inserito non corrispondono a nulla sulla console di navigazione. Prova una delle rotte qui sotto, oppure torna al ponte di comando e scegli uno strumento che esiste davvero.",
+    "links": {
+      "home": "Torna alla base",
+      "tools": "Schiera degli strumenti",
+      "tutorials": "Tutorial"
+    }
+  },
+  "themeToggle": {
+    "toggle": "Cambia tema"
+  }
+}

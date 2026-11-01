@@ -1,0 +1,257 @@
+{
+  "common": {
+    "brand": "Media Manipulator",
+    "brandTagline": "המירו תמונות, סרטונים וקובצי אודיו בקלות",
+    "loading": "טוען…",
+    "loadingShort": "טוען...",
+    "tryAgain": "ניסיון נוסף",
+    "cancel": "ביטול",
+    "close": "סגירה",
+    "back": "הקודם",
+    "next": "הבא",
+    "save": "שמירה",
+    "saving": "שומר...",
+    "submit": "שליחה",
+    "submitting": "שולח...",
+    "download": "הורדה",
+    "preview": "תצוגה מקדימה",
+    "remove": "הסרה",
+    "clear": "ניקוי",
+    "reset": "איפוס",
+    "apply": "החלה",
+    "enable": "הפעלה",
+    "disable": "השבתה",
+    "yes": "כן",
+    "no": "לא",
+    "more": "עוד",
+    "less": "פחות",
+    "and": "ו",
+    "or": "או",
+    "of": "מתוך",
+    "to": "עד",
+    "from": "מ",
+    "by": "על ידי",
+    "in": "ב",
+    "with": "עם",
+    "all": "הכול",
+    "none": "ללא",
+    "off": "כבוי",
+    "on": "פעיל",
+    "optional": "לא חובה",
+    "required": "חובה",
+    "auto": "אוטומטי",
+    "manual": "ידני",
+    "default": "ברירת מחדל",
+    "advanced": "מתקדם",
+    "basic": "בסיסי",
+    "settings": "הגדרות",
+    "options": "אפשרויות",
+    "search": "חיפוש",
+    "filter": "סינון",
+    "selected": "נבחר",
+    "step": "שלב",
+    "minutes": "דקות",
+    "seconds": "שניות",
+    "items": "פריטים",
+    "showAll": "הצגת הכול",
+    "showMore": "הצגת עוד",
+    "showLess": "הצגת פחות",
+    "retentionPromise": "אתם בוחרים כמה זמן נשמור את הקבצים שלכם — 24 שעות כברירת מחדל לאורחים, עד שנתיים עם חשבון חינמי",
+    "retentionPromiseShort": "קבצים נשמרים 24 שעות לאורחים; עם חשבון חינמי אתם בוחרים בין 24 שעות לשנתיים"
+  },
+  "units": {
+    "bytes": "B",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "pixels": "px",
+    "percent": "%",
+    "kbps": "kbps",
+    "fps": "fps",
+    "hz": "Hz",
+    "khz": "kHz"
+  },
+  "duration": {
+    "zero": "0 שניות",
+    "hours_one": "{{count}} שעה",
+    "hours_two": "{{count}} שעות",
+    "hours_many": "{{count}} שעות",
+    "hours_other": "{{count}} שעות",
+    "minutes_one": "{{count}} דקה",
+    "minutes_two": "{{count}} דקות",
+    "minutes_many": "{{count}} דקות",
+    "minutes_other": "{{count}} דקות",
+    "seconds_one": "{{count}} שנייה",
+    "seconds_two": "{{count}} שניות",
+    "seconds_many": "{{count}} שניות",
+    "seconds_other": "{{count}} שניות"
+  },
+  "topNav": {
+    "home": "בית",
+    "tools": "כלים",
+    "about": "אודות",
+    "howItWorks": "איך זה עובד",
+    "tutorials": "מדריכים",
+    "privacyPolicy": "מדיניות הפרטיות",
+    "termsOfService": "תנאי השימוש",
+    "blog": "בלוג",
+    "links": {
+      "homeDescription": "דף הבית, שבו תוכלו להמיר את הקבצים שלכם",
+      "toolsDescription": "כלים מקוונים וחינמיים להמרה, דחיסה, תמלול וניקוי של קובצי מדיה",
+      "aboutDescription": "עמוד אודות, שבו תוכלו ללמוד עוד על הפרויקט ועל היוצר שלו",
+      "howItWorksDescription": "עמוד ״איך זה עובד״, שבו תוכלו ללמוד עוד על תהליך ההמרה",
+      "tutorialsDescription": "מדריכים מפורטים שלב אחר שלב לממירי האודיו, הווידאו והתמונות ולכלי הבינה המלאכותית שלהם",
+      "privacyPolicyDescription": "עמוד מדיניות הפרטיות, שבו תוכלו ללמוד עוד על מדיניות הפרטיות של הפרויקט",
+      "termsOfServiceDescription": "עמוד תנאי השימוש, שבו תוכלו ללמוד עוד על תנאי השימוש של הפרויקט",
+      "blogDescription": "עמוד הבלוג, שבו תוכלו לקרוא את החדשות והעדכונים האחרונים על הפרויקט"
+    },
+    "navigationLabel": "ניווט",
+    "language": "שפה",
+    "selectLanguage": "בחירת שפה",
+    "voices": "קולות",
+    "contact": "צור קשר",
+    "pricing": "תמחור"
+  },
+  "footer": {
+    "tagline": "כלים מבוססי דפדפן ובעזרת שרת לעריכה, המרה, דחיסה, ניתוח, תמלול, סיכום ועיבוד נוסף של קובצי תמונה, וידאו ואודיו.",
+    "contact": "יצירת קשר:",
+    "explore": "גילוי",
+    "legal": "משפטי",
+    "doNotSell": "אין למכור או לשתף את המידע האישי שלי",
+    "cookieSettings": "הגדרות עוגיות",
+    "copyright": "© {{year}} Media Manipulator, מוצר של CreaTV Ltd. כל הזכויות שמורות.",
+    "operatedBy": "מופעל על ידי CreaTV Ltd. · קולורדו, ארה״ב",
+    "changelog": "יומן שינויים",
+    "status": "סטטוס",
+    "licenses": "רישיונות קוד פתוח"
+  },
+  "languageSelector": {
+    "label": "שפה",
+    "current": "השפה הנוכחית: {{language}}",
+    "select": "בחירת שפה"
+  },
+  "home": {
+    "contentStudioCta": {
+      "title": "Darkroom",
+      "badge": "חדש",
+      "body": "ערכו, שכבו ומזגו וידאו ואודיו בציר זמן רב-רצועות, ולאחר מכן ייצאו ל־MP4 — עורך בסגנון Premiere Pro, ישירות בדפדפן.",
+      "cta": "לנסות את Darkroom"
+    },
+    "hero": {
+      "title": "כלי מקוון וחינמי להמרה, עריכה, תמלול וניהול מטא-נתונים למדיה",
+      "subtitle": "המירו, דחסו, ערכו, תמללו, סכמו, בדקו מטא-נתונים ונקו קובצי תמונה, וידאו ואודיו ישירות מהדפדפן.",
+      "popularLabel": "כלים פופולריים",
+      "allTools": "כל הכלים",
+      "removeExif": "הסרת EXIF",
+      "compressVideo": "דחיסת וידאו",
+      "transcribeVideo": "תמלול וידאו",
+      "transcodeHls": "טרנסקוד → HLS",
+      "transcodeDash": "טרנסקוד → DASH",
+      "webpToJpg": "WebP → JPG",
+      "wavToMp3": "WAV → MP3",
+      "compressImage": "דחיסת תמונה",
+      "resizeImage": "שינוי גודל תמונה",
+      "extractAudio": "חילוץ אודיו"
+    },
+    "upload": {
+      "title": "העלאת קובץ",
+      "dragDrop": "גררו ושחררו את הקובץ שלכם כאן",
+      "orClickSelect": "או לחצו כדי לבחור מהמחשב שלכם",
+      "chooseFile": "בחירת קובץ",
+      "unsupportedFile": "סוג קובץ לא נתמך. בחרו קובץ תמונה, וידאו או אודיו."
+    },
+    "options": {
+      "transcriptionOptions": "אפשרויות תמלול",
+      "transcodeOptions": "אפשרויות טרנסקוד",
+      "conversionOptions": "אפשרויות המרה",
+      "documentScanOptions": "אפשרויות סריקת מסמכים",
+      "convert": "המרה",
+      "transcribe": "תמלול",
+      "transcode": "טרנסקוד",
+      "scanDocument": "סריקה ל־PDF / Word (AI)"
+    },
+    "history": {
+      "title": "היסטוריית המרות",
+      "subtitle": "פתחו מחדש או הורידו כל תוצאת תמונה, וידאו או אודיו מהפעלה זו.",
+      "newConversion": "המרה חדשה",
+      "transcriptBadge": "תמליל",
+      "preview": "תצוגה מקדימה",
+      "download": "הורדה",
+      "itemLabel": "#{{number}} {{filename}}",
+      "startedProcessing": "התחיל ב-{{time}} ועדיין בעיבוד",
+      "completedAt": "הושלם ב-{{time}}",
+      "transcriptionFailed": "התמלול נכשל",
+      "conversionFailed": "ההמרה נכשלה"
+    },
+    "result": {
+      "transcriptResult": "תוצאת התמליל",
+      "convertedPreview": "תצוגה מקדימה של הקובץ שהומר",
+      "transcriptSubtitle": "תמליל וסקירת בינה מלאכותית עבור {{filename}}.",
+      "convertedSubtitle": "עברו בין הגרסה המקורית לגרסה הערוכה הסופית של {{filename}}.",
+      "original": "מקורי",
+      "final": "סופי"
+    },
+    "progress": {
+      "preparingUpload": "מכין העלאה מאובטחת...",
+      "uploadingToS3": "מעלה את הקובץ ישירות ל־S3...",
+      "finalizing": "מכין את הקובץ שהועלה בשרת...",
+      "startingTranscription": "מתחיל תמלול...",
+      "startingConversion": "מתחיל המרה...",
+      "converting": "ממיר...",
+      "percentComplete": "{{percent}}% הושלם",
+      "conversionFailed": "ההמרה נכשלה. נסו שוב."
+    },
+    "download": {
+      "downloadAs": "הורדת {{filename}}",
+      "fileWillBeDownloaded": "הקובץ יורד בשם: {{filename}}"
+    },
+    "fileLoadingConverter": "טוען ממיר…",
+    "gettingStarted": {
+      "title": "התחילו ב-4 שלבים",
+      "step1": {
+        "title": "העלאת קובץ",
+        "body": "גררו קובץ תמונה, וידאו או אודיו לאזור ההעלאה שמשמאל, או לחצו על <em>בחירת קובץ</em>. קבצים נשמרים 24 שעות לאורחים; עם חשבון חינמי אתם בוחרים בין 24 שעות לשנתיים."
+      },
+      "step2": {
+        "title": "בחרו כאן את ההגדרות שלכם",
+        "body": "הפאנל הימני יתחלף לממיר המתאים — תמונה, וידאו או אודיו — ברגע שנבחר קובץ. בחרו פורמט, כווננו מסננים, או הפעילו פעולת בינה מלאכותית."
+      },
+      "step3": {
+        "title": "המרה",
+        "body": "לחצו על <em>המרת קובץ</em>. עקבו אחר סרגל ההתקדמות — המשימות רצות על שרת ה-GPU שלנו בזמן אמת."
+      },
+      "step4": {
+        "title": "תצוגה מקדימה והורדה",
+        "body": "התוצאה מוצגת אוטומטית כשהיא מוכנה. עברו בין מקורי לסופי, ולאחר מכן לחצו על הורדה."
+      }
+    },
+    "localAi": {
+      "title": "כולל כלי בינה מלאכותית מקומיים",
+      "body": "טשטוש פנים, הסרת רקע, הגדלת רזולוציה בבינה מלאכותית, טשטוש טקסט/מידע אישי מבוסס OCR, ניקוי קול, בידוד ווקאלי והסרת שירה לקריוקי — כל אלה פועלים על שרת ה-GPU שלנו. אף ספק בינה מלאכותית חיצוני לא רואה את הקבצים שלכם."
+    },
+    "notSure": {
+      "title": "לא בטוחים מאיפה להתחיל?",
+      "body": "המדריכים שלנו, שלב אחר שלב, סוקרים כל הגדרה בממירי האודיו, הווידאו והתמונות — כולל כלי הבינה המלאכותית.",
+      "cta": "עיון במדריכים"
+    },
+    "howItWorks": {
+      "title": "איך זה עובד",
+      "body": "Media Manipulator מפעיל את FFmpeg ואת ImageMagick עבור המרות סטנדרטיות, ומודלים ייעודיים של בינה מלאכותית על ה-GPU המקומי שלנו עבור הפעולות האופציונליות מבוססות הבינה המלאכותית. כל העיבוד מתבצע בשרתים שבשליטתנו — קראו את הפירוט המלא לפרטים נוספים.",
+      "cta": "לקרוא כיצד זה עובד"
+    }
+  },
+  "notFound": {
+    "preTitle": "אובדן טלמטריה",
+    "title": "האזור הזה בספינה אינו קיים",
+    "body": "הקואורדינטות שהזנתם לא תואמות לשום דבר בקונסולת הניווט. נסו אחד מהנתיבים שלמטה — או חִזרו לגשר הראשי ובחרו כלי שבאמת קיים.",
+    "links": {
+      "home": "חזרה לבסיס",
+      "tools": "מערך הכלים",
+      "tutorials": "מדריכים"
+    }
+  },
+  "themeToggle": {
+    "toggle": "החלפת ערכת נושא"
+  }
+}

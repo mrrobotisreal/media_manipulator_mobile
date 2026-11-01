@@ -1,0 +1,1406 @@
+{
+  "transcribeResultView": {
+    "loading": "Đang tải kết quả chép lời...",
+    "noResult": "Không có kết quả chép lời cho tác vụ này.",
+    "complete": "Chép lời hoàn tất",
+    "outputFormat": "Định dạng đầu ra:",
+    "language": "Ngôn ngữ: {{language}}",
+    "duration": "Thời lượng: {{duration}}",
+    "noAudioStream": "Không có luồng âm thanh",
+    "noSpeech": "Không có lời nói nhận diện được",
+    "nothingToTranscribe": "Không có gì để chép lời",
+    "noTranscriptGenerated": "Không thể tạo bản chép lời cho tệp này.",
+    "transcriptHeader_other": "Bản chép lời ({{count}} đoạn)",
+    "aiSummaryTitle": "Tóm tắt AI & đánh giá an toàn",
+    "analysisRunning": "Đang chạy tóm tắt và đánh giá an toàn trong nền...",
+    "analysisError": "Lỗi phân tích: {{error}}",
+    "summary": "Tóm tắt",
+    "extendedSummary": "Tóm tắt mở rộng",
+    "safetyBadge": "An toàn: {{rating}}",
+    "harmfulFlagged": "Phát hiện nội dung có thể gây hại",
+    "harmfulNone": "Không có nội dung gây hại bị gắn cờ",
+    "sentimentBadge": "Cảm xúc: {{label}}",
+    "notesLabel": "Ghi chú: {{notes}}",
+    "summaryPending": "Tóm tắt và đánh giá an toàn sẽ hiển thị ở đây khi tác vụ phân tích hoàn tất.",
+    "unknown": "không xác định"
+  },
+  "summarize": {
+    "loading": "Đang kiểm tra xem tính năng tóm tắt có khả dụng không…",
+    "unavailable": "Tính năng tóm tắt video và âm thanh tạm thời không khả dụng. Vui lòng thử lại sau; các trang Chép lời vẫn hoạt động bình thường.",
+    "notInPlan": "Gói của bạn không bao gồm tính năng tóm tắt.",
+    "signIn": {
+      "title": "Đăng nhập để tóm tắt",
+      "body": "Tính năng tóm tắt chạy trên máy chủ GPU của chúng tôi và cần một tài khoản miễn phí. Hãy đăng nhập hoặc tạo tài khoản, sau đó tải tệp của bạn lên.",
+      "button": "Đăng nhập",
+      "signup": "Tạo tài khoản miễn phí"
+    },
+    "uploadHintVideo": "một tệp video hoặc âm thanh",
+    "uploadHintAudio": "một tệp âm thanh",
+    "outputLanguage": "Ngôn ngữ tóm tắt",
+    "sameAsSpeech": "Giống ngôn ngữ trong lời nói",
+    "depth": {
+      "label": "Độ chi tiết",
+      "standard": "Tiêu chuẩn",
+      "deep": "Chuyên sâu",
+      "hint": "Chế độ chuyên sâu viết bản tóm tắt bằng một mô hình lớn hơn. Sẽ mất nhiều thời gian hơn."
+    },
+    "note": "Tốn một tác vụ AI trong hạn mức hằng ngày của bạn. Tác vụ thất bại không bị tính.",
+    "noteFrames": "Gói của bạn đọc tối đa {{frames}} khung hình của video. Tốn một tác vụ AI trong hạn mức hằng ngày; tác vụ thất bại không bị tính.",
+    "start": "Tóm tắt",
+    "stagesTitle": "Tiến trình",
+    "stages": {
+      "probe": "Đang đọc tệp",
+      "audio": "Đang chép lời",
+      "frames": "Đang chọn khung hình",
+      "vision": "Đang mô tả các khung hình",
+      "synthesis": "Đang viết bản tóm tắt",
+      "render": "Đang định dạng kết quả"
+    },
+    "status": {
+      "pending": "Đang chờ",
+      "processing": "Đang xử lý",
+      "completed": "Hoàn tất",
+      "skipped": "Đã bỏ qua",
+      "failed": "Thất bại"
+    },
+    "framesCount": "Khung hình: {{count}}",
+    "errors": {
+      "signin_required": "Đăng nhập để tóm tắt.",
+      "summary_not_in_plan": "Gói của bạn không bao gồm tính năng tóm tắt.",
+      "summary_unavailable": "Tính năng tóm tắt tạm thời không khả dụng. Vui lòng thử lại sau.",
+      "unreadable_media": "Không thể đọc tệp này như âm thanh hoặc video.",
+      "no_audio_or_video": "Tệp này không có âm thanh hoặc video để tóm tắt.",
+      "file_too_large": "Tệp này lớn hơn hoặc dài hơn mức gói của bạn cho phép.",
+      "upload_not_found": "Không tìm thấy tệp đã tải lên. Vui lòng thử lại.",
+      "quota_exceeded": "Bạn đã dùng hết số tác vụ AI của hôm nay.",
+      "invalid_request": "Yêu cầu không được chấp nhận. Hãy tải lại trang và thử lại.",
+      "unknown": "Không thể bắt đầu tóm tắt. Vui lòng thử lại."
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "Thả {{hint}} của bạn vào đây",
+    "selectHint": "hoặc nhấp để chọn từ máy tính. Tệp được lưu 24 giờ với khách; với tài khoản miễn phí bạn chọn từ 24 giờ đến 2 năm.",
+    "selectFile": "Chọn tệp",
+    "removeFile": "Gỡ tệp",
+    "uploadingPercent": "Đang tải lên {{percent}}%",
+    "workingOnFile": "Đang xử lý tệp của bạn…",
+    "previewResult": "Xem trước kết quả",
+    "downloadResult": "Tải xuống kết quả",
+    "jobFailed": "Tác vụ thất bại. Hãy thử tệp khác hoặc làm mới trang.",
+    "resultPreview": "Xem trước kết quả",
+    "toggleHint": "Chuyển qua lại giữa đầu vào gốc và kết quả hoàn chỉnh.",
+    "closePreview": "Đóng bản xem trước",
+    "loadingPreview": "Đang tải bản xem trước…",
+    "zipPreviewTitle": "Không có bản xem trước cho tải xuống ZIP",
+    "zipPreviewBody": "Kết quả này được đóng gói dưới dạng tệp ZIP. Hãy tải xuống và giải nén trên máy để xem nội dung."
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "Bộ chuyển đổi phương tiện nhúng",
+    "tryItNow": "Thử ngay",
+    "recommendedOutput": "Đầu ra khuyên dùng:",
+    "outputFormat": "Định dạng đầu ra:",
+    "outputLocked": "Đầu ra cố định cho công cụ này:",
+    "expectedInput": "Đầu vào mong đợi:",
+    "accepts": "Chấp nhận:",
+    "dragDrop": "Kéo và thả tệp {{kind}} vào đây",
+    "mediaKinds": {
+      "image": "hình ảnh",
+      "video": "video",
+      "audio": "âm thanh",
+      "pdf": "PDF"
+    },
+    "selectHint": "hoặc nhấp để chọn từ máy tính. Tệp được lưu 24 giờ với khách; với tài khoản miễn phí bạn chọn từ 24 giờ đến 2 năm.",
+    "selectFile": "Chọn tệp",
+    "removeFile": "Gỡ tệp",
+    "uploadingPercent": "Đang tải lên {{percent}}%",
+    "workingOnFile": "Đang xử lý tệp của bạn…",
+    "downloadFilename": "Tải xuống {{filename}}",
+    "transcribeFailed": "Chép lời thất bại.",
+    "conversionFailed": "Chuyển đổi thất bại.",
+    "tryAgainOrOpen": "Thử lại hoặc mở bộ chuyển đổi đầy đủ.",
+    "needFullPrefix": "Cần đầy đủ tính năng?",
+    "openFullConverter": "Mở bộ chuyển đổi đầy đủ",
+    "needFullSuffix": "— bao gồm lịch sử chuyển đổi, luồng chép lời và các công cụ AI."
+  },
+  "extractAudio": {
+    "title": "Tách âm thanh",
+    "subtitle": "Lấy bản âm thanh ra khỏi tệp video và lưu dưới dạng MP3, WAV, AAC, OGG hoặc FLAC.",
+    "formatLabel": "Định dạng âm thanh đầu ra",
+    "outputLocked": "Khóa ở {{format}} cho công cụ này",
+    "expectedInput": "Đầu vào mong đợi: {{format}}",
+    "submit": "Tách âm thanh",
+    "running": "Đang tách…",
+    "success": "Đã tách âm thanh. Dùng nút tải xuống để lưu.",
+    "uploadHint": "tệp video",
+    "note": "Bản âm thanh được tách giữ nguyên toàn bộ thời lượng và chất lượng của nguồn. Video không có âm thanh sẽ trả về lỗi rõ ràng.",
+    "formats": {
+      "mp3": "MP3 (gọn nhẹ, phát được ở mọi nơi)",
+      "wav": "WAV (không mất dữ liệu, dung lượng lớn)",
+      "m4a": "M4A (AAC — chất lượng tốt, gọn nhẹ)",
+      "aac": "AAC (thô)",
+      "flac": "FLAC (không mất dữ liệu)",
+      "ogg": "OGG (Vorbis)"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "tệp video",
+    "expectedInput": "Đầu vào mong đợi: {{format}}",
+    "levelLabel": "Mức nén",
+    "levels": {
+      "smallest": "Tệp nhỏ nhất",
+      "balanced": "Cân bằng (khuyên dùng)",
+      "high_quality": "Chất lượng cao"
+    },
+    "levelHints": {
+      "smallest": "Thu nhỏ tối đa cho email và chat. Có thể thấy giảm chất lượng ở cảnh nhiều chi tiết.",
+      "balanced": "Cân đối tốt giữa kích thước và chất lượng cho hầu hết video và đăng tải mạng xã hội.",
+      "high_quality": "Giữ nhiều chi tiết nhất. Nhỏ hơn nguồn, nhưng không nhiều bằng."
+    },
+    "formatLabel": "Định dạng đầu ra",
+    "outputLocked": "Khóa ở {{format}} cho công cụ này",
+    "resolutionLabel": "Độ phân giải",
+    "resolutions": {
+      "keep": "Giữ nguyên gốc",
+      "1080": "1080p (Full HD)",
+      "720": "720p (HD)",
+      "480": "480p (SD)"
+    },
+    "codecLabel": "Codec",
+    "codecs": {
+      "h264": "H.264 (tương thích nhất)",
+      "h265": "H.265 / HEVC (nhỏ hơn, thiết bị hiện đại)"
+    },
+    "stripAudio": "Bỏ bản âm thanh để tệp còn nhỏ hơn nữa",
+    "note": "Chúng tôi mã hóa lại video ở mức đã chọn. Đầu ra MP4 dùng H.264 + AAC với faststart để phát ngay lập tức.",
+    "running": "Đang nén…",
+    "submit": "Nén video"
+  },
+  "videoTrimmer": {
+    "uploadHint": "tệp video",
+    "expectedInput": "Đầu vào mong đợi: {{format}}",
+    "startLabel": "Bắt đầu (giây)",
+    "endLabel": "Kết thúc (giây)",
+    "durationLabel": "Độ dài clip: {{duration}}",
+    "invalidRange": "Đặt thời điểm kết thúc sau thời điểm bắt đầu.",
+    "pickRange": "Chọn khoảng trực quan",
+    "formatLabel": "Định dạng đầu ra",
+    "outputLocked": "Khóa ở {{format}} cho công cụ này",
+    "reencodeLabel": "Mã hóa lại để cắt chính xác từng khung hình",
+    "reencodeHint": "Mã hóa lại cắt chính xác tại thời điểm bạn chọn nhưng chậm hơn và có thể thay đổi nhẹ kích thước tệp.",
+    "note": "Chúng tôi giữ chất lượng gốc bằng cách cắt nhanh, không mất dữ liệu bất cứ khi nào có thể (không mã hóa lại).",
+    "running": "Đang cắt…",
+    "submit": "Cắt đoạn video",
+    "submitCut": "Cắt video"
+  },
+  "videoTransform": {
+    "uploadHint": "tệp video",
+    "expectedInput": "Đầu vào mong đợi: {{format}}",
+    "autoPlaceholder": "Tự động",
+    "widthLabel": "Chiều rộng (px)",
+    "heightLabel": "Chiều cao (px)",
+    "preserveAspect": "Giữ tỷ lệ khung hình (vừa trong khung)",
+    "resizeNote": "Để trống một trường để co giãn trường còn lại theo tỷ lệ. Tối đa 4096 px mỗi cạnh.",
+    "rotationLabel": "Xoay",
+    "rotations": {
+      "90": "90° theo chiều kim đồng hồ",
+      "180": "180° (lộn ngược)",
+      "270": "90° ngược chiều kim đồng hồ"
+    },
+    "flipH": "Lật ngang",
+    "flipV": "Lật dọc",
+    "rotateNote": "Sửa video bị nghiêng hoặc lộn ngược. 90° và 270° hoán đổi chiều rộng và chiều cao.",
+    "cropX": "Lệch trái (X, px)",
+    "cropY": "Lệch trên (Y, px)",
+    "cropW": "Chiều rộng cắt (px)",
+    "cropH": "Chiều cao cắt (px)",
+    "cropNote": "Nhập hình chữ nhật cần giữ, tính bằng pixel từ góc trên bên trái. Bắt buộc có chiều rộng và chiều cao.",
+    "formatLabel": "Định dạng đầu ra",
+    "outputLocked": "Khóa ở {{format}} cho công cụ này",
+    "running": "Đang xử lý…",
+    "submit": {
+      "crop": "Cắt video",
+      "resize": "Đổi kích thước video",
+      "rotate": "Xoay video"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "Tách video (không âm thanh)",
+    "subtitle": "Loại bỏ bản âm thanh khỏi tệp video, chỉ giữ luồng video.",
+    "uploadHint": "tệp video",
+    "formatLabel": "Định dạng chứa đầu ra",
+    "formats": {
+      "mp4": "MP4 (khuyên dùng)",
+      "webm": "WebM"
+    },
+    "note": "Luồng video được sao chép nguyên trạng bất cứ khi nào có thể — không mất chất lượng. Chúng tôi chỉ mã hóa lại nếu định dạng chứa đích yêu cầu.",
+    "submit": "Bỏ âm thanh khỏi video",
+    "running": "Đang loại bỏ âm thanh…",
+    "success": "Đã tách luồng video."
+  },
+  "extractFrames": {
+    "title": "Trích xuất khung hình",
+    "subtitle": "Lưu từng khung hình của video thành hình ảnh PNG, JPG hoặc WebP.",
+    "uploadHint": "tệp video",
+    "modeLabel": "Chế độ trích xuất",
+    "modes": {
+      "every_n_seconds": "Mỗi N giây",
+      "fps": "Số khung hình mỗi giây cụ thể",
+      "timestamp": "Các mốc thời gian cụ thể"
+    },
+    "secondsBetween": "Số giây giữa các khung hình",
+    "fpsLabel": "Khung hình mỗi giây",
+    "timestampsLabel": "Mốc thời gian tính bằng giây (phân cách bằng dấu phẩy)",
+    "timestampsPlaceholder": "ví dụ: 1, 5.5, 12, 30",
+    "imageFormatLabel": "Định dạng hình ảnh",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG (không mất dữ liệu)",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "Số khung hình tối đa",
+    "zipNote": "Các khung hình được gói vào một tệp ZIP để tải xuống. Chúng tôi giới hạn số lượng để tác vụ nhanh và dễ đoán; hãy tăng giới hạn nếu bạn thực sự cần nhiều hơn.",
+    "submit": "Trích xuất khung hình",
+    "running": "Đang trích xuất khung hình…",
+    "success": "Đã trích xuất khung hình. Tải xuống tệp ZIP bên dưới."
+  },
+  "captionTranslator": {
+    "title": "Dịch phụ đề",
+    "subtitle": "Tải lên tệp phụ đề VTT, SRT hoặc TXT và dịch sang ngôn ngữ khác.",
+    "dropHere": "Thả tệp .srt hoặc .vtt của bạn vào đây",
+    "privacyNote": "Tệp được lưu 24 giờ với khách; với tài khoản miễn phí bạn chọn từ 24 giờ đến 2 năm. Chúng tôi không gửi phụ đề của bạn đến nhà cung cấp AI bên thứ ba.",
+    "selectCaptionFile": "Chọn tệp phụ đề",
+    "removeFile": "Gỡ tệp",
+    "sourceLanguage": "Ngôn ngữ nguồn",
+    "targetLanguage": "Ngôn ngữ đích",
+    "autoDetect": "Tự nhận diện (khuyên dùng)",
+    "outputFormat": "Định dạng đầu ra",
+    "sameAsInput": "Giống đầu vào ({{format}})",
+    "formats": {
+      "srt": "SRT (SubRip)",
+      "vtt": "VTT (WebVTT)"
+    },
+    "timingNote": "Thời gian và thứ tự các dòng phụ đề được giữ nguyên chính xác — chỉ phần văn bản được dịch.",
+    "translating": "Đang dịch…",
+    "translateCaptions": "Dịch phụ đề",
+    "uploadingPercent": "Đang tải lên {{percent}}%",
+    "translatingWithModel": "Đang dịch bằng mô hình AI cục bộ…",
+    "downloadTranslated": "Tải xuống phụ đề đã dịch",
+    "translationFailed": "Dịch thất bại. Hãy thử tệp nhỏ hơn hoặc ngôn ngữ đích khác."
+  },
+  "stitchAudioToVideo": {
+    "title": "Ghép âm thanh vào video",
+    "subtitle": "Thêm hoặc thay thế bản âm thanh trên tệp video.",
+    "dropBaseVideo": "Thả video gốc của bạn vào đây",
+    "intro": "Chọn video trước — bạn sẽ thêm các bản âm thanh (lồng tiếng, nhạc, thuyết minh) sau.",
+    "selectVideo": "Chọn video",
+    "removeBaseVideo": "Gỡ video gốc",
+    "audioTracks": "Bản âm thanh",
+    "removeTrack": "Gỡ bản này",
+    "volume": "Âm lượng",
+    "startOffset": "Độ lệch bắt đầu (giây)",
+    "loopTrack": "Lặp bản này cho khớp độ dài video",
+    "addAudioTrack": "Thêm bản âm thanh ({{count}}/{{max}})",
+    "audioModeLabel": "Chế độ âm thanh",
+    "audioModes": {
+      "mix": "Trộn với âm thanh hiện có",
+      "replace": "Thay thế âm thanh gốc"
+    },
+    "outputLengthLabel": "Độ dài đầu ra",
+    "outputLength": {
+      "video": "Cắt theo thời lượng video",
+      "longest": "Theo đầu vào dài nhất"
+    },
+    "stitching": "Đang ghép âm thanh + video…",
+    "addAudioToVideo": "Thêm âm thanh vào video",
+    "uploadingPercent": "Đang tải lên {{percent}}%",
+    "mixingOnServer": "Đang trộn trên máy chủ…",
+    "downloadStitched": "Tải xuống video đã ghép",
+    "stitchFailed": "Ghép thất bại. Hãy kiểm tra tệp âm thanh của bạn hợp lệ và thử lại."
+  },
+  "aiVideoTools": {
+    "title": "Công cụ video AI",
+    "tooltipIntro": "Công cụ video AI hiện gồm <strong>Nội suy khung hình AI</strong>, tạo ra các khung hình trung gian mới để chuyển động phát mượt hơn.",
+    "tooltipBestFor": "Phù hợp nhất để nâng cảnh quay 24/30fps lên 60fps hoặc 60fps lên 120fps. Thao tác này nặng về GPU và hiện luôn xuất MP4.",
+    "intro": "Nội suy khung hình AI tạo khung hình trung gian để chuyển động mượt hơn. Phù hợp nhất với clip 24/30fps → 60fps hoặc 60fps → 120fps.",
+    "gpuNote": "Thao tác này nặng về GPU và hiện xuất MP4. Với video dài hoặc 4K, hãy dùng chiều cao xử lý tối đa thấp hơn trước. Khác với chuyển đổi FPS cơ bản — nội suy AI tổng hợp khung hình mới thay vì nhân bản, và bỏ qua hầu hết các bộ lọc hình ảnh / thời gian khác trong v1.",
+    "operationLabel": "Thao tác",
+    "operations": {
+      "none_short": "Không",
+      "frame_interpolation": "Nội suy khung hình AI"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "Tốc độ khung hình mục tiêu",
+      "modelLabel": "Mô hình RIFE",
+      "models": {
+        "rife-v4.6": "RIFE v4.6 — khuyên dùng",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3 — tương thích"
+      },
+      "qualityLabel": "Chất lượng",
+      "qualityOptions": {
+        "low": "Thấp — mã hóa nhanh hơn",
+        "medium": "Trung bình — cân bằng",
+        "high": "Cao — mã hóa chậm hơn"
+      },
+      "maxHeightLabel": "Chiều cao xử lý tối đa",
+      "preserveAudio": "Giữ bản âm thanh từ nguồn"
+    },
+    "notes": {
+      "mp4": "Đầu ra luôn là MP4 (H.264 + AAC) trong v1.",
+      "trim": "Cắt đoạn bị tắt khi dùng nội suy khung hình AI trong v1 — hãy cắt clip riêng trước nếu cần.",
+      "artifacts": "Chuyển động nhanh, chuyển cảnh, tóc, tay, bánh xe và vật che khuất có thể lộ lỗi nội suy. Hãy xem trước trước khi đăng."
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "Dòng thời gian chọn đoạn",
+      "startHandle": "Điểm bắt đầu vùng chọn",
+      "endHandle": "Điểm kết thúc vùng chọn",
+      "playSelection": "Phát vùng chọn",
+      "pause": "Tạm dừng",
+      "start": "Bắt đầu",
+      "end": "Kết thúc",
+      "startTime": "Thời điểm bắt đầu (p:gg.t)",
+      "endTime": "Thời điểm kết thúc (p:gg.t)",
+      "nudgeBack": "Lùi 0,1 giây",
+      "nudgeForward": "Tiến 0,1 giây",
+      "selected": "đã chọn",
+      "frames": "khung hình",
+      "estimate": "ước tính",
+      "fpsAssumption": "ước tính khung hình giả định 30fps — máy chủ dùng tốc độ khung hình thực của video",
+      "overRecommended": "Vùng chọn dài hơn {{seconds}} giây vẫn hoạt động, nhưng thời gian xử lý tăng nhanh — đoạn ngắn hơn cũng so sánh tốt không kém.",
+      "overFrameBudget": "Vùng chọn này có thể vượt giới hạn {{maxFrames}} khung hình ở 30fps. Nếu tốc độ khung hình thực của video cao hơn ~30fps, hãy rút ngắn vùng chọn."
+    },
+    "picker": {
+      "title": "Mô hình phục hồi",
+      "selectAll": "Chọn tất cả",
+      "selectNone": "Không chọn",
+      "frameGroup": "Bộ tăng cường từng khung hình — gồm khung hình đã tăng cường + video",
+      "videoGroup": "Mô hình phục hồi video — chỉ video",
+      "unavailable": "Không có trên máy chủ này",
+      "includeFrames": "Bao gồm khung hình đã tăng cường (PNG)",
+      "includeFramesHint": "Thêm mọi khung hình đã tăng cường từ các mô hình từng khung hình vào gói tải xuống, bên cạnh các video.",
+      "includeFramesWarning": "Khung hình có thể làm gói tải xuống phình to — một clip 10 giây có thể thêm hàng trăm PNG lớn cho mỗi mô hình.",
+      "noneSelected": "Chọn ít nhất một mô hình để tiếp tục.",
+      "runningTotal": "Đã chọn {{count}} mô hình · tổng thời gian xử lý ước tính {{estimate}}"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "Bộ nâng cấp GAN nhanh — mốc cơ sở nhanh mà mọi phép so sánh nên có."
+      },
+      "swinir": {
+        "description": "Siêu phân giải thực tế dựa trên transformer — kết cấu mạnh, chậm hơn Real-ESRGAN."
+      },
+      "hat": {
+        "description": "GAN siêu phân giải hybrid attention — thường cho ảnh tĩnh sắc nét nhất, chậm nhất Nhóm A."
+      },
+      "basicvsrpp": {
+        "description": "Siêu phân giải video hồi quy — dùng các khung hình lân cận để nhất quán theo thời gian."
+      },
+      "rvrt": {
+        "description": "Transformer phục hồi video hồi quy — chi tiết tốt kèm nhận thức chuyển động."
+      },
+      "vrt": {
+        "description": "Transformer phục hồi video — chất lượng hàng đầu với nhiều clip, chậm nhất cho đến nay."
+      }
+    },
+    "panel": {
+      "loading": "Đang kiểm tra khả năng của máy chủ…",
+      "disabled": "Phục hồi video AI tạm thời không khả dụng trên máy chủ này.",
+      "notAVideo": "Vui lòng chọn một tệp video.",
+      "tooLarge": "Video này vượt quá giới hạn tải lên {{max}}.",
+      "dropTitle": "Thả video vào đây, hoặc nhấp để chọn",
+      "dropHint": "Bạn sẽ chọn một đoạn ngắn (tối đa 15 giây) để phục hồi — video dài vẫn ổn.",
+      "fileLabel": "Tệp:",
+      "changeFile": "Đổi tệp",
+      "preparingUpload": "Đang chuẩn bị tải lên…",
+      "uploading": "Đang tải lên bộ nhớ an toàn… {{percent}}%",
+      "startingJob": "Đang bắt đầu tác vụ phục hồi…",
+      "submit": "Phục hồi đoạn với {{count}} mô hình",
+      "modelFailedBadge": "thất bại — các mô hình khác tiếp tục",
+      "genericFailure": "Phục hồi thất bại. Vui lòng thử lại với đoạn ngắn hơn.",
+      "startOver": "Bắt đầu lại",
+      "completedTitle": "Phục hồi hoàn tất — gói so sánh của bạn đã sẵn sàng.",
+      "modelSucceeded": "thành công",
+      "modelFailed": "thất bại (xem FAILED.txt trong gói)",
+      "download": "Tải xuống kết quả",
+      "downloadAgain": "Tải xuống lại",
+      "downloadSize": "Kích thước gói: {{size}}",
+      "downloadSizeHint": "Tệp nén này rất lớn — hãy đảm bảo bạn còn ít nhất {{size}} dung lượng trống trước khi tải xuống.",
+      "linkExpiresIn": "liên kết hết hạn sau {{countdown}}",
+      "linkExpired": "liên kết tải xuống đã hết hạn — hãy chạy lại phục hồi",
+      "restoreAnother": "Phục hồi đoạn khác"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "Cắt (tùy chọn)",
+      "useEntireImage": "Dùng toàn bộ hình ảnh",
+      "previewAlt": "Hình ảnh đã tải lên",
+      "regionLabel": "Vùng cắt — kéo để di chuyển, dùng phím mũi tên để tinh chỉnh",
+      "dragHint": "Kéo trên hình ảnh để tập trung vào một vùng, hoặc giữ toàn bộ hình ảnh",
+      "cropReadout": "Cắt: {{w}}×{{h}} px",
+      "fullReadout": "Toàn bộ hình ảnh: {{w}}×{{h}} px",
+      "outputReadout": "đầu ra ước tính {{w}}×{{h}} px ở {{scale}}x",
+      "overBudget": "Vùng cắt và tỷ lệ đó sẽ vượt giới hạn kích thước đầu ra. Hãy chọn 2x hoặc vùng cắt nhỏ hơn."
+    },
+    "picker": {
+      "precleanToggle": "Làm sạch trước (dọn dẹp giữ nguyên độ trung thực)",
+      "precleanToggleHint": "Loại bỏ lỗi nén, nhiễu và mờ chuyển động mà không tổng hợp chi tiết mới — chạy trước khi tăng cường.",
+      "precleanOrderNote": "Dọn dẹp luôn chạy theo thứ tự loại bỏ lỗi nén → khử nhiễu → khử mờ, mỗi bước trên kết quả trước, bất kể thứ tự chọn.",
+      "precleanBaseHint": "Hình ảnh đã làm sạch trở thành nền mà mọi mô hình bên dưới chạy trên đó.",
+      "fbcnnQf": "Hệ số chất lượng FBCNN",
+      "fbcnnQfAuto": "Tự động",
+      "fbcnnQfHint": "để trống = tự động; thấp hơn giả định nén nặng hơn",
+      "generalGroup": "Mô hình phục hồi & nâng cấp",
+      "faceToggle": "Tăng cường khuôn mặt",
+      "faceToggleHint": "Thêm GFPGAN và/hoặc CodeFormer để tái tạo khuôn mặt.",
+      "previewFaces": "Xem trước khuôn mặt đã phát hiện",
+      "facesDetected": "Đã phát hiện {{count}} khuôn mặt.",
+      "fidelityLabel": "Độ trung thực CodeFormer (w)",
+      "fidelityHint": "Thấp hơn = đẹp hơn, cao hơn = sát đầu vào hơn. Mặc định 0,70.",
+      "chainToggle": "Nối chuỗi: chạy lại mô hình khuôn mặt trên mỗi kết quả đã nâng cấp",
+      "chainHint": "Cũng tạo phiên bản tăng cường khuôn mặt cho đầu ra của mỗi bộ nâng cấp, ngoài việc chạy trên nguồn.",
+      "generativeWarning": "Tăng cường khuôn mặt là tái tạo sinh — khuôn mặt được tăng cường là tổng hợp để rõ nét và gợi ý, KHÔNG phải khôi phục trung thực để nhận dạng.",
+      "noneSelected": "Chọn ít nhất một mô hình để tiếp tục.",
+      "totalOutputs": "Sẽ tạo {{count}} đầu ra.",
+      "overBudget": "Lựa chọn đó sẽ tạo nhiều hơn mức tối đa {{max}} đầu ra. Hãy bỏ chọn một số mô hình hoặc tắt nối chuỗi.",
+      "unavailable": "Không có trên máy chủ này"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "Loại bỏ lỗi nén JPEG mù (1x, không sinh)."
+      },
+      "scunet": {
+        "description": "Khử nhiễu thực mù — biến thể PSNR, không bịa kết cấu (1x)."
+      },
+      "nafnet": {
+        "description": "Khử mờ chuyển động (trọng số GoPro, 1x)."
+      },
+      "realesrgan": {
+        "description": "Bộ nâng cấp GAN nhanh — mốc cơ sở nhanh mà mọi phép so sánh nên có."
+      },
+      "swinir": {
+        "description": "Siêu phân giải thực tế dựa trên transformer — kết cấu mạnh, chậm hơn Real-ESRGAN."
+      },
+      "hat": {
+        "description": "GAN siêu phân giải hybrid attention — thường cho kết quả sắc nét nhất."
+      },
+      "gfpgan": {
+        "description": "Phục hồi khuôn mặt GFPGAN v1.4 — tái tạo sinh."
+      },
+      "codeformer": {
+        "description": "Phục hồi khuôn mặt CodeFormer với núm chỉnh độ trung thực — tái tạo sinh."
+      }
+    },
+    "panel": {
+      "loading": "Đang kiểm tra khả năng của máy chủ…",
+      "disabled": "Phục hồi hình ảnh AI tạm thời không khả dụng trên máy chủ này.",
+      "notAnImage": "Vui lòng chọn một tệp hình ảnh.",
+      "tooLarge": "Hình ảnh này vượt quá giới hạn tải lên {{max}}.",
+      "dropTitle": "Thả hình ảnh vào đây, hoặc nhấp để chọn",
+      "dropHint": "PNG, JPEG, WebP, TIFF hoặc BMP. Bạn có thể cắt một vùng sau khi tải lên.",
+      "fileLabel": "Tệp:",
+      "changeFile": "Đổi tệp",
+      "scaleLabel": "Tỷ lệ đầu ra",
+      "scaleAuto": "Tự động",
+      "scaleHint": "Tự động chọn 4x cho vùng cắt nhỏ (cao ≤540px) và 2x cho các trường hợp còn lại. Mô hình chạy gốc 4x; 2x thu nhỏ bằng Lanczos.",
+      "preparingUpload": "Đang chuẩn bị…",
+      "uploading": "Đang tải lên… {{percent}}%",
+      "startingJob": "Đang bắt đầu tác vụ phục hồi…",
+      "submit": "Phục hồi với {{count}} mô hình",
+      "unitFailedBadge": "thất bại — các mô hình khác tiếp tục",
+      "genericFailure": "Phục hồi thất bại. Vui lòng thử lại với vùng cắt nhỏ hơn hoặc ít mô hình hơn.",
+      "startOver": "Bắt đầu lại",
+      "completedTitle": "Phục hồi hoàn tất — so sánh kết quả của bạn bên dưới.",
+      "download": "Tải xuống tất cả kết quả",
+      "downloadAgain": "Tải xuống lại",
+      "downloadSize": "Kích thước gói: {{size}}",
+      "restoreAnother": "Phục hồi hình ảnh khác"
+    },
+    "results": {
+      "includedInDownload": "Có trong gói tải xuống",
+      "fidelityBadge": "dọn dẹp không sinh",
+      "generativeBadge": "sinh — không phải bằng chứng",
+      "originalCaption": "Bản gốc (đã chuẩn bị) · {{w}}×{{h}}",
+      "failed": "Mô hình này thất bại",
+      "compareOriginal": "Bản gốc"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "tệp âm thanh",
+    "previewTitle": "Xem trước dạng sóng",
+    "sizeQualifiers": {
+      "small": "nhỏ",
+      "medium": "vừa",
+      "large": "lớn",
+      "xl": "rất lớn"
+    },
+    "presets": {
+      "10x1": "10:1 — Dạng sóng rộng (khuyên dùng)",
+      "8x1": "8:1 — Dạng sóng rộng",
+      "6x1": "6:1 — Dạng sóng rộng cân bằng",
+      "16x9": "16:9 — Xem trước video / mạng xã hội tiêu chuẩn",
+      "1x1": "1:1 — Xem trước mạng xã hội vuông"
+    },
+    "sizeLabel": "{{width}}×{{height}} ({{qualifier}})",
+    "modes": {
+      "point": {
+        "label": "Điểm",
+        "description": "Một chấm cho mỗi mẫu — gọn gàng và tối giản."
+      },
+      "line": {
+        "label": "Vạch",
+        "description": "Một vạch dọc cho mỗi mẫu — hiện diện đậm hơn."
+      },
+      "p2p": {
+        "label": "Điểm nối điểm",
+        "description": "Một chấm cho mỗi mẫu cộng đường nối — vẻ uyển chuyển."
+      },
+      "cline": {
+        "label": "Vạch căn giữa",
+        "description": "Vạch dọc căn giữa trên trục — vẻ đối xứng."
+      }
+    },
+    "output": "Đầu ra",
+    "outputOptions": {
+      "video": "Video dạng sóng",
+      "image": "Hình ảnh dạng sóng",
+      "both": "Cả hai (ZIP)"
+    },
+    "bothNote": "Cả hai đầu ra sẽ được đóng gói vào một tệp .zip để bạn tải xuống chỉ với một cú nhấp.",
+    "includeAudio": "Kèm âm thanh gốc vào video dạng sóng được tạo",
+    "includeAudioNote": "Video dạng sóng sẽ phát đồng bộ với âm thanh nguồn — hoàn hảo cho audiogram, bản xem trước nhạc và clip podcast. Tắt để có dạng sóng không tiếng.",
+    "videoFormat": "Định dạng video",
+    "videoFormats": {
+      "mp4": "MP4 (khuyên dùng)",
+      "webm": "WebM"
+    },
+    "imageFormat": "Định dạng hình ảnh",
+    "imageFormats": {
+      "png": "PNG (khuyên dùng)",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "Tỷ lệ khung hình & kích thước",
+    "useCustomSize": "Dùng chiều rộng / chiều cao tùy chỉnh",
+    "widthPlaceholder": "Chiều rộng",
+    "heightPlaceholder": "Chiều cao",
+    "advancedSettings": "Cài đặt dạng sóng nâng cao",
+    "renderMode": "Chế độ kết xuất",
+    "renderModeNote": "Chế độ kết xuất áp dụng cho video dạng sóng. Đầu ra hình ảnh dùng bộ kết xuất khung tĩnh, bỏ qua cài đặt chế độ.",
+    "frameRate": "Tốc độ khung hình",
+    "useFrameRate": "Dùng tốc độ khung hình",
+    "useSamples": "Dùng số mẫu mỗi cột (n)",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps (mặc định)",
+    "samplesPlaceholder": "ví dụ: 64",
+    "frameRateNote": "Chọn tốc độ khung hình đầu ra <em>hoặc</em> số mẫu âm thanh vẽ trên mỗi cột. Không chọn cả hai.",
+    "splitChannels": "Tách kênh stereo (vẽ trái và phải riêng)",
+    "primaryColor": "Màu chính",
+    "secondaryColor": "Màu phụ (chế độ tách)",
+    "scale": "Thang",
+    "scaleOptions": {
+      "lin": "lin — trực tiếp/chính xác nhất",
+      "log": "log — làm phần yên lặng dễ thấy hơn",
+      "sqrt": "sqrt — tăng nhẹ phần yên lặng",
+      "cbrt": "cbrt — tăng mạnh hơn phần yên lặng"
+    },
+    "draw": "Vẽ",
+    "drawOptions": {
+      "scale": "scale (mặc định)",
+      "full": "full"
+    },
+    "generating": "Đang tạo dạng sóng…",
+    "generate": "Tạo dạng sóng"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "Đang tải Quét tài liệu AI…",
+      "disabled": "Quét tài liệu hiện không khả dụng.",
+      "notAnImage": "Vui lòng thêm tệp hình ảnh (PNG, JPEG, WebP, TIFF, BMP hoặc HEIC).",
+      "tooLarge": "Mỗi hình ảnh phải dưới {{max}}.",
+      "tooManyPages": "Bạn có thể thêm tối đa {{max}} trang.",
+      "dropTitle": "Thêm trang đã quét",
+      "dropHint": "Tài liệu in hoặc ghi chú viết tay — thả một hoặc nhiều hình ảnh, hoặc nhấp để chọn.",
+      "uploading": "Đang tải lên… {{percent}}%",
+      "startingJob": "Đang bắt đầu quét…",
+      "preparingUpload": "Đang chuẩn bị…",
+      "submit": "Quét {{count}} trang",
+      "genericFailure": "Đã có lỗi xảy ra khi quét. Vui lòng thử lại.",
+      "startOver": "Bắt đầu lại",
+      "completedTitle": "Tài liệu của bạn đã sẵn sàng.",
+      "viewResult": "Xem kết quả",
+      "scanAnother": "Quét tài liệu khác"
+    },
+    "options": {
+      "contentMode": "Loại nội dung",
+      "modeAuto": "Tự động (nhận diện từng trang)",
+      "modePrinted": "Tài liệu in",
+      "modeHandwriting": "Chữ viết tay",
+      "printedUnavailable": "OCR bản in không khả dụng trên máy chủ này.",
+      "handwritingUnavailable": "Chép lời chữ viết tay hiện đang ngoại tuyến.",
+      "outputs": "Đầu ra",
+      "pdfAlways": "PDF có thể tìm kiếm (luôn có)",
+      "docx": "Word chỉnh sửa được (.docx)",
+      "unavailable": "không khả dụng",
+      "language": "Ngôn ngữ (OCR bản in)",
+      "printedCleanup": "Dọn dẹp trang in",
+      "deskew": "Chỉnh nghiêng",
+      "rotate": "Tự động xoay",
+      "clean": "Làm sạch (loại bỏ đốm)",
+      "structureEngine": "Bộ máy cấu trúc DOCX",
+      "enginePaddle": "PaddleOCR-VL (ưu tiên)",
+      "engineDocling": "Docling (dự phòng)",
+      "engineTrocr": "TrOCR (dự phòng)",
+      "preclean": "Tăng cường bản quét độ phân giải thấp trước khi đọc",
+      "precleanHint": "Nâng cấp bản quét ghi chú mờ từ điện thoại — giúp nhận diện chữ viết tay. Mặc định bật cho chữ viết tay/tự động.",
+      "handwritingTitle": "Tùy chọn chữ viết tay",
+      "verify": "Xác minh bằng AI",
+      "verifyHint": "Lượt thứ hai chỉ đọc lại các token được đánh dấu không chắc chắn; không bao giờ sửa văn bản chắc chắn hay bịa nội dung.",
+      "secondOpinion": "Ý kiến thứ hai",
+      "secondOpinionHint": "Một bộ nhận diện độc lập đọc lại chữ viết tay; các chỗ bất đồng được gắn cờ, không bao giờ âm thầm gộp.",
+      "summary": "Tóm tắt AI (tệp riêng)",
+      "summaryHint": "Tùy chọn. Ghi một bản tóm tắt riêng, được dán nhãn rõ ràng — không bao giờ thay thế bản chép nguyên văn."
+    },
+    "pageOrder": {
+      "title": "Trang ({{count}})",
+      "hint": "Kéo các trang để sắp xếp lại trước khi quét.",
+      "pageLabel": "Trang {{n}}",
+      "remove": "Gỡ trang",
+      "drag": "Kéo để sắp xếp lại"
+    },
+    "viewer": {
+      "title": "Tài liệu đã quét của bạn",
+      "description": "Trang in có lớp văn bản tìm kiếm được, trung thực; trang viết tay là bản chép bằng máy — hãy đối chiếu với bản gốc.",
+      "confidenceTitle": "Chép chữ viết tay — hãy đối chiếu với bản gốc",
+      "confidenceNote": "{{pages}} trang viết tay đã chép · {{tokens}} token được đánh dấu không chắc chắn ([illegible] / [?]).",
+      "noPdf": "Không tạo được PDF cho tác vụ này.",
+      "downloadPdf": "Tải xuống PDF",
+      "downloadDocx": "Tải xuống Word (.docx)",
+      "downloadSummary": "Tải xuống tóm tắt AI"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}} (beta)",
+    "untitled": "Bản vẽ chưa đặt tên",
+    "projectName": "Tên dự án",
+    "backHome": "Quay lại Media Manipulator",
+    "invalidProject": "Liên kết dự án này không hợp lệ. Hiện tại dự án chỉ được lưu trong trình duyệt này.",
+    "newProject": "Bắt đầu bản vẽ mới",
+    "undo": "Hoàn tác",
+    "redo": "Làm lại",
+    "zoomIn": "Phóng to",
+    "zoomOut": "Thu nhỏ",
+    "zoomFit": "Vừa màn hình",
+    "canvas": {
+      "label": "Vùng vẽ"
+    },
+    "tools": {
+      "label": "Công cụ",
+      "select": "Chọn",
+      "node": "Sửa nút",
+      "rect": "Hình chữ nhật",
+      "ellipse": "Hình elip",
+      "line": "Đường thẳng",
+      "pen": "Bút",
+      "text": "Văn bản",
+      "hand": "Kéo khung nhìn",
+      "textPlaceholder": "Nhập, rồi nhấn Enter"
+    },
+    "import": {
+      "button": "Nhập",
+      "done_other": "Đã nhập {{count}} lớp",
+      "tooLarge": "Tệp đó lớn hơn 4 MB.",
+      "warningsTitle_other": "{{count}} lưu ý từ quá trình nhập",
+      "errors": {
+        "too_large": "SVG đó lớn hơn 4 MB.",
+        "not_svg": "Tệp đó không phải hình ảnh SVG.",
+        "malformed": "Không đọc được SVG đó. Tệp có thể bị hỏng.",
+        "entities": "Không thể nhập SVG khai báo thực thể XML.",
+        "too_complex": "SVG đó có quá nhiều lớp để chỉnh sửa.",
+        "json": "Tệp đó không phải tài liệu Motion mà phiên bản này mở được."
+      },
+      "warnings": {
+        "script_removed": "Đã gỡ script:",
+        "event_handler_removed": "Đã gỡ trình xử lý sự kiện:",
+        "external_reference_removed": "Đã gỡ tham chiếu bên ngoài:",
+        "unsafe_content_removed": "Đã gỡ nội dung không an toàn:",
+        "unsupported_element": "Giữ nguyên trạng (không chỉnh sửa được):",
+        "style_dropped": "Kiểu không được hỗ trợ:",
+        "invalid_value": "Giá trị bị bỏ qua:",
+        "dangling_reference": "Đã bỏ tham chiếu bị thiếu:"
+      }
+    },
+    "export": {
+      "svg": "Xuất SVG",
+      "open": "Xuất"
+    },
+    "draft": {
+      "title": "Khôi phục thay đổi chưa lưu?",
+      "description": "Bản vẽ này có các thay đổi được lưu trong trình duyệt nhưng chưa xuất.",
+      "from": "{{name}}, {{time}}",
+      "layers_other": "{{count}} lớp",
+      "recover": "Khôi phục",
+      "discard": "Bỏ"
+    },
+    "layers": {
+      "title": "Lớp",
+      "empty": "Vẽ một hình hoặc nhập SVG để bắt đầu.",
+      "group": "Nhóm",
+      "ungroup": "Bỏ nhóm",
+      "delete": "Xóa",
+      "rename": "Tên lớp",
+      "lock": "Khóa",
+      "unlock": "Mở khóa",
+      "hide": "Ẩn",
+      "show": "Hiện",
+      "expand": "Mở rộng nhóm",
+      "collapse": "Thu gọn nhóm",
+      "raw": "Giữ nguyên trạng",
+      "rawHint": "Giữ đúng như khi nhập; không chỉnh sửa được",
+      "masked": "Có mặt nạ",
+      "clipped": "Có đường cắt",
+      "maskDef": "Mặt nạ {{id}}",
+      "clipDef": "Đường cắt {{id}}"
+    },
+    "layerTypes": {
+      "group": "Nhóm",
+      "path": "Đường path",
+      "rect": "Hình chữ nhật",
+      "ellipse": "Hình elip",
+      "line": "Đường thẳng",
+      "polyline": "Đường gấp khúc",
+      "polygon": "Đa giác",
+      "text": "Văn bản",
+      "image": "Hình ảnh",
+      "use": "Bản sao",
+      "raw": "Giữ nguyên trạng"
+    },
+    "inspector": {
+      "title": "Thuộc tính",
+      "canvas": "Vùng vẽ",
+      "background": "Nền",
+      "emptyHint": "Chọn một lớp để chỉnh sửa. Shift + nhấp để chọn nhiều lớp.",
+      "selection": "Vùng chọn",
+      "layersSelected_other": "{{count}} lớp",
+      "transform": "Biến đổi",
+      "geometry": "Hình học",
+      "appearance": "Giao diện",
+      "text": "Văn bản",
+      "width": "Chiều rộng",
+      "height": "Chiều cao",
+      "scaleX": "Tỷ lệ X",
+      "scaleY": "Tỷ lệ Y",
+      "rotation": "Xoay",
+      "skewX": "Nghiêng",
+      "anchorX": "Neo X",
+      "anchorY": "Neo Y",
+      "cornerRadius": "Bo góc",
+      "reference": "Bản sao của",
+      "pathHint": "Dùng công cụ Sửa nút (A) để di chuyển điểm và tay cầm.",
+      "rawHint": "Phần này của SVG dùng các tính năng mà trình biên tập chưa thể thay đổi. Nó được giữ đúng như khi nhập và xuất ra không đổi.",
+      "markupSize": "Mã đánh dấu",
+      "fill": "Tô",
+      "stroke": "Nét",
+      "strokeWidth": "Độ dày nét",
+      "opacity": "Độ mờ",
+      "none": "Không",
+      "colorValue": "Giá trị {{label}}",
+      "solid": "Màu đặc",
+      "linear": "Tuyến tính",
+      "radial": "Tỏa tròn",
+      "fontSize": "Cỡ chữ",
+      "fontFamily": "Phông chữ",
+      "fontWeight": "Độ đậm",
+      "letterSpacing": "Giãn chữ",
+      "textAnchor": "Căn lề",
+      "alignStart": "Đầu",
+      "alignMiddle": "Giữa",
+      "alignEnd": "Cuối",
+      "regular": "Thường",
+      "bold": "Đậm",
+      "maskSection": "Mặt nạ và cắt",
+      "maskHint": "Lớp trên trở thành mặt nạ hoặc đường cắt của lớp dưới.",
+      "useAsMask": "Dùng làm mặt nạ",
+      "useAsClip": "Dùng làm đường cắt",
+      "releaseMask": "Gỡ mặt nạ",
+      "releaseClip": "Gỡ đường cắt",
+      "skewY": "Nghiêng Y"
+    },
+    "gradient": {
+      "stops": "Điểm dừng chuyển màu",
+      "stop": "Điểm dừng {{index}} tại {{offset}}%",
+      "stopColor": "Màu điểm dừng",
+      "removeStop": "Xóa điểm dừng",
+      "addStop": "Thêm điểm dừng",
+      "offset": "Vị trí",
+      "angle": "Góc",
+      "radius": "Bán kính",
+      "centreX": "Tâm X",
+      "centreY": "Tâm Y"
+    },
+    "properties": {
+      "x": "Vị trí X",
+      "y": "Vị trí Y",
+      "scaleX": "Tỷ lệ X",
+      "scaleY": "Tỷ lệ Y",
+      "rotation": "Xoay",
+      "skewX": "Nghiêng X",
+      "skewY": "Nghiêng Y",
+      "anchorX": "Neo X",
+      "anchorY": "Neo Y",
+      "opacity": "Độ mờ",
+      "fill": "Tô",
+      "stroke": "Nét",
+      "strokeWidth": "Độ dày nét",
+      "strokeDashoffset": "Vẽ dần (độ lệch nét đứt)",
+      "d": "Hình dạng (biến hình)",
+      "motionPath": "Đường chuyển động",
+      "stopColor": "Màu điểm dừng chuyển màu {{n}}",
+      "stopOffset": "Vị trí điểm dừng chuyển màu {{n}}",
+      "blur": "Làm mờ"
+    },
+    "timeline": {
+      "title": "Dòng thời gian",
+      "play": "Phát (Space)",
+      "pause": "Tạm dừng (Space)",
+      "toStart": "Về đầu (Home)",
+      "toEnd": "Đến cuối (End)",
+      "loop": "Lặp",
+      "autokey": "Tự động khóa",
+      "autokeyHint": "Khi bật, mọi thay đổi thuộc tính trên vùng vẽ hoặc trong bảng thuộc tính sẽ thêm keyframe tại đầu phát.",
+      "duration": "Độ dài",
+      "playhead": "Đầu phát",
+      "setIn": "Đặt điểm bắt đầu phạm vi phát tại đầu phát",
+      "setOut": "Đặt điểm kết thúc phạm vi phát tại đầu phát",
+      "clearRange": "Xóa phạm vi phát",
+      "inMarker": "Điểm bắt đầu phạm vi phát",
+      "outMarker": "Điểm kết thúc phạm vi phát",
+      "addKeys": "Thêm keyframe tại đầu phát cho các lớp đã chọn",
+      "copyKeys": "Sao chép keyframe",
+      "pasteKeys": "Dán keyframe tại đầu phát",
+      "deleteKeys": "Xóa keyframe",
+      "zoomIn": "Phóng to dòng thời gian",
+      "zoomOut": "Thu nhỏ dòng thời gian",
+      "empty": "Vẽ hoặc nhập một hình, rồi tạo hoạt ảnh cho nó ở đây.",
+      "animate": "Tạo hoạt ảnh {{property}}",
+      "stopAnimating": "Dừng hoạt ảnh {{property}}",
+      "addKeyHere": "Thêm keyframe {{property}} tại đầu phát",
+      "removeKeyHere": "Xóa keyframe {{property}} tại đầu phát",
+      "key": "Keyframe {{property}} tại {{time}}",
+      "layerKey": "Keyframe của {{layer}} tại {{time}}",
+      "maskContent": "Mặt nạ: {{layer}}",
+      "clipContent": "Cắt: {{layer}}"
+    },
+    "easing": {
+      "title": "Easing",
+      "presets": "Thiết lập easing",
+      "linear": "Tuyến tính",
+      "easeIn": "Ease in",
+      "easeOut": "Ease out",
+      "easeBoth": "Ease in-out",
+      "hold": "Giữ",
+      "custom": "Đường cong",
+      "curve": "Đường cong easing",
+      "handle": "Tay cầm đường cong {{name}}",
+      "mixed": "Các keyframe đã chọn dùng easing khác nhau. Chọn một để áp dụng cho tất cả.",
+      "applies_other": "Easing của các đoạn sau {{count}} keyframe."
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "GIF động phát được ở mọi nơi. 256 màu, một bảng màu chung."
+        },
+        "png_sequence": {
+          "title": "Chuỗi PNG (.zip)",
+          "hint": "Mỗi khung hình là một PNG có độ trong suốt, nén zip, cho trình biên tập video và game engine."
+        },
+        "mp4": {
+          "title": "Video MP4",
+          "hint": "Video H.264 (hoặc AV1), mã hóa trong trình duyệt của bạn. Không âm thanh."
+        },
+        "webm": {
+          "title": "Video WebM",
+          "hint": "Video VP9 (hoặc AV1), mã hóa trong trình duyệt của bạn. Không âm thanh."
+        }
+      },
+      "block": {
+        "locked": "Gói của bạn không bao gồm định dạng này.",
+        "notOnAnyPlan": "Chưa có trên bất kỳ gói nào.",
+        "useChromium": "Dùng Chrome hoặc Edge để xuất video",
+        "noCodec": "Trình duyệt này không thể mã hóa định dạng video này. Hãy thử định dạng video còn lại, hoặc Chrome hoặc Edge."
+      },
+      "size": "Kích thước",
+      "sizeOption": "{{height}}p ({{width}} × {{height}})",
+      "fps": "Khung hình mỗi giây",
+      "from": "Từ (giây)",
+      "to": "Đến (giây)",
+      "gif": {
+        "loop": "Lặp",
+        "forever": "Mãi mãi",
+        "plays_other": "Phát {{count}} lần",
+        "dither": "Dither (chuyển màu mượt hơn, tệp lớn hơn)",
+        "transparent": "Nền trong suốt"
+      },
+      "summary": "{{width}} × {{height}} px, {{frames}} khung hình, {{seconds}} giây, khoảng {{size}}",
+      "flattenWhite": "Vùng vẽ trong suốt; video không có độ trong suốt, nên các khung hình được đặt trên nền trắng.",
+      "clamped": {
+        "height": "Kích thước giới hạn ở {{height}}p theo gói của bạn.",
+        "fps": "Tốc độ khung hình giới hạn ở {{fps}} fps.",
+        "duration": "Độ dài giới hạn ở {{seconds}} giây theo gói của bạn."
+      },
+      "tooLarge": "Bản xuất này sẽ lớn hơn 2 GB. Hãy giảm kích thước, tốc độ khung hình hoặc độ dài.",
+      "cancelCounts": "Hủy sau khi đã bắt đầu xuất vẫn tính một lượt xuất trong hạn mức hằng ngày của bạn.",
+      "preparing": "Đang chuẩn bị…",
+      "progress": "Đang kết xuất khung hình {{done}} trên {{total}}",
+      "progressLabel": "Tiến trình xuất",
+      "finalizing": "Đang hoàn thiện tệp…",
+      "cancel": "Hủy",
+      "cancelled": "Đã hủy xuất. Không tải xuống gì cả.",
+      "failed": {
+        "tooLarge": "Tệp đã vượt quá 2 GB nên quá trình xuất bị dừng. Hãy giảm kích thước, tốc độ khung hình hoặc độ dài.",
+        "codec": "Trình duyệt này không thể mã hóa video ở kích thước và tốc độ khung hình này. Hãy thử kích thước nhỏ hơn, hoặc Chrome hoặc Edge.",
+        "unsafe": "Bản vẽ này chứa nội dung bên ngoài không thể kết xuất thành khung hình. Hãy gỡ bỏ và thử lại.",
+        "error": "Xuất thất bại trong trình duyệt. Hãy thử lại, hoặc thử kích thước nhỏ hơn."
+      },
+      "capHeight": "Gói của bạn xuất tệp raster tối đa {{max}}p.",
+      "capFps": "Gói của bạn xuất tối đa {{max}} khung hình mỗi giây."
+    },
+    "exportDialog": {
+      "title": "Xuất",
+      "description": "Bản xuất được tạo trong trình duyệt của bạn. Xuất hoạt ảnh được tính vào hạn mức hằng ngày; SVG tĩnh luôn miễn phí.",
+      "formats": "Định dạng xuất",
+      "animated": "SVG động",
+      "animatedHint": "Một tệp SVG kèm hoạt ảnh. CSS thuần khi có thể, nếu không thì một script nhỏ nhúng trong tệp.",
+      "static": "SVG tĩnh",
+      "staticHint": "Khung hình tại đầu phát, không có hoạt ảnh. Miễn phí, không bao giờ bị tính.",
+      "export": "Xuất",
+      "unsupported": "Hoạt ảnh này dùng các hiệu ứng mà SVG động chưa thể xuất.",
+      "doneStatic": "Đã tải xuống SVG tĩnh.",
+      "done_other": "Đã tải xuống. Hôm nay còn {{count}} lượt xuất hoạt ảnh.",
+      "doneUnlimited": "Đã tải xuống.",
+      "limit_other": "Bạn đã dùng hết {{count}} lượt xuất hoạt ảnh của hôm nay.",
+      "locked": "Gói của bạn không bao gồm định dạng này.",
+      "capDuration": "Gói của bạn xuất hoạt ảnh dài tối đa {{seconds}} giây. Hãy rút ngắn hoạt ảnh hoặc nâng cấp.",
+      "capOther": "Bản xuất này lớn hơn mức gói của bạn cho phép.",
+      "unavailable": "Hiện không thể xuất. Không có gì bị tính; hãy thử lại sau giây lát.",
+      "upgrade": "Xem các gói",
+      "runtimeCss": "CSS thuần, không script.",
+      "runtimeAnimeBecause": "Dùng một script {{size}} KB (anime.js, MIT) vì: {{reasons}}.",
+      "runtimeAnimeChosen": "Dùng một script {{size}} KB (anime.js, MIT).",
+      "scriptImgNote": "Script chạy khi SVG được mở trực tiếp hoặc đặt inline trong trang, không chạy trong thẻ <img> (chỉ hiện khung hình đầu tiên).",
+      "forceAnime": "Dùng runtime script",
+      "reasons": {
+        "morph": "biến hình",
+        "stopOffset": "vị trí điểm dừng chuyển màu",
+        "blur": "làm mờ (Safari)",
+        "motionRotate": "xoay theo đường path kèm track xoay"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "Cho LottieFiles, lottie-web và các trình phát Lottie trên iOS, Android và Flutter. Các tính năng Lottie không chứa được sẽ được liệt kê sau khi tải xuống."
+        },
+        "react_tsx": {
+          "title": "Component React (.tsx)",
+          "hint": "Một tệp component với SVG inline. Chỉ cần React, cộng thêm gói anime.js khi dùng runtime script."
+        },
+        "js": {
+          "title": "Module JavaScript (.js)",
+          "hint": "Một ES module thuần với mount, play, pause và seek. Không cần framework."
+        },
+        "ts": {
+          "title": "Module TypeScript (.ts)",
+          "hint": "Module JavaScript kèm kiểu dữ liệu."
+        },
+        "flutter": {
+          "title": "Widget Flutter (.dart)",
+          "hint": "Widget flutter_svg gốc khi hoạt ảnh chỉ di chuyển, mờ dần và đổi màu; nếu không thì là trình phát WebView."
+        }
+      },
+      "emitted": {
+        "css": "Hoạt ảnh bằng CSS, không script.",
+        "anime": "Hoạt ảnh bằng anime.js (MIT, nhập dưới dạng dependency).",
+        "animeBecause": "Hoạt ảnh bằng anime.js (MIT, nhập dưới dạng dependency) vì: {{reasons}}."
+      },
+      "flutter": {
+        "native": "Đã xuất widget gốc (flutter_svg và một AnimationController): hoạt ảnh chỉ dùng transform, opacity và màu sắc.",
+        "webview": "Đã xuất trình phát WebView (webview_flutter) vì {{reasons}}. WebView có nền đục và nặng hơn widget gốc."
+      },
+      "flutterReasons": {
+        "morph": "nó biến hình một hình dạng",
+        "mask": "nó tạo hoạt ảnh cho mặt nạ hoặc đường cắt",
+        "blur": "nó tạo hoạt ảnh làm mờ",
+        "motionPath": "nó di chuyển theo đường chuyển động",
+        "drawOn": "nó vẽ dần một nét",
+        "gradient": "nó tạo hoạt ảnh cho điểm dừng chuyển màu",
+        "symbol": "nó tạo hoạt ảnh cho các lớp bên trong một symbol",
+        "raw": "nó chứa mã SVG mà trình biên tập giữ nguyên trạng"
+      }
+    },
+    "gate": {
+      "locked": "Bị khóa trên gói của bạn",
+      "requires": {
+        "free": "Có trong tài khoản miễn phí.",
+        "premium": "Có trong Premium.",
+        "pro": "Có trong Pro."
+      },
+      "cta": {
+        "signup": "Đăng nhập miễn phí",
+        "premium": "Nâng cấp lên Premium",
+        "pro": "Nâng cấp lên Pro"
+      }
+    },
+    "projects": {
+      "save": "Lưu",
+      "saveToAccount": "Lưu vào tài khoản",
+      "status": {
+        "local": "Chỉ trong trình duyệt này",
+        "saved": "Đã lưu",
+        "saving": "Đang lưu…",
+        "retrying": "Đang thử lại…",
+        "offline": "Ngoại tuyến, thay đổi được giữ tại đây",
+        "conflict": "Đã thay đổi ở nơi khác",
+        "failed": "Chưa lưu"
+      },
+      "signIn": "Đăng nhập",
+      "signInTitle": "Đăng nhập để lưu vào tài khoản của bạn",
+      "signInBody": "Không có tài khoản, dự án chỉ nằm trong trình duyệt này. Hãy đăng nhập (trong thẻ mới, rồi quay lại) để lưu dự án này vào tài khoản, hoặc tải xuống dưới dạng tệp để mở lại sau.",
+      "downloadJson": "Tải xuống .json",
+      "limit_other": "Gói của bạn lưu được {{count}} dự án. Hãy xóa một dự án trong tài khoản, hoặc nâng cấp.",
+      "saveFailed": "Không lưu được dự án này vào tài khoản của bạn. Các thay đổi được giữ trong trình duyệt này.",
+      "open": {
+        "signin": "Đăng nhập để mở dự án này. Dự án trong tài khoản chỉ hiển thị với chủ sở hữu.",
+        "notFound": "Dự án này không tồn tại, hoặc thuộc về tài khoản khác.",
+        "failed": "Không tải được dự án này. Hãy kiểm tra kết nối và tải lại trang.",
+        "unreadable": "Dự án này được lưu bởi phiên bản mới hơn và không thể mở tại đây."
+      },
+      "conflict": {
+        "title": "Dự án này đã thay đổi ở thẻ hoặc thiết bị khác.",
+        "reload": "Tải bản kia",
+        "keep": "Giữ bản của tôi",
+        "reloadTitle": "Thay thế phiên bản của bạn?",
+        "reloadBody": "Tải lại sẽ mở bản sao được lưu ở nơi khác và bỏ các thay đổi trong thẻ này. Hãy tải xuống phiên bản của bạn trước nếu muốn giữ.",
+        "downloadMine": "Tải xuống phiên bản của tôi",
+        "reloadConfirm": "Tải bản kia",
+        "reloadFailed": "Không tải được bản sao đã lưu. Hãy thử lại."
+      }
+    },
+    "animators": {
+      "title": "Tạo hoạt ảnh",
+      "selectOne": "Chọn một lớp để tạo hoạt ảnh cho nó.",
+      "drawOn": "Vẽ dần",
+      "drawOnHint": "Vẽ nét từ đầu đến cuối (độ lệch nét đứt).",
+      "motionPath": "Đường chuyển động",
+      "motionPathHint": "Di chuyển lớp dọc theo một đường path. Chọn một đường hoặc vẽ bằng bút.",
+      "morph": "Biến hình",
+      "morphHint": "Biến đường path này thành hình dạng khác. Chọn hình đích.",
+      "gradient": "Chuyển màu",
+      "gradientHint": "Tạo hoạt ảnh cho màu sắc chuyển màu của lớp này (một track cho mỗi điểm dừng).",
+      "maskClip": "Mặt nạ/Cắt",
+      "maskClipHint": "Tạo hoạt ảnh cho mặt nạ hoặc hình cắt của lớp với các track riêng.",
+      "blur": "Làm mờ",
+      "blurHint": "Làm mờ dần lớp theo thời gian.",
+      "blurAmount": "Mức làm mờ",
+      "pickGuide": "Di chuyển theo đường nào?",
+      "pickTarget": "Biến thành hình nào?",
+      "noShapes": "Chưa có hình nào khác.",
+      "drawWithPen": "Vẽ hình mới bằng bút",
+      "autoOrient": "Xoay theo đường",
+      "spanHint": "Bộ tạo hoạt ảnh chạy từ đầu phát đến cuối. Điều chỉnh keyframe của chúng trong dòng thời gian.",
+      "notApplied": "Bộ tạo hoạt ảnh đó không áp dụng cho lớp này.",
+      "morphFailed": "Hai hình này không thể biến hình vào nhau."
+    },
+    "lottie": {
+      "supportSummary": "Những gì Lottie không chứa được",
+      "document": "toàn bộ hoạt ảnh",
+      "warningsTitle_other": "{{count}} mục không chuyển được",
+      "unsupported": {
+        "maskAdvanced": "Mặt nạ không phải hình trắng hoặc đen đơn giản, và mặt nạ trên lớp lồng nhau",
+        "filter": "Làm mờ và các bộ lọc khác",
+        "text": "Văn bản (cần đường viền phông chữ; hãy chuyển văn bản thành đường path trước)",
+        "image": "Hình ảnh không được nhúng, hoặc hình ảnh bên trong nhóm",
+        "useComplex": "Symbol tái sử dụng có kích thước hoặc view box riêng",
+        "raw": "Mã SVG mà trình biên tập giữ nguyên trạng",
+        "cssOnly": "Chế độ hòa trộn, marker và các kiểu chỉ có trong CSS",
+        "strokeGradientAnimation": "Chuyển màu động trên nét",
+        "gradientShape": "Chuyển màu lặp, tiêu điểm hoặc kéo giãn",
+        "paint": "Kiểu tô không phải màu hoặc chuyển màu",
+        "skew": "Nghiêng trên cả hai trục cùng lúc",
+        "morph": "Biến hình làm thay đổi số lượng đường con",
+        "playOnce": "Phát một lần (trình phát Lottie mặc định lặp)",
+        "expression": "Biểu thức (dùng giá trị keyframe)",
+        "effect": "Hiệu ứng lớp như làm mờ hoặc đổ bóng",
+        "textLayer": "Lớp văn bản (giữ dưới dạng nhóm rỗng có tên)",
+        "timeRemap": "Ánh xạ lại thời gian",
+        "threeD": "Lớp 3D và xoay 3D",
+        "blendMode": "Chế độ hòa trộn khác normal",
+        "matte": "Track matte",
+        "maskMode": "Mặt nạ khác chế độ cộng và trừ",
+        "modifier": "Repeater, bo góc và các bộ sửa hình dạng khác",
+        "imageExternal": "Hình ảnh không được nhúng trong tệp",
+        "spatialTangents": "Đường chuyển động cong (lớp di chuyển theo đường thẳng)",
+        "layerTiming": "Điểm vào và ra của lớp trên lớp có độ mờ được tạo hoạt ảnh",
+        "unknownLayer": "Loại lớp mà trình biên tập không vẽ",
+        "unknownShape": "Mục hình dạng không xác định",
+        "autoOrient": "Tự động xoay theo đường",
+        "skewAxis": "Nghiêng theo trục góc",
+        "polystar": "Sao và đa giác bo tròn hoặc động (vẽ dưới dạng đường viền thuần)",
+        "trimComplex": "Trim path làm nhiều hơn vẽ dần hoặc xóa dần",
+        "gradientAnimation": "Vị trí chuyển màu động và chuyển màu nét động",
+        "multipleStyles": "Nhiều màu tô hoặc nét trên một hình (dùng cái gần nhất)",
+        "styleOpacity": "Độ mờ tô hoặc nét động trên chuyển màu",
+        "morphCounts": "Khóa hình dạng có số điểm khác nhau (các khung trung gian sẽ khác)"
+      },
+      "import": {
+        "warningsTitle_other": "{{count}} mục không nhập được",
+        "warningsBody": "Hoạt ảnh đã sẵn sàng để mở. Các phần sau của tệp Lottie không được hỗ trợ và đã bị bỏ qua hoặc đơn giản hóa:",
+        "open": "Mở hoạt ảnh",
+        "unavailable": "Nhập Lottie không khả dụng trên trang này.",
+        "refused": {
+          "limit": "Bạn đã dùng hết lượt xuất và nhập của hôm nay.",
+          "locked": "Gói của bạn không bao gồm nhập Lottie.",
+          "cap": "Tệp này lớn hơn mức gói của bạn cho phép.",
+          "unavailable": "Hiện không thể nhập. Không có gì bị tính; hãy thử lại sau giây lát."
+        },
+        "errors": {
+          "too_large": "Tệp đó lớn hơn 4 MB.",
+          "not_json": "Không đọc được tệp đó dưới dạng JSON.",
+          "not_lottie": "Tệp đó không phải hoạt ảnh Lottie.",
+          "too_complex": "Hoạt ảnh đó có quá nhiều lớp, keyframe hoặc điểm.",
+          "invalid": "Không thể chuyển tệp Lottie đó thành hoạt ảnh."
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "Kéo và thả tệp ảnh, video, âm thanh hoặc PDF vào đây",
+    "hint": "hoặc nhấp để chọn từ máy tính của bạn. Tệp chỉ được đọc để lấy siêu dữ liệu và bị xóa sau khi phân tích; không có gì được chuyển đổi.",
+    "largeFile": "Các tệp lớn hơn {{size}} chỉ được kiểm tra khi bạn yêu cầu, để video lớn không bị tải lên ngoài ý muốn.",
+    "failed": "Không thể kiểm tra tệp. Có thể định dạng không được hỗ trợ hoặc tệp quá lớn so với gói của bạn."
+  },
+  "voiceTools": {
+    "loading": "Đang tải các công cụ giọng nói…",
+    "unavailable": {
+      "title": "Giọng nói hiện chưa dùng được",
+      "body": "Công cụ giọng nói đang tắt hoặc đang khởi động lại nên công cụ này không thể chạy lúc này. Chưa có gì bị tính vào hạn mức. Vui lòng thử lại sau.",
+      "shiftStillWorks": "Công cụ đổi cao độ bên dưới không cần công cụ giọng nói và vẫn dùng được."
+    },
+    "warmingUp": "Đang khởi động công cụ giọng nói, yêu cầu đầu tiên có thể mất tới 20 giây.",
+    "honesty": "Lời nói được tạo bằng giọng đã lưu hoặc giọng có sẵn mang một hình mờ âm thanh không nghe thấy được; âm thanh được thay đổi bằng công cụ đổi cao độ thì không có. Chỉ dùng giọng của chính bạn hoặc giọng bạn có quyền sử dụng. Không có gì bạn ghi âm hay tạo ra được dùng để huấn luyện bất kỳ mô hình nào, và các công cụ giọng nói chạy trên máy chủ của chính chúng tôi.",
+    "signIn": {
+      "title": "Đăng nhập để lưu giọng nói",
+      "body": "Một giọng nói đã lưu cần có chủ sở hữu và bản ghi sự đồng ý, nên việc sao chép giọng nói, giữ lại giọng nói đã thiết kế, chuyển sang một giọng nói và Giọng nói của tôi đều cần có tài khoản. Sẽ không có gì được tải lên cho đến khi bạn đăng nhập.",
+      "cta": "Đăng nhập"
+    },
+    "recorder": {
+      "record": "Ghi âm",
+      "recording": "Đang ghi âm",
+      "stop": "Dừng",
+      "cancel": "Hủy ghi âm",
+      "level": "Mức micro",
+      "or": "hoặc",
+      "upload": "Tải lên tệp âm thanh",
+      "remove": "Xóa",
+      "recorded": "Bản ghi âm của bạn, {{duration}}",
+      "uploaded": "{{name}}, {{duration}}",
+      "measuring": "Đang đọc độ dài của tệp…",
+      "unknownLength": "Không đọc được độ dài của tệp này trong trình duyệt; máy chủ sẽ kiểm tra.",
+      "tooShort": "Bản ghi âm dài {{seconds}} giây. Một giọng nói cần ít nhất 5 giây lời nói.",
+      "tooLong": "Bản ghi âm dài {{seconds}} giây. Hãy giữ trong 60 giây hoặc ít hơn.",
+      "referenceHint": "Ghi âm hoặc tải lên 5 đến 60 giây lời nói rõ ràng trong phòng yên tĩnh. Hãy đọc vài câu tự nhiên.",
+      "inputHint": "Ghi âm hoặc tải lên lời nói bạn muốn thay đổi.",
+      "micDenied": "Quyền truy cập micro đã bị chặn. Hãy cho phép micro cho trang này trên thanh địa chỉ của trình duyệt, hoặc tải lên một tệp thay thế.",
+      "micHostBlocked": "Trang chứa công cụ này chưa cho phép truy cập micro. Hãy tải lên một tệp thay thế.",
+      "micUnavailable": "Trình duyệt này không hỗ trợ ghi âm. Hãy tải lên một tệp âm thanh thay thế."
+    },
+    "consent": {
+      "label": "Đây là giọng của tôi, hoặc tôi có sự cho phép rõ ràng của người sở hữu giọng nói này.",
+      "note": "Chúng tôi lưu thời điểm bạn xác nhận điều này và phiên bản của nội dung này ({{version}}) cùng với giọng nói. Xem mục 8.11 của Điều khoản."
+    },
+    "clone": {
+      "title": "Tạo giọng nói từ bản ghi âm",
+      "nameLabel": "Tên giọng nói",
+      "namePlaceholder": "Giọng của tôi",
+      "languageLabel": "Ngôn ngữ của bản ghi âm",
+      "create": "Tạo giọng nói",
+      "creating": "Đang tạo giọng nói của bạn…",
+      "created": "Đã tạo giọng nói. Nghe thử trong Giọng nói của tôi.",
+      "signInToCreate": "Đăng nhập để tạo giọng nói",
+      "limitReached": "Bạn đã lưu {{used}} trên {{limit}} giọng nói theo gói của bạn. Hãy xóa một giọng trong Tài khoản, Giọng nói, hoặc nâng cấp để lưu thêm.",
+      "noSaving": "Gói của bạn không thể lưu giọng nói.",
+      "usage": "Đã lưu {{used}} trên {{limit}} giọng nói",
+      "usageUnlimited": "Đã lưu {{used}} giọng nói"
+    },
+    "myVoices": {
+      "title": "Giọng nói của tôi",
+      "empty": "Chưa có giọng nói nào được lưu.",
+      "preview": "Nghe thử {{name}}",
+      "use": "Dùng giọng nói này",
+      "inUse": "Đã chọn",
+      "manage": "Quản lý giọng nói của bạn trong Tài khoản",
+      "kinds": {
+        "cloned": "Sao chép",
+        "designed": "Thiết kế",
+        "preset": "Có sẵn"
+      }
+    },
+    "picker": {
+      "label": "Giọng nói",
+      "saved": "Giọng nói của tôi",
+      "presets": "Giọng nói có sẵn",
+      "none": "Chưa có giọng nói nào để dùng."
+    },
+    "speak": {
+      "title": "Tạo lời nói",
+      "textLabel": "Văn bản cần đọc",
+      "placeholder": "Nhập nội dung mà giọng nói sẽ đọc.",
+      "counter": "{{used}} trên {{max}} ký tự",
+      "overLimit": "Văn bản này dài hơn mức gói của bạn cho phép trong một yêu cầu ({{max}} ký tự).",
+      "languageLabel": "Ngôn ngữ",
+      "exaggerationLabel": "Cảm xúc",
+      "exaggerationHint": "Thấp hơn thì điềm tĩnh hơn, cao hơn thì giàu biểu cảm hơn.",
+      "generate": "Tạo lời nói",
+      "generating": "Đang tạo…",
+      "notAllowed": "Gói của bạn không bao gồm việc tạo lời nói."
+    },
+    "designer": {
+      "title": "Mô tả một giọng nói",
+      "descriptionLabel": "Mô tả",
+      "placeholder": "Ấm áp, trầm, hơi khàn, trung niên, điềm tĩnh",
+      "hint": "Mô tả giọng nói nên nghe như thế nào. Công cụ hiểu mô tả bằng tiếng Anh tốt nhất; các thẻ bên dưới thêm những đặc điểm thường gặp.",
+      "languageLabel": "Ngôn ngữ của bản nghe thử",
+      "languageNote": "Một giọng nói được thiết kế sẽ được tạo bằng một trong các ngôn ngữ này; sau khi được giữ lại, nó có thể nói mọi ngôn ngữ của công cụ lời nói.",
+      "chipGroups": {
+        "gender": "Giới tính",
+        "age": "Độ tuổi",
+        "accent": "Giọng vùng",
+        "tone": "Âm sắc",
+        "pace": "Tốc độ"
+      },
+      "chips": {
+        "female": "Nữ",
+        "male": "Nam",
+        "neutral": "Trung tính",
+        "young": "Thanh niên",
+        "middleAged": "Trung niên",
+        "older": "Lớn tuổi",
+        "american": "Mỹ",
+        "british": "Anh",
+        "australian": "Úc",
+        "irish": "Ireland",
+        "warm": "Ấm áp",
+        "bright": "Trong sáng",
+        "deep": "Trầm",
+        "raspy": "Khàn",
+        "soft": "Nhẹ nhàng",
+        "slow": "Chậm",
+        "measured": "Từ tốn",
+        "fast": "Nhanh"
+      },
+      "preview": "Nghe thử",
+      "previewing": "Đang tạo bản nghe thử…",
+      "previewsLeft": "Lượt nghe thử còn lại: {{left}} trên {{max}}",
+      "previewsUsed": "Bạn đã dùng hết 3 lượt nghe thử cho mô tả này. Hãy giữ lại giọng nói, hoặc đổi mô tả để nghe thử lại.",
+      "previewLabel": "Bản nghe thử của giọng nói đã mô tả",
+      "keepTitle": "Giữ giọng nói này",
+      "nameLabel": "Tên giọng nói",
+      "keep": "Giữ giọng nói này",
+      "keeping": "Đang lưu giọng nói…",
+      "kept": "Đã lưu giọng nói. Giờ nó nằm trong Giọng nói của tôi.",
+      "signInToKeep": "Đăng nhập để giữ giọng nói này"
+    },
+    "changer": {
+      "modeLabel": "Cách thay đổi",
+      "modes": {
+        "shift": "Đổi cao độ (tức thì)",
+        "convert": "Chuyển sang một giọng nói (AI)"
+      },
+      "shiftHint": "Đổi cao độ và formant bằng rubberband, tức thì. Được tính là một thao tác. Kết quả không có hình mờ âm thanh.",
+      "convertHint": "Làm cho bản ghi âm nghe như một giọng nói đã lưu hoặc có sẵn. Được tính là một tác vụ AI. Kết quả mang một hình mờ âm thanh không nghe thấy được.",
+      "convertNotInPlan": "Chuyển sang một giọng nói không nằm trong gói của bạn.",
+      "upgrade": "Xem các gói",
+      "signInToConvert": "Đăng nhập để chuyển sang một giọng nói",
+      "targetLabel": "Chuyển sang",
+      "convert": "Chuyển đổi",
+      "converting": "Đang chuyển đổi…"
+    },
+    "shifter": {
+      "semitonesLabel": "Cao độ",
+      "semitonesValue": "{{value}} nửa cung",
+      "formantLabel": "Formant",
+      "formants": {
+        "preserved": "Giữ nguyên đặc trưng của giọng",
+        "shifted": "Đổi cùng với cao độ"
+      },
+      "presetsLabel": "Mẫu có sẵn",
+      "presets": {
+        "deeper": "Trầm hơn",
+        "higher": "Cao hơn",
+        "child": "Như trẻ em",
+        "elder": "Lớn tuổi",
+        "telephone": "Điện thoại"
+      },
+      "shift": "Đổi giọng",
+      "shifting": "Đang đổi…"
+    },
+    "result": {
+      "working": "Đang xử lý…",
+      "failed": "Tác vụ giọng nói đã thất bại. Nó không bị tính vào hạn mức.",
+      "downloadMp3": "Tải xuống MP3",
+      "downloadWav": "Tải xuống WAV",
+      "wavPreparing": "Đang chuẩn bị WAV…",
+      "wavFailed": "Không thể tạo WAV trong trình duyệt này. Hãy tải xuống MP3 thay thế.",
+      "wavNote": "WAV được giải mã từ MP3 ngay trong trình duyệt của bạn.",
+      "another": "Bắt đầu lại"
+    },
+    "darkroom": {
+      "title": "Tạo lồng tiếng",
+      "description": "Nhập kịch bản, chọn giọng nói và ngôn ngữ. Lồng tiếng sẽ được thêm vào phương tiện của dự án này và đặt tại đầu phát.",
+      "placeholder": "Nhập kịch bản lồng tiếng.",
+      "generate": "Tạo lồng tiếng",
+      "presetsOnly": "Khi chưa đăng nhập, bạn có thể dùng các giọng nói đặt sẵn. Hãy đăng nhập để dùng giọng nói bạn đã lưu.",
+      "added": "Đã thêm lồng tiếng tại đầu phát",
+      "noAsset": "Đã tạo lồng tiếng nhưng không thêm được vào dự án. Vui lòng thử lại."
+    },
+    "errors": {
+      "sign_in_required": "Đăng nhập để lưu và dùng các giọng nói của riêng bạn.",
+      "consent_required": "Hãy đánh dấu vào ô để xác nhận đây là giọng của bạn, hoặc bạn có sự cho phép rõ ràng của người nói.",
+      "reference_required": "Hãy ghi âm hoặc tải lên 5 đến 60 giây lời nói trước.",
+      "reference_too_short": "Bản ghi âm phải dài ít nhất 5 giây.",
+      "reference_too_long": "Bản ghi âm phải dài tối đa 60 giây.",
+      "reference_too_large": "Tệp ghi âm quá lớn.",
+      "no_speech_detected": "Chúng tôi không nghe thấy lời nói trong bản ghi âm đó. Hãy ghi âm vài câu trong phòng yên tĩnh.",
+      "not_audio": "Tệp đó không phải là bản ghi âm mà chúng tôi đọc được.",
+      "name_invalid": "Hãy đặt cho giọng nói một cái tên dài từ 1 đến 60 ký tự.",
+      "language_not_supported": "Ngôn ngữ đó không được hỗ trợ cho giọng nói này.",
+      "voice_limit": "Bạn đã đạt số giọng nói được lưu theo gói của mình ({{limit}}). Hãy xóa một giọng hoặc nâng cấp để lưu thêm.",
+      "text_required": "Hãy nhập nội dung cần nói.",
+      "text_too_long": "Gói của bạn cho phép tối đa {{limit}} ký tự mỗi yêu cầu.",
+      "exaggeration_invalid": "Cảm xúc phải nằm trong khoảng từ 0,25 đến 2.",
+      "voice_convert_not_in_plan": "Chuyển sang một giọng nói không có trong gói của bạn.",
+      "voice_input_too_long": "Gói của bạn cho phép bản ghi âm dài tối đa {{limit}} giây ở đây.",
+      "input_required": "Hãy thêm bản ghi âm bạn muốn thay đổi.",
+      "input_too_large": "Bản ghi âm quá lớn so với gói của bạn.",
+      "voice_required": "Hãy chọn một giọng nói để chuyển sang.",
+      "voice_not_found": "Giọng nói đó không còn tồn tại.",
+      "preset_not_found": "Giọng nói có sẵn đó không dùng được.",
+      "description_required": "Hãy mô tả giọng nói bạn muốn.",
+      "description_too_long": "Hãy giữ mô tả dưới 1000 ký tự.",
+      "preview_limit": "Bạn đã nghe thử mô tả này ba lần trong giờ qua. Hãy giữ lại giọng nói, hoặc đổi mô tả.",
+      "session_required": "Nghe thử cần có phiên trình duyệt. Hãy tải lại trang và thử lại.",
+      "semitones_invalid": "Cao độ phải nằm trong khoảng từ -12 đến 12 nửa cung.",
+      "shift_invalid": "Các thiết lập đổi giọng đó không hợp lệ.",
+      "voices_unavailable": "Công cụ giọng nói hiện không khả dụng. Chưa có gì bị tính vào hạn mức; hãy thử lại sau ít phút.",
+      "voices_storage_unavailable": "Các giọng nói đã lưu tạm thời không khả dụng. Chưa có gì bị tính vào hạn mức.",
+      "voices_timeout": "Công cụ giọng nói phản hồi quá lâu. Chưa có gì bị tính vào hạn mức.",
+      "voice_request_refused": "Công cụ giọng nói đã từ chối yêu cầu đó.",
+      "upload_failed": "Tải lên không thành công. Vui lòng thử lại.",
+      "job_failed": "Không thể bắt đầu tác vụ. Vui lòng thử lại.",
+      "invalid_body": "Có nội dung trong yêu cầu không hợp lệ. Hãy tải lại trang và thử lại.",
+      "rate_limited": "Có quá nhiều yêu cầu giọng nói trong giờ qua. Vui lòng thử lại sau.",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+    }
+  }
+}

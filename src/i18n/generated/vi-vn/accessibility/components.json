@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "Xem trước"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "Về định dạng hình ảnh đầu ra",
+    "dpiTooltip": "Về chất lượng kết xuất (DPI)",
+    "pagesTooltip": "Về cách chọn trang",
+    "qualityTooltip": "Về chất lượng JPG"
+  },
+  "ad": {
+    "label": "Quảng cáo",
+    "close": "Đóng quảng cáo"
+  },
+  "modals": {
+    "close": "Đóng",
+    "previousStep": "Bước trước",
+    "nextStep": "Bước tiếp theo"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "Điểm kéo góc trên bên trái",
+    "topRightHandle": "Điểm kéo góc trên bên phải",
+    "bottomLeftHandle": "Điểm kéo góc dưới bên trái",
+    "bottomRightHandle": "Điểm kéo góc dưới bên phải"
+  },
+  "mediaTrimModal": {
+    "scrubber": "Thanh kéo cắt đoạn",
+    "playToggle": "Phát / tạm dừng bản xem trước"
+  },
+  "overlays": {
+    "canvas": "Vùng chọn",
+    "removeRegion": "Xóa vùng này",
+    "previousPage": "Trang trước",
+    "nextPage": "Trang sau"
+  },
+  "quotaMeter": {
+    "gauge": "Đã dùng {{used}} / {{limit}} thao tác trong ngày",
+    "gaugeUnlimited": "Không giới hạn thao tác trong ngày",
+    "aiGauge": "{{label}} {{used}} / {{limit}} tác vụ AI trong ngày đã dùng",
+    "openUpgrade": "Xem cách tăng hạn mức hằng ngày",
+    "openAccount": "Mở tài khoản của bạn"
+  },
+  "accountMenu": {
+    "open": "Menu tài khoản"
+  }
+}

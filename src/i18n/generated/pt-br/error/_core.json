@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "Ocorreu um erro desconhecido. Tente de novo.",
+    "unexpected": "Algo deu errado. Tente de novo.",
+    "networkOffline": "Parece que você está offline. Verifique sua conexão e tente de novo.",
+    "tryAgainLater": "Tente de novo em instantes.",
+    "missingFile": "Nenhum arquivo selecionado.",
+    "missingField": "Este campo é obrigatório."
+  },
+  "upload": {
+    "fileTooLarge": "O arquivo é grande demais.",
+    "unsupportedFormat": "Formato de arquivo não suportado.",
+    "uploadFailed": "Falha no envio. Tente de novo.",
+    "missingFile": "Escolha um arquivo primeiro."
+  },
+  "conversion": {
+    "failed": "Falha na conversão.",
+    "failedTryAgain": "Falha na conversão. Tente de novo.",
+    "previewFailed": "Não foi possível carregar a pré-visualização da imagem convertida",
+    "downloadFailed": "Falha no download. Tente de novo."
+  },
+  "transcribe": {
+    "failed": "Falha na transcrição.",
+    "failedTryAgain": "Falha na transcrição. Tente de novo."
+  },
+  "transcode": {
+    "failed": "Falha na transcodificação.",
+    "failedTryAgain": "Falha na transcodificação. Tente de novo."
+  },
+  "validation": {
+    "required": "Este campo é obrigatório.",
+    "invalidNumber": "Digite um número válido.",
+    "outOfRange": "O valor deve estar entre {{min}} e {{max}}.",
+    "tooShort": "Deve ter pelo menos {{count}} caracteres.",
+    "tooLong": "Deve ter no máximo {{count}} caracteres.",
+    "invalidEmail": "Digite um endereço de e-mail válido.",
+    "invalidUrl": "Digite uma URL válida."
+  },
+  "auth": {
+    "signInFailed": "Falha ao entrar. Tente de novo.",
+    "signUpFailed": "Falha ao criar a conta. Tente de novo.",
+    "passwordTooShort": "A senha deve ter pelo menos 8 caracteres.",
+    "passwordsDoNotMatch": "As senhas não coincidem.",
+    "invalidCredentials": "E-mail ou senha incorretos.",
+    "emailRequired": "O e-mail é obrigatório.",
+    "passwordRequired": "A senha é obrigatória.",
+    "tryAgain": "Tente de novo.",
+    "userNotFound": "Nenhuma conta encontrada com este e-mail.",
+    "wrongPassword": "Senha incorreta.",
+    "emailAlreadyInUse": "Já existe uma conta com este e-mail.",
+    "weakPassword": "A senha deve ter pelo menos 6 caracteres.",
+    "invalidEmail": "Informe um endereço de e-mail válido.",
+    "tooManyRequests": "Muitas tentativas. Aguarde alguns minutos e tente de novo.",
+    "network": "Erro de rede. Verifique sua conexão e tente de novo."
+  },
+  "ad": {
+    "loadFailed": "Não foi possível carregar o anúncio."
+  },
+  "forms": {
+    "fixErrors": "Corrija os seguintes erros:",
+    "invalidValue": "Valor inválido",
+    "fieldRequired": "Este campo é obrigatório.",
+    "invalidNumber": "Digite um número válido.",
+    "outOfRange": "O valor deve estar entre {{min}} e {{max}}.",
+    "faceDetectFailed": "Falha na detecção de rostos. Tente de novo.",
+    "removeObjectFailed": "Falha na remoção do objeto. Tente de novo.",
+    "imageForm": {
+      "noFile": "Escolha uma imagem primeiro.",
+      "exifLoadFailed": "Não foi possível ler os metadados EXIF deste arquivo."
+    },
+    "videoForm": {
+      "noFile": "Escolha um vídeo primeiro."
+    },
+    "audioForm": {
+      "noFile": "Escolha um arquivo de áudio primeiro."
+    },
+    "transcribe": {
+      "noFile": "Escolha um arquivo de mídia primeiro.",
+      "invalidLanguage": "Digite um código de idioma BCP-47 válido."
+    },
+    "transcode": {
+      "probeFailed": "Não foi possível analisar o arquivo de origem. Tente outro arquivo."
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "Falha na tradução das legendas.",
+      "missingFile": "Envie um arquivo de legendas primeiro."
+    },
+    "stitchAudioToVideo": {
+      "failed": "Falha ao unir áudio e vídeo.",
+      "missingTracks": "Adicione pelo menos uma faixa de áudio."
+    },
+    "extract": {
+      "failed": "Falha na extração.",
+      "noStreams": "Nenhum fluxo correspondente encontrado neste arquivo."
+    }
+  },
+  "errorBoundary": {
+    "title": "Algo deu errado",
+    "body": "Um erro inesperado interrompeu esta página. Seus arquivos não foram perdidos: você pode tentar de novo e, se o problema continuar, recarregue a página.",
+    "tryAgain": "Tentar de novo",
+    "goHome": "Ir para a página inicial"
+  },
+  "toasts": {
+    "conversionStartFailed": "Não foi possível iniciar a conversão.",
+    "transcriptionStartFailed": "Não foi possível iniciar a transcrição.",
+    "transcodeStartFailed": "Não foi possível iniciar a transcodificação.",
+    "videoAnalysisFailed": "Não foi possível analisar o vídeo.",
+    "translationStartFailed": "Não foi possível iniciar a tradução.",
+    "scanStartFailed": "Não foi possível iniciar a digitalização.",
+    "jobStartFailed": "Não foi possível iniciar o trabalho.",
+    "stitchStartFailed": "Não foi possível iniciar a união.",
+    "restorationStartFailed": "Não foi possível iniciar a restauração.",
+    "identificationFailed": "Não foi possível identificar o arquivo.",
+    "jobStatusCheckFailed": "Não foi possível verificar o status do trabalho.",
+    "exportStartFailed": "Não foi possível iniciar a exportação.",
+    "exportFailed": "Falha na exportação.",
+    "saveProjectFailed": "Não foi possível salvar o projeto.",
+    "createProjectFailed": "Não foi possível criar o projeto.",
+    "uploadFailed": "Falha no envio.",
+    "audioProcessingFailed": "Falha no processamento do áudio.",
+    "unexpectedFallback": "Ocorreu um erro inesperado.",
+    "conversionFailedFallback": "O processo de conversão encontrou um erro.",
+    "unableToGetProgress": "Não foi possível obter o progresso da conversão."
+  }
+}

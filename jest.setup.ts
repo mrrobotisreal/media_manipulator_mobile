@@ -71,3 +71,5 @@ jest.mock('expo-network', () => ({
   addNetworkStateListener: jest.fn(() => ({ remove: jest.fn() })),
   getNetworkStateAsync: jest.fn(() => Promise.resolve({ isConnected: true })),
 }));
+
+jest.mock('expo-updates', () => ({ reloadAsync: jest.fn(() => Promise.resolve()) }));

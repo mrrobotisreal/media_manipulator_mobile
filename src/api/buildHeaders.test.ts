@@ -39,7 +39,7 @@ describe('buildHeaders', () => {
   it('uses the settings locale for Accept-Language', async () => {
     const { store } = await makeReadyStore();
     store.dispatch(localeSet('ru'));
-    expect((await buildHeaders())['Accept-Language']).toBe('ru');
+    expect((await buildHeaders())['Accept-Language']).toBe('ru-RU');
   });
 
   it('swallows a throwing token provider', async () => {

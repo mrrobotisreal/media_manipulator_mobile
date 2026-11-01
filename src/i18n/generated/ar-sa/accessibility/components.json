@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "معاينة"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "حول تنسيق الصورة الناتجة",
+    "dpiTooltip": "حول جودة العرض (DPI)",
+    "pagesTooltip": "حول اختيار الصفحات",
+    "qualityTooltip": "حول جودة JPG"
+  },
+  "ad": {
+    "label": "إعلان",
+    "close": "إغلاق الإعلان"
+  },
+  "modals": {
+    "close": "إغلاق",
+    "previousStep": "الخطوة السابقة",
+    "nextStep": "الخطوة التالية"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "مقبض الزاوية العلوية اليسرى",
+    "topRightHandle": "مقبض الزاوية العلوية اليمنى",
+    "bottomLeftHandle": "مقبض الزاوية السفلية اليسرى",
+    "bottomRightHandle": "مقبض الزاوية السفلية اليمنى"
+  },
+  "mediaTrimModal": {
+    "scrubber": "شريط تحديد القص",
+    "playToggle": "تشغيل / إيقاف المعاينة مؤقتًا"
+  },
+  "overlays": {
+    "canvas": "لوحة التحديد",
+    "removeRegion": "إزالة هذه المنطقة",
+    "previousPage": "الصفحة السابقة",
+    "nextPage": "الصفحة التالية"
+  },
+  "quotaMeter": {
+    "gauge": "تم استخدام {{used}} من {{limit}} عملية يومية",
+    "gaugeUnlimited": "لا يوجد حد يومي للعمليات",
+    "aiGauge": "{{label}} {{used}} / {{limit}}: مهام الذكاء الاصطناعي اليومية المستخدمة",
+    "openUpgrade": "تعرّف على كيفية الحصول على حصة يومية أكبر",
+    "openAccount": "فتح حسابك"
+  },
+  "accountMenu": {
+    "open": "قائمة الحساب"
+  }
+}

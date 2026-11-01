@@ -1,10 +1,11 @@
 import * as Localization from 'expo-localization';
+import { resolveLocale } from '@/i18n/resolveLocale';
 import type { RootState } from '@/state/store';
 
 /**
- * Locale for Accept-Language: the user's override, else the device's, else en-US.
- * MA05 re-points this at the i18n active locale without changing callers.
+ * The locale for Accept-Language and the account sync: the same code the UI resolves
+ * (override, else best match of the device locales, else en-US).
  */
 export function getRequestLocale(state: Pick<RootState, 'settings'>): string {
-  return state.settings.locale ?? Localization.getLocales()[0]?.languageTag ?? 'en-US';
+  return resolveLocale(state.settings.locale, Localization.getLocales());
 }

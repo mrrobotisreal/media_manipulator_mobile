@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "확인",
+    "cancel": "취소",
+    "retry": "다시 시도",
+    "close": "닫기",
+    "continue": "계속",
+    "done": "완료",
+    "loading": "불러오는 중",
+    "processing": "처리 중",
+    "signOut": "로그아웃",
+    "back": "뒤로"
+  },
+  "tabs": {
+    "tools": "도구",
+    "history": "기록",
+    "account": "계정"
+  },
+  "placeholders": {
+    "toolsBody": "도구는 MA10에서 제공됩니다.",
+    "historyBody": "작업이 여기에 표시됩니다.",
+    "accountBody": "계정은 MA15에서 제공됩니다.",
+    "signInBody": "로그인은 MA04에서 제공됩니다",
+    "openShell": "앱 셸 열기",
+    "errorBoundary": "문제가 발생했습니다. 앱을 다시 시작하세요."
+  },
+  "language": {
+    "title": "언어",
+    "system": "시스템 기본값",
+    "rtlReloadTitle": "레이아웃 방향을 바꾸려면 다시 시작",
+    "rtlReloadBody": "이 언어를 오른쪽에서 왼쪽으로 표시하려면 앱을 다시 시작해야 합니다.",
+    "rtlReloadBodyLtr": "이 언어를 왼쪽에서 오른쪽으로 표시하려면 앱을 다시 시작해야 합니다.",
+    "rtlReloadConfirm": "지금 다시 시작"
+  }
+}

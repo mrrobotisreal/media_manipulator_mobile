@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "תצוגה מקדימה"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "מידע על פורמט תמונת הפלט",
+    "dpiTooltip": "מידע על איכות העיבוד (DPI)",
+    "pagesTooltip": "מידע על בחירת עמודים",
+    "qualityTooltip": "מידע על איכות ה־JPG"
+  },
+  "ad": {
+    "label": "פרסומת",
+    "close": "סגירת הפרסומת"
+  },
+  "modals": {
+    "close": "סגירה",
+    "previousStep": "השלב הקודם",
+    "nextStep": "השלב הבא"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "נקודת אחיזה שמאלית עליונה",
+    "topRightHandle": "נקודת אחיזה ימנית עליונה",
+    "bottomLeftHandle": "נקודת אחיזה שמאלית תחתונה",
+    "bottomRightHandle": "נקודת אחיזה ימנית תחתונה"
+  },
+  "mediaTrimModal": {
+    "scrubber": "מחוון גזירה",
+    "playToggle": "הפעלה / השהיה של התצוגה המקדימה"
+  },
+  "overlays": {
+    "canvas": "משטח בחירה",
+    "removeRegion": "הסרת האזור הזה",
+    "previousPage": "העמוד הקודם",
+    "nextPage": "העמוד הבא"
+  },
+  "quotaMeter": {
+    "gauge": "נוצלו {{used}} מתוך {{limit}} פעולות יומיות",
+    "gaugeUnlimited": "אין מגבלת פעולות יומית",
+    "aiGauge": "{{label}} {{used}} / {{limit}}: משימות AI יומיות שנוצלו",
+    "openUpgrade": "כך תוכלו לקבל מכסה יומית גדולה יותר",
+    "openAccount": "פתיחת החשבון שלך"
+  },
+  "accountMenu": {
+    "open": "תפריט החשבון"
+  }
+}

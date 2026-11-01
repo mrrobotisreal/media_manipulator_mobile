@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "An unknown error occurred. Please try again.",
+    "unexpected": "Something went wrong. Please try again.",
+    "networkOffline": "You appear to be offline. Check your connection and try again.",
+    "tryAgainLater": "Please try again in a moment.",
+    "missingFile": "No file selected.",
+    "missingField": "This field is required."
+  },
+  "upload": {
+    "fileTooLarge": "File is too large.",
+    "unsupportedFormat": "Unsupported file format.",
+    "uploadFailed": "Upload failed. Please try again.",
+    "missingFile": "Please choose a file first."
+  },
+  "conversion": {
+    "failed": "Conversion failed.",
+    "failedTryAgain": "Conversion failed. Please try again.",
+    "previewFailed": "Failed to load converted image preview",
+    "downloadFailed": "Download failed. Please try again."
+  },
+  "transcribe": {
+    "failed": "Transcription failed.",
+    "failedTryAgain": "Transcription failed. Please try again."
+  },
+  "transcode": {
+    "failed": "Transcode failed.",
+    "failedTryAgain": "Transcode failed. Please try again."
+  },
+  "validation": {
+    "required": "This field is required.",
+    "invalidNumber": "Enter a valid number.",
+    "outOfRange": "Value must be between {{min}} and {{max}}.",
+    "tooShort": "Must be at least {{count}} characters.",
+    "tooLong": "Must be at most {{count}} characters.",
+    "invalidEmail": "Enter a valid email address.",
+    "invalidUrl": "Enter a valid URL."
+  },
+  "auth": {
+    "signInFailed": "Sign-in failed. Please try again.",
+    "signUpFailed": "Sign-up failed. Please try again.",
+    "passwordTooShort": "Password must be at least 8 characters.",
+    "passwordsDoNotMatch": "Passwords do not match.",
+    "invalidCredentials": "Email or password is incorrect.",
+    "emailRequired": "Email is required.",
+    "passwordRequired": "Password is required.",
+    "tryAgain": "Please try again.",
+    "userNotFound": "No account found with this email.",
+    "wrongPassword": "Incorrect password.",
+    "emailAlreadyInUse": "An account with this email already exists.",
+    "weakPassword": "Password should be at least 6 characters.",
+    "invalidEmail": "Enter a valid email address.",
+    "tooManyRequests": "Too many attempts. Wait a few minutes and try again.",
+    "network": "Network error. Check your connection and try again."
+  },
+  "ad": {
+    "loadFailed": "Advertisement failed to load."
+  },
+  "forms": {
+    "fixErrors": "Please fix the following errors:",
+    "invalidValue": "Invalid value",
+    "fieldRequired": "This field is required.",
+    "invalidNumber": "Enter a valid number.",
+    "outOfRange": "Value must be between {{min}} and {{max}}.",
+    "faceDetectFailed": "Face detection failed. Please try again.",
+    "removeObjectFailed": "Object removal failed. Please try again.",
+    "imageForm": {
+      "noFile": "Choose an image first.",
+      "exifLoadFailed": "Could not read EXIF metadata for this file."
+    },
+    "videoForm": {
+      "noFile": "Choose a video first."
+    },
+    "audioForm": {
+      "noFile": "Choose an audio file first."
+    },
+    "transcribe": {
+      "noFile": "Choose a media file first.",
+      "invalidLanguage": "Enter a valid BCP-47 language code."
+    },
+    "transcode": {
+      "probeFailed": "Failed to probe the source file. Try a different file."
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "Caption translation failed.",
+      "missingFile": "Upload a caption file first."
+    },
+    "stitchAudioToVideo": {
+      "failed": "Audio/video stitch failed.",
+      "missingTracks": "Add at least one audio track."
+    },
+    "extract": {
+      "failed": "Extraction failed.",
+      "noStreams": "No matching streams found in this file."
+    }
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "body": "An unexpected error interrupted this page. Your files were not lost — you can try again, and if the problem continues, reload the page.",
+    "tryAgain": "Try again",
+    "goHome": "Go to homepage"
+  },
+  "toasts": {
+    "conversionStartFailed": "Failed to start conversion.",
+    "transcriptionStartFailed": "Failed to start transcription.",
+    "transcodeStartFailed": "Failed to start transcode.",
+    "videoAnalysisFailed": "Failed to analyze video.",
+    "translationStartFailed": "Failed to start translation.",
+    "scanStartFailed": "Failed to start scan.",
+    "jobStartFailed": "Failed to start job.",
+    "stitchStartFailed": "Failed to start stitch job.",
+    "restorationStartFailed": "Failed to start restoration.",
+    "identificationFailed": "Failed to identify file.",
+    "jobStatusCheckFailed": "Failed to check job status.",
+    "exportStartFailed": "Failed to start export.",
+    "exportFailed": "Export failed.",
+    "saveProjectFailed": "Failed to save project.",
+    "createProjectFailed": "Failed to create project.",
+    "uploadFailed": "Upload failed.",
+    "audioProcessingFailed": "Audio processing failed.",
+    "unexpectedFallback": "An unexpected error occurred.",
+    "conversionFailedFallback": "The conversion process encountered an error.",
+    "unableToGetProgress": "Unable to get conversion progress."
+  }
+}

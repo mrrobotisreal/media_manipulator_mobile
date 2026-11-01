@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AccessibilityInfo } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import Animated, {
   Easing,
   cancelAnimation,
@@ -11,14 +12,8 @@ import Animated, {
 import { ApertureMark } from './ApertureMark';
 
 /** Rotating aperture; static when the OS asks for reduced motion. */
-export function ProcessingIndicator({
-  size = 32,
-  label = 'Processing',
-}: {
-  size?: number;
-  label?: string;
-}) {
-  // i18n: MA05
+export function ProcessingIndicator({ size = 32, label }: { size?: number; label?: string }) {
+  const { t } = useTranslation();
   const [reduced, setReduced] = useState(false);
   const r = useSharedValue(0);
   useEffect(() => {
@@ -37,7 +32,11 @@ export function ProcessingIndicator({
   }, [reduced, r]);
   const style = useAnimatedStyle(() => ({ transform: [{ rotate: `${r.value}deg` }] }));
   return (
-    <Animated.View accessibilityRole="progressbar" accessibilityLabel={label} style={style}>
+    <Animated.View
+      accessibilityRole="progressbar"
+      accessibilityLabel={label ?? t('common.processing')}
+      style={style}
+    >
       <ApertureMark size={size} />
     </Animated.View>
   );

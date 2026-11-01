@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Media Manipulatorのホーム",
+    "openMenu": "メニューを開く",
+    "github": "GitHubで見る",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "テーマを切り替え",
+    "languageMenu": "言語を変更",
+    "navIcon": "Media Manipulatorのアイコン",
+    "winappsLogo": "WinAppsのロゴ",
+    "creatvLogo": "CreaTVのロゴ",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "本文へスキップ",
+  "footer": {
+    "homeLink": "Media Manipulatorのホーム",
+    "navIcon": "Media Manipulatorのアイコン"
+  },
+  "home": {
+    "popularTools": "人気のツール",
+    "closePreview": "プレビューを閉じる"
+  },
+  "notFound": {
+    "recoveryRoutes": "復帰ルート"
+  },
+  "loading": {
+    "label": "読み込み中"
+  },
+  "languageSelector": {
+    "trigger": "言語を変更",
+    "icon": "翻訳アイコン"
+  },
+  "common": {
+    "close": "閉じる",
+    "open": "開く",
+    "loading": "読み込み中",
+    "moreOptions": "その他のオプション"
+  },
+  "transcribeForm": {
+    "formatTooltip": "文字起こしの出力形式について",
+    "languageTooltip": "言語ヒントについて"
+  },
+  "audioForm": {
+    "aiTooltip": "AI音声ツールについて"
+  },
+  "videoForm": {
+    "aiTooltip": "AI動画ツールについて"
+  },
+  "imageForm": {
+    "aiTooltip": "AI画像ツールについて",
+    "selectiveFacesTooltip": "選択した顔のプライバシー保護について",
+    "removeObjectTooltip": "オブジェクトの除去について",
+    "metadataTooltip": "メタデータの扱いについて",
+    "vectorizeThresholdTooltip": "ベクター化のしきい値について"
+  }
+}

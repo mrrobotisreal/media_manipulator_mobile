@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "キャンセル",
+    "retry": "再試行",
+    "close": "閉じる",
+    "continue": "続ける",
+    "done": "完了",
+    "loading": "読み込み中",
+    "processing": "処理中",
+    "signOut": "ログアウト",
+    "back": "戻る"
+  },
+  "tabs": {
+    "tools": "ツール",
+    "history": "履歴",
+    "account": "アカウント"
+  },
+  "placeholders": {
+    "toolsBody": "ツールはMA10で登場します。",
+    "historyBody": "ジョブはここに表示されます。",
+    "accountBody": "アカウントはMA15で登場します。",
+    "signInBody": "ログインはMA04で登場します",
+    "openShell": "アプリシェルを開く",
+    "errorBoundary": "問題が発生しました。アプリを再起動してください。"
+  },
+  "language": {
+    "title": "言語",
+    "system": "システムのデフォルト",
+    "rtlReloadTitle": "再起動してレイアウトの方向を切り替える",
+    "rtlReloadBody": "この言語を右から左に表示するには、アプリの再起動が必要です。",
+    "rtlReloadBodyLtr": "この言語を左から右に表示するには、アプリの再起動が必要です。",
+    "rtlReloadConfirm": "今すぐ再起動"
+  }
+}

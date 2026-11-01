@@ -1,0 +1,1406 @@
+{
+  "transcribeResultView": {
+    "loading": "文字起こし結果を読み込み中...",
+    "noResult": "このジョブの文字起こし結果はありません。",
+    "complete": "文字起こし完了",
+    "outputFormat": "出力形式：",
+    "language": "言語：{{language}}",
+    "duration": "長さ：{{duration}}",
+    "noAudioStream": "音声ストリームなし",
+    "noSpeech": "認識できる発話なし",
+    "nothingToTranscribe": "文字起こしする内容がありません",
+    "noTranscriptGenerated": "このファイルからは文字起こしを生成できませんでした。",
+    "transcriptHeader_other": "文字起こし（{{count}}セグメント）",
+    "aiSummaryTitle": "AI要約と安全性レビュー",
+    "analysisRunning": "バックグラウンドで要約と安全性レビューを実行中...",
+    "analysisError": "解析エラー：{{error}}",
+    "summary": "要約",
+    "extendedSummary": "詳細な要約",
+    "safetyBadge": "安全性：{{rating}}",
+    "harmfulFlagged": "有害な可能性のあるコンテンツを検出",
+    "harmfulNone": "有害なコンテンツは検出されませんでした",
+    "sentimentBadge": "感情：{{label}}",
+    "notesLabel": "メモ：{{notes}}",
+    "summaryPending": "解析ジョブが完了すると、要約と安全性レビューがここに表示されます。",
+    "unknown": "不明"
+  },
+  "summarize": {
+    "loading": "要約が利用できるか確認しています…",
+    "unavailable": "動画・音声の要約は一時的にご利用いただけません。しばらくしてからもう一度お試しください。文字起こしのページは引き続きご利用いただけます。",
+    "notInPlan": "ご利用のプランには要約が含まれていません。",
+    "signIn": {
+      "title": "要約するにはサインインしてください",
+      "body": "要約は自社のGPUサーバーで実行され、無料アカウントが必要です。サインインまたはアカウントを作成してから、ファイルをアップロードしてください。",
+      "button": "サインイン",
+      "signup": "無料アカウントを作成"
+    },
+    "uploadHintVideo": "動画または音声ファイル",
+    "uploadHintAudio": "音声ファイル",
+    "outputLanguage": "要約の言語",
+    "sameAsSpeech": "音声と同じ言語",
+    "depth": {
+      "label": "詳しさ",
+      "standard": "標準",
+      "deep": "詳細",
+      "hint": "詳細では、より大きなモデルで要約を作成します。時間がかかります。"
+    },
+    "note": "1日の利用枠のAIジョブを1回分使用します。失敗したジョブはカウントされません。",
+    "noteFrames": "ご利用のプランでは、動画から最大{{frames}}フレームを読み取ります。1日の利用枠のAIジョブを1回分使用します。失敗したジョブはカウントされません。",
+    "start": "要約する",
+    "stagesTitle": "進行状況",
+    "stages": {
+      "probe": "ファイルを読み込み中",
+      "audio": "音声を文字起こし中",
+      "frames": "フレームを選択中",
+      "vision": "フレームを解析中",
+      "synthesis": "要約を作成中",
+      "render": "結果を整形中"
+    },
+    "status": {
+      "pending": "待機中",
+      "processing": "処理中",
+      "completed": "完了",
+      "skipped": "スキップ",
+      "failed": "失敗"
+    },
+    "framesCount": "フレーム数：{{count}}",
+    "errors": {
+      "signin_required": "要約するにはサインインしてください。",
+      "summary_not_in_plan": "ご利用のプランには要約が含まれていません。",
+      "summary_unavailable": "要約は一時的にご利用いただけません。しばらくしてからもう一度お試しください。",
+      "unreadable_media": "このファイルを音声または動画として読み込めませんでした。",
+      "no_audio_or_video": "このファイルには要約できる音声も動画もありません。",
+      "file_too_large": "このファイルは、ご利用のプランで許可されているサイズまたは長さを超えています。",
+      "upload_not_found": "アップロードが見つかりませんでした。もう一度お試しください。",
+      "quota_exceeded": "本日のAIジョブの利用枠をすべて使い切りました。",
+      "invalid_request": "リクエストが受け付けられませんでした。ページを再読み込みして、もう一度お試しください。",
+      "unknown": "要約を開始できませんでした。もう一度お試しください。"
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "{{hint}}をここにドロップ",
+    "selectHint": "またはクリックしてパソコンから選択。ゲストのファイルは24時間保存されます。無料アカウントなら24時間から2年までの間で選べます。",
+    "selectFile": "ファイルを選択",
+    "removeFile": "ファイルを削除",
+    "uploadingPercent": "アップロード中 {{percent}}%",
+    "workingOnFile": "ファイルを処理中…",
+    "previewResult": "結果をプレビュー",
+    "downloadResult": "結果をダウンロード",
+    "jobFailed": "ジョブが失敗しました。別のファイルを試すか、ページを再読み込みしてください。",
+    "resultPreview": "結果のプレビュー",
+    "toggleHint": "元の入力と完成した結果を切り替えます。",
+    "closePreview": "プレビューを閉じる",
+    "loadingPreview": "プレビューを読み込み中…",
+    "zipPreviewTitle": "ZIPダウンロードはプレビューできません",
+    "zipPreviewBody": "この結果はZIPアーカイブとしてまとめられています。ダウンロードしてローカルで展開し、内容をご確認ください。"
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "埋め込みメディアコンバーター",
+    "tryItNow": "今すぐ試す",
+    "recommendedOutput": "推奨出力：",
+    "outputFormat": "出力形式：",
+    "outputLocked": "このツールの出力は固定：",
+    "expectedInput": "想定される入力：",
+    "accepts": "対応：",
+    "dragDrop": "{{kind}}ファイルをここにドラッグ＆ドロップ",
+    "mediaKinds": {
+      "image": "画像",
+      "video": "動画",
+      "audio": "音声",
+      "pdf": "PDF"
+    },
+    "selectHint": "またはクリックしてパソコンから選択。ゲストのファイルは24時間保存されます。無料アカウントなら24時間から2年までの間で選べます。",
+    "selectFile": "ファイルを選択",
+    "removeFile": "ファイルを削除",
+    "uploadingPercent": "アップロード中 {{percent}}%",
+    "workingOnFile": "ファイルを処理中…",
+    "downloadFilename": "{{filename}}をダウンロード",
+    "transcribeFailed": "文字起こしに失敗しました。",
+    "conversionFailed": "変換に失敗しました。",
+    "tryAgainOrOpen": "もう一度お試しいただくか、フル機能のコンバーターを開いてください。",
+    "needFullPrefix": "すべての機能が必要ですか？",
+    "openFullConverter": "フル機能のコンバーターを開く",
+    "needFullSuffix": "— 変換履歴、文字起こしフロー、AIツールが含まれています。"
+  },
+  "extractAudio": {
+    "title": "音声を抽出",
+    "subtitle": "動画ファイルから音声トラックを取り出し、MP3、WAV、AAC、OGG、またはFLACとして保存します。",
+    "formatLabel": "出力音声形式",
+    "outputLocked": "このツールでは{{format}}に固定",
+    "expectedInput": "想定される入力：{{format}}",
+    "submit": "音声を抽出",
+    "running": "抽出中…",
+    "success": "音声を抽出しました。ダウンロードボタンで保存してください。",
+    "uploadHint": "動画ファイル",
+    "note": "抽出されたトラックは、ソースの長さと品質をそのまま保持します。音声のない動画では明確なエラーが返されます。",
+    "formats": {
+      "mp3": "MP3（コンパクト、どこでも再生可能）",
+      "wav": "WAV（ロスレス、大容量）",
+      "m4a": "M4A（AAC — 高品質でコンパクト）",
+      "aac": "AAC（raw）",
+      "flac": "FLAC（ロスレス）",
+      "ogg": "OGG（Vorbis）"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "動画ファイル",
+    "expectedInput": "想定される入力：{{format}}",
+    "levelLabel": "圧縮レベル",
+    "levels": {
+      "smallest": "最小ファイル",
+      "balanced": "バランス（推奨）",
+      "high_quality": "高品質"
+    },
+    "levelHints": {
+      "smallest": "メールやチャット向けに最大限縮小します。細かい映像では目に見える画質低下があります。",
+      "balanced": "ほとんどの動画やSNS投稿に適した、サイズと品質のバランスの良い設定です。",
+      "high_quality": "最もディテールを保持します。ソースより小さくなりますが、縮小幅は控えめです。"
+    },
+    "formatLabel": "出力形式",
+    "outputLocked": "このツールでは{{format}}に固定",
+    "resolutionLabel": "解像度",
+    "resolutions": {
+      "keep": "オリジナルを維持",
+      "1080": "1080p（フルHD）",
+      "720": "720p（HD）",
+      "480": "480p（SD）"
+    },
+    "codecLabel": "コーデック",
+    "codecs": {
+      "h264": "H.264（最も互換性が高い）",
+      "h265": "H.265 / HEVC（より小さい、最新デバイス向け）"
+    },
+    "stripAudio": "音声トラックを削除してさらに小さくする",
+    "note": "選択したレベルで動画を再エンコードします。MP4出力はH.264 + AACにfaststartを適用し、すぐに再生できます。",
+    "running": "圧縮中…",
+    "submit": "動画を圧縮"
+  },
+  "videoTrimmer": {
+    "uploadHint": "動画ファイル",
+    "expectedInput": "想定される入力：{{format}}",
+    "startLabel": "開始（秒）",
+    "endLabel": "終了（秒）",
+    "durationLabel": "クリップの長さ：{{duration}}",
+    "invalidRange": "終了時間は開始時間より後に設定してください。",
+    "pickRange": "範囲を視覚的に選択",
+    "formatLabel": "出力形式",
+    "outputLocked": "このツールでは{{format}}に固定",
+    "reencodeLabel": "フレーム単位で正確にカットするために再エンコード",
+    "reencodeHint": "再エンコードすると指定した時間で正確にカットされますが、処理が遅くなり、ファイルサイズがわずかに変わることがあります。",
+    "note": "可能な限り高速なロスレスカット（再エンコードなし）でオリジナルの品質を維持します。",
+    "running": "トリミング中…",
+    "submit": "動画をトリミング",
+    "submitCut": "動画をカット"
+  },
+  "videoTransform": {
+    "uploadHint": "動画ファイル",
+    "expectedInput": "想定される入力：{{format}}",
+    "autoPlaceholder": "自動",
+    "widthLabel": "幅（px）",
+    "heightLabel": "高さ（px）",
+    "preserveAspect": "縦横比を保持（枠内に収める）",
+    "resizeNote": "片方を空欄にすると、もう片方に合わせて比例して拡大縮小されます。1辺あたり最大4096 pxです。",
+    "rotationLabel": "回転",
+    "rotations": {
+      "90": "時計回りに90°",
+      "180": "180°（上下逆）",
+      "270": "反時計回りに90°"
+    },
+    "flipH": "左右反転",
+    "flipV": "上下反転",
+    "rotateNote": "横向きや上下逆の動画を修正します。90°と270°では幅と高さが入れ替わります。",
+    "cropX": "左からのオフセット（X、px）",
+    "cropY": "上からのオフセット（Y、px）",
+    "cropW": "切り抜き幅（px）",
+    "cropH": "切り抜き高さ（px）",
+    "cropNote": "残したい長方形を、左上隅からのピクセル数で入力します。幅と高さは必須です。",
+    "formatLabel": "出力形式",
+    "outputLocked": "このツールでは{{format}}に固定",
+    "running": "処理中…",
+    "submit": {
+      "crop": "動画を切り抜く",
+      "resize": "動画をリサイズ",
+      "rotate": "動画を回転"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "映像を抽出（音声なし）",
+    "subtitle": "動画ファイルから音声トラックを取り除き、映像ストリームだけを残します。",
+    "uploadHint": "動画ファイル",
+    "formatLabel": "出力コンテナ",
+    "formats": {
+      "mp4": "MP4（推奨）",
+      "webm": "WebM"
+    },
+    "note": "映像ストリームは可能な限りストリームコピーされるため、品質の低下はありません。出力先のコンテナが必要とする場合にのみ再エンコードします。",
+    "submit": "動画から音声を削除",
+    "running": "音声を削除中…",
+    "success": "映像ストリームを抽出しました。"
+  },
+  "extractFrames": {
+    "title": "フレームを抽出",
+    "subtitle": "動画から個別のフレームをPNG、JPG、またはWebP画像として保存します。",
+    "uploadHint": "動画ファイル",
+    "modeLabel": "抽出モード",
+    "modes": {
+      "every_n_seconds": "N秒ごと",
+      "fps": "指定したフレームレート",
+      "timestamp": "指定したタイムスタンプ"
+    },
+    "secondsBetween": "フレーム間の秒数",
+    "fpsLabel": "1秒あたりのフレーム数",
+    "timestampsLabel": "タイムスタンプ（秒、カンマ区切り）",
+    "timestampsPlaceholder": "例：1, 5.5, 12, 30",
+    "imageFormatLabel": "画像形式",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG（ロスレス）",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "最大フレーム数",
+    "zipNote": "フレームは1つのZIPにまとめてダウンロードされます。ジョブを高速かつ予測可能に保つため枚数に上限を設けています。本当に必要な場合は上限を上げてください。",
+    "submit": "フレームを抽出",
+    "running": "フレームを抽出中…",
+    "success": "フレームを抽出しました。下からZIPをダウンロードしてください。"
+  },
+  "captionTranslator": {
+    "title": "字幕を翻訳",
+    "subtitle": "VTT、SRT、またはTXTの字幕ファイルをアップロードし、別の言語に翻訳します。",
+    "dropHere": ".srtまたは.vttファイルをここにドロップ",
+    "privacyNote": "ゲストのファイルは24時間保存されます。無料アカウントなら24時間から2年までの間で選べます。字幕を第三者のAIプロバイダーに送ることはありません。",
+    "selectCaptionFile": "字幕ファイルを選択",
+    "removeFile": "ファイルを削除",
+    "sourceLanguage": "元の言語",
+    "targetLanguage": "翻訳先の言語",
+    "autoDetect": "自動検出（推奨）",
+    "outputFormat": "出力形式",
+    "sameAsInput": "入力と同じ（{{format}}）",
+    "formats": {
+      "srt": "SRT（SubRip）",
+      "vtt": "VTT（WebVTT）"
+    },
+    "timingNote": "キューのタイミングと順序はそのまま保持され、キューのテキストだけが翻訳されます。",
+    "translating": "翻訳中…",
+    "translateCaptions": "字幕を翻訳",
+    "uploadingPercent": "アップロード中 {{percent}}%",
+    "translatingWithModel": "ローカルAIモデルで翻訳中…",
+    "downloadTranslated": "翻訳した字幕をダウンロード",
+    "translationFailed": "翻訳に失敗しました。より小さなファイルか、別の翻訳先言語をお試しください。"
+  },
+  "stitchAudioToVideo": {
+    "title": "動画に音声を結合",
+    "subtitle": "動画ファイルに音声トラックを追加または置き換えます。",
+    "dropBaseVideo": "ベースとなる動画をここにドロップ",
+    "intro": "まず動画を選び、次に音声トラック（ナレーション、音楽、語りなど）を追加します。",
+    "selectVideo": "動画を選択",
+    "removeBaseVideo": "ベース動画を削除",
+    "audioTracks": "音声トラック",
+    "removeTrack": "トラックを削除",
+    "volume": "音量",
+    "startOffset": "開始オフセット（秒）",
+    "loopTrack": "動画の長さに合わせてこのトラックをループ",
+    "addAudioTrack": "音声トラックを追加（{{count}}/{{max}}）",
+    "audioModeLabel": "音声モード",
+    "audioModes": {
+      "mix": "既存の音声とミックス",
+      "replace": "元の音声を置き換え"
+    },
+    "outputLengthLabel": "出力の長さ",
+    "outputLength": {
+      "video": "動画の長さに合わせる",
+      "longest": "最も長い入力に合わせる"
+    },
+    "stitching": "音声と動画を結合中…",
+    "addAudioToVideo": "動画に音声を追加",
+    "uploadingPercent": "アップロード中 {{percent}}%",
+    "mixingOnServer": "サーバーでミキシング中…",
+    "downloadStitched": "結合した動画をダウンロード",
+    "stitchFailed": "結合に失敗しました。音声ファイルが有効か確認してからもう一度お試しください。"
+  },
+  "aiVideoTools": {
+    "title": "AI動画ツール",
+    "tooltipIntro": "AI動画ツールには現在<strong>AIフレーム補間</strong>が含まれており、中間フレームを新たに生成して動きをより滑らかに再生します。",
+    "tooltipBestFor": "24/30fpsの映像を60fpsに、または60fpsを120fpsに引き上げるのに最適です。GPU負荷が高く、現在は常にMP4で出力されます。",
+    "intro": "AIフレーム補間は、より滑らかな動きのために中間フレームを生成します。24/30fps → 60fps、または60fps → 120fpsのクリップに最適です。",
+    "gpuNote": "GPU負荷が高く、現在はMP4で出力されます。長い動画や4K動画では、まず最大処理高さを下げてください。これは基本的なFPS変換とは異なり、AI補間はフレームを複製するのではなく新しいフレームを合成します。v1では他のほとんどの視覚／時間系フィルターはバイパスされます。",
+    "operationLabel": "処理",
+    "operations": {
+      "none_short": "なし",
+      "frame_interpolation": "AIフレーム補間"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "目標フレームレート",
+      "modelLabel": "RIFEモデル",
+      "models": {
+        "rife-v4.6": "RIFE v4.6 — 推奨",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3 — 互換性重視"
+      },
+      "qualityLabel": "品質",
+      "qualityOptions": {
+        "low": "低 — 高速エンコード",
+        "medium": "中 — バランス",
+        "high": "高 — 低速エンコード"
+      },
+      "maxHeightLabel": "最大処理高さ",
+      "preserveAudio": "ソースの音声トラックを保持"
+    },
+    "notes": {
+      "mp4": "v1では出力は常にMP4（H.264 + AAC）です。",
+      "trim": "v1ではAIフレーム補間と同時にトリミングはできません。必要なら先に別途クリップをトリミングしてください。",
+      "artifacts": "速い動き、シーンの切り替わり、髪、手、車輪、遮蔽部分では補間のアーティファクトが出ることがあります。公開前にプレビューしてください。"
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "スニペット選択タイムライン",
+      "startHandle": "選択の開始",
+      "endHandle": "選択の終了",
+      "playSelection": "選択範囲を再生",
+      "pause": "一時停止",
+      "start": "開始",
+      "end": "終了",
+      "startTime": "開始時間（m:ss.t）",
+      "endTime": "終了時間（m:ss.t）",
+      "nudgeBack": "0.1秒戻す",
+      "nudgeForward": "0.1秒進める",
+      "selected": "選択中",
+      "frames": "フレーム",
+      "estimate": "推定",
+      "fpsAssumption": "フレーム数の推定は30fpsを前提としています。サーバーは動画の実際のフレームレートを使用します",
+      "overRecommended": "{{seconds}}秒を超える選択も可能ですが、処理時間が急激に増えます。短いスニペットでも比較には十分です。",
+      "overFrameBudget": "この選択は30fps換算で{{maxFrames}}フレームの上限を超える可能性があります。動画の実際のフレームレートが約30fpsより高い場合は、選択範囲を短くしてください。"
+    },
+    "picker": {
+      "title": "復元モデル",
+      "selectAll": "すべて選択",
+      "selectNone": "なし",
+      "frameGroup": "フレーム単位エンハンサー — 強化フレーム + 動画を含む",
+      "videoGroup": "動画復元モデル — 動画のみ",
+      "unavailable": "このサーバーでは利用できません",
+      "includeFrames": "強化フレーム（PNG）を含める",
+      "includeFramesHint": "フレーム単位モデルで強化したすべてのフレームを、動画と一緒にダウンロードに追加します。",
+      "includeFramesWarning": "フレームを含めるとダウンロードサイズが何倍にもなることがあります。10秒のクリップでも、モデルごとに数百枚の大きなPNGが追加されます。",
+      "noneSelected": "続行するにはモデルを1つ以上選択してください。",
+      "runningTotal": "{{count}}個のモデルを選択中 · 処理時間の合計推定 {{estimate}}"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "高速なGANアップスケーラー。あらゆる比較に含めるべき手軽なベースラインです。"
+      },
+      "swinir": {
+        "description": "Transformerベースの実写向け超解像。テクスチャに強く、Real-ESRGANより低速です。"
+      },
+      "hat": {
+        "description": "ハイブリッドアテンション超解像GAN。静止画では最も鮮明になることが多く、グループAで最も低速です。"
+      },
+      "basicvsrpp": {
+        "description": "再帰型動画超解像。隣接フレームを利用して時間的一貫性を保ちます。"
+      },
+      "rvrt": {
+        "description": "再帰型動画復元Transformer。動きを考慮した高いディテール再現。"
+      },
+      "vrt": {
+        "description": "動画復元Transformer。多くのクリップで最高品質ですが、圧倒的に低速です。"
+      }
+    },
+    "panel": {
+      "loading": "サーバーの機能を確認中…",
+      "disabled": "このサーバーではAI動画復元を一時的に利用できません。",
+      "notAVideo": "動画ファイルを選択してください。",
+      "tooLarge": "この動画はアップロード上限の{{max}}を超えています。",
+      "dropTitle": "動画をここにドロップするか、クリックして選択",
+      "dropHint": "復元する短いスニペット（最大15秒）を選びます。長い動画でも問題ありません。",
+      "fileLabel": "ファイル：",
+      "changeFile": "ファイルを変更",
+      "preparingUpload": "アップロードを準備中…",
+      "uploading": "安全なストレージにアップロード中… {{percent}}%",
+      "startingJob": "復元ジョブを開始中…",
+      "submit": "{{count}}個のモデルでスニペットを復元",
+      "modelFailedBadge": "失敗 — 他のモデルは続行",
+      "genericFailure": "復元に失敗しました。より短いスニペットでもう一度お試しください。",
+      "startOver": "最初からやり直す",
+      "completedTitle": "復元が完了しました。比較パッケージの準備ができています。",
+      "modelSucceeded": "成功",
+      "modelFailed": "失敗（パッケージ内のFAILED.txtを参照）",
+      "download": "結果をダウンロード",
+      "downloadAgain": "もう一度ダウンロード",
+      "downloadSize": "パッケージサイズ：{{size}}",
+      "downloadSizeHint": "このアーカイブは大きいため、ダウンロード前に{{size}}以上の空きディスク容量があることを確認してください。",
+      "linkExpiresIn": "リンクの有効期限：あと{{countdown}}",
+      "linkExpired": "ダウンロードリンクの期限が切れました。復元をもう一度実行してください",
+      "restoreAnother": "別のスニペットを復元"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "切り抜き（任意）",
+      "useEntireImage": "画像全体を使用",
+      "previewAlt": "アップロードした画像",
+      "regionLabel": "切り抜き領域 — ドラッグで移動、矢印キーで微調整",
+      "dragHint": "画像上をドラッグして領域に絞り込むか、画像全体をそのまま使います",
+      "cropReadout": "切り抜き：{{w}}×{{h}} px",
+      "fullReadout": "画像全体：{{w}}×{{h}} px",
+      "outputReadout": "{{scale}}倍で推定出力{{w}}×{{h}} px",
+      "overBudget": "その切り抜きと倍率では出力サイズの上限を超えます。2倍にするか、切り抜きを小さくしてください。"
+    },
+    "picker": {
+      "precleanToggle": "事前クリーンアップ（忠実度を保つ処理）",
+      "precleanToggleHint": "新しいディテールを合成せずに、圧縮アーティファクト、ノイズ、モーションブラーを除去します。強化の前に実行されます。",
+      "precleanOrderNote": "クリーンアップは選択順に関係なく、常にアーティファクト除去 → ノイズ除去 → ブラー除去の順で、それぞれ前の結果に対して実行されます。",
+      "precleanBaseHint": "クリーンアップ後の画像が、以下のすべてのモデルのベースになります。",
+      "fbcnnQf": "FBCNN品質係数",
+      "fbcnnQfAuto": "自動",
+      "fbcnnQfHint": "空欄 = 自動。低いほど強い圧縮を想定します",
+      "generalGroup": "復元・アップスケールモデル",
+      "faceToggle": "顔の強化",
+      "faceToggleHint": "顔を再構成するGFPGANやCodeFormerを追加します。",
+      "previewFaces": "検出された顔をプレビュー",
+      "facesDetected": "{{count}}人の顔を検出しました。",
+      "fidelityLabel": "CodeFormerの忠実度（w）",
+      "fidelityHint": "低いほどきれいに、高いほど入力に近くなります。デフォルトは0.70です。",
+      "chainToggle": "連鎖：アップスケール結果ごとに顔モデルを再実行",
+      "chainHint": "ソースに対して実行するのに加え、各アップスケーラーの出力に対しても顔を強化したバージョンを生成します。",
+      "generativeWarning": "顔の強化は生成的な再構成です。強化された顔は明瞭さや手がかりのために合成されたもので、身元特定のための忠実な復元ではありません。",
+      "noneSelected": "続行するにはモデルを1つ以上選択してください。",
+      "totalOutputs": "{{count}}個の出力が生成されます。",
+      "overBudget": "その選択では出力の上限{{max}}個を超えます。モデルの選択を減らすか、連鎖をオフにしてください。",
+      "unavailable": "このサーバーでは利用できません"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "ブラインドJPEG／圧縮アーティファクト除去（1倍、非生成）。"
+      },
+      "scunet": {
+        "description": "ブラインド実ノイズ除去。PSNR版で、テクスチャの捏造なし（1倍）。"
+      },
+      "nafnet": {
+        "description": "モーションブラー除去（GoPro重み、1倍）。"
+      },
+      "realesrgan": {
+        "description": "高速なGANアップスケーラー。あらゆる比較に含めるべき手軽なベースラインです。"
+      },
+      "swinir": {
+        "description": "Transformerベースの実写向け超解像。テクスチャに強く、Real-ESRGANより低速です。"
+      },
+      "hat": {
+        "description": "ハイブリッドアテンション超解像GAN。最も鮮明な結果になることが多いです。"
+      },
+      "gfpgan": {
+        "description": "GFPGAN v1.4による顔の復元。生成的な再構成です。"
+      },
+      "codeformer": {
+        "description": "忠実度ダイヤル付きのCodeFormerによる顔の復元。生成的な再構成です。"
+      }
+    },
+    "panel": {
+      "loading": "サーバーの機能を確認中…",
+      "disabled": "このサーバーではAI画像復元を一時的に利用できません。",
+      "notAnImage": "画像ファイルを選択してください。",
+      "tooLarge": "この画像はアップロード上限の{{max}}を超えています。",
+      "dropTitle": "画像をここにドロップするか、クリックして選択",
+      "dropHint": "PNG、JPEG、WebP、TIFF、またはBMP。アップロード後に領域を切り抜けます。",
+      "fileLabel": "ファイル：",
+      "changeFile": "ファイルを変更",
+      "scaleLabel": "出力倍率",
+      "scaleAuto": "自動",
+      "scaleHint": "自動では、小さな切り抜き（高さ540px以下）に4倍、それ以外に2倍を選びます。モデルはネイティブで4倍を実行し、2倍はLanczosで縮小します。",
+      "preparingUpload": "準備中…",
+      "uploading": "アップロード中… {{percent}}%",
+      "startingJob": "復元ジョブを開始中…",
+      "submit": "{{count}}個のモデルで復元",
+      "unitFailedBadge": "失敗 — 他のモデルは続行",
+      "genericFailure": "復元に失敗しました。より小さな切り抜きか、モデル数を減らしてもう一度お試しください。",
+      "startOver": "最初からやり直す",
+      "completedTitle": "復元が完了しました。以下で結果を比較してください。",
+      "download": "すべての結果をダウンロード",
+      "downloadAgain": "もう一度ダウンロード",
+      "downloadSize": "パッケージサイズ：{{size}}",
+      "restoreAnother": "別の画像を復元"
+    },
+    "results": {
+      "includedInDownload": "ダウンロードに含まれます",
+      "fidelityBadge": "非生成クリーンアップ",
+      "generativeBadge": "生成的 — 証拠にはなりません",
+      "originalCaption": "オリジナル（前処理済み） · {{w}}×{{h}}",
+      "failed": "このモデルは失敗しました",
+      "compareOriginal": "オリジナル"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "音声ファイル",
+    "previewTitle": "波形プレビュー",
+    "sizeQualifiers": {
+      "small": "小",
+      "medium": "中",
+      "large": "大",
+      "xl": "特大"
+    },
+    "presets": {
+      "10x1": "10:1 — ワイド波形（推奨）",
+      "8x1": "8:1 — ワイド波形",
+      "6x1": "6:1 — バランスの取れたワイド波形",
+      "16x9": "16:9 — 標準的な動画／SNSプレビュー",
+      "1x1": "1:1 — 正方形のSNSプレビュー"
+    },
+    "sizeLabel": "{{width}}×{{height}}（{{qualifier}}）",
+    "modes": {
+      "point": {
+        "label": "ポイント",
+        "description": "サンプルごとに1つの点。クリーンでミニマルです。"
+      },
+      "line": {
+        "label": "ライン",
+        "description": "サンプルごとに縦の棒。より力強い存在感です。"
+      },
+      "p2p": {
+        "label": "ポイント間を結ぶ",
+        "description": "サンプルごとの点と、それらを結ぶ線。流れるような見た目です。"
+      },
+      "cline": {
+        "label": "中央揃えライン",
+        "description": "軸を中心にした縦線。左右対称の見た目です。"
+      }
+    },
+    "output": "出力",
+    "outputOptions": {
+      "video": "波形動画",
+      "image": "波形画像",
+      "both": "両方（ZIP）"
+    },
+    "bothNote": "両方の出力が1つの.zipにまとめられ、ワンクリックでダウンロードできます。",
+    "includeAudio": "生成した波形動画に元の音声を含める",
+    "includeAudioNote": "波形動画はソース音声と同期して再生されます。オーディオグラム、音楽プレビュー、ポッドキャストのクリップに最適です。無音の波形にするにはオフにしてください。",
+    "videoFormat": "動画形式",
+    "videoFormats": {
+      "mp4": "MP4（推奨）",
+      "webm": "WebM"
+    },
+    "imageFormat": "画像形式",
+    "imageFormats": {
+      "png": "PNG（推奨）",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "縦横比とサイズ",
+    "useCustomSize": "カスタムの幅／高さを使用",
+    "widthPlaceholder": "幅",
+    "heightPlaceholder": "高さ",
+    "advancedSettings": "高度な波形設定",
+    "renderMode": "レンダリングモード",
+    "renderModeNote": "レンダリングモードは波形動画に適用されます。画像出力は静止フレーム用レンダラーを使うため、モード設定は無視されます。",
+    "frameRate": "フレームレート",
+    "useFrameRate": "フレームレートを使用",
+    "useSamples": "列ごとのサンプル数（n）を使用",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps（デフォルト）",
+    "samplesPlaceholder": "例：64",
+    "frameRateNote": "出力フレームレート<em>または</em>列ごとに描画する音声サンプル数のどちらかを選びます。両方は指定できません。",
+    "splitChannels": "ステレオチャンネルを分割（左右を別々に描画）",
+    "primaryColor": "メインカラー",
+    "secondaryColor": "サブカラー（分割モード）",
+    "scale": "スケール",
+    "scaleOptions": {
+      "lin": "lin — 最も直接的で正確",
+      "log": "log — 静かな部分を見やすくする",
+      "sqrt": "sqrt — 静かな部分を控えめに強調",
+      "cbrt": "cbrt — 静かな部分をより強く強調"
+    },
+    "draw": "描画",
+    "drawOptions": {
+      "scale": "scale（デフォルト）",
+      "full": "full"
+    },
+    "generating": "波形を生成中…",
+    "generate": "波形を生成"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "AI文書スキャンを読み込み中…",
+      "disabled": "文書スキャンは現在利用できません。",
+      "notAnImage": "画像ファイル（PNG、JPEG、WebP、TIFF、BMP、またはHEIC）を追加してください。",
+      "tooLarge": "各画像は{{max}}未満である必要があります。",
+      "tooManyPages": "追加できるページは最大{{max}}枚です。",
+      "dropTitle": "スキャンしたページを追加",
+      "dropHint": "印刷文書または手書きメモ。1枚以上の画像をドロップするか、クリックして選択してください。",
+      "uploading": "アップロード中… {{percent}}%",
+      "startingJob": "スキャンを開始中…",
+      "preparingUpload": "準備中…",
+      "submit": "{{count}}ページをスキャン",
+      "genericFailure": "スキャン中に問題が発生しました。もう一度お試しください。",
+      "startOver": "最初からやり直す",
+      "completedTitle": "文書の準備ができました。",
+      "viewResult": "結果を表示",
+      "scanAnother": "別の文書をスキャン"
+    },
+    "options": {
+      "contentMode": "コンテンツの種類",
+      "modeAuto": "自動（ページごとに検出）",
+      "modePrinted": "印刷文書",
+      "modeHandwriting": "手書き",
+      "printedUnavailable": "このサーバーでは印刷文書のOCRを利用できません。",
+      "handwritingUnavailable": "手書きの文字起こしは現在オフラインです。",
+      "outputs": "出力",
+      "pdfAlways": "検索可能なPDF（常に）",
+      "docx": "編集可能なWord（.docx）",
+      "unavailable": "利用不可",
+      "language": "言語（印刷文書のOCR）",
+      "printedCleanup": "印刷ページのクリーンアップ",
+      "deskew": "傾き補正",
+      "rotate": "自動回転",
+      "clean": "クリーン（斑点を除去）",
+      "structureEngine": "DOCX構造エンジン",
+      "enginePaddle": "PaddleOCR-VL（優先）",
+      "engineDocling": "Docling（フォールバック）",
+      "engineTrocr": "TrOCR（フォールバック）",
+      "preclean": "読み取り前に低解像度スキャンを強化",
+      "precleanHint": "スマートフォンで撮ったぼやけたメモのスキャンをアップスケールし、手書き認識を助けます。手書き／自動ではデフォルトでオンです。",
+      "handwritingTitle": "手書きのオプション",
+      "verify": "AIで検証",
+      "verifyHint": "2回目のパスで、不確実とマークされたトークンだけを読み直します。確実なテキストを変更したり内容を創作したりすることはありません。",
+      "secondOpinion": "セカンドオピニオン",
+      "secondOpinionHint": "独立した認識エンジンが手書きを読み直します。不一致はフラグ付けされ、黙って統合されることはありません。",
+      "summary": "AI要約（別ファイル）",
+      "summaryHint": "任意です。明確にラベル付けされた別の要約を書き出します。逐語的な文字起こしを置き換えることはありません。"
+    },
+    "pageOrder": {
+      "title": "ページ（{{count}}）",
+      "hint": "スキャン前にページをドラッグして並べ替えられます。",
+      "pageLabel": "ページ{{n}}",
+      "remove": "ページを削除",
+      "drag": "ドラッグして並べ替え"
+    },
+    "viewer": {
+      "title": "スキャンした文書",
+      "description": "印刷ページには忠実な検索可能テキストレイヤーが付きます。手書きページは機械による文字起こしのため、原本と照らし合わせてご確認ください。",
+      "confidenceTitle": "手書きの文字起こし — 原本と照らし合わせて確認してください",
+      "confidenceNote": "手書きページ{{pages}}枚を文字起こし · 不確実とマークされたトークン{{tokens}}個（[illegible] / [?]）。",
+      "noPdf": "このジョブではPDFが生成されませんでした。",
+      "downloadPdf": "PDFをダウンロード",
+      "downloadDocx": "Word（.docx）をダウンロード",
+      "downloadSummary": "AI要約をダウンロード"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}}（ベータ）",
+    "untitled": "無題の図面",
+    "projectName": "プロジェクト名",
+    "backHome": "Media Manipulatorに戻る",
+    "invalidProject": "このプロジェクトのリンクは無効です。プロジェクトは今のところこのブラウザにのみ保存されています。",
+    "newProject": "新しい図面を開始",
+    "undo": "元に戻す",
+    "redo": "やり直す",
+    "zoomIn": "ズームイン",
+    "zoomOut": "ズームアウト",
+    "zoomFit": "画面に合わせる",
+    "canvas": {
+      "label": "描画キャンバス"
+    },
+    "tools": {
+      "label": "ツール",
+      "select": "選択",
+      "node": "ノードを編集",
+      "rect": "長方形",
+      "ellipse": "楕円",
+      "line": "直線",
+      "pen": "ペン",
+      "text": "テキスト",
+      "hand": "パン",
+      "textPlaceholder": "入力してEnterを押してください"
+    },
+    "import": {
+      "button": "インポート",
+      "done_other": "{{count}}個のレイヤーをインポートしました",
+      "tooLarge": "そのファイルは4 MBを超えています。",
+      "warningsTitle_other": "インポートに関する{{count}}件の注意",
+      "errors": {
+        "too_large": "そのSVGは4 MBを超えています。",
+        "not_svg": "そのファイルはSVG画像ではありません。",
+        "malformed": "そのSVGを読み取れませんでした。破損している可能性があります。",
+        "entities": "XMLエンティティを宣言しているSVGはインポートできません。",
+        "too_complex": "そのSVGはレイヤーが多すぎて編集できません。",
+        "json": "そのファイルは、このバージョンで開けるMotionドキュメントではありません。"
+      },
+      "warnings": {
+        "script_removed": "スクリプトを削除：",
+        "event_handler_removed": "イベントハンドラーを削除：",
+        "external_reference_removed": "外部参照を削除：",
+        "unsafe_content_removed": "安全でないコンテンツを削除：",
+        "unsupported_element": "そのまま保持（編集不可）：",
+        "style_dropped": "スタイル非対応：",
+        "invalid_value": "値を無視：",
+        "dangling_reference": "存在しない参照を削除："
+      }
+    },
+    "export": {
+      "svg": "SVGをエクスポート",
+      "open": "エクスポート"
+    },
+    "draft": {
+      "title": "未保存の変更を復旧しますか？",
+      "description": "この図面には、このブラウザに保存されているもののエクスポートされていない変更があります。",
+      "from": "{{name}}、{{time}}",
+      "layers_other": "{{count}}個のレイヤー",
+      "recover": "復旧",
+      "discard": "破棄"
+    },
+    "layers": {
+      "title": "レイヤー",
+      "empty": "図形を描くか、SVGをインポートして始めましょう。",
+      "group": "グループ化",
+      "ungroup": "グループ解除",
+      "delete": "削除",
+      "rename": "レイヤー名",
+      "lock": "ロック",
+      "unlock": "ロック解除",
+      "hide": "非表示",
+      "show": "表示",
+      "expand": "グループを展開",
+      "collapse": "グループを折りたたむ",
+      "raw": "そのまま保持",
+      "rawHint": "インポートしたままの状態で保持されます。編集はできません",
+      "masked": "マスクあり",
+      "clipped": "クリップパスあり",
+      "maskDef": "マスク{{id}}",
+      "clipDef": "クリップパス{{id}}"
+    },
+    "layerTypes": {
+      "group": "グループ",
+      "path": "パス",
+      "rect": "長方形",
+      "ellipse": "楕円",
+      "line": "直線",
+      "polyline": "折れ線",
+      "polygon": "多角形",
+      "text": "テキスト",
+      "image": "画像",
+      "use": "インスタンス",
+      "raw": "そのまま保持"
+    },
+    "inspector": {
+      "title": "インスペクター",
+      "canvas": "キャンバス",
+      "background": "背景",
+      "emptyHint": "レイヤーを選択して編集します。Shift+クリックで複数選択できます。",
+      "selection": "選択範囲",
+      "layersSelected_other": "{{count}}個のレイヤー",
+      "transform": "変形",
+      "geometry": "ジオメトリ",
+      "appearance": "外観",
+      "text": "テキスト",
+      "width": "幅",
+      "height": "高さ",
+      "scaleX": "スケールX",
+      "scaleY": "スケールY",
+      "rotation": "回転",
+      "skewX": "スキュー",
+      "anchorX": "アンカーX",
+      "anchorY": "アンカーY",
+      "cornerRadius": "角の丸み",
+      "reference": "インスタンス元",
+      "pathHint": "ノード編集ツール（A）を使って点とハンドルを動かせます。",
+      "rawHint": "SVGのこの部分は、エディターがまだ変更できない機能を使っています。インポートしたままの状態で保持され、変更されずにエクスポートされます。",
+      "markupSize": "マークアップ",
+      "fill": "塗り",
+      "stroke": "線",
+      "strokeWidth": "線の太さ",
+      "opacity": "不透明度",
+      "none": "なし",
+      "colorValue": "{{label}}の値",
+      "solid": "単色",
+      "linear": "線形",
+      "radial": "放射状",
+      "fontSize": "文字サイズ",
+      "fontFamily": "フォント",
+      "fontWeight": "太さ",
+      "letterSpacing": "字間",
+      "textAnchor": "配置",
+      "alignStart": "先頭",
+      "alignMiddle": "中央",
+      "alignEnd": "末尾",
+      "regular": "標準",
+      "bold": "太字",
+      "maskSection": "マスクとクリップ",
+      "maskHint": "上のレイヤーが下のレイヤーのマスクまたはクリップパスになります。",
+      "useAsMask": "マスクとして使用",
+      "useAsClip": "クリップとして使用",
+      "releaseMask": "マスクを解除",
+      "releaseClip": "クリップパスを解除",
+      "skewY": "スキューY"
+    },
+    "gradient": {
+      "stops": "グラデーションの分岐点",
+      "stop": "分岐点{{index}}（{{offset}}%）",
+      "stopColor": "分岐点の色",
+      "removeStop": "分岐点を削除",
+      "addStop": "分岐点を追加",
+      "offset": "位置",
+      "angle": "角度",
+      "radius": "半径",
+      "centreX": "中心X",
+      "centreY": "中心Y"
+    },
+    "properties": {
+      "x": "位置X",
+      "y": "位置Y",
+      "scaleX": "スケールX",
+      "scaleY": "スケールY",
+      "rotation": "回転",
+      "skewX": "スキューX",
+      "skewY": "スキューY",
+      "anchorX": "アンカーX",
+      "anchorY": "アンカーY",
+      "opacity": "不透明度",
+      "fill": "塗り",
+      "stroke": "線",
+      "strokeWidth": "線の太さ",
+      "strokeDashoffset": "描画アニメーション（ダッシュオフセット）",
+      "d": "形状（モーフ）",
+      "motionPath": "モーションパス",
+      "stopColor": "グラデーション分岐点{{n}}の色",
+      "stopOffset": "グラデーション分岐点{{n}}の位置",
+      "blur": "ぼかし"
+    },
+    "timeline": {
+      "title": "タイムライン",
+      "play": "再生（Space）",
+      "pause": "一時停止（Space）",
+      "toStart": "先頭へ（Home）",
+      "toEnd": "末尾へ（End）",
+      "loop": "ループ",
+      "autokey": "自動キー",
+      "autokeyHint": "オンにすると、キャンバスやインスペクターでプロパティを変更するたびに、再生ヘッドの位置にキーフレームが追加されます。",
+      "duration": "長さ",
+      "playhead": "再生ヘッド",
+      "setIn": "再生ヘッドの位置に再生範囲の開始を設定",
+      "setOut": "再生ヘッドの位置に再生範囲の終了を設定",
+      "clearRange": "再生範囲をクリア",
+      "inMarker": "再生範囲の開始",
+      "outMarker": "再生範囲の終了",
+      "addKeys": "選択したレイヤーの再生ヘッド位置にキーフレームを追加",
+      "copyKeys": "キーフレームをコピー",
+      "pasteKeys": "再生ヘッドの位置にキーフレームを貼り付け",
+      "deleteKeys": "キーフレームを削除",
+      "zoomIn": "タイムラインをズームイン",
+      "zoomOut": "タイムラインをズームアウト",
+      "empty": "図形を描くかインポートして、ここでアニメーションを付けましょう。",
+      "animate": "{{property}}をアニメーション化",
+      "stopAnimating": "{{property}}のアニメーションを停止",
+      "addKeyHere": "再生ヘッドの位置に{{property}}のキーフレームを追加",
+      "removeKeyHere": "再生ヘッド位置の{{property}}のキーフレームを削除",
+      "key": "{{time}}の{{property}}キーフレーム",
+      "layerKey": "{{time}}の{{layer}}のキーフレーム",
+      "maskContent": "マスク：{{layer}}",
+      "clipContent": "クリップ：{{layer}}"
+    },
+    "easing": {
+      "title": "イージング",
+      "presets": "イージングプリセット",
+      "linear": "リニア",
+      "easeIn": "イーズイン",
+      "easeOut": "イーズアウト",
+      "easeBoth": "イーズイン・アウト",
+      "hold": "ホールド",
+      "custom": "カーブ",
+      "curve": "イージングカーブ",
+      "handle": "カーブハンドル{{name}}",
+      "mixed": "選択したキーフレームは異なるイージングを使っています。1つ選ぶとすべてに適用されます。",
+      "applies_other": "{{count}}個のキーフレームの後の区間のイージング。"
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "どこでも再生できるアニメーションGIF。256色、グローバルパレット1つ。"
+        },
+        "png_sequence": {
+          "title": "PNG連番（.zip）",
+          "hint": "各フレームを透明度付きPNGとしてzipにまとめます。動画編集ソフトやゲームエンジン向けです。"
+        },
+        "mp4": {
+          "title": "MP4動画",
+          "hint": "ブラウザでエンコードされるH.264（またはAV1）動画。音声なし。"
+        },
+        "webm": {
+          "title": "WebM動画",
+          "hint": "ブラウザでエンコードされるVP9（またはAV1）動画。音声なし。"
+        }
+      },
+      "block": {
+        "locked": "お使いのプランにはこの形式が含まれていません。",
+        "notOnAnyPlan": "まだどのプランでも利用できません。",
+        "useChromium": "動画のエクスポートにはChromeまたはEdgeをお使いください",
+        "noCodec": "このブラウザではこの動画形式をエンコードできません。もう一方の動画形式か、ChromeまたはEdgeをお試しください。"
+      },
+      "size": "サイズ",
+      "sizeOption": "{{height}}p（{{width}} × {{height}}）",
+      "fps": "1秒あたりのフレーム数",
+      "from": "開始（秒）",
+      "to": "終了（秒）",
+      "gif": {
+        "loop": "ループ",
+        "forever": "無限",
+        "plays_other": "{{count}}回再生",
+        "dither": "ディザリング（滑らかなグラデーション、ファイルは大きめ）",
+        "transparent": "透明な背景"
+      },
+      "summary": "{{width}} × {{height}} px、{{frames}}フレーム、{{seconds}}秒、約{{size}}",
+      "flattenWhite": "キャンバスは透明ですが、動画には透明度がないため、フレームは白の上に配置されます。",
+      "clamped": {
+        "height": "お使いのプランによりサイズは{{height}}pに制限されています。",
+        "fps": "フレームレートは{{fps}} fpsに制限されています。",
+        "duration": "お使いのプランにより長さは{{seconds}}秒に制限されています。"
+      },
+      "tooLarge": "このエクスポートは2 GBを超えます。サイズ、フレームレート、または長さを下げてください。",
+      "cancelCounts": "エクスポート開始後にキャンセルしても、1日の利用枠から1回分が消費されます。",
+      "preparing": "準備中…",
+      "progress": "フレーム{{done}} / {{total}}をレンダリング中",
+      "progressLabel": "エクスポートの進行状況",
+      "finalizing": "ファイルを仕上げ中…",
+      "cancel": "キャンセル",
+      "cancelled": "エクスポートをキャンセルしました。何もダウンロードされていません。",
+      "failed": {
+        "tooLarge": "ファイルが2 GBを超えたため、エクスポートを停止しました。サイズ、フレームレート、または長さを下げてください。",
+        "codec": "このブラウザではこのサイズとフレームレートで動画をエンコードできません。より小さなサイズか、ChromeまたはEdgeをお試しください。",
+        "unsafe": "この図面には、フレームにレンダリングできない外部コンテンツが含まれています。削除してからもう一度お試しください。",
+        "error": "ブラウザでのエクスポートに失敗しました。もう一度お試しいただくか、より小さなサイズをお試しください。"
+      },
+      "capHeight": "お使いのプランでは最大{{max}}pまでのラスターファイルをエクスポートできます。",
+      "capFps": "お使いのプランでは1秒あたり最大{{max}}フレームまでエクスポートできます。"
+    },
+    "exportDialog": {
+      "title": "エクスポート",
+      "description": "エクスポートはブラウザ内で行われます。アニメーション付きのエクスポートは1日の利用枠にカウントされ、静的SVGは常に無料です。",
+      "formats": "エクスポート形式",
+      "animated": "アニメーションSVG",
+      "animatedHint": "アニメーションを含む1つのSVGファイル。可能な限り純粋なCSSを使い、それ以外は小さなインラインスクリプトを使います。",
+      "static": "静的SVG",
+      "staticHint": "再生ヘッド位置のフレームをアニメーションなしで出力します。無料で、カウントされません。",
+      "export": "エクスポート",
+      "unsupported": "このアニメーションは、アニメーションSVGではまだエクスポートできない効果を使っています。",
+      "doneStatic": "静的SVGをダウンロードしました。",
+      "done_other": "ダウンロードしました。本日のアニメーション付きエクスポートは残り{{count}}回です。",
+      "doneUnlimited": "ダウンロードしました。",
+      "limit_other": "本日のアニメーション付きエクスポート{{count}}回を使い切りました。",
+      "locked": "お使いのプランにはこの形式が含まれていません。",
+      "capDuration": "お使いのプランでは最長{{seconds}}秒のアニメーションをエクスポートできます。アニメーションを短くするか、アップグレードしてください。",
+      "capOther": "このエクスポートはプランの上限を超えています。",
+      "unavailable": "エクスポートは現在利用できません。カウントはされていません。しばらくしてからもう一度お試しください。",
+      "upgrade": "プランを見る",
+      "runtimeCss": "純粋なCSS、スクリプトなし。",
+      "runtimeAnimeBecause": "{{size}} KBのスクリプト（anime.js、MIT）を使用します。理由：{{reasons}}。",
+      "runtimeAnimeChosen": "{{size}} KBのスクリプト（anime.js、MIT）を使用します。",
+      "scriptImgNote": "スクリプトはSVGを直接開いたときやページにインラインで配置したときに実行され、<img>タグ内では実行されません（最初のフレームが表示されます）。",
+      "forceAnime": "スクリプトランタイムを使用",
+      "reasons": {
+        "morph": "形状のモーフ",
+        "stopOffset": "グラデーション分岐点の位置",
+        "blur": "ぼかし（Safari）",
+        "motionRotate": "回転トラック付きのパス回転"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "LottieFiles、lottie-web、およびiOS、Android、FlutterのLottieプレーヤー向け。Lottieで表現できない機能はダウンロード後に一覧表示されます。"
+        },
+        "react_tsx": {
+          "title": "Reactコンポーネント（.tsx）",
+          "hint": "SVGをインラインで含む1つのコンポーネントファイル。必要なのはReactだけで、スクリプトランタイムを使う場合はanime.jsパッケージも必要です。"
+        },
+        "js": {
+          "title": "JavaScriptモジュール（.js）",
+          "hint": "mount、play、pause、seekを備えたプレーンなESモジュール。フレームワーク不要。"
+        },
+        "ts": {
+          "title": "TypeScriptモジュール（.ts）",
+          "hint": "型付きのJavaScriptモジュール。"
+        },
+        "flutter": {
+          "title": "Flutterウィジェット（.dart）",
+          "hint": "アニメーションが移動、フェード、色変更だけの場合はネイティブのflutter_svgウィジェット、それ以外はWebViewプレーヤー。"
+        }
+      },
+      "emitted": {
+        "css": "CSSでアニメーション、スクリプトなし。",
+        "anime": "anime.js（MIT、依存パッケージとしてインポート）でアニメーション。",
+        "animeBecause": "anime.js（MIT、依存パッケージとしてインポート）でアニメーション。理由：{{reasons}}。"
+      },
+      "flutter": {
+        "native": "ネイティブウィジェット（flutter_svgとAnimationController）を出力しました。アニメーションはtransform、opacity、色のみを使用しています。",
+        "webview": "WebViewプレーヤー（webview_flutter）を出力しました。理由：{{reasons}}。WebViewは背景が不透明で、ネイティブウィジェットより重くなります。"
+      },
+      "flutterReasons": {
+        "morph": "形状をモーフしている",
+        "mask": "マスクまたはクリップパスをアニメーション化している",
+        "blur": "ぼかしをアニメーション化している",
+        "motionPath": "モーションパスに沿って移動している",
+        "drawOn": "線の描画アニメーションがある",
+        "gradient": "グラデーションの分岐点をアニメーション化している",
+        "symbol": "シンボル内のレイヤーをアニメーション化している",
+        "raw": "エディターがそのまま保持するSVGマークアップを含んでいる"
+      }
+    },
+    "gate": {
+      "locked": "お使いのプランではロックされています",
+      "requires": {
+        "free": "無料アカウントに含まれます。",
+        "premium": "Premiumに含まれます。",
+        "pro": "Proに含まれます。"
+      },
+      "cta": {
+        "signup": "無料でサインイン",
+        "premium": "Premiumにアップグレード",
+        "pro": "Proにアップグレード"
+      }
+    },
+    "projects": {
+      "save": "保存",
+      "saveToAccount": "アカウントに保存",
+      "status": {
+        "local": "このブラウザのみ",
+        "saved": "保存済み",
+        "saving": "保存中…",
+        "retrying": "再試行中…",
+        "offline": "オフライン。変更はここに保持されます",
+        "conflict": "別の場所で変更されました",
+        "failed": "未保存"
+      },
+      "signIn": "サインイン",
+      "signInTitle": "アカウントに保存するにはサインインしてください",
+      "signInBody": "アカウントがない場合、プロジェクトはこのブラウザにのみ残ります。サインイン（新しいタブで行ってから戻ってきてください）してこのプロジェクトをアカウントに保存するか、後で再度開けるファイルとしてダウンロードしてください。",
+      "downloadJson": ".jsonをダウンロード",
+      "limit_other": "お使いのプランで保存できるプロジェクトは{{count}}件です。アカウントで1件削除するか、アップグレードしてください。",
+      "saveFailed": "このプロジェクトをアカウントに保存できませんでした。変更はこのブラウザに保持されています。",
+      "open": {
+        "signin": "このプロジェクトを開くにはサインインしてください。アカウントのプロジェクトは所有者にのみ表示されます。",
+        "notFound": "このプロジェクトは存在しないか、別のアカウントのものです。",
+        "failed": "このプロジェクトを読み込めませんでした。接続を確認してページを再読み込みしてください。",
+        "unreadable": "このプロジェクトは新しいバージョンで保存されたため、ここでは開けません。"
+      },
+      "conflict": {
+        "title": "このプロジェクトは別のタブまたはデバイスで変更されました。",
+        "reload": "相手の版を読み込む",
+        "keep": "自分の版を保持",
+        "reloadTitle": "自分の版を置き換えますか？",
+        "reloadBody": "再読み込みすると別の場所で保存されたコピーが開き、このタブの変更は破棄されます。残したい場合は、先に自分の版をダウンロードしてください。",
+        "downloadMine": "自分の版をダウンロード",
+        "reloadConfirm": "相手の版を読み込む",
+        "reloadFailed": "保存されたコピーを読み込めませんでした。もう一度お試しください。"
+      }
+    },
+    "animators": {
+      "title": "アニメーション",
+      "selectOne": "アニメーション化するレイヤーを1つ選択してください。",
+      "drawOn": "描画アニメーション",
+      "drawOnHint": "線を始点から終点まで描くアニメーション（線のダッシュオフセット）。",
+      "motionPath": "モーションパス",
+      "motionPathHint": "レイヤーをパスに沿って移動させます。パスを選ぶか、ペンで描いてください。",
+      "morph": "モーフ",
+      "morphHint": "このパスを別の形状にモーフします。変形先の形状を選んでください。",
+      "gradient": "グラデーション",
+      "gradientHint": "このレイヤーのグラデーションの色をアニメーション化します（分岐点ごとに1トラック）。",
+      "maskClip": "マスク／クリップ",
+      "maskClipHint": "レイヤーのマスクまたはクリップ形状を独自のトラックでアニメーション化します。",
+      "blur": "ぼかし",
+      "blurHint": "時間とともにレイヤーをぼかしていきます。",
+      "blurAmount": "ぼかしの量",
+      "pickGuide": "どのパスに沿って移動しますか？",
+      "pickTarget": "どの形状にモーフしますか？",
+      "noShapes": "他の形状はまだありません。",
+      "drawWithPen": "ペンで新しく描く",
+      "autoOrient": "パスに沿って回転",
+      "spanHint": "アニメーターは再生ヘッドから末尾まで実行されます。キーフレームはタイムラインで調整してください。",
+      "notApplied": "そのアニメーターはこのレイヤーには適用できません。",
+      "morphFailed": "この2つの形状はモーフできません。"
+    },
+    "lottie": {
+      "supportSummary": "Lottieで表現できないもの",
+      "document": "アニメーション全体",
+      "warningsTitle_other": "{{count}}件の項目が引き継がれませんでした",
+      "unsupported": {
+        "maskAdvanced": "単純な白または黒の形状以外のマスク、およびネストしたレイヤー上のマスク",
+        "filter": "ぼかしやその他のフィルター",
+        "text": "テキスト（フォントのアウトラインが必要です。先にテキストをパスに変換してください）",
+        "image": "埋め込まれていない画像、またはグループ内の画像",
+        "useComplex": "独自のサイズやビューボックスを持つ再利用シンボル",
+        "raw": "エディターがそのまま保持するSVGマークアップ",
+        "cssOnly": "ブレンドモード、マーカー、その他のCSSのみのスタイル",
+        "strokeGradientAnimation": "線上のアニメーション付きグラデーション",
+        "gradientShape": "繰り返し、焦点付き、または引き伸ばされたグラデーション",
+        "paint": "単色やグラデーション以外の塗り",
+        "skew": "両軸同時のスキュー",
+        "morph": "サブパスの数が変わる形状モーフ",
+        "playOnce": "1回だけ再生（Lottieプレーヤーはデフォルトでループします）",
+        "expression": "エクスプレッション（キーフレームの値が使われます）",
+        "effect": "ぼかしやドロップシャドウなどのレイヤーエフェクト",
+        "textLayer": "テキストレイヤー（名前付きの空のグループとして保持）",
+        "timeRemap": "タイムリマップ",
+        "threeD": "3Dレイヤーと3D回転",
+        "blendMode": "通常以外のブレンドモード",
+        "matte": "トラックマット",
+        "maskMode": "加算と減算以外のマスク",
+        "modifier": "リピーター、角丸、その他の形状モディファイア",
+        "imageExternal": "ファイルに埋め込まれていない画像",
+        "spatialTangents": "曲線のモーションパス（レイヤーは直線で移動します）",
+        "layerTiming": "不透明度がアニメーション化されたレイヤーのイン点とアウト点",
+        "unknownLayer": "エディターが描画しないレイヤータイプ",
+        "unknownShape": "不明な形状アイテム",
+        "autoOrient": "パスに沿った自動回転",
+        "skewAxis": "傾いた軸に沿ったスキュー",
+        "polystar": "角丸またはアニメーション付きの星形と多角形（プレーンなアウトラインとして描画）",
+        "trimComplex": "描画や消去以外の動作をするトリムパス",
+        "gradientAnimation": "アニメーション付きのグラデーション位置と線のグラデーション",
+        "multipleStyles": "1つの形状に複数の塗りや線（最も近いものが使われます）",
+        "styleOpacity": "グラデーションの塗りや線の不透明度のアニメーション",
+        "morphCounts": "点の数が異なる形状キー（中間フレームが異なります）"
+      },
+      "import": {
+        "warningsTitle_other": "{{count}}件の項目をインポートできませんでした",
+        "warningsBody": "アニメーションを開く準備ができました。Lottieファイルの次の部分は非対応のため、省略または簡略化されました：",
+        "open": "アニメーションを開く",
+        "unavailable": "このサイトではLottieのインポートは利用できません。",
+        "refused": {
+          "limit": "本日のエクスポートとインポートの枠を使い切りました。",
+          "locked": "お使いのプランにはLottieのインポートが含まれていません。",
+          "cap": "このファイルはプランの上限より大きいです。",
+          "unavailable": "インポートは現在利用できません。カウントはされていません。しばらくしてからもう一度お試しください。"
+        },
+        "errors": {
+          "too_large": "そのファイルは4 MBを超えています。",
+          "not_json": "そのファイルをJSONとして読み取れませんでした。",
+          "not_lottie": "そのファイルはLottieアニメーションではありません。",
+          "too_complex": "そのアニメーションはレイヤー、キーフレーム、または点が多すぎます。",
+          "invalid": "そのLottieファイルをアニメーションに変換できませんでした。"
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "画像、動画、音声、またはPDFファイルをここにドラッグ＆ドロップ",
+    "hint": "またはクリックしてパソコンから選択します。ファイルはメタデータを読み取るためだけに使われ、解析後に削除されます。変換は行われません。",
+    "largeFile": "{{size}}を超えるファイルは、大きな動画が誤ってアップロードされないよう、依頼されたときだけ検査します。",
+    "failed": "ファイルを検査できませんでした。対応していない形式か、ご利用のプランには大きすぎる可能性があります。"
+  },
+  "voiceTools": {
+    "loading": "ボイスツールを読み込み中…",
+    "unavailable": {
+      "title": "ボイス機能は現在ご利用いただけません",
+      "body": "音声エンジンが停止中か再起動中のため、現在このツールは実行できません。利用回数にはカウントされていません。しばらくしてからもう一度お試しください。",
+      "shiftStillWorks": "下のピッチシフターは音声エンジンを必要としないため、引き続き使えます。"
+    },
+    "warmingUp": "音声エンジンを準備しています。最初のリクエストには最大20秒かかることがあります。",
+    "honesty": "保存したボイスまたはプリセットのボイスで作った音声には、聞こえない透かしが入ります。シフターで変更した音声には入りません。ご自身の声、または使用許可を得ている声のみをお使いください。録音または生成したものは、いかなるモデルの学習にも使用されません。音声エンジンは当社自身のサーバーで動作します。",
+    "signIn": {
+      "title": "ボイスを保存するにはサインイン",
+      "body": "保存したボイスには所有者と同意の記録が必要です。そのため、ボイスのクローン、デザインしたボイスの保存、ボイスへの変換、マイボイスの利用にはアカウントが必要です。サインインするまで、何もアップロードされません。",
+      "cta": "サインイン"
+    },
+    "recorder": {
+      "record": "録音",
+      "recording": "録音中",
+      "stop": "停止",
+      "cancel": "録音をキャンセル",
+      "level": "マイクのレベル",
+      "or": "または",
+      "upload": "音声ファイルをアップロード",
+      "remove": "削除",
+      "recorded": "録音、{{duration}}",
+      "uploaded": "{{name}}、{{duration}}",
+      "measuring": "ファイルの長さを読み取っています…",
+      "unknownLength": "このファイルの長さをブラウザで読み取れませんでした。サーバーが確認します。",
+      "tooShort": "録音は{{seconds}}秒です。ボイスには5秒以上の音声が必要です。",
+      "tooLong": "録音は{{seconds}}秒です。60秒以内にしてください。",
+      "referenceHint": "静かな部屋で、はっきりした音声を5〜60秒録音またはアップロードしてください。自然な文を何文か読んでください。",
+      "inputHint": "変更したい音声を録音またはアップロードしてください。",
+      "micDenied": "マイクへのアクセスがブロックされました。ブラウザのアドレスバーでこのサイトのマイクを許可するか、代わりにファイルをアップロードしてください。",
+      "micHostBlocked": "このツールを表示しているページがマイクへのアクセスを許可していません。代わりにファイルをアップロードしてください。",
+      "micUnavailable": "このブラウザでは録音できません。代わりに音声ファイルをアップロードしてください。"
+    },
+    "consent": {
+      "label": "これは私自身の声です。または、この声の持ち主である本人から明示的な許可を得ています。",
+      "note": "確認した日時と、この文面のバージョン（{{version}}）をボイスと一緒に保存します。利用規約のセクション8.11をご覧ください。"
+    },
+    "clone": {
+      "title": "録音からボイスを作成",
+      "nameLabel": "ボイス名",
+      "namePlaceholder": "私のボイス",
+      "languageLabel": "録音の言語",
+      "create": "ボイスを作成",
+      "creating": "ボイスを作成中…",
+      "created": "ボイスを作成しました。プレビューはマイボイスで聞けます。",
+      "signInToCreate": "サインインしてボイスを作成",
+      "limitReached": "ご利用のプランで保存できるボイスは{{limit}}件で、{{used}}件を保存済みです。アカウントのボイスで1件削除するか、アップグレードしてください。",
+      "noSaving": "ご利用のプランではボイスを保存できません。",
+      "usage": "{{limit}}件中{{used}}件のボイスを保存済み",
+      "usageUnlimited": "{{used}}件のボイスを保存済み"
+    },
+    "myVoices": {
+      "title": "マイボイス",
+      "empty": "保存したボイスはまだありません。",
+      "preview": "{{name}}のプレビュー",
+      "use": "このボイスを使う",
+      "inUse": "選択中",
+      "manage": "アカウントでボイスを管理",
+      "kinds": {
+        "cloned": "クローン",
+        "designed": "デザイン",
+        "preset": "プリセット"
+      }
+    },
+    "picker": {
+      "label": "ボイス",
+      "saved": "マイボイス",
+      "presets": "プリセットのボイス",
+      "none": "利用できるボイスはまだありません。"
+    },
+    "speak": {
+      "title": "音声を生成",
+      "textLabel": "読み上げるテキスト",
+      "placeholder": "ボイスに話させたい内容を入力してください。",
+      "counter": "{{max}}文字中{{used}}文字",
+      "overLimit": "1回のリクエストでご利用のプランが許可する長さ（{{max}}文字）を超えています。",
+      "languageLabel": "言語",
+      "exaggerationLabel": "感情",
+      "exaggerationHint": "低いほど落ち着いた話し方、高いほど表現豊かになります。",
+      "generate": "音声を生成",
+      "generating": "生成中…",
+      "notAllowed": "ご利用のプランには音声生成が含まれていません。"
+    },
+    "designer": {
+      "title": "ボイスを言葉で説明",
+      "descriptionLabel": "説明",
+      "placeholder": "温かく、低めで、少しかすれた、中年の、落ち着いた声",
+      "hint": "どんな声にしたいかを説明してください。エンジンは英語の説明を最もよく理解します。下のチップで、よく使う特徴を追加できます。",
+      "languageLabel": "プレビューの言語",
+      "languageNote": "デザインしたボイスは、これらの言語のいずれかで作成されます。保存すると、音声ツールのすべての言語で話せるようになります。",
+      "chipGroups": {
+        "gender": "性別",
+        "age": "年齢",
+        "accent": "アクセント",
+        "tone": "トーン",
+        "pace": "話す速さ"
+      },
+      "chips": {
+        "female": "女性",
+        "male": "男性",
+        "neutral": "中性的",
+        "young": "若い成人",
+        "middleAged": "中年",
+        "older": "高齢",
+        "american": "アメリカ英語",
+        "british": "イギリス英語",
+        "australian": "オーストラリア英語",
+        "irish": "アイルランド英語",
+        "warm": "温かい",
+        "bright": "明るい",
+        "deep": "深みのある",
+        "raspy": "かすれた",
+        "soft": "柔らかい",
+        "slow": "ゆっくり",
+        "measured": "落ち着いた",
+        "fast": "速い"
+      },
+      "preview": "プレビュー",
+      "previewing": "プレビューを作成中…",
+      "previewsLeft": "残りプレビュー回数：{{max}}回中{{left}}回",
+      "previewsUsed": "この説明では3回のプレビューをすべて使用しました。ボイスを保存するか、説明を変更して再度プレビューしてください。",
+      "previewLabel": "説明したボイスのプレビュー",
+      "keepTitle": "このボイスを保存",
+      "nameLabel": "ボイス名",
+      "keep": "このボイスを保存",
+      "keeping": "ボイスを保存中…",
+      "kept": "ボイスを保存しました。マイボイスに入っています。",
+      "signInToKeep": "サインインしてこのボイスを保存"
+    },
+    "changer": {
+      "modeLabel": "変更方法",
+      "modes": {
+        "shift": "シフト（即時）",
+        "convert": "ボイスに変換（AI）"
+      },
+      "shiftHint": "rubberbandでピッチとフォルマントを即座にシフトします。1回の操作としてカウントされます。結果に透かしは入りません。",
+      "convertHint": "録音を、保存したボイスまたはプリセットのボイスのように聞こえるようにします。AIジョブ1件としてカウントされます。結果には聞こえない透かしが入ります。",
+      "convertNotInPlan": "ボイスへの変換はご利用のプランに含まれていません。",
+      "upgrade": "プランを見る",
+      "signInToConvert": "サインインしてボイスに変換",
+      "targetLabel": "変換先",
+      "convert": "変換",
+      "converting": "変換中…"
+    },
+    "shifter": {
+      "semitonesLabel": "ピッチ",
+      "semitonesValue": "{{value}}半音",
+      "formantLabel": "フォルマント",
+      "formants": {
+        "preserved": "声の個性を保つ",
+        "shifted": "ピッチと一緒にシフト"
+      },
+      "presetsLabel": "プリセット",
+      "presets": {
+        "deeper": "低く",
+        "higher": "高く",
+        "child": "子どもっぽく",
+        "elder": "高齢風",
+        "telephone": "電話風"
+      },
+      "shift": "声をシフト",
+      "shifting": "シフト中…"
+    },
+    "result": {
+      "working": "処理中…",
+      "failed": "ボイスのジョブが失敗しました。カウントされていません。",
+      "downloadMp3": "MP3をダウンロード",
+      "downloadWav": "WAVをダウンロード",
+      "wavPreparing": "WAVを準備中…",
+      "wavFailed": "このブラウザではWAVを作成できませんでした。代わりにMP3をダウンロードしてください。",
+      "wavNote": "WAVは、お使いのブラウザ内でMP3からデコードされます。",
+      "another": "最初からやり直す"
+    },
+    "darkroom": {
+      "title": "ナレーションを生成",
+      "description": "スクリプトを入力し、ボイスと言語を選んでください。ナレーションはこのプロジェクトのメディアに追加され、再生ヘッドの位置に配置されます。",
+      "placeholder": "ナレーションのスクリプトを入力してください。",
+      "generate": "ナレーションを生成",
+      "presetsOnly": "サインインしていなくても、プリセットのボイスを利用できます。保存したボイスを使うにはサインインしてください。",
+      "added": "再生ヘッドの位置にナレーションを追加しました",
+      "noAsset": "ナレーションは生成されましたが、プロジェクトに追加できませんでした。もう一度お試しください。"
+    },
+    "errors": {
+      "sign_in_required": "ご自身のボイスを保存して使うには、サインインしてください。",
+      "consent_required": "ボックスにチェックを入れて、これがご自身の声であること、または話者から明示的な許可を得ていることを確認してください。",
+      "reference_required": "まず5〜60秒の音声を録音またはアップロードしてください。",
+      "reference_too_short": "録音は5秒以上である必要があります。",
+      "reference_too_long": "録音は60秒以内である必要があります。",
+      "reference_too_large": "録音ファイルが大きすぎます。",
+      "no_speech_detected": "その録音から音声を検出できませんでした。静かな部屋で何文か録音してください。",
+      "not_audio": "そのファイルは読み取れる録音ではありません。",
+      "name_invalid": "ボイスには1〜60文字の名前を付けてください。",
+      "language_not_supported": "この言語はこのボイスではサポートされていません。",
+      "voice_limit": "ご利用のプランで保存できるボイスの数（{{limit}}件）に達しました。1件削除するか、アップグレードしてください。",
+      "text_required": "話させる内容を入力してください。",
+      "text_too_long": "ご利用のプランでは、1回のリクエストにつき最大{{limit}}文字までです。",
+      "exaggeration_invalid": "感情は0.25〜2の範囲で指定してください。",
+      "voice_convert_not_in_plan": "ボイスへの変換はご利用のプランに含まれていません。",
+      "voice_input_too_long": "ご利用のプランでは、ここでは最大{{limit}}秒までの録音が使えます。",
+      "input_required": "変更したい録音を追加してください。",
+      "input_too_large": "録音がご利用のプランの上限を超えています。",
+      "voice_required": "変換先のボイスを1つ選んでください。",
+      "voice_not_found": "そのボイスはもう存在しません。",
+      "preset_not_found": "そのプリセットのボイスは利用できません。",
+      "description_required": "希望するボイスを説明してください。",
+      "description_too_long": "説明は1000文字以内にしてください。",
+      "preview_limit": "この説明は、この1時間に3回プレビューしました。ボイスを保存するか、説明を変更してください。",
+      "session_required": "プレビューにはブラウザのセッションが必要です。ページを再読み込みして、もう一度お試しください。",
+      "semitones_invalid": "ピッチは-12〜12半音の範囲で指定してください。",
+      "shift_invalid": "そのシフト設定は無効です。",
+      "voices_unavailable": "音声エンジンは現在利用できません。カウントされていません。しばらくしてからもう一度お試しください。",
+      "voices_storage_unavailable": "保存したボイスは一時的に利用できません。カウントされていません。",
+      "voices_timeout": "音声エンジンの応答に時間がかかりすぎました。カウントされていません。",
+      "voice_request_refused": "音声エンジンがそのリクエストを拒否しました。",
+      "upload_failed": "アップロードに失敗しました。もう一度お試しください。",
+      "job_failed": "ジョブを開始できませんでした。もう一度お試しください。",
+      "invalid_body": "リクエストの内容に無効な部分がありました。ページを再読み込みして、もう一度お試しください。",
+      "rate_limited": "直近1時間のボイスのリクエストが多すぎます。しばらくしてからもう一度お試しください。",
+      "generic": "問題が発生しました。もう一度お試しください。"
+    }
+  }
+}

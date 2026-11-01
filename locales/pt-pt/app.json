@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "retry": "Tentar novamente",
+    "close": "Fechar",
+    "continue": "Continuar",
+    "done": "Concluído",
+    "loading": "A carregar",
+    "processing": "A processar",
+    "signOut": "Terminar sessão",
+    "back": "Voltar"
+  },
+  "tabs": {
+    "tools": "Ferramentas",
+    "history": "Histórico",
+    "account": "Conta"
+  },
+  "placeholders": {
+    "toolsBody": "As ferramentas chegam no MA10.",
+    "historyBody": "As suas tarefas vão aparecer aqui.",
+    "accountBody": "A conta chega no MA15.",
+    "signInBody": "O início de sessão chega no MA04",
+    "openShell": "Abrir o ecrã base da aplicação",
+    "errorBoundary": "Ocorreu um erro. Reinicie a aplicação."
+  },
+  "language": {
+    "title": "Idioma",
+    "system": "Predefinição do sistema",
+    "rtlReloadTitle": "Reinicie para mudar a direção do esquema",
+    "rtlReloadBody": "A aplicação tem de reiniciar para mostrar este idioma da direita para a esquerda.",
+    "rtlReloadBodyLtr": "A aplicação tem de reiniciar para mostrar este idioma da esquerda para a direita.",
+    "rtlReloadConfirm": "Reiniciar agora"
+  }
+}

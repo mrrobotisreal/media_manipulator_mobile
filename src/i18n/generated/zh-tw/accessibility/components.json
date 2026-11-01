@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "預覽"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "關於輸出圖片格式",
+    "dpiTooltip": "關於轉譯品質（DPI）",
+    "pagesTooltip": "關於頁面選擇",
+    "qualityTooltip": "關於 JPG 品質"
+  },
+  "ad": {
+    "label": "廣告",
+    "close": "關閉廣告"
+  },
+  "modals": {
+    "close": "關閉",
+    "previousStep": "上一步",
+    "nextStep": "下一步"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "左上角控制點",
+    "topRightHandle": "右上角控制點",
+    "bottomLeftHandle": "左下角控制點",
+    "bottomRightHandle": "右下角控制點"
+  },
+  "mediaTrimModal": {
+    "scrubber": "剪輯拖曳列",
+    "playToggle": "播放／暫停預覽"
+  },
+  "overlays": {
+    "canvas": "選取畫布",
+    "removeRegion": "移除此區域",
+    "previousPage": "上一頁",
+    "nextPage": "下一頁"
+  },
+  "quotaMeter": {
+    "gauge": "已使用 {{used}} / {{limit}} 次每日操作",
+    "gaugeUnlimited": "沒有每日操作上限",
+    "aiGauge": "{{label}} {{used}} / {{limit}}：已使用的每日 AI 工作",
+    "openUpgrade": "了解如何取得更高的每日額度",
+    "openAccount": "開啟你的帳號"
+  },
+  "accountMenu": {
+    "open": "帳號選單"
+  }
+}
