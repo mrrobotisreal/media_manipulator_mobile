@@ -17,6 +17,7 @@ export const CLIENT_ERROR_CODES = [
   'source_limit_exceeded',
   'contract_mismatch',
   'interrupted',
+  'file_gone',
   'unknown',
 ] as const;
 

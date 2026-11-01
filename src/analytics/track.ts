@@ -18,12 +18,25 @@ export type StubEventName =
   // File intake (MA11).
   | 'file_selected'
   | 'file_rejected'
-  | 'share_intent_received';
+  | 'share_intent_received'
+  // Upload + jobs (MA12).
+  | 'upload_started'
+  | 'upload_completed'
+  | 'upload_failed'
+  | 'job_started'
+  | 'job_completed'
+  | 'job_failed'
+  | 'activation_first_job_completed';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 
-export function track(name: StubEventName, props?: EventProps): void {
-  if (__DEV__) console.debug('[analytics:stub] track', name, props);
+/**
+ * `context` overrides the ambient tool context for this one event (web `analytics.track`'s third
+ * argument): job events fire after the tool screen is gone, so they carry their own `tool_slug`,
+ * `media_kind` and `job_id`.
+ */
+export function track(name: StubEventName, props?: EventProps, context?: EventProps): void {
+  if (__DEV__) console.debug('[analytics:stub] track', name, props, context);
 }
 
 export function identify(uid: string, traits?: EventProps): void {
