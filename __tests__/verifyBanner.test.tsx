@@ -8,7 +8,11 @@ import ToolsTab from '../app/(app)/(tabs)/index';
 import { makeReadyStore } from '@/state/testing';
 import { identityChanged, statusChanged } from '@/state/slices/auth';
 
-jest.mock('lucide-react-native', () => ({ Wrench: () => null }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }) }));
+jest.mock('lucide-react-native', () => {
+  const Stub = () => null;
+  return new Proxy({}, { get: () => Stub });
+});
 jest.mock('@/ui/components/ProcessingIndicator', () => ({}));
 jest.mock('@/ui/components/ProgressBar', () => ({}));
 jest.mock('@/ui/components/QuotaMeter', () => ({}));
