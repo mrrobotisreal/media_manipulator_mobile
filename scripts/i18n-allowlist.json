@@ -46,6 +46,16 @@
     "vi-VN:tools.families.video",
     "vi-VN:tools.families.ai",
     "vi-VN:tools.families.metadata",
-    "vi-VN:tools.badge.ai"
+    "vi-VN:tools.badge.ai",
+    "de-DE:files.kinds.video",
+    "de-DE:files.kinds.audio",
+    "es-ES:files.kinds.audio",
+    "es-MX:files.kinds.video",
+    "es-MX:files.kinds.audio",
+    "fr-FR:files.kinds.image",
+    "fr-FR:files.kinds.audio",
+    "it-IT:files.kinds.video",
+    "it-IT:files.kinds.audio",
+    "vi-VN:files.kinds.video"
   ]
 }

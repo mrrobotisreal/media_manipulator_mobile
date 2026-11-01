@@ -11,6 +11,18 @@ export type Variant = 'development' | 'preview' | 'production';
 export const ANDROID_PACKAGE = 'com.mediamanipulator.app';
 export const IOS_BUNDLE_ID = 'com.mediamanipulator.app';
 
+// The system Photo Picker / Storage Access Framework need none of these; keep them out of the merged manifest.
+export const BLOCKED_ANDROID_PERMISSIONS = [
+  'android.permission.READ_MEDIA_IMAGES',
+  'android.permission.READ_MEDIA_VIDEO',
+  'android.permission.READ_MEDIA_AUDIO',
+  'android.permission.READ_MEDIA_VISUAL_USER_SELECTED',
+  'android.permission.READ_EXTERNAL_STORAGE',
+  'android.permission.WRITE_EXTERNAL_STORAGE',
+  'android.permission.CAMERA',
+  'android.permission.RECORD_AUDIO',
+];
+
 const BACKGROUND = '#0A0B0D';
 
 const VARIANTS: Record<Variant, { name: string; scheme: string; suffix: string }> = {
@@ -52,6 +64,27 @@ export function buildConfig(
         ios: { deploymentTarget: '16.4', useFrameworks: 'static' },
       },
     ],
+    // File intake (MA11). System pickers need no storage permissions (ARCHITECTURE section 11).
+    [
+      'expo-image-picker',
+      { photosPermission: false, cameraPermission: false, microphonePermission: false },
+    ],
+    'expo-document-picker',
+    'expo-video',
+    [
+      'expo-audio',
+      { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false },
+    ],
+    // Android share-into only; the iOS share extension is MA36 (ADR MA-0002). The plugin's typed MIME list
+    // has no audio/pdf, so `*/*` receives everything and src/files/share-intent.ts filters by MIME in JS.
+    [
+      'expo-share-intent',
+      {
+        disableIOS: true,
+        androidIntentFilters: ['image/*', 'video/*', '*/*'],
+        androidMultiIntentFilters: ['image/*', 'video/*', '*/*'],
+      },
+    ],
   ];
   // Auth plugins live inside the same guard: without a Firebase config file the native modules are not linked.
   // The google-signin plugin reads REVERSED_CLIENT_ID from the plist itself (no iosUrlScheme option needed).
@@ -74,6 +107,7 @@ export function buildConfig(
     icon: './assets/icon.png',
     runtimeVersion: { policy: 'fingerprint' },
     android: {
+      blockedPermissions: BLOCKED_ANDROID_PERMISSIONS,
       package: `${ANDROID_PACKAGE}${v.suffix}`,
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',

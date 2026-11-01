@@ -74,3 +74,18 @@ jest.mock('expo-network', () => ({
 }));
 
 jest.mock('expo-updates', () => ({ reloadAsync: jest.fn(() => Promise.resolve()) }));
+
+// MA11 native modules: no JS-side implementation under jest.
+jest.mock('expo-audio', () => ({ createAudioPlayer: jest.fn() }));
+jest.mock('expo-video', () => ({ createVideoPlayer: jest.fn() }));
+jest.mock('expo-image', () => ({ Image: () => null }));
+jest.mock('expo-image-picker', () => ({ launchImageLibraryAsync: jest.fn() }));
+jest.mock('expo-document-picker', () => ({ getDocumentAsync: jest.fn() }));
+jest.mock('expo-share-intent', () => ({
+  ShareIntentProvider: ({ children }: { children: unknown }) => children,
+  useShareIntentContext: () => ({
+    hasShareIntent: false,
+    shareIntent: { files: null },
+    resetShareIntent: jest.fn(),
+  }),
+}));

@@ -29,10 +29,13 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Preset** (MA10 type only): a named `Partial<defaults>` variant of a tool for a folded web page, with its own analytics slug.
 - **Analytics slug**: the web tool slug a row reports as `context.tool_slug` (first folded slug, never an alias in the web's `TOOL_ALIAS_OF`); keeps web and app funnels comparable.
 - **Endpoint `auto`**: presign for a video file, multipart upload otherwise (`resolveTransport`).
+- **Intake** (MA11): getting a user file into the app as an `IntakeFile`: a stable `file://` copy under `cache/intake/<id>/` (never a `content://` URI), made by `src/files/intake.ts` before any check that needs the bytes. A 24 h sweep (start + foreground) deletes unreferenced copies.
+- **Share-into** (MA11): Android `ACTION_SEND` / `SEND_MULTIPLE` via `expo-share-intent` 8.x. The plugin receives `*/*` and `src/files/share-intent.ts` filters by MIME in JS; a share is held in memory until `auth.status === 'ready'`, then routed to `app/(app)/intake.tsx`. iOS share extension is MA36.
+- **Pre-flight check** (MA11): pure `src/files/preflight.ts` run before any upload: `unsupported_type`, `too_large`, `too_long`, `empty`, `too_many`, against the cached `/account/me` limits. Skipped (never guessed) while the snapshot loads; a failed duration probe never blocks.
 
 ## Layout
 
-`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`; `src/tools` registry, search, recents (MA10).
+`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`; `src/tools` registry, search, recents (MA10); `src/files` intake, pre-flight, share-into, FileArea (MA11).
 
 ## Ids
 

@@ -269,5 +269,44 @@
       "withGoogle": "Xác nhận bằng Google",
       "withApple": "Xác nhận bằng Apple"
     }
+  },
+  "files": {
+    "pick": {
+      "media": "Ảnh và video",
+      "files": "Tệp"
+    },
+    "change": "Thay đổi",
+    "remove": "Xóa",
+    "copying": "Đang chuẩn bị tệp…",
+    "kinds": {
+      "image": "Hình ảnh",
+      "video": "Video",
+      "audio": "Âm thanh",
+      "pdf": "PDF"
+    },
+    "error": {
+      "lowSpace": "Không đủ dung lượng trống để mở tệp này. Hãy giải phóng bớt dung lượng rồi thử lại.",
+      "copyFailed": "Không thể mở tệp này. Hãy thử lại."
+    }
+  },
+  "intake": {
+    "title": "Mở bằng",
+    "toolsFor": "Công cụ cho tệp này",
+    "toolsForMany": "Công cụ cho {{count}} tệp này",
+    "mixedKinds": "Các tệp này cần công cụ khác nhau. Hãy chia sẻ từng loại một.",
+    "unsupported": {
+      "title": "Media Manipulator không thể mở loại tệp này",
+      "body": "Hãy chia sẻ hình ảnh, video, âm thanh hoặc tệp PDF.",
+      "back": "Quay lại Công cụ"
+    },
+    "rejected": {
+      "tooLarge": "Tệp này có dung lượng {{size}}. Gói của bạn chấp nhận tệp tối đa {{limit}}.",
+      "tooLong": "Video này dài {{duration}}. Gói của bạn cho phép tối đa {{limit}}.",
+      "unsupported": "{{tool}} không chấp nhận loại tệp này.",
+      "unsupportedAny": "Media Manipulator không thể mở loại tệp này.",
+      "videoFormat": "Định dạng video này không được hỗ trợ. Hãy dùng một trong các định dạng: {{formats}}.",
+      "empty": "Tệp này trống.",
+      "tooMany": "Chỉ chọn tối đa {{count}} tệp mỗi lần."
+    }
   }
 }

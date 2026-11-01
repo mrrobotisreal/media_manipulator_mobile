@@ -269,5 +269,44 @@
       "withGoogle": "Googleで確認",
       "withApple": "Appleで確認"
     }
+  },
+  "files": {
+    "pick": {
+      "media": "写真と動画",
+      "files": "ファイル"
+    },
+    "change": "変更",
+    "remove": "削除",
+    "copying": "ファイルを準備中…",
+    "kinds": {
+      "image": "画像",
+      "video": "動画",
+      "audio": "音声",
+      "pdf": "PDF"
+    },
+    "error": {
+      "lowSpace": "このファイルを開くための空き容量が足りません。空きを増やしてからもう一度お試しください。",
+      "copyFailed": "このファイルを開けませんでした。もう一度お試しください。"
+    }
+  },
+  "intake": {
+    "title": "アプリで開く",
+    "toolsFor": "このファイルのツール",
+    "toolsForMany": "これら{{count}}個のファイルのツール",
+    "mixedKinds": "これらのファイルには異なるツールが必要です。種類ごとに共有してください。",
+    "unsupported": {
+      "title": "Media Manipulatorではこの種類のファイルを開けません",
+      "body": "画像、動画、音声、PDFファイルを共有してください。",
+      "back": "ツールに戻る"
+    },
+    "rejected": {
+      "tooLarge": "このファイルは{{size}}です。ご利用のプランでは{{limit}}までのファイルを使用できます。",
+      "tooLong": "この動画の長さは{{duration}}です。ご利用のプランでは最大{{limit}}までです。",
+      "unsupported": "{{tool}}はこの種類のファイルに対応していません。",
+      "unsupportedAny": "Media Manipulatorではこの種類のファイルを開けません。",
+      "videoFormat": "この動画形式には対応していません。次のいずれかをご利用ください：{{formats}}。",
+      "empty": "このファイルは空です。",
+      "tooMany": "一度に選択できるのは最大{{count}}個のファイルです。"
+    }
   }
 }
