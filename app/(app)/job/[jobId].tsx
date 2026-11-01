@@ -28,6 +28,9 @@ function sourceFor(job: JobRecord): ResultSource | null {
     resultHint: tool?.resultHint,
     toolSlug: job.analyticsSlug,
     mediaKind: tool ? analyticsMediaKind(tool) : undefined,
+    tool: tool
+      ? { id: tool.id, family: tool.family, kind: tool.accepts.kinds[0] ?? 'image' }
+      : undefined,
   };
 }
 

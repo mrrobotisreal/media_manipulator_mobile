@@ -10,6 +10,11 @@ import {
 import { formatBytes, formatDateTime } from '@/lib/format';
 import { Num, Text } from '@/ui/components/Text';
 import { findOriginal } from './cache';
+import { ActionsBar } from './ActionsBar';
+import { canOfferMp3 } from './mp3';
+import { isShareable } from './shareable';
+import { useResultActions } from './useResultActions';
+import { useAppSelector } from '@/state/hooks';
 import { describe, type ResultDescriptor, type ResultKind } from './describe';
 import { viewerFor } from './viewers';
 
@@ -20,6 +25,8 @@ export interface ResultSource {
   resultHint?: ResultKind;
   toolSlug?: string;
   mediaKind?: ResultContext['mediaKind'];
+  /** Registry tool for "Run another" and the MP3 offer; absent for a job opened by id. */
+  tool?: { id: string; family: string; kind: 'image' | 'video' | 'audio' | 'pdf' };
 }
 
 /** Builds the descriptor from the server snapshot, attaching MA12's cached original when it exists. */
@@ -51,6 +58,17 @@ export function ResultBody({ source, surface }: { source: ResultSource; surface:
     trackResultViewed(context, descriptor.kind, surface, Boolean(descriptor.original));
   }, [context, descriptor.kind, descriptor.original, surface]);
 
+  const actions = useResultActions({
+    descriptor,
+    context,
+    surface,
+    tool: source.tool,
+    originalName: source.job.originalFile.name,
+    originalMime: source.job.originalFile.type,
+  });
+  const haptics = useAppSelector((s) => s.settings.haptics);
+  const hints = [source.tool?.id, source.webTask, source.toolSlug];
+
   return (
     <View className="gap-4" testID="result-body">
       {createElement(viewerFor(descriptor.kind), { descriptor, context })}
@@ -67,7 +85,13 @@ export function ResultBody({ source, surface }: { source: ResultSource; surface:
           </Num>
         ) : null}
       </View>
-      {/* MA14: actions bar (Save, Share, Download) renders here. */}
+      <ActionsBar
+        actions={actions}
+        haptics={haptics}
+        canShareLink={isShareable(descriptor.kind, source.webTask, source.job.mode, ...hints)}
+        canMp3={canOfferMp3(descriptor.fileName, ...hints)}
+        canRunAnother={Boolean(source.tool)}
+      />
     </View>
   );
 }

@@ -44,5 +44,6 @@ const settingsSlice = createSlice({
   },
 });
 
-export const { hapticsSet, analyticsOptOutSet, localeSet, saveDirSet, toolOpened } = settingsSlice.actions;
+export const { hapticsSet, analyticsOptOutSet, localeSet, saveDirSet, toolOpened } =
+  settingsSlice.actions;
 export default settingsSlice.reducer;
