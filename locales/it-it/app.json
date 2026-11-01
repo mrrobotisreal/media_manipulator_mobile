@@ -420,5 +420,56 @@
     "done": "Eliminato",
     "pending": "Eliminazione… potrebbe volerci un minuto prima che scompaia ovunque.",
     "failed": "Impossibile eliminare questo risultato. Riprova."
+  },
+  "history": {
+    "title": "Cronologia",
+    "today": "Oggi",
+    "yesterday": "Ieri",
+    "inProgress": "In corso",
+    "deletesOn": "Verrà eliminato il {{date}}",
+    "keptLonger": "Conservato più a lungo",
+    "expired": "Scaduto",
+    "status": {
+      "processing": "In elaborazione",
+      "failed": "Non riuscito"
+    },
+    "empty": {
+      "title": "Ancora nessun risultato",
+      "body": "Esegui uno strumento e i risultati appariranno qui per {{retention}}.",
+      "bodyShort": "Esegui uno strumento e i risultati appariranno qui.",
+      "cta": "Apri Strumenti"
+    },
+    "loadFailed": "Impossibile caricare la cronologia.",
+    "retry": "Riprova",
+    "keep": {
+      "title": "Conserva questo risultato più a lungo",
+      "week": "1 settimana",
+      "month": "1 mese",
+      "sixMonths": "6 mesi",
+      "year": "1 anno",
+      "done": "Conservato fino al {{date}}",
+      "gone": "Questo risultato è già stato eliminato.",
+      "failed": "Impossibile prolungare questo risultato. Riprova."
+    },
+    "actions": {
+      "title": "Azioni per {{name}}",
+      "delete": "Elimina",
+      "keepLonger": "Conserva più a lungo"
+    },
+    "tool": {
+      "convert": "Conversione",
+      "caption_translator": "Traduzione sottotitoli",
+      "stitch_audio_to_video": "Unione audio",
+      "video_transcode": "Pacchetto HLS / DASH",
+      "document_scan": "Scansione documento",
+      "image_restore": "Ripristino immagine",
+      "video_restore": "Ripristino video",
+      "studio_derive": "Pulizia audio Studio",
+      "studio_captions": "Sottotitoli Studio",
+      "studio_export": "Esportazione Studio",
+      "video_summary": "Riepilogo video",
+      "vector_vectorize": "Vettorializza",
+      "studio_reverse_proxy": "Proxy anteprima Studio"
+    }
   }
 }

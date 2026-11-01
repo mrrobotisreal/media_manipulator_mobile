@@ -1,6 +1,8 @@
 import { File } from 'expo-file-system';
 import { track } from '@/analytics/track';
 import { API_BASE_URL } from '@/api/config';
+import { buildHeaders } from '@/api/baseQuery';
+import { linkForJob } from '@/history/reopenFallback';
 import type { MmError } from '@/api/errors';
 import type { DownloadLink } from '@/api/schemas/job';
 import { cachedResult, resultDir, resultFile } from './cache';
@@ -146,6 +148,11 @@ export function inlineResultUrl(jobId: string, sessionId: string): string {
   return `${API_BASE_URL}/result/${encodeURIComponent(jobId)}?sid=${encodeURIComponent(sessionId)}`;
 }
 
+/** API-hosted download URL without a signed `token=`: needs the owner headers. */
+function isTokenless(url: string): boolean {
+  return url.startsWith(`${apiOrigin()}/`) && !/[?&]token=/.test(url);
+}
+
 /** Real dependencies: RTK Query mint + `File.downloadFileAsync`. Imported lazily so tests stay native-free. */
 export function realFetchDeps(): FetchResultDeps {
   /* eslint-disable @typescript-eslint/no-require-imports */
@@ -153,14 +160,22 @@ export function realFetchDeps(): FetchResultDeps {
   const { jobsApi } = require('@/api/endpoints/jobs') as typeof import('@/api/endpoints/jobs');
   /* eslint-enable @typescript-eslint/no-require-imports */
   return {
+    // A job opened from History may carry a direct URL (MA15); otherwise a link is minted.
     mintLink: (jobId) =>
-      store
-        .dispatch(jobsApi.endpoints.createDownloadLink.initiate(jobId))
-        .unwrap() as Promise<DownloadLink>,
+      linkForJob(
+        jobId,
+        (id) =>
+          store
+            .dispatch(jobsApi.endpoints.createDownloadLink.initiate(id))
+            .unwrap() as Promise<DownloadLink>,
+      ),
     download: async (url, dest, { onProgress, signal }) => {
+      // A History URL on the API host has no token: it is authorised by the owner headers.
+      const headers = isTokenless(url) ? await buildHeaders() : undefined;
       await File.downloadFileAsync(url, dest, {
         idempotent: true,
         signal,
+        headers,
         onProgress: ({ bytesWritten, totalBytes }) => {
           if (onProgress && totalBytes > 0) onProgress(Math.min(1, bytesWritten / totalBytes));
         },

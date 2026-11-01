@@ -420,5 +420,56 @@
     "done": "삭제했어요",
     "pending": "삭제하는 중… 모든 곳에서 사라지기까지 1분 정도 걸릴 수 있어요.",
     "failed": "이 결과를 삭제하지 못했어요. 다시 시도해 주세요."
+  },
+  "history": {
+    "title": "기록",
+    "today": "오늘",
+    "yesterday": "어제",
+    "inProgress": "진행 중",
+    "deletesOn": "{{date}}에 삭제됨",
+    "keptLonger": "더 오래 보관됨",
+    "expired": "만료됨",
+    "status": {
+      "processing": "처리 중",
+      "failed": "실패"
+    },
+    "empty": {
+      "title": "아직 결과가 없어요",
+      "body": "도구를 실행하면 결과가 {{retention}} 동안 여기에 표시돼요.",
+      "bodyShort": "도구를 실행하면 결과가 여기에 표시돼요.",
+      "cta": "도구 열기"
+    },
+    "loadFailed": "기록을 불러오지 못했어요.",
+    "retry": "다시 시도",
+    "keep": {
+      "title": "이 결과를 더 오래 보관",
+      "week": "1주",
+      "month": "1개월",
+      "sixMonths": "6개월",
+      "year": "1년",
+      "done": "{{date}}까지 보관됨",
+      "gone": "이 결과는 이미 삭제되었어요.",
+      "failed": "보관 기간을 연장하지 못했어요. 다시 시도해 주세요."
+    },
+    "actions": {
+      "title": "{{name}} 작업",
+      "delete": "삭제",
+      "keepLonger": "더 오래 보관"
+    },
+    "tool": {
+      "convert": "변환",
+      "caption_translator": "자막 번역",
+      "stitch_audio_to_video": "오디오 합치기",
+      "video_transcode": "HLS / DASH 패키지",
+      "document_scan": "문서 스캔",
+      "image_restore": "이미지 복원",
+      "video_restore": "영상 복원",
+      "studio_derive": "Studio 오디오 정리",
+      "studio_captions": "Studio 자막",
+      "studio_export": "Studio 내보내기",
+      "video_summary": "영상 요약",
+      "vector_vectorize": "벡터화",
+      "studio_reverse_proxy": "Studio 미리보기 프록시"
+    }
   }
 }

@@ -7,6 +7,7 @@ import { isServerActive, type JobRecord } from '@/jobs/types';
 import { useBatchPosition, useJob } from '@/jobs/useJob';
 import { failureKeyFor } from '@/results/failureCopy';
 import { ResultBody, type ResultSource } from '@/results/ResultBody';
+import { jobFromEntry, reopenableEntry } from '@/history/reopenFallback';
 import { useRemoteJob } from '@/results/useRemoteJob';
 import { Button } from '@/ui/components/Button';
 import { Num, Text } from '@/ui/components/Text';
@@ -142,6 +143,11 @@ export default function JobRoute() {
     }
   } else if (remote.status === 'loading') {
     body = <ProcessingIndicator />;
+  } else if (remote.status === 'missing' && reopenableEntry(id)) {
+    // History opened a result the server's in-memory job map no longer has: the row is enough to download it.
+    const entry = reopenableEntry(id)!;
+    title = t('job.state.completed');
+    body = <ResultBody source={{ job: jobFromEntry(entry) }} surface={surface} />;
   } else if (remote.status === 'missing') {
     body = (
       <View className="gap-3" testID="result-not-on-server">

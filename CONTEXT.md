@@ -42,6 +42,10 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Viewer** (MA13): a component in `src/results/viewers/` chosen by `viewerFor(kind)`; unregistered or not-yet-built kinds render `UnknownViewer`. Image/gif/pdf/archive download into `cache/results/<jobId>/`; video/audio stream `GET /result/:id` with owner headers when the API sniffed a MIME.
 - **Compare** (MA13): image-only wipe/toggle of the result against the original copy kept in `cache/originals/<jobId>/`; wipe values are logical percentages (0 = start edge).
 - **Job engine** (MA12): `src/jobs/jobEngine.ts`, plain TypeScript over an injected `JobTransport`; one upload at a time, SSE for the watched job (fallback 2 s poll after an error or 60 s silence), 5 s poll for the rest, nothing while backgrounded. `runtime.ts` wires the real store/native modules; `useJob(id)` watches while a screen is mounted.
+- **History entry** (MA15): one row of `GET /account/history` (`HistoryEntry`, `src/api/schemas/history.ts`); the server's record of a job, listed 50 per page (offset paging, infinite query). `deadlineOf` = `deletesOn || resultExpiresAt`.
+- **Pending row** (MA15): a local `jobs` record (uploading / in flight / `upload_failed`) the server history does not list yet; shown under "In progress" until a loaded page contains its `jobId`, then the server row wins.
+- **Keep longer** (MA15): `PATCH /jobs/:id/retention {keepForHours}` pins a result past the account window (1 week to 1 year in the UI); needs a ledger row (`retainedObjectId`); 409 `nothing_to_keep` means it is already gone. No analytics event.
+- **Entry cache** (MA15): in-memory map of the History row last opened, so the result screen can open a job the server's job map has forgotten.
 
 ## Layout
 

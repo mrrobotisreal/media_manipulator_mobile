@@ -420,5 +420,56 @@
     "done": "Đã xóa",
     "pending": "Đang xóa… có thể mất một phút để biến mất khỏi mọi nơi.",
     "failed": "Không thể xóa kết quả này. Hãy thử lại."
+  },
+  "history": {
+    "title": "Lịch sử",
+    "today": "Hôm nay",
+    "yesterday": "Hôm qua",
+    "inProgress": "Đang thực hiện",
+    "deletesOn": "Xóa vào {{date}}",
+    "keptLonger": "Lưu lâu hơn",
+    "expired": "Đã hết hạn",
+    "status": {
+      "processing": "Đang xử lý",
+      "failed": "Không thành công"
+    },
+    "empty": {
+      "title": "Chưa có kết quả",
+      "body": "Chạy một công cụ và kết quả sẽ hiển thị tại đây trong {{retention}}.",
+      "bodyShort": "Chạy một công cụ và kết quả sẽ hiển thị tại đây.",
+      "cta": "Mở Công cụ"
+    },
+    "loadFailed": "Không thể tải lịch sử của bạn.",
+    "retry": "Thử lại",
+    "keep": {
+      "title": "Lưu kết quả này lâu hơn",
+      "week": "1 tuần",
+      "month": "1 tháng",
+      "sixMonths": "6 tháng",
+      "year": "1 năm",
+      "done": "Lưu đến {{date}}",
+      "gone": "Kết quả này đã bị xóa.",
+      "failed": "Không thể gia hạn kết quả này. Hãy thử lại."
+    },
+    "actions": {
+      "title": "Thao tác cho {{name}}",
+      "delete": "Xóa",
+      "keepLonger": "Lưu lâu hơn"
+    },
+    "tool": {
+      "convert": "Chuyển đổi",
+      "caption_translator": "Dịch phụ đề",
+      "stitch_audio_to_video": "Ghép âm thanh",
+      "video_transcode": "Gói HLS / DASH",
+      "document_scan": "Quét tài liệu",
+      "image_restore": "Khôi phục ảnh",
+      "video_restore": "Khôi phục video",
+      "studio_derive": "Dọn dẹp âm thanh Studio",
+      "studio_captions": "Phụ đề Studio",
+      "studio_export": "Xuất từ Studio",
+      "video_summary": "Tóm tắt video",
+      "vector_vectorize": "Vector hóa",
+      "studio_reverse_proxy": "Proxy xem trước Studio"
+    }
   }
 }

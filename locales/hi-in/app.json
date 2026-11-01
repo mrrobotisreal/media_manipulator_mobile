@@ -420,5 +420,56 @@
     "done": "हटा दिया गया",
     "pending": "हटाया जा रहा है… हर जगह से गायब होने में एक मिनट लग सकता है।",
     "failed": "यह नतीजा हटाया नहीं जा सका। फिर कोशिश करें।"
+  },
+  "history": {
+    "title": "इतिहास",
+    "today": "आज",
+    "yesterday": "कल",
+    "inProgress": "प्रगति में",
+    "deletesOn": "{{date}} को हटाया जाएगा",
+    "keptLonger": "ज़्यादा समय तक रखा गया",
+    "expired": "समाप्त",
+    "status": {
+      "processing": "प्रोसेस हो रहा है",
+      "failed": "विफल"
+    },
+    "empty": {
+      "title": "अभी कोई परिणाम नहीं",
+      "body": "कोई टूल चलाएँ और आपके परिणाम {{retention}} तक यहाँ दिखेंगे।",
+      "bodyShort": "कोई टूल चलाएँ और आपके परिणाम यहाँ दिखेंगे।",
+      "cta": "टूल्स खोलें"
+    },
+    "loadFailed": "आपका इतिहास लोड नहीं हो सका।",
+    "retry": "फिर कोशिश करें",
+    "keep": {
+      "title": "इस परिणाम को ज़्यादा समय तक रखें",
+      "week": "1 सप्ताह",
+      "month": "1 महीना",
+      "sixMonths": "6 महीने",
+      "year": "1 साल",
+      "done": "{{date}} तक रखा गया",
+      "gone": "यह परिणाम पहले ही हटा दिया गया है।",
+      "failed": "इस परिणाम की अवधि नहीं बढ़ाई जा सकी। फिर कोशिश करें।"
+    },
+    "actions": {
+      "title": "{{name}} के लिए कार्रवाइयाँ",
+      "delete": "हटाएँ",
+      "keepLonger": "ज़्यादा समय तक रखें"
+    },
+    "tool": {
+      "convert": "रूपांतरण",
+      "caption_translator": "कैप्शन अनुवाद",
+      "stitch_audio_to_video": "ऑडियो जोड़ना",
+      "video_transcode": "HLS / DASH पैकेज",
+      "document_scan": "दस्तावेज़ स्कैन",
+      "image_restore": "इमेज बहाली",
+      "video_restore": "वीडियो बहाली",
+      "studio_derive": "Studio ऑडियो सफ़ाई",
+      "studio_captions": "Studio कैप्शन",
+      "studio_export": "Studio एक्सपोर्ट",
+      "video_summary": "वीडियो सारांश",
+      "vector_vectorize": "वेक्टराइज़",
+      "studio_reverse_proxy": "Studio प्रीव्यू प्रॉक्सी"
+    }
   }
 }

@@ -420,5 +420,56 @@
     "done": "נמחק",
     "pending": "מוחק… ייתכן שייקח דקה עד שהיא תיעלם מכל מקום.",
     "failed": "לא ניתן היה למחוק את התוצאה הזו. נסה שוב."
+  },
+  "history": {
+    "title": "היסטוריה",
+    "today": "היום",
+    "yesterday": "אתמול",
+    "inProgress": "בתהליך",
+    "deletesOn": "יימחק ב-{{date}}",
+    "keptLonger": "נשמר לזמן ארוך יותר",
+    "expired": "פג תוקף",
+    "status": {
+      "processing": "מעבד",
+      "failed": "נכשל"
+    },
+    "empty": {
+      "title": "עדיין אין תוצאות",
+      "body": "הפעילו כלי והתוצאות יופיעו כאן למשך {{retention}}.",
+      "bodyShort": "הפעילו כלי והתוצאות יופיעו כאן.",
+      "cta": "פתח כלים"
+    },
+    "loadFailed": "לא ניתן לטעון את ההיסטוריה.",
+    "retry": "נסה שוב",
+    "keep": {
+      "title": "שמור תוצאה זו לזמן ארוך יותר",
+      "week": "שבוע אחד",
+      "month": "חודש אחד",
+      "sixMonths": "6 חודשים",
+      "year": "שנה אחת",
+      "done": "נשמר עד {{date}}",
+      "gone": "תוצאה זו כבר נמחקה.",
+      "failed": "לא ניתן להאריך את התוצאה. נסה שוב."
+    },
+    "actions": {
+      "title": "פעולות עבור {{name}}",
+      "delete": "מחק",
+      "keepLonger": "שמור לזמן ארוך יותר"
+    },
+    "tool": {
+      "convert": "המרה",
+      "caption_translator": "תרגום כתוביות",
+      "stitch_audio_to_video": "שילוב אודיו",
+      "video_transcode": "חבילת HLS / DASH",
+      "document_scan": "סריקת מסמך",
+      "image_restore": "שחזור תמונה",
+      "video_restore": "שחזור וידאו",
+      "studio_derive": "ניקוי אודיו ב-Studio",
+      "studio_captions": "כתוביות Studio",
+      "studio_export": "ייצוא Studio",
+      "video_summary": "סיכום וידאו",
+      "vector_vectorize": "וקטוריזציה",
+      "studio_reverse_proxy": "פרוקסי תצוגה מקדימה ב-Studio"
+    }
   }
 }

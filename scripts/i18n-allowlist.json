@@ -57,6 +57,7 @@
     "it-IT:files.kinds.video",
     "it-IT:files.kinds.audio",
     "vi-VN:files.kinds.video",
-    "de-DE:result.details"
+    "de-DE:result.details",
+    "fr-FR:history.tool.convert"
   ]
 }
