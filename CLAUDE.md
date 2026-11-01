@@ -18,6 +18,7 @@ Expo SDK 57 / React Native dev-client app. Read `CONTEXT.md`, then the planning 
 - User-visible strings: English literals tagged `// i18n: MA05` until MA05, then 18 locales. Use logical styles (`start`/`end`, `ps`/`pe`), never left/right.
 - Use `Text`/`Button` from `src/ui/components`, not react-native's (lint-enforced in `app/` and `src/features`).
 - `useFrameworks: 'static'` (iOS) is react-native-firebase's requirement; keep it.
+- App ids: `com.mediamanipulator.app` (Android and iOS), never `com.media_manipulator.app` / `com.media-manipulator.app`.
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 - Merge green work to `main` before the final report (merge-on-completion).
 
