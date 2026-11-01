@@ -53,7 +53,7 @@ export function mergeAllowance(metric: QuotaMetric, input: AllowanceInput): Allo
     header !== undefined &&
     header.limit > 0 &&
     (header.resetAt === null || isFuture(header.resetAt, now)) &&
-    (fetchedAt === undefined || header.observedAt > fetchedAt);
+    (fetchedAt === undefined || header.observedAt >= fetchedAt);
 
   if (headerUsable) {
     const used = Math.max(0, header.limit - header.remaining);

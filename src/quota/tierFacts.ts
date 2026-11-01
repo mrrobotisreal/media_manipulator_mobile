@@ -55,3 +55,22 @@ export function higherTierFact(
   const tied = higher.filter((x) => x.value === first.value).map((x) => x.tier);
   return { limitKey, tiers: tied, value: first.value };
 }
+
+const LIMIT_OF_METRIC = { ops: 'opsPerDay', ai_ops: 'aiOpsPerDay' } as const;
+export const limitKeyForMetric = (metric: 'ops' | 'ai_ops'): TierFactKey => LIMIT_OF_METRIC[metric];
+
+/** Per-tier values of `limitKey` for the paid tiers above `currentTier` that raise it. */
+export function higherTierValues(
+  limitKey: TierFactKey,
+  tiers: TiersResponse['tiers'] | undefined,
+  currentTier: string | null | undefined,
+): { tier: PaidTier; value: number }[] {
+  if (!tiers || !currentTier) return [];
+  const currentRank = RANK[currentTier] ?? RANK.free!;
+  const current = limitsOf(tiers, currentTier) ?? limitsOf(tiers, 'free');
+  if (!current || currentRank >= RANK.pro!) return [];
+  return PAID.filter((t) => RANK[t]! > currentRank)
+    .map((t) => ({ tier: t, value: limitsOf(tiers, t)?.[limitKey] }))
+    .filter((x): x is { tier: PaidTier; value: number } => x.value !== undefined)
+    .filter((x) => rank(x.value) > rank(current[limitKey]));
+}
