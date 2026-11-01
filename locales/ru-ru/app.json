@@ -34,7 +34,6 @@
     "badge": {
       "ai": "ИИ"
     },
-    "quotaSlot": "Здесь появится ваш дневной лимит",
     "items": {
       "image-convert": {
         "title": "Конвертация изображения",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Векторизация",
       "studio_reverse_proxy": "Прокси предпросмотра Studio"
     }
+  },
+  "quota": {
+    "resetsIn": "Сброс через {{time}}",
+    "planSheet": {
+      "title": "Тариф и лимиты",
+      "current": "Ваш тариф",
+      "managed": "Тарифами можно управлять в вашем аккаунте Media Manipulator.",
+      "loading": "Загрузка сведений о тарифе",
+      "loadFailed": "Сведения о тарифе сейчас недоступны."
+    },
+    "rows": {
+      "ops": "Операций в день",
+      "aiOps": "ИИ-операций в день",
+      "fileSize": "Максимальный файл",
+      "videoLength": "Максимальная длина видео",
+      "outputHeight": "Максимальное разрешение вывода",
+      "retention": "Срок хранения результатов"
+    },
+    "tiers": {
+      "free": "Бесплатный",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Оператор"
+    },
+    "tierNames": {
+      "both": "Premium и Pro"
+    },
+    "metricName": {
+      "ops": "операций",
+      "ai_ops": "ИИ-операций"
+    },
+    "exceeded": {
+      "title": "Сегодняшний лимит исчерпан: {{limit}} {{metricName}}.",
+      "body": "Сброс через {{time}}.",
+      "bodyNoTime": "Лимит обновляется каждый день."
+    },
+    "compareRow": "{{tier}}: {{value}} в день",
+    "rateLimited": {
+      "title": "Слишком много запросов",
+      "body": "Повторите попытку через {{seconds}} с.",
+      "ready": "Можно повторить попытку."
+    },
+    "tryAgain": "Повторить",
+    "heightLimited": {
+      "lower": "Уменьшите значение, чтобы продолжить."
+    },
+    "tooLong": {
+      "title": "Это длиннее, чем допускает ваш тариф",
+      "body": "Ваш тариф допускает до {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "Этот файл превышает допустимое для сервиса",
+      "body": "Разрешение, частота кадров или длительность превышают лимит сервиса. Попробуйте файл меньшего размера."
+    },
+    "fact": {
+      "fileSize": "{{tiers}}: файлы до {{value}}.",
+      "videoLength": "{{tiers}}: видео до {{value}}.",
+      "outputHeight": "{{tiers}}: до {{value}}p.",
+      "ops": "{{tiers}}: {{value}} в день.",
+      "aiOps": "{{tiers}}: {{value}} в день.",
+      "retention": "{{tiers}}: результаты хранятся {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "Все лимиты"
   }
 }

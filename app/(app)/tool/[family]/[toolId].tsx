@@ -7,9 +7,9 @@ import { FileArea } from '@/files/components/FileArea';
 import { getIntakeFiles } from '@/files/session';
 import type { IntakeFile } from '@/files/types';
 import { getJobEngine } from '@/jobs/runtime';
+import { QuotaChip } from '@/quota/QuotaChip';
 import { useAppDispatch } from '@/state/hooks';
 import { toolOpened } from '@/state/slices/settings';
-import { QuotaHeaderSlot } from '@/tools/components/QuotaHeaderSlot';
 import { ToolIcon } from '@/tools/icons';
 import { analyticsMediaKind, getTool } from '@/tools/registry';
 import { Button } from '@/ui/components/Button';
@@ -53,7 +53,7 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
         </View>
         <Text className="text-muted-fg">{t(tool.descriptionKey)}</Text>
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
-        <QuotaHeaderSlot />
+        <QuotaChip metric={tool.metric} />
         <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
         <Form value={tool.defaults} onChange={() => undefined} />
         <Button

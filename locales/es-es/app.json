@@ -34,7 +34,6 @@
     "badge": {
       "ai": "IA"
     },
-    "quotaSlot": "Aquí aparecerá tu límite diario",
     "items": {
       "image-convert": {
         "title": "Convertir imagen",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Vectorizar",
       "studio_reverse_proxy": "Proxy de vista previa de Studio"
     }
+  },
+  "quota": {
+    "resetsIn": "Se restablece en {{time}}",
+    "planSheet": {
+      "title": "Plan y límites",
+      "current": "Tu plan",
+      "managed": "Los planes se gestionan en tu cuenta de Media Manipulator.",
+      "loading": "Cargando los detalles del plan",
+      "loadFailed": "Los detalles del plan no están disponibles en este momento."
+    },
+    "rows": {
+      "ops": "Operaciones al día",
+      "aiOps": "Operaciones de IA al día",
+      "fileSize": "Archivo más grande",
+      "videoLength": "Vídeo más largo",
+      "outputHeight": "Salida más alta",
+      "retention": "Resultados conservados"
+    },
+    "tiers": {
+      "free": "Gratis",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Operador"
+    },
+    "tierNames": {
+      "both": "Premium y Pro"
+    },
+    "metricName": {
+      "ops": "operaciones",
+      "ai_ops": "operaciones de IA"
+    },
+    "exceeded": {
+      "title": "Has usado las {{limit}} {{metricName}} de hoy.",
+      "body": "Se restablece en {{time}}.",
+      "bodyNoTime": "Tu límite se restablece cada día."
+    },
+    "compareRow": "{{tier}}: {{value}} al día",
+    "rateLimited": {
+      "title": "Demasiadas solicitudes",
+      "body": "Inténtalo de nuevo en {{seconds}} s.",
+      "ready": "Ya puedes volver a intentarlo."
+    },
+    "tryAgain": "Reintentar",
+    "heightLimited": {
+      "lower": "Reduce el ajuste para continuar."
+    },
+    "tooLong": {
+      "title": "Esto es más largo de lo que permite tu plan",
+      "body": "Tu plan permite hasta {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "Este archivo supera lo que admite el servicio",
+      "body": "Su resolución, velocidad de fotogramas o duración supera el límite del servicio. Prueba con una versión más pequeña."
+    },
+    "fact": {
+      "fileSize": "{{tiers}} admiten archivos de hasta {{value}}.",
+      "videoLength": "{{tiers}} permiten vídeos de hasta {{value}}.",
+      "outputHeight": "{{tiers}}: hasta {{value}}p.",
+      "ops": "{{tiers}}: {{value}} al día.",
+      "aiOps": "{{tiers}}: {{value}} al día.",
+      "retention": "{{tiers}} conservan los resultados durante {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "Ver todos los límites"
   }
 }

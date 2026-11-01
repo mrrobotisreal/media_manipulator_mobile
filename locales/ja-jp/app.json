@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "1日の利用枠がここに表示されます",
     "items": {
       "image-convert": {
         "title": "画像を変換",
@@ -471,5 +470,69 @@
       "vector_vectorize": "ベクター化",
       "studio_reverse_proxy": "Studioプレビュープロキシ"
     }
+  },
+  "quota": {
+    "resetsIn": "{{time}}後にリセットされます",
+    "planSheet": {
+      "title": "プランと上限",
+      "current": "ご利用のプラン",
+      "managed": "プランはMedia Manipulatorアカウントで管理されます。",
+      "loading": "プランの詳細を読み込み中",
+      "loadFailed": "プランの詳細は現在利用できません。"
+    },
+    "rows": {
+      "ops": "1日の処理数",
+      "aiOps": "1日のAI処理数",
+      "fileSize": "最大ファイルサイズ",
+      "videoLength": "最長の動画",
+      "outputHeight": "最高の出力",
+      "retention": "結果の保存期間"
+    },
+    "tiers": {
+      "free": "無料",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "オペレーター"
+    },
+    "tierNames": {
+      "both": "PremiumとPro"
+    },
+    "metricName": {
+      "ops": "処理",
+      "ai_ops": "AI処理"
+    },
+    "exceeded": {
+      "title": "本日の{{metricName}}を{{limit}}回すべて使用しました。",
+      "body": "{{time}}後にリセットされます。",
+      "bodyNoTime": "上限は毎日リセットされます。"
+    },
+    "compareRow": "{{tier}}：1日{{value}}",
+    "rateLimited": {
+      "title": "リクエストが多すぎます",
+      "body": "{{seconds}}秒後にもう一度お試しください。",
+      "ready": "今すぐもう一度お試しいただけます。"
+    },
+    "tryAgain": "もう一度試す",
+    "heightLimited": {
+      "lower": "続行するには設定を下げてください。"
+    },
+    "tooLong": {
+      "title": "ご利用のプランで許可されている長さを超えています",
+      "body": "ご利用のプランでは最大{{limit}}までです。"
+    },
+    "deploymentCap": {
+      "title": "このファイルはサービスの受け付け上限を超えています",
+      "body": "解像度、フレームレート、または長さがサービスの上限を超えています。より小さいバージョンをお試しください。"
+    },
+    "fact": {
+      "fileSize": "{{tiers}}では{{value}}までのファイルを使用できます。",
+      "videoLength": "{{tiers}}では{{value}}までの動画を使用できます。",
+      "outputHeight": "{{tiers}}：最大{{value}}p。",
+      "ops": "{{tiers}}：1日{{value}}。",
+      "aiOps": "{{tiers}}：1日{{value}}。",
+      "retention": "{{tiers}}では結果を{{value}}保存します。"
+    },
+    "ok": "OK",
+    "seeAll": "すべての上限を見る"
   }
 }

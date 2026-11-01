@@ -1,4 +1,5 @@
 import { router, useLocalSearchParams, type Href } from 'expo-router';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 import { analyticsMediaKind, getTool } from '@/tools/registry';
@@ -8,6 +9,7 @@ import { useBatchPosition, useJob } from '@/jobs/useJob';
 import { failureKeyFor } from '@/results/failureCopy';
 import { ResultBody, type ResultSource } from '@/results/ResultBody';
 import { jobFromEntry, reopenableEntry } from '@/history/reopenFallback';
+import { LimitSheet, hasLimitSheet } from '@/quota/LimitSheets';
 import { useRemoteJob } from '@/results/useRemoteJob';
 import { Button } from '@/ui/components/Button';
 import { Num, Text } from '@/ui/components/Text';
@@ -81,12 +83,23 @@ function FailureBody({ job }: { job: JobRecord }) {
   const engine = getJobEngine();
   const tool = getTool(job.toolId);
   const key = failureKeyFor(job);
+  const sheet = job.state === 'rejected' && hasLimitSheet(job.error);
+  // Auto-opens once per rejected record while its screen is focused; Details reopens it.
+  const [dismissed, setDismissed] = useState(false);
+  const open = sheet && !dismissed;
   return (
     <View className="gap-3" testID="result-failure">
       <Text className="text-danger">{t(`result.failed.${key}`)}</Text>
-      {job.state === 'rejected' ? (
-        // MA16 opens the quota/limit sheet from `job.error`; no-op until then.
-        <Button label={t('result.details')} variant="ghost" onPress={() => undefined} />
+      {sheet ? (
+        <>
+          <Button label={t('result.details')} variant="ghost" onPress={() => setDismissed(false)} />
+          <LimitSheet
+            visible={open}
+            error={job.error}
+            toolSlug={job.analyticsSlug}
+            onClose={() => setDismissed(true)}
+          />
+        </>
       ) : null}
       {job.state === 'upload_failed' ? (
         <Button label={t('job.retry')} onPress={() => engine.retry(job.localId)} />

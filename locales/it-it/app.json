@@ -34,7 +34,6 @@
     "badge": {
       "ai": "IA"
     },
-    "quotaSlot": "Il tuo limite giornaliero appare qui",
     "items": {
       "image-convert": {
         "title": "Converti immagine",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Vettorializza",
       "studio_reverse_proxy": "Proxy anteprima Studio"
     }
+  },
+  "quota": {
+    "resetsIn": "Si azzera tra {{time}}",
+    "planSheet": {
+      "title": "Piano e limiti",
+      "current": "Il tuo piano",
+      "managed": "I piani si gestiscono dal tuo account Media Manipulator.",
+      "loading": "Caricamento dei dettagli del piano",
+      "loadFailed": "I dettagli del piano non sono disponibili al momento."
+    },
+    "rows": {
+      "ops": "Operazioni al giorno",
+      "aiOps": "Operazioni IA al giorno",
+      "fileSize": "File più grande",
+      "videoLength": "Video più lungo",
+      "outputHeight": "Uscita più alta",
+      "retention": "Risultati conservati"
+    },
+    "tiers": {
+      "free": "Gratuito",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Operatore"
+    },
+    "tierNames": {
+      "both": "Premium e Pro"
+    },
+    "metricName": {
+      "ops": "operazioni",
+      "ai_ops": "operazioni IA"
+    },
+    "exceeded": {
+      "title": "Hai usato tutte le {{limit}} {{metricName}} di oggi.",
+      "body": "Si azzera tra {{time}}.",
+      "bodyNoTime": "Il tuo limite si azzera ogni giorno."
+    },
+    "compareRow": "{{tier}}: {{value}} al giorno",
+    "rateLimited": {
+      "title": "Troppe richieste",
+      "body": "Riprova tra {{seconds}} s.",
+      "ready": "Ora puoi riprovare."
+    },
+    "tryAgain": "Riprova",
+    "heightLimited": {
+      "lower": "Riduci l'impostazione per continuare."
+    },
+    "tooLong": {
+      "title": "Supera la durata consentita dal tuo piano",
+      "body": "Il tuo piano consente fino a {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "Questo file supera quanto accettato dal servizio",
+      "body": "La risoluzione, il frame rate o la durata superano il limite del servizio. Prova una versione più piccola."
+    },
+    "fact": {
+      "fileSize": "{{tiers}} accettano file fino a {{value}}.",
+      "videoLength": "{{tiers}} consentono video fino a {{value}}.",
+      "outputHeight": "{{tiers}}: fino a {{value}}p.",
+      "ops": "{{tiers}}: {{value}} al giorno.",
+      "aiOps": "{{tiers}}: {{value}} al giorno.",
+      "retention": "{{tiers}} conservano i risultati per {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "Vedi tutti i limiti"
   }
 }

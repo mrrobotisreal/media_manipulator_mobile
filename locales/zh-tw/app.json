@@ -34,7 +34,6 @@
     "badge": {
       "ai": "AI"
     },
-    "quotaSlot": "您的每日額度會顯示在這裡",
     "items": {
       "image-convert": {
         "title": "轉換圖片",
@@ -471,5 +470,69 @@
       "vector_vectorize": "向量化",
       "studio_reverse_proxy": "Studio 預覽代理"
     }
+  },
+  "quota": {
+    "resetsIn": "{{time}}後重設",
+    "planSheet": {
+      "title": "方案與限額",
+      "current": "你的方案",
+      "managed": "方案在你的 Media Manipulator 帳號中管理。",
+      "loading": "正在載入方案詳情",
+      "loadFailed": "目前無法取得方案詳情。"
+    },
+    "rows": {
+      "ops": "每日操作數",
+      "aiOps": "每日 AI 操作數",
+      "fileSize": "最大檔案",
+      "videoLength": "最長影片",
+      "outputHeight": "最高輸出解析度",
+      "retention": "結果保留時間"
+    },
+    "tiers": {
+      "free": "免費",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "營運者"
+    },
+    "tierNames": {
+      "both": "Premium 和 Pro"
+    },
+    "metricName": {
+      "ops": "操作",
+      "ai_ops": "AI 操作"
+    },
+    "exceeded": {
+      "title": "你今天的 {{limit}} 次{{metricName}}已全部用完。",
+      "body": "{{time}}後重設。",
+      "bodyNoTime": "額度每天重設。"
+    },
+    "compareRow": "{{tier}}:每天 {{value}}",
+    "rateLimited": {
+      "title": "請求過多",
+      "body": "請在 {{seconds}} 秒後重試。",
+      "ready": "現在可以重試了。"
+    },
+    "tryAgain": "重試",
+    "heightLimited": {
+      "lower": "請調低設定以繼續。"
+    },
+    "tooLong": {
+      "title": "超出了你的方案允許的長度",
+      "body": "你的方案最多允許 {{limit}}。"
+    },
+    "deploymentCap": {
+      "title": "此檔案超出服務可接受的範圍",
+      "body": "解析度、影格率或長度超過了服務限制。請嘗試較小的版本。"
+    },
+    "fact": {
+      "fileSize": "{{tiers}}:檔案最大 {{value}}。",
+      "videoLength": "{{tiers}}:影片最長 {{value}}。",
+      "outputHeight": "{{tiers}}:最高 {{value}}p。",
+      "ops": "{{tiers}}:每天 {{value}}。",
+      "aiOps": "{{tiers}}:每天 {{value}}。",
+      "retention": "{{tiers}}:結果保留 {{value}}。"
+    },
+    "ok": "OK",
+    "seeAll": "查看所有限額"
   }
 }

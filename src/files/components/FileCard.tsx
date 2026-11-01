@@ -7,6 +7,7 @@ import type { MediaKind } from '@/tools/types';
 import { Button } from '@/ui/components/Button';
 import { Num, Text } from '@/ui/components/Text';
 import { colors } from '@/ui/tokens';
+import { useFactText } from '@/quota/useTierFacts';
 import type { IntakeFile, Rejection } from '../types';
 
 const KIND_ICON = { image: ImageIcon, video: Film, audio: Music, pdf: FileText } as const;
@@ -85,6 +86,15 @@ export function RejectionCard({
   formats?: string;
 }) {
   const { t } = useTranslation();
+  // Neutral fact when a higher plan would accept the file (TOOLS_V1 §1); no link, no button.
+  const sizeFact = useFactText('maxFileBytes');
+  const lengthFact = useFactText('maxVideoSeconds');
+  const fact =
+    rejection.reason === 'too_large'
+      ? sizeFact
+      : rejection.reason === 'too_long'
+        ? lengthFact
+        : null;
   let message: string;
   switch (rejection.reason) {
     case 'too_large':
@@ -126,6 +136,11 @@ export function RejectionCard({
           </Text>
         ) : null}
         <Text className="text-sm text-muted-fg">{message}</Text>
+        {fact ? (
+          <Text testID="rejection-fact" className="text-sm text-muted-fg">
+            {fact}
+          </Text>
+        ) : null}
       </View>
     </View>
   );

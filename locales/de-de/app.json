@@ -34,7 +34,6 @@
     "badge": {
       "ai": "KI"
     },
-    "quotaSlot": "Dein Tageskontingent erscheint hier",
     "items": {
       "image-convert": {
         "title": "Bild konvertieren",
@@ -471,5 +470,69 @@
       "vector_vectorize": "Vektorisieren",
       "studio_reverse_proxy": "Studio-Vorschau-Proxy"
     }
+  },
+  "quota": {
+    "resetsIn": "Zurückgesetzt in {{time}}",
+    "planSheet": {
+      "title": "Tarif & Limits",
+      "current": "Dein Tarif",
+      "managed": "Tarife werden in deinem Media-Manipulator-Konto verwaltet.",
+      "loading": "Tarifdetails werden geladen",
+      "loadFailed": "Die Tarifdetails sind gerade nicht verfügbar."
+    },
+    "rows": {
+      "ops": "Vorgänge pro Tag",
+      "aiOps": "KI-Vorgänge pro Tag",
+      "fileSize": "Größte Datei",
+      "videoLength": "Längstes Video",
+      "outputHeight": "Höchste Ausgabe",
+      "retention": "Ergebnisse gespeichert"
+    },
+    "tiers": {
+      "free": "Kostenlos",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "Betreiber"
+    },
+    "tierNames": {
+      "both": "Premium und Pro"
+    },
+    "metricName": {
+      "ops": "Vorgänge",
+      "ai_ops": "KI-Vorgänge"
+    },
+    "exceeded": {
+      "title": "Du hast heute alle {{limit}} {{metricName}} genutzt.",
+      "body": "Wird in {{time}} zurückgesetzt.",
+      "bodyNoTime": "Dein Kontingent wird jeden Tag zurückgesetzt."
+    },
+    "compareRow": "{{tier}}: {{value}} pro Tag",
+    "rateLimited": {
+      "title": "Zu viele Anfragen",
+      "body": "Versuche es in {{seconds}} s erneut.",
+      "ready": "Du kannst es jetzt erneut versuchen."
+    },
+    "tryAgain": "Erneut versuchen",
+    "heightLimited": {
+      "lower": "Verringere die Einstellung, um fortzufahren."
+    },
+    "tooLong": {
+      "title": "Das ist länger, als dein Tarif erlaubt",
+      "body": "Dein Tarif erlaubt bis zu {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "Diese Datei überschreitet, was der Dienst akzeptiert",
+      "body": "Auflösung, Bildrate oder Länge liegen über dem Limit des Dienstes. Versuche eine kleinere Version."
+    },
+    "fact": {
+      "fileSize": "{{tiers}} akzeptieren Dateien bis {{value}}.",
+      "videoLength": "{{tiers}} erlauben Videos bis {{value}}.",
+      "outputHeight": "{{tiers}}: bis zu {{value}}p.",
+      "ops": "{{tiers}}: {{value}} pro Tag.",
+      "aiOps": "{{tiers}}: {{value}} pro Tag.",
+      "retention": "{{tiers}} speichern Ergebnisse für {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "Alle Limits ansehen"
   }
 }

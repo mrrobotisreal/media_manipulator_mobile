@@ -34,7 +34,6 @@
     "badge": {
       "ai": "ذكاء اصطناعي"
     },
-    "quotaSlot": "ستظهر حصتك اليومية هنا",
     "items": {
       "image-convert": {
         "title": "تحويل الصورة",
@@ -471,5 +470,69 @@
       "vector_vectorize": "تحويل إلى متجه",
       "studio_reverse_proxy": "وسيط معاينة الاستوديو"
     }
+  },
+  "quota": {
+    "resetsIn": "تتم إعادة التعيين خلال {{time}}",
+    "planSheet": {
+      "title": "الخطة والحدود",
+      "current": "خطتك",
+      "managed": "تُدار الخطط من حسابك في Media Manipulator.",
+      "loading": "جارٍ تحميل تفاصيل الخطة",
+      "loadFailed": "تفاصيل الخطة غير متاحة حاليًا."
+    },
+    "rows": {
+      "ops": "العمليات في اليوم",
+      "aiOps": "عمليات الذكاء الاصطناعي في اليوم",
+      "fileSize": "أكبر ملف",
+      "videoLength": "أطول فيديو",
+      "outputHeight": "أعلى دقة للإخراج",
+      "retention": "مدة الاحتفاظ بالنتائج"
+    },
+    "tiers": {
+      "free": "مجاني",
+      "premium": "Premium",
+      "pro": "Pro",
+      "operator": "المشغّل"
+    },
+    "tierNames": {
+      "both": "Premium وPro"
+    },
+    "metricName": {
+      "ops": "العمليات",
+      "ai_ops": "عمليات الذكاء الاصطناعي"
+    },
+    "exceeded": {
+      "title": "لقد استخدمت جميع {{metricName}} البالغ عددها {{limit}} لهذا اليوم.",
+      "body": "تتم إعادة التعيين خلال {{time}}.",
+      "bodyNoTime": "يُعاد تعيين حصتك كل يوم."
+    },
+    "compareRow": "{{tier}}: {{value}} في اليوم",
+    "rateLimited": {
+      "title": "طلبات كثيرة جدًا",
+      "body": "حاول مرة أخرى بعد {{seconds}} ث.",
+      "ready": "يمكنك المحاولة مرة أخرى الآن."
+    },
+    "tryAgain": "حاول مرة أخرى",
+    "heightLimited": {
+      "lower": "خفّض الإعداد للمتابعة."
+    },
+    "tooLong": {
+      "title": "هذا أطول مما تسمح به خطتك",
+      "body": "تسمح خطتك بما يصل إلى {{limit}}."
+    },
+    "deploymentCap": {
+      "title": "هذا الملف يتجاوز ما تقبله الخدمة",
+      "body": "دقته أو معدل الإطارات أو مدته يتجاوز حد الخدمة. جرّب نسخة أصغر."
+    },
+    "fact": {
+      "fileSize": "تقبل {{tiers}} ملفات حتى {{value}}.",
+      "videoLength": "تسمح {{tiers}} بفيديوهات حتى {{value}}.",
+      "outputHeight": "{{tiers}}: حتى {{value}}p.",
+      "ops": "{{tiers}}: {{value}} في اليوم.",
+      "aiOps": "{{tiers}}: {{value}} في اليوم.",
+      "retention": "تحتفظ {{tiers}} بالنتائج لمدة {{value}}."
+    },
+    "ok": "OK",
+    "seeAll": "عرض كل الحدود"
   }
 }

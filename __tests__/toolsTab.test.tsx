@@ -14,7 +14,6 @@ jest.mock('lucide-react-native', () => {
 });
 jest.mock('@/ui/components/ProcessingIndicator', () => ({}));
 jest.mock('@/ui/components/ProgressBar', () => ({}));
-jest.mock('@/ui/components/QuotaMeter', () => ({}));
 jest.mock('@/auth/ui/AuthBanners', () => ({ AuthBanners: () => null }));
 
 async function renderTab(recents: string[] = []) {
