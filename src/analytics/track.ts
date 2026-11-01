@@ -14,7 +14,11 @@ export type StubEventName =
   | 'signout'
   // Tools (MA10).
   | 'tool_viewed'
-  | 'options_changed';
+  | 'options_changed'
+  // File intake (MA11).
+  | 'file_selected'
+  | 'file_rejected'
+  | 'share_intent_received';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 

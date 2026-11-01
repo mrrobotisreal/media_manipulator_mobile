@@ -67,7 +67,6 @@ export function extensionOf(name: string): string {
 /** Keeps the cache path safe: no separators or control characters, bounded length, extension kept. */
 export function sanitizeName(name: string, fallback = 'file'): string {
   const base = (name.split(/[\\/]/).pop() ?? '').normalize('NFC');
-  // eslint-disable-next-line no-control-regex
   const cleaned = base
     .replace(/[\u0000-\u001f<>:"|?*]/g, '_')
     .replace(/^\.+/, '')

@@ -1,7 +1,6 @@
-import type { ToolAccepts } from '@/tools/types';
+import type { MediaKind, ToolAccepts } from '@/tools/types';
 import { PRESIGN_VIDEO_EXTENSIONS } from './mime';
 import { MAX_FILES_PER_SELECTION, type PreflightResult, type RejectReason } from './types';
-import type { MediaKind } from '@/tools/types';
 
 /** The subset of `/account/me` `limits` the checks read. */
 export interface PreflightLimits {

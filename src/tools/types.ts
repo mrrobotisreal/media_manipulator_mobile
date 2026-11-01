@@ -42,6 +42,8 @@ export interface ToolDefinition<F = ToolOptions> {
   /** lucide-react-native component name. */
   icon: string;
   accepts: ToolAccepts;
+  /** Multi-select in the pickers; default false (v1 runs one job per file, MA12 owns the queue). */
+  batch?: boolean;
   endpoint: ToolEndpoint;
   defaults: F;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */

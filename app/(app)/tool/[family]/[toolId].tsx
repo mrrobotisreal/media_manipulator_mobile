@@ -1,8 +1,10 @@
 import { Redirect, useLocalSearchParams } from 'expo-router';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
+import { FileArea } from '@/files/components/FileArea';
+import { getIntakeFiles } from '@/files/session';
 import { useAppDispatch } from '@/state/hooks';
 import { toolOpened } from '@/state/slices/settings';
 import { QuotaHeaderSlot } from '@/tools/components/QuotaHeaderSlot';
@@ -15,10 +17,11 @@ import { colors } from '@/ui/tokens';
 
 const TOOLS_TAB = '/(app)/(tabs)';
 
-function ToolScreen({ toolId, from }: { toolId: string; from?: string }) {
+function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; intake?: string }) {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const tool = getTool(toolId)!;
+  const attached = useMemo(() => getIntakeFiles(intake ? intake.split(',') : []), [intake]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));
@@ -39,10 +42,9 @@ function ToolScreen({ toolId, from }: { toolId: string; from?: string }) {
         <Text className="text-muted-fg">{t(tool.descriptionKey)}</Text>
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
         <QuotaHeaderSlot />
-        <View className="h-28 items-center justify-center rounded-lg border border-dashed border-edge-control">
-          <Text className="text-muted-fg">{t('tool.fileArea')}</Text>
-        </View>
+        <FileArea tool={tool} initialFiles={attached} />
         <Form value={tool.defaults} onChange={() => undefined} />
+        {/* MA12 wires Start to upload with the selected files. */}
         <Button label={t('tool.start')} disabled />
       </ScrollView>
     </Screen>
@@ -51,12 +53,19 @@ function ToolScreen({ toolId, from }: { toolId: string; from?: string }) {
 
 // i18n-keys: tool.kinds.image, tool.kinds.video, tool.kinds.audio, tool.kinds.pdf
 export default function ToolRoute() {
-  const { family, toolId, from } = useLocalSearchParams<{
+  const { family, toolId, from, intake } = useLocalSearchParams<{
     family: string;
     toolId: string;
     from?: string;
+    intake?: string;
   }>();
   const tool = typeof toolId === 'string' ? getTool(toolId) : undefined;
   if (!tool || tool.family !== family) return <Redirect href={TOOLS_TAB} />;
-  return <ToolScreen toolId={tool.id} from={typeof from === 'string' ? from : undefined} />;
+  return (
+    <ToolScreen
+      toolId={tool.id}
+      from={typeof from === 'string' ? from : undefined}
+      intake={typeof intake === 'string' ? intake : undefined}
+    />
+  );
 }
