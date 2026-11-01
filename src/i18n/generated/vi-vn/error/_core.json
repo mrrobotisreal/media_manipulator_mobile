@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "Đã xảy ra lỗi không xác định. Vui lòng thử lại.",
+    "unexpected": "Đã có lỗi xảy ra. Vui lòng thử lại.",
+    "networkOffline": "Có vẻ bạn đang ngoại tuyến. Hãy kiểm tra kết nối và thử lại.",
+    "tryAgainLater": "Vui lòng thử lại sau giây lát.",
+    "missingFile": "Chưa chọn tệp nào.",
+    "missingField": "Trường này là bắt buộc."
+  },
+  "upload": {
+    "fileTooLarge": "Tệp quá lớn.",
+    "unsupportedFormat": "Định dạng tệp không được hỗ trợ.",
+    "uploadFailed": "Tải lên thất bại. Vui lòng thử lại.",
+    "missingFile": "Vui lòng chọn tệp trước."
+  },
+  "conversion": {
+    "failed": "Chuyển đổi thất bại.",
+    "failedTryAgain": "Chuyển đổi thất bại. Vui lòng thử lại.",
+    "previewFailed": "Không tải được bản xem trước của hình ảnh đã chuyển đổi",
+    "downloadFailed": "Tải xuống thất bại. Vui lòng thử lại."
+  },
+  "transcribe": {
+    "failed": "Chép lời thất bại.",
+    "failedTryAgain": "Chép lời thất bại. Vui lòng thử lại."
+  },
+  "transcode": {
+    "failed": "Chuyển mã thất bại.",
+    "failedTryAgain": "Chuyển mã thất bại. Vui lòng thử lại."
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc.",
+    "invalidNumber": "Hãy nhập một số hợp lệ.",
+    "outOfRange": "Giá trị phải nằm trong khoảng từ {{min}} đến {{max}}.",
+    "tooShort": "Phải có ít nhất {{count}} ký tự.",
+    "tooLong": "Không được vượt quá {{count}} ký tự.",
+    "invalidEmail": "Hãy nhập một địa chỉ email hợp lệ.",
+    "invalidUrl": "Hãy nhập một URL hợp lệ."
+  },
+  "auth": {
+    "signInFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
+    "signUpFailed": "Đăng ký thất bại. Vui lòng thử lại.",
+    "passwordTooShort": "Mật khẩu phải có ít nhất 8 ký tự.",
+    "passwordsDoNotMatch": "Mật khẩu không khớp.",
+    "invalidCredentials": "Email hoặc mật khẩu không đúng.",
+    "emailRequired": "Cần nhập email.",
+    "passwordRequired": "Cần nhập mật khẩu.",
+    "tryAgain": "Vui lòng thử lại.",
+    "userNotFound": "Không tìm thấy tài khoản nào với email này.",
+    "wrongPassword": "Mật khẩu không đúng.",
+    "emailAlreadyInUse": "Đã có tài khoản dùng email này.",
+    "weakPassword": "Mật khẩu nên có ít nhất 6 ký tự.",
+    "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "tooManyRequests": "Quá nhiều lần thử. Hãy đợi vài phút rồi thử lại.",
+    "network": "Lỗi mạng. Hãy kiểm tra kết nối rồi thử lại."
+  },
+  "ad": {
+    "loadFailed": "Không tải được quảng cáo."
+  },
+  "forms": {
+    "fixErrors": "Vui lòng sửa các lỗi sau:",
+    "invalidValue": "Giá trị không hợp lệ",
+    "fieldRequired": "Trường này là bắt buộc.",
+    "invalidNumber": "Hãy nhập một số hợp lệ.",
+    "outOfRange": "Giá trị phải nằm trong khoảng từ {{min}} đến {{max}}.",
+    "faceDetectFailed": "Nhận diện khuôn mặt thất bại. Vui lòng thử lại.",
+    "removeObjectFailed": "Xóa đối tượng thất bại. Vui lòng thử lại.",
+    "imageForm": {
+      "noFile": "Hãy chọn một hình ảnh trước.",
+      "exifLoadFailed": "Không đọc được siêu dữ liệu EXIF của tệp này."
+    },
+    "videoForm": {
+      "noFile": "Hãy chọn một video trước."
+    },
+    "audioForm": {
+      "noFile": "Hãy chọn một tệp âm thanh trước."
+    },
+    "transcribe": {
+      "noFile": "Hãy chọn một tệp phương tiện trước.",
+      "invalidLanguage": "Hãy nhập mã ngôn ngữ BCP-47 hợp lệ."
+    },
+    "transcode": {
+      "probeFailed": "Không phân tích được tệp nguồn. Hãy thử tệp khác."
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "Dịch phụ đề thất bại.",
+      "missingFile": "Hãy tải lên tệp phụ đề trước."
+    },
+    "stitchAudioToVideo": {
+      "failed": "Ghép âm thanh với video thất bại.",
+      "missingTracks": "Hãy thêm ít nhất một bản âm thanh."
+    },
+    "extract": {
+      "failed": "Trích xuất thất bại.",
+      "noStreams": "Không tìm thấy luồng phù hợp trong tệp này."
+    }
+  },
+  "errorBoundary": {
+    "title": "Đã có lỗi xảy ra",
+    "body": "Một lỗi không mong muốn đã làm gián đoạn trang này. Tệp của bạn không bị mất — bạn có thể thử lại, và nếu sự cố vẫn tiếp diễn, hãy tải lại trang.",
+    "tryAgain": "Thử lại",
+    "goHome": "Về trang chủ"
+  },
+  "toasts": {
+    "conversionStartFailed": "Không bắt đầu được quá trình chuyển đổi.",
+    "transcriptionStartFailed": "Không bắt đầu được quá trình chép lời.",
+    "transcodeStartFailed": "Không bắt đầu được quá trình chuyển mã.",
+    "videoAnalysisFailed": "Không phân tích được video.",
+    "translationStartFailed": "Không bắt đầu được quá trình dịch.",
+    "scanStartFailed": "Không bắt đầu được quá trình quét.",
+    "jobStartFailed": "Không bắt đầu được tác vụ.",
+    "stitchStartFailed": "Không bắt đầu được tác vụ ghép.",
+    "restorationStartFailed": "Không bắt đầu được quá trình phục hồi.",
+    "identificationFailed": "Không nhận dạng được tệp.",
+    "jobStatusCheckFailed": "Không kiểm tra được trạng thái tác vụ.",
+    "exportStartFailed": "Không bắt đầu được quá trình xuất.",
+    "exportFailed": "Xuất thất bại.",
+    "saveProjectFailed": "Không lưu được dự án.",
+    "createProjectFailed": "Không tạo được dự án.",
+    "uploadFailed": "Tải lên thất bại.",
+    "audioProcessingFailed": "Xử lý âm thanh thất bại.",
+    "unexpectedFallback": "Đã xảy ra lỗi không mong muốn.",
+    "conversionFailedFallback": "Quá trình chuyển đổi đã gặp lỗi.",
+    "unableToGetProgress": "Không lấy được tiến trình chuyển đổi."
+  }
+}

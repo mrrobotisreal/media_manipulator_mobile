@@ -1,0 +1,248 @@
+{
+  "common": {
+    "brand": "Media Manipulator",
+    "brandTagline": "Chuyển đổi hình ảnh, video và tệp âm thanh thật dễ dàng",
+    "loading": "Đang tải…",
+    "loadingShort": "Đang tải...",
+    "tryAgain": "Thử lại",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "save": "Lưu",
+    "saving": "Đang lưu...",
+    "submit": "Gửi",
+    "submitting": "Đang gửi...",
+    "download": "Tải xuống",
+    "preview": "Xem trước",
+    "remove": "Gỡ bỏ",
+    "clear": "Xóa hết",
+    "reset": "Đặt lại",
+    "apply": "Áp dụng",
+    "enable": "Bật",
+    "disable": "Tắt",
+    "yes": "Có",
+    "no": "Không",
+    "more": "Thêm",
+    "less": "Bớt",
+    "and": "và",
+    "or": "hoặc",
+    "of": "trong",
+    "to": "đến",
+    "from": "từ",
+    "by": "bởi",
+    "in": "trong",
+    "with": "với",
+    "all": "Tất cả",
+    "none": "Không có",
+    "off": "Tắt",
+    "on": "Bật",
+    "optional": "Tùy chọn",
+    "required": "Bắt buộc",
+    "auto": "Tự động",
+    "manual": "Thủ công",
+    "default": "Mặc định",
+    "advanced": "Nâng cao",
+    "basic": "Cơ bản",
+    "settings": "Cài đặt",
+    "options": "Tùy chọn",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "selected": "Đã chọn",
+    "step": "Bước",
+    "minutes": "phút",
+    "seconds": "giây",
+    "items": "mục",
+    "showAll": "Hiện tất cả",
+    "showMore": "Hiện thêm",
+    "showLess": "Thu gọn",
+    "retentionPromise": "Bạn chọn thời gian chúng tôi lưu tệp của bạn — mặc định 24 giờ với khách, tối đa 2 năm với tài khoản miễn phí",
+    "retentionPromiseShort": "Tệp được lưu 24 giờ với khách; với tài khoản miễn phí bạn chọn từ 24 giờ đến 2 năm"
+  },
+  "units": {
+    "bytes": "B",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "pixels": "px",
+    "percent": "%",
+    "kbps": "kbps",
+    "fps": "fps",
+    "hz": "Hz",
+    "khz": "kHz"
+  },
+  "duration": {
+    "zero": "0 giây",
+    "hours_other": "{{count}} giờ",
+    "minutes_other": "{{count}} phút",
+    "seconds_other": "{{count}} giây"
+  },
+  "topNav": {
+    "home": "Trang chủ",
+    "tools": "Công cụ",
+    "about": "Giới thiệu",
+    "howItWorks": "Cách hoạt động",
+    "tutorials": "Hướng dẫn",
+    "privacyPolicy": "Chính sách quyền riêng tư",
+    "termsOfService": "Điều khoản dịch vụ",
+    "blog": "Blog",
+    "links": {
+      "homeDescription": "Trang chủ, nơi bạn có thể chuyển đổi tệp của mình",
+      "toolsDescription": "Công cụ trực tuyến miễn phí để chuyển đổi, nén, chép lời và dọn dẹp tệp phương tiện",
+      "aboutDescription": "Trang giới thiệu, nơi bạn tìm hiểu thêm về dự án và người tạo ra nó",
+      "howItWorksDescription": "Trang cách hoạt động, nơi bạn tìm hiểu thêm về quy trình chuyển đổi",
+      "tutorialsDescription": "Hướng dẫn từng bước cho các bộ chuyển đổi âm thanh, video, hình ảnh và các công cụ AI của chúng",
+      "privacyPolicyDescription": "Trang chính sách quyền riêng tư, nơi bạn tìm hiểu thêm về chính sách quyền riêng tư của dự án",
+      "termsOfServiceDescription": "Trang điều khoản dịch vụ, nơi bạn tìm hiểu thêm về điều khoản dịch vụ của dự án",
+      "blogDescription": "Trang blog, nơi bạn đọc tin tức và cập nhật mới nhất về dự án"
+    },
+    "navigationLabel": "Điều hướng",
+    "language": "Ngôn ngữ",
+    "selectLanguage": "Chọn ngôn ngữ",
+    "voices": "Giọng nói",
+    "contact": "Liên hệ",
+    "pricing": "Bảng giá"
+  },
+  "footer": {
+    "tagline": "Công cụ chạy trên trình duyệt và có máy chủ hỗ trợ để chỉnh sửa, chuyển đổi, nén, phân tích, chép lời, tóm tắt và xử lý tệp hình ảnh, video và âm thanh theo nhiều cách khác.",
+    "contact": "Liên hệ:",
+    "explore": "Khám phá",
+    "legal": "Pháp lý",
+    "doNotSell": "Không bán hoặc chia sẻ thông tin cá nhân của tôi",
+    "cookieSettings": "Cài đặt cookie",
+    "copyright": "© {{year}} Media Manipulator, một sản phẩm của CreaTV Ltd. Bảo lưu mọi quyền.",
+    "operatedBy": "Vận hành bởi CreaTV Ltd. · Colorado, Hoa Kỳ",
+    "changelog": "Nhật ký thay đổi",
+    "status": "Trạng thái",
+    "licenses": "Giấy phép mã nguồn mở"
+  },
+  "languageSelector": {
+    "label": "Ngôn ngữ",
+    "current": "Ngôn ngữ hiện tại: {{language}}",
+    "select": "Chọn một ngôn ngữ"
+  },
+  "home": {
+    "contentStudioCta": {
+      "title": "Darkroom",
+      "badge": "Mới",
+      "body": "Chỉnh sửa, xếp lớp và phối video & âm thanh trên dòng thời gian đa track, rồi xuất MP4 — một trình biên tập kiểu Premiere Pro, ngay trong trình duyệt của bạn.",
+      "cta": "Dùng thử Darkroom"
+    },
+    "hero": {
+      "title": "Công cụ chuyển đổi, chỉnh sửa, chép lời và siêu dữ liệu phương tiện trực tuyến miễn phí",
+      "subtitle": "Chuyển đổi, nén, chỉnh sửa, chép lời, tóm tắt, kiểm tra siêu dữ liệu và dọn dẹp tệp hình ảnh, video và âm thanh ngay trên trình duyệt của bạn.",
+      "popularLabel": "Công cụ phổ biến",
+      "allTools": "Tất cả công cụ",
+      "removeExif": "Xóa EXIF",
+      "compressVideo": "Nén video",
+      "transcribeVideo": "Chép lời video",
+      "transcodeHls": "Chuyển mã → HLS",
+      "transcodeDash": "Chuyển mã → DASH",
+      "webpToJpg": "WebP → JPG",
+      "wavToMp3": "WAV → MP3",
+      "compressImage": "Nén hình ảnh",
+      "resizeImage": "Đổi kích thước hình ảnh",
+      "extractAudio": "Tách âm thanh"
+    },
+    "upload": {
+      "title": "Tải tệp lên",
+      "dragDrop": "Kéo và thả tệp của bạn vào đây",
+      "orClickSelect": "hoặc nhấp để chọn từ máy tính",
+      "chooseFile": "Chọn tệp",
+      "unsupportedFile": "Loại tệp không được hỗ trợ. Vui lòng chọn tệp hình ảnh, video hoặc âm thanh."
+    },
+    "options": {
+      "transcriptionOptions": "Tùy chọn chép lời",
+      "transcodeOptions": "Tùy chọn chuyển mã",
+      "conversionOptions": "Tùy chọn chuyển đổi",
+      "documentScanOptions": "Tùy chọn quét tài liệu",
+      "convert": "Chuyển đổi",
+      "transcribe": "Chép lời",
+      "transcode": "Chuyển mã",
+      "scanDocument": "Quét sang PDF / Word (AI)"
+    },
+    "history": {
+      "title": "Lịch sử chuyển đổi",
+      "subtitle": "Mở lại hoặc tải xuống bất kỳ kết quả hình ảnh, video hoặc âm thanh nào trong phiên này.",
+      "newConversion": "Chuyển đổi mới",
+      "transcriptBadge": "Bản chép lời",
+      "preview": "Xem trước",
+      "download": "Tải xuống",
+      "itemLabel": "#{{number}} {{filename}}",
+      "startedProcessing": "Bắt đầu {{time}} và vẫn đang xử lý",
+      "completedAt": "Hoàn tất {{time}}",
+      "transcriptionFailed": "Chép lời thất bại",
+      "conversionFailed": "Chuyển đổi thất bại"
+    },
+    "result": {
+      "transcriptResult": "Kết quả chép lời",
+      "convertedPreview": "Xem trước tệp đã chuyển đổi",
+      "transcriptSubtitle": "Bản chép lời và đánh giá AI cho {{filename}}.",
+      "convertedSubtitle": "Chuyển qua lại giữa bản gốc và bản đã chỉnh sửa hoàn chỉnh của {{filename}}.",
+      "original": "Bản gốc",
+      "final": "Bản cuối"
+    },
+    "progress": {
+      "preparingUpload": "Đang chuẩn bị tải lên an toàn...",
+      "uploadingToS3": "Đang tải tệp trực tiếp lên S3...",
+      "finalizing": "Đang chuẩn bị tệp đã tải lên trên máy chủ...",
+      "startingTranscription": "Đang bắt đầu chép lời...",
+      "startingConversion": "Đang bắt đầu chuyển đổi...",
+      "converting": "Đang chuyển đổi...",
+      "percentComplete": "Hoàn thành {{percent}}%",
+      "conversionFailed": "Chuyển đổi thất bại. Vui lòng thử lại."
+    },
+    "download": {
+      "downloadAs": "Tải xuống {{filename}}",
+      "fileWillBeDownloaded": "Tệp sẽ được tải xuống với tên: {{filename}}"
+    },
+    "fileLoadingConverter": "Đang tải bộ chuyển đổi…",
+    "gettingStarted": {
+      "title": "Bắt đầu với 4 bước",
+      "step1": {
+        "title": "Tải lên một tệp",
+        "body": "Kéo bất kỳ tệp hình ảnh, video hoặc âm thanh nào vào vùng tải lên bên trái, hoặc nhấp <em>Chọn tệp</em>. Tệp được lưu 24 giờ với khách; với tài khoản miễn phí bạn chọn từ 24 giờ đến 2 năm."
+      },
+      "step2": {
+        "title": "Chọn cài đặt tại đây",
+        "body": "Bảng bên phải sẽ chuyển sang bộ chuyển đổi phù hợp — hình ảnh, video hoặc âm thanh — ngay khi bạn chọn tệp. Chọn định dạng, tinh chỉnh bộ lọc hoặc bật một thao tác AI."
+      },
+      "step3": {
+        "title": "Chuyển đổi",
+        "body": "Nhấp <em>Chuyển đổi tệp</em>. Theo dõi thanh tiến trình — tác vụ chạy theo thời gian thực trên máy chủ GPU của chúng tôi."
+      },
+      "step4": {
+        "title": "Xem trước và tải xuống",
+        "body": "Kết quả tự động hiển thị khi sẵn sàng. Chuyển qua lại giữa Bản gốc và Bản cuối, rồi nhấp Tải xuống."
+      }
+    },
+    "localAi": {
+      "title": "Có sẵn công cụ AI cục bộ",
+      "body": "Làm mờ khuôn mặt, xóa nền, nâng cấp độ phân giải bằng AI, che văn bản/thông tin cá nhân dựa trên OCR, làm sạch giọng nói, tách giọng hát và loại bỏ giọng hát cho karaoke đều chạy trên máy chủ GPU riêng của chúng tôi. Không nhà cung cấp AI bên thứ ba nào thấy tệp của bạn."
+    },
+    "notSure": {
+      "title": "Chưa biết bắt đầu từ đâu?",
+      "body": "Các hướng dẫn từng bước của chúng tôi đi qua mọi cài đặt trong bộ chuyển đổi âm thanh, video và hình ảnh — bao gồm cả các công cụ AI.",
+      "cta": "Xem hướng dẫn"
+    },
+    "howItWorks": {
+      "title": "Cách hoạt động",
+      "body": "Media Manipulator dùng FFmpeg và ImageMagick cho các chuyển đổi tiêu chuẩn, và các mô hình AI chuyên dụng trên GPU cục bộ của chúng tôi cho các thao tác AI tùy chọn. Mọi xử lý diễn ra trên máy chủ do chúng tôi kiểm soát — đọc bản mô tả đầy đủ để biết chi tiết.",
+      "cta": "Đọc Cách hoạt động"
+    }
+  },
+  "notFound": {
+    "preTitle": "Mất tín hiệu đo xa",
+    "title": "Khu vực này của con tàu không tồn tại",
+    "body": "Tọa độ bạn nhập không trỏ đến bất cứ thứ gì trên bảng điều hướng. Hãy thử một trong các đường dẫn bên dưới — hoặc quay về đài chỉ huy và chọn một công cụ có thật.",
+    "links": {
+      "home": "Về căn cứ",
+      "tools": "Dàn công cụ",
+      "tutorials": "Hướng dẫn"
+    }
+  },
+  "themeToggle": {
+    "toggle": "Chuyển giao diện sáng/tối"
+  }
+}

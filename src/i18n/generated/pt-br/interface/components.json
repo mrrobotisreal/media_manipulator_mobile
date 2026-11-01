@@ -1,0 +1,776 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "Ferramentas e tutoriais relacionados"
+  },
+  "filePreview": {
+    "showResult": "Mostrar resultado"
+  },
+  "authModal": {
+    "defaultTitle": "Crie uma conta gratuita",
+    "defaultDescription": "Mantenha seu histórico, salve projetos do Darkroom e ganhe uma cota diária maior.",
+    "signInTitle": "Bem-vindo de volta",
+    "signInDescription": "Seu histórico, seus projetos salvos do Studio e sua cota diária estão onde você deixou.",
+    "tabs": {
+      "signup": "Criar conta",
+      "signin": "Entrar"
+    },
+    "fields": {
+      "fullName": "Nome completo",
+      "fullNamePlaceholder": "João da Silva",
+      "email": "E-mail",
+      "emailPlaceholder": "joao@exemplo.com",
+      "password": "Senha",
+      "passwordPlaceholderSignup": "Pelo menos 6 caracteres",
+      "passwordPlaceholderSignin": "Sua senha"
+    },
+    "actions": {
+      "createAccount": "Criar conta gratuita",
+      "creatingAccount": "Criando conta...",
+      "signIn": "Entrar",
+      "signingIn": "Entrando..."
+    },
+    "googleSignIn": "Continuar com o Google",
+    "orDivider": "OU",
+    "terms": "Ao se cadastrar, você concorda com nossos <tos>Termos de Serviço</tos> e nossa <privacy>Política de Privacidade</privacy>",
+    "toast": {
+      "welcome": "Bem-vindo!",
+      "welcomeBack": "Bem-vindo de volta!",
+      "welcomeMM": "Bem-vindo ao Media Manipulator!",
+      "accountCreated": "Conta criada!",
+      "signedIn": "Login feito com sucesso.",
+      "googleSuccess": "Login com o Google feito com sucesso.",
+      "authFailed": "Falha na autenticação",
+      "nameRequired": "Nome obrigatório",
+      "nameRequiredDesc": "Digite seu nome.",
+      "appleSuccess": "Login com a Apple feito com sucesso"
+    },
+    "contextual": {
+      "signupTitle": "Você usou suas {{limit}} conversões gratuitas de hoje",
+      "signupBody": "Uma conta gratuita aumenta sua cota diária, mantém seu histórico de conversões e salva projetos do Darkroom.",
+      "premiumTitle": "Você atingiu o limite de hoje, de {{limit}}",
+      "premiumBody": "O Premium aumenta sua cota diária, libera exportações em 4K e processamento prioritário, e remove os anúncios.",
+      "resets": "Sua cota atual é renovada {{when}}."
+    },
+    "plans": {
+      "freeTitle": "O que uma conta gratuita oferece",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/mês",
+      "premiumUpgrade": "Assinar o Premium",
+      "comparePlans": "Comparar todos os planos",
+      "opsPerDay": "{{count}} operações por dia",
+      "opsPerDayUnlimited": "Operações ilimitadas por dia",
+      "maxFileSize": "Arquivos de até {{size}}",
+      "maxVideoLength": "Vídeos de até {{duration}}",
+      "maxOutput": "Saída de até {{height}}p",
+      "studioProjects": "{{count}} projetos do Studio salvos",
+      "studioProjectsUnlimited": "Projetos do Studio salvos sem limite",
+      "retention": "Você escolhe por quanto tempo os arquivos ficam guardados: de 24 horas a 2 anos",
+      "priorityGpu": "Processamento prioritário",
+      "noAds": "Sem anúncios",
+      "retentionGuest": "Arquivos guardados por 24 horas"
+    },
+    "loadingPlans": "Carregando planos…",
+    "appleSignIn": "Continuar com a Apple",
+    "forgotPassword": "Esqueceu a senha?",
+    "reset": {
+      "title": "Redefinir sua senha",
+      "body": "Informe o e-mail da sua conta e enviaremos um link.",
+      "submit": "Enviar link de redefinição",
+      "sending": "Enviando...",
+      "sent": "Se existir uma conta com esse e-mail, enviamos um link para redefinir sua senha.",
+      "back": "Voltar para o login"
+    },
+    "link": {
+      "notice": "Este e-mail já está cadastrado com outro método de login. Entre com esse método para vincular os dois.",
+      "linked": "Contas vinculadas. Agora você pode entrar com qualquer um dos métodos."
+    }
+  },
+  "imageCropModal": {
+    "title": "Recortar imagem",
+    "subtitle": "Arraste para ajustar a área de recorte e clique em Aplicar.",
+    "instructions": "Arraste a área de recorte para posicioná-la, ou arraste o canto inferior direito para redimensionar. A área mais escura será removida.",
+    "previewAlt": "Pré-visualização do recorte",
+    "cropArea": "Área de recorte: {{width}} × {{height}} pixels",
+    "apply": "Aplicar recorte",
+    "cancel": "Cancelar",
+    "reset": "Redefinir"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "Cortar vídeo",
+    "titleAudio": "Cortar áudio",
+    "instructions": "Arraste as alças na linha do tempo para selecionar o trecho que você quer manter. As áreas acinzentadas serão removidas.",
+    "audioFile": "Arquivo de áudio",
+    "startLabel": "Tempo inicial",
+    "endLabel": "Tempo final",
+    "durationLabel": "Duração",
+    "finalDuration": "Duração final: {{duration}}",
+    "apply": "Aplicar corte",
+    "cancel": "Cancelar",
+    "reset": "Redefinir",
+    "playPreview": "Reproduzir prévia",
+    "pausePreview": "Pausar"
+  },
+  "removeObjectOverlay": {
+    "title": "Remover objeto",
+    "instructions": "Desenhe retângulos sobre os objetos que você quer remover. O inpainting LaMa vai reconstruir o fundo.",
+    "rectangleCount_one": "{{count}} região selecionada",
+    "rectangleCount_other": "{{count}} regiões selecionadas",
+    "addRegion": "Adicionar região",
+    "clearRegions": "Limpar tudo",
+    "apply": "Remover objetos",
+    "cancel": "Cancelar",
+    "undo": "Desfazer",
+    "previewAlt": "Marque as áreas a remover",
+    "dragHint": "Arraste para definir o tamanho e solte. Use as alças para ajustar.",
+    "removeRectangle": "Remover retângulo {{number}}"
+  },
+  "faceSelectionOverlay": {
+    "title": "Selecione os rostos para desfocar",
+    "instructions": "Toque em cada rosto ao qual você quer aplicar o efeito de privacidade. Toque de novo para desmarcar.",
+    "selectAll": "Selecionar todos",
+    "clearSelection": "Limpar seleção",
+    "apply": "Aplicar",
+    "cancel": "Cancelar",
+    "selectedCount_one": "{{count}} rosto selecionado",
+    "selectedCount_other": "{{count}} rostos selecionados",
+    "noFacesDetected": "Nenhum rosto detectado nesta imagem.",
+    "previewAlt": "Pré-visualização dos rostos detectados",
+    "faceAria": "Rosto {{label}}",
+    "faceSelectedAria": "Rosto {{label}} (selecionado)"
+  },
+  "mobileAnchorAd": {
+    "label": "Anúncio"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV: dê vida às suas ideias",
+    "creatvCreativeAlt": "Venha conhecer a CreaTV! Onde as ideias ganham vida."
+  },
+  "alternativeAdBanner": {
+    "placeholder": "Espaço de anúncio {{network}} - {{position}}",
+    "placeholderFormat": "Formato: {{format}} | Slot: {{slot}}",
+    "placeholderProduction": "Os anúncios da {{network}} aparecerão aqui em produção"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "Etapa {{number}}",
+    "defaultTitle": "Como funciona"
+  },
+  "privacyPolicyComponent": {
+    "title": "Privacidade em resumo",
+    "summary": "Os arquivos são processados nos nossos servidores e nunca enviados a provedores de IA terceirizados. Sem conta, ficam guardados por 24 horas; com uma conta gratuita, você escolhe de 24 horas a 2 anos.",
+    "learnMore": "Ler a Política de Privacidade completa"
+  },
+  "quotaMeter": {
+    "label": "Hoje",
+    "aiLabel": "IA",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "{{remaining}} de {{limit}} restantes hoje",
+    "atLimit": "Limite diário atingido",
+    "unlimited": "Sem limite diário nesta conta",
+    "resets": "Renova {{when}}",
+    "moreCta": "Quero mais"
+  },
+  "accountMenu": {
+    "signIn": "Entrar",
+    "account": "Conta",
+    "signOut": "Sair",
+    "signOutFailed": "Não foi possível sair da conta",
+    "tier": {
+      "anonymous": "Visitante",
+      "free": "Gratuito",
+      "premium": "Premium",
+      "operator": "Operador",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · termina em {{date}}",
+    "tierEndsPro": "Pro · termina em {{date}}"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "Arquivos de até {{size}}",
+    "fileLimitMoreFree": "Arquivos maiores exigem uma conta gratuita",
+    "fileLimitMorePremium": "Arquivos maiores exigem o Premium",
+    "nudgeTitle": "Esse está pronto",
+    "nudgeBodyFree": "Uma conta gratuita dá a você uma cota diária maior e mantém seu histórico.",
+    "nudgeBodyPremium": "O Premium adiciona exportações em 4K, processamento prioritário e zero anúncios.",
+    "nudgeAction": "Veja o que você ganha"
+  },
+  "consentBanner": {
+    "label": "Escolhas de cookies e análise",
+    "body": "Usamos análise própria e que respeita a privacidade para saber quais ferramentas são usadas e onde elas falham. Seus arquivos nunca fazem parte disso, e você pode mudar essa escolha a qualquer momento.",
+    "bodyGdpr": "Antes de medir qualquer coisa, precisamos da sua permissão. Usamos análise própria para saber quais ferramentas são usadas e onde elas falham. Nada é coletado até você decidir, e seus arquivos nunca fazem parte disso.",
+    "privacyLink": "Ler a política de privacidade",
+    "more": "Mais",
+    "customize": "Personalizar",
+    "accept": "Aceitar",
+    "decline": "Recusar"
+  },
+  "consentPrefs": {
+    "title": "Preferências de privacidade",
+    "subtitle": "Escolha o que o Media Manipulator pode medir. As mudanças valem assim que você salvar.",
+    "necessary": {
+      "title": "Estritamente necessários",
+      "body": "Sua escolha de tema e um ID anônimo de dispositivo e visita que nos permite aplicar os limites do plano gratuito e bloquear abusos. Sem cookies, sem uso publicitário, e não pode ser desativado sem quebrar as ferramentas.",
+      "always": "Sempre ativo"
+    },
+    "analytics": {
+      "title": "Análise",
+      "body": "Quais ferramentas você usa, se uma conversão deu certo, a velocidade de carregamento das páginas e erros que devemos corrigir. Dados próprios, guardados por 13 meses, nunca vendidos. Sem nomes de arquivo e sem conteúdo de arquivo."
+    },
+    "advertising": {
+      "title": "Publicidade",
+      "body": "Permite que o Google personalize os anúncios exibidos em algumas páginas de ferramentas para visitantes gratuitos e não conectados. A exibição de um anúncio não depende desta chave; desativada, os anúncios não são personalizados. Premium e Pro nunca veem anúncios.",
+      "bodyGdpr": "Na sua região, as escolhas sobre anúncios são feitas na mensagem de consentimento do Google, não aqui; este painel cobre a nossa própria análise de uso. Até você escolher lá, os anúncios nas páginas de ferramentas não são personalizados. Premium e Pro nunca veem anúncios.",
+      "bodyGpc": "Para publicidade personalizada. Seu navegador está enviando um sinal Global Privacy Control, então isso permanece desativado. Respeitamos esse sinal, e um clique aqui não pode anulá-lo.",
+      "managedByGoogle": "Gerenciado pela mensagem de consentimento do Google",
+      "openGoogleMessage": "Alterar opções de anúncios"
+    },
+    "gpcDetected": "Global Privacy Control detectado. Nós já excluímos você automaticamente de qualquer venda ou compartilhamento das suas informações pessoais e registramos isso.",
+    "doNotSell": {
+      "title": "Não vender nem compartilhar minhas informações pessoais",
+      "body": "Não vendemos suas informações pessoais. Esta opção exclui você de qualquer compartilhamento para fins publicitários, agora e no futuro. A análise própria é uma escolha separada, acima.",
+      "action": "Não autorizar",
+      "done": "Você está excluído"
+    },
+    "yourData": {
+      "title": "Seus dados",
+      "body": "Baixe uma cópia de tudo o que nossa análise guarda sobre este navegador, ou exclua tudo permanentemente. Se você estiver conectado, as duas ações cobrem todos os dispositivos vinculados à sua conta; caso contrário, cobrem só este navegador.",
+      "export": "Exportar meus dados",
+      "exporting": "Preparando sua exportação…",
+      "delete": "Excluir meus dados",
+      "deleting": "Excluindo…",
+      "deleteConfirmBody": "Isso exclui permanentemente seu histórico de análise (eventos, visitas e seu perfil de visitante) e não pode ser desfeito. Os registros das suas escolhas de consentimento são mantidos, porque a lei exige que possamos comprová-las. Digite DELETE para confirmar.",
+      "deleteConfirmPlaceholder": "Digite DELETE para confirmar",
+      "deleteConfirmAction": "Excluir permanentemente",
+      "deletedSummary": "Pronto. Excluímos {{events}} eventos em {{sessions}} visitas, e este navegador recebeu um ID anônimo totalmente novo.",
+      "deletedNote": "Os registros das suas escolhas de consentimento são mantidos como prova exigida por lei. Sua configuração de consentimento continua a mesma: se a análise estiver ativa, novas atividades são coletadas com o novo ID; você pode desativá-la acima a qualquer momento.",
+      "error": "Não deu certo. Tente de novo em instantes. Se você não viu nenhuma confirmação, nada foi alterado."
+    },
+    "policyPrefix": "Todos os detalhes sobre o que coletamos, por que e por quanto tempo guardamos:",
+    "policyLink": "política de privacidade",
+    "cancel": "Cancelar",
+    "save": "Salvar preferências"
+  },
+  "toasts": {
+    "conversionStarted": "Conversão iniciada com sucesso",
+    "conversionStartedDescription": "ID do trabalho: {{jobId}} - Seu arquivo está sendo processado",
+    "transcriptionStarted": "Transcrição iniciada",
+    "transcriptionStartedDescription": "ID do trabalho: {{jobId}} - Gerando a transcrição",
+    "transcodeStarted": "Transcodificação iniciada",
+    "translationStarted": "Tradução de legendas iniciada",
+    "jobStarted": "Trabalho iniciado",
+    "stitchStarted": "Trabalho de união iniciado",
+    "jobIdDescription": "ID do trabalho: {{jobId}}",
+    "conversionCompleted": "Conversão concluída com sucesso!",
+    "readyForDownload": "Seu arquivo está pronto para download",
+    "uploadingFile": "Enviando {{fileName}}…",
+    "uploadingFileProgress": "Enviando {{fileName}}… {{percent}}%",
+    "processingFile": "Processando {{fileName}}…",
+    "buildingPreview": "Gerando pré-visualização…",
+    "assetAdded": "{{fileName}} adicionado",
+    "audioAdded": "Áudio adicionado",
+    "processingAudio": "Processando áudio…",
+    "captionsReady": "Legendas prontas",
+    "binUpdateFailed": "Não foi possível atualizar a biblioteca de mídia",
+    "assetDeleteFailed": "Não foi possível excluir essa mídia"
+  },
+  "resultPanel": {
+    "ariaLabel": "Resultado",
+    "download": "Baixar",
+    "downloadFailed": "Falha no download. Tente de novo.",
+    "downloadStatus": {
+      "preparing": "Preparando o download…",
+      "started": "Seu download começou — confira os downloads do navegador.",
+      "startedWithSize": "Seu download começou ({{size}}) — confira os downloads do navegador.",
+      "failed": "Não foi possível iniciar o download.",
+      "gone": "Este resultado não está mais disponível para download.",
+      "retry": "Tentar novamente",
+      "noRecharge": "Baixar de novo nunca executa nem cobra o trabalho outra vez."
+    },
+    "compare": "Comparar",
+    "original": "Original",
+    "result": "Resultado",
+    "runAnother": "Fazer outra",
+    "size": "Tamanho",
+    "keepsUntil": "Guardado até",
+    "loading": "Carregando pré-visualização…",
+    "loadFailed": "Não foi possível carregar o resultado.",
+    "retry": "Tentar de novo",
+    "kind": {
+      "image": "Imagem",
+      "gif": "GIF animado",
+      "video": "Vídeo",
+      "audio": "Áudio",
+      "transcript": "Transcrição",
+      "captions": "Legendas",
+      "pdf": "Documento PDF",
+      "archive": "Arquivo compactado",
+      "hls": "Pacote HLS",
+      "dash": "Pacote DASH",
+      "metadata": "Metadados",
+      "unknown": "Arquivo",
+      "summary": "Resumo"
+    },
+    "image": {
+      "zoom": "Zoom",
+      "fit": "Ajustar",
+      "transparencyGrid": "Grade de transparência",
+      "dimensions": "Dimensões",
+      "originalAlt": "Imagem original {{fileName}}",
+      "resultAlt": "Imagem resultante {{fileName}}"
+    },
+    "gif": {
+      "alt": "GIF animado {{fileName}}"
+    },
+    "audio": {
+      "waveform": "Forma de onda do áudio"
+    },
+    "unknown": {
+      "body": "Este resultado ainda não tem pré-visualização no navegador. Baixe para abrir.",
+      "type": "Tipo",
+      "size": "Tamanho"
+    },
+    "transcript": {
+      "search": "Buscar na transcrição",
+      "searchPlaceholder": "Buscar…",
+      "matchCount": "{{current}} de {{total}}",
+      "noMatches": "Nenhum resultado",
+      "prevMatch": "Resultado anterior",
+      "nextMatch": "Próximo resultado",
+      "copyAll": "Copiar tudo",
+      "copied": "Copiado",
+      "format": "Formato",
+      "rawPreview": "Texto bruto",
+      "seekTo": "Ir para {{time}}",
+      "showMore": "Mostrar mais ({{count}} restantes)",
+      "details": "Idioma, descrição do áudio e revisão por IA"
+    },
+    "captions": {
+      "cues": "Legendas",
+      "sourceCues": "Legendas de origem",
+      "skipped": "Blocos ignorados",
+      "countMismatch": "A origem tem {{source}} legendas, mas a tradução tem {{translated}}. As linhas extras aparecem ao lado de uma célula vazia.",
+      "source": "Origem",
+      "translated": "Traduzido",
+      "timingDiffers": "tempo diferente",
+      "empty": "(nenhum)"
+    },
+    "compareModes": {
+      "label": "Modo de comparação",
+      "slider": "Posição da comparação",
+      "sliderValue": "{{before}} {{beforePct}}%, {{after}} {{afterPct}}%",
+      "wipe": "Cortina",
+      "side_by_side": "Lado a lado",
+      "toggle": "Alternar",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "Controles de reprodução",
+      "play": "Reproduzir",
+      "pause": "Pausar",
+      "seek": "Avançar/retroceder",
+      "rate": "Velocidade",
+      "mute": "Silenciar",
+      "unmute": "Ativar o som do resultado",
+      "prevFrame": "Quadro anterior",
+      "nextFrame": "Próximo quadro",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps (alvo)",
+      "largeNotice": "A pré-visualização é limitada à largura do contêiner; vídeos muito grandes podem reproduzir devagar.",
+      "videoOriginal": "Vídeo original",
+      "videoResult": "Vídeo resultante",
+      "audibleLabel": "Lado audível",
+      "audioOriginal": "Áudio original",
+      "audioResult": "Áudio resultante",
+      "otherPeaks": "Forma de onda do outro lado",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_one": "{{count}} arquivo",
+      "summary_other": "{{count}} arquivos",
+      "truncated": "O arquivo compactado está truncado; mostrando o que foi possível ler.",
+      "search": "Buscar arquivos",
+      "view": "Visualização",
+      "gallery": "Galeria",
+      "list": "Lista",
+      "noMatches": "Nenhum arquivo corresponde.",
+      "play": "Reproduzir {{name}}",
+      "open": "Abrir",
+      "downloadEntry": "Baixar {{name}}",
+      "lightbox": "Pré-visualização da imagem",
+      "previous": "Anterior",
+      "next": "Próximo",
+      "tooLarge": "Grande demais para pré-visualizar no navegador.",
+      "unreadable": "Não foi possível ler este arquivo compactado no navegador.",
+      "noSingleEntry": "Arquivos individuais não podem ser baixados do servidor, então baixe o arquivo compactado inteiro."
+    },
+    "pdf": {
+      "title": "Pré-visualização do PDF",
+      "openInNewTab": "Abrir em nova aba",
+      "fallback": "Seu navegador não consegue exibir este PDF aqui."
+    },
+    "stream": {
+      "rung": "Qualidade",
+      "auto": "Automática",
+      "rungLabel": "{{height}}p, {{bitrate}} kbps",
+      "unsupported": "Este stream não pode ser reproduzido no navegador, então aqui está o relatório dele.",
+      "loading": "Preparando o stream",
+      "av1": "Este navegador não consegue decodificar AV1."
+    },
+    "restore": {
+      "picker": "Modelo",
+      "original": "Original",
+      "modelOption": "{{name}}, {{duration}}s, {{size}}",
+      "failedTitle": "Modelos que falharam",
+      "failedItem": "{{name}}: {{error}}",
+      "loading": "Carregando os clipes restaurados",
+      "download": "Baixar todos os resultados"
+    },
+    "summary": {
+      "loading": "Carregando o resumo",
+      "loadFailed": "Não foi possível carregar o resumo.",
+      "untitled": "Resumo",
+      "language": "Idioma: {{language}}",
+      "chapters": "Capítulos",
+      "seekTo": "Ir para {{time}}",
+      "topics": "Tópicos",
+      "onScreenText": "Texto na tela",
+      "visual": "Imagem",
+      "speech": "Fala",
+      "notes": "Observações",
+      "copyMarkdown": "Copiar como Markdown",
+      "copied": "Copiado",
+      "downloadMd": "Baixar .md",
+      "downloadJson": "Baixar .json",
+      "showAll": "Mostrar tudo ({{count}})",
+      "showLess": "Mostrar menos"
+    },
+    "mp3": {
+      "button": "Baixar como MP3",
+      "converting": "Convertendo para MP3…",
+      "hint": "Arquivo menor, convertido no nosso servidor. Grátis e nunca conta como trabalho de IA.",
+      "started": "Seu download do MP3 começou — confira os downloads do navegador.",
+      "startedWithSize": "Seu download do MP3 começou ({{size}}) — confira os downloads do navegador.",
+      "failed": "Não foi possível preparar o MP3. Tente de novo em instantes."
+    }
+  },
+  "billing": {
+    "intervalLabel": "Periodicidade da cobrança",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "perMonth": "/mês",
+    "perYear": "/ano",
+    "currency": {
+      "label": "Moeda",
+      "panelLabel": "Moeda",
+      "lockedNote": "Sua assinatura é cobrada em {{currency}}. Isso não pode mudar enquanto ela estiver ativa."
+    },
+    "yearlyBonus": "{{months}} meses grátis",
+    "cancelAnytime": "Cancele quando quiser",
+    "refund": "Reembolso em até 14 dias no primeiro pagamento",
+    "taxNote": "Nenhum imposto é adicionado por cima",
+    "upgrade": "Assinar o Premium",
+    "manage": "Gerenciar assinatura",
+    "operator": "Ilimitado (operador)",
+    "unavailable": "O Premium ainda não está disponível",
+    "busy": "Abrindo o checkout…",
+    "cancelledNote": "O checkout foi cancelado. Nada foi cobrado.",
+    "dismiss": "Dispensar",
+    "errors": {
+      "unavailable": "O Premium ainda não está disponível.",
+      "operator": "Contas de operador já têm acesso ilimitado.",
+      "generic": "Não foi possível iniciar o checkout. Tente de novo em instantes.",
+      "alreadyOnPlan": "Você já tem este plano ou um superior.",
+      "currencyLocked": "Sua conta de cobrança está configurada em {{currency}}, então os preços agora aparecem em {{currency}}. Escolha seu plano de novo para continuar."
+    },
+    "panel": {
+      "title": "Cobrança",
+      "loading": "Carregando seus dados de cobrança…",
+      "loadFailed": "Não foi possível carregar seus dados de cobrança. Recarregue para tentar de novo.",
+      "operator": "Acesso de operador. Não precisa de assinatura.",
+      "unavailable": "As assinaturas ainda não estão disponíveis.",
+      "grantUntil": "Premium concedido pela equipe até {{date}}.",
+      "grantOpen": "Premium concedido pela equipe sem data de término.",
+      "freeBody": "Você está no plano gratuito. O Premium aumenta seus limites e remove os anúncios.",
+      "upgrade": "Assinar o Premium",
+      "pastDueTitle": "Seu último pagamento não foi aprovado",
+      "pastDueBody": "O acesso Premium continua por até 7 dias enquanto tentamos de novo. Atualize sua forma de pagamento para mantê-lo.",
+      "intervalLabel": "Cobrança",
+      "endsLabel": "O Premium termina em",
+      "renewsLabel": "Renova em",
+      "endsOn": "Sua assinatura termina em {{date}}.",
+      "resumeHint": "Abra Gerenciar assinatura para retomá-la.",
+      "renewsOn": "Renova em {{date}}.",
+      "updatePayment": "Atualizar forma de pagamento",
+      "cancelledTitle": "Seu plano Premium está cancelado",
+      "cancelledBody": "Você mantém o Premium até {{date}}. Depois disso, sua conta passa para o plano Gratuito e nada mais é cobrado.",
+      "cancelledBodyNoDate": "Você mantém o Premium até o fim do período de cobrança atual. Depois disso, sua conta passa para o plano Gratuito e nada mais é cobrado.",
+      "planLabel": "Plano",
+      "pro": {
+        "grantUntil": "Pro concedido pela equipe até {{date}}.",
+        "grantOpen": "Pro concedido pela equipe sem data de término.",
+        "pastDueBody": "O acesso Pro continua por até 7 dias enquanto tentamos de novo. Atualize sua forma de pagamento para mantê-lo.",
+        "endsLabel": "O Pro termina em",
+        "cancelledTitle": "Seu plano Pro está cancelado",
+        "cancelledBody": "Você mantém o Pro até {{date}}. Depois disso, sua conta passa para o plano Gratuito e nada mais é cobrado.",
+        "cancelledBodyNoDate": "Você mantém o Pro até o fim do período de cobrança atual. Depois disso, sua conta passa para o plano Gratuito e nada mais é cobrado."
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "Confirmando seu pagamento…",
+        "body": "Isso costuma levar alguns segundos."
+      },
+      "confirmed": {
+        "title": "Bem-vindo ao Premium",
+        "body": "Seu pagamento foi aprovado e seu plano agora é o Premium."
+      },
+      "shortly": {
+        "title": "Pagamento recebido",
+        "body": "Seu plano será atualizado em breve. Se ainda aparecer como Gratuito daqui a um minuto, atualize abaixo."
+      },
+      "foreign": {
+        "title": "Não conseguimos associar este pagamento à sua conta",
+        "body": "Se você acabou de pagar, entre com a conta que usou no checkout."
+      },
+      "failed": {
+        "title": "Ainda não conseguimos confirmar seu pagamento",
+        "body": "Seu plano é atualizado automaticamente assim que o pagamento for confirmado. Tente de novo em instantes."
+      },
+      "refresh": "Atualizar meu plano",
+      "confirmedPro": {
+        "title": "Bem-vindo ao Pro",
+        "body": "Seu pagamento foi aprovado e seu plano agora é o Pro: os maiores limites diários e a maior cota do Motion conforme o editor Motion for sendo lançado."
+      }
+    },
+    "offer": {
+      "title": "Mudou de ideia? Fique com o Premium por {{price}}/mês",
+      "resumeTitle": "Mudou de ideia? Fique com o Premium pelo seu preço atual",
+      "fineprint": "Nada é cobrado hoje. A partir de {{date}}, você paga {{price}}/mês em vez de {{current}}/mês, todo mês até cancelar.",
+      "cta": "Ficar com o Premium por {{price}}/mês",
+      "resumeCta": "Ficar com o Premium por {{price}}{{unit}}",
+      "keepAtCurrent": "Ficar com o Premium por {{price}}/mês",
+      "keepAtCurrentNoPrice": "Ficar com o Premium pelo preço normal",
+      "working": "Processando…",
+      "renewed": "O Premium será renovado em {{date}} por {{price}}/mês",
+      "renewedNoPrice": "O Premium será renovado em {{date}}",
+      "renewedBare": "O Premium vai continuar sendo renovado",
+      "changed": "A oferta mudou. Esta é a atual.",
+      "failed": "Não foi possível atualizar sua assinatura. Tente de novo.",
+      "resumePrice": "Você paga {{price}}{{unit}} hoje, e é isso que você continua pagando.",
+      "resumeCtaNoPrice": "Ficar com o Premium",
+      "fineprintNoCurrent": "Nada é cobrado hoje. A partir de {{date}}, você paga {{price}}/mês, todo mês até cancelar.",
+      "resumeFineprint": "Nada é cobrado hoje. Seu próximo pagamento é em {{date}}, pelo mesmo preço, e a renovação continua normalmente até você cancelar.",
+      "unitMonth": "/mês",
+      "unitYear": "/ano"
+    },
+    "upgradePro": "Assinar o Pro",
+    "unavailablePro": "O Pro ainda não está disponível",
+    "switchToPremium": "Mudar para o Premium",
+    "planChange": {
+      "cancel": "Agora não",
+      "upgrade": {
+        "title": "Assinar o Pro agora?",
+        "body": "Você paga hoje a diferença proporcional ao restante deste período de cobrança. Sua data de renovação continua {{date}} e, a partir daí, o Pro custa {{price}}{{unit}}.",
+        "bodyNoPrice": "Você paga hoje a diferença proporcional ao restante deste período de cobrança. Sua data de renovação continua {{date}}.",
+        "bodyNoDate": "Você paga hoje a diferença proporcional ao restante deste período de cobrança. Sua data de renovação não muda.",
+        "fineprint": "O Pro começa assim que o pagamento for aprovado. O reembolso de 14 dias vale só para o seu primeiro pagamento.",
+        "confirm": "Assinar o Pro"
+      },
+      "downgrade": {
+        "title": "Mudar para o Premium no fim deste período?",
+        "body": "Você mantém o Pro até {{date}}. Depois disso, seu plano passa a ser o Premium por {{price}}{{unit}}.",
+        "bodyNoPrice": "Você mantém o Pro até {{date}}. Depois disso, seu plano passa a ser o Premium.",
+        "bodyNoDate": "Você mantém o Pro até o fim do período de cobrança atual. Depois disso, seu plano passa a ser o Premium.",
+        "fineprint": "Nada é reembolsado pelo restante deste período. Você pode manter o Pro a qualquer momento antes da mudança.",
+        "confirm": "Mudar para o Premium"
+      },
+      "upgraded": "Agora você está no Pro.",
+      "scheduled": "Seu plano muda para o Premium em {{date}}.",
+      "scheduledNoDate": "Seu plano muda para o Premium no fim deste período de cobrança.",
+      "kept": "Você vai continuar no Pro.",
+      "pendingBody": "Premium a partir de {{date}}. Até lá, você mantém o Pro.",
+      "keepPro": "Manter o Pro",
+      "dropTitle": "Passe para o Premium e continue",
+      "dropBody": "Em vez de perder tudo, você pode ficar no Premium pelo preço normal. Retome sua assinatura em Gerenciar assinatura e depois escolha Mudar para o Premium aqui.",
+      "dropCta": "Retomar em Gerenciar assinatura",
+      "errors": {
+        "notSubscription": "Mudanças de plano só estão disponíveis para assinaturas pagas. Um plano concedido pela equipe não pode ser alterado aqui.",
+        "samePlan": "Você já está neste plano.",
+        "notAvailable": "Esta mudança não está disponível no momento. Se sua assinatura estiver cancelada, retome-a primeiro em Gerenciar assinatura.",
+        "generic": "Não foi possível mudar seu plano. Tente de novo em instantes."
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "Você atingiu o limite de hoje, de {{limit}}",
+      "body": "O Premium aumenta sua cota diária e remove os anúncios."
+    },
+    "outputHeight": {
+      "title": "Esta saída é maior do que o seu plano permite",
+      "body": "Você pediu {{requested}}p; seu plano permite até {{limit}}p."
+    },
+    "projects": {
+      "title": "Você atingiu o limite de projetos salvos",
+      "body": "Seu plano guarda até {{limit}} projetos do Darkroom salvos."
+    },
+    "topTier": "Seu plano já é o mais alto. Reduza a configuração para continuar.",
+    "close": "Talvez depois",
+    "signup": "Criar uma conta gratuita",
+    "upgrade": "Assinar o Premium",
+    "fileSize": {
+      "title": "Este arquivo é maior do que o seu plano permite",
+      "body": "Seu plano aceita arquivos de até {{limit}}."
+    },
+    "premiumChange": {
+      "fileSize": "O Premium aceita arquivos de até {{value}}.",
+      "ops": "O Premium permite {{value}} conversões por dia.",
+      "opsUnlimited": "O Premium não tem limite diário de conversões.",
+      "aiOps": "O Premium permite {{value}} trabalhos de IA por dia.",
+      "aiOpsUnlimited": "O Premium não tem limite diário de trabalhos de IA.",
+      "exports": "O Premium permite {{value}} exportações por dia.",
+      "exportsUnlimited": "O Premium não tem limite diário de exportações.",
+      "height": "O Premium gera saídas de até {{value}}p.",
+      "projects": "O Premium guarda até {{value}} projetos salvos.",
+      "projectsUnlimited": "O Premium não tem limite de projetos salvos."
+    },
+    "noHigherPlan": "Nenhum plano aumenta mais este limite. Reduza a configuração para continuar.",
+    "proNote": "Ao fazer o upgrade, a diferença proporcional é cobrada hoje; sua data de renovação continua a mesma.",
+    "proChange": {
+      "ops": "O Pro permite {{value}} conversões por dia.",
+      "opsUnlimited": "O Pro não tem limite diário de conversões.",
+      "aiOps": "O Pro permite {{value}} trabalhos de IA por dia.",
+      "aiOpsUnlimited": "O Pro não tem limite diário de trabalhos de IA.",
+      "exports": "O Pro permite {{value}} exportações por dia.",
+      "exportsUnlimited": "O Pro não tem limite diário de exportações."
+    }
+  },
+  "recentStrip": {
+    "title": "Recentes",
+    "clear": "Limpar recentes",
+    "open": "Abrir {{name}}",
+    "converter": "Conversor",
+    "expiresInHours": "Expira em {{hours}}h",
+    "expiresInMinutes": "Expira em {{minutes}}min",
+    "expired": "Este arquivo expirou",
+    "openFailed": "Não foi possível abrir este arquivo. Tente de novo.",
+    "signupCta": "Os arquivos de visitantes são excluídos após 24 horas. Cadastre-se para guardar estes por 6 meses.",
+    "signupAction": "Cadastre-se grátis"
+  },
+  "quotaChip": {
+    "title": "Ver planos Premium",
+    "ops": {
+      "remaining": "{{remaining}} de {{limit}} conversões restantes hoje",
+      "empty": "Todas as {{limit}} conversões de hoje foram usadas"
+    },
+    "ai_ops": {
+      "remaining": "{{remaining}} de {{limit}} trabalhos de IA restantes hoje",
+      "empty": "Todos os {{limit}} trabalhos de IA de hoje foram usados"
+    },
+    "export": {
+      "remaining": "{{remaining}} de {{limit}} exportações restantes hoje",
+      "empty": "Todas as {{limit}} exportações de hoje foram usadas"
+    },
+    "titlePro": "Ver planos Pro"
+  },
+  "queueLine": {
+    "text": "Isto esperou {{time}} na fila compartilhada. Os trabalhos Premium vão primeiro.",
+    "cta": "Conhecer o Premium"
+  },
+  "yearlyNudge": {
+    "title": "Mude para o anual e ganhe {{months}} meses grátis",
+    "body": "Você pagou vários meses seguidos. O plano anual custa menos do que doze pagamentos mensais. Você pode mudar a qualquer momento no portal de cobrança.",
+    "cta": "Mudar para o anual",
+    "dismiss": "Não, obrigado"
+  },
+  "accountTour": {
+    "title": "Bem-vindo ao Media Manipulator",
+    "step": "Etapa {{current}} de {{total}}",
+    "next": "Avançar",
+    "back": "Voltar",
+    "skip": "Pular",
+    "notNow": "Agora não",
+    "setRetention": "Definir retenção",
+    "keepResults": {
+      "title": "Guarde seus resultados",
+      "body": "Tudo o que você converte enquanto está conectado é salvo no Histórico, para você reabrir ou baixar depois. Guardamos pelo período que você escolher."
+    },
+    "darkroomProjects": {
+      "title": "Projetos do Darkroom",
+      "body": "Os projetos do Darkroom são salvos na sua conta e listados em Projetos, para você continuar uma edição em qualquer dispositivo."
+    },
+    "retention": {
+      "title": "Escolha sua retenção",
+      "body": "Recomendamos 6 meses. Você pode escolher qualquer período de 24 horas a 2 anos e mudar quando quiser em Privacidade e dados."
+    },
+    "replay": "Repetir o tour",
+    "replayHint": "Veja de novo a breve introdução à sua conta."
+  },
+  "status": {
+    "title": "Status do serviço",
+    "intro": "Status em tempo real do serviço Media Manipulator. Atualiza a cada 10 segundos.",
+    "operational": "Operacional",
+    "degraded": "Degradado",
+    "down": "Fora do ar",
+    "unknown": "Status indisponível",
+    "checking": "Verificando...",
+    "operationalDetail": "Todos os sistemas estão funcionando normalmente.",
+    "degradedDetail": "Algumas partes do serviço estão com problemas. As conversões podem ficar lentas ou falhar.",
+    "downDetail": "O serviço não está respondendo. Tente de novo em alguns minutos.",
+    "unknownDetail": "Esta página não conseguiu acessar o serviço de status pelo seu navegador agora há pouco. Isso não significa que as ferramentas estão fora do ar. Ela tentará de novo em alguns segundos.",
+    "queueTitle": "Fila de processamento de IA",
+    "running": "Em execução agora",
+    "waiting": "Aguardando",
+    "gpuOff": "O processamento de IA não está ativado neste servidor.",
+    "checksTitle": "Componentes",
+    "database": "Banco de dados",
+    "storage": "Armazenamento",
+    "cache": "Cache",
+    "ok": "OK",
+    "fail": "Problema",
+    "basicOnly": "Só o status geral está disponível no momento.",
+    "lastChecked": "Última verificação {{time}}",
+    "metaTitle": "Status | Media Manipulator"
+  },
+  "share": {
+    "button": "Compartilhar",
+    "revokeLinks": "Revogar links",
+    "copied": "Link copiado. Ele funciona até {{when}}.",
+    "copyManually": "Não foi possível copiar automaticamente. Copie este link: {{url}}",
+    "notAllowed": "Este tipo de resultado não pode ser compartilhado.",
+    "expired": "Este arquivo expirou.",
+    "limitTitle": "Limite de compartilhamento atingido",
+    "limitBody": "Este resultado já tem 5 links de compartilhamento ativos, o máximo. Revogue-os para criar um novo.",
+    "revokeConfirm": "Revogar links",
+    "cancel": "Cancelar",
+    "signIn": "Entre de novo para compartilhar este resultado.",
+    "failed": "Não foi possível criar um link de compartilhamento. Tente de novo.",
+    "revoked": "Todos os links de compartilhamento deste resultado foram revogados.",
+    "revokeNone": "Não havia links ativos para revogar.",
+    "revokeFailed": "Não foi possível revogar os links. Tente de novo.",
+    "revokeTitle": "Revogar todos os links de compartilhamento?",
+    "revokeBody": "Quem tiver um link para este resultado vai perder o acesso na hora. Você pode criar um novo link depois."
+  },
+  "sharedResult": {
+    "metaTitle": "Resultado compartilhado | Media Manipulator",
+    "metaDescription": "Um arquivo feito com o Media Manipulator, compartilhado por link.",
+    "ogTitle": "{{fileName}} feito com o Media Manipulator",
+    "goneTitle": "Este link expirou ou foi removido",
+    "goneBody": "Os links de compartilhamento param de funcionar quando expiram, quando o dono os revoga ou quando o arquivo é excluído.",
+    "goneCta": "Ir para o Media Manipulator",
+    "madeWith": "Feito com o Media Manipulator",
+    "tryIt": "Experimente com o seu arquivo",
+    "expires": "Este link funciona até {{when}}."
+  },
+  "planSummary": {
+    "title": "Planos em resumo",
+    "current": "Seu plano",
+    "free": "Gratuito",
+    "ops": "{{value}} operações por dia",
+    "opsUnlimited": "Operações ilimitadas por dia",
+    "aiOps": "{{value}} trabalhos de IA por dia",
+    "aiOpsUnlimited": "Trabalhos de IA ilimitados por dia",
+    "fileSize": "Arquivos de até {{value}}",
+    "compare": "Comparar todos os planos"
+  }
+}

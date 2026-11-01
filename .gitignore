@@ -9,8 +9,8 @@ dist/
 web-build/
 coverage/
 # Firebase config files (EAS file variables)
-google-services.json
-GoogleService-Info.plist
+google-services*.json
+GoogleService-Info*.plist
 # signing material
 *.jks
 *.keystore

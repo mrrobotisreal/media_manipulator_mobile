@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "확인",
+    "cancel": "취소",
+    "retry": "다시 시도",
+    "close": "닫기",
+    "continue": "계속",
+    "done": "완료",
+    "loading": "불러오는 중",
+    "processing": "처리 중",
+    "signOut": "로그아웃",
+    "back": "뒤로"
+  },
+  "tabs": {
+    "tools": "도구",
+    "history": "기록",
+    "account": "계정"
+  },
+  "placeholders": {
+    "toolsBody": "도구는 MA10에서 제공됩니다.",
+    "historyBody": "작업이 여기에 표시됩니다.",
+    "accountBody": "계정은 MA15에서 제공됩니다.",
+    "errorBoundary": "문제가 발생했습니다. 앱을 다시 시작하세요."
+  },
+  "language": {
+    "title": "언어",
+    "system": "시스템 기본값",
+    "rtlReloadTitle": "레이아웃 방향을 바꾸려면 다시 시작",
+    "rtlReloadBody": "이 언어를 오른쪽에서 왼쪽으로 표시하려면 앱을 다시 시작해야 합니다.",
+    "rtlReloadBodyLtr": "이 언어를 왼쪽에서 오른쪽으로 표시하려면 앱을 다시 시작해야 합니다.",
+    "rtlReloadConfirm": "지금 다시 시작"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Media Manipulator에 로그인",
+      "subtitle": "media-manipulator.com과 같은 계정을 사용하세요.",
+      "email": "이메일로 로그인",
+      "createAccount": "계정 만들기",
+      "legal": "계속하면 {{terms}} 및 {{privacy}}에 동의하는 것으로 간주됩니다.",
+      "terms": "이용약관",
+      "privacy": "개인정보 처리방침",
+      "unavailable": "이 빌드에서는 로그인을 사용할 수 없어요.",
+      "sessionExpired": "세션이 만료되었어요. 다시 로그인해 주세요."
+    },
+    "signUp": {
+      "title": "계정 만들기",
+      "name": "이름",
+      "passwordHelper": "8자 이상",
+      "submit": "계정 만들기",
+      "haveAccount": "이미 계정이 있나요? 로그인"
+    },
+    "errors": {
+      "nameRequired": "이름을 입력해 주세요(최대 80자).",
+      "emailInUse": "이 이메일로 만든 계정이 이미 있어요. 로그인해 주세요.",
+      "weakPassword": "더 안전한 비밀번호를 선택해 주세요(8자 이상).",
+      "generic": "문제가 생겼어요. 다시 시도해 주세요."
+    },
+    "link": {
+      "title": "계정 연결",
+      "linkApple": "Apple 연결",
+      "linkAppleBody": "Apple ID를 연결하면 다음에 그 계정으로 로그인할 수 있어요."
+    },
+    "verify": {
+      "banner": "계정을 안전하게 지키려면 이메일을 인증해 주세요.",
+      "send": "링크 보내기",
+      "sent": "링크를 보냈어요. 받은편지함을 확인해 주세요."
+    },
+    "sync": {
+      "failedTitle": "계정에 연결할 수 없었어요",
+      "failedBody": "연결 상태를 확인하고 다시 시도해 주세요. 파일과 요금제는 안전해요."
+    },
+    "signOut": {
+      "confirmTitle": "로그아웃할까요?",
+      "confirmBody": "언제든 다시 로그인할 수 있어요."
+    },
+    "reauth": {
+      "title": "본인 확인",
+      "body": "보안을 위해 계속하려면 다시 로그인해 주세요.",
+      "withPassword": "비밀번호로 확인",
+      "withGoogle": "Google로 확인",
+      "withApple": "Apple로 확인"
+    }
+  }
+}

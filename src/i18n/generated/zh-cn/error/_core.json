@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "发生未知错误，请重试。",
+    "unexpected": "出了点问题，请重试。",
+    "networkOffline": "你似乎已离线。请检查网络连接后重试。",
+    "tryAgainLater": "请稍后重试。",
+    "missingFile": "未选择文件。",
+    "missingField": "此项为必填项。"
+  },
+  "upload": {
+    "fileTooLarge": "文件过大。",
+    "unsupportedFormat": "不支持的文件格式。",
+    "uploadFailed": "上传失败，请重试。",
+    "missingFile": "请先选择一个文件。"
+  },
+  "conversion": {
+    "failed": "转换失败。",
+    "failedTryAgain": "转换失败，请重试。",
+    "previewFailed": "无法加载转换后的图片预览",
+    "downloadFailed": "下载失败，请重试。"
+  },
+  "transcribe": {
+    "failed": "转录失败。",
+    "failedTryAgain": "转录失败，请重试。"
+  },
+  "transcode": {
+    "failed": "转码失败。",
+    "failedTryAgain": "转码失败，请重试。"
+  },
+  "validation": {
+    "required": "此项为必填项。",
+    "invalidNumber": "请输入有效的数字。",
+    "outOfRange": "数值必须介于{{min}}和{{max}}之间。",
+    "tooShort": "至少需要{{count}}个字符。",
+    "tooLong": "最多只能有{{count}}个字符。",
+    "invalidEmail": "请输入有效的电子邮件地址。",
+    "invalidUrl": "请输入有效的URL。"
+  },
+  "auth": {
+    "signInFailed": "登录失败，请重试。",
+    "signUpFailed": "注册失败，请重试。",
+    "passwordTooShort": "密码至少需要8个字符。",
+    "passwordsDoNotMatch": "两次输入的密码不一致。",
+    "invalidCredentials": "电子邮件或密码不正确。",
+    "emailRequired": "请输入电子邮件。",
+    "passwordRequired": "请输入密码。",
+    "tryAgain": "请重试。",
+    "userNotFound": "未找到使用此电子邮件的账号。",
+    "wrongPassword": "密码不正确。",
+    "emailAlreadyInUse": "此电子邮件已注册账号。",
+    "weakPassword": "密码至少需要6个字符。",
+    "invalidEmail": "请输入有效的电子邮件地址。",
+    "tooManyRequests": "尝试次数过多。请等待几分钟后重试。",
+    "network": "网络错误。请检查网络连接后重试。"
+  },
+  "ad": {
+    "loadFailed": "广告加载失败。"
+  },
+  "forms": {
+    "fixErrors": "请修正以下错误：",
+    "invalidValue": "无效的值",
+    "fieldRequired": "此项为必填项。",
+    "invalidNumber": "请输入有效的数字。",
+    "outOfRange": "数值必须介于{{min}}和{{max}}之间。",
+    "faceDetectFailed": "人脸检测失败，请重试。",
+    "removeObjectFailed": "物体移除失败，请重试。",
+    "imageForm": {
+      "noFile": "请先选择一张图片。",
+      "exifLoadFailed": "无法读取此文件的EXIF元数据。"
+    },
+    "videoForm": {
+      "noFile": "请先选择一个视频。"
+    },
+    "audioForm": {
+      "noFile": "请先选择一个音频文件。"
+    },
+    "transcribe": {
+      "noFile": "请先选择一个媒体文件。",
+      "invalidLanguage": "请输入有效的BCP-47语言代码。"
+    },
+    "transcode": {
+      "probeFailed": "无法探测源文件。请尝试其他文件。"
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "字幕翻译失败。",
+      "missingFile": "请先上传字幕文件。"
+    },
+    "stitchAudioToVideo": {
+      "failed": "音视频合成失败。",
+      "missingTracks": "请至少添加一条音轨。"
+    },
+    "extract": {
+      "failed": "提取失败。",
+      "noStreams": "在此文件中未找到匹配的流。"
+    }
+  },
+  "errorBoundary": {
+    "title": "出了点问题",
+    "body": "一个意外错误中断了此页面。您的文件没有丢失——您可以重试，如果问题仍然存在，请重新加载页面。",
+    "tryAgain": "重试",
+    "goHome": "返回首页"
+  },
+  "toasts": {
+    "conversionStartFailed": "无法启动转换。",
+    "transcriptionStartFailed": "无法启动转录。",
+    "transcodeStartFailed": "无法启动转码。",
+    "videoAnalysisFailed": "视频分析失败。",
+    "translationStartFailed": "无法启动翻译。",
+    "scanStartFailed": "无法启动扫描。",
+    "jobStartFailed": "无法启动任务。",
+    "stitchStartFailed": "无法启动合成任务。",
+    "restorationStartFailed": "无法启动修复。",
+    "identificationFailed": "无法识别文件。",
+    "jobStatusCheckFailed": "无法检查任务状态。",
+    "exportStartFailed": "无法启动导出。",
+    "exportFailed": "导出失败。",
+    "saveProjectFailed": "无法保存项目。",
+    "createProjectFailed": "无法创建项目。",
+    "uploadFailed": "上传失败。",
+    "audioProcessingFailed": "音频处理失败。",
+    "unexpectedFallback": "发生意外错误。",
+    "conversionFailedFallback": "转换过程中遇到错误。",
+    "unableToGetProgress": "无法获取转换进度。"
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "common": {
+    "brand": "Media Manipulator",
+    "brandTagline": "Convert images, videos, and audio files with ease",
+    "loading": "Loading…",
+    "loadingShort": "Loading...",
+    "tryAgain": "Try again",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "saving": "Saving...",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "download": "Download",
+    "preview": "Preview",
+    "remove": "Remove",
+    "clear": "Clear",
+    "reset": "Reset",
+    "apply": "Apply",
+    "enable": "Enable",
+    "disable": "Disable",
+    "yes": "Yes",
+    "no": "No",
+    "more": "More",
+    "less": "Less",
+    "and": "and",
+    "or": "or",
+    "of": "of",
+    "to": "to",
+    "from": "from",
+    "by": "by",
+    "in": "in",
+    "with": "with",
+    "all": "All",
+    "none": "None",
+    "off": "Off",
+    "on": "On",
+    "optional": "Optional",
+    "required": "Required",
+    "auto": "Auto",
+    "manual": "Manual",
+    "default": "Default",
+    "advanced": "Advanced",
+    "basic": "Basic",
+    "settings": "Settings",
+    "options": "Options",
+    "search": "Search",
+    "filter": "Filter",
+    "selected": "Selected",
+    "step": "Step",
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "items": "items",
+    "showAll": "Show all",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "retentionPromise": "You choose how long we keep your files — 24 hours by default for guests, up to 2 years with a free account",
+    "retentionPromiseShort": "Files are kept 24 hours for guests; with a free account you choose 24 hours to 2 years"
+  },
+  "units": {
+    "bytes": "B",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "pixels": "px",
+    "percent": "%",
+    "kbps": "kbps",
+    "fps": "fps",
+    "hz": "Hz",
+    "khz": "kHz"
+  },
+  "duration": {
+    "zero": "0 sec",
+    "hours_one": "{{count}} hr",
+    "hours_other": "{{count}} hr",
+    "minutes_one": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "seconds_one": "{{count}} sec",
+    "seconds_other": "{{count}} sec"
+  },
+  "topNav": {
+    "home": "Home",
+    "tools": "Tools",
+    "about": "About",
+    "howItWorks": "How it works",
+    "tutorials": "Tutorials",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "blog": "Blog",
+    "links": {
+      "homeDescription": "Home page where you can convert your files",
+      "toolsDescription": "Free online tools for converting, compressing, transcribing, and cleaning up media files",
+      "aboutDescription": "About page where you can learn more about the project and its creator",
+      "howItWorksDescription": "How it works page where you can learn more about the conversion process",
+      "tutorialsDescription": "Step-by-step tutorials for the audio, video, and image converters and their AI tools",
+      "privacyPolicyDescription": "Privacy policy page where you can learn more about the privacy policy of the project",
+      "termsOfServiceDescription": "Terms of service page where you can learn more about the terms of service of the project",
+      "blogDescription": "Blog page where you can read the latest news and updates about the project"
+    },
+    "navigationLabel": "Navigation",
+    "language": "Language",
+    "selectLanguage": "Select language",
+    "voices": "Voices",
+    "contact": "Contact",
+    "pricing": "Pricing"
+  },
+  "footer": {
+    "tagline": "Browser-based and server-assisted tools for editing, converting, compressing, analyzing, transcribing, summarizing, and otherwise processing image, video, and audio files.",
+    "contact": "Contact:",
+    "explore": "Explore",
+    "legal": "Legal",
+    "doNotSell": "Do Not Sell or Share My Personal Information",
+    "cookieSettings": "Cookie settings",
+    "copyright": "© {{year}} Media Manipulator, a CreaTV Ltd. product. All rights reserved.",
+    "operatedBy": "Operated by CreaTV Ltd. · Colorado, USA",
+    "changelog": "Changelog",
+    "status": "Status",
+    "licenses": "Open-source licences"
+  },
+  "languageSelector": {
+    "label": "Language",
+    "current": "Current language: {{language}}",
+    "select": "Select a language"
+  },
+  "home": {
+    "contentStudioCta": {
+      "title": "Darkroom",
+      "badge": "New",
+      "body": "Edit, layer, and mix video & audio on a multi-track timeline, then export MP4 — a Premiere Pro–style editor, right in your browser.",
+      "cta": "Try Darkroom"
+    },
+    "hero": {
+      "title": "Free Online Media Converter, Editor, Transcriber & Metadata Tool",
+      "subtitle": "Convert, compress, edit, transcribe, summarize, inspect metadata, and clean up image, video, and audio files directly from your browser.",
+      "popularLabel": "Popular tools",
+      "allTools": "All tools",
+      "removeExif": "Remove EXIF",
+      "compressVideo": "Compress video",
+      "transcribeVideo": "Transcribe video",
+      "transcodeHls": "Transcode → HLS",
+      "transcodeDash": "Transcode → DASH",
+      "webpToJpg": "WebP → JPG",
+      "wavToMp3": "WAV → MP3",
+      "compressImage": "Compress image",
+      "resizeImage": "Resize image",
+      "extractAudio": "Extract audio"
+    },
+    "upload": {
+      "title": "Upload File",
+      "dragDrop": "Drag and drop your file here",
+      "orClickSelect": "or click to select from your computer",
+      "chooseFile": "Choose File",
+      "unsupportedFile": "Unsupported file type. Please select an image, video, or audio file."
+    },
+    "options": {
+      "transcriptionOptions": "Transcription Options",
+      "transcodeOptions": "Transcode Options",
+      "conversionOptions": "Conversion Options",
+      "documentScanOptions": "Document Scan Options",
+      "convert": "Convert",
+      "transcribe": "Transcribe",
+      "transcode": "Transcode",
+      "scanDocument": "Scan to PDF / Word (AI)"
+    },
+    "history": {
+      "title": "Conversion History",
+      "subtitle": "Reopen or download any image, video, or audio result from this session.",
+      "newConversion": "New Conversion",
+      "transcriptBadge": "Transcript",
+      "preview": "Preview",
+      "download": "Download",
+      "itemLabel": "#{{number}} {{filename}}",
+      "startedProcessing": "Started {{time}} and still processing",
+      "completedAt": "Completed {{time}}",
+      "transcriptionFailed": "Transcription failed",
+      "conversionFailed": "Conversion failed"
+    },
+    "result": {
+      "transcriptResult": "Transcript Result",
+      "convertedPreview": "Converted File Preview",
+      "transcriptSubtitle": "Transcript and AI review for {{filename}}.",
+      "convertedSubtitle": "Toggle between the original and finalized edited version of {{filename}}.",
+      "original": "Original",
+      "final": "Final"
+    },
+    "progress": {
+      "preparingUpload": "Preparing secure upload...",
+      "uploadingToS3": "Uploading file directly to S3...",
+      "finalizing": "Staging uploaded file on the server...",
+      "startingTranscription": "Starting transcription...",
+      "startingConversion": "Starting conversion...",
+      "converting": "Converting...",
+      "percentComplete": "{{percent}}% Complete",
+      "conversionFailed": "Conversion failed. Please try again."
+    },
+    "download": {
+      "downloadAs": "Download {{filename}}",
+      "fileWillBeDownloaded": "File will be downloaded as: {{filename}}"
+    },
+    "fileLoadingConverter": "Loading converter…",
+    "gettingStarted": {
+      "title": "Get started in 4 steps",
+      "step1": {
+        "title": "Upload a file",
+        "body": "Drag any image, video, or audio file into the upload zone on the left, or click <em>Choose File</em>. Files are kept 24 hours for guests; with a free account you choose 24 hours to 2 years."
+      },
+      "step2": {
+        "title": "Pick your settings here",
+        "body": "The right panel will switch to the appropriate converter — image, video, or audio — once a file is selected. Pick a format, tweak filters, or enable an AI operation."
+      },
+      "step3": {
+        "title": "Convert",
+        "body": "Click <em>Convert File</em>. Watch the progress bar — jobs run on our GPU server in real time."
+      },
+      "step4": {
+        "title": "Preview and download",
+        "body": "The result auto-previews when it's ready. Toggle between Original and Final, then click Download."
+      }
+    },
+    "localAi": {
+      "title": "Includes local AI tools",
+      "body": "Face blur, background removal, AI upscale, OCR-based text/PII redaction, voice cleanup, vocal isolation, and karaoke vocal removal all run on our own GPU server. No third-party AI providers see your files."
+    },
+    "notSure": {
+      "title": "Not sure where to begin?",
+      "body": "Our step-by-step tutorials walk through every setting in the audio, video, and image converters — including the AI tools.",
+      "cta": "Browse Tutorials"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "body": "Media Manipulator runs FFmpeg and ImageMagick for standard conversions, and dedicated AI models on our local GPU for the optional AI operations. All processing happens on servers we control — read the full breakdown for details.",
+      "cta": "Read How it Works"
+    }
+  },
+  "notFound": {
+    "preTitle": "Telemetry lost",
+    "title": "This sector of the ship doesn't exist",
+    "body": "The coordinates you punched in don't map to anything on the navigation console. Try one of the routes below — or head back to the main bridge and pick a tool that does exist.",
+    "links": {
+      "home": "Return to base",
+      "tools": "Tools array",
+      "tutorials": "Tutorials"
+    }
+  },
+  "themeToggle": {
+    "toggle": "Toggle theme"
+  }
+}

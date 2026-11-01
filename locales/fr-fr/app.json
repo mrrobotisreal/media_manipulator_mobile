@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Annuler",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "continue": "Continuer",
+    "done": "Terminé",
+    "loading": "Chargement",
+    "processing": "Traitement en cours",
+    "signOut": "Se déconnecter",
+    "back": "Retour"
+  },
+  "tabs": {
+    "tools": "Outils",
+    "history": "Historique",
+    "account": "Compte"
+  },
+  "placeholders": {
+    "toolsBody": "Les outils arrivent avec MA10.",
+    "historyBody": "Vos tâches apparaîtront ici.",
+    "accountBody": "Le compte arrive avec MA15.",
+    "errorBoundary": "Une erreur s'est produite. Redémarrez l'application."
+  },
+  "language": {
+    "title": "Langue",
+    "system": "Langue du système",
+    "rtlReloadTitle": "Redémarrer pour changer le sens d'affichage",
+    "rtlReloadBody": "L'application doit redémarrer pour afficher cette langue de droite à gauche.",
+    "rtlReloadBodyLtr": "L'application doit redémarrer pour afficher cette langue de gauche à droite.",
+    "rtlReloadConfirm": "Redémarrer maintenant"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Connectez-vous à Media Manipulator",
+      "subtitle": "Utilisez le même compte que sur media-manipulator.com.",
+      "email": "Se connecter avec l'e-mail",
+      "createAccount": "Créer un compte",
+      "legal": "En continuant, vous acceptez les {{terms}} et la {{privacy}}.",
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de confidentialité",
+      "unavailable": "La connexion n'est pas disponible dans cette version.",
+      "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter."
+    },
+    "signUp": {
+      "title": "Créez votre compte",
+      "name": "Nom",
+      "passwordHelper": "8 caractères minimum",
+      "submit": "Créer un compte",
+      "haveAccount": "Vous avez déjà un compte ? Connectez-vous"
+    },
+    "errors": {
+      "nameRequired": "Saisissez votre nom (80 caractères maximum).",
+      "emailInUse": "Un compte existe déjà avec cet e-mail. Connectez-vous plutôt.",
+      "weakPassword": "Choisissez un mot de passe plus robuste (8 caractères minimum).",
+      "generic": "Un problème est survenu. Veuillez réessayer."
+    },
+    "link": {
+      "title": "Associez vos comptes",
+      "linkApple": "Associer Apple",
+      "linkAppleBody": "Associez votre identifiant Apple pour pouvoir vous connecter avec lors de votre prochaine visite."
+    },
+    "verify": {
+      "banner": "Vérifiez votre e-mail pour sécuriser votre compte.",
+      "send": "Envoyer le lien",
+      "sent": "Lien envoyé. Consultez votre boîte de réception."
+    },
+    "sync": {
+      "failedTitle": "Impossible d'accéder à votre compte",
+      "failedBody": "Vérifiez votre connexion et réessayez. Vos fichiers et votre forfait sont en sécurité."
+    },
+    "signOut": {
+      "confirmTitle": "Se déconnecter ?",
+      "confirmBody": "Vous pourrez vous reconnecter à tout moment."
+    },
+    "reauth": {
+      "title": "Confirmez que c'est vous",
+      "body": "Pour votre sécurité, reconnectez-vous pour continuer.",
+      "withPassword": "Confirmer avec le mot de passe",
+      "withGoogle": "Confirmer avec Google",
+      "withApple": "Confirmer avec Apple"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "דף הבית של Media Manipulator",
+    "openMenu": "פתיחת התפריט",
+    "github": "צפייה ב־GitHub",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "החלפת ערכת נושא",
+    "languageMenu": "שינוי שפה",
+    "navIcon": "סמל Media Manipulator",
+    "winappsLogo": "לוגו WinApps",
+    "creatvLogo": "לוגו CreaTV",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "דילוג לתוכן",
+  "footer": {
+    "homeLink": "דף הבית של Media Manipulator",
+    "navIcon": "סמל Media Manipulator"
+  },
+  "home": {
+    "popularTools": "כלים פופולריים",
+    "closePreview": "סגירת התצוגה המקדימה"
+  },
+  "notFound": {
+    "recoveryRoutes": "נתיבי שחזור"
+  },
+  "loading": {
+    "label": "בטעינה"
+  },
+  "languageSelector": {
+    "trigger": "שינוי שפה",
+    "icon": "סמל תרגום"
+  },
+  "common": {
+    "close": "סגירה",
+    "open": "פתיחה",
+    "loading": "בטעינה",
+    "moreOptions": "אפשרויות נוספות"
+  },
+  "transcribeForm": {
+    "formatTooltip": "מידע על פורמט פלט התמלול",
+    "languageTooltip": "מידע על רמז השפה"
+  },
+  "audioForm": {
+    "aiTooltip": "מידע על כלי בינה מלאכותית לאודיו"
+  },
+  "videoForm": {
+    "aiTooltip": "מידע על כלי בינה מלאכותית לווידאו"
+  },
+  "imageForm": {
+    "aiTooltip": "מידע על כלי בינה מלאכותית לתמונות",
+    "selectiveFacesTooltip": "מידע על פרטיות פנים סלקטיבית",
+    "removeObjectTooltip": "מידע על הסרת אובייקטים",
+    "metadataTooltip": "מידע על הטיפול במטא-נתונים",
+    "vectorizeThresholdTooltip": "מידע על סף הווקטוריזציה"
+  }
+}

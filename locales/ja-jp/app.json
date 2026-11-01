@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "キャンセル",
+    "retry": "再試行",
+    "close": "閉じる",
+    "continue": "続ける",
+    "done": "完了",
+    "loading": "読み込み中",
+    "processing": "処理中",
+    "signOut": "ログアウト",
+    "back": "戻る"
+  },
+  "tabs": {
+    "tools": "ツール",
+    "history": "履歴",
+    "account": "アカウント"
+  },
+  "placeholders": {
+    "toolsBody": "ツールはMA10で登場します。",
+    "historyBody": "ジョブはここに表示されます。",
+    "accountBody": "アカウントはMA15で登場します。",
+    "errorBoundary": "問題が発生しました。アプリを再起動してください。"
+  },
+  "language": {
+    "title": "言語",
+    "system": "システムのデフォルト",
+    "rtlReloadTitle": "再起動してレイアウトの方向を切り替える",
+    "rtlReloadBody": "この言語を右から左に表示するには、アプリの再起動が必要です。",
+    "rtlReloadBodyLtr": "この言語を左から右に表示するには、アプリの再起動が必要です。",
+    "rtlReloadConfirm": "今すぐ再起動"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Media Manipulatorにログイン",
+      "subtitle": "media-manipulator.comと同じアカウントを使用できます。",
+      "email": "メールでログイン",
+      "createAccount": "アカウントを作成",
+      "legal": "続行すると、{{terms}}および{{privacy}}に同意したものとみなされます。",
+      "terms": "利用規約",
+      "privacy": "プライバシーポリシー",
+      "unavailable": "このビルドではログインを利用できません。",
+      "sessionExpired": "セッションの有効期限が切れました。もう一度ログインしてください。"
+    },
+    "signUp": {
+      "title": "アカウントを作成",
+      "name": "名前",
+      "passwordHelper": "8文字以上",
+      "submit": "アカウントを作成",
+      "haveAccount": "すでにアカウントをお持ちですか？ ログイン"
+    },
+    "errors": {
+      "nameRequired": "名前を入力してください(80文字以内)。",
+      "emailInUse": "このメールアドレスのアカウントはすでに存在します。ログインしてください。",
+      "weakPassword": "より強力なパスワードを選んでください(8文字以上)。",
+      "generic": "問題が発生しました。もう一度お試しください。"
+    },
+    "link": {
+      "title": "アカウントを連携",
+      "linkApple": "Appleを連携",
+      "linkAppleBody": "Apple IDを連携すると、次回からそれでログインできます。"
+    },
+    "verify": {
+      "banner": "アカウントを安全に保つため、メールアドレスを確認してください。",
+      "send": "リンクを送信",
+      "sent": "リンクを送信しました。受信トレイをご確認ください。"
+    },
+    "sync": {
+      "failedTitle": "アカウントに接続できませんでした",
+      "failedBody": "接続を確認して、もう一度お試しください。ファイルとプランは安全です。"
+    },
+    "signOut": {
+      "confirmTitle": "ログアウトしますか？",
+      "confirmBody": "いつでもまたログインできます。"
+    },
+    "reauth": {
+      "title": "本人確認",
+      "body": "安全のため、続行するにはもう一度ログインしてください。",
+      "withPassword": "パスワードで確認",
+      "withGoogle": "Googleで確認",
+      "withApple": "Appleで確認"
+    }
+  }
+}

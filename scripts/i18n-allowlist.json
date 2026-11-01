@@ -1,0 +1,16 @@
+{
+  "_comment": "English-identical leaves allowed in non-English locales. `values` match the whole string; `keys` are 'path' (all locales) or 'locale:path'.",
+  "values": [
+    "Media Manipulator",
+    "MediaManip",
+    "Pro",
+    "Premium",
+    "OK",
+    "MP4",
+    "PNG",
+    "GIF",
+    "PDF",
+    "EXIF"
+  ],
+  "keys": ["it-IT:tabs.account", "de-DE:auth.signUp.name"]
+}

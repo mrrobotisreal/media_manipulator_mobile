@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "プレビュー"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "出力画像形式について",
+    "dpiTooltip": "レンダリング品質（DPI）について",
+    "pagesTooltip": "ページ選択について",
+    "qualityTooltip": "JPG品質について"
+  },
+  "ad": {
+    "label": "広告",
+    "close": "広告を閉じる"
+  },
+  "modals": {
+    "close": "閉じる",
+    "previousStep": "前のステップ",
+    "nextStep": "次のステップ"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "左上のハンドル",
+    "topRightHandle": "右上のハンドル",
+    "bottomLeftHandle": "左下のハンドル",
+    "bottomRightHandle": "右下のハンドル"
+  },
+  "mediaTrimModal": {
+    "scrubber": "トリミングスクラバー",
+    "playToggle": "プレビューの再生／一時停止"
+  },
+  "overlays": {
+    "canvas": "選択キャンバス",
+    "removeRegion": "この領域を削除",
+    "previousPage": "前のページ",
+    "nextPage": "次のページ"
+  },
+  "quotaMeter": {
+    "gauge": "1日の操作回数：{{used}} / {{limit}}使用済み",
+    "gaugeUnlimited": "1日の操作回数に上限はありません",
+    "aiGauge": "{{label}} {{used}} / {{limit}}：1日のAIジョブ使用数",
+    "openUpgrade": "1日の利用枠を増やす方法を見る",
+    "openAccount": "アカウントを開く"
+  },
+  "accountMenu": {
+    "open": "アカウントメニュー"
+  }
+}

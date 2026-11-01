@@ -1,0 +1,773 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "相关工具和教程"
+  },
+  "filePreview": {
+    "showResult": "显示结果"
+  },
+  "authModal": {
+    "defaultTitle": "创建免费账号",
+    "defaultDescription": "保留你的历史记录、保存Darkroom项目，并获得更高的每日额度。",
+    "signInTitle": "欢迎回来",
+    "signInDescription": "你的历史记录、已保存的Studio项目和每日额度都在原处等你。",
+    "tabs": {
+      "signup": "创建账号",
+      "signin": "登录"
+    },
+    "fields": {
+      "fullName": "姓名",
+      "fullNamePlaceholder": "张三",
+      "email": "电子邮件",
+      "emailPlaceholder": "zhangsan@example.com",
+      "password": "密码",
+      "passwordPlaceholderSignup": "至少6个字符",
+      "passwordPlaceholderSignin": "你的密码"
+    },
+    "actions": {
+      "createAccount": "创建免费账号",
+      "creatingAccount": "正在创建账号...",
+      "signIn": "登录",
+      "signingIn": "正在登录..."
+    },
+    "googleSignIn": "使用Google继续",
+    "orDivider": "或",
+    "terms": "注册即表示你同意我们的<tos>服务条款</tos>和<privacy>隐私政策</privacy>",
+    "toast": {
+      "welcome": "欢迎！",
+      "welcomeBack": "欢迎回来！",
+      "welcomeMM": "欢迎使用Media Manipulator！",
+      "accountCreated": "账号已创建！",
+      "signedIn": "登录成功。",
+      "googleSuccess": "已成功通过Google登录。",
+      "authFailed": "身份验证失败",
+      "nameRequired": "请填写姓名",
+      "nameRequiredDesc": "请输入你的姓名。",
+      "appleSuccess": "已成功通过Apple登录。"
+    },
+    "contextual": {
+      "signupTitle": "你今天的{{limit}}次免费转换已用完",
+      "signupBody": "免费账号可以提高你的每日额度、保留转换历史记录，并保存Darkroom项目。",
+      "premiumTitle": "你已达到今天{{limit}}次的上限",
+      "premiumBody": "Premium可以提高你的每日额度，解锁4K导出和优先处理，并移除广告。",
+      "resets": "你当前的额度将于{{when}}重置。"
+    },
+    "plans": {
+      "freeTitle": "免费账号能为你带来什么",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/月",
+      "premiumUpgrade": "升级到Premium",
+      "comparePlans": "比较所有套餐",
+      "opsPerDay": "每天{{count}}次操作",
+      "opsPerDayUnlimited": "每天不限次数操作",
+      "maxFileSize": "文件最大{{size}}",
+      "maxVideoLength": "视频最长{{duration}}",
+      "maxOutput": "输出最高{{height}}p",
+      "studioProjects": "{{count}}个已保存的Studio项目",
+      "studioProjectsUnlimited": "不限数量的已保存Studio项目",
+      "retention": "文件保留时长由你决定：24小时至2年",
+      "priorityGpu": "优先处理",
+      "noAds": "无广告",
+      "retentionGuest": "文件保留24小时"
+    },
+    "loadingPlans": "正在加载套餐…",
+    "appleSignIn": "使用Apple继续",
+    "forgotPassword": "忘记密码？",
+    "reset": {
+      "title": "重置密码",
+      "body": "请输入你的账号电子邮件，我们会向你发送一个链接。",
+      "submit": "发送重置链接",
+      "sending": "正在发送…",
+      "sent": "如果该电子邮件对应的账号存在，我们已发送重置密码的链接。",
+      "back": "返回登录"
+    },
+    "link": {
+      "notice": "此电子邮件已通过其他登录方式注册。请使用该方式登录以将两者关联。",
+      "linked": "账号已关联。你现在可以使用任一方式登录。"
+    }
+  },
+  "imageCropModal": {
+    "title": "裁剪图片",
+    "subtitle": "拖动以调整裁剪区域，然后点击应用。",
+    "instructions": "拖动裁剪区域以调整位置，或拖动右下角以调整大小。较暗的区域将被移除。",
+    "previewAlt": "裁剪预览",
+    "cropArea": "裁剪区域：{{width}} × {{height}}像素",
+    "apply": "应用裁剪",
+    "cancel": "取消",
+    "reset": "重置"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "裁剪视频",
+    "titleAudio": "裁剪音频",
+    "instructions": "拖动时间线上的控制点以选择要保留的部分。灰色区域将被移除。",
+    "audioFile": "音频文件",
+    "startLabel": "开始时间",
+    "endLabel": "结束时间",
+    "durationLabel": "时长",
+    "finalDuration": "最终时长：{{duration}}",
+    "apply": "应用裁剪",
+    "cancel": "取消",
+    "reset": "重置",
+    "playPreview": "播放预览",
+    "pausePreview": "暂停"
+  },
+  "removeObjectOverlay": {
+    "title": "移除物体",
+    "instructions": "在要移除的物体上绘制矩形。LaMa修复算法会重建背景。",
+    "rectangleCount_other": "已选择{{count}}个区域",
+    "addRegion": "添加区域",
+    "clearRegions": "全部清除",
+    "apply": "移除物体",
+    "cancel": "取消",
+    "undo": "撤销",
+    "previewAlt": "标记要移除的区域",
+    "dragHint": "拖动以确定大小，然后松开。使用控制点进行微调。",
+    "removeRectangle": "移除矩形{{number}}"
+  },
+  "faceSelectionOverlay": {
+    "title": "选择要模糊的人脸",
+    "instructions": "点按每个要应用隐私效果的人脸。再次点按可取消选择。",
+    "selectAll": "全选",
+    "clearSelection": "清除选择",
+    "apply": "应用",
+    "cancel": "取消",
+    "selectedCount_other": "已选择{{count}}张人脸",
+    "noFacesDetected": "在此图片中未检测到人脸。",
+    "previewAlt": "检测到的人脸预览",
+    "faceAria": "人脸{{label}}",
+    "faceSelectedAria": "人脸{{label}}（已选择）"
+  },
+  "mobileAnchorAd": {
+    "label": "广告"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV——让创意成为现实",
+    "creatvCreativeAlt": "来看看CreaTV吧！在这里，创意成为现实。"
+  },
+  "alternativeAdBanner": {
+    "placeholder": "{{network}}广告占位符 - {{position}}",
+    "placeholderFormat": "格式：{{format}} | 位置：{{slot}}",
+    "placeholderProduction": "{{network}}广告将在生产环境中显示于此处"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "第{{number}}步",
+    "defaultTitle": "工作原理"
+  },
+  "privacyPolicyComponent": {
+    "title": "隐私速览",
+    "summary": "文件在我们的服务器上处理，绝不会发送给第三方AI服务商。未登录账号时文件保留24小时；注册免费账号后，你可以选择保留24小时至2年。",
+    "learnMore": "阅读完整的隐私政策"
+  },
+  "quotaMeter": {
+    "label": "今天",
+    "aiLabel": "AI",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "今天还剩{{remaining}}/{{limit}}次",
+    "atLimit": "已达每日上限",
+    "unlimited": "此账号没有每日上限",
+    "resets": "{{when}}重置",
+    "moreCta": "获取更多"
+  },
+  "accountMenu": {
+    "signIn": "登录",
+    "account": "账号",
+    "signOut": "退出登录",
+    "signOutFailed": "无法退出登录",
+    "tier": {
+      "anonymous": "访客",
+      "free": "免费",
+      "premium": "Premium",
+      "operator": "运营者",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · {{date}}到期",
+    "tierEndsPro": "Pro · {{date}}到期"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "文件最大{{size}}",
+    "fileLimitMoreFree": "更大的文件需要免费账号",
+    "fileLimitMorePremium": "更大的文件需要Premium",
+    "nudgeTitle": "这个已经完成了",
+    "nudgeBodyFree": "免费账号可以为你提供更高的每日额度，并保留你的历史记录。",
+    "nudgeBodyPremium": "Premium新增4K导出、优先处理，并且无广告。",
+    "nudgeAction": "看看你能获得什么"
+  },
+  "consentBanner": {
+    "label": "Cookie和分析选项",
+    "body": "我们使用尊重隐私的第一方分析来了解哪些工具被使用以及哪里出了问题。你的文件绝不会包含在内，并且你可以随时更改此设置。",
+    "bodyGdpr": "在我们进行任何统计之前，需要你的许可。我们使用第一方分析来了解哪些工具被使用以及哪里出了问题——在你做出选择之前不会收集任何数据，你的文件也绝不会包含在内。",
+    "privacyLink": "阅读隐私政策",
+    "more": "更多",
+    "customize": "自定义",
+    "accept": "接受",
+    "decline": "拒绝"
+  },
+  "consentPrefs": {
+    "title": "隐私偏好设置",
+    "subtitle": "选择Media Manipulator可以统计哪些内容。更改会在你保存后立即生效。",
+    "necessary": {
+      "title": "严格必要",
+      "body": "你的主题选择，以及一个匿名的设备和访问ID，用于让我们执行免费套餐的限制并阻止滥用。不使用Cookie，不用于广告，并且无法关闭，否则工具将无法正常工作。",
+      "always": "始终开启"
+    },
+    "analytics": {
+      "title": "分析",
+      "body": "你使用了哪些工具、转换是否成功、页面加载速度如何，以及我们应该修复的错误。第一方数据，保留13个月，绝不出售。不包含文件名，也不包含文件内容。"
+    },
+    "advertising": {
+      "title": "广告",
+      "body": "允许Google对部分工具页面上向免费用户和未登录访客展示的广告进行个性化。是否出现广告不取决于此开关；关闭表示广告不会被个性化。Premium和Pro用户永远不会看到广告。",
+      "bodyGdpr": "在您所在的地区，有关广告的选择在Google的同意消息中进行，而不是在这里；此面板仅涵盖我们自己的分析。在您于该处做出选择之前，工具页面上的任何广告都不会被个性化。Premium和Pro用户永远不会看到广告。",
+      "bodyGpc": "用于个性化广告。你的浏览器正在发送Global Privacy Control信号，因此此项保持关闭——我们尊重该信号，在此处点击无法覆盖它。",
+      "managedByGoogle": "由Google同意消息管理",
+      "openGoogleMessage": "更改广告选择"
+    },
+    "gpcDetected": "检测到Global Privacy Control。我们已自动为你选择退出任何个人信息的出售或共享，并已记录此操作。",
+    "doNotSell": {
+      "title": "请勿出售或共享我的个人信息",
+      "body": "我们不会出售你的个人信息。此选项让你选择退出现在和将来任何用于广告目的的共享。第一方分析是上面的一项单独选择。",
+      "action": "选择退出",
+      "done": "你已选择退出"
+    },
+    "yourData": {
+      "title": "你的数据",
+      "body": "下载我们的分析系统中保存的有关此浏览器的全部数据副本，或永久删除这些数据。如果你已登录，两者均涵盖与你账号关联的所有设备；否则仅涵盖此浏览器。",
+      "export": "导出我的数据",
+      "exporting": "正在准备导出…",
+      "delete": "删除我的数据",
+      "deleting": "正在删除…",
+      "deleteConfirmBody": "这将永久删除你的分析历史记录——事件、访问记录和你的访客资料——且无法撤销。你的同意选择记录会被保留，因为法律要求我们能够证明这些选择。输入DELETE以确认。",
+      "deleteConfirmPlaceholder": "输入DELETE以确认",
+      "deleteConfirmAction": "永久删除",
+      "deletedSummary": "完成。我们删除了{{sessions}}次访问中的{{events}}个事件，并已为此浏览器分配全新的匿名ID。",
+      "deletedNote": "你的同意选择记录会作为法律要求的证明被保留。你的同意设置本身保持不变——如果分析处于开启状态，新的活动将在新ID下收集；你可以随时在上方关闭它。",
+      "error": "操作失败。请稍后重试——如果你没有看到确认信息，说明没有任何更改。"
+    },
+    "policyPrefix": "关于我们收集什么、为什么收集以及保留多久的完整说明：",
+    "policyLink": "隐私政策",
+    "cancel": "取消",
+    "save": "保存偏好设置"
+  },
+  "toasts": {
+    "conversionStarted": "转换已成功启动",
+    "conversionStartedDescription": "任务ID：{{jobId}} - 你的文件正在处理中",
+    "transcriptionStarted": "转录已启动",
+    "transcriptionStartedDescription": "任务ID：{{jobId}} - 正在生成转录文本",
+    "transcodeStarted": "转码已启动",
+    "translationStarted": "字幕翻译已启动",
+    "jobStarted": "任务已启动",
+    "stitchStarted": "合成任务已启动",
+    "jobIdDescription": "任务ID：{{jobId}}",
+    "conversionCompleted": "转换成功完成！",
+    "readyForDownload": "你的文件已可下载",
+    "uploadingFile": "正在上传{{fileName}}…",
+    "uploadingFileProgress": "正在上传{{fileName}}… {{percent}}%",
+    "processingFile": "正在处理{{fileName}}…",
+    "buildingPreview": "正在生成预览…",
+    "assetAdded": "已添加{{fileName}}",
+    "audioAdded": "已添加音频",
+    "processingAudio": "正在处理音频…",
+    "captionsReady": "字幕已就绪",
+    "binUpdateFailed": "无法更新媒体库",
+    "assetDeleteFailed": "无法删除该媒体"
+  },
+  "resultPanel": {
+    "ariaLabel": "结果",
+    "download": "下载",
+    "downloadFailed": "下载失败，请重试。",
+    "downloadStatus": {
+      "preparing": "正在准备下载…",
+      "started": "下载已开始，请查看浏览器的下载列表。",
+      "startedWithSize": "下载已开始（{{size}}），请查看浏览器的下载列表。",
+      "failed": "无法开始下载。",
+      "gone": "此结果已无法下载。",
+      "retry": "重试",
+      "noRecharge": "重新下载不会重新运行任务，也不会计费。"
+    },
+    "compare": "对比",
+    "original": "原始",
+    "result": "结果",
+    "runAnother": "再来一次",
+    "size": "大小",
+    "keepsUntil": "保留至",
+    "loading": "正在加载预览…",
+    "loadFailed": "无法加载结果。",
+    "retry": "重试",
+    "kind": {
+      "image": "图片",
+      "gif": "动态GIF",
+      "video": "视频",
+      "audio": "音频",
+      "transcript": "转录文本",
+      "captions": "字幕",
+      "pdf": "PDF文档",
+      "archive": "压缩包",
+      "hls": "HLS包",
+      "dash": "DASH包",
+      "metadata": "元数据",
+      "unknown": "文件",
+      "summary": "摘要"
+    },
+    "image": {
+      "zoom": "缩放",
+      "fit": "适应",
+      "transparencyGrid": "透明网格",
+      "dimensions": "尺寸",
+      "originalAlt": "原始图片{{fileName}}",
+      "resultAlt": "结果图片{{fileName}}"
+    },
+    "gif": {
+      "alt": "动态GIF {{fileName}}"
+    },
+    "audio": {
+      "waveform": "音频波形"
+    },
+    "unknown": {
+      "body": "此结果暂时没有浏览器内预览。请下载后打开。",
+      "type": "类型",
+      "size": "大小"
+    },
+    "transcript": {
+      "search": "搜索转录文本",
+      "searchPlaceholder": "搜索…",
+      "matchCount": "第{{current}}个，共{{total}}个",
+      "noMatches": "无匹配项",
+      "prevMatch": "上一个匹配项",
+      "nextMatch": "下一个匹配项",
+      "copyAll": "全部复制",
+      "copied": "已复制",
+      "format": "格式",
+      "rawPreview": "原始文本",
+      "seekTo": "跳转到{{time}}",
+      "showMore": "显示更多（还剩{{count}}条）",
+      "details": "语言、音频描述和AI审阅"
+    },
+    "captions": {
+      "cues": "字幕条",
+      "sourceCues": "源字幕条",
+      "skipped": "跳过的块",
+      "countMismatch": "源文件有{{source}}条字幕，但译文有{{translated}}条。多出的行会与空单元格对照显示。",
+      "source": "源文本",
+      "translated": "译文",
+      "timingDiffers": "时间不一致",
+      "empty": "（无）"
+    },
+    "compareModes": {
+      "label": "对比视图",
+      "slider": "对比位置",
+      "sliderValue": "{{before}} {{beforePct}}%，{{after}} {{afterPct}}%",
+      "wipe": "擦除",
+      "side_by_side": "并排",
+      "toggle": "切换",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "播放控制",
+      "play": "播放",
+      "pause": "暂停",
+      "seek": "定位",
+      "rate": "速度",
+      "mute": "静音",
+      "unmute": "取消结果静音",
+      "prevFrame": "上一帧",
+      "nextFrame": "下一帧",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps（目标）",
+      "largeNotice": "预览宽度受容器限制；超大视频可能播放缓慢。",
+      "videoOriginal": "原始视频",
+      "videoResult": "结果视频",
+      "audibleLabel": "有声一侧",
+      "audioOriginal": "原始音频",
+      "audioResult": "结果音频",
+      "otherPeaks": "另一侧波形",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_other": "{{count}}个文件",
+      "truncated": "压缩包不完整；显示可读取的部分。",
+      "search": "搜索文件",
+      "view": "视图",
+      "gallery": "画廊",
+      "list": "列表",
+      "noMatches": "没有匹配的文件。",
+      "play": "播放{{name}}",
+      "open": "打开",
+      "downloadEntry": "下载{{name}}",
+      "lightbox": "图片预览",
+      "previous": "上一个",
+      "next": "下一个",
+      "tooLarge": "文件过大，无法在浏览器中预览。",
+      "unreadable": "无法在浏览器中读取此压缩包。",
+      "noSingleEntry": "无法从服务器单独下载单个文件，请下载整个压缩包。"
+    },
+    "pdf": {
+      "title": "PDF预览",
+      "openInNewTab": "在新标签页中打开",
+      "fallback": "你的浏览器无法内嵌显示此PDF。"
+    },
+    "stream": {
+      "rung": "画质",
+      "auto": "自动",
+      "rungLabel": "{{height}}p，{{bitrate}} kbps",
+      "unsupported": "此流无法在浏览器中播放，以下是它的报告。",
+      "loading": "正在准备流",
+      "av1": "此浏览器无法解码AV1。"
+    },
+    "restore": {
+      "picker": "模型",
+      "original": "原始",
+      "modelOption": "{{name}}，{{duration}}秒，{{size}}",
+      "failedTitle": "失败的模型",
+      "failedItem": "{{name}}：{{error}}",
+      "loading": "正在加载修复后的片段",
+      "download": "下载全部结果"
+    },
+    "summary": {
+      "loading": "正在加载摘要",
+      "loadFailed": "无法加载摘要。",
+      "untitled": "摘要",
+      "language": "语言：{{language}}",
+      "chapters": "章节",
+      "seekTo": "跳转到 {{time}}",
+      "topics": "主题",
+      "onScreenText": "画面文字",
+      "visual": "画面",
+      "speech": "语音",
+      "notes": "备注",
+      "copyMarkdown": "复制为 Markdown",
+      "copied": "已复制",
+      "downloadMd": "下载 .md",
+      "downloadJson": "下载 .json",
+      "showAll": "显示全部（{{count}}）",
+      "showLess": "收起"
+    },
+    "mp3": {
+      "button": "下载为MP3",
+      "converting": "正在转换为MP3…",
+      "hint": "文件更小，在我们的服务器上转换。免费，且不会计入AI任务。",
+      "started": "MP3下载已开始，请查看浏览器的下载列表。",
+      "startedWithSize": "MP3下载已开始（{{size}}），请查看浏览器的下载列表。",
+      "failed": "无法准备MP3，请稍后再试。"
+    }
+  },
+  "billing": {
+    "intervalLabel": "计费周期",
+    "monthly": "按月",
+    "yearly": "按年",
+    "perMonth": "/月",
+    "perYear": "/年",
+    "currency": {
+      "label": "货币",
+      "panelLabel": "货币",
+      "lockedNote": "你的订阅以{{currency}}计费。订阅生效期间无法更改。"
+    },
+    "yearlyBonus": "免费{{months}}个月",
+    "cancelAnytime": "随时取消",
+    "refund": "首次付款享14天退款保障",
+    "taxNote": "不额外加收税费",
+    "upgrade": "升级到Premium",
+    "manage": "管理订阅",
+    "operator": "不限量（运营者）",
+    "unavailable": "Premium暂未开放",
+    "busy": "正在打开结账页面…",
+    "cancelledNote": "结账已取消。你没有被扣款。",
+    "dismiss": "关闭",
+    "errors": {
+      "unavailable": "Premium暂未开放。",
+      "operator": "运营者账户已拥有不限量访问权限。",
+      "generic": "无法启动结账。请稍后重试。",
+      "alreadyOnPlan": "你已拥有此套餐或更高级的套餐。",
+      "currencyLocked": "你的计费账户已设为{{currency}}，因此价格现在以{{currency}}显示。请重新选择套餐以继续。"
+    },
+    "panel": {
+      "title": "账单",
+      "loading": "正在加载你的账单详情…",
+      "loadFailed": "无法加载你的账单详情。请重新加载重试。",
+      "operator": "运营者访问权限。无需订阅。",
+      "unavailable": "订阅暂未开放。",
+      "grantUntil": "团队已授予Premium，有效期至{{date}}。",
+      "grantOpen": "团队已授予Premium，无到期日期。",
+      "freeBody": "你当前使用免费套餐。Premium可以提高你的限额并移除广告。",
+      "upgrade": "升级到Premium",
+      "pastDueTitle": "你的上一次付款未成功",
+      "pastDueBody": "我们重试期间，Premium访问权限最多可继续保留7天。请更新付款方式以保留它。",
+      "intervalLabel": "计费",
+      "endsLabel": "Premium到期日",
+      "renewsLabel": "续订日期",
+      "endsOn": "你的订阅将于{{date}}到期。",
+      "resumeHint": "打开“管理订阅”以恢复订阅。",
+      "renewsOn": "将于{{date}}续订。",
+      "updatePayment": "更新付款方式",
+      "cancelledTitle": "你的Premium套餐已取消",
+      "cancelledBody": "你可以继续使用Premium至{{date}}。之后你的账户将切换为免费套餐，不再收取任何费用。",
+      "cancelledBodyNoDate": "你可以继续使用Premium至当前计费周期结束。之后你的账户将切换为免费套餐，不再收取任何费用。",
+      "planLabel": "套餐",
+      "pro": {
+        "grantUntil": "团队已授予Pro，有效期至{{date}}。",
+        "grantOpen": "团队已授予Pro，无到期日期。",
+        "pastDueBody": "我们重试期间，Pro访问权限最多可继续保留7天。请更新付款方式以保留它。",
+        "endsLabel": "Pro到期日",
+        "cancelledTitle": "你的Pro套餐已取消",
+        "cancelledBody": "你可以继续使用Pro至{{date}}。之后你的账户将切换为免费套餐，不再收取任何费用。",
+        "cancelledBodyNoDate": "你可以继续使用Pro至当前计费周期结束。之后你的账户将切换为免费套餐，不再收取任何费用。"
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "正在确认你的付款…",
+        "body": "这通常只需几秒钟。"
+      },
+      "confirmed": {
+        "title": "欢迎使用Premium",
+        "body": "你的付款已成功，你的套餐现在是Premium。"
+      },
+      "shortly": {
+        "title": "已收到付款",
+        "body": "你的套餐很快就会更新。如果一分钟后仍显示为免费，请在下方刷新。"
+      },
+      "foreign": {
+        "title": "我们无法将此付款与你的账户匹配",
+        "body": "如果你刚刚付款，请使用结账时所用的账号登录。"
+      },
+      "failed": {
+        "title": "我们暂时无法确认你的付款",
+        "body": "付款确认后，你的套餐会自动更新。请稍后重试。"
+      },
+      "refresh": "刷新我的套餐",
+      "confirmedPro": {
+        "title": "欢迎使用Pro",
+        "body": "你的付款已成功，你的套餐现在是Pro：最高的每日限额，以及随着Motion编辑器推出而提供的最大Motion额度。"
+      }
+    },
+    "offer": {
+      "title": "改变主意了？以{{price}}/月继续使用Premium",
+      "resumeTitle": "改变主意了？以当前价格继续使用Premium",
+      "fineprint": "今天不会扣款。从{{date}}起，你每月支付{{price}}而不是{{current}}，每月扣款直到你取消为止。",
+      "cta": "以{{price}}/月继续使用Premium",
+      "resumeCta": "以{{price}}{{unit}}继续使用Premium",
+      "keepAtCurrent": "以{{price}}/月继续使用Premium",
+      "keepAtCurrentNoPrice": "以常规价格继续使用Premium",
+      "working": "处理中…",
+      "renewed": "Premium将于{{date}}以{{price}}/月续订",
+      "renewedNoPrice": "Premium将于{{date}}续订",
+      "renewedBare": "Premium将继续续订",
+      "changed": "优惠已变更，以下是当前的优惠。",
+      "failed": "无法更新你的订阅，请重试。",
+      "resumePrice": "你今天支付{{price}}{{unit}}，之后也一直按此价格支付。",
+      "resumeCtaNoPrice": "继续使用Premium",
+      "fineprintNoCurrent": "今天不会扣款。从{{date}}起，你每月支付{{price}}，每月扣款直到你取消为止。",
+      "resumeFineprint": "今天不会扣款。你的下一次付款在{{date}}，价格不变，之后照常续订直到你取消为止。",
+      "unitMonth": "/月",
+      "unitYear": "/年"
+    },
+    "upgradePro": "升级到Pro",
+    "unavailablePro": "Pro暂未开放",
+    "switchToPremium": "切换到Premium",
+    "planChange": {
+      "cancel": "暂不",
+      "upgrade": {
+        "title": "现在升级到Pro？",
+        "body": "你今天支付本计费周期剩余时间的按比例差价。你的续订日期仍为{{date}}，此后Pro的费用为{{price}}{{unit}}。",
+        "bodyNoPrice": "你今天支付本计费周期剩余时间的按比例差价。你的续订日期仍为{{date}}。",
+        "bodyNoDate": "你今天支付本计费周期剩余时间的按比例差价。你的续订日期不变。",
+        "fineprint": "付款成功后Pro立即生效。14天退款保障仅适用于你的首次付款。",
+        "confirm": "升级到Pro"
+      },
+      "downgrade": {
+        "title": "在本周期结束时切换到Premium？",
+        "body": "你可以继续使用Pro至{{date}}。之后你的套餐为Premium，费用为{{price}}{{unit}}。",
+        "bodyNoPrice": "你可以继续使用Pro至{{date}}。之后你的套餐为Premium。",
+        "bodyNoDate": "你可以继续使用Pro至当前计费周期结束。之后你的套餐为Premium。",
+        "fineprint": "本周期剩余时间的费用不予退还。在切换之前，你可以随时选择保留Pro。",
+        "confirm": "切换到Premium"
+      },
+      "upgraded": "你现在使用的是Pro。",
+      "scheduled": "你的套餐将于{{date}}切换为Premium。",
+      "scheduledNoDate": "你的套餐将在本计费周期结束时切换为Premium。",
+      "kept": "你将继续使用Pro。",
+      "pendingBody": "{{date}}起为Premium。在此之前你可以继续使用Pro。",
+      "keepPro": "保留Pro",
+      "dropTitle": "降级到Premium并继续使用",
+      "dropBody": "与其失去一切，你可以以常规价格继续使用Premium。先在“管理订阅”中恢复你的订阅，然后在这里选择“切换到Premium”。",
+      "dropCta": "在“管理订阅”中恢复",
+      "errors": {
+        "notSubscription": "套餐变更仅适用于付费订阅。团队授予的套餐无法在此处更改。",
+        "samePlan": "你已在使用此套餐。",
+        "notAvailable": "此变更目前不可用。如果你的订阅已取消，请先在“管理订阅”中恢复它。",
+        "generic": "无法更改你的套餐。请稍后重试。"
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "你已达到今天{{limit}}次的上限",
+      "body": "Premium可以提高你的每日额度并移除广告。"
+    },
+    "outputHeight": {
+      "title": "此输出分辨率超出了你的套餐允许范围",
+      "body": "你请求的是{{requested}}p；你的套餐最高允许{{limit}}p。"
+    },
+    "projects": {
+      "title": "你已达到已保存项目的上限",
+      "body": "你的套餐最多保留{{limit}}个已保存的Darkroom项目。"
+    },
+    "topTier": "你的套餐已经是最高级别。请调低设置以继续。",
+    "close": "以后再说",
+    "signup": "创建免费账号",
+    "upgrade": "升级到Premium",
+    "fileSize": {
+      "title": "此文件超出了你的套餐允许的大小",
+      "body": "你的套餐接受最大{{limit}}的文件。"
+    },
+    "premiumChange": {
+      "fileSize": "Premium接受最大{{value}}的文件。",
+      "ops": "Premium每天允许{{value}}次转换。",
+      "opsUnlimited": "Premium没有每日转换次数限制。",
+      "aiOps": "Premium每天允许{{value}}个AI任务。",
+      "aiOpsUnlimited": "Premium没有每日AI任务限制。",
+      "exports": "Premium每天允许{{value}}次导出。",
+      "exportsUnlimited": "Premium没有每日导出次数限制。",
+      "height": "Premium最高可输出{{value}}p。",
+      "projects": "Premium最多保留{{value}}个已保存项目。",
+      "projectsUnlimited": "Premium没有已保存项目数量限制。"
+    },
+    "noHigherPlan": "没有套餐能进一步提高此限额。请调低设置以继续。",
+    "proNote": "升级会在今天收取按比例计算的差价；你的续订日期保持不变。",
+    "proChange": {
+      "ops": "Pro每天允许{{value}}次转换。",
+      "opsUnlimited": "Pro没有每日转换次数限制。",
+      "aiOps": "Pro每天允许{{value}}个AI任务。",
+      "aiOpsUnlimited": "Pro没有每日AI任务限制。",
+      "exports": "Pro每天允许{{value}}次导出。",
+      "exportsUnlimited": "Pro没有每日导出次数限制。"
+    }
+  },
+  "recentStrip": {
+    "title": "最近",
+    "clear": "清除最近记录",
+    "open": "打开{{name}}",
+    "converter": "转换器",
+    "expiresInHours": "{{hours}}小时后过期",
+    "expiresInMinutes": "{{minutes}}分钟后过期",
+    "expired": "此文件已过期",
+    "openFailed": "无法打开此文件，请重试。",
+    "signupCta": "访客文件会在24小时后删除。注册后可将这些文件保留6个月。",
+    "signupAction": "免费注册"
+  },
+  "quotaChip": {
+    "title": "查看Premium套餐",
+    "ops": {
+      "remaining": "今天还剩{{remaining}}/{{limit}}次转换",
+      "empty": "今天的{{limit}}次转换已全部用完"
+    },
+    "ai_ops": {
+      "remaining": "今天还剩{{remaining}}/{{limit}}个AI任务",
+      "empty": "今天的{{limit}}个AI任务已全部用完"
+    },
+    "export": {
+      "remaining": "今天还剩{{remaining}}/{{limit}}次导出",
+      "empty": "今天的{{limit}}次导出已全部用完"
+    },
+    "titlePro": "查看Pro套餐"
+  },
+  "queueLine": {
+    "text": "此任务在共享队列中等待了{{time}}。Premium任务优先处理。",
+    "cta": "查看Premium"
+  },
+  "yearlyNudge": {
+    "title": "切换到按年付费，免费获得{{months}}个月",
+    "body": "你已连续支付了好几个月。年付套餐比十二次月付更便宜。你可以随时在账单门户中切换。",
+    "cta": "切换到按年付费",
+    "dismiss": "不用了"
+  },
+  "accountTour": {
+    "title": "欢迎使用Media Manipulator",
+    "step": "第{{current}}步，共{{total}}步",
+    "next": "下一步",
+    "back": "返回",
+    "skip": "跳过",
+    "notNow": "暂不",
+    "setRetention": "设置保留时长",
+    "keepResults": {
+      "title": "保留你的结果",
+      "body": "你登录后转换的所有内容都会保存到历史记录中，以便你稍后重新打开或下载。我们会按你选择的时长保留它们。"
+    },
+    "darkroomProjects": {
+      "title": "Darkroom项目",
+      "body": "Darkroom项目会保存到你的账号并列在“项目”下，这样你可以在任何设备上继续编辑。"
+    },
+    "retention": {
+      "title": "选择你的保留时长",
+      "body": "我们推荐6个月。你可以选择24小时至2年之间的任意时长，并随时在“隐私与数据”中更改。"
+    },
+    "replay": "重播引导",
+    "replayHint": "再次查看关于你账号的简短介绍。"
+  },
+  "status": {
+    "title": "服务状态",
+    "intro": "Media Manipulator服务的实时状态。每10秒更新一次。",
+    "operational": "正常运行",
+    "degraded": "性能下降",
+    "down": "服务中断",
+    "unknown": "状态暂不可用",
+    "checking": "检查中...",
+    "operationalDetail": "所有系统运行正常。",
+    "degradedDetail": "服务的部分组件出现问题。转换可能变慢或失败。",
+    "downDetail": "服务没有响应。请几分钟后重试。",
+    "unknownDetail": "此页面刚才无法通过你的浏览器连接到状态服务，这并不代表工具已经中断。几秒钟后会自动重试。",
+    "queueTitle": "AI处理队列",
+    "running": "正在运行",
+    "waiting": "等待中",
+    "gpuOff": "此服务器未启用AI处理。",
+    "checksTitle": "组件",
+    "database": "数据库",
+    "storage": "存储",
+    "cache": "缓存",
+    "ok": "正常",
+    "fail": "异常",
+    "basicOnly": "目前仅提供总体状态。",
+    "lastChecked": "上次检查：{{time}}",
+    "metaTitle": "服务状态 | Media Manipulator"
+  },
+  "share": {
+    "button": "分享",
+    "revokeLinks": "撤销链接",
+    "copied": "链接已复制。有效期至{{when}}。",
+    "copyManually": "无法自动复制。请手动复制此链接：{{url}}",
+    "notAllowed": "此类结果无法分享。",
+    "expired": "此文件已过期。",
+    "limitTitle": "已达分享上限",
+    "limitBody": "此结果已有5个有效的分享链接，这是上限。撤销它们以创建新链接。",
+    "revokeConfirm": "撤销链接",
+    "cancel": "取消",
+    "signIn": "请重新登录以分享此结果。",
+    "failed": "无法创建分享链接，请重试。",
+    "revoked": "此结果的所有分享链接已被撤销。",
+    "revokeNone": "没有可撤销的有效链接。",
+    "revokeFailed": "无法撤销链接，请重试。",
+    "revokeTitle": "撤销所有分享链接？",
+    "revokeBody": "任何拥有此结果链接的人都会立即失去访问权限。之后你可以创建新链接。"
+  },
+  "sharedResult": {
+    "metaTitle": "分享的结果 | Media Manipulator",
+    "metaDescription": "使用Media Manipulator制作并通过链接分享的文件。",
+    "ogTitle": "使用Media Manipulator制作的{{fileName}}",
+    "goneTitle": "此链接已过期或已被移除",
+    "goneBody": "分享链接会在过期、被所有者撤销或文件被删除时失效。",
+    "goneCta": "前往Media Manipulator",
+    "madeWith": "使用Media Manipulator制作",
+    "tryIt": "用你的文件试试",
+    "expires": "此链接有效期至{{when}}。"
+  },
+  "planSummary": {
+    "title": "套餐速览",
+    "current": "你的套餐",
+    "free": "免费",
+    "ops": "每天{{value}}次操作",
+    "opsUnlimited": "每天不限次数操作",
+    "aiOps": "每天{{value}}个AI任务",
+    "aiOpsUnlimited": "每天不限数量的AI任务",
+    "fileSize": "文件最大{{value}}",
+    "compare": "比较所有套餐"
+  }
+}

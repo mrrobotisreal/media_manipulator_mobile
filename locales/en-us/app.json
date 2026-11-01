@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "close": "Close",
+    "continue": "Continue",
+    "done": "Done",
+    "loading": "Loading",
+    "processing": "Processing",
+    "signOut": "Sign out",
+    "back": "Back"
+  },
+  "tabs": {
+    "tools": "Tools",
+    "history": "History",
+    "account": "Account"
+  },
+  "placeholders": {
+    "toolsBody": "Tools arrive in MA10.",
+    "historyBody": "Your jobs will appear here.",
+    "accountBody": "Account arrives in MA15.",
+    "errorBoundary": "Something went wrong. Restart the app."
+  },
+  "language": {
+    "title": "Language",
+    "system": "System default",
+    "rtlReloadTitle": "Restart to switch layout direction",
+    "rtlReloadBody": "The app needs to restart to show this language right to left.",
+    "rtlReloadBodyLtr": "The app needs to restart to show this language left to right.",
+    "rtlReloadConfirm": "Restart now"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign in to Media Manipulator",
+      "subtitle": "Use the same account as on media-manipulator.com.",
+      "email": "Sign in with email",
+      "createAccount": "Create an account",
+      "legal": "By continuing you agree to the {{terms}} and {{privacy}}.",
+      "terms": "Terms",
+      "privacy": "Privacy Policy",
+      "unavailable": "Sign-in isn't available in this build.",
+      "sessionExpired": "Your session expired. Please sign in again."
+    },
+    "signUp": {
+      "title": "Create your account",
+      "name": "Name",
+      "passwordHelper": "At least 8 characters",
+      "submit": "Create account",
+      "haveAccount": "Already have an account? Sign in"
+    },
+    "errors": {
+      "nameRequired": "Enter your name (up to 80 characters).",
+      "emailInUse": "An account with this email already exists. Sign in instead.",
+      "weakPassword": "Choose a stronger password (at least 8 characters).",
+      "generic": "Something went wrong. Please try again."
+    },
+    "link": {
+      "title": "Link your accounts",
+      "linkApple": "Link Apple",
+      "linkAppleBody": "Link your Apple ID so you can sign in with it next time."
+    },
+    "verify": {
+      "banner": "Verify your email to keep your account secure.",
+      "send": "Send link",
+      "sent": "Link sent. Check your inbox."
+    },
+    "sync": {
+      "failedTitle": "We couldn't reach your account",
+      "failedBody": "Check your connection and try again. Your files and plan are safe."
+    },
+    "signOut": {
+      "confirmTitle": "Sign out?",
+      "confirmBody": "You can sign back in at any time."
+    },
+    "reauth": {
+      "title": "Confirm it is you",
+      "body": "For your security, sign in again to continue.",
+      "withPassword": "Confirm with password",
+      "withGoogle": "Confirm with Google",
+      "withApple": "Confirm with Apple"
+    }
+  }
+}

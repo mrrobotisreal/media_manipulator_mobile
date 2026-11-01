@@ -1,0 +1,751 @@
+{
+  "transcribeForm": {
+    "outputFormatTitle": "逐字稿輸出格式",
+    "intro": "我們使用 whisper-ctranslate2 在自己的 GPU 伺服器上轉錄{{mediaKind}}。逐字稿準備好後，會自動執行摘要與安全審閱。",
+    "mediaKind": {
+      "video": "影片",
+      "audio": "音訊"
+    },
+    "languageLabel": "語言提示（選填）",
+    "languagePlaceholder": "例如 en、es、ja（留空則自動偵測）",
+    "languageHint": "BCP-47 簡碼。留空則由 whisper 自動偵測口說語言。",
+    "languageTooltip": "BCP-47 簡碼（例如 en、es、ja、de、fr）。留空則由 whisper 自動偵測口說語言。提供正確的提示可提高短片段的逐字稿準確度。",
+    "transcribing": "轉錄中...",
+    "submit": "轉錄檔案",
+    "format": {
+      "vtt": {
+        "label": "字幕（VTT）",
+        "description": "帶時間碼的字幕，適用於影片播放器與無障礙工具。"
+      },
+      "srt": {
+        "label": "字幕（SRT）",
+        "description": "SubRip 字幕，與 YouTube、Premiere、DaVinci Resolve 及大多數影片剪輯軟體相容。"
+      },
+      "txt": {
+        "label": "純文字",
+        "description": "連續的逐字稿文字，適合閱讀或進一步編輯。"
+      },
+      "json": {
+        "label": "結構化 JSON",
+        "description": "含時間資料的分段逐字稿，供後續處理使用。"
+      }
+    },
+    "formatTooltip": {
+      "vtt": "<strong>VTT</strong>：帶時間碼的字幕，適用於 HTML5 影片播放器與無障礙工具。",
+      "txt": "<strong>純文字</strong>：連續的逐字稿文字，適合閱讀或進一步編輯。",
+      "json": "<strong>結構化 JSON</strong>：含時間資料的分段逐字稿，供後續流程使用。"
+    }
+  },
+  "audioForm": {
+    "converting": "轉換中...",
+    "submit": "轉換檔案",
+    "trimStatus": "剪輯：{{start}} - {{end}}（{{duration}}）",
+    "ai": {
+      "title": "AI 音訊工具",
+      "tooltipIntro": "每個工作只執行一項 AI 操作，在我們的本機 GPU 伺服器上進行。該工作會略過標準的 FFmpeg 處理鏈。",
+      "tooltipCleanVoice": "<strong>清理人聲</strong>：DeepFilterNet 降噪 + 廣播級潤飾鏈（高通／低通、響度、限幅器）。",
+      "tooltipRemoveNoise": "<strong>移除背景噪音</strong>：DeepFilterNet 降噪，不含潤飾鏈。",
+      "tooltipIsolateVocals": "<strong>分離人聲</strong>：Demucs htdemucs 人聲分軌（預設與原檔案格式相同）。",
+      "tooltipRemoveVocals": "<strong>移除人聲／卡拉 OK</strong>：Demucs 伴奏分軌。",
+      "intro": "AI 音訊工具以 GPU 工作執行，可能比基本轉換花費更長時間。",
+      "operationLabel": "操作",
+      "operations": {
+        "none": "無（標準轉換）",
+        "clean_voice": "清理人聲",
+        "remove_background_noise": "移除背景噪音",
+        "isolate_vocals": "分離人聲",
+        "remove_vocals": "移除人聲／卡拉 OK"
+      },
+      "aiActiveNote": "選擇 AI 操作時，會略過位元率、EQ 及其他標準音訊選項。",
+      "presetLocked": "此工具的預設組"
+    },
+    "stemFormat": {
+      "label": "輸出格式",
+      "options": {
+        "auto": "與輸入相同（建議）",
+        "autoWithFormat": "與輸入相同：{{format}}（建議）",
+        "mp3": "MP3（320 kbps）",
+        "flac": "FLAC（無損）",
+        "wav": "WAV（無損，檔案最大）"
+      },
+      "withEstimate": "{{label}} · 約 {{size}}",
+      "help": "大小為估算值。MP3 仍輸出 MP3；無損檔案（WAV、FLAC、AIFF）則輸出 FLAC。",
+      "helpNoEstimate": "MP3 仍輸出 MP3；無損檔案（WAV、FLAC、AIFF）則輸出 FLAC。如需無損，請選擇 FLAC 或 WAV。",
+      "wavHint": "WAV 約為 {{size}}，下載檔案非常大；FLAC 同樣無損，大小約為一半。"
+    }
+  },
+  "videoForm": {
+    "converting": "轉換中...",
+    "submit": "轉換檔案",
+    "trimStatus": "剪輯：{{start}} - {{end}}（{{duration}}）"
+  },
+  "imageForm": {
+    "converting": "轉換中...",
+    "submit": "轉換檔案",
+    "cropStatus": "裁切區域：{{width}}×{{height}} 像素，位於（{{x}}, {{y}}）",
+    "vectorize": {
+      "title": "向量化（PNG → SVG）",
+      "note": "向量化會將你的圖片描摹成真正的向量路徑。最適合標誌、圖示、簽名與黑白線稿，不適合照片。",
+      "thresholdLabel": "黑白閾值",
+      "thresholdTooltip": "比這個閾值更暗的像素會被描摹為填滿的形狀。調高可擷取更多細節，調低則只保留最粗的形狀。"
+    },
+    "ico": {
+      "note": "會產生包含 16、32、48、64、128 與 256 px 圖示的多尺寸 .ico，非常適合網站圖示與 Windows 應用程式圖示。"
+    },
+    "ai": {
+      "title": "AI 圖片工具",
+      "tooltipIntro": "每個工作只執行一項 AI 操作，在我們的本機 GPU 伺服器上進行。該工作會略過標準的 ImageMagick 流程。",
+      "tooltipFacePrivacy": "<strong>臉部隱私</strong>：偵測並遮蔽臉部（模糊、像素化或黑色方塊）。",
+      "tooltipRemoveBackground": "<strong>移除背景</strong>：透過 rembg + BiRefNet/ISNet/U2Net 輸出透明 PNG。",
+      "tooltipAiUpscale": "<strong>AI 放大</strong>：Real-ESRGAN ncnn Vulkan 2 倍或 4 倍。",
+      "tooltipRedactText": "<strong>遮蔽文字／個資</strong>：以 OCR 為基礎的遮蔽。",
+      "tooltipRemoveObject": "<strong>移除物件</strong>：在不想要的物件上畫出矩形；LaMa 修復會重建其背後的區域。",
+      "intro": "AI 工具每次轉換只執行一項操作。為了獲得最佳結果，請在發布敏感媒體前先預覽輸出。",
+      "operationLabel": "操作",
+      "operations": {
+        "none": "無（標準轉換）",
+        "face_privacy": "臉部模糊／像素化",
+        "remove_background": "移除背景",
+        "ai_upscale": "AI 放大",
+        "redact_text": "遮蔽文字／個資",
+        "remove_object": "移除物件（LaMa 修復）"
+      },
+      "faceMode": {
+        "label": "臉部模式",
+        "blur": "模糊",
+        "pixelate": "像素化",
+        "blackbox": "黑色方塊"
+      },
+      "selectiveFaces": {
+        "title": "選擇性臉部",
+        "tooltipDefault": "預設會將所選效果套用到每一張偵測到的臉。",
+        "tooltipDetect": "使用<strong>偵測臉部</strong>預覽方框，並選擇要遮蔽或略過哪些臉。",
+        "tooltipExpire": "臉部方框只會暫時儲存供選擇使用，並會自動過期。",
+        "selectionModeLabel": "選取模式",
+        "selectionMode": {
+          "all": "所有偵測到的臉",
+          "only_selected": "僅選取的臉",
+          "all_except_selected": "選取以外的所有臉"
+        },
+        "detecting": "偵測中…",
+        "reDetect": "重新偵測臉部",
+        "detect": "偵測臉部",
+        "selectAll": "全選",
+        "clearSelection": "清除選取",
+        "chooseFile": "請先選擇圖片以偵測臉部。",
+        "noFaces": "沒有偵測到臉部。你仍可在轉換時執行預設的臉部隱私處理，或試試另一張圖片。",
+        "detected_other": "偵測到 {{count}} 張臉。已選取：{{selected}}。",
+        "defaultNote": "預設：套用到每一張偵測到的臉。使用「偵測臉部」來選擇特定的臉。"
+      },
+      "background": {
+        "modelLabel": "背景模型",
+        "models": {
+          "birefnet-general": "BiRefNet General（建議）",
+          "birefnet-general-lite": "BiRefNet General Lite",
+          "birefnet-portrait": "BiRefNet Portrait",
+          "isnet-general-use": "ISNet General Use",
+          "u2net": "U2Net",
+          "u2netp": "U2Net Lite",
+          "u2net_human_seg": "U2Net 人像分割"
+        },
+        "pngNote": "輸出一律為 PNG，以保留透明度。"
+      },
+      "upscale": {
+        "scaleLabel": "倍率",
+        "scale4x": "4 倍",
+        "scale2x": "2 倍",
+        "modelLabel": "模型",
+        "models": {
+          "realesrgan-x4plus": "realesrgan-x4plus（照片）",
+          "realesrgan-x4plus-anime": "realesrgan-x4plus-anime",
+          "realesr-animevideov3": "realesr-animevideov3"
+        },
+        "experimentalNote": "4 倍是預設值，結果最穩定。2 倍以一半的比例執行同一個模型，在某些圖片上可能看起來略有裁切。",
+        "pngNote": "輸出預設為 PNG。"
+      },
+      "removeObject": {
+        "title": "標記要移除的物件",
+        "tooltipDraw": "在圖片上點選並拖曳，為每個想抹除的物件加上一個矩形。拖曳矩形本體可移動，拖曳控制點可調整大小。",
+        "tooltipResult": "LaMa 修復會重建每個矩形後方的區域。為了獲得最佳結果，請讓方框緊貼物件；太大的矩形會讓模型需要憑空產生更多背景。",
+        "tooltipTip": "提示：多個較小的矩形通常比一個巨大的矩形效果更乾淨。",
+        "clearAll": "全部清除",
+        "chooseFile": "請先選擇圖片，再開始標記物件。",
+        "atLeastOne": "請至少加入一個涵蓋想移除物件的矩形。",
+        "readyToInpaint_other": "{{count}} 個矩形已可進行修復。",
+        "formatNote": "LaMa 的輸出會保留你選擇的輸出格式（JPG、PNG、WebP、GIF）。此操作會略過濾鏡、文字疊加與色調。"
+      },
+      "redact": {
+        "detectLabel": "偵測",
+        "detect": {
+          "pii": "僅個資",
+          "all-text": "所有文字"
+        },
+        "redactionLabel": "遮蔽樣式",
+        "redaction": {
+          "blackbox": "黑色方塊",
+          "blur": "模糊",
+          "pixelate": "像素化"
+        },
+        "ocrNote": "OCR 遮蔽為盡力而為。分享前請先檢查輸出。"
+      },
+      "aiActiveNote": "選擇 AI 操作時，會略過格式、濾鏡及其他標準圖片選項。",
+      "operationLocked": "此工具的預設組"
+    },
+    "textOverlay": {
+      "title": "文字疊加",
+      "tooltipAria": "關於文字疊加",
+      "tooltip": "將浮水印或說明文字燒錄到輸出圖片上。輸入文字，然後選擇大小（8–512 px）、對齊位置（角落／邊緣／中央錨點）、文字與外框顏色、外框寬度，以及相對於錨點的像素偏移。文字留空則略過疊加。",
+      "overlayText": "疊加文字",
+      "overlayPlaceholder": "要畫在圖片上的選填文字",
+      "size": "文字大小",
+      "position": "位置",
+      "textColor": "文字顏色",
+      "strokeColor": "外框顏色",
+      "strokeWidth": "外框寬度",
+      "xOffset": "X 偏移",
+      "yOffset": "Y 偏移",
+      "gravity": {
+        "NorthWest": "左上",
+        "North": "上",
+        "NorthEast": "右上",
+        "West": "左",
+        "Center": "中央",
+        "East": "右",
+        "SouthWest": "左下",
+        "South": "下",
+        "SouthEast": "右下"
+      }
+    },
+    "metadata": {
+      "title": "中繼資料",
+      "intro": "選擇要保留、移除或改寫圖片的中繼資料。",
+      "tooltipKeep": "<strong>保留所有中繼資料</strong>：保留原始檔的每一個 EXIF/IPTC/XMP/GPS 欄位。",
+      "tooltipStrip": "<strong>移除所有中繼資料</strong>：移除相機、GPS、軟體與時間戳記欄位。建議在將照片分享到網路上之前使用。",
+      "tooltipCustom": "<strong>自訂中繼資料</strong>：先移除，再只改寫你提供的欄位（標題、作者、版權、IPTC 關鍵字、GPS 欄位等）。",
+      "modeLabel": "中繼資料模式",
+      "modes": {
+        "keep": "保留所有中繼資料",
+        "strip": "移除所有中繼資料",
+        "custom": "自訂中繼資料"
+      },
+      "fields": {
+        "title": "標題",
+        "author": "藝術家／作者",
+        "description": "說明",
+        "copyright": "版權",
+        "comment": "使用者註解",
+        "keywords": "關鍵字"
+      },
+      "exifFields": "EXIF / TIFF 欄位",
+      "gpsFields": "GPS／位置欄位",
+      "showAdvanced": "顯示進階／裝置中繼資料",
+      "hideAdvanced": "隱藏進階／裝置中繼資料",
+      "gps": {
+        "title": "GPS／位置選項",
+        "tooltipAria": "關於 GPS／位置選項",
+        "tooltip": "移除或取代相機或手機儲存的 GPS 中繼資料。你也可以只移除拍攝方向、GPS 時間戳記、海拔或目的地欄位。取代模式可讓你指定不同的緯度／經度／海拔，並可選擇性地將精確度四捨五入以保護隱私。",
+        "removeLocationData": "移除位置資料",
+        "replaceLocationData": "取代位置資料",
+        "roundPrecision": "降低位置精確度",
+        "removeCaptureDirection": "移除拍攝方向／方位",
+        "removeTimestamp": "移除 GPS 時間戳記",
+        "removeAltitude": "移除海拔",
+        "removeDestination": "移除目的地欄位",
+        "latitude": "緯度",
+        "longitude": "經度",
+        "altitude": "海拔",
+        "precisionDecimals": "精確度小數位數"
+      }
+    },
+    "_obsoletePlaceholder": ""
+  },
+  "videoTranscodeForm": {
+    "premiumTooltip": "註冊 Premium 帳號以解鎖完整的轉碼功能。",
+    "premiumBadge": "Premium",
+    "tooSmallBadge": "太小",
+    "protocol": {
+      "title": "協定",
+      "tooltipAria": "關於轉碼協定",
+      "tooltipHls": "<strong>HLS</strong>：Apple HTTP Live Streaming。H.264/AAC，master.m3u8 + 各畫質變體 + .ts 片段。到處都能播放。",
+      "tooltipDash": "<strong>DASH</strong>：MPEG-DASH 自適應串流。AV1（最小、現代）或 VP9（支援較廣）；manifest.mpd + .m4s 片段。",
+      "hlsSub": "H.264 / AAC · .m3u8 · 全平台",
+      "dashSub": "AV1 或 VP9 · .mpd · 現代網頁",
+      "av1Sub": "建議 · 檔案更小",
+      "vp9Sub": "播放支援較廣"
+    },
+    "analyze": {
+      "intro": "我們會上傳你的影片並執行 <code>ffprobe</code>，以偵測解析度、編解碼器、音訊，以及來源支援的畫質階層。",
+      "uploadingPercent": "上傳中 {{percent}}%",
+      "analyzingSource": "正在分析來源...",
+      "preparingUpload": "正在準備上傳...",
+      "analyzeVideo": "分析影片"
+    },
+    "report": {
+      "title": "來源影片報告",
+      "resolution": "解析度",
+      "maxQuality": "最高畫質",
+      "fps": "FPS",
+      "duration": "長度",
+      "audio": "音訊",
+      "videoCodec": "影片編解碼器",
+      "audioCodec": "音訊編解碼器",
+      "container": "容器",
+      "fileSize": "檔案大小",
+      "yes": "是",
+      "no": "否"
+    },
+    "rungs": {
+      "title": "畫質階層",
+      "tooltipAria": "關於畫質階層",
+      "tooltip": "每個選取的階層會成為最終 HLS/DASH 套件中的一個畫質版本。Premium 階層（144p/240p/1080p/2160p）需要 Premium 才能使用。",
+      "defaultsNote": "預設：來源影片支援時為 360p + 480p + 720p。"
+    },
+    "captions": {
+      "disabledTooltip": "字幕需要音軌。這部影片似乎沒有音訊。",
+      "enabledTooltip": "使用 whisper-ctranslate2 從音軌產生 VTT 字幕。預設關閉。",
+      "generateCaptions": "產生字幕",
+      "captionsSub": "從音軌自動產生的 VTT 字幕。預設關閉。",
+      "generateStoryboards": "產生分鏡縮圖",
+      "storyboardsSub": "精靈圖拖曳縮圖 + WebVTT 索引。預設關閉。"
+    },
+    "translations": {
+      "title": "額外的字幕翻譯",
+      "tooltipAria": "關於額外的字幕翻譯",
+      "tooltip1": "主要字幕軌是 whisper 以自動偵測的來源語言所做的轉錄。最多可再加入 {{max}} 種語言，我們會透過你的 Ollama 文字模型翻譯各段落。",
+      "tooltip2": "每個翻譯都會成為獨立的 VTT，外加一個 HLS 字幕版本（EXT-X-MEDIA）與 DASH 文字 AdaptationSet，讓播放器顯示字幕軌選擇器。",
+      "primaryNote": "主要軌道：自動偵測的來源語言。最多可加入 {{max}} 條翻譯軌。",
+      "backendUnreachable": "無法連線到翻譯後端（Ollama）。所選語言會在工作執行時被略過。",
+      "removeLanguage": "移除語言",
+      "addLanguage": "+ 新增翻譯語言（{{count}}/{{max}}）"
+    },
+    "bundle": {
+      "title": "下載格式",
+      "tooltipAria": "關於下載格式",
+      "tooltipTargz": "<strong>.tar.gz</strong>：對文字為主的播放清單來說更小，在 macOS/Linux 上通用，Windows 10 以上也可透過內建的 <code>tar</code> 指令原生解壓。",
+      "tooltipZip": "<strong>.zip</strong>：如果你使用較舊的 Windows，或只想連按兩下就能解壓而不必多想，這是安全的預設選項。檔案稍大；內容完全相同。",
+      "defaultBadge": "預設",
+      "targzSub": "更小 · macOS/Linux/Win 10+ 原生支援",
+      "zipSub": "對 Windows 更友善 · 連按兩下解壓"
+    },
+    "start": {
+      "starting": "正在開始轉碼...",
+      "startButton": "開始 {{protocol}} 轉碼（輸出：{{format}}）"
+    },
+    "tooSmall": "這部影片低於免費轉碼的最低要求 360p。請載入 360p 或更高解析度的影片。",
+    "progress": {
+      "title": "流程進度",
+      "failed": "轉碼失敗。"
+    },
+    "downloadPackage": "下載 {{filename}}"
+  },
+  "pdfForm": {
+    "outputFormat": {
+      "label": "輸出圖片格式",
+      "tooltip": "選擇 JPG 可取得較小、適合照片的檔案；選擇 PNG 可取得清晰無損的頁面（最適合文字與線稿）。",
+      "locked": "此工具已鎖定為 {{format}}"
+    },
+    "dpi": {
+      "label": "轉譯品質（DPI）",
+      "tooltip": "DPI 越高，轉譯的圖片越清晰也越大。150 DPI 是不錯的預設值；列印品質的輸出請使用 300。"
+    },
+    "pages": {
+      "label": "要轉換的頁面",
+      "tooltip": "轉換每一頁（以圖片 ZIP 下載）或只轉換第一頁（以單張圖片下載）。",
+      "all": "所有頁面（ZIP）",
+      "allHint": "每頁一張圖片，打包成單一 .zip 下載。",
+      "first": "僅第一頁",
+      "firstHint": "只將第 1 頁轉譯為單張圖片。"
+    },
+    "quality": {
+      "label": "JPG 品質（%）",
+      "tooltip": "JPEG 壓縮品質，範圍 1–100。90 是均衡的預設值；較低的值會以犧牲細節為代價縮小檔案。"
+    },
+    "submit": "轉換 PDF",
+    "converting": "轉換中…"
+  },
+  "conversionOptions": {
+    "image": {
+      "cropping": {
+        "title": "圖片裁切",
+        "tooltipAria": "關於圖片裁切",
+        "tooltip": "開啟視覺化裁切選取器，只保留圖片的一部分。裁切會在調整大小與濾鏡之前執行，所以你在下方設定的尺寸會套用到裁切後的區域。如果想要整張圖片，請略過此步驟。",
+        "selectPortion": "選取你想保留的圖片部分",
+        "editCrop": "編輯裁切",
+        "cropImage": "裁切圖片"
+      },
+      "format": {
+        "label": "格式",
+        "tooltipAria": "關於圖片格式",
+        "tooltip": "輸出檔案類型。JPG 最適合照片，PNG 保留透明度且很適合圖形，WebP 是較小的現代格式，GIF 則用於舊式或動畫用途。",
+        "locked": "此工具已鎖定為 {{format}}"
+      },
+      "resizeEmphasis": "在下方設定目標寬度和／或高度。留空其中一項即可等比例縮放並保持原始長寬比。",
+      "quality": {
+        "label": "品質（%）",
+        "tooltipAria": "關於圖片品質",
+        "tooltip": "JPG 與 WebP 輸出的壓縮品質（1–100）。85 是均衡的預設值。較低的值會縮小檔案但產生瑕疵；高於 95 的值很少有可見差異。PNG 與 GIF 會忽略此設定。"
+      },
+      "width": {
+        "label": "寬度（px）",
+        "tooltipAria": "關於圖片寬度",
+        "tooltip": "目標寬度，單位為像素。留空則保留原始寬度，或依據「高度」欄位等比例縮放。圖片會在調整大小前依 EXIF 自動旋轉，所以尺寸會與預覽中看到的一致。",
+        "placeholder": "自動"
+      },
+      "height": {
+        "label": "高度（px）",
+        "tooltipAria": "關於圖片高度",
+        "tooltip": "目標高度，單位為像素。留空則保留原始高度，或依據「寬度」欄位等比例縮放。同時設定寬度與高度會強制為精確尺寸，可能導致圖片變形。",
+        "placeholder": "自動"
+      },
+      "filter": {
+        "label": "濾鏡",
+        "tooltipAria": "關於圖片濾鏡",
+        "tooltip": "對輸出套用單一 ImageMagick 效果：灰階、復古褐色、模糊／銳利化、漩渦、桶狀變形、油畫、復古、浮雕、炭筆、素描，或固定角度旋轉。選擇「無」則略過濾鏡。",
+        "options": {
+          "none": "無",
+          "grayscale": "灰階",
+          "sepia": "復古褐色",
+          "blur": "模糊",
+          "sharpen": "銳利化",
+          "swirl": "漩渦",
+          "barrel-distortion": "桶狀變形",
+          "oil-painting": "油畫",
+          "vintage": "復古",
+          "emboss": "浮雕",
+          "charcoal": "炭筆",
+          "sketch": "素描",
+          "rotate-45º": "旋轉 45º",
+          "rotate-90º": "旋轉 90º",
+          "rotate-180º": "旋轉 180º",
+          "rotate-270º": "旋轉 270º"
+        }
+      },
+      "tint": {
+        "label": "色調顏色",
+        "tooltipAria": "關於色調顏色",
+        "tooltip": "在圖片上覆蓋一層 30% 的色彩。適合品牌縮圖或雙色調效果。將顏色選擇器保持為黑色（#000000）則略過色調。"
+      }
+    },
+    "audio": {
+      "trimming": {
+        "title": "音訊剪輯",
+        "tooltipAria": "關於音訊剪輯",
+        "tooltip": "開啟波形播放器以選擇開始與結束時間。只有選取的片段會被編碼到輸出檔案中。",
+        "selectPortion": "選取你想保留的音訊部分",
+        "editTrim": "編輯剪輯",
+        "trimAudio": "剪輯音訊"
+      },
+      "format": {
+        "label": "格式",
+        "tooltipAria": "關於音訊格式",
+        "tooltip": "輸出的編解碼器／容器。MP3 有通用支援；WAV/FLAC/ALAC 為無損；AAC 適合高效串流；OGG、Opus、AC3 與 DTS 則針對特定工作流程。"
+      },
+      "bitrate": {
+        "label": "位元率（kbps）",
+        "tooltipAria": "關於音訊位元率",
+        "tooltip": "控制有損格式的壓縮品質與檔案大小之間的取捨。128 kbps 適合 Podcast，192–256 kbps 是音樂的理想預設值，320 kbps 則是 MP3 的最高品質。WAV、FLAC 與 ALAC（無損）會忽略此設定。"
+      },
+      "speed": {
+        "label": "速度倍率",
+        "tooltipAria": "關於音訊速度倍率",
+        "tooltip": "播放速度從 0.25 倍（慢）到 4 倍（快）。使用 FFmpeg 的 atempo 濾鏡保留音高，極端值會自動串接處理。"
+      },
+      "volume": {
+        "label": "音量倍率",
+        "tooltipAria": "關於音量倍率",
+        "tooltip": "線性增益係數，從 0.1 倍到 2 倍。1.0 表示音量不變。若需更精細的 dB 控制，請使用「進階音訊效果」中的「放大」滑桿。"
+      }
+    },
+    "video": {
+      "trimming": {
+        "title": "影片剪輯",
+        "tooltipAria": "關於影片剪輯",
+        "tooltip": "開啟播放器瀏覽影片並選擇開始／結束時間。只有該片段會被編碼到輸出中。無論輸出編解碼器為何，剪輯都能運作，包括動態 GIF。",
+        "selectPortion": "選取你想保留的影片部分",
+        "editTrim": "編輯剪輯",
+        "trimVideo": "剪輯影片"
+      },
+      "format": {
+        "label": "格式",
+        "tooltipAria": "關於影片格式",
+        "tooltip": "輸出容器與編解碼器。MP4（H.264+AAC）是網頁上最安全的預設選項。WebM 使用 VP9+Opus，很適合開放網頁嵌入。MOV/MKV/AVI/WMV/FLV 針對特定工作流程；ProRes/DNxHD 是高位元率的剪輯用編解碼器。GIF（動態）會透過 ffmpeg + gifsicle 將片段縮小並轉為調色盤，非常適合短的無聲循環。",
+        "locked": "此工具已鎖定為 {{format}}",
+        "options": {
+          "mp4": "MP4",
+          "webm": "WebM",
+          "avi": "AVI",
+          "mov": "MOV",
+          "mkv": "MKV",
+          "flv": "FLV",
+          "wmv": "WMV",
+          "prores": "ProRes（MOV）",
+          "dnxhd": "DNxHR（MOV）",
+          "gif": "GIF（動態）"
+        }
+      },
+      "quality": {
+        "label": "品質",
+        "tooltipAria": "關於影片品質",
+        "tooltip": "底層會選用 x264 CRF 預設值。低 ≈ CRF 30（檔案小），中 ≈ CRF 23（均衡的預設值），高 ≈ CRF 18（在大多數素材上視覺無損）。GIF 輸出會忽略此設定，請改用下方的 GIF 面板調整調色盤大小與影格率。",
+        "options": {
+          "low": "低",
+          "medium": "中",
+          "high": "高"
+        }
+      },
+      "width": {
+        "label": "寬度（px）",
+        "tooltipAria": "關於影片寬度",
+        "tooltip": "目標輸出寬度，單位為像素。留空則保留原始寬度，或依高度等比例縮放。搭配「保持長寬比」可避免變形。格式為 GIF 時，留空會使用下方「動態 GIF」面板中的寬度。",
+        "placeholder": "自動"
+      },
+      "height": {
+        "label": "高度（px）",
+        "tooltipAria": "關於影片高度",
+        "tooltip": "目標輸出高度，單位為像素。留空則保留原始高度，或依寬度等比例縮放。GIF 輸出會忽略此設定，高度會依寬度計算以保持長寬比（並四捨五入到 4 的倍數）。",
+        "placeholder": "自動",
+        "placeholderGif": "自動（依寬度）"
+      },
+      "speed": {
+        "label": "速度倍率",
+        "tooltipAria": "關於速度倍率",
+        "tooltip": "播放速度從 0.25 倍（慢動作）到 4 倍（快速）。影片 PTS 與音訊速度會一起調整，讓結果保持同步。GIF 輸出請使用「動態 GIF」面板中的「影格率」與「影格延遲」控制播放感。"
+      },
+      "preserveAspectRatio": {
+        "label": "保持長寬比",
+        "tooltipAria": "關於保持長寬比",
+        "tooltip": "同時設定寬度與高度時，這會使用 FFmpeg 的 force_original_aspect_ratio=decrease 縮放，讓影片在不變形的情況下符合方框。關閉可強制為精確（可能變形）的尺寸。GIF 輸出一律保持長寬比。"
+      },
+      "gif": {
+        "title": "動態 GIF 設定",
+        "tooltipAria": "關於動態 GIF 設定",
+        "tooltip": "GIF 轉換分兩個階段：ffmpeg 先縮小影片並以所選影格率取樣，接著 gifsicle 量化調色盤並最佳化輸出。上方「轉換／轉錄」中的品質、高度與速度控制項在 GIF 輸出時會被略過，由此面板接手。",
+        "subtitle": "調整 ffmpeg → gifsicle 流程。預設值對應良好的螢幕錄影預設組（900px 寬、12 fps、128 色）。",
+        "width": {
+          "label": "寬度（px）",
+          "tooltipAria": "關於 GIF 寬度",
+          "tooltip": "輸出寬度，單位為像素。高度會自動計算以保持長寬比（四捨五入到 4 的倍數以符合 ffmpeg 的要求）。480–900 是螢幕錄影的理想範圍；較小的值能快速縮小檔案。"
+        },
+        "fps": {
+          "label": "影格率（fps）",
+          "tooltipAria": "關於 GIF 影格率",
+          "tooltip": "ffmpeg 在交給 gifsicle 之前，每秒從來源影片取樣多少影格。12 fps 對螢幕錄影來說已經流暢；動作較多的片段可提高到 18–24，想縮小檔案則降到 8–10。"
+        },
+        "colors": {
+          "label": "色彩數",
+          "tooltipAria": "關於 GIF 色彩數",
+          "tooltip": "gifsicle 量化的最大調色盤大小（2–256）。128 是理想的預設值；平面 UI 素材可降到 64 以縮小檔案，有平滑漸層的照片類片段則提高到 256。"
+        },
+        "delay": {
+          "label": "影格延遲",
+          "tooltipAria": "關於 GIF 影格延遲",
+          "tooltip": "gifsicle 的影格間延遲，單位為 1/100 秒。越低播放越快。3（= 30ms）是俐落的螢幕錄影感；6–10 會產生較慢、較從容的循環。與上方的 ffmpeg 取樣率無關。"
+        },
+        "optimize": {
+          "label": "最佳化等級",
+          "tooltipAria": "關於 GIF 最佳化等級",
+          "tooltip": "gifsicle --optimize 等級。1 最快但輸出最大，3 最慢但輸出最小。除非你正在反覆調整長片段並想快速取得草稿，否則請維持 3。",
+          "options": {
+            "1": "1：快速，檔案較大",
+            "2": "2：均衡",
+            "3": "3：最小，較慢"
+          }
+        }
+      }
+    }
+  },
+  "advancedAudioEffects": {
+    "title": "進階音訊效果",
+    "tooltipAria": "關於進階音訊效果",
+    "tooltipIntro": "手動音訊處理鏈，分為四個可展開的區段：",
+    "tooltipBasic": "<strong>基本音訊處理</strong>：正規化、放大、淡入／淡出、EQ 預設組、立體聲寬度／聲道平衡。",
+    "tooltipTime": "<strong>時間類效果</strong>：殘響、延遲與調變（合唱、鑲邊、顫音、抖音）。",
+    "tooltipRestoration": "<strong>修復與清理</strong>：降噪、去除哼聲、去削波、移除靜音。",
+    "tooltipAdvanced": "<strong>進階音訊</strong>：音高位移、時間伸縮、空間音訊。",
+    "sections": {
+      "basic": {
+        "title": "基本音訊處理",
+        "description": "音量控制、EQ、動態與立體聲處理"
+      },
+      "time": {
+        "title": "時間類效果",
+        "description": "殘響、延遲、回音與調變效果"
+      },
+      "restoration": {
+        "title": "修復與清理",
+        "description": "降噪、去除哼聲、去削波與靜音偵測"
+      },
+      "advanced": {
+        "title": "進階處理",
+        "description": "音高位移、時間伸縮、空間音訊與頻譜處理"
+      }
+    },
+    "volumeDynamics": {
+      "title": "音量與動態",
+      "tooltip": "以分貝放大（-60 到 +60）、套用淡入／淡出時間，以及切換響度正規化。需要對齊電平時使用「放大」，想要一致的感知響度時使用「正規化」。"
+    },
+    "equalizer": {
+      "title": "等化器",
+      "tooltip": "選擇一個對應到多頻段 FFmpeg 等化器濾鏡鏈的預設組：低音增強、高音增強、人聲、古典、搖滾或爵士。選擇「無」則不更動 EQ。",
+      "enable": "啟用 EQ",
+      "presetLabel": "EQ 預設組",
+      "presets": {
+        "none": "無",
+        "bass-boost": "低音增強",
+        "treble-boost": "高音增強",
+        "vocal": "人聲增強",
+        "classical": "古典",
+        "rock": "搖滾",
+        "jazz": "爵士"
+      }
+    },
+    "stereo": {
+      "title": "立體聲處理",
+      "tooltip": "調整聲道平衡（-100 左到 +100 右）、立體聲寬度（0 = 單聲道，100 = 原始，最高 200 = 更寬）、切換轉為單聲道，並可選擇交換左右聲道。",
+      "pan": "聲道平衡",
+      "leftRight": "左 ← → 右",
+      "stereoWidth": "立體聲寬度",
+      "widthRange": "0% 到 200%"
+    },
+    "reverb": {
+      "title": "殘響",
+      "tooltip": "為音訊增添空間感。可選擇房間（小）、大廳（大）、板式（復古錄音室）或彈簧（吉他音箱風格）。房間大小、阻尼與濕／乾比例可微調效果。",
+      "enable": "啟用殘響",
+      "typeLabel": "殘響類型",
+      "types": {
+        "none": "無",
+        "room": "房間",
+        "hall": "大廳",
+        "plate": "板式",
+        "spring": "彈簧"
+      },
+      "roomSize": "房間大小",
+      "roomRange": "0% 到 100%",
+      "wetDry": "濕／乾比例",
+      "dryWet": "乾 ← → 濕"
+    },
+    "delay": {
+      "title": "延遲與回音",
+      "tooltip": "加入訊號的延遲副本。回音是單一拍點；多拍點會加入數個偏移的回音；乒乓則在左右聲道之間彈跳。時間（ms）、回授 % 與濕訊號電平決定重複的樣貌。",
+      "enable": "啟用延遲",
+      "typeLabel": "延遲類型",
+      "types": {
+        "none": "無",
+        "echo": "簡單回音",
+        "multi-tap": "多拍點",
+        "ping-pong": "乒乓"
+      },
+      "delayTime": "延遲時間（ms）",
+      "feedback": "回授（%）",
+      "feedbackRange": "0% 到 95%"
+    },
+    "restoration": {
+      "noiseReduction": "降噪",
+      "deHum": "去除哼聲（50/60Hz）",
+      "declip": "音訊去削波",
+      "silenceDetection": "靜音偵測"
+    },
+    "advanced": {
+      "pitchShift": "音高位移（半音）",
+      "pitchValue": "{{value}} 個半音",
+      "pitchRange": "-24 到 +24 個半音",
+      "timeStretch": "時間伸縮係數",
+      "timeStretchValue": "{{value}} 倍速",
+      "timeStretchRange": "0.25 倍到 4 倍速",
+      "spatialAudio": "空間音訊",
+      "spatial": {
+        "none": "無",
+        "binaural": "雙耳",
+        "surround": "環繞",
+        "3d": "3D 音訊"
+      },
+      "spectral": "頻譜處理",
+      "spectralOptions": {
+        "none": "無",
+        "vocoder": "聲碼器",
+        "formant": "共振峰濾波",
+        "convolution": "卷積"
+      }
+    },
+    "labels": {
+      "amplify": "放大（dB）",
+      "amplifyRange": "-60dB 到 +60dB",
+      "normalize": "音訊正規化",
+      "fadeIn": "淡入（秒）",
+      "fadeOut": "淡出（秒）"
+    }
+  },
+  "advancedVideoEffects": {
+    "title": "進階影片效果",
+    "tooltipAria": "關於進階影片效果",
+    "tooltipIntro": "手動影片濾鏡鏈，分為四個可展開的區段：",
+    "tooltipVisual": "<strong>視覺效果</strong>：色彩校正、模糊／銳利化、雜訊與藝術濾鏡。",
+    "tooltipTransform": "<strong>變形</strong>：旋轉、翻轉、自訂裁切、填補／加黑邊。",
+    "tooltipTemporal": "<strong>時間類效果</strong>：倒轉、乒乓、影格率轉換、穩定。",
+    "tooltipAdvanced": "<strong>進階處理</strong>：去交錯、HDR 色調對應、色彩空間轉換。",
+    "sections": {
+      "visual": {
+        "title": "視覺效果",
+        "description": "色彩校正、模糊／銳利化、藝術效果與雜訊控制"
+      },
+      "transform": {
+        "title": "幾何變形",
+        "description": "旋轉、翻轉、裁切與填補"
+      },
+      "temporal": {
+        "title": "時間類效果",
+        "description": "速度控制、倒轉、影格率與穩定"
+      },
+      "advanced": {
+        "title": "進階處理",
+        "description": "去交錯、HDR 處理與色彩空間轉換"
+      }
+    },
+    "colorExposure": {
+      "title": "色彩與曝光",
+      "tooltip": "調整亮度、對比、飽和度、色相、Gamma、曝光，以及陰影／亮部還原。這些對應到 FFmpeg 的 eq 與 curves 濾鏡，並疊加成單一的色彩校正處理。"
+    },
+    "blurSharpen": {
+      "title": "模糊與銳利化",
+      "tooltip": "加入高斯模糊（0–50 sigma）、帶角度與距離的動態模糊，或可調整半徑、強度與閾值的遮色片銳利化。"
+    },
+    "labels": {
+      "brightness": "亮度",
+      "contrast": "對比",
+      "saturation": "飽和度",
+      "hue": "色相",
+      "gaussianBlur": "高斯模糊",
+      "artisticEffect": "藝術效果",
+      "rotation": "旋轉（度）",
+      "flipHorizontal": "水平翻轉",
+      "flipVertical": "垂直翻轉",
+      "reverseVideo": "倒轉影片",
+      "pingPong": "乒乓循環",
+      "targetFrameRate": "目標影格率",
+      "stabilization": "影片穩定",
+      "deinterlace": "影片去交錯",
+      "outputColorSpace": "輸出色彩空間"
+    },
+    "ranges": {
+      "hundred": "-100 到 +100",
+      "hue": "-180° 到 +180°",
+      "blur": "0 到 50px"
+    },
+    "artistic": {
+      "none": "無",
+      "oil-painting": "油畫",
+      "watercolor": "水彩",
+      "sketch": "素描",
+      "emboss": "浮雕",
+      "edge-detection": "邊緣偵測",
+      "posterize": "色調分離"
+    },
+    "colorSpace": {
+      "rec709": "Rec.709（標準）",
+      "rec2020": "Rec.2020（HDR）",
+      "srgb": "sRGB",
+      "p3": "Display P3"
+    },
+    "autoPlaceholder": "自動"
+  }
+}

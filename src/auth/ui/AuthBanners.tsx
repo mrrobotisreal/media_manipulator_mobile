@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AppState, View } from 'react-native';
 import { useAppDispatch, useAppSelector } from '@/state/hooks';
 import { appleLinkOfferSet, identityChanged, noticeSet } from '@/state/slices/auth';
@@ -6,7 +7,6 @@ import { Button, Text } from '@/ui/components';
 import { sendVerificationEmail } from '../email';
 import { currentUser, refreshIdentity } from '../firebase';
 import { linkAppleNow } from '../linking';
-import { authT } from '../strings';
 
 function Banner({ children }: { children: React.ReactNode }) {
   return (
@@ -21,6 +21,7 @@ function Banner({ children }: { children: React.ReactNode }) {
  * dismissible verify-email banner (password accounts only; never blocks tools).
  */
 export function AuthBanners() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { notice, appleLinkOffer, emailVerified, providerIds } = useAppSelector((s) => s.auth);
   const [verifyDismissed, setVerifyDismissed] = useState(false);
@@ -42,9 +43,9 @@ export function AuthBanners() {
     <>
       {notice === 'linked' ? (
         <Banner>
-          <Text>{authT('link.linked')}</Text>
+          <Text>{t('interface:authModal.link.linked')}</Text>
           <Button
-            label={authT('verify.dismiss')}
+            label={t('common.close')}
             variant="ghost"
             onPress={() => dispatch(noticeSet(null))}
           />
@@ -52,9 +53,9 @@ export function AuthBanners() {
       ) : null}
       {appleLinkOffer ? (
         <Banner>
-          <Text>{authT('link.linkAppleBody')}</Text>
+          <Text>{t('auth.link.linkAppleBody')}</Text>
           <Button
-            label={authT('link.linkApple')}
+            label={t('auth.link.linkApple')}
             variant="secondary"
             onPress={() => {
               const user = currentUser();
@@ -62,7 +63,7 @@ export function AuthBanners() {
             }}
           />
           <Button
-            label={authT('verify.dismiss')}
+            label={t('common.close')}
             variant="ghost"
             onPress={() => dispatch(appleLinkOfferSet(false))}
           />
@@ -70,10 +71,10 @@ export function AuthBanners() {
       ) : null}
       {needsVerify ? (
         <Banner>
-          <Text>{sent ? authT('verify.sent') : authT('verify.banner')}</Text>
+          <Text>{sent ? t('auth.verify.sent') : t('auth.verify.banner')}</Text>
           {sent ? null : (
             <Button
-              label={authT('verify.send')}
+              label={t('auth.verify.send')}
               variant="secondary"
               onPress={() =>
                 void sendVerificationEmail()
@@ -83,7 +84,7 @@ export function AuthBanners() {
             />
           )}
           <Button
-            label={authT('verify.dismiss')}
+            label={t('common.close')}
             variant="ghost"
             onPress={() => setVerifyDismissed(true)}
           />

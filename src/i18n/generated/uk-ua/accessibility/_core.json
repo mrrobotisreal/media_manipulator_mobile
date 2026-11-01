@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Головна сторінка Media Manipulator",
+    "openMenu": "Відкрити меню",
+    "github": "Переглянути на GitHub",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "Перемкнути тему",
+    "languageMenu": "Змінити мову",
+    "navIcon": "Значок Media Manipulator",
+    "winappsLogo": "Логотип WinApps",
+    "creatvLogo": "Логотип CreaTV",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "Перейти до вмісту",
+  "footer": {
+    "homeLink": "Головна сторінка Media Manipulator",
+    "navIcon": "Значок Media Manipulator"
+  },
+  "home": {
+    "popularTools": "Популярні інструменти",
+    "closePreview": "Закрити попередній перегляд"
+  },
+  "notFound": {
+    "recoveryRoutes": "Шляхи відновлення"
+  },
+  "loading": {
+    "label": "Завантаження"
+  },
+  "languageSelector": {
+    "trigger": "Змінити мову",
+    "icon": "Значок перекладу"
+  },
+  "common": {
+    "close": "Закрити",
+    "open": "Відкрити",
+    "loading": "Завантаження",
+    "moreOptions": "Додаткові параметри"
+  },
+  "transcribeForm": {
+    "formatTooltip": "Про формат вихідного транскрипту",
+    "languageTooltip": "Про підказку мови"
+  },
+  "audioForm": {
+    "aiTooltip": "Про ШІ-інструменти для аудіо"
+  },
+  "videoForm": {
+    "aiTooltip": "Про ШІ-інструменти для відео"
+  },
+  "imageForm": {
+    "aiTooltip": "Про ШІ-інструменти для зображень",
+    "selectiveFacesTooltip": "Про вибіркову приватність облич",
+    "removeObjectTooltip": "Про видалення об'єктів",
+    "metadataTooltip": "Про обробку метаданих",
+    "vectorizeThresholdTooltip": "Про поріг векторизації"
+  }
+}

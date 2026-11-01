@@ -1,0 +1,773 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "関連ツールとチュートリアル"
+  },
+  "filePreview": {
+    "showResult": "結果を表示"
+  },
+  "authModal": {
+    "defaultTitle": "無料アカウントを作成",
+    "defaultDescription": "履歴を保持し、Darkroomプロジェクトを保存し、1日の利用枠を増やせます。",
+    "signInTitle": "おかえりなさい",
+    "signInDescription": "履歴、保存したStudioプロジェクト、1日の利用枠は、前回のままです。",
+    "tabs": {
+      "signup": "アカウント作成",
+      "signin": "サインイン"
+    },
+    "fields": {
+      "fullName": "氏名",
+      "fullNamePlaceholder": "山田 太郎",
+      "email": "メールアドレス",
+      "emailPlaceholder": "taro@example.com",
+      "password": "パスワード",
+      "passwordPlaceholderSignup": "6文字以上",
+      "passwordPlaceholderSignin": "パスワード"
+    },
+    "actions": {
+      "createAccount": "無料アカウントを作成",
+      "creatingAccount": "アカウントを作成中...",
+      "signIn": "サインイン",
+      "signingIn": "サインイン中..."
+    },
+    "googleSignIn": "Googleで続行",
+    "orDivider": "または",
+    "terms": "登録すると、<tos>利用規約</tos>と<privacy>プライバシーポリシー</privacy>に同意したものとみなされます",
+    "toast": {
+      "welcome": "ようこそ！",
+      "welcomeBack": "おかえりなさい！",
+      "welcomeMM": "Media Manipulatorへようこそ！",
+      "accountCreated": "アカウントを作成しました！",
+      "signedIn": "サインインしました。",
+      "googleSuccess": "Googleでサインインしました。",
+      "authFailed": "認証に失敗しました",
+      "nameRequired": "名前が必要です",
+      "nameRequiredDesc": "名前を入力してください。",
+      "appleSuccess": "Appleでサインインしました。"
+    },
+    "contextual": {
+      "signupTitle": "本日の無料変換枠{{limit}}回を使い切りました",
+      "signupBody": "無料アカウントなら1日の利用枠が増え、変換履歴が保持され、Darkroomプロジェクトを保存できます。",
+      "premiumTitle": "本日の上限{{limit}}回に達しました",
+      "premiumBody": "Premiumなら1日の利用枠が増え、4Kエクスポートと優先処理が使え、広告が表示されなくなります。",
+      "resets": "現在の利用枠は{{when}}にリセットされます。"
+    },
+    "plans": {
+      "freeTitle": "無料アカウントでできること",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/月",
+      "premiumUpgrade": "Premiumにアップグレード",
+      "comparePlans": "すべてのプランを比較",
+      "opsPerDay": "1日{{count}}回の操作",
+      "opsPerDayUnlimited": "1日の操作回数無制限",
+      "maxFileSize": "ファイルは最大{{size}}まで",
+      "maxVideoLength": "動画は最長{{duration}}まで",
+      "maxOutput": "出力は最大{{height}}pまで",
+      "studioProjects": "Studioプロジェクトを{{count}}件まで保存",
+      "studioProjectsUnlimited": "Studioプロジェクトの保存数無制限",
+      "retention": "ファイルの保存期間を24時間から2年まで自由に選択",
+      "priorityGpu": "優先処理",
+      "noAds": "広告なし",
+      "retentionGuest": "ファイルを24時間保存"
+    },
+    "loadingPlans": "プランを読み込み中…",
+    "appleSignIn": "Appleで続行",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "reset": {
+      "title": "パスワードをリセット",
+      "body": "アカウントのメールアドレスを入力してください。リンクをお送りします。",
+      "submit": "リセットリンクを送信",
+      "sending": "送信中...",
+      "sent": "そのメールアドレスのアカウントが存在する場合、パスワードをリセットするためのリンクを送信しました。",
+      "back": "サインインに戻る"
+    },
+    "link": {
+      "notice": "このメールアドレスはすでに別のサインイン方法で登録されています。その方法でサインインすると、両方を連携できます。",
+      "linked": "アカウントを連携しました。どちらの方法でもサインインできます。"
+    }
+  },
+  "imageCropModal": {
+    "title": "画像を切り抜く",
+    "subtitle": "ドラッグして切り抜き範囲を調整し、「適用」をクリックしてください。",
+    "instructions": "切り抜き範囲をドラッグして位置を決めるか、右下の角をドラッグしてサイズを変更します。暗い部分は削除されます。",
+    "previewAlt": "切り抜きプレビュー",
+    "cropArea": "切り抜き範囲：{{width}} × {{height}}ピクセル",
+    "apply": "切り抜きを適用",
+    "cancel": "キャンセル",
+    "reset": "リセット"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "動画をトリミング",
+    "titleAudio": "音声をトリミング",
+    "instructions": "タイムライン上のハンドルをドラッグして、残したい部分を選択します。グレーの部分は削除されます。",
+    "audioFile": "音声ファイル",
+    "startLabel": "開始時間",
+    "endLabel": "終了時間",
+    "durationLabel": "長さ",
+    "finalDuration": "最終的な長さ：{{duration}}",
+    "apply": "トリミングを適用",
+    "cancel": "キャンセル",
+    "reset": "リセット",
+    "playPreview": "プレビューを再生",
+    "pausePreview": "一時停止"
+  },
+  "removeObjectOverlay": {
+    "title": "オブジェクトを除去",
+    "instructions": "除去したいオブジェクトの上に長方形を描きます。LaMaインペインティングが背景を再構成します。",
+    "rectangleCount_other": "{{count}}個の領域を選択中",
+    "addRegion": "領域を追加",
+    "clearRegions": "すべてクリア",
+    "apply": "オブジェクトを除去",
+    "cancel": "キャンセル",
+    "undo": "元に戻す",
+    "previewAlt": "除去する範囲を指定",
+    "dragHint": "ドラッグしてサイズを決め、離します。ハンドルで微調整できます。",
+    "removeRectangle": "長方形{{number}}を削除"
+  },
+  "faceSelectionOverlay": {
+    "title": "ぼかす顔を選択",
+    "instructions": "プライバシー効果を適用したい顔をタップします。もう一度タップすると選択解除されます。",
+    "selectAll": "すべて選択",
+    "clearSelection": "選択を解除",
+    "apply": "適用",
+    "cancel": "キャンセル",
+    "selectedCount_other": "{{count}}人の顔を選択中",
+    "noFacesDetected": "この画像に顔は検出されませんでした。",
+    "previewAlt": "検出された顔のプレビュー",
+    "faceAria": "顔{{label}}",
+    "faceSelectedAria": "顔{{label}}（選択済み）"
+  },
+  "mobileAnchorAd": {
+    "label": "広告"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV — アイデアをかたちに",
+    "creatvCreativeAlt": "CreaTVをぜひご覧ください！アイデアをかたちにする場所です。"
+  },
+  "alternativeAdBanner": {
+    "placeholder": "{{network}}広告プレースホルダー - {{position}}",
+    "placeholderFormat": "形式：{{format}} | スロット：{{slot}}",
+    "placeholderProduction": "本番環境ではここに{{network}}の広告が表示されます"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "ステップ{{number}}",
+    "defaultTitle": "仕組み"
+  },
+  "privacyPolicyComponent": {
+    "title": "プライバシーの概要",
+    "summary": "ファイルは当社のサーバーで処理され、第三者のAIプロバイダーに送られることはありません。アカウントなしの場合は24時間保存され、無料アカウントなら24時間から2年までの間で選べます。",
+    "learnMore": "プライバシーポリシーの全文を読む"
+  },
+  "quotaMeter": {
+    "label": "今日",
+    "aiLabel": "AI",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "本日残り{{remaining}} / {{limit}}",
+    "atLimit": "1日の上限に達しました",
+    "unlimited": "このアカウントに1日の上限はありません",
+    "resets": "{{when}}にリセット",
+    "moreCta": "もっと増やす"
+  },
+  "accountMenu": {
+    "signIn": "サインイン",
+    "account": "アカウント",
+    "signOut": "サインアウト",
+    "signOutFailed": "サインアウトできませんでした",
+    "tier": {
+      "anonymous": "ゲスト",
+      "free": "無料",
+      "premium": "Premium",
+      "operator": "オペレーター",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · {{date}}まで",
+    "tierEndsPro": "Pro · {{date}}まで"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "ファイルは最大{{size}}まで",
+    "fileLimitMoreFree": "より大きなファイルには無料アカウントが必要です",
+    "fileLimitMorePremium": "より大きなファイルにはPremiumが必要です",
+    "nudgeTitle": "完了しました",
+    "nudgeBodyFree": "無料アカウントなら1日の利用枠が増え、履歴が保持されます。",
+    "nudgeBodyPremium": "Premiumなら4Kエクスポート、優先処理、広告なしが加わります。",
+    "nudgeAction": "特典を見る"
+  },
+  "consentBanner": {
+    "label": "Cookieと分析の選択",
+    "body": "どのツールが使われ、どこで問題が起きているかを把握するため、プライバシーに配慮したファーストパーティの分析を使用しています。ファイルが対象になることはなく、この設定はいつでも変更できます。",
+    "bodyGdpr": "計測を始める前に、ご同意が必要です。どのツールが使われ、どこで問題が起きているかを把握するためにファーストパーティの分析を使用しています。選択いただくまで何も収集されず、ファイルが対象になることはありません。",
+    "privacyLink": "プライバシーポリシーを読む",
+    "more": "詳細",
+    "customize": "カスタマイズ",
+    "accept": "同意する",
+    "decline": "拒否する"
+  },
+  "consentPrefs": {
+    "title": "プライバシー設定",
+    "subtitle": "Media Manipulatorが計測してよい項目を選んでください。変更は保存後すぐに適用されます。",
+    "necessary": {
+      "title": "必須",
+      "body": "テーマの選択と、無料プランの上限適用や不正利用の防止に使う匿名のデバイスIDおよび訪問IDです。Cookieは使わず、広告には利用しません。ツールの動作に必要なためオフにはできません。",
+      "always": "常にオン"
+    },
+    "analytics": {
+      "title": "分析",
+      "body": "使用したツール、変換の成否、ページの読み込み速度、修正すべきエラーです。ファーストパーティで13か月保持し、販売は一切しません。ファイル名やファイルの内容は含まれません。"
+    },
+    "advertising": {
+      "title": "広告",
+      "body": "一部のツールページで無料ユーザーおよびログアウト中の訪問者に表示される広告を、Googleがパーソナライズできるようにします。広告が表示されるかどうかはこのスイッチに依存せず、オフの場合は広告がパーソナライズされません。PremiumとProでは広告は表示されません。",
+      "bodyGdpr": "お住まいの地域では、広告に関する選択はここではなくGoogleの同意メッセージで行います。このパネルは当社独自の分析を対象としています。そちらで選択するまで、ツールページの広告はパーソナライズされません。PremiumとProでは広告は表示されません。",
+      "bodyGpc": "パーソナライズ広告のための設定です。お使いのブラウザがGlobal Privacy Control信号を送信しているため、この設定はオフのままです。当社はこの信号を尊重し、ここでのクリックで上書きすることはできません。",
+      "managedByGoogle": "Googleの同意メッセージで管理",
+      "openGoogleMessage": "広告の選択を変更"
+    },
+    "gpcDetected": "Global Privacy Controlを検出しました。個人情報の販売や共有から自動的にオプトアウトし、その記録を保存しました。",
+    "doNotSell": {
+      "title": "個人情報を販売・共有しない",
+      "body": "当社は個人情報を販売しません。この設定により、現在および将来にわたって広告目的での共有からオプトアウトされます。ファーストパーティの分析は上記の別の選択項目です。",
+      "action": "オプトアウト",
+      "done": "オプトアウト済みです"
+    },
+    "yourData": {
+      "title": "あなたのデータ",
+      "body": "当社の分析がこのブラウザについて保持しているすべてのデータのコピーをダウンロードするか、完全に削除できます。サインイン中の場合はアカウントに紐づくすべてのデバイスが対象になり、そうでない場合はこのブラウザのみが対象です。",
+      "export": "データをエクスポート",
+      "exporting": "エクスポートを準備中…",
+      "delete": "データを削除",
+      "deleting": "削除中…",
+      "deleteConfirmBody": "分析履歴（イベント、訪問、訪問者プロファイル）を完全に削除します。この操作は取り消せません。同意の選択記録は、法律上その証明が求められるため保持されます。確認のためDELETEと入力してください。",
+      "deleteConfirmPlaceholder": "確認のためDELETEと入力",
+      "deleteConfirmAction": "完全に削除",
+      "deletedSummary": "完了しました。{{sessions}}回の訪問にわたる{{events}}件のイベントを削除し、このブラウザには新しい匿名IDを割り当てました。",
+      "deletedNote": "同意の選択記録は、法的に必要な証明として保持されます。同意設定そのものは変更されません。分析がオンの場合、新しい活動は新しいIDで収集されます。上記でいつでもオフにできます。",
+      "error": "処理できませんでした。しばらくしてからもう一度お試しください。確認メッセージが表示されなかった場合、何も変更されていません。"
+    },
+    "policyPrefix": "収集する内容、その理由、保持期間の詳細：",
+    "policyLink": "プライバシーポリシー",
+    "cancel": "キャンセル",
+    "save": "設定を保存"
+  },
+  "toasts": {
+    "conversionStarted": "変換を開始しました",
+    "conversionStartedDescription": "ジョブID：{{jobId}} - ファイルを処理中です",
+    "transcriptionStarted": "文字起こしを開始しました",
+    "transcriptionStartedDescription": "ジョブID：{{jobId}} - 文字起こしを生成中です",
+    "transcodeStarted": "トランスコードを開始しました",
+    "translationStarted": "字幕の翻訳を開始しました",
+    "jobStarted": "ジョブを開始しました",
+    "stitchStarted": "結合ジョブを開始しました",
+    "jobIdDescription": "ジョブID：{{jobId}}",
+    "conversionCompleted": "変換が完了しました！",
+    "readyForDownload": "ファイルをダウンロードできます",
+    "uploadingFile": "{{fileName}}をアップロード中…",
+    "uploadingFileProgress": "{{fileName}}をアップロード中… {{percent}}%",
+    "processingFile": "{{fileName}}を処理中…",
+    "buildingPreview": "プレビューを作成中…",
+    "assetAdded": "{{fileName}}を追加しました",
+    "audioAdded": "音声を追加しました",
+    "processingAudio": "音声を処理中…",
+    "captionsReady": "字幕の準備ができました",
+    "binUpdateFailed": "メディアビンを更新できませんでした",
+    "assetDeleteFailed": "そのメディアを削除できませんでした"
+  },
+  "resultPanel": {
+    "ariaLabel": "結果",
+    "download": "ダウンロード",
+    "downloadFailed": "ダウンロードに失敗しました。もう一度お試しください。",
+    "downloadStatus": {
+      "preparing": "ダウンロードを準備しています…",
+      "started": "ダウンロードを開始しました。ブラウザーのダウンロードを確認してください。",
+      "startedWithSize": "ダウンロードを開始しました（{{size}}）。ブラウザーのダウンロードを確認してください。",
+      "failed": "ダウンロードを開始できませんでした。",
+      "gone": "この結果はダウンロードできなくなりました。",
+      "retry": "再試行",
+      "noRecharge": "再ダウンロードしても、ジョブが再実行されたり課金されたりすることはありません。"
+    },
+    "compare": "比較",
+    "original": "オリジナル",
+    "result": "結果",
+    "runAnother": "もう1件実行",
+    "size": "サイズ",
+    "keepsUntil": "保存期限",
+    "loading": "プレビューを読み込み中…",
+    "loadFailed": "結果を読み込めませんでした。",
+    "retry": "再試行",
+    "kind": {
+      "image": "画像",
+      "gif": "アニメーションGIF",
+      "video": "動画",
+      "audio": "音声",
+      "transcript": "文字起こし",
+      "captions": "字幕",
+      "pdf": "PDF文書",
+      "archive": "アーカイブ",
+      "hls": "HLSパッケージ",
+      "dash": "DASHパッケージ",
+      "metadata": "メタデータ",
+      "unknown": "ファイル",
+      "summary": "要約"
+    },
+    "image": {
+      "zoom": "ズーム",
+      "fit": "全体表示",
+      "transparencyGrid": "透明グリッド",
+      "dimensions": "寸法",
+      "originalAlt": "オリジナル画像{{fileName}}",
+      "resultAlt": "結果画像{{fileName}}"
+    },
+    "gif": {
+      "alt": "アニメーションGIF {{fileName}}"
+    },
+    "audio": {
+      "waveform": "音声波形"
+    },
+    "unknown": {
+      "body": "この結果にはまだブラウザ内プレビューがありません。ダウンロードして開いてください。",
+      "type": "種類",
+      "size": "サイズ"
+    },
+    "transcript": {
+      "search": "文字起こしを検索",
+      "searchPlaceholder": "検索…",
+      "matchCount": "{{current}} / {{total}}",
+      "noMatches": "一致なし",
+      "prevMatch": "前の一致",
+      "nextMatch": "次の一致",
+      "copyAll": "すべてコピー",
+      "copied": "コピーしました",
+      "format": "形式",
+      "rawPreview": "生テキスト",
+      "seekTo": "{{time}}へ移動",
+      "showMore": "もっと見る（残り{{count}}件）",
+      "details": "言語、音声の説明、AIレビュー"
+    },
+    "captions": {
+      "cues": "キュー",
+      "sourceCues": "元のキュー",
+      "skipped": "スキップしたブロック",
+      "countMismatch": "元のキューは{{source}}件ですが、翻訳は{{translated}}件です。余分な行は空のセルと並べて表示されます。",
+      "source": "原文",
+      "translated": "翻訳",
+      "timingDiffers": "タイミングが異なります",
+      "empty": "（なし）"
+    },
+    "compareModes": {
+      "label": "比較表示",
+      "slider": "比較位置",
+      "sliderValue": "{{before}} {{beforePct}}%、{{after}} {{afterPct}}%",
+      "wipe": "ワイプ",
+      "side_by_side": "左右に並べる",
+      "toggle": "切り替え",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "再生コントロール",
+      "play": "再生",
+      "pause": "一時停止",
+      "seek": "シーク",
+      "rate": "速度",
+      "mute": "ミュート",
+      "unmute": "結果の音声をミュート解除",
+      "prevFrame": "前のフレーム",
+      "nextFrame": "次のフレーム",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps（目標）",
+      "largeNotice": "プレビューはコンテナ幅に制限されます。非常に大きな動画は再生が遅くなることがあります。",
+      "videoOriginal": "オリジナル動画",
+      "videoResult": "結果の動画",
+      "audibleLabel": "音声を出す側",
+      "audioOriginal": "オリジナル音声",
+      "audioResult": "結果の音声",
+      "otherPeaks": "もう一方の波形",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_other": "{{count}}個のファイル",
+      "truncated": "アーカイブが途中で切れています。読み取れた分を表示しています。",
+      "search": "ファイルを検索",
+      "view": "表示",
+      "gallery": "ギャラリー",
+      "list": "リスト",
+      "noMatches": "一致するファイルがありません。",
+      "play": "{{name}}を再生",
+      "open": "開く",
+      "downloadEntry": "{{name}}をダウンロード",
+      "lightbox": "画像プレビュー",
+      "previous": "前へ",
+      "next": "次へ",
+      "tooLarge": "大きすぎてブラウザでプレビューできません。",
+      "unreadable": "このアーカイブはブラウザで読み取れませんでした。",
+      "noSingleEntry": "個別のファイルはサーバーからダウンロードできないため、アーカイブ全体をダウンロードしてください。"
+    },
+    "pdf": {
+      "title": "PDFプレビュー",
+      "openInNewTab": "新しいタブで開く",
+      "fallback": "お使いのブラウザはこのPDFをインライン表示できません。"
+    },
+    "stream": {
+      "rung": "画質",
+      "auto": "自動",
+      "rungLabel": "{{height}}p、{{bitrate}} kbps",
+      "unsupported": "このストリームはブラウザで再生できないため、レポートを表示しています。",
+      "loading": "ストリームを準備中",
+      "av1": "このブラウザはAV1をデコードできません。"
+    },
+    "restore": {
+      "picker": "モデル",
+      "original": "オリジナル",
+      "modelOption": "{{name}}、{{duration}}秒、{{size}}",
+      "failedTitle": "失敗したモデル",
+      "failedItem": "{{name}}：{{error}}",
+      "loading": "復元したクリップを読み込み中",
+      "download": "すべての結果をダウンロード"
+    },
+    "summary": {
+      "loading": "要約を読み込み中",
+      "loadFailed": "要約を読み込めませんでした。",
+      "untitled": "要約",
+      "language": "言語：{{language}}",
+      "chapters": "チャプター",
+      "seekTo": "{{time}}へジャンプ",
+      "topics": "トピック",
+      "onScreenText": "画面上のテキスト",
+      "visual": "映像",
+      "speech": "音声",
+      "notes": "メモ",
+      "copyMarkdown": "Markdownとしてコピー",
+      "copied": "コピーしました",
+      "downloadMd": ".mdをダウンロード",
+      "downloadJson": ".jsonをダウンロード",
+      "showAll": "すべて表示（{{count}}）",
+      "showLess": "表示を減らす"
+    },
+    "mp3": {
+      "button": "MP3でダウンロード",
+      "converting": "MP3に変換中…",
+      "hint": "より小さいファイルを、当社のサーバーで変換します。無料で、AIジョブとしてカウントされることはありません。",
+      "started": "MP3のダウンロードを開始しました。ブラウザーのダウンロードを確認してください。",
+      "startedWithSize": "MP3のダウンロードを開始しました（{{size}}）。ブラウザーのダウンロードを確認してください。",
+      "failed": "MP3を準備できませんでした。しばらくしてからもう一度お試しください。"
+    }
+  },
+  "billing": {
+    "intervalLabel": "請求周期",
+    "monthly": "月払い",
+    "yearly": "年払い",
+    "perMonth": "/月",
+    "perYear": "/年",
+    "currency": {
+      "label": "通貨",
+      "panelLabel": "通貨",
+      "lockedNote": "ご利用中のサブスクリプションは{{currency}}で請求されています。有効な間は変更できません。"
+    },
+    "yearlyBonus": "{{months}}か月分無料",
+    "cancelAnytime": "いつでもキャンセル可能",
+    "refund": "初回のお支払いは14日間返金可能",
+    "taxNote": "税金の上乗せはありません",
+    "upgrade": "Premiumにアップグレード",
+    "manage": "サブスクリプションを管理",
+    "operator": "無制限（オペレーター）",
+    "unavailable": "Premiumはまだご利用いただけません",
+    "busy": "チェックアウトを開いています…",
+    "cancelledNote": "チェックアウトがキャンセルされました。請求は発生していません。",
+    "dismiss": "閉じる",
+    "errors": {
+      "unavailable": "Premiumはまだご利用いただけません。",
+      "operator": "オペレーターアカウントはすでに無制限でご利用いただけます。",
+      "generic": "チェックアウトを開始できませんでした。しばらくしてからもう一度お試しください。",
+      "alreadyOnPlan": "すでにこのプラン、またはそれより上位のプランをご利用中です。",
+      "currencyLocked": "請求アカウントが{{currency}}に設定されているため、価格を{{currency}}で表示しています。続行するにはもう一度プランを選択してください。"
+    },
+    "panel": {
+      "title": "お支払い",
+      "loading": "お支払い情報を読み込み中…",
+      "loadFailed": "お支払い情報を読み込めませんでした。再読み込みしてお試しください。",
+      "operator": "オペレーターアクセスです。サブスクリプションは不要です。",
+      "unavailable": "サブスクリプションはまだご利用いただけません。",
+      "grantUntil": "運営チームにより{{date}}までPremiumが付与されています。",
+      "grantOpen": "運営チームにより期限なしでPremiumが付与されています。",
+      "freeBody": "現在は無料プランです。Premiumなら上限が増え、広告が表示されなくなります。",
+      "upgrade": "Premiumにアップグレード",
+      "pastDueTitle": "前回のお支払いが完了しませんでした",
+      "pastDueBody": "再試行の間、Premiumは最長7日間継続されます。引き続きご利用いただくには、お支払い方法を更新してください。",
+      "intervalLabel": "請求",
+      "endsLabel": "Premiumの終了日",
+      "renewsLabel": "更新日",
+      "endsOn": "サブスクリプションは{{date}}に終了します。",
+      "resumeHint": "再開するには「サブスクリプションを管理」を開いてください。",
+      "renewsOn": "{{date}}に更新されます。",
+      "updatePayment": "お支払い方法を更新",
+      "cancelledTitle": "Premiumプランはキャンセルされています",
+      "cancelledBody": "{{date}}まではPremiumをご利用いただけます。その後、アカウントは無料プランに切り替わり、それ以上の請求はありません。",
+      "cancelledBodyNoDate": "現在の請求期間が終わるまではPremiumをご利用いただけます。その後、アカウントは無料プランに切り替わり、それ以上の請求はありません。",
+      "planLabel": "プラン",
+      "pro": {
+        "grantUntil": "運営チームにより{{date}}までProが付与されています。",
+        "grantOpen": "運営チームにより期限なしでProが付与されています。",
+        "pastDueBody": "再試行の間、Proは最長7日間継続されます。引き続きご利用いただくには、お支払い方法を更新してください。",
+        "endsLabel": "Proの終了日",
+        "cancelledTitle": "Proプランはキャンセルされています",
+        "cancelledBody": "{{date}}まではProをご利用いただけます。その後、アカウントは無料プランに切り替わり、それ以上の請求はありません。",
+        "cancelledBodyNoDate": "現在の請求期間が終わるまではProをご利用いただけます。その後、アカウントは無料プランに切り替わり、それ以上の請求はありません。"
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "お支払いを確認中…",
+        "body": "通常は数秒で完了します。"
+      },
+      "confirmed": {
+        "title": "Premiumへようこそ",
+        "body": "お支払いが完了し、プランはPremiumになりました。"
+      },
+      "shortly": {
+        "title": "お支払いを受け付けました",
+        "body": "まもなくプランが更新されます。1分経っても無料プランのままの場合は、下から更新してください。"
+      },
+      "foreign": {
+        "title": "このお支払いをアカウントと照合できませんでした",
+        "body": "お支払いを済ませたばかりの場合は、チェックアウト時に使用したアカウントでサインインしてください。"
+      },
+      "failed": {
+        "title": "お支払いをまだ確認できていません",
+        "body": "お支払いが確認されると、プランは自動的に更新されます。しばらくしてからもう一度お試しください。"
+      },
+      "refresh": "プランを更新",
+      "confirmedPro": {
+        "title": "Proへようこそ",
+        "body": "お支払いが完了し、プランはProになりました。最高水準の1日の上限と、Motionエディターの展開に伴う最大のMotion利用枠をご利用いただけます。"
+      }
+    },
+    "offer": {
+      "title": "気が変わりましたか？月額{{price}}でPremiumを継続",
+      "resumeTitle": "気が変わりましたか？現在の価格でPremiumを継続",
+      "fineprint": "本日の請求はありません。{{date}}から、キャンセルするまで毎月{{current}}ではなく{{price}}をお支払いいただきます。",
+      "cta": "月額{{price}}でPremiumを継続",
+      "resumeCta": "{{price}}{{unit}}でPremiumを継続",
+      "keepAtCurrent": "月額{{price}}でPremiumを継続",
+      "keepAtCurrentNoPrice": "通常価格でPremiumを継続",
+      "working": "処理中…",
+      "renewed": "Premiumは{{date}}に月額{{price}}で更新されます",
+      "renewedNoPrice": "Premiumは{{date}}に更新されます",
+      "renewedBare": "Premiumは引き続き更新されます",
+      "changed": "オファーが変更されました。現在のオファーはこちらです。",
+      "failed": "サブスクリプションを更新できませんでした。もう一度お試しください。",
+      "resumePrice": "本日{{price}}{{unit}}をお支払いいただき、以降も同じ金額です。",
+      "resumeCtaNoPrice": "Premiumを継続",
+      "fineprintNoCurrent": "本日の請求はありません。{{date}}から、キャンセルするまで毎月{{price}}をお支払いいただきます。",
+      "resumeFineprint": "本日の請求はありません。次回のお支払いは{{date}}に同じ価格で行われ、キャンセルするまで通常どおり更新されます。",
+      "unitMonth": "/月",
+      "unitYear": "/年"
+    },
+    "upgradePro": "Proにアップグレード",
+    "unavailablePro": "Proはまだご利用いただけません",
+    "switchToPremium": "Premiumに切り替え",
+    "planChange": {
+      "cancel": "今はしない",
+      "upgrade": {
+        "title": "今すぐProにアップグレードしますか？",
+        "body": "この請求期間の残りに対する日割りの差額を本日お支払いいただきます。更新日は{{date}}のまま変わらず、以降Proは{{price}}{{unit}}です。",
+        "bodyNoPrice": "この請求期間の残りに対する日割りの差額を本日お支払いいただきます。更新日は{{date}}のまま変わりません。",
+        "bodyNoDate": "この請求期間の残りに対する日割りの差額を本日お支払いいただきます。更新日は変わりません。",
+        "fineprint": "お支払いが完了するとすぐにProが始まります。14日間の返金は初回のお支払いにのみ適用されます。",
+        "confirm": "Proにアップグレード"
+      },
+      "downgrade": {
+        "title": "この期間の終了時にPremiumへ切り替えますか？",
+        "body": "{{date}}まではProをご利用いただけます。その後のプランは{{price}}{{unit}}のPremiumです。",
+        "bodyNoPrice": "{{date}}まではProをご利用いただけます。その後のプランはPremiumです。",
+        "bodyNoDate": "現在の請求期間が終わるまではProをご利用いただけます。その後のプランはPremiumです。",
+        "fineprint": "この期間の残りについて返金はありません。切り替え前であればいつでもProを継続できます。",
+        "confirm": "Premiumに切り替え"
+      },
+      "upgraded": "Proになりました。",
+      "scheduled": "プランは{{date}}にPremiumへ切り替わります。",
+      "scheduledNoDate": "プランはこの請求期間の終了時にPremiumへ切り替わります。",
+      "kept": "Proを継続します。",
+      "pendingBody": "{{date}}からPremiumになります。それまではProをご利用いただけます。",
+      "keepPro": "Proを継続",
+      "dropTitle": "Premiumに下げて続ける",
+      "dropBody": "すべてを失う代わりに、通常価格のPremiumにとどまることができます。「サブスクリプションを管理」でサブスクリプションを再開してから、ここで「Premiumに切り替え」を選んでください。",
+      "dropCta": "「サブスクリプションを管理」で再開",
+      "errors": {
+        "notSubscription": "プランの変更は有料サブスクリプションでのみ可能です。運営チームが付与したプランはここでは変更できません。",
+        "samePlan": "すでにこのプランをご利用中です。",
+        "notAvailable": "この変更は現在ご利用いただけません。サブスクリプションがキャンセルされている場合は、まず「サブスクリプションを管理」で再開してください。",
+        "generic": "プランを変更できませんでした。しばらくしてからもう一度お試しください。"
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "本日の上限{{limit}}回に達しました",
+      "body": "Premiumなら1日の利用枠が増え、広告が表示されなくなります。"
+    },
+    "outputHeight": {
+      "title": "この出力サイズはプランの上限を超えています",
+      "body": "{{requested}}pが指定されましたが、お使いのプランでは最大{{limit}}pまでです。"
+    },
+    "projects": {
+      "title": "保存プロジェクト数の上限に達しました",
+      "body": "お使いのプランではDarkroomプロジェクトを{{limit}}件まで保存できます。"
+    },
+    "topTier": "すでに最上位のプランです。続行するには設定値を下げてください。",
+    "close": "後で",
+    "signup": "無料アカウントを作成",
+    "upgrade": "Premiumにアップグレード",
+    "fileSize": {
+      "title": "このファイルはプランの上限より大きいです",
+      "body": "お使いのプランで受け付けられるファイルは最大{{limit}}までです。"
+    },
+    "premiumChange": {
+      "fileSize": "Premiumなら最大{{value}}のファイルを受け付けます。",
+      "ops": "Premiumなら1日{{value}}回の変換ができます。",
+      "opsUnlimited": "Premiumには1日の変換回数の上限がありません。",
+      "aiOps": "Premiumなら1日{{value}}回のAIジョブができます。",
+      "aiOpsUnlimited": "PremiumにはAIジョブの1日の上限がありません。",
+      "exports": "Premiumなら1日{{value}}回のエクスポートができます。",
+      "exportsUnlimited": "Premiumには1日のエクスポート回数の上限がありません。",
+      "height": "Premiumなら最大{{value}}pで出力できます。",
+      "projects": "Premiumならプロジェクトを{{value}}件まで保存できます。",
+      "projectsUnlimited": "Premiumには保存プロジェクト数の上限がありません。"
+    },
+    "noHigherPlan": "この上限をさらに引き上げるプランはありません。続行するには設定値を下げてください。",
+    "proNote": "アップグレードすると日割りの差額が本日請求されます。更新日は変わりません。",
+    "proChange": {
+      "ops": "Proなら1日{{value}}回の変換ができます。",
+      "opsUnlimited": "Proには1日の変換回数の上限がありません。",
+      "aiOps": "Proなら1日{{value}}回のAIジョブができます。",
+      "aiOpsUnlimited": "ProにはAIジョブの1日の上限がありません。",
+      "exports": "Proなら1日{{value}}回のエクスポートができます。",
+      "exportsUnlimited": "Proには1日のエクスポート回数の上限がありません。"
+    }
+  },
+  "recentStrip": {
+    "title": "最近の項目",
+    "clear": "最近の項目をクリア",
+    "open": "{{name}}を開く",
+    "converter": "コンバーター",
+    "expiresInHours": "あと{{hours}}時間で期限切れ",
+    "expiresInMinutes": "あと{{minutes}}分で期限切れ",
+    "expired": "このファイルは期限切れです",
+    "openFailed": "このファイルを開けませんでした。もう一度お試しください。",
+    "signupCta": "ゲストのファイルは24時間後に削除されます。登録すると6か月間保持できます。",
+    "signupAction": "無料で登録"
+  },
+  "quotaChip": {
+    "title": "Premiumプランを見る",
+    "ops": {
+      "remaining": "本日の変換は残り{{remaining}} / {{limit}}回",
+      "empty": "本日の変換{{limit}}回をすべて使用しました"
+    },
+    "ai_ops": {
+      "remaining": "本日のAIジョブは残り{{remaining}} / {{limit}}回",
+      "empty": "本日のAIジョブ{{limit}}回をすべて使用しました"
+    },
+    "export": {
+      "remaining": "本日のエクスポートは残り{{remaining}} / {{limit}}回",
+      "empty": "本日のエクスポート{{limit}}回をすべて使用しました"
+    },
+    "titlePro": "Proプランを見る"
+  },
+  "queueLine": {
+    "text": "共有キューで{{time}}待機しました。Premiumのジョブが優先されます。",
+    "cta": "Premiumを見る"
+  },
+  "yearlyNudge": {
+    "title": "年払いに切り替えて{{months}}か月分無料",
+    "body": "数か月連続でお支払いいただいています。年払いプランは月払い12回分より安くなります。請求ポータルからいつでも切り替えられます。",
+    "cta": "年払いに切り替え",
+    "dismiss": "結構です"
+  },
+  "accountTour": {
+    "title": "Media Manipulatorへようこそ",
+    "step": "ステップ{{current}} / {{total}}",
+    "next": "次へ",
+    "back": "戻る",
+    "skip": "スキップ",
+    "notNow": "今はしない",
+    "setRetention": "保存期間を設定",
+    "keepResults": {
+      "title": "結果を保持",
+      "body": "サインイン中に変換したものはすべて履歴に保存され、後で再度開いたりダウンロードしたりできます。選択した期間だけ保持されます。"
+    },
+    "darkroomProjects": {
+      "title": "Darkroomプロジェクト",
+      "body": "Darkroomプロジェクトはアカウントに保存され、「プロジェクト」に一覧表示されるので、どのデバイスからでも編集を再開できます。"
+    },
+    "retention": {
+      "title": "保存期間を選ぶ",
+      "body": "おすすめは6か月です。24時間から2年までの間で選べ、「プライバシーとデータ」でいつでも変更できます。"
+    },
+    "replay": "ツアーをもう一度見る",
+    "replayHint": "アカウントの簡単な紹介をもう一度表示します。"
+  },
+  "status": {
+    "title": "サービス稼働状況",
+    "intro": "Media Manipulatorサービスのライブ稼働状況です。10秒ごとに更新されます。",
+    "operational": "正常稼働中",
+    "degraded": "一部障害",
+    "down": "停止中",
+    "unknown": "ステータスを確認できません",
+    "checking": "確認中...",
+    "operationalDetail": "すべてのシステムが正常に動作しています。",
+    "degradedDetail": "サービスの一部に問題が発生しています。変換が遅くなったり失敗したりすることがあります。",
+    "downDetail": "サービスが応答していません。数分後にもう一度お試しください。",
+    "unknownDetail": "このページは、お使いのブラウザーからステータスサービスにいま接続できませんでした。ツールが停止しているとは限りません。数秒後に再試行します。",
+    "queueTitle": "AI処理キュー",
+    "running": "実行中",
+    "waiting": "待機中",
+    "gpuOff": "このサーバーではAI処理が有効になっていません。",
+    "checksTitle": "コンポーネント",
+    "database": "データベース",
+    "storage": "ストレージ",
+    "cache": "キャッシュ",
+    "ok": "OK",
+    "fail": "問題あり",
+    "basicOnly": "現在は全体の稼働状況のみ確認できます。",
+    "lastChecked": "最終確認：{{time}}",
+    "metaTitle": "稼働状況 | Media Manipulator"
+  },
+  "share": {
+    "button": "共有",
+    "revokeLinks": "リンクを無効化",
+    "copied": "リンクをコピーしました。{{when}}まで有効です。",
+    "copyManually": "自動でコピーできませんでした。このリンクをコピーしてください：{{url}}",
+    "notAllowed": "この種類の結果は共有できません。",
+    "expired": "このファイルは期限切れです。",
+    "limitTitle": "共有上限に達しました",
+    "limitBody": "この結果にはすでに上限の5件の有効な共有リンクがあります。新しく作成するには、既存のリンクを無効化してください。",
+    "revokeConfirm": "リンクを無効化",
+    "cancel": "キャンセル",
+    "signIn": "この結果を共有するには、もう一度サインインしてください。",
+    "failed": "共有リンクを作成できませんでした。もう一度お試しください。",
+    "revoked": "この結果の共有リンクをすべて無効化しました。",
+    "revokeNone": "無効化できる有効なリンクはありませんでした。",
+    "revokeFailed": "リンクを無効化できませんでした。もう一度お試しください。",
+    "revokeTitle": "すべての共有リンクを無効化しますか？",
+    "revokeBody": "この結果へのリンクを持っている人は、すぐにアクセスできなくなります。その後、新しいリンクを作成できます。"
+  },
+  "sharedResult": {
+    "metaTitle": "共有された結果 | Media Manipulator",
+    "metaDescription": "Media Manipulatorで作成され、リンクで共有されたファイルです。",
+    "ogTitle": "Media Manipulatorで作成した{{fileName}}",
+    "goneTitle": "このリンクは期限切れか、削除されました",
+    "goneBody": "共有リンクは、期限が切れたとき、所有者が無効化したとき、またはファイルが削除されたときに使えなくなります。",
+    "goneCta": "Media Manipulatorへ",
+    "madeWith": "Media Manipulatorで作成",
+    "tryIt": "自分のファイルで試す",
+    "expires": "このリンクは{{when}}まで有効です。"
+  },
+  "planSummary": {
+    "title": "プラン概要",
+    "current": "現在のプラン",
+    "free": "無料",
+    "ops": "1日{{value}}回の操作",
+    "opsUnlimited": "1日の操作回数無制限",
+    "aiOps": "1日{{value}}回のAIジョブ",
+    "aiOpsUnlimited": "1日のAIジョブ数無制限",
+    "fileSize": "ファイルは最大{{value}}まで",
+    "compare": "すべてのプランを比較"
+  }
+}

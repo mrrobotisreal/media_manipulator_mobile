@@ -1,0 +1,773 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "Công cụ và hướng dẫn liên quan"
+  },
+  "filePreview": {
+    "showResult": "Hiện kết quả"
+  },
+  "authModal": {
+    "defaultTitle": "Tạo tài khoản miễn phí",
+    "defaultDescription": "Giữ lịch sử của bạn, lưu dự án Darkroom và nhận hạn mức hằng ngày lớn hơn.",
+    "signInTitle": "Chào mừng trở lại",
+    "signInDescription": "Lịch sử, dự án Studio đã lưu và hạn mức hằng ngày của bạn vẫn ở nguyên chỗ cũ.",
+    "tabs": {
+      "signup": "Tạo tài khoản",
+      "signin": "Đăng nhập"
+    },
+    "fields": {
+      "fullName": "Họ và tên",
+      "fullNamePlaceholder": "Nguyễn Văn A",
+      "email": "Email",
+      "emailPlaceholder": "ten@example.com",
+      "password": "Mật khẩu",
+      "passwordPlaceholderSignup": "Ít nhất 6 ký tự",
+      "passwordPlaceholderSignin": "Mật khẩu của bạn"
+    },
+    "actions": {
+      "createAccount": "Tạo tài khoản miễn phí",
+      "creatingAccount": "Đang tạo tài khoản...",
+      "signIn": "Đăng nhập",
+      "signingIn": "Đang đăng nhập..."
+    },
+    "googleSignIn": "Tiếp tục với Google",
+    "orDivider": "HOẶC",
+    "terms": "Khi đăng ký, bạn đồng ý với <tos>Điều khoản dịch vụ</tos> và <privacy>Chính sách quyền riêng tư</privacy> của chúng tôi",
+    "toast": {
+      "welcome": "Chào mừng bạn!",
+      "welcomeBack": "Chào mừng trở lại!",
+      "welcomeMM": "Chào mừng bạn đến với Media Manipulator!",
+      "accountCreated": "Đã tạo tài khoản!",
+      "signedIn": "Đăng nhập thành công.",
+      "googleSuccess": "Đăng nhập bằng Google thành công.",
+      "authFailed": "Xác thực thất bại",
+      "nameRequired": "Cần nhập tên",
+      "nameRequiredDesc": "Vui lòng nhập tên của bạn.",
+      "appleSuccess": "Đăng nhập bằng Apple thành công."
+    },
+    "contextual": {
+      "signupTitle": "Bạn đã dùng hết {{limit}} lượt chuyển đổi miễn phí hôm nay",
+      "signupBody": "Tài khoản miễn phí nâng hạn mức hằng ngày, giữ lịch sử chuyển đổi và lưu dự án Darkroom của bạn.",
+      "premiumTitle": "Bạn đã chạm giới hạn {{limit}} của hôm nay",
+      "premiumBody": "Premium nâng hạn mức hằng ngày, mở khóa xuất 4K và xử lý ưu tiên, đồng thời loại bỏ quảng cáo.",
+      "resets": "Hạn mức hiện tại của bạn được đặt lại {{when}}."
+    },
+    "plans": {
+      "freeTitle": "Tài khoản miễn phí mang lại gì cho bạn",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/tháng",
+      "premiumUpgrade": "Nâng cấp lên Premium",
+      "comparePlans": "So sánh tất cả các gói",
+      "opsPerDay": "{{count}} thao tác mỗi ngày",
+      "opsPerDayUnlimited": "Không giới hạn thao tác mỗi ngày",
+      "maxFileSize": "Tệp tối đa {{size}}",
+      "maxVideoLength": "Video dài tối đa {{duration}}",
+      "maxOutput": "Đầu ra tối đa {{height}}p",
+      "studioProjects": "{{count}} dự án Studio được lưu",
+      "studioProjectsUnlimited": "Không giới hạn dự án Studio được lưu",
+      "retention": "Bạn chọn thời gian lưu tệp: từ 24 giờ đến 2 năm",
+      "priorityGpu": "Xử lý ưu tiên",
+      "noAds": "Không quảng cáo",
+      "retentionGuest": "Tệp được lưu trong 24 giờ"
+    },
+    "loadingPlans": "Đang tải các gói…",
+    "appleSignIn": "Tiếp tục với Apple",
+    "forgotPassword": "Quên mật khẩu?",
+    "reset": {
+      "title": "Đặt lại mật khẩu",
+      "body": "Nhập email tài khoản của bạn và chúng tôi sẽ gửi cho bạn một liên kết.",
+      "submit": "Gửi liên kết đặt lại",
+      "sending": "Đang gửi...",
+      "sent": "Nếu có tài khoản dùng email đó, chúng tôi đã gửi một liên kết để đặt lại mật khẩu của bạn.",
+      "back": "Quay lại đăng nhập"
+    },
+    "link": {
+      "notice": "Email này đã được đăng ký bằng một phương thức đăng nhập khác. Hãy đăng nhập bằng phương thức đó để liên kết chúng.",
+      "linked": "Đã liên kết các tài khoản. Từ giờ bạn có thể đăng nhập bằng một trong hai phương thức."
+    }
+  },
+  "imageCropModal": {
+    "title": "Cắt hình ảnh",
+    "subtitle": "Kéo để điều chỉnh vùng cắt, rồi nhấp Áp dụng.",
+    "instructions": "Kéo vùng cắt để định vị, hoặc kéo góc dưới bên phải để đổi kích thước. Phần tối hơn sẽ bị loại bỏ.",
+    "previewAlt": "Xem trước vùng cắt",
+    "cropArea": "Vùng cắt: {{width}} × {{height}} pixel",
+    "apply": "Áp dụng cắt",
+    "cancel": "Hủy",
+    "reset": "Đặt lại"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "Cắt đoạn video",
+    "titleAudio": "Cắt đoạn âm thanh",
+    "instructions": "Kéo các điểm kéo trên dòng thời gian để chọn phần bạn muốn giữ. Các vùng xám sẽ bị loại bỏ.",
+    "audioFile": "Tệp âm thanh",
+    "startLabel": "Thời điểm bắt đầu",
+    "endLabel": "Thời điểm kết thúc",
+    "durationLabel": "Thời lượng",
+    "finalDuration": "Thời lượng cuối: {{duration}}",
+    "apply": "Áp dụng cắt đoạn",
+    "cancel": "Hủy",
+    "reset": "Đặt lại",
+    "playPreview": "Phát bản xem trước",
+    "pausePreview": "Tạm dừng"
+  },
+  "removeObjectOverlay": {
+    "title": "Xóa đối tượng",
+    "instructions": "Vẽ hình chữ nhật lên các đối tượng bạn muốn xóa. Kỹ thuật inpainting LaMa sẽ tái tạo phần nền.",
+    "rectangleCount_other": "Đã chọn {{count}} vùng",
+    "addRegion": "Thêm vùng",
+    "clearRegions": "Xóa tất cả",
+    "apply": "Xóa đối tượng",
+    "cancel": "Hủy",
+    "undo": "Hoàn tác",
+    "previewAlt": "Đánh dấu vùng cần xóa",
+    "dragHint": "Kéo để định cỡ, rồi thả ra. Dùng các điểm kéo để tinh chỉnh.",
+    "removeRectangle": "Xóa hình chữ nhật {{number}}"
+  },
+  "faceSelectionOverlay": {
+    "title": "Chọn khuôn mặt cần làm mờ",
+    "instructions": "Chạm vào từng khuôn mặt bạn muốn áp dụng hiệu ứng bảo vệ riêng tư. Chạm lần nữa để bỏ chọn.",
+    "selectAll": "Chọn tất cả",
+    "clearSelection": "Bỏ chọn",
+    "apply": "Áp dụng",
+    "cancel": "Hủy",
+    "selectedCount_other": "Đã chọn {{count}} khuôn mặt",
+    "noFacesDetected": "Không phát hiện khuôn mặt nào trong hình ảnh này.",
+    "previewAlt": "Xem trước các khuôn mặt đã phát hiện",
+    "faceAria": "Khuôn mặt {{label}}",
+    "faceSelectedAria": "Khuôn mặt {{label}} (đã chọn)"
+  },
+  "mobileAnchorAd": {
+    "label": "Quảng cáo"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV — biến ý tưởng thành hiện thực",
+    "creatvCreativeAlt": "Ghé thăm CreaTV! Nơi ý tưởng được biến thành hiện thực."
+  },
+  "alternativeAdBanner": {
+    "placeholder": "Chỗ dành cho quảng cáo {{network}} - {{position}}",
+    "placeholderFormat": "Định dạng: {{format}} | Vị trí: {{slot}}",
+    "placeholderProduction": "Quảng cáo {{network}} sẽ xuất hiện ở đây trong môi trường chính thức"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "Bước {{number}}",
+    "defaultTitle": "Cách hoạt động"
+  },
+  "privacyPolicyComponent": {
+    "title": "Tóm tắt về quyền riêng tư",
+    "summary": "Tệp được xử lý trên máy chủ của chúng tôi và không bao giờ gửi đến nhà cung cấp AI bên thứ ba. Không có tài khoản, tệp được lưu 24 giờ; với tài khoản miễn phí bạn chọn từ 24 giờ đến 2 năm.",
+    "learnMore": "Đọc toàn bộ Chính sách quyền riêng tư"
+  },
+  "quotaMeter": {
+    "label": "Hôm nay",
+    "aiLabel": "AI",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "Còn {{remaining}} trên {{limit}} hôm nay",
+    "atLimit": "Đã đạt giới hạn trong ngày",
+    "unlimited": "Tài khoản này không có giới hạn trong ngày",
+    "resets": "Đặt lại {{when}}",
+    "moreCta": "Nhận thêm"
+  },
+  "accountMenu": {
+    "signIn": "Đăng nhập",
+    "account": "Tài khoản",
+    "signOut": "Đăng xuất",
+    "signOutFailed": "Không thể đăng xuất",
+    "tier": {
+      "anonymous": "Khách",
+      "free": "Miễn phí",
+      "premium": "Premium",
+      "operator": "Vận hành viên",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · kết thúc {{date}}",
+    "tierEndsPro": "Pro · kết thúc {{date}}"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "Tệp tối đa {{size}}",
+    "fileLimitMoreFree": "Tệp lớn hơn cần tài khoản miễn phí",
+    "fileLimitMorePremium": "Tệp lớn hơn cần Premium",
+    "nudgeTitle": "Xong rồi đó",
+    "nudgeBodyFree": "Tài khoản miễn phí cho bạn hạn mức hằng ngày lớn hơn và giữ lịch sử của bạn.",
+    "nudgeBodyPremium": "Premium thêm xuất 4K, xử lý ưu tiên và không quảng cáo.",
+    "nudgeAction": "Xem bạn nhận được gì"
+  },
+  "consentBanner": {
+    "label": "Lựa chọn về cookie và phân tích",
+    "body": "Chúng tôi dùng phân tích của bên thứ nhất, tôn trọng quyền riêng tư, để biết công cụ nào được dùng và lỗi ở đâu. Tệp của bạn không bao giờ nằm trong đó, và bạn có thể thay đổi lựa chọn này bất cứ lúc nào.",
+    "bodyGdpr": "Trước khi đo lường bất cứ điều gì, chúng tôi cần sự đồng ý của bạn. Chúng tôi dùng phân tích của bên thứ nhất để biết công cụ nào được dùng và lỗi ở đâu — không thu thập gì cho đến khi bạn chọn, và tệp của bạn không bao giờ nằm trong đó.",
+    "privacyLink": "Đọc chính sách quyền riêng tư",
+    "more": "Thêm",
+    "customize": "Tùy chỉnh",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối"
+  },
+  "consentPrefs": {
+    "title": "Tùy chọn quyền riêng tư",
+    "subtitle": "Chọn những gì Media Manipulator được phép đo lường. Thay đổi có hiệu lực ngay sau khi bạn lưu.",
+    "necessary": {
+      "title": "Thiết yếu",
+      "body": "Lựa chọn giao diện của bạn, cùng một ID thiết bị và lượt truy cập ẩn danh giúp chúng tôi áp dụng giới hạn gói miễn phí và chặn lạm dụng. Không cookie, không dùng cho quảng cáo, và không thể tắt mà không làm hỏng các công cụ.",
+      "always": "Luôn bật"
+    },
+    "analytics": {
+      "title": "Phân tích",
+      "body": "Bạn dùng công cụ nào, chuyển đổi có thành công không, trang tải nhanh ra sao và những lỗi chúng tôi cần sửa. Của bên thứ nhất, lưu 13 tháng, không bao giờ bán. Không có tên tệp và không có nội dung tệp."
+    },
+    "advertising": {
+      "title": "Quảng cáo",
+      "body": "Cho phép Google cá nhân hóa quảng cáo hiển thị trên một số trang công cụ đối với khách miễn phí và khách chưa đăng nhập. Việc quảng cáo có xuất hiện hay không không phụ thuộc vào công tắc này; tắt nghĩa là quảng cáo không được cá nhân hóa. Premium và Pro không bao giờ thấy quảng cáo.",
+      "bodyGdpr": "Ở khu vực của bạn, lựa chọn về quảng cáo được thực hiện trong thông báo đồng ý của Google chứ không phải ở đây; bảng này chỉ áp dụng cho phân tích của chính chúng tôi. Cho đến khi bạn lựa chọn ở đó, mọi quảng cáo trên trang công cụ đều không được cá nhân hóa. Premium và Pro không bao giờ thấy quảng cáo.",
+      "bodyGpc": "Dành cho quảng cáo cá nhân hóa. Trình duyệt của bạn đang gửi tín hiệu Global Privacy Control nên mục này luôn tắt — chúng tôi tôn trọng tín hiệu đó và một cú nhấp ở đây không thể ghi đè.",
+      "managedByGoogle": "Do thông báo đồng ý của Google quản lý",
+      "openGoogleMessage": "Thay đổi lựa chọn quảng cáo"
+    },
+    "gpcDetected": "Đã phát hiện Global Privacy Control. Chúng tôi đã tự động từ chối mọi hình thức bán hoặc chia sẻ thông tin cá nhân của bạn, và đã ghi nhận việc này.",
+    "doNotSell": {
+      "title": "Không bán hoặc chia sẻ thông tin cá nhân của tôi",
+      "body": "Chúng tôi không bán thông tin cá nhân của bạn. Lựa chọn này từ chối mọi hình thức chia sẻ cho mục đích quảng cáo, hiện tại và trong tương lai. Phân tích của bên thứ nhất là một lựa chọn riêng ở phía trên.",
+      "action": "Từ chối",
+      "done": "Bạn đã từ chối"
+    },
+    "yourData": {
+      "title": "Dữ liệu của bạn",
+      "body": "Tải xuống bản sao mọi thứ hệ thống phân tích của chúng tôi lưu về trình duyệt này, hoặc xóa vĩnh viễn. Nếu bạn đã đăng nhập, cả hai thao tác áp dụng cho mọi thiết bị liên kết với tài khoản của bạn; nếu không, chúng chỉ áp dụng cho trình duyệt này.",
+      "export": "Xuất dữ liệu của tôi",
+      "exporting": "Đang chuẩn bị bản xuất…",
+      "delete": "Xóa dữ liệu của tôi",
+      "deleting": "Đang xóa…",
+      "deleteConfirmBody": "Thao tác này xóa vĩnh viễn lịch sử phân tích của bạn — sự kiện, lượt truy cập và hồ sơ khách truy cập — và không thể hoàn tác. Bản ghi về các lựa chọn đồng ý của bạn được giữ lại, vì luật yêu cầu chúng tôi phải chứng minh được chúng. Nhập DELETE để xác nhận.",
+      "deleteConfirmPlaceholder": "Nhập DELETE để xác nhận",
+      "deleteConfirmAction": "Xóa vĩnh viễn",
+      "deletedSummary": "Xong. Chúng tôi đã xóa {{events}} sự kiện trong {{sessions}} lượt truy cập, và trình duyệt này đã được cấp một ID ẩn danh hoàn toàn mới.",
+      "deletedNote": "Bản ghi về các lựa chọn đồng ý của bạn được giữ lại làm bằng chứng theo yêu cầu pháp lý. Cài đặt đồng ý của bạn không thay đổi — nếu phân tích đang bật, hoạt động mới sẽ được thu thập dưới ID mới; bạn có thể tắt ở phía trên bất cứ lúc nào.",
+      "error": "Thao tác không thành công. Vui lòng thử lại sau giây lát — không có gì thay đổi nếu bạn chưa thấy xác nhận."
+    },
+    "policyPrefix": "Chi tiết đầy đủ về những gì chúng tôi thu thập, lý do và thời gian lưu giữ:",
+    "policyLink": "chính sách quyền riêng tư",
+    "cancel": "Hủy",
+    "save": "Lưu tùy chọn"
+  },
+  "toasts": {
+    "conversionStarted": "Đã bắt đầu chuyển đổi thành công",
+    "conversionStartedDescription": "Mã tác vụ: {{jobId}} - Tệp của bạn đang được xử lý",
+    "transcriptionStarted": "Đã bắt đầu chép lời",
+    "transcriptionStartedDescription": "Mã tác vụ: {{jobId}} - Đang tạo bản chép lời",
+    "transcodeStarted": "Đã bắt đầu chuyển mã",
+    "translationStarted": "Đã bắt đầu dịch phụ đề",
+    "jobStarted": "Đã bắt đầu tác vụ",
+    "stitchStarted": "Đã bắt đầu tác vụ ghép",
+    "jobIdDescription": "Mã tác vụ: {{jobId}}",
+    "conversionCompleted": "Chuyển đổi hoàn tất thành công!",
+    "readyForDownload": "Tệp của bạn đã sẵn sàng để tải xuống",
+    "uploadingFile": "Đang tải lên {{fileName}}…",
+    "uploadingFileProgress": "Đang tải lên {{fileName}}… {{percent}}%",
+    "processingFile": "Đang xử lý {{fileName}}…",
+    "buildingPreview": "Đang dựng bản xem trước…",
+    "assetAdded": "Đã thêm {{fileName}}",
+    "audioAdded": "Đã thêm âm thanh",
+    "processingAudio": "Đang xử lý âm thanh…",
+    "captionsReady": "Phụ đề đã sẵn sàng",
+    "binUpdateFailed": "Không cập nhật được khay phương tiện",
+    "assetDeleteFailed": "Không xóa được phương tiện đó"
+  },
+  "resultPanel": {
+    "ariaLabel": "Kết quả",
+    "download": "Tải xuống",
+    "downloadFailed": "Tải xuống thất bại. Hãy thử lại.",
+    "downloadStatus": {
+      "preparing": "Đang chuẩn bị tải xuống…",
+      "started": "Đã bắt đầu tải xuống — hãy xem mục tải xuống của trình duyệt.",
+      "startedWithSize": "Đã bắt đầu tải xuống ({{size}}) — hãy xem mục tải xuống của trình duyệt.",
+      "failed": "Không thể bắt đầu tải xuống.",
+      "gone": "Kết quả này không còn để tải xuống.",
+      "retry": "Thử lại",
+      "noRecharge": "Tải xuống lại không bao giờ chạy lại hay tính phí công việc."
+    },
+    "compare": "So sánh",
+    "original": "Bản gốc",
+    "result": "Kết quả",
+    "runAnother": "Chạy lần khác",
+    "size": "Kích thước",
+    "keepsUntil": "Lưu đến",
+    "loading": "Đang tải bản xem trước…",
+    "loadFailed": "Không tải được kết quả.",
+    "retry": "Thử lại",
+    "kind": {
+      "image": "Hình ảnh",
+      "gif": "GIF động",
+      "video": "Video",
+      "audio": "Âm thanh",
+      "transcript": "Bản chép lời",
+      "captions": "Phụ đề",
+      "pdf": "Tài liệu PDF",
+      "archive": "Tệp nén",
+      "hls": "Gói HLS",
+      "dash": "Gói DASH",
+      "metadata": "Siêu dữ liệu",
+      "unknown": "Tệp",
+      "summary": "Tóm tắt"
+    },
+    "image": {
+      "zoom": "Thu phóng",
+      "fit": "Vừa khung",
+      "transparencyGrid": "Lưới trong suốt",
+      "dimensions": "Kích thước",
+      "originalAlt": "Hình ảnh gốc {{fileName}}",
+      "resultAlt": "Hình ảnh kết quả {{fileName}}"
+    },
+    "gif": {
+      "alt": "GIF động {{fileName}}"
+    },
+    "audio": {
+      "waveform": "Dạng sóng âm thanh"
+    },
+    "unknown": {
+      "body": "Kết quả này chưa có bản xem trước trong trình duyệt. Hãy tải xuống để mở.",
+      "type": "Loại",
+      "size": "Kích thước"
+    },
+    "transcript": {
+      "search": "Tìm trong bản chép lời",
+      "searchPlaceholder": "Tìm kiếm…",
+      "matchCount": "{{current}} trên {{total}}",
+      "noMatches": "Không có kết quả",
+      "prevMatch": "Kết quả trước",
+      "nextMatch": "Kết quả sau",
+      "copyAll": "Sao chép tất cả",
+      "copied": "Đã sao chép",
+      "format": "Định dạng",
+      "rawPreview": "Văn bản thô",
+      "seekTo": "Nhảy đến {{time}}",
+      "showMore": "Hiện thêm (còn {{count}})",
+      "details": "Ngôn ngữ, mô tả âm thanh và đánh giá AI"
+    },
+    "captions": {
+      "cues": "Dòng phụ đề",
+      "sourceCues": "Dòng phụ đề nguồn",
+      "skipped": "Khối bị bỏ qua",
+      "countMismatch": "Bản nguồn có {{source}} dòng nhưng bản dịch có {{translated}}. Các hàng dư được hiển thị cạnh ô trống.",
+      "source": "Nguồn",
+      "translated": "Bản dịch",
+      "timingDiffers": "thời gian khác nhau",
+      "empty": "(không có)"
+    },
+    "compareModes": {
+      "label": "Chế độ so sánh",
+      "slider": "Vị trí so sánh",
+      "sliderValue": "{{before}} {{beforePct}}%, {{after}} {{afterPct}}%",
+      "wipe": "Gạt",
+      "side_by_side": "Cạnh nhau",
+      "toggle": "Chuyển đổi",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "Điều khiển phát",
+      "play": "Phát",
+      "pause": "Tạm dừng",
+      "seek": "Tua",
+      "rate": "Tốc độ",
+      "mute": "Tắt tiếng",
+      "unmute": "Bật tiếng kết quả",
+      "prevFrame": "Khung hình trước",
+      "nextFrame": "Khung hình sau",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps (mục tiêu)",
+      "largeNotice": "Bản xem trước bị giới hạn theo chiều rộng khung; video rất lớn có thể phát chậm.",
+      "videoOriginal": "Video gốc",
+      "videoResult": "Video kết quả",
+      "audibleLabel": "Bên đang phát tiếng",
+      "audioOriginal": "Âm thanh gốc",
+      "audioResult": "Âm thanh kết quả",
+      "otherPeaks": "Dạng sóng bên còn lại",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_other": "{{count}} tệp",
+      "truncated": "Tệp nén bị cắt ngắn; đang hiển thị phần đọc được.",
+      "search": "Tìm tệp",
+      "view": "Xem",
+      "gallery": "Thư viện",
+      "list": "Danh sách",
+      "noMatches": "Không có tệp phù hợp.",
+      "play": "Phát {{name}}",
+      "open": "Mở",
+      "downloadEntry": "Tải xuống {{name}}",
+      "lightbox": "Xem trước hình ảnh",
+      "previous": "Trước",
+      "next": "Sau",
+      "tooLarge": "Quá lớn để xem trước trong trình duyệt.",
+      "unreadable": "Không đọc được tệp nén này trong trình duyệt.",
+      "noSingleEntry": "Không thể tải từng tệp riêng lẻ từ máy chủ, hãy tải xuống toàn bộ tệp nén."
+    },
+    "pdf": {
+      "title": "Xem trước PDF",
+      "openInNewTab": "Mở trong thẻ mới",
+      "fallback": "Trình duyệt của bạn không thể hiển thị PDF này ngay trong trang."
+    },
+    "stream": {
+      "rung": "Chất lượng",
+      "auto": "Tự động",
+      "rungLabel": "{{height}}p, {{bitrate}} kbps",
+      "unsupported": "Không thể phát luồng này trong trình duyệt, vì vậy đây là báo cáo của nó.",
+      "loading": "Đang chuẩn bị luồng",
+      "av1": "Trình duyệt này không thể giải mã AV1."
+    },
+    "restore": {
+      "picker": "Mô hình",
+      "original": "Bản gốc",
+      "modelOption": "{{name}}, {{duration}} giây, {{size}}",
+      "failedTitle": "Mô hình bị lỗi",
+      "failedItem": "{{name}}: {{error}}",
+      "loading": "Đang tải các đoạn đã phục hồi",
+      "download": "Tải xuống tất cả kết quả"
+    },
+    "summary": {
+      "loading": "Đang tải bản tóm tắt",
+      "loadFailed": "Không thể tải bản tóm tắt.",
+      "untitled": "Tóm tắt",
+      "language": "Ngôn ngữ: {{language}}",
+      "chapters": "Chương",
+      "seekTo": "Chuyển đến {{time}}",
+      "topics": "Chủ đề",
+      "onScreenText": "Văn bản trên màn hình",
+      "visual": "Hình ảnh",
+      "speech": "Lời nói",
+      "notes": "Ghi chú",
+      "copyMarkdown": "Sao chép dưới dạng Markdown",
+      "copied": "Đã sao chép",
+      "downloadMd": "Tải xuống .md",
+      "downloadJson": "Tải xuống .json",
+      "showAll": "Hiện tất cả ({{count}})",
+      "showLess": "Thu gọn"
+    },
+    "mp3": {
+      "button": "Tải xuống dạng MP3",
+      "converting": "Đang chuyển sang MP3…",
+      "hint": "Tệp nhỏ hơn, được chuyển đổi trên máy chủ của chúng tôi. Miễn phí và không bao giờ tính là công việc AI.",
+      "started": "Đã bắt đầu tải xuống MP3 — hãy xem mục tải xuống của trình duyệt.",
+      "startedWithSize": "Đã bắt đầu tải xuống MP3 ({{size}}) — hãy xem mục tải xuống của trình duyệt.",
+      "failed": "Không thể chuẩn bị tệp MP3. Hãy thử lại sau giây lát."
+    }
+  },
+  "billing": {
+    "intervalLabel": "Chu kỳ thanh toán",
+    "monthly": "Hằng tháng",
+    "yearly": "Hằng năm",
+    "perMonth": "/tháng",
+    "perYear": "/năm",
+    "currency": {
+      "label": "Tiền tệ",
+      "panelLabel": "Tiền tệ",
+      "lockedNote": "Gói đăng ký của bạn được thanh toán bằng {{currency}}. Không thể thay đổi khi gói đang hoạt động."
+    },
+    "yearlyBonus": "Miễn phí {{months}} tháng",
+    "cancelAnytime": "Hủy bất cứ lúc nào",
+    "refund": "Hoàn tiền trong 14 ngày cho lần thanh toán đầu tiên",
+    "taxNote": "Không cộng thêm thuế",
+    "upgrade": "Nâng cấp lên Premium",
+    "manage": "Quản lý gói đăng ký",
+    "operator": "Không giới hạn (vận hành viên)",
+    "unavailable": "Premium chưa khả dụng",
+    "busy": "Đang mở trang thanh toán…",
+    "cancelledNote": "Thanh toán đã bị hủy. Bạn chưa bị tính phí.",
+    "dismiss": "Bỏ qua",
+    "errors": {
+      "unavailable": "Premium chưa khả dụng.",
+      "operator": "Tài khoản vận hành viên đã có quyền truy cập không giới hạn.",
+      "generic": "Không bắt đầu được thanh toán. Vui lòng thử lại sau giây lát.",
+      "alreadyOnPlan": "Bạn đã có gói này hoặc gói cao hơn.",
+      "currencyLocked": "Tài khoản thanh toán của bạn được đặt ở {{currency}}, nên giá hiện được hiển thị bằng {{currency}}. Hãy chọn lại gói để tiếp tục."
+    },
+    "panel": {
+      "title": "Thanh toán",
+      "loading": "Đang tải thông tin thanh toán của bạn…",
+      "loadFailed": "Không tải được thông tin thanh toán. Hãy tải lại để thử lại.",
+      "operator": "Quyền vận hành viên. Không cần gói đăng ký.",
+      "unavailable": "Gói đăng ký chưa khả dụng.",
+      "grantUntil": "Premium do đội ngũ cấp đến {{date}}.",
+      "grantOpen": "Premium do đội ngũ cấp, không có ngày kết thúc.",
+      "freeBody": "Bạn đang dùng gói miễn phí. Premium nâng giới hạn của bạn và loại bỏ quảng cáo.",
+      "upgrade": "Nâng cấp lên Premium",
+      "pastDueTitle": "Lần thanh toán gần nhất của bạn không thành công",
+      "pastDueBody": "Quyền truy cập Premium tiếp tục tối đa 7 ngày trong khi chúng tôi thử lại. Hãy cập nhật phương thức thanh toán để giữ gói.",
+      "intervalLabel": "Thanh toán",
+      "endsLabel": "Premium kết thúc vào",
+      "renewsLabel": "Gia hạn vào",
+      "endsOn": "Gói đăng ký của bạn kết thúc vào {{date}}.",
+      "resumeHint": "Mở Quản lý gói đăng ký để tiếp tục gói.",
+      "renewsOn": "Gia hạn vào {{date}}.",
+      "updatePayment": "Cập nhật phương thức thanh toán",
+      "cancelledTitle": "Gói Premium của bạn đã bị hủy",
+      "cancelledBody": "Bạn giữ Premium đến {{date}}. Sau đó tài khoản của bạn chuyển sang Miễn phí và không bị tính thêm phí.",
+      "cancelledBodyNoDate": "Bạn giữ Premium đến hết chu kỳ thanh toán hiện tại. Sau đó tài khoản của bạn chuyển sang Miễn phí và không bị tính thêm phí.",
+      "planLabel": "Gói",
+      "pro": {
+        "grantUntil": "Pro do đội ngũ cấp đến {{date}}.",
+        "grantOpen": "Pro do đội ngũ cấp, không có ngày kết thúc.",
+        "pastDueBody": "Quyền truy cập Pro tiếp tục tối đa 7 ngày trong khi chúng tôi thử lại. Hãy cập nhật phương thức thanh toán để giữ gói.",
+        "endsLabel": "Pro kết thúc vào",
+        "cancelledTitle": "Gói Pro của bạn đã bị hủy",
+        "cancelledBody": "Bạn giữ Pro đến {{date}}. Sau đó tài khoản của bạn chuyển sang Miễn phí và không bị tính thêm phí.",
+        "cancelledBodyNoDate": "Bạn giữ Pro đến hết chu kỳ thanh toán hiện tại. Sau đó tài khoản của bạn chuyển sang Miễn phí và không bị tính thêm phí."
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "Đang xác nhận thanh toán của bạn…",
+        "body": "Thường chỉ mất vài giây."
+      },
+      "confirmed": {
+        "title": "Chào mừng đến với Premium",
+        "body": "Thanh toán của bạn đã thành công và gói của bạn hiện là Premium."
+      },
+      "shortly": {
+        "title": "Đã nhận thanh toán",
+        "body": "Gói của bạn sẽ sớm được cập nhật. Nếu sau một phút vẫn hiển thị Miễn phí, hãy làm mới bên dưới."
+      },
+      "foreign": {
+        "title": "Chúng tôi không khớp được thanh toán này với tài khoản của bạn",
+        "body": "Nếu bạn vừa thanh toán, hãy đăng nhập bằng tài khoản bạn đã dùng khi thanh toán."
+      },
+      "failed": {
+        "title": "Chúng tôi chưa xác nhận được thanh toán của bạn",
+        "body": "Gói của bạn sẽ tự động cập nhật ngay khi thanh toán được xác nhận. Hãy thử lại sau giây lát."
+      },
+      "refresh": "Làm mới gói của tôi",
+      "confirmedPro": {
+        "title": "Chào mừng đến với Pro",
+        "body": "Thanh toán của bạn đã thành công và gói của bạn hiện là Pro: giới hạn hằng ngày cao nhất, và hạn mức Motion lớn nhất khi trình biên tập Motion ra mắt."
+      }
+    },
+    "offer": {
+      "title": "Đổi ý rồi? Giữ Premium với giá {{price}}/tháng",
+      "resumeTitle": "Đổi ý rồi? Giữ Premium với mức giá hiện tại của bạn",
+      "fineprint": "Hôm nay không tính phí. Từ {{date}}, bạn trả {{price}}/tháng thay vì {{current}}/tháng, mỗi tháng cho đến khi bạn hủy.",
+      "cta": "Giữ Premium với giá {{price}}/tháng",
+      "resumeCta": "Giữ Premium với giá {{price}}{{unit}}",
+      "keepAtCurrent": "Giữ Premium với giá {{price}}/tháng",
+      "keepAtCurrentNoPrice": "Giữ Premium với giá thông thường",
+      "working": "Đang xử lý…",
+      "renewed": "Premium sẽ gia hạn vào {{date}} với giá {{price}}/tháng",
+      "renewedNoPrice": "Premium sẽ gia hạn vào {{date}}",
+      "renewedBare": "Premium sẽ tiếp tục gia hạn",
+      "changed": "Ưu đãi đã thay đổi, đây là ưu đãi hiện tại.",
+      "failed": "Không cập nhật được gói đăng ký của bạn. Vui lòng thử lại.",
+      "resumePrice": "Hôm nay bạn trả {{price}}{{unit}}, và đó là mức bạn tiếp tục trả.",
+      "resumeCtaNoPrice": "Giữ Premium",
+      "fineprintNoCurrent": "Hôm nay không tính phí. Từ {{date}}, bạn trả {{price}}/tháng, mỗi tháng cho đến khi bạn hủy.",
+      "resumeFineprint": "Hôm nay không tính phí. Lần thanh toán tiếp theo của bạn là vào {{date}}, với cùng mức giá, và gói gia hạn như thường lệ cho đến khi bạn hủy.",
+      "unitMonth": "/tháng",
+      "unitYear": "/năm"
+    },
+    "upgradePro": "Nâng cấp lên Pro",
+    "unavailablePro": "Pro chưa khả dụng",
+    "switchToPremium": "Chuyển sang Premium",
+    "planChange": {
+      "cancel": "Để sau",
+      "upgrade": {
+        "title": "Nâng cấp lên Pro ngay?",
+        "body": "Hôm nay bạn trả phần chênh lệch theo tỷ lệ cho phần còn lại của chu kỳ thanh toán này. Ngày gia hạn của bạn vẫn là {{date}}, và từ đó Pro có giá {{price}}{{unit}}.",
+        "bodyNoPrice": "Hôm nay bạn trả phần chênh lệch theo tỷ lệ cho phần còn lại của chu kỳ thanh toán này. Ngày gia hạn của bạn vẫn là {{date}}.",
+        "bodyNoDate": "Hôm nay bạn trả phần chênh lệch theo tỷ lệ cho phần còn lại của chu kỳ thanh toán này. Ngày gia hạn của bạn không thay đổi.",
+        "fineprint": "Pro bắt đầu ngay khi thanh toán thành công. Chính sách hoàn tiền 14 ngày chỉ áp dụng cho lần thanh toán đầu tiên của bạn.",
+        "confirm": "Nâng cấp lên Pro"
+      },
+      "downgrade": {
+        "title": "Chuyển sang Premium vào cuối chu kỳ này?",
+        "body": "Bạn giữ Pro đến {{date}}. Sau đó gói của bạn là Premium với giá {{price}}{{unit}}.",
+        "bodyNoPrice": "Bạn giữ Pro đến {{date}}. Sau đó gói của bạn là Premium.",
+        "bodyNoDate": "Bạn giữ Pro đến hết chu kỳ thanh toán hiện tại. Sau đó gói của bạn là Premium.",
+        "fineprint": "Không hoàn tiền cho phần còn lại của chu kỳ này. Bạn có thể giữ Pro bất cứ lúc nào trước khi chuyển.",
+        "confirm": "Chuyển sang Premium"
+      },
+      "upgraded": "Bạn hiện đang dùng Pro.",
+      "scheduled": "Gói của bạn chuyển sang Premium vào {{date}}.",
+      "scheduledNoDate": "Gói của bạn chuyển sang Premium vào cuối chu kỳ thanh toán này.",
+      "kept": "Bạn đang giữ Pro.",
+      "pendingBody": "Premium từ {{date}}. Bạn giữ Pro đến lúc đó.",
+      "keepPro": "Giữ Pro",
+      "dropTitle": "Hạ xuống Premium và tiếp tục",
+      "dropBody": "Thay vì mất tất cả, bạn có thể ở lại Premium với giá thông thường. Hãy tiếp tục gói đăng ký trong Quản lý gói đăng ký, rồi chọn Chuyển sang Premium tại đây.",
+      "dropCta": "Tiếp tục trong Quản lý gói đăng ký",
+      "errors": {
+        "notSubscription": "Chỉ có thể đổi gói với gói đăng ký trả phí. Gói do đội ngũ cấp không thể thay đổi tại đây.",
+        "samePlan": "Bạn đang dùng gói này rồi.",
+        "notAvailable": "Hiện không thể thực hiện thay đổi này. Nếu gói đăng ký của bạn đã bị hủy, hãy tiếp tục gói trong Quản lý gói đăng ký trước.",
+        "generic": "Không đổi được gói của bạn. Vui lòng thử lại sau giây lát."
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "Bạn đã chạm giới hạn {{limit}} của hôm nay",
+      "body": "Premium nâng hạn mức hằng ngày của bạn và loại bỏ quảng cáo."
+    },
+    "outputHeight": {
+      "title": "Đầu ra này cao hơn mức gói của bạn cho phép",
+      "body": "Bạn yêu cầu {{requested}}p; gói của bạn cho phép tối đa {{limit}}p."
+    },
+    "projects": {
+      "title": "Bạn đã đạt giới hạn dự án được lưu",
+      "body": "Gói của bạn lưu tối đa {{limit}} dự án Darkroom."
+    },
+    "topTier": "Gói của bạn đã ở mức cao nhất. Hãy hạ cài đặt xuống để tiếp tục.",
+    "close": "Để sau",
+    "signup": "Tạo tài khoản miễn phí",
+    "upgrade": "Nâng cấp lên Premium",
+    "fileSize": {
+      "title": "Tệp này lớn hơn mức gói của bạn cho phép",
+      "body": "Gói của bạn chấp nhận tệp tối đa {{limit}}."
+    },
+    "premiumChange": {
+      "fileSize": "Premium chấp nhận tệp tối đa {{value}}.",
+      "ops": "Premium cho phép {{value}} lượt chuyển đổi mỗi ngày.",
+      "opsUnlimited": "Premium không giới hạn lượt chuyển đổi hằng ngày.",
+      "aiOps": "Premium cho phép {{value}} tác vụ AI mỗi ngày.",
+      "aiOpsUnlimited": "Premium không giới hạn tác vụ AI hằng ngày.",
+      "exports": "Premium cho phép {{value}} lượt xuất mỗi ngày.",
+      "exportsUnlimited": "Premium không giới hạn lượt xuất hằng ngày.",
+      "height": "Premium xuất tối đa {{value}}p.",
+      "projects": "Premium lưu tối đa {{value}} dự án.",
+      "projectsUnlimited": "Premium không giới hạn dự án được lưu."
+    },
+    "noHigherPlan": "Không có gói nào nâng giới hạn này cao hơn. Hãy hạ cài đặt xuống để tiếp tục.",
+    "proNote": "Nâng cấp sẽ tính phần chênh lệch theo tỷ lệ ngay hôm nay; ngày gia hạn của bạn không đổi.",
+    "proChange": {
+      "ops": "Pro cho phép {{value}} lượt chuyển đổi mỗi ngày.",
+      "opsUnlimited": "Pro không giới hạn lượt chuyển đổi hằng ngày.",
+      "aiOps": "Pro cho phép {{value}} tác vụ AI mỗi ngày.",
+      "aiOpsUnlimited": "Pro không giới hạn tác vụ AI hằng ngày.",
+      "exports": "Pro cho phép {{value}} lượt xuất mỗi ngày.",
+      "exportsUnlimited": "Pro không giới hạn lượt xuất hằng ngày."
+    }
+  },
+  "recentStrip": {
+    "title": "Gần đây",
+    "clear": "Xóa mục gần đây",
+    "open": "Mở {{name}}",
+    "converter": "Bộ chuyển đổi",
+    "expiresInHours": "Hết hạn sau {{hours}} giờ",
+    "expiresInMinutes": "Hết hạn sau {{minutes}} phút",
+    "expired": "Tệp này đã hết hạn",
+    "openFailed": "Không mở được tệp này. Hãy thử lại.",
+    "signupCta": "Tệp của khách bị xóa sau 24 giờ. Đăng ký để giữ chúng trong 6 tháng.",
+    "signupAction": "Đăng ký miễn phí"
+  },
+  "quotaChip": {
+    "title": "Xem các gói Premium",
+    "ops": {
+      "remaining": "Còn {{remaining}} trên {{limit}} lượt chuyển đổi hôm nay",
+      "empty": "Đã dùng hết {{limit}} lượt chuyển đổi hôm nay"
+    },
+    "ai_ops": {
+      "remaining": "Còn {{remaining}} trên {{limit}} tác vụ AI hôm nay",
+      "empty": "Đã dùng hết {{limit}} tác vụ AI hôm nay"
+    },
+    "export": {
+      "remaining": "Còn {{remaining}} trên {{limit}} lượt xuất hôm nay",
+      "empty": "Đã dùng hết {{limit}} lượt xuất hôm nay"
+    },
+    "titlePro": "Xem các gói Pro"
+  },
+  "queueLine": {
+    "text": "Tác vụ này đã chờ {{time}} trong hàng đợi chung. Tác vụ Premium được ưu tiên trước.",
+    "cta": "Xem Premium"
+  },
+  "yearlyNudge": {
+    "title": "Chuyển sang gói năm và được miễn phí {{months}} tháng",
+    "body": "Bạn đã thanh toán nhiều tháng liên tiếp. Gói năm rẻ hơn mười hai lần thanh toán hằng tháng. Bạn có thể chuyển bất cứ lúc nào từ cổng thanh toán.",
+    "cta": "Chuyển sang gói năm",
+    "dismiss": "Không, cảm ơn"
+  },
+  "accountTour": {
+    "title": "Chào mừng bạn đến với Media Manipulator",
+    "step": "Bước {{current}} trên {{total}}",
+    "next": "Tiếp theo",
+    "back": "Quay lại",
+    "skip": "Bỏ qua",
+    "notNow": "Để sau",
+    "setRetention": "Đặt thời gian lưu",
+    "keepResults": {
+      "title": "Giữ kết quả của bạn",
+      "body": "Mọi thứ bạn chuyển đổi khi đã đăng nhập được lưu vào Lịch sử, để bạn mở lại hoặc tải xuống sau. Chúng tôi lưu trong khoảng thời gian bạn chọn."
+    },
+    "darkroomProjects": {
+      "title": "Dự án Darkroom",
+      "body": "Dự án Darkroom được lưu vào tài khoản của bạn và liệt kê trong mục Dự án, để bạn tiếp tục chỉnh sửa trên bất kỳ thiết bị nào."
+    },
+    "retention": {
+      "title": "Chọn thời gian lưu",
+      "body": "Chúng tôi khuyên dùng 6 tháng. Bạn có thể chọn bất kỳ mức nào từ 24 giờ đến 2 năm, và thay đổi bất cứ lúc nào trong mục Quyền riêng tư & dữ liệu."
+    },
+    "replay": "Xem lại phần giới thiệu",
+    "replayHint": "Xem lại phần giới thiệu ngắn về tài khoản của bạn."
+  },
+  "status": {
+    "title": "Trạng thái dịch vụ",
+    "intro": "Trạng thái trực tiếp của dịch vụ Media Manipulator. Cập nhật mỗi 10 giây.",
+    "operational": "Hoạt động bình thường",
+    "degraded": "Suy giảm",
+    "down": "Ngừng hoạt động",
+    "unknown": "Chưa có trạng thái",
+    "checking": "Đang kiểm tra...",
+    "operationalDetail": "Mọi hệ thống đang hoạt động bình thường.",
+    "degradedDetail": "Một số phần của dịch vụ đang gặp sự cố. Chuyển đổi có thể chậm hoặc thất bại.",
+    "downDetail": "Dịch vụ không phản hồi. Vui lòng thử lại sau vài phút.",
+    "unknownDetail": "Trang này vừa không kết nối được tới dịch vụ trạng thái từ trình duyệt của bạn. Điều đó không có nghĩa là các công cụ đang ngừng hoạt động. Trang sẽ thử lại sau vài giây.",
+    "queueTitle": "Hàng đợi xử lý AI",
+    "running": "Đang chạy",
+    "waiting": "Đang chờ",
+    "gpuOff": "Xử lý AI chưa được bật trên máy chủ này.",
+    "checksTitle": "Thành phần",
+    "database": "Cơ sở dữ liệu",
+    "storage": "Lưu trữ",
+    "cache": "Bộ nhớ đệm",
+    "ok": "OK",
+    "fail": "Sự cố",
+    "basicOnly": "Hiện chỉ có trạng thái tổng quan.",
+    "lastChecked": "Kiểm tra lần cuối {{time}}",
+    "metaTitle": "Trạng thái | Media Manipulator"
+  },
+  "share": {
+    "button": "Chia sẻ",
+    "revokeLinks": "Thu hồi liên kết",
+    "copied": "Đã sao chép liên kết. Liên kết có hiệu lực đến {{when}}.",
+    "copyManually": "Không sao chép tự động được. Hãy sao chép liên kết này: {{url}}",
+    "notAllowed": "Loại kết quả này không thể chia sẻ.",
+    "expired": "Tệp này đã hết hạn.",
+    "limitTitle": "Đã đạt giới hạn chia sẻ",
+    "limitBody": "Kết quả này đã có 5 liên kết chia sẻ đang hoạt động, là mức tối đa. Hãy thu hồi chúng để tạo liên kết mới.",
+    "revokeConfirm": "Thu hồi liên kết",
+    "cancel": "Hủy",
+    "signIn": "Đăng nhập lại để chia sẻ kết quả này.",
+    "failed": "Không tạo được liên kết chia sẻ. Hãy thử lại.",
+    "revoked": "Tất cả liên kết chia sẻ của kết quả này đã được thu hồi.",
+    "revokeNone": "Không có liên kết đang hoạt động nào để thu hồi.",
+    "revokeFailed": "Không thu hồi được liên kết. Hãy thử lại.",
+    "revokeTitle": "Thu hồi tất cả liên kết chia sẻ?",
+    "revokeBody": "Bất kỳ ai có liên kết đến kết quả này sẽ mất quyền truy cập ngay lập tức. Bạn có thể tạo liên kết mới sau đó."
+  },
+  "sharedResult": {
+    "metaTitle": "Kết quả được chia sẻ | Media Manipulator",
+    "metaDescription": "Một tệp được tạo bằng Media Manipulator, chia sẻ qua liên kết.",
+    "ogTitle": "{{fileName}} được tạo bằng Media Manipulator",
+    "goneTitle": "Liên kết này đã hết hạn hoặc bị gỡ bỏ",
+    "goneBody": "Liên kết chia sẻ ngừng hoạt động khi hết hạn, khi chủ sở hữu thu hồi, hoặc khi tệp bị xóa.",
+    "goneCta": "Đến Media Manipulator",
+    "madeWith": "Được tạo bằng Media Manipulator",
+    "tryIt": "Thử với tệp của bạn",
+    "expires": "Liên kết này có hiệu lực đến {{when}}."
+  },
+  "planSummary": {
+    "title": "Tổng quan các gói",
+    "current": "Gói của bạn",
+    "free": "Miễn phí",
+    "ops": "{{value}} thao tác mỗi ngày",
+    "opsUnlimited": "Không giới hạn thao tác mỗi ngày",
+    "aiOps": "{{value}} tác vụ AI mỗi ngày",
+    "aiOpsUnlimited": "Không giới hạn tác vụ AI mỗi ngày",
+    "fileSize": "Tệp tối đa {{value}}",
+    "compare": "So sánh tất cả các gói"
+  }
+}

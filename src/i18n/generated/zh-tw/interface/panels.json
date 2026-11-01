@@ -1,0 +1,1406 @@
+{
+  "transcribeResultView": {
+    "loading": "正在載入逐字稿結果...",
+    "noResult": "此工作沒有可用的逐字稿結果。",
+    "complete": "轉錄完成",
+    "outputFormat": "輸出格式：",
+    "language": "語言：{{language}}",
+    "duration": "長度：{{duration}}",
+    "noAudioStream": "沒有音訊串流",
+    "noSpeech": "沒有可辨識的語音",
+    "nothingToTranscribe": "沒有可轉錄的內容",
+    "noTranscriptGenerated": "無法為此檔案產生逐字稿。",
+    "transcriptHeader_other": "逐字稿（{{count}} 個段落）",
+    "aiSummaryTitle": "AI 摘要與安全審閱",
+    "analysisRunning": "正在背景執行摘要與安全審閱...",
+    "analysisError": "分析錯誤：{{error}}",
+    "summary": "摘要",
+    "extendedSummary": "延伸摘要",
+    "safetyBadge": "安全性：{{rating}}",
+    "harmfulFlagged": "偵測到可能有害的內容",
+    "harmfulNone": "未標記任何有害內容",
+    "sentimentBadge": "情緒：{{label}}",
+    "notesLabel": "備註：{{notes}}",
+    "summaryPending": "分析工作完成後，摘要與安全審閱會顯示在這裡。",
+    "unknown": "未知"
+  },
+  "summarize": {
+    "loading": "正在檢查摘要功能是否可用…",
+    "unavailable": "影片與音訊摘要暫時無法使用，請稍後再試；轉錄頁面仍可正常使用。",
+    "notInPlan": "你的方案不包含摘要功能。",
+    "signIn": {
+      "title": "登入後產生摘要",
+      "body": "摘要在我們自己的 GPU 伺服器上執行，需要一個免費帳號。請登入或建立帳號，然後上傳檔案。",
+      "button": "登入",
+      "signup": "建立免費帳號"
+    },
+    "uploadHintVideo": "影片或音訊檔案",
+    "uploadHintAudio": "音訊檔案",
+    "outputLanguage": "摘要語言",
+    "sameAsSpeech": "與語音語言相同",
+    "depth": {
+      "label": "深度",
+      "standard": "標準",
+      "deep": "深入",
+      "hint": "「深入」會使用更大的模型來撰寫摘要，耗時較長。"
+    },
+    "note": "會使用每日額度中的 1 次 AI 工作。失敗的工作不會計入。",
+    "noteFrames": "你的方案最多會讀取影片的 {{frames}} 個影格。會使用每日額度中的 1 次 AI 工作；失敗的工作不會計入。",
+    "start": "產生摘要",
+    "stagesTitle": "進度",
+    "stages": {
+      "probe": "讀取檔案",
+      "audio": "轉錄語音",
+      "frames": "挑選影格",
+      "vision": "描述影格",
+      "synthesis": "撰寫摘要",
+      "render": "整理結果格式"
+    },
+    "status": {
+      "pending": "等待中",
+      "processing": "進行中",
+      "completed": "已完成",
+      "skipped": "已略過",
+      "failed": "失敗"
+    },
+    "framesCount": "影格：{{count}}",
+    "errors": {
+      "signin_required": "請登入後再產生摘要。",
+      "summary_not_in_plan": "你的方案不包含摘要功能。",
+      "summary_unavailable": "摘要功能暫時無法使用，請稍後再試。",
+      "unreadable_media": "無法將此檔案當作音訊或影片讀取。",
+      "no_audio_or_video": "此檔案中沒有可供摘要的音訊或影片。",
+      "file_too_large": "此檔案的大小或長度超出了你的方案限制。",
+      "upload_not_found": "找不到已上傳的檔案，請重試。",
+      "quota_exceeded": "你今天的 AI 工作次數已用完。",
+      "invalid_request": "請求未被接受。請重新載入頁面後再試。",
+      "unknown": "無法開始產生摘要，請重試。"
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "將你的{{hint}}拖放到這裡",
+    "selectHint": "或點選以從電腦中選擇。訪客的檔案保留 24 小時；使用免費帳號可自行選擇 24 小時到 2 年。",
+    "selectFile": "選擇檔案",
+    "removeFile": "移除檔案",
+    "uploadingPercent": "上傳中 {{percent}}%",
+    "workingOnFile": "正在處理你的檔案…",
+    "previewResult": "預覽結果",
+    "downloadResult": "下載結果",
+    "jobFailed": "工作失敗。請改用其他檔案或重新整理。",
+    "resultPreview": "結果預覽",
+    "toggleHint": "在原始輸入與最終結果之間切換。",
+    "closePreview": "關閉預覽",
+    "loadingPreview": "正在載入預覽…",
+    "zipPreviewTitle": "ZIP 下載無法預覽",
+    "zipPreviewBody": "此結果以 ZIP 壓縮檔打包。請下載並在本機解壓縮以檢視內容。"
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "內嵌媒體轉換器",
+    "tryItNow": "立即試用",
+    "recommendedOutput": "建議的輸出：",
+    "outputFormat": "輸出格式：",
+    "outputLocked": "此工具的輸出已鎖定：",
+    "expectedInput": "預期的輸入：",
+    "accepts": "接受：",
+    "dragDrop": "將{{kind}}檔案拖放到這裡",
+    "mediaKinds": {
+      "image": "圖片",
+      "video": "影片",
+      "audio": "音訊",
+      "pdf": "PDF"
+    },
+    "selectHint": "或點選以從電腦中選擇。訪客的檔案保留 24 小時；使用免費帳號可自行選擇 24 小時到 2 年。",
+    "selectFile": "選擇檔案",
+    "removeFile": "移除檔案",
+    "uploadingPercent": "上傳中 {{percent}}%",
+    "workingOnFile": "正在處理你的檔案…",
+    "downloadFilename": "下載 {{filename}}",
+    "transcribeFailed": "轉錄失敗。",
+    "conversionFailed": "轉換失敗。",
+    "tryAgainOrOpen": "再試一次或開啟完整的轉換器。",
+    "needFullPrefix": "需要完整功能？",
+    "openFullConverter": "開啟完整的轉換器",
+    "needFullSuffix": "，它包含轉換記錄、逐字稿流程與 AI 工具。"
+  },
+  "extractAudio": {
+    "title": "擷取音訊",
+    "subtitle": "從影片檔案中取出音軌，並儲存為 MP3、WAV、AAC、OGG 或 FLAC。",
+    "formatLabel": "輸出音訊格式",
+    "outputLocked": "此工具已鎖定為 {{format}}",
+    "expectedInput": "預期的輸入：{{format}}",
+    "submit": "擷取音訊",
+    "running": "擷取中…",
+    "success": "音訊已擷取。請使用下載按鈕儲存。",
+    "uploadHint": "影片檔案",
+    "note": "擷取的音軌會保留來源的完整長度與品質。沒有音訊的影片會回傳明確的錯誤。",
+    "formats": {
+      "mp3": "MP3（精簡，到處都能播放）",
+      "wav": "WAV（無損，檔案大）",
+      "m4a": "M4A（AAC，品質佳且精簡）",
+      "aac": "AAC（原始）",
+      "flac": "FLAC（無損）",
+      "ogg": "OGG（Vorbis）"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "影片檔案",
+    "expectedInput": "預期的輸入：{{format}}",
+    "levelLabel": "壓縮等級",
+    "levels": {
+      "smallest": "最小檔案",
+      "balanced": "均衡（建議）",
+      "high_quality": "高品質"
+    },
+    "levelHints": {
+      "smallest": "最大程度縮小，適合電子郵件與聊天。細節豐富的畫面會有可見的品質損失。",
+      "balanced": "對大多數影片與社群上傳來說，大小與品質之間的良好取捨。",
+      "high_quality": "保留最多細節。比來源小，但幅度沒那麼大。"
+    },
+    "formatLabel": "輸出格式",
+    "outputLocked": "此工具已鎖定為 {{format}}",
+    "resolutionLabel": "解析度",
+    "resolutions": {
+      "keep": "保留原始",
+      "1080": "1080p（Full HD）",
+      "720": "720p（HD）",
+      "480": "480p（SD）"
+    },
+    "codecLabel": "編解碼器",
+    "codecs": {
+      "h264": "H.264（相容性最佳）",
+      "h265": "H.265 / HEVC（更小，適用於新式裝置）"
+    },
+    "stripAudio": "移除音軌以取得更小的檔案",
+    "note": "我們會以所選等級重新編碼影片。MP4 輸出使用 H.264 + AAC 並啟用 faststart，以便立即播放。",
+    "running": "壓縮中…",
+    "submit": "壓縮影片"
+  },
+  "videoTrimmer": {
+    "uploadHint": "影片檔案",
+    "expectedInput": "預期的輸入：{{format}}",
+    "startLabel": "開始（秒）",
+    "endLabel": "結束（秒）",
+    "durationLabel": "片段長度：{{duration}}",
+    "invalidRange": "請將結束時間設定在開始時間之後。",
+    "pickRange": "以視覺方式選取範圍",
+    "formatLabel": "輸出格式",
+    "outputLocked": "此工具已鎖定為 {{format}}",
+    "reencodeLabel": "重新編碼以精確到影格",
+    "reencodeHint": "重新編碼會精確地在你指定的時間點切割，但速度較慢，檔案大小也可能略有變化。",
+    "note": "只要可能，我們會以快速的無損切割保留原始品質（不重新編碼）。",
+    "running": "剪輯中…",
+    "submit": "剪輯影片",
+    "submitCut": "切割影片"
+  },
+  "videoTransform": {
+    "uploadHint": "影片檔案",
+    "expectedInput": "預期的輸入：{{format}}",
+    "autoPlaceholder": "自動",
+    "widthLabel": "寬度（px）",
+    "heightLabel": "高度（px）",
+    "preserveAspect": "保持長寬比（符合方框）",
+    "resizeNote": "留空其中一個欄位即可等比例縮放另一個。每邊最大 4096 px。",
+    "rotationLabel": "旋轉",
+    "rotations": {
+      "90": "順時針 90°",
+      "180": "180°（上下顛倒）",
+      "270": "逆時針 90°"
+    },
+    "flipH": "水平翻轉",
+    "flipV": "垂直翻轉",
+    "rotateNote": "修正橫向或上下顛倒的影片。90° 與 270° 會交換寬度與高度。",
+    "cropX": "左側偏移（X，px）",
+    "cropY": "頂端偏移（Y，px）",
+    "cropW": "裁切寬度（px）",
+    "cropH": "裁切高度（px）",
+    "cropNote": "輸入要保留的矩形，以左上角為起點的像素值。寬度與高度為必填。",
+    "formatLabel": "輸出格式",
+    "outputLocked": "此工具已鎖定為 {{format}}",
+    "running": "處理中…",
+    "submit": {
+      "crop": "裁切影片",
+      "resize": "調整影片大小",
+      "rotate": "旋轉影片"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "擷取影片（無音訊）",
+    "subtitle": "從影片檔案中移除音軌，只保留影片串流。",
+    "uploadHint": "影片檔案",
+    "formatLabel": "輸出容器",
+    "formats": {
+      "mp4": "MP4（建議）",
+      "webm": "WebM"
+    },
+    "note": "只要可能，影片串流會直接複製，不會損失品質。只有在目標容器需要時才會重新編碼。",
+    "submit": "從影片移除音訊",
+    "running": "正在移除音訊…",
+    "success": "影片串流已擷取。"
+  },
+  "extractFrames": {
+    "title": "擷取影格",
+    "subtitle": "將影片中的個別影格儲存為 PNG、JPG 或 WebP 圖片。",
+    "uploadHint": "影片檔案",
+    "modeLabel": "擷取模式",
+    "modes": {
+      "every_n_seconds": "每 N 秒",
+      "fps": "指定每秒影格數",
+      "timestamp": "指定時間戳記"
+    },
+    "secondsBetween": "影格間隔秒數",
+    "fpsLabel": "每秒影格數",
+    "timestampsLabel": "時間戳記（秒，以逗號分隔）",
+    "timestampsPlaceholder": "例如 1, 5.5, 12, 30",
+    "imageFormatLabel": "圖片格式",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG（無損）",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "最大影格數",
+    "zipNote": "影格會打包成單一 ZIP 供下載。我們會限制數量，讓工作快速且可預期；如果真的需要更多，請提高上限。",
+    "submit": "擷取影格",
+    "running": "正在擷取影格…",
+    "success": "影格已擷取。請在下方下載 ZIP。"
+  },
+  "captionTranslator": {
+    "title": "翻譯字幕",
+    "subtitle": "上傳 VTT、SRT 或 TXT 字幕檔案，並翻譯成另一種語言。",
+    "dropHere": "將你的 .srt 或 .vtt 檔案拖放到這裡",
+    "privacyNote": "訪客的檔案保留 24 小時；使用免費帳號可自行選擇 24 小時到 2 年。我們不會將你的字幕傳送給第三方 AI 供應商。",
+    "selectCaptionFile": "選擇字幕檔案",
+    "removeFile": "移除檔案",
+    "sourceLanguage": "來源語言",
+    "targetLanguage": "目標語言",
+    "autoDetect": "自動偵測（建議）",
+    "outputFormat": "輸出格式",
+    "sameAsInput": "與輸入相同（{{format}}）",
+    "formats": {
+      "srt": "SRT（SubRip）",
+      "vtt": "VTT（WebVTT）"
+    },
+    "timingNote": "字幕段的時間與順序會完全保留，只翻譯字幕文字。",
+    "translating": "翻譯中…",
+    "translateCaptions": "翻譯字幕",
+    "uploadingPercent": "上傳中 {{percent}}%",
+    "translatingWithModel": "正在使用本機 AI 模型翻譯…",
+    "downloadTranslated": "下載翻譯後的字幕",
+    "translationFailed": "翻譯失敗。請試試較小的檔案或其他目標語言。"
+  },
+  "stitchAudioToVideo": {
+    "title": "將音訊合併到影片",
+    "subtitle": "在影片檔案上新增或取代音軌。",
+    "dropBaseVideo": "將你的基底影片拖放到這裡",
+    "intro": "先選擇影片，接下來再加入音軌（旁白、音樂、口白）。",
+    "selectVideo": "選擇影片",
+    "removeBaseVideo": "移除基底影片",
+    "audioTracks": "音軌",
+    "removeTrack": "移除音軌",
+    "volume": "音量",
+    "startOffset": "開始偏移（秒）",
+    "loopTrack": "循環此音軌以符合影片長度",
+    "addAudioTrack": "新增音軌（{{count}}/{{max}}）",
+    "audioModeLabel": "音訊模式",
+    "audioModes": {
+      "mix": "與現有音訊混合",
+      "replace": "取代原始音訊"
+    },
+    "outputLengthLabel": "輸出長度",
+    "outputLength": {
+      "video": "裁剪至影片長度",
+      "longest": "符合最長的輸入"
+    },
+    "stitching": "正在合併音訊與影片…",
+    "addAudioToVideo": "將音訊加入影片",
+    "uploadingPercent": "上傳中 {{percent}}%",
+    "mixingOnServer": "正在伺服器上混音…",
+    "downloadStitched": "下載合併後的影片",
+    "stitchFailed": "合併失敗。請確認你的音訊檔案有效，然後再試一次。"
+  },
+  "aiVideoTools": {
+    "title": "AI 影片工具",
+    "tooltipIntro": "AI 影片工具目前包含 <strong>AI 影格插補</strong>，它會產生新的中間影格，讓動態播放更流暢。",
+    "tooltipBestFor": "最適合將 24/30fps 的素材提升到 60fps，或將 60fps 提升到 120fps。這會大量使用 GPU，目前一律輸出 MP4。",
+    "intro": "AI 影格插補會建立中間影格，讓動態更流暢。最適合 24/30fps → 60fps 或 60fps → 120fps 的片段。",
+    "gpuNote": "這會大量使用 GPU，目前輸出 MP4。對於長影片或 4K 影片，請先使用較低的最大處理高度。這與基本的 FPS 轉換不同：AI 插補會合成新影格而非複製影格，而且在 v1 中會略過大多數其他視覺／時間類濾鏡。",
+    "operationLabel": "操作",
+    "operations": {
+      "none_short": "無",
+      "frame_interpolation": "AI 影格插補"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "目標影格率",
+      "modelLabel": "RIFE 模型",
+      "models": {
+        "rife-v4.6": "RIFE v4.6：建議",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3：相容性"
+      },
+      "qualityLabel": "品質",
+      "qualityOptions": {
+        "low": "低：編碼較快",
+        "medium": "中：均衡",
+        "high": "高：編碼較慢"
+      },
+      "maxHeightLabel": "最大處理高度",
+      "preserveAudio": "保留來源的音軌"
+    },
+    "notes": {
+      "mp4": "v1 的輸出一律為 MP4（H.264 + AAC）。",
+      "trim": "v1 中 AI 影格插補無法搭配剪輯。如有需要，請先另外剪輯片段。",
+      "artifacts": "快速動作、場景切換、頭髮、手、輪子與遮擋處可能出現插補瑕疵。發布前請先預覽。"
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "片段選取時間軸",
+      "startHandle": "選取開始",
+      "endHandle": "選取結束",
+      "playSelection": "播放選取範圍",
+      "pause": "暫停",
+      "start": "開始",
+      "end": "結束",
+      "startTime": "開始時間（m:ss.t）",
+      "endTime": "結束時間（m:ss.t）",
+      "nudgeBack": "往前微調 0.1 秒",
+      "nudgeForward": "往後微調 0.1 秒",
+      "selected": "已選取",
+      "frames": "影格",
+      "estimate": "約",
+      "fpsAssumption": "影格估計以 30fps 計算，伺服器會使用你影片的實際影格率",
+      "overRecommended": "超過 {{seconds}} 秒的選取範圍也能運作，但處理時間會快速增加；較短的片段同樣適合比較。",
+      "overFrameBudget": "以 30fps 計算，這個選取範圍可能超過 {{maxFrames}} 個影格的上限。如果你影片的實際影格率高於約 30fps，請縮短選取範圍。"
+    },
+    "picker": {
+      "title": "修復模型",
+      "selectAll": "全選",
+      "selectNone": "無",
+      "frameGroup": "逐格增強模型：包含增強後的影格 + 影片",
+      "videoGroup": "影片修復模型：僅影片",
+      "unavailable": "此伺服器上無法使用",
+      "includeFrames": "包含增強後的影格（PNG）",
+      "includeFramesHint": "將逐格模型產生的每一個增強影格加入下載，與影片放在一起。",
+      "includeFramesWarning": "影格可能讓下載大小倍增：一段 10 秒的片段每個模型可能增加數百張大型 PNG。",
+      "noneSelected": "請至少選擇一個模型以繼續。",
+      "runningTotal": "已選取 {{count}} 個模型 · 預估總處理時間 {{estimate}}"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "快速的 GAN 放大器，每次比較都應包含的快速基準。"
+      },
+      "swinir": {
+        "description": "以 Transformer 為基礎的真實世界超解析度，紋理強，比 Real-ESRGAN 慢。"
+      },
+      "hat": {
+        "description": "混合注意力超解析度 GAN，靜態畫面通常最銳利，A 組中最慢。"
+      },
+      "basicvsrpp": {
+        "description": "遞迴式影片超解析度，利用相鄰影格維持時間一致性。"
+      },
+      "rvrt": {
+        "description": "遞迴式影片修復 Transformer，細節強且具動態感知。"
+      },
+      "vrt": {
+        "description": "影片修復 Transformer，在許多片段上品質最佳，但速度遠遠最慢。"
+      }
+    },
+    "panel": {
+      "loading": "正在檢查伺服器功能…",
+      "disabled": "AI 影片修復在此伺服器上暫時無法使用。",
+      "notAVideo": "請選擇影片檔案。",
+      "tooLarge": "這部影片超過 {{max}} 的上傳限制。",
+      "dropTitle": "將影片拖放到這裡，或點選以選擇",
+      "dropHint": "你將選取一小段片段（最長 15 秒）進行修復，長影片也沒問題。",
+      "fileLabel": "檔案：",
+      "changeFile": "變更檔案",
+      "preparingUpload": "正在準備上傳…",
+      "uploading": "正在上傳到安全儲存空間… {{percent}}%",
+      "startingJob": "正在開始修復工作…",
+      "submit": "以 {{count}} 個模型修復片段",
+      "modelFailedBadge": "失敗，其他模型繼續執行",
+      "genericFailure": "修復失敗。請改用較短的片段再試一次。",
+      "startOver": "重新開始",
+      "completedTitle": "修復完成，你的比較套件已準備好。",
+      "modelSucceeded": "成功",
+      "modelFailed": "失敗（請參閱套件中的 FAILED.txt）",
+      "download": "下載結果",
+      "downloadAgain": "再次下載",
+      "downloadSize": "套件大小：{{size}}",
+      "downloadSizeHint": "這個壓縮檔很大，下載前請確認至少有 {{size}} 的可用磁碟空間。",
+      "linkExpiresIn": "連結將於 {{countdown}} 後到期",
+      "linkExpired": "下載連結已到期，請再次執行修復",
+      "restoreAnother": "修復另一個片段"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "裁切（選填）",
+      "useEntireImage": "使用整張圖片",
+      "previewAlt": "已上傳的圖片",
+      "regionLabel": "裁切區域：拖曳以移動，使用方向鍵微調",
+      "dragHint": "在圖片上拖曳以聚焦某個區域，或保留整張圖片",
+      "cropReadout": "裁切：{{w}}×{{h}} px",
+      "fullReadout": "整張圖片：{{w}}×{{h}} px",
+      "outputReadout": "預估輸出 {{w}}×{{h}} px，{{scale}} 倍",
+      "overBudget": "這個裁切與倍率會超過輸出大小限制。請選擇 2 倍或較小的裁切範圍。"
+    },
+    "picker": {
+      "precleanToggle": "預先清理（保真的清理）",
+      "precleanToggleHint": "移除壓縮瑕疵、雜訊與動態模糊，不合成新細節；在增強之前執行。",
+      "precleanOrderNote": "無論選取順序為何，清理一律依序執行瑕疵移除 → 降噪 → 去模糊，每一步都以前一步的結果為基礎。",
+      "precleanBaseHint": "清理後的圖片會成為下方每個模型執行的基底。",
+      "fbcnnQf": "FBCNN 品質係數",
+      "fbcnnQfAuto": "自動",
+      "fbcnnQfHint": "留空 = 自動；數值越低表示假設壓縮越嚴重",
+      "generalGroup": "修復與放大模型",
+      "faceToggle": "臉部增強",
+      "faceToggleHint": "加入 GFPGAN 和／或 CodeFormer 以重建臉部。",
+      "previewFaces": "預覽偵測到的臉部",
+      "facesDetected": "偵測到 {{count}} 張臉。",
+      "fidelityLabel": "CodeFormer 保真度（w）",
+      "fidelityHint": "越低越美化，越高越接近輸入。預設 0.70。",
+      "chainToggle": "串接：在每個放大結果上再次執行臉部模型",
+      "chainHint": "除了在來源上執行之外，也為每個放大器的輸出產生一個臉部增強版本。",
+      "generativeWarning": "臉部增強是生成式重建：增強後的臉部是為了清晰度與線索而合成的，並非可用於身分識別的忠實還原。",
+      "noneSelected": "請至少選擇一個模型以繼續。",
+      "totalOutputs": "將產生 {{count}} 個輸出。",
+      "overBudget": "這個選擇會產生超過 {{max}} 個輸出的上限。請取消選取部分模型或關閉串接。",
+      "unavailable": "此伺服器上無法使用"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "盲式 JPEG／壓縮瑕疵移除（1 倍，非生成式）。"
+      },
+      "scunet": {
+        "description": "盲式真實雜訊降噪，PSNR 變體，不會憑空產生紋理（1 倍）。"
+      },
+      "nafnet": {
+        "description": "動態去模糊（GoPro 權重，1 倍）。"
+      },
+      "realesrgan": {
+        "description": "快速的 GAN 放大器，每次比較都應包含的快速基準。"
+      },
+      "swinir": {
+        "description": "以 Transformer 為基礎的真實世界超解析度，紋理強，比 Real-ESRGAN 慢。"
+      },
+      "hat": {
+        "description": "混合注意力超解析度 GAN，通常是最銳利的結果。"
+      },
+      "gfpgan": {
+        "description": "GFPGAN v1.4 臉部修復，生成式重建。"
+      },
+      "codeformer": {
+        "description": "CodeFormer 臉部修復，附保真度調節，生成式重建。"
+      }
+    },
+    "panel": {
+      "loading": "正在檢查伺服器功能…",
+      "disabled": "AI 圖片修復在此伺服器上暫時無法使用。",
+      "notAnImage": "請選擇圖片檔案。",
+      "tooLarge": "這張圖片超過 {{max}} 的上傳限制。",
+      "dropTitle": "將圖片拖放到這裡，或點選以選擇",
+      "dropHint": "PNG、JPEG、WebP、TIFF 或 BMP。上傳後可裁切到某個區域。",
+      "fileLabel": "檔案：",
+      "changeFile": "變更檔案",
+      "scaleLabel": "輸出倍率",
+      "scaleAuto": "自動",
+      "scaleHint": "自動會為小型裁切（高度 ≤540px）選擇 4 倍，其他則為 2 倍。模型原生以 4 倍執行；2 倍會以 Lanczos 縮小。",
+      "preparingUpload": "準備中…",
+      "uploading": "上傳中… {{percent}}%",
+      "startingJob": "正在開始修復工作…",
+      "submit": "以 {{count}} 個模型修復",
+      "unitFailedBadge": "失敗，其他模型繼續執行",
+      "genericFailure": "修復失敗。請改用較小的裁切範圍或較少的模型再試一次。",
+      "startOver": "重新開始",
+      "completedTitle": "修復完成，請在下方比較你的結果。",
+      "download": "下載所有結果",
+      "downloadAgain": "再次下載",
+      "downloadSize": "套件大小：{{size}}",
+      "restoreAnother": "修復另一張圖片"
+    },
+    "results": {
+      "includedInDownload": "已包含在下載中",
+      "fidelityBadge": "非生成式清理",
+      "generativeBadge": "生成式，不可作為證據",
+      "originalCaption": "原始（已預處理）· {{w}}×{{h}}",
+      "failed": "此模型失敗",
+      "compareOriginal": "原始"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "音訊檔案",
+    "previewTitle": "波形預覽",
+    "sizeQualifiers": {
+      "small": "小",
+      "medium": "中",
+      "large": "大",
+      "xl": "特大"
+    },
+    "presets": {
+      "10x1": "10:1：寬幅波形（建議）",
+      "8x1": "8:1：寬幅波形",
+      "6x1": "6:1：均衡的寬幅波形",
+      "16x9": "16:9：標準影片／社群預覽",
+      "1x1": "1:1：正方形社群預覽"
+    },
+    "sizeLabel": "{{width}}×{{height}}（{{qualifier}}）",
+    "modes": {
+      "point": {
+        "label": "點",
+        "description": "每個取樣一個點，乾淨簡約。"
+      },
+      "line": {
+        "label": "線",
+        "description": "每個取樣一條垂直線，存在感更強。"
+      },
+      "p2p": {
+        "label": "點對點",
+        "description": "每個取樣一個點並以線相連，流動感十足。"
+      },
+      "cline": {
+        "label": "置中線",
+        "description": "以軸線為中心的垂直線，對稱的外觀。"
+      }
+    },
+    "output": "輸出",
+    "outputOptions": {
+      "video": "波形影片",
+      "image": "波形圖片",
+      "both": "兩者（ZIP）"
+    },
+    "bothNote": "兩種輸出會打包成單一 .zip，一鍵即可下載。",
+    "includeAudio": "在產生的波形影片中包含原始音訊",
+    "includeAudioNote": "波形影片會與來源音訊同步播放，非常適合音訊圖、音樂預覽與 Podcast 片段。關閉則產生無聲的波形。",
+    "videoFormat": "影片格式",
+    "videoFormats": {
+      "mp4": "MP4（建議）",
+      "webm": "WebM"
+    },
+    "imageFormat": "圖片格式",
+    "imageFormats": {
+      "png": "PNG（建議）",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "長寬比與大小",
+    "useCustomSize": "使用自訂寬度／高度",
+    "widthPlaceholder": "寬度",
+    "heightPlaceholder": "高度",
+    "advancedSettings": "進階波形設定",
+    "renderMode": "轉譯模式",
+    "renderModeNote": "轉譯模式適用於波形影片。圖片輸出使用靜態影格轉譯器，會忽略模式設定。",
+    "frameRate": "影格率",
+    "useFrameRate": "使用影格率",
+    "useSamples": "使用每欄取樣數（n）",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps（預設）",
+    "samplesPlaceholder": "例如 64",
+    "frameRateNote": "選擇輸出影格率<em>或</em>每欄繪製的音訊取樣數，兩者擇一。",
+    "splitChannels": "分割立體聲聲道（分別繪製左右聲道）",
+    "primaryColor": "主要顏色",
+    "secondaryColor": "次要顏色（分割模式）",
+    "scale": "刻度",
+    "scaleOptions": {
+      "lin": "lin：最直接／準確",
+      "log": "log：讓安靜的部分更明顯",
+      "sqrt": "sqrt：輕微提升安靜的部分",
+      "cbrt": "cbrt：更強地提升安靜的部分"
+    },
+    "draw": "繪製",
+    "drawOptions": {
+      "scale": "scale（預設）",
+      "full": "full"
+    },
+    "generating": "正在產生波形…",
+    "generate": "產生波形"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "正在載入 AI 文件掃描…",
+      "disabled": "文件掃描目前無法使用。",
+      "notAnImage": "請加入圖片檔案（PNG、JPEG、WebP、TIFF、BMP 或 HEIC）。",
+      "tooLarge": "每張圖片必須小於 {{max}}。",
+      "tooManyPages": "最多只能加入 {{max}} 頁。",
+      "dropTitle": "加入掃描頁面",
+      "dropHint": "印刷文件或手寫筆記：拖放一張或多張圖片，或點選以選擇。",
+      "uploading": "上傳中… {{percent}}%",
+      "startingJob": "正在開始掃描…",
+      "preparingUpload": "準備中…",
+      "submit": "掃描 {{count}} 頁",
+      "genericFailure": "掃描時發生問題，請再試一次。",
+      "startOver": "重新開始",
+      "completedTitle": "你的文件已準備好。",
+      "viewResult": "檢視結果",
+      "scanAnother": "掃描另一份"
+    },
+    "options": {
+      "contentMode": "內容類型",
+      "modeAuto": "自動（逐頁偵測）",
+      "modePrinted": "印刷文件",
+      "modeHandwriting": "手寫",
+      "printedUnavailable": "此伺服器上無法使用印刷文字 OCR。",
+      "handwritingUnavailable": "手寫轉錄目前離線。",
+      "outputs": "輸出",
+      "pdfAlways": "可搜尋的 PDF（一律產生）",
+      "docx": "可編輯的 Word（.docx）",
+      "unavailable": "無法使用",
+      "language": "語言（印刷文字 OCR）",
+      "printedCleanup": "印刷頁面清理",
+      "deskew": "校正歪斜",
+      "rotate": "自動旋轉",
+      "clean": "清理（移除雜點）",
+      "structureEngine": "DOCX 結構引擎",
+      "enginePaddle": "PaddleOCR-VL（優先）",
+      "engineDocling": "Docling（備用）",
+      "engineTrocr": "TrOCR（備用）",
+      "preclean": "在辨識前增強低解析度掃描",
+      "precleanHint": "放大模糊的手機拍攝筆記，有助於手寫辨識。手寫／自動模式下預設開啟。",
+      "handwritingTitle": "手寫選項",
+      "verify": "以 AI 驗證",
+      "verifyHint": "第二輪只重新辨識標記為不確定的詞元；絕不會更改有把握的文字或憑空產生內容。",
+      "secondOpinion": "第二意見",
+      "secondOpinionHint": "由獨立的辨識器重新辨識手寫；不一致之處會被標記，絕不會默默合併。",
+      "summary": "AI 摘要（另存檔案）",
+      "summaryHint": "選填。會另外寫出一份清楚標示的摘要，絕不會取代逐字轉錄。"
+    },
+    "pageOrder": {
+      "title": "頁面（{{count}}）",
+      "hint": "掃描前可拖曳頁面以重新排序。",
+      "pageLabel": "第 {{n}} 頁",
+      "remove": "移除頁面",
+      "drag": "拖曳以重新排序"
+    },
+    "viewer": {
+      "title": "你掃描的文件",
+      "description": "印刷頁面帶有忠實的可搜尋文字層；手寫頁面是機器轉錄，請對照原件驗證。",
+      "confidenceTitle": "手寫轉錄：請對照原件驗證",
+      "confidenceNote": "已轉錄 {{pages}} 頁手寫內容 · {{tokens}} 個詞元標記為不確定（[illegible] / [?]）。",
+      "noPdf": "此工作沒有產生 PDF。",
+      "downloadPdf": "下載 PDF",
+      "downloadDocx": "下載 Word（.docx）",
+      "downloadSummary": "下載 AI 摘要"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}}（測試版）",
+    "untitled": "未命名繪圖",
+    "projectName": "專案名稱",
+    "backHome": "返回 Media Manipulator",
+    "invalidProject": "此專案連結無效。專案目前只儲存在此瀏覽器中。",
+    "newProject": "開始新的繪圖",
+    "undo": "復原",
+    "redo": "重做",
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "zoomFit": "符合螢幕",
+    "canvas": {
+      "label": "繪圖畫布"
+    },
+    "tools": {
+      "label": "工具",
+      "select": "選取",
+      "node": "編輯節點",
+      "rect": "矩形",
+      "ellipse": "橢圓",
+      "line": "線條",
+      "pen": "鋼筆",
+      "text": "文字",
+      "hand": "平移",
+      "textPlaceholder": "輸入文字，然後按 Enter"
+    },
+    "import": {
+      "button": "匯入",
+      "done_other": "已匯入 {{count}} 個圖層",
+      "tooLarge": "該檔案超過 4 MB。",
+      "warningsTitle_other": "匯入時有 {{count}} 則備註",
+      "errors": {
+        "too_large": "該 SVG 超過 4 MB。",
+        "not_svg": "該檔案不是 SVG 圖片。",
+        "malformed": "無法讀取該 SVG，檔案可能已損壞。",
+        "entities": "宣告 XML 實體的 SVG 無法匯入。",
+        "too_complex": "該 SVG 的圖層太多，無法編輯。",
+        "json": "該檔案不是此版本可以開啟的 Motion 文件。"
+      },
+      "warnings": {
+        "script_removed": "已移除指令碼：",
+        "event_handler_removed": "已移除事件處理常式：",
+        "external_reference_removed": "已移除外部參照：",
+        "unsafe_content_removed": "已移除不安全的內容：",
+        "unsupported_element": "按原樣保留（不可編輯）：",
+        "style_dropped": "不支援的樣式：",
+        "invalid_value": "已忽略的值：",
+        "dangling_reference": "已捨棄遺失的參照："
+      }
+    },
+    "export": {
+      "svg": "匯出 SVG",
+      "open": "匯出"
+    },
+    "draft": {
+      "title": "復原未儲存的變更？",
+      "description": "這個繪圖有儲存在此瀏覽器中但尚未匯出的變更。",
+      "from": "{{name}}，{{time}}",
+      "layers_other": "{{count}} 個圖層",
+      "recover": "復原",
+      "discard": "捨棄"
+    },
+    "layers": {
+      "title": "圖層",
+      "empty": "畫一個形狀或匯入 SVG 以開始。",
+      "group": "群組",
+      "ungroup": "取消群組",
+      "delete": "刪除",
+      "rename": "圖層名稱",
+      "lock": "鎖定",
+      "unlock": "解除鎖定",
+      "hide": "隱藏",
+      "show": "顯示",
+      "expand": "展開群組",
+      "collapse": "收合群組",
+      "raw": "按原樣保留",
+      "rawHint": "完全依匯入時的狀態保留，不可編輯",
+      "masked": "有遮罩",
+      "clipped": "有剪裁路徑",
+      "maskDef": "遮罩 {{id}}",
+      "clipDef": "剪裁路徑 {{id}}"
+    },
+    "layerTypes": {
+      "group": "群組",
+      "path": "路徑",
+      "rect": "矩形",
+      "ellipse": "橢圓",
+      "line": "線條",
+      "polyline": "折線",
+      "polygon": "多邊形",
+      "text": "文字",
+      "image": "圖片",
+      "use": "實例",
+      "raw": "按原樣保留"
+    },
+    "inspector": {
+      "title": "檢閱器",
+      "canvas": "畫布",
+      "background": "背景",
+      "emptyHint": "選取一個圖層以編輯。按住 Shift 點選可選取多個。",
+      "selection": "選取範圍",
+      "layersSelected_other": "{{count}} 個圖層",
+      "transform": "變形",
+      "geometry": "幾何",
+      "appearance": "外觀",
+      "text": "文字",
+      "width": "寬度",
+      "height": "高度",
+      "scaleX": "縮放 X",
+      "scaleY": "縮放 Y",
+      "rotation": "旋轉",
+      "skewX": "傾斜",
+      "anchorX": "錨點 X",
+      "anchorY": "錨點 Y",
+      "cornerRadius": "圓角半徑",
+      "reference": "實例來源",
+      "pathHint": "使用「編輯節點」工具（A）移動點與控制桿。",
+      "rawHint": "SVG 的這個部分使用了編輯器目前無法變更的功能。它會完全依匯入時的狀態保留，並原樣匯出。",
+      "markupSize": "標記",
+      "fill": "填色",
+      "stroke": "線條",
+      "strokeWidth": "線條寬度",
+      "opacity": "不透明度",
+      "none": "無",
+      "colorValue": "{{label}} 值",
+      "solid": "單色",
+      "linear": "線性",
+      "radial": "放射狀",
+      "fontSize": "字型大小",
+      "fontFamily": "字型",
+      "fontWeight": "字重",
+      "letterSpacing": "字距",
+      "textAnchor": "對齊",
+      "alignStart": "起點",
+      "alignMiddle": "中間",
+      "alignEnd": "終點",
+      "regular": "一般",
+      "bold": "粗體",
+      "maskSection": "遮罩與剪裁",
+      "maskHint": "上層的圖層會成為下層圖層的遮罩或剪裁路徑。",
+      "useAsMask": "作為遮罩",
+      "useAsClip": "作為剪裁",
+      "releaseMask": "解除遮罩",
+      "releaseClip": "解除剪裁路徑",
+      "skewY": "傾斜 Y"
+    },
+    "gradient": {
+      "stops": "漸層色標",
+      "stop": "色標 {{index}}，位於 {{offset}}%",
+      "stopColor": "色標顏色",
+      "removeStop": "移除色標",
+      "addStop": "新增色標",
+      "offset": "位置",
+      "angle": "角度",
+      "radius": "半徑",
+      "centreX": "中心 X",
+      "centreY": "中心 Y"
+    },
+    "properties": {
+      "x": "位置 X",
+      "y": "位置 Y",
+      "scaleX": "縮放 X",
+      "scaleY": "縮放 Y",
+      "rotation": "旋轉",
+      "skewX": "傾斜 X",
+      "skewY": "傾斜 Y",
+      "anchorX": "錨點 X",
+      "anchorY": "錨點 Y",
+      "opacity": "不透明度",
+      "fill": "填色",
+      "stroke": "線條",
+      "strokeWidth": "線條寬度",
+      "strokeDashoffset": "描繪（虛線偏移）",
+      "d": "形狀（變形）",
+      "motionPath": "動態路徑",
+      "stopColor": "漸層色標 {{n}} 的顏色",
+      "stopOffset": "漸層色標 {{n}} 的位置",
+      "blur": "模糊"
+    },
+    "timeline": {
+      "title": "時間軸",
+      "play": "播放（空白鍵）",
+      "pause": "暫停（空白鍵）",
+      "toStart": "前往開頭（Home）",
+      "toEnd": "前往結尾（End）",
+      "loop": "循環",
+      "autokey": "自動關鍵影格",
+      "autokeyHint": "開啟時，在畫布或檢閱器中變更任何屬性都會在播放指標處新增關鍵影格。",
+      "duration": "長度",
+      "playhead": "播放指標",
+      "setIn": "在播放指標處設定播放範圍起點",
+      "setOut": "在播放指標處設定播放範圍終點",
+      "clearRange": "清除播放範圍",
+      "inMarker": "播放範圍起點",
+      "outMarker": "播放範圍終點",
+      "addKeys": "在播放指標處為選取的圖層新增關鍵影格",
+      "copyKeys": "複製關鍵影格",
+      "pasteKeys": "在播放指標處貼上關鍵影格",
+      "deleteKeys": "刪除關鍵影格",
+      "zoomIn": "放大時間軸",
+      "zoomOut": "縮小時間軸",
+      "empty": "畫一個或匯入一個形狀，然後在這裡製作動畫。",
+      "animate": "為{{property}}製作動畫",
+      "stopAnimating": "停止{{property}}的動畫",
+      "addKeyHere": "在播放指標處新增{{property}}關鍵影格",
+      "removeKeyHere": "移除播放指標處的{{property}}關鍵影格",
+      "key": "{{time}} 處的{{property}}關鍵影格",
+      "layerKey": "{{time}} 處的 {{layer}} 關鍵影格",
+      "maskContent": "遮罩：{{layer}}",
+      "clipContent": "剪裁：{{layer}}"
+    },
+    "easing": {
+      "title": "緩動",
+      "presets": "緩動預設組",
+      "linear": "線性",
+      "easeIn": "緩入",
+      "easeOut": "緩出",
+      "easeBoth": "緩入緩出",
+      "hold": "保持",
+      "custom": "曲線",
+      "curve": "緩動曲線",
+      "handle": "曲線控制桿 {{name}}",
+      "mixed": "選取的關鍵影格使用不同的緩動。選擇一種以套用到全部。",
+      "applies_other": "{{count}} 個關鍵影格之後區段的緩動。"
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "到處都能播放的動態 GIF。256 色，單一全域調色盤。"
+        },
+        "png_sequence": {
+          "title": "PNG 序列（.zip）",
+          "hint": "每一個影格都是帶透明度的 PNG，壓縮成 zip，供影片剪輯軟體與遊戲引擎使用。"
+        },
+        "mp4": {
+          "title": "MP4 影片",
+          "hint": "在你的瀏覽器中編碼的 H.264（或 AV1）影片。無音訊。"
+        },
+        "webm": {
+          "title": "WebM 影片",
+          "hint": "在你的瀏覽器中編碼的 VP9（或 AV1）影片。無音訊。"
+        }
+      },
+      "block": {
+        "locked": "你的方案不包含此格式。",
+        "notOnAnyPlan": "目前所有方案都尚未提供。",
+        "useChromium": "請使用 Chrome 或 Edge 匯出影片",
+        "noCodec": "此瀏覽器無法編碼這種影片格式。請試試另一種影片格式，或改用 Chrome 或 Edge。"
+      },
+      "size": "大小",
+      "sizeOption": "{{height}}p（{{width}} × {{height}}）",
+      "fps": "每秒影格數",
+      "from": "從（秒）",
+      "to": "到（秒）",
+      "gif": {
+        "loop": "循環",
+        "forever": "永遠",
+        "plays_other": "播放 {{count}} 次",
+        "dither": "抖動（漸層更平滑，檔案較大）",
+        "transparent": "透明背景"
+      },
+      "summary": "{{width}} × {{height}} px，{{frames}} 個影格，{{seconds}} 秒，約 {{size}}",
+      "flattenWhite": "畫布是透明的；影片沒有透明度，因此影格會放在白色背景上。",
+      "clamped": {
+        "height": "你的方案將大小限制為 {{height}}p。",
+        "fps": "影格率限制為 {{fps}} fps。",
+        "duration": "你的方案將長度限制為 {{seconds}} 秒。"
+      },
+      "tooLarge": "這次匯出會超過 2 GB。請降低大小、影格率或長度。",
+      "cancelCounts": "匯出開始後再取消，仍會從你的每日額度中扣除一次匯出。",
+      "preparing": "準備中…",
+      "progress": "正在轉譯第 {{done}} 個影格，共 {{total}} 個",
+      "progressLabel": "匯出進度",
+      "finalizing": "正在完成檔案…",
+      "cancel": "取消",
+      "cancelled": "匯出已取消。沒有下載任何內容。",
+      "failed": {
+        "tooLarge": "檔案超過了 2 GB，因此匯出已停止。請降低大小、影格率或長度。",
+        "codec": "此瀏覽器無法以這個大小與影格率編碼影片。請試試較小的大小，或改用 Chrome 或 Edge。",
+        "unsafe": "這個繪圖包含無法轉譯為影格的外部內容。請移除後再試一次。",
+        "error": "匯出在瀏覽器中失敗。請再試一次，或試試較小的大小。"
+      },
+      "capHeight": "你的方案可匯出最高 {{max}}p 的點陣檔案。",
+      "capFps": "你的方案可匯出最高每秒 {{max}} 個影格。"
+    },
+    "exportDialog": {
+      "title": "匯出",
+      "description": "匯出在你的瀏覽器中進行。動畫匯出會計入你的每日額度；靜態 SVG 一律免費。",
+      "formats": "匯出格式",
+      "animated": "動態 SVG",
+      "animatedHint": "一個包含動畫的 SVG 檔案。可能時使用純 CSS，否則使用一小段內嵌指令碼。",
+      "static": "靜態 SVG",
+      "staticHint": "播放指標處的影格，不含動畫。免費，永不計入。",
+      "export": "匯出",
+      "unsupported": "這個動畫使用了動態 SVG 目前還無法匯出的效果。",
+      "doneStatic": "靜態 SVG 已下載。",
+      "done_other": "已下載。今天還剩 {{count}} 次動畫匯出。",
+      "doneUnlimited": "已下載。",
+      "limit_other": "你今天的 {{count}} 次動畫匯出已用完。",
+      "locked": "你的方案不包含此格式。",
+      "capDuration": "你的方案可匯出最長 {{seconds}} 秒的動畫。請縮短動畫或升級。",
+      "capOther": "這次匯出超過你的方案允許的範圍。",
+      "unavailable": "目前無法匯出。沒有計入任何次數；請稍後再試。",
+      "upgrade": "查看方案",
+      "runtimeCss": "純 CSS，無指令碼。",
+      "runtimeAnimeBecause": "使用一段 {{size}} KB 的指令碼（anime.js，MIT），原因：{{reasons}}。",
+      "runtimeAnimeChosen": "使用一段 {{size}} KB 的指令碼（anime.js，MIT）。",
+      "scriptImgNote": "指令碼會在 SVG 直接開啟或內嵌於頁面中時執行，在 <img> 標籤內不會執行（只顯示第一個影格）。",
+      "forceAnime": "使用指令碼執行環境",
+      "reasons": {
+        "morph": "形狀變形",
+        "stopOffset": "漸層色標位置",
+        "blur": "模糊（Safari）",
+        "motionRotate": "帶旋轉軌道的路徑旋轉"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "適用於 LottieFiles、lottie-web，以及 iOS、Android 與 Flutter 的 Lottie 播放器。Lottie 無法承載的功能會在下載後列出。"
+        },
+        "react_tsx": {
+          "title": "React 元件（.tsx）",
+          "hint": "一個內含 SVG 的元件檔案。只需要 React，使用指令碼執行環境時另需 anime.js 套件。"
+        },
+        "js": {
+          "title": "JavaScript 模組（.js）",
+          "hint": "一個純 ES 模組，提供 mount、play、pause 與 seek。不依賴任何框架。"
+        },
+        "ts": {
+          "title": "TypeScript 模組（.ts）",
+          "hint": "帶型別的 JavaScript 模組。"
+        },
+        "flutter": {
+          "title": "Flutter 小工具（.dart）",
+          "hint": "當動畫只有移動、淡化與變色時，產生原生的 flutter_svg 小工具；否則產生 WebView 播放器。"
+        }
+      },
+      "emitted": {
+        "css": "以 CSS 製作動畫，無指令碼。",
+        "anime": "以 anime.js 製作動畫（MIT，作為相依套件匯入）。",
+        "animeBecause": "以 anime.js 製作動畫（MIT，作為相依套件匯入），原因：{{reasons}}。"
+      },
+      "flutter": {
+        "native": "已產生原生小工具（flutter_svg 與 AnimationController）：動畫只使用變形、不透明度與顏色。",
+        "webview": "已產生 WebView 播放器（webview_flutter），因為{{reasons}}。WebView 的背景不透明，而且比原生小工具更耗資源。"
+      },
+      "flutterReasons": {
+        "morph": "它會變形形狀",
+        "mask": "它為遮罩或剪裁路徑製作動畫",
+        "blur": "它為模糊製作動畫",
+        "motionPath": "它沿著動態路徑移動",
+        "drawOn": "它描繪線條",
+        "gradient": "它為漸層色標製作動畫",
+        "symbol": "它為符號內的圖層製作動畫",
+        "raw": "它包含編輯器按原樣保留的 SVG 標記"
+      }
+    },
+    "gate": {
+      "locked": "你的方案未開放",
+      "requires": {
+        "free": "免費帳號即包含。",
+        "premium": "Premium 包含。",
+        "pro": "Pro 包含。"
+      },
+      "cta": {
+        "signup": "免費登入",
+        "premium": "升級至 Premium",
+        "pro": "升級至 Pro"
+      }
+    },
+    "projects": {
+      "save": "儲存",
+      "saveToAccount": "儲存到帳號",
+      "status": {
+        "local": "僅在此瀏覽器中",
+        "saved": "已儲存",
+        "saving": "儲存中…",
+        "retrying": "重試中…",
+        "offline": "離線，變更保留在這裡",
+        "conflict": "已在其他地方變更",
+        "failed": "未儲存"
+      },
+      "signIn": "登入",
+      "signInTitle": "登入以儲存到你的帳號",
+      "signInBody": "沒有帳號時，專案只會保留在此瀏覽器中。請登入（在新分頁中登入後再回來）以將此專案儲存到你的帳號，或下載為檔案，之後可以再次開啟。",
+      "downloadJson": "下載 .json",
+      "limit_other": "你的方案可儲存 {{count}} 個專案。請在你的帳號中刪除一個，或升級。",
+      "saveFailed": "此專案無法儲存到你的帳號。你的變更會保留在此瀏覽器中。",
+      "open": {
+        "signin": "請登入以開啟此專案。帳號專案只有擁有者看得到。",
+        "notFound": "此專案不存在，或屬於另一個帳號。",
+        "failed": "無法載入此專案。請檢查網路連線並重新載入頁面。",
+        "unreadable": "此專案由較新的版本儲存，無法在這裡開啟。"
+      },
+      "conflict": {
+        "title": "此專案已在另一個分頁或裝置上變更。",
+        "reload": "重新載入對方的版本",
+        "keep": "保留我的版本",
+        "reloadTitle": "取代你的版本？",
+        "reloadBody": "重新載入會開啟在其他地方儲存的副本，並捨棄此分頁中的變更。如果想保留你的版本，請先下載。",
+        "downloadMine": "下載我的版本",
+        "reloadConfirm": "重新載入對方的版本",
+        "reloadFailed": "無法載入已儲存的副本，請再試一次。"
+      }
+    },
+    "animators": {
+      "title": "動畫",
+      "selectOne": "選取一個圖層以製作動畫。",
+      "drawOn": "描繪",
+      "drawOnHint": "從起點到終點描繪線條（虛線偏移）。",
+      "motionPath": "動態路徑",
+      "motionPathHint": "讓圖層沿著路徑移動。選擇一條路徑，或用鋼筆畫一條。",
+      "morph": "變形",
+      "morphHint": "將此路徑變形為另一個形狀。選擇目標形狀。",
+      "gradient": "漸層",
+      "gradientHint": "為此圖層漸層的顏色製作動畫（每個色標一條軌道）。",
+      "maskClip": "遮罩／剪裁",
+      "maskClipHint": "以獨立的軌道為圖層的遮罩或剪裁形狀製作動畫。",
+      "blur": "模糊",
+      "blurHint": "隨時間逐漸模糊圖層。",
+      "blurAmount": "模糊量",
+      "pickGuide": "沿著哪條路徑移動？",
+      "pickTarget": "變形為哪個形狀？",
+      "noShapes": "還沒有其他形狀。",
+      "drawWithPen": "用鋼筆畫一個新的",
+      "autoOrient": "隨路徑旋轉",
+      "spanHint": "動畫器會從播放指標執行到結尾。可在時間軸中調整其關鍵影格。",
+      "notApplied": "該動畫器不適用於此圖層。",
+      "morphFailed": "這兩個形狀無法互相變形。"
+    },
+    "lottie": {
+      "supportSummary": "Lottie 無法承載的內容",
+      "document": "整個動畫",
+      "warningsTitle_other": "{{count}} 項內容未能轉移",
+      "unsupported": {
+        "maskAdvanced": "簡單白色或黑色形狀以外的遮罩，以及巢狀圖層上的遮罩",
+        "filter": "模糊與其他濾鏡",
+        "text": "文字（需要字型外框；請先將文字轉換為路徑）",
+        "image": "未嵌入的圖片，或群組內的圖片",
+        "useComplex": "有自訂大小或檢視框的重複使用符號",
+        "raw": "編輯器按原樣保留的 SVG 標記",
+        "cssOnly": "混合模式、標記與其他僅限 CSS 的樣式",
+        "strokeGradientAnimation": "線條上的動態漸層",
+        "gradientShape": "重複、焦點或拉伸的漸層",
+        "paint": "不是顏色或漸層的填色",
+        "skew": "同時在兩軸上傾斜",
+        "morph": "改變子路徑數量的形狀變形",
+        "playOnce": "只播放一次（Lottie 播放器預設循環）",
+        "expression": "運算式（使用關鍵影格的值）",
+        "effect": "圖層效果，例如模糊或陰影",
+        "textLayer": "文字圖層（保留為空的具名群組）",
+        "timeRemap": "時間重對應",
+        "threeD": "3D 圖層與 3D 旋轉",
+        "blendMode": "正常以外的混合模式",
+        "matte": "軌道遮罩",
+        "maskMode": "相加與相減以外的遮罩",
+        "modifier": "重複器、圓角與其他形狀修改器",
+        "imageExternal": "未嵌入檔案中的圖片",
+        "spatialTangents": "彎曲的動態路徑（圖層會以直線移動）",
+        "layerTiming": "不透明度有動畫的圖層上的進出點",
+        "unknownLayer": "編輯器無法繪製的圖層類型",
+        "unknownShape": "未知的形狀項目",
+        "autoOrient": "沿路徑自動定向",
+        "skewAxis": "沿傾斜軸傾斜",
+        "polystar": "圓角或動態的星形與多邊形（繪製為普通外框）",
+        "trimComplex": "除了描繪或擦除之外還做其他事的修剪路徑",
+        "gradientAnimation": "動態的漸層位置與動態的線條漸層",
+        "multipleStyles": "一個形狀上有多個填色或線條（使用最接近的一個）",
+        "styleOpacity": "漸層上動態的填色或線條不透明度",
+        "morphCounts": "點數不同的形狀關鍵影格（中間影格會有差異）"
+      },
+      "import": {
+        "warningsTitle_other": "{{count}} 項內容無法匯入",
+        "warningsBody": "動畫已可開啟。Lottie 檔案中的這些部分不受支援，已被省略或簡化：",
+        "open": "開啟動畫",
+        "unavailable": "此網站無法使用 Lottie 匯入。",
+        "refused": {
+          "limit": "你今天的匯出與匯入次數已用完。",
+          "locked": "你的方案不包含 Lottie 匯入。",
+          "cap": "此檔案超過你的方案允許的大小。",
+          "unavailable": "目前無法匯入。沒有計入任何次數；請稍後再試。"
+        },
+        "errors": {
+          "too_large": "該檔案超過 4 MB。",
+          "not_json": "該檔案無法以 JSON 格式讀取。",
+          "not_lottie": "該檔案不是 Lottie 動畫。",
+          "too_complex": "該動畫的圖層、關鍵影格或點太多。",
+          "invalid": "該 Lottie 檔案無法轉換為動畫。"
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "將圖片、影片、音訊或 PDF 檔案拖放到這裡",
+    "hint": "或點選從電腦中選擇。檔案僅用於讀取中繼資料，分析後即刪除；不會進行任何轉換。",
+    "largeFile": "超過 {{size}} 的檔案只在您要求時才檢查，以免大型影片被誤上傳。",
+    "failed": "無法檢查此檔案。可能是不支援的類型，或超出了您方案的大小限制。"
+  },
+  "voiceTools": {
+    "loading": "正在載入語音工具…",
+    "unavailable": {
+      "title": "語音功能目前無法使用",
+      "body": "語音引擎已關閉或正在重新啟動，因此此工具目前無法執行。本次未計入額度。請稍後再試。",
+      "shiftStillWorks": "下方的變調器不需要語音引擎，仍可使用。"
+    },
+    "warmingUp": "正在暖機語音引擎，第一次請求最多可能需要 20 秒。",
+    "honesty": "使用已儲存語音或預設語音產生的語音帶有聽不見的浮水印；以變調器處理的音訊則沒有。請只使用你自己的聲音，或你已獲得使用許可的聲音。你錄製或產生的任何內容都不會用於訓練任何模型，語音引擎執行於我們自己的伺服器上。",
+    "signIn": {
+      "title": "登入以儲存語音",
+      "body": "已儲存的語音需要有擁有者與同意記錄，因此複製語音、保留設計的語音、轉換為某個語音，以及「我的語音」都需要帳號。登入之前不會上傳任何內容。",
+      "cta": "登入"
+    },
+    "recorder": {
+      "record": "錄音",
+      "recording": "錄音中",
+      "stop": "停止",
+      "cancel": "取消錄音",
+      "level": "麥克風音量",
+      "or": "或",
+      "upload": "上傳音訊檔案",
+      "remove": "移除",
+      "recorded": "你的錄音，{{duration}}",
+      "uploaded": "{{name}}，{{duration}}",
+      "measuring": "正在讀取檔案長度…",
+      "unknownLength": "瀏覽器無法讀取此檔案的長度；伺服器會進行檢查。",
+      "tooShort": "錄音長度為 {{seconds}} 秒。語音至少需要 5 秒的說話內容。",
+      "tooLong": "錄音長度為 {{seconds}} 秒。請控制在 60 秒以內。",
+      "referenceHint": "在安靜的房間中錄製或上傳 5 到 60 秒清晰的語音。朗讀幾句自然的話。",
+      "inputHint": "錄製或上傳你想要變更的語音。",
+      "micDenied": "麥克風權限已被封鎖。請在瀏覽器網址列中允許此網站使用麥克風，或改為上傳檔案。",
+      "micHostBlocked": "代管此工具的頁面未允許使用麥克風。請改為上傳檔案。",
+      "micUnavailable": "此瀏覽器不支援錄音。請改為上傳音訊檔案。"
+    },
+    "consent": {
+      "label": "這是我自己的聲音，或者我已獲得聲音所屬者的明確許可。",
+      "note": "我們會將你確認的時間與此文字的版本（{{version}}）與該語音一併儲存。請參閱服務條款第 8.11 節。"
+    },
+    "clone": {
+      "title": "透過錄音建立語音",
+      "nameLabel": "語音名稱",
+      "namePlaceholder": "我的語音",
+      "languageLabel": "錄音語言",
+      "create": "建立語音",
+      "creating": "正在建立你的語音…",
+      "created": "語音已建立。可在「我的語音」中試聽其預覽。",
+      "signInToCreate": "登入以建立語音",
+      "limitReached": "你的方案已儲存 {{used}} / {{limit}} 個語音。請在帳號的「語音」中刪除一個，或升級以儲存更多。",
+      "noSaving": "你的方案無法儲存語音。",
+      "usage": "已儲存 {{used}} / {{limit}} 個語音",
+      "usageUnlimited": "已儲存 {{used}} 個語音"
+    },
+    "myVoices": {
+      "title": "我的語音",
+      "empty": "還沒有已儲存的語音。",
+      "preview": "{{name}} 的預覽",
+      "use": "使用此語音",
+      "inUse": "已選取",
+      "manage": "在帳號中管理你的語音",
+      "kinds": {
+        "cloned": "複製",
+        "designed": "設計",
+        "preset": "預設"
+      }
+    },
+    "picker": {
+      "label": "語音",
+      "saved": "我的語音",
+      "presets": "預設語音",
+      "none": "目前沒有可用的語音。"
+    },
+    "speak": {
+      "title": "產生語音",
+      "textLabel": "要朗讀的文字",
+      "placeholder": "輸入語音要說的內容。",
+      "counter": "{{used}} / {{max}} 個字元",
+      "overLimit": "超出了你的方案單次請求允許的長度（{{max}} 個字元）。",
+      "languageLabel": "語言",
+      "exaggerationLabel": "情感",
+      "exaggerationHint": "數值越低越平靜，越高越富有表現力。",
+      "generate": "產生語音",
+      "generating": "正在產生…",
+      "notAllowed": "你的方案不包含語音產生功能。"
+    },
+    "designer": {
+      "title": "描述一個語音",
+      "descriptionLabel": "描述",
+      "placeholder": "溫暖、低沉、略帶沙啞、中年、平靜",
+      "hint": "描述語音聽起來應該是什麼樣子。引擎對英文描述的理解最好；下方的標籤可加入常見特徵。",
+      "languageLabel": "預覽語言",
+      "languageNote": "設計的語音會以其中一種語言建立；保留後，它可以說語音工具支援的所有語言。",
+      "chipGroups": {
+        "gender": "性別",
+        "age": "年齡",
+        "accent": "口音",
+        "tone": "音色",
+        "pace": "語速"
+      },
+      "chips": {
+        "female": "女聲",
+        "male": "男聲",
+        "neutral": "中性",
+        "young": "青年",
+        "middleAged": "中年",
+        "older": "年長",
+        "american": "美式",
+        "british": "英式",
+        "australian": "澳洲式",
+        "irish": "愛爾蘭式",
+        "warm": "溫暖",
+        "bright": "明亮",
+        "deep": "低沉",
+        "raspy": "沙啞",
+        "soft": "柔和",
+        "slow": "慢",
+        "measured": "沉穩",
+        "fast": "快"
+      },
+      "preview": "預覽",
+      "previewing": "正在產生預覽…",
+      "previewsLeft": "剩餘預覽：{{left}} / {{max}}",
+      "previewsUsed": "你已用完此描述的 3 次預覽。請保留該語音，或修改描述後再次預覽。",
+      "previewLabel": "所描述語音的預覽",
+      "keepTitle": "保留此語音",
+      "nameLabel": "語音名稱",
+      "keep": "保留此語音",
+      "keeping": "正在儲存語音…",
+      "kept": "語音已儲存。現在可在「我的語音」中找到。",
+      "signInToKeep": "登入以保留此語音"
+    },
+    "changer": {
+      "modeLabel": "變更方式",
+      "modes": {
+        "shift": "變調（即時）",
+        "convert": "轉換為某個語音（AI）"
+      },
+      "shiftHint": "使用 rubberband 即時調整音高與共振峰。計為一次操作。結果不帶浮水印。",
+      "convertHint": "讓錄音聽起來像某個已儲存或預設的語音。計為一次 AI 工作。結果帶有聽不見的浮水印。",
+      "convertNotInPlan": "轉換為某個語音不包含在你的方案中。",
+      "upgrade": "查看方案",
+      "signInToConvert": "登入以轉換為某個語音",
+      "targetLabel": "轉換為",
+      "convert": "轉換",
+      "converting": "正在轉換…"
+    },
+    "shifter": {
+      "semitonesLabel": "音高",
+      "semitonesValue": "{{value}} 個半音",
+      "formantLabel": "共振峰",
+      "formants": {
+        "preserved": "保留語音的特色",
+        "shifted": "隨音高一起變化"
+      },
+      "presetsLabel": "預設",
+      "presets": {
+        "deeper": "更低沉",
+        "higher": "更高",
+        "child": "童聲",
+        "elder": "年長",
+        "telephone": "電話"
+      },
+      "shift": "變聲",
+      "shifting": "正在變聲…"
+    },
+    "result": {
+      "working": "處理中…",
+      "failed": "語音工作失敗。未計入額度。",
+      "downloadMp3": "下載 MP3",
+      "downloadWav": "下載 WAV",
+      "wavPreparing": "正在準備 WAV…",
+      "wavFailed": "無法在此瀏覽器中產生 WAV。請改為下載 MP3。",
+      "wavNote": "WAV 是在你的瀏覽器中由 MP3 解碼而來。",
+      "another": "重新開始"
+    },
+    "darkroom": {
+      "title": "產生旁白",
+      "description": "輸入腳本，選擇語音和語言。旁白會加入此專案的媒體中，並放置在播放指標處。",
+      "placeholder": "輸入旁白腳本。",
+      "generate": "產生旁白",
+      "presetsOnly": "未登入時，你可以使用預設語音。登入後可使用你儲存的語音。",
+      "added": "旁白已加入到播放指標處",
+      "noAsset": "旁白已產生，但無法加入專案中。請再試一次。"
+    },
+    "errors": {
+      "sign_in_required": "請登入以儲存並使用你自己的語音。",
+      "consent_required": "請勾選核取方塊，確認這是你自己的聲音，或你已獲得說話者的明確許可。",
+      "reference_required": "請先錄製或上傳 5 到 60 秒的語音。",
+      "reference_too_short": "錄音必須至少 5 秒。",
+      "reference_too_long": "錄音必須在 60 秒以內。",
+      "reference_too_large": "錄音檔案過大。",
+      "no_speech_detected": "在該錄音中沒有聽到說話內容。請在安靜的房間中錄幾句話。",
+      "not_audio": "該檔案不是我們能讀取的錄音。",
+      "name_invalid": "請為語音取一個 1 到 60 個字元的名稱。",
+      "language_not_supported": "此語音不支援該語言。",
+      "voice_limit": "你已達到方案允許儲存的語音數量（{{limit}}）。請刪除一個，或升級以儲存更多。",
+      "text_required": "請輸入要說的內容。",
+      "text_too_long": "你的方案每次請求最多允許 {{limit}} 個字元。",
+      "exaggeration_invalid": "情感值必須介於 0.25 到 2 之間。",
+      "voice_convert_not_in_plan": "轉換為某個語音不包含在你的方案中。",
+      "voice_input_too_long": "你的方案在此處允許的錄音最長為 {{limit}} 秒。",
+      "input_required": "請加入你想要變更的錄音。",
+      "input_too_large": "錄音對你的方案來說過大。",
+      "voice_required": "請選擇一個要轉換成的語音。",
+      "voice_not_found": "該語音已不存在。",
+      "preset_not_found": "該預設語音無法使用。",
+      "description_required": "請描述你想要的語音。",
+      "description_too_long": "描述請控制在 1000 個字元以內。",
+      "preview_limit": "你在一小時內已對此描述預覽了三次。請保留該語音，或修改描述。",
+      "session_required": "預覽需要瀏覽器工作階段。請重新載入頁面後再試。",
+      "semitones_invalid": "音高必須介於 -12 到 12 個半音之間。",
+      "shift_invalid": "這些變調設定無效。",
+      "voices_unavailable": "語音引擎目前無法使用。未計入額度；請稍後再試。",
+      "voices_storage_unavailable": "已儲存的語音暫時無法使用。未計入額度。",
+      "voices_timeout": "語音引擎耗時過長。未計入額度。",
+      "voice_request_refused": "語音引擎拒絕了該請求。",
+      "upload_failed": "上傳失敗。請再試一次。",
+      "job_failed": "無法啟動該工作。請再試一次。",
+      "invalid_body": "請求中的某些內容無效。請重新載入頁面後再試。",
+      "rate_limited": "過去一小時內的語音請求過多。請稍後再試。",
+      "generic": "發生錯誤。請再試一次。"
+    }
+  }
+}

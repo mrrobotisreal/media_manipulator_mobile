@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Trang chủ Media Manipulator",
+    "openMenu": "Mở menu",
+    "github": "Xem trên GitHub",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "Chuyển giao diện sáng/tối",
+    "languageMenu": "Đổi ngôn ngữ",
+    "navIcon": "Biểu tượng Media Manipulator",
+    "winappsLogo": "Logo WinApps",
+    "creatvLogo": "Logo CreaTV",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "Chuyển đến nội dung",
+  "footer": {
+    "homeLink": "Trang chủ Media Manipulator",
+    "navIcon": "Biểu tượng Media Manipulator"
+  },
+  "home": {
+    "popularTools": "Công cụ phổ biến",
+    "closePreview": "Đóng bản xem trước"
+  },
+  "notFound": {
+    "recoveryRoutes": "Đường dẫn khôi phục"
+  },
+  "loading": {
+    "label": "Đang tải"
+  },
+  "languageSelector": {
+    "trigger": "Đổi ngôn ngữ",
+    "icon": "Biểu tượng dịch"
+  },
+  "common": {
+    "close": "Đóng",
+    "open": "Mở",
+    "loading": "Đang tải",
+    "moreOptions": "Tùy chọn khác"
+  },
+  "transcribeForm": {
+    "formatTooltip": "Về định dạng đầu ra của bản chép lời",
+    "languageTooltip": "Về gợi ý ngôn ngữ"
+  },
+  "audioForm": {
+    "aiTooltip": "Về Công cụ âm thanh AI"
+  },
+  "videoForm": {
+    "aiTooltip": "Về Công cụ video AI"
+  },
+  "imageForm": {
+    "aiTooltip": "Về Công cụ hình ảnh AI",
+    "selectiveFacesTooltip": "Về bảo vệ riêng tư khuôn mặt có chọn lọc",
+    "removeObjectTooltip": "Về xóa đối tượng",
+    "metadataTooltip": "Về cách xử lý siêu dữ liệu",
+    "vectorizeThresholdTooltip": "Về ngưỡng vector hóa"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Annulla",
+    "retry": "Riprova",
+    "close": "Chiudi",
+    "continue": "Continua",
+    "done": "Fatto",
+    "loading": "Caricamento",
+    "processing": "Elaborazione",
+    "signOut": "Esci",
+    "back": "Indietro"
+  },
+  "tabs": {
+    "tools": "Strumenti",
+    "history": "Cronologia",
+    "account": "Account"
+  },
+  "placeholders": {
+    "toolsBody": "Gli strumenti arrivano con MA10.",
+    "historyBody": "I tuoi lavori appariranno qui.",
+    "accountBody": "L'account arriva con MA15.",
+    "errorBoundary": "Qualcosa è andato storto. Riavvia l'app."
+  },
+  "language": {
+    "title": "Lingua",
+    "system": "Predefinita del sistema",
+    "rtlReloadTitle": "Riavvia per cambiare la direzione del layout",
+    "rtlReloadBody": "L'app deve riavviarsi per mostrare questa lingua da destra a sinistra.",
+    "rtlReloadBodyLtr": "L'app deve riavviarsi per mostrare questa lingua da sinistra a destra.",
+    "rtlReloadConfirm": "Riavvia ora"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Accedi a Media Manipulator",
+      "subtitle": "Usa lo stesso account di media-manipulator.com.",
+      "email": "Accedi con l'email",
+      "createAccount": "Crea un account",
+      "legal": "Continuando accetti i {{terms}} e l'{{privacy}}.",
+      "terms": "Termini di servizio",
+      "privacy": "Informativa sulla privacy",
+      "unavailable": "L'accesso non è disponibile in questa versione.",
+      "sessionExpired": "La sessione è scaduta. Accedi di nuovo."
+    },
+    "signUp": {
+      "title": "Crea il tuo account",
+      "name": "Nome",
+      "passwordHelper": "Almeno 8 caratteri",
+      "submit": "Crea account",
+      "haveAccount": "Hai già un account? Accedi"
+    },
+    "errors": {
+      "nameRequired": "Inserisci il tuo nome (massimo 80 caratteri).",
+      "emailInUse": "Esiste già un account con questa email. Accedi invece.",
+      "weakPassword": "Scegli una password più sicura (almeno 8 caratteri).",
+      "generic": "Qualcosa è andato storto. Riprova."
+    },
+    "link": {
+      "title": "Collega i tuoi account",
+      "linkApple": "Collega Apple",
+      "linkAppleBody": "Collega il tuo ID Apple per poter accedere con quello la prossima volta."
+    },
+    "verify": {
+      "banner": "Verifica la tua email per proteggere il tuo account.",
+      "send": "Invia link",
+      "sent": "Link inviato. Controlla la posta in arrivo."
+    },
+    "sync": {
+      "failedTitle": "Non siamo riusciti a raggiungere il tuo account",
+      "failedBody": "Controlla la connessione e riprova. I tuoi file e il tuo piano sono al sicuro."
+    },
+    "signOut": {
+      "confirmTitle": "Uscire?",
+      "confirmBody": "Potrai accedere di nuovo quando vuoi."
+    },
+    "reauth": {
+      "title": "Conferma che sei tu",
+      "body": "Per la tua sicurezza, accedi di nuovo per continuare.",
+      "withPassword": "Conferma con la password",
+      "withGoogle": "Conferma con Google",
+      "withApple": "Conferma con Apple"
+    }
+  }
+}

@@ -11,7 +11,7 @@ module.exports = defineConfig([
   expoConfig,
   prettierConfig,
   {
-    ignores: ['android/*', 'ios/*', '.expo/*', 'dist/*', 'coverage/*', 'graphify-out/*'],
+    ignores: ['android/*', 'ios/*', '.expo/*', 'dist/*', 'coverage/*', 'graphify-out/*', 'src/i18n/generated/*'],
   },
   {
     files: ['app/**/*.{ts,tsx}', 'src/features/**/*.{ts,tsx}'],

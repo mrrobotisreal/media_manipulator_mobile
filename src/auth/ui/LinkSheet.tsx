@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { useAppDispatch, useAppSelector } from '@/state/hooks';
 import { linkPromptSet } from '@/state/slices/auth';
 import { Button, Sheet, Text } from '@/ui/components';
 import { clearPendingLink, linkProviderOptions } from '../linking';
 import type { AuthMethod } from '../methods';
-import { authT } from '../strings';
 
 /**
  * "This email is already registered with another sign-in method." Offers the other providers
@@ -19,6 +19,7 @@ export function LinkSheet({
   email?: string;
   onPick: (method: AuthMethod) => void;
 }) {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const attempted = useAppSelector((s) => s.auth.linkPrompt);
   const [options, setOptions] = useState<AuthMethod[]>([]);
@@ -37,20 +38,20 @@ export function LinkSheet({
     dispatch(linkPromptSet(null));
   };
   const label: Record<AuthMethod, string> = {
-    apple: authT('signIn.apple'),
-    google: authT('signIn.google'),
-    email: authT('signIn.email'),
+    apple: t('interface:authModal.appleSignIn'),
+    google: t('interface:authModal.googleSignIn'),
+    email: t('auth.signIn.email'),
   };
 
   return (
     <Sheet visible={attempted !== null} onClose={close}>
       <View className="gap-3" testID="link-sheet">
-        <Text className="text-lg font-semibold">{authT('link.title')}</Text>
-        <Text className="text-muted-fg">{authT('link.body')}</Text>
+        <Text className="text-lg font-semibold">{t('auth.link.title')}</Text>
+        <Text className="text-muted-fg">{t('interface:authModal.link.notice')}</Text>
         {options.map((m) => (
           <Button key={m} label={label[m]} variant="secondary" onPress={() => onPick(m)} />
         ))}
-        <Button label={authT('link.cancel')} variant="ghost" onPress={close} />
+        <Button label={t('common.cancel')} variant="ghost" onPress={close} />
       </View>
     </Sheet>
   );

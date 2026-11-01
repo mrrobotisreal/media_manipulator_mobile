@@ -1,8 +1,9 @@
 import { Link, Redirect } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { Linking, ScrollView, View } from 'react-native';
 import { trackAuthScreenShown } from '@/auth/analytics';
-import { errorEmail } from '@/auth/errors';
+import { authErrorI18nKey, errorEmail } from '@/auth/errors';
 import { isFirebaseConfigured } from '@/lib/firebaseAvailable';
 import {
   signInWithApple,
@@ -10,7 +11,6 @@ import {
   signInWithGoogle,
   type SignInOutcome,
 } from '@/auth/signIn';
-import { authT } from '@/auth/strings';
 import { LinkSheet } from '@/auth/ui/LinkSheet';
 import { ProviderButtons } from '@/auth/ui/ProviderButtons';
 import { PRIVACY_URL, TERMS_URL } from '@/lib/links';
@@ -21,6 +21,7 @@ import { isValidEmail } from '@/auth/email';
 import type { AuthMethod } from '@/auth/methods';
 
 export default function SignIn() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const status = useAppSelector((s) => s.auth.status);
   const notice = useAppSelector((s) => s.auth.notice);
@@ -41,7 +42,7 @@ export default function SignIn() {
 
   const handle = (outcome: SignInOutcome) => {
     setBusy(false);
-    if (outcome.status === 'error') setError(authT(`errors.${outcome.errorKey}`));
+    if (outcome.status === 'error') setError(t(authErrorI18nKey(outcome.errorKey)));
     else if (outcome.status === 'link') setLinkEmail(outcome.email ?? errorEmail(undefined));
     else {
       setError(null);
@@ -69,12 +70,12 @@ export default function SignIn() {
       >
         <Wordmark />
         <View className="gap-1">
-          <Text className="text-xl font-semibold">{authT('signIn.title')}</Text>
-          <Text className="text-muted-fg">{authT('signIn.subtitle')}</Text>
+          <Text className="text-xl font-semibold">{t('auth.signIn.title')}</Text>
+          <Text className="text-muted-fg">{t('auth.signIn.subtitle')}</Text>
         </View>
         {notice === 'sessionExpired' ? (
           <Text className="text-premium" testID="session-expired">
-            {authT('signIn.sessionExpired')}
+            {t('auth.signIn.sessionExpired')}
           </Text>
         ) : null}
         {available ? (
@@ -87,7 +88,7 @@ export default function SignIn() {
             {emailOpen ? (
               <View className="gap-3">
                 <TextField
-                  label={authT('signInForm.email')}
+                  label={t('interface:authModal.fields.email')}
                   value={email}
                   onChangeText={setEmail}
                   autoCapitalize="none"
@@ -96,7 +97,7 @@ export default function SignIn() {
                   textContentType="emailAddress"
                 />
                 <TextField
-                  label={authT('signInForm.password')}
+                  label={t('interface:authModal.fields.password')}
                   value={password}
                   onChangeText={setPassword}
                   secureTextEntry
@@ -104,7 +105,7 @@ export default function SignIn() {
                   textContentType="password"
                 />
                 <Button
-                  label={authT('signIn.submit')}
+                  label={t('interface:accountMenu.signIn')}
                   size="lg"
                   loading={busy}
                   disabled={!isValidEmail(email) || password.length === 0}
@@ -113,7 +114,7 @@ export default function SignIn() {
               </View>
             ) : (
               <Button
-                label={authT('signIn.email')}
+                label={t('auth.signIn.email')}
                 variant="ghost"
                 size="lg"
                 disabled={busy}
@@ -127,23 +128,23 @@ export default function SignIn() {
             ) : null}
             <View className="flex-row flex-wrap justify-between gap-3">
               <Link href="/(auth)/sign-up" asChild>
-                <Text className="text-primary">{authT('signIn.createAccount')}</Text>
+                <Text className="text-primary">{t('auth.signIn.createAccount')}</Text>
               </Link>
               <Link href="/(auth)/forgot-password" asChild>
-                <Text className="text-primary">{authT('signIn.forgot')}</Text>
+                <Text className="text-primary">{t('interface:authModal.forgotPassword')}</Text>
               </Link>
             </View>
             <Text className="text-sm text-subtle">
-              {authT('signIn.legal', { terms: '\u0001', privacy: '\u0002' })
+              {t('auth.signIn.legal', { terms: '\u0001', privacy: '\u0002' })
                 .split(/(\u0001|\u0002)/)
-                .map((part, i) =>
+                .map((part: string, i: number) =>
                   part === '\u0001' ? (
                     <Text
                       key={i}
                       className="text-sm text-primary"
                       onPress={() => void Linking.openURL(TERMS_URL)}
                     >
-                      {authT('signIn.terms')}
+                      {t('auth.signIn.terms')}
                     </Text>
                   ) : part === '\u0002' ? (
                     <Text
@@ -151,7 +152,7 @@ export default function SignIn() {
                       className="text-sm text-primary"
                       onPress={() => void Linking.openURL(PRIVACY_URL)}
                     >
-                      {authT('signIn.privacy')}
+                      {t('auth.signIn.privacy')}
                     </Text>
                   ) : (
                     part
@@ -161,7 +162,7 @@ export default function SignIn() {
           </>
         ) : (
           <Text className="text-muted-fg" testID="auth-unavailable">
-            {authT('signIn.unavailable')}
+            {t('auth.signIn.unavailable')}
           </Text>
         )}
       </ScrollView>

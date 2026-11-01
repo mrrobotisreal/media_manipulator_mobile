@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "אישור",
+    "cancel": "ביטול",
+    "retry": "נסה שוב",
+    "close": "סגירה",
+    "continue": "המשך",
+    "done": "סיום",
+    "loading": "טוען",
+    "processing": "מעבד",
+    "signOut": "התנתקות",
+    "back": "חזרה"
+  },
+  "tabs": {
+    "tools": "כלים",
+    "history": "היסטוריה",
+    "account": "חשבון"
+  },
+  "placeholders": {
+    "toolsBody": "הכלים יגיעו ב-MA10.",
+    "historyBody": "המשימות שלך יופיעו כאן.",
+    "accountBody": "החשבון יגיע ב-MA15.",
+    "errorBoundary": "משהו השתבש. הפעל מחדש את האפליקציה."
+  },
+  "language": {
+    "title": "שפה",
+    "system": "ברירת המחדל של המערכת",
+    "rtlReloadTitle": "הפעל מחדש כדי להחליף את כיוון הפריסה",
+    "rtlReloadBody": "יש להפעיל מחדש את האפליקציה כדי להציג את השפה הזו מימין לשמאל.",
+    "rtlReloadBodyLtr": "יש להפעיל מחדש את האפליקציה כדי להציג את השפה הזו משמאל לימין.",
+    "rtlReloadConfirm": "הפעל מחדש עכשיו"
+  },
+  "auth": {
+    "signIn": {
+      "title": "התחברות ל-Media Manipulator",
+      "subtitle": "אפשר להשתמש באותו חשבון כמו ב-media-manipulator.com.",
+      "email": "התחברות עם אימייל",
+      "createAccount": "יצירת חשבון",
+      "legal": "בהמשך אתם מסכימים ל{{terms}} ול{{privacy}}.",
+      "terms": "תנאי השימוש",
+      "privacy": "מדיניות הפרטיות",
+      "unavailable": "ההתחברות לא זמינה בגרסה הזו.",
+      "sessionExpired": "תוקף ההתחברות פג. נא להתחבר שוב."
+    },
+    "signUp": {
+      "title": "יצירת חשבון",
+      "name": "שם",
+      "passwordHelper": "לפחות 8 תווים",
+      "submit": "יצירת חשבון",
+      "haveAccount": "כבר יש לך חשבון? התחברות"
+    },
+    "errors": {
+      "nameRequired": "יש להזין שם (עד 80 תווים).",
+      "emailInUse": "כבר קיים חשבון עם האימייל הזה. אפשר להתחבר במקום זה.",
+      "weakPassword": "כדאי לבחור סיסמה חזקה יותר (לפחות 8 תווים).",
+      "generic": "משהו השתבש. נסו שוב."
+    },
+    "link": {
+      "title": "קישור החשבונות שלך",
+      "linkApple": "קישור Apple",
+      "linkAppleBody": "קשרו את מזהה ה-Apple שלכם כדי שתוכלו להתחבר איתו בפעם הבאה."
+    },
+    "verify": {
+      "banner": "אמתו את האימייל כדי לשמור על החשבון מאובטח.",
+      "send": "שליחת קישור",
+      "sent": "הקישור נשלח. בדקו את תיבת הדואר."
+    },
+    "sync": {
+      "failedTitle": "לא הצלחנו להגיע לחשבון שלך",
+      "failedBody": "בדקו את החיבור ונסו שוב. הקבצים והתוכנית שלך בטוחים."
+    },
+    "signOut": {
+      "confirmTitle": "להתנתק?",
+      "confirmBody": "אפשר להתחבר שוב בכל עת."
+    },
+    "reauth": {
+      "title": "אשרו שזה אתם",
+      "body": "לביטחונכם, התחברו שוב כדי להמשיך.",
+      "withPassword": "אישור עם סיסמה",
+      "withGoogle": "אישור עם Google",
+      "withApple": "אישור עם Apple"
+    }
+  }
+}

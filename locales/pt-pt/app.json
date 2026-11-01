@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "retry": "Tentar novamente",
+    "close": "Fechar",
+    "continue": "Continuar",
+    "done": "Concluído",
+    "loading": "A carregar",
+    "processing": "A processar",
+    "signOut": "Terminar sessão",
+    "back": "Voltar"
+  },
+  "tabs": {
+    "tools": "Ferramentas",
+    "history": "Histórico",
+    "account": "Conta"
+  },
+  "placeholders": {
+    "toolsBody": "As ferramentas chegam no MA10.",
+    "historyBody": "As suas tarefas vão aparecer aqui.",
+    "accountBody": "A conta chega no MA15.",
+    "errorBoundary": "Ocorreu um erro. Reinicie a aplicação."
+  },
+  "language": {
+    "title": "Idioma",
+    "system": "Predefinição do sistema",
+    "rtlReloadTitle": "Reinicie para mudar a direção do esquema",
+    "rtlReloadBody": "A aplicação tem de reiniciar para mostrar este idioma da direita para a esquerda.",
+    "rtlReloadBodyLtr": "A aplicação tem de reiniciar para mostrar este idioma da esquerda para a direita.",
+    "rtlReloadConfirm": "Reiniciar agora"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Iniciar sessão no Media Manipulator",
+      "subtitle": "Utilize a mesma conta que em media-manipulator.com.",
+      "email": "Iniciar sessão com e-mail",
+      "createAccount": "Criar uma conta",
+      "legal": "Ao continuar, aceita os {{terms}} e a {{privacy}}.",
+      "terms": "Termos",
+      "privacy": "Política de Privacidade",
+      "unavailable": "O início de sessão não está disponível nesta versão.",
+      "sessionExpired": "A sua sessão expirou. Inicie sessão novamente."
+    },
+    "signUp": {
+      "title": "Crie a sua conta",
+      "name": "Nome",
+      "passwordHelper": "Pelo menos 8 caracteres",
+      "submit": "Criar conta",
+      "haveAccount": "Já tem conta? Inicie sessão"
+    },
+    "errors": {
+      "nameRequired": "Introduza o seu nome (até 80 caracteres).",
+      "emailInUse": "Já existe uma conta com este e-mail. Inicie sessão.",
+      "weakPassword": "Escolha uma palavra-passe mais forte (pelo menos 8 caracteres).",
+      "generic": "Algo correu mal. Tente novamente."
+    },
+    "link": {
+      "title": "Associe as suas contas",
+      "linkApple": "Associar Apple",
+      "linkAppleBody": "Associe o seu ID Apple para iniciar sessão com ele da próxima vez."
+    },
+    "verify": {
+      "banner": "Verifique o seu e-mail para manter a conta segura.",
+      "send": "Enviar ligação",
+      "sent": "Ligação enviada. Verifique a sua caixa de entrada."
+    },
+    "sync": {
+      "failedTitle": "Não conseguimos aceder à sua conta",
+      "failedBody": "Verifique a ligação e tente novamente. Os seus ficheiros e o seu plano estão seguros."
+    },
+    "signOut": {
+      "confirmTitle": "Terminar sessão?",
+      "confirmBody": "Pode voltar a iniciar sessão a qualquer momento."
+    },
+    "reauth": {
+      "title": "Confirme que é você",
+      "body": "Por segurança, inicie sessão novamente para continuar.",
+      "withPassword": "Confirmar com palavra-passe",
+      "withGoogle": "Confirmar com Google",
+      "withApple": "Confirmar com Apple"
+    }
+  }
+}

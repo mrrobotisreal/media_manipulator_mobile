@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "continue": "Continuar",
+    "done": "Listo",
+    "loading": "Cargando",
+    "processing": "Procesando",
+    "signOut": "Cerrar sesión",
+    "back": "Volver"
+  },
+  "tabs": {
+    "tools": "Herramientas",
+    "history": "Historial",
+    "account": "Cuenta"
+  },
+  "placeholders": {
+    "toolsBody": "Las herramientas llegarán en MA10.",
+    "historyBody": "Tus trabajos aparecerán aquí.",
+    "accountBody": "La cuenta llegará en MA15.",
+    "errorBoundary": "Algo salió mal. Reinicia la app."
+  },
+  "language": {
+    "title": "Idioma",
+    "system": "Predeterminado del sistema",
+    "rtlReloadTitle": "Reinicia para cambiar la dirección del diseño",
+    "rtlReloadBody": "La app necesita reiniciarse para mostrar este idioma de derecha a izquierda.",
+    "rtlReloadBodyLtr": "La app necesita reiniciarse para mostrar este idioma de izquierda a derecha.",
+    "rtlReloadConfirm": "Reiniciar ahora"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Inicia sesión en Media Manipulator",
+      "subtitle": "Usa la misma cuenta que en media-manipulator.com.",
+      "email": "Iniciar sesión con correo electrónico",
+      "createAccount": "Crear una cuenta",
+      "legal": "Al continuar, aceptas los {{terms}} y la {{privacy}}.",
+      "terms": "Términos de uso",
+      "privacy": "Política de privacidad",
+      "unavailable": "El inicio de sesión no está disponible en esta versión.",
+      "sessionExpired": "Tu sesión expiró. Inicia sesión de nuevo."
+    },
+    "signUp": {
+      "title": "Crea tu cuenta",
+      "name": "Nombre",
+      "passwordHelper": "Al menos 8 caracteres",
+      "submit": "Crear cuenta",
+      "haveAccount": "¿Ya tienes una cuenta? Inicia sesión"
+    },
+    "errors": {
+      "nameRequired": "Escribe tu nombre (máximo 80 caracteres).",
+      "emailInUse": "Ya existe una cuenta con este correo electrónico. Inicia sesión mejor.",
+      "weakPassword": "Elige una contraseña más segura (al menos 8 caracteres).",
+      "generic": "Algo salió mal. Inténtalo de nuevo."
+    },
+    "link": {
+      "title": "Vincula tus cuentas",
+      "linkApple": "Vincular Apple",
+      "linkAppleBody": "Vincula tu ID de Apple para poder iniciar sesión con él la próxima vez."
+    },
+    "verify": {
+      "banner": "Verifica tu correo electrónico para mantener tu cuenta segura.",
+      "send": "Enviar enlace",
+      "sent": "Enlace enviado. Revisa tu bandeja de entrada."
+    },
+    "sync": {
+      "failedTitle": "No pudimos acceder a tu cuenta",
+      "failedBody": "Revisa tu conexión e inténtalo de nuevo. Tus archivos y tu plan están a salvo."
+    },
+    "signOut": {
+      "confirmTitle": "¿Cerrar sesión?",
+      "confirmBody": "Puedes volver a iniciar sesión cuando quieras."
+    },
+    "reauth": {
+      "title": "Confirma que eres tú",
+      "body": "Por tu seguridad, inicia sesión de nuevo para continuar.",
+      "withPassword": "Confirmar con contraseña",
+      "withGoogle": "Confirmar con Google",
+      "withApple": "Confirmar con Apple"
+    }
+  }
+}

@@ -1,10 +1,16 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
+import { i18n } from '@/i18n';
 import ForgotPassword from '../app/(auth)/forgot-password';
 import SignIn from '../app/(auth)/sign-in';
 import { makeReadyStore } from '@/state/testing';
 import { statusChanged } from '@/state/slices/auth';
 import * as FB from '@react-native-firebase/auth';
+
+jest.mock('@/ui/components/ProcessingIndicator', () => ({}));
+jest.mock('@/ui/components/ProgressBar', () => ({}));
+jest.mock('@/ui/components/QuotaMeter', () => ({}));
 
 jest.mock('expo-router', () => {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -21,7 +27,11 @@ jest.mock('@/analytics/track', () => ({ track: jest.fn(), identify: jest.fn(), r
 async function renderScreen(ui: React.ReactElement) {
   const { store } = await makeReadyStore();
   store.dispatch(statusChanged('signedOut'));
-  await render(<Provider store={store}>{ui}</Provider>);
+  await render(
+    <Provider store={store}>
+      <I18nextProvider i18n={i18n}>{ui}</I18nextProvider>
+    </Provider>,
+  );
 }
 
 describe('sign-in screen', () => {
@@ -60,16 +70,16 @@ describe('forgot-password screen', () => {
   it('ends in the neutral confirmation even for an unknown account', async () => {
     (FB.sendPasswordResetEmail as jest.Mock).mockRejectedValue({ code: 'auth/user-not-found' });
     await renderScreen(<ForgotPassword />);
-    fireEvent.changeText(screen.getByLabelText('Email'), 'nobody@example.com');
-    fireEvent.press(screen.getByText('Send reset link'));
+    await fireEvent.changeText(screen.getByLabelText('Email'), 'nobody@example.com');
+    await fireEvent.press(screen.getByText('Send reset link'));
     await waitFor(() => expect(screen.getByTestId('reset-sent')).toBeTruthy());
     expect(screen.getByText(/If an account exists for that email/)).toBeTruthy();
   });
 
   it('shows an inline error for a malformed email', async () => {
     await renderScreen(<ForgotPassword />);
-    fireEvent.changeText(screen.getByLabelText('Email'), 'nope');
-    fireEvent.press(screen.getByText('Send reset link'));
+    await fireEvent.changeText(screen.getByLabelText('Email'), 'nope');
+    await fireEvent.press(screen.getByText('Send reset link'));
     await waitFor(() => expect(screen.getByText('Enter a valid email address.')).toBeTruthy());
   });
 });

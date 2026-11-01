@@ -1,0 +1,780 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "כלים ומדריכים קשורים"
+  },
+  "filePreview": {
+    "showResult": "הצג תוצאה"
+  },
+  "authModal": {
+    "defaultTitle": "צרו חשבון חינמי",
+    "defaultDescription": "שמרו את ההיסטוריה שלכם, שמרו פרויקטים ב־Darkroom, וקבלו מכסה יומית גדולה יותר.",
+    "signInTitle": "ברוכים השבים",
+    "signInDescription": "ההיסטוריה, פרויקטי ה־Studio השמורים והמכסה היומית שלכם נמצאים בדיוק במקום שהשארתם אותם.",
+    "tabs": {
+      "signup": "יצירת חשבון",
+      "signin": "התחברות"
+    },
+    "fields": {
+      "fullName": "שם מלא",
+      "fullNamePlaceholder": "John Doe",
+      "email": "אימייל",
+      "emailPlaceholder": "john@example.com",
+      "password": "סיסמה",
+      "passwordPlaceholderSignup": "לפחות 6 תווים",
+      "passwordPlaceholderSignin": "הסיסמה שלכם"
+    },
+    "actions": {
+      "createAccount": "צרו חשבון חינמי",
+      "creatingAccount": "יוצרים חשבון...",
+      "signIn": "התחברות",
+      "signingIn": "מתחברים..."
+    },
+    "googleSignIn": "המשיכו עם Google",
+    "orDivider": "או",
+    "terms": "בהרשמה, אתם מסכימים ל<tos>תנאי השימוש</tos> ול<privacy>מדיניות הפרטיות</privacy> שלנו",
+    "toast": {
+      "welcome": "ברוכים הבאים!",
+      "welcomeBack": "ברוכים השבים!",
+      "welcomeMM": "ברוכים הבאים ל־Media Manipulator!",
+      "accountCreated": "החשבון נוצר!",
+      "signedIn": "ההתחברות בוצעה בהצלחה.",
+      "googleSuccess": "ההתחברות עם Google בוצעה בהצלחה.",
+      "authFailed": "האימות נכשל",
+      "nameRequired": "נדרש שם",
+      "nameRequiredDesc": "יש להזין שם.",
+      "appleSuccess": "ההתחברות עם Apple בוצעה בהצלחה."
+    },
+    "contextual": {
+      "signupTitle": "ניצלתם היום את {{limit}} ההמרות החינמיות שלכם",
+      "signupBody": "חשבון חינמי מגדיל את המכסה היומית שלכם, שומר את היסטוריית ההמרות ומאפשר לשמור פרויקטים ב־Darkroom.",
+      "premiumTitle": "הגעתם למגבלה היומית של {{limit}}",
+      "premiumBody": "Premium מגדיל את המכסה היומית שלכם, פותח ייצוא ב־4K ועיבוד בעדיפות גבוהה, ומסיר פרסומות.",
+      "resets": "המכסה הנוכחית שלכם מתאפסת ב-{{when}}."
+    },
+    "plans": {
+      "freeTitle": "מה חשבון חינמי נותן לכם",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/חודש",
+      "premiumUpgrade": "שדרגו לפרימיום",
+      "comparePlans": "השוואת כל התוכניות",
+      "opsPerDay": "{{count}} פעולות ביום",
+      "opsPerDayUnlimited": "פעולות ללא הגבלה ביום",
+      "maxFileSize": "קבצים עד {{size}}",
+      "maxVideoLength": "סרטונים עד {{duration}}",
+      "maxOutput": "פלט עד {{height}}p",
+      "studioProjects": "{{count}} פרויקטים שמורים ב־Studio",
+      "studioProjectsUnlimited": "פרויקטים שמורים ללא הגבלה ב־Studio",
+      "retention": "אתם בוחרים כמה זמן הקבצים נשמרים: בין 24 שעות לשנתיים",
+      "priorityGpu": "עיבוד בעדיפות גבוהה",
+      "noAds": "ללא פרסומות",
+      "retentionGuest": "הקבצים נשמרים 24 שעות"
+    },
+    "loadingPlans": "טוען תוכניות…",
+    "appleSignIn": "המשיכו עם Apple",
+    "forgotPassword": "שכחתם סיסמה?",
+    "reset": {
+      "title": "איפוס הסיסמה",
+      "body": "הזינו את כתובת האימייל של החשבון ונשלח לכם קישור.",
+      "submit": "שליחת קישור לאיפוס",
+      "sending": "שולח…",
+      "sent": "אם קיים חשבון עם כתובת האימייל הזו, שלחנו אליה קישור לאיפוס הסיסמה.",
+      "back": "חזרה להתחברות"
+    },
+    "link": {
+      "notice": "כתובת האימייל הזו כבר רשומה עם שיטת התחברות אחרת. התחברו באמצעות אותה שיטה כדי לקשר ביניהן.",
+      "linked": "החשבונות קושרו. מעכשיו אפשר להתחבר בכל אחת מהשיטות."
+    }
+  },
+  "imageCropModal": {
+    "title": "חיתוך תמונה",
+    "subtitle": "גררו כדי להתאים את אזור החיתוך, ואז לחצו על החלה.",
+    "instructions": "גררו את אזור החיתוך כדי למקם אותו, או גררו את הפינה הימנית התחתונה לשינוי הגודל. האזור הכהה יותר יוסר.",
+    "previewAlt": "תצוגה מקדימה של החיתוך",
+    "cropArea": "אזור חיתוך: {{width}} × {{height}} פיקסלים",
+    "apply": "החלת חיתוך",
+    "cancel": "ביטול",
+    "reset": "איפוס"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "קיצוץ וידאו",
+    "titleAudio": "קיצוץ אודיו",
+    "instructions": "גררו את הידיות בציר הזמן כדי לבחור את הקטע שברצונכם לשמור. האזורים האפורים יוסרו.",
+    "audioFile": "קובץ אודיו",
+    "startLabel": "זמן התחלה",
+    "endLabel": "זמן סיום",
+    "durationLabel": "משך",
+    "finalDuration": "משך סופי: {{duration}}",
+    "apply": "החלת קיצוץ",
+    "cancel": "ביטול",
+    "reset": "איפוס",
+    "playPreview": "הפעלת תצוגה מקדימה",
+    "pausePreview": "השהיה"
+  },
+  "removeObjectOverlay": {
+    "title": "הסרת אובייקט",
+    "instructions": "ציירו מלבנים מעל האובייקטים שברצונכם להסיר. שחזור LaMa ישחזר את הרקע.",
+    "rectangleCount_one": "{{count}} אזור נבחר",
+    "rectangleCount_two": "{{count}} אזורים נבחרו",
+    "rectangleCount_many": "{{count}} אזורים נבחרו",
+    "rectangleCount_other": "{{count}} אזורים נבחרו",
+    "addRegion": "הוספת אזור",
+    "clearRegions": "ניקוי הכול",
+    "apply": "הסרת אובייקטים",
+    "cancel": "ביטול",
+    "undo": "בטל",
+    "previewAlt": "סימון אזורים להסרה",
+    "dragHint": "גררו לשינוי גודל, ואז שחררו. השתמשו בידיות לכיוונון מדויק.",
+    "removeRectangle": "הסרת מלבן {{number}}"
+  },
+  "faceSelectionOverlay": {
+    "title": "בחירת פנים לטשטוש",
+    "instructions": "הקישו על כל פרצוף שעליו תרצו להחיל את אפקט הפרטיות. הקישו שוב כדי לבטל את הבחירה.",
+    "selectAll": "בחירת הכול",
+    "clearSelection": "ניקוי הבחירה",
+    "apply": "החלה",
+    "cancel": "ביטול",
+    "selectedCount_one": "{{count}} פרצוף נבחר",
+    "selectedCount_two": "{{count}} פרצופים נבחרו",
+    "selectedCount_many": "{{count}} פרצופים נבחרו",
+    "selectedCount_other": "{{count}} פרצופים נבחרו",
+    "noFacesDetected": "לא זוהו פרצופים בתמונה זו.",
+    "previewAlt": "תצוגה מקדימה של הפרצופים שזוהו",
+    "faceAria": "פרצוף {{label}}",
+    "faceSelectedAria": "פרצוף {{label}} (נבחר)"
+  },
+  "mobileAnchorAd": {
+    "label": "פרסומת"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV — הביאו רעיונות לחיים",
+    "creatvCreativeAlt": "בואו לגלות את CreaTV! המקום שבו רעיונות הופכים למציאות."
+  },
+  "alternativeAdBanner": {
+    "placeholder": "מיקום פרסומת {{network}} - {{position}}",
+    "placeholderFormat": "פורמט: {{format}} | משבצת: {{slot}}",
+    "placeholderProduction": "פרסומות {{network}} יופיעו כאן בסביבת הייצור"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "שלב {{number}}",
+    "defaultTitle": "איך זה עובד"
+  },
+  "privacyPolicyComponent": {
+    "title": "פרטיות במבט חטוף",
+    "summary": "הקבצים מעובדים בשרתים שלנו ולעולם לא נשלחים לספקי בינה מלאכותית חיצוניים. ללא חשבון הם נשמרים 24 שעות; עם חשבון חינמי אתם בוחרים בין 24 שעות לשנתיים.",
+    "learnMore": "קראו את מדיניות הפרטיות המלאה"
+  },
+  "quotaMeter": {
+    "label": "היום",
+    "aiLabel": "AI",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "{{remaining}} מתוך {{limit}} נותרו היום",
+    "atLimit": "הגעתם למגבלה היומית",
+    "unlimited": "לחשבון זה אין מגבלה יומית",
+    "resets": "מתאפס ב-{{when}}",
+    "moreCta": "קבלו עוד"
+  },
+  "accountMenu": {
+    "signIn": "התחברות",
+    "account": "חשבון",
+    "signOut": "התנתקות",
+    "signOutFailed": "לא הצלחנו לנתק אתכם",
+    "tier": {
+      "anonymous": "אורח",
+      "free": "חינמי",
+      "premium": "Premium",
+      "operator": "מפעיל",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · מסתיים ב־{{date}}",
+    "tierEndsPro": "Pro · מסתיים ב־{{date}}"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "קבצים עד {{size}}",
+    "fileLimitMoreFree": "קבצים גדולים יותר דורשים חשבון חינמי",
+    "fileLimitMorePremium": "קבצים גדולים יותר דורשים Premium",
+    "nudgeTitle": "זה הושלם",
+    "nudgeBodyFree": "חשבון חינמי נותן לכם מכסה יומית גדולה יותר ושומר את ההיסטוריה שלכם.",
+    "nudgeBodyPremium": "Premium מוסיף ייצוא ב־4K, עיבוד בעדיפות גבוהה וללא פרסומות.",
+    "nudgeAction": "גלו מה תקבלו"
+  },
+  "consentBanner": {
+    "label": "העדפות עוגיות וניתוח נתונים",
+    "body": "אנחנו משתמשים בניתוח נתונים מבית ראשון ושומר על הפרטיות כדי לראות אילו כלים נמצאים בשימוש והיכן הם נכשלים. הקבצים שלכם לעולם אינם חלק מכך, ותוכלו לשנות זאת בכל עת.",
+    "bodyGdpr": "לפני שנמדוד משהו, אנחנו זקוקים לאישורכם. אנחנו משתמשים בניתוח נתונים מבית ראשון כדי לראות אילו כלים נמצאים בשימוש והיכן הם נכשלים — שום דבר לא נאסף עד שתבחרו, והקבצים שלכם לעולם אינם חלק מכך.",
+    "privacyLink": "קראו את מדיניות הפרטיות",
+    "more": "עוד",
+    "customize": "התאמה אישית",
+    "accept": "אישור",
+    "decline": "דחייה"
+  },
+  "consentPrefs": {
+    "title": "העדפות פרטיות",
+    "subtitle": "בחרו מה Media Manipulator רשאי למדוד. השינויים נכנסים לתוקף מיד לאחר השמירה.",
+    "necessary": {
+      "title": "הכרחי בלבד",
+      "body": "בחירת ערכת הנושא שלכם, ומזהה מכשיר וביקור אנונימי שמאפשר לנו לאכוף מגבלות של המסלול החינמי ולחסום שימוש לרעה. ללא עוגיות, ללא שימוש לצורכי פרסום, ולא ניתן לכבות זאת מבלי לפגוע בפעולת הכלים.",
+      "always": "פעיל תמיד"
+    },
+    "analytics": {
+      "title": "ניתוח נתונים",
+      "body": "אילו כלים אתם משתמשים בהם, האם המרה הצליחה, כמה מהר עמודים נטענים, ושגיאות שעלינו לתקן. מבית ראשון, נשמר 13 חודשים, לעולם לא נמכר. ללא שמות קבצים וללא תוכן קבצים."
+    },
+    "advertising": {
+      "title": "פרסום",
+      "body": "מאפשר ל-Google להתאים אישית את המודעות המוצגות בחלק מעמודי הכלים למבקרים חינמיים ולמבקרים שאינם מחוברים. הופעת מודעה אינה תלויה במתג זה; כשהוא כבוי, המודעות אינן מותאמות אישית. מנויי Premium ו-Pro אינם רואים מודעות לעולם.",
+      "bodyGdpr": "באזור שלכם, הבחירות לגבי מודעות מתבצעות בהודעת ההסכמה של Google ולא כאן; חלונית זו מכסה את הניתוח הסטטיסטי שלנו. עד שתבחרו שם, מודעות בעמודי הכלים אינן מותאמות אישית. מנויי Premium ו-Pro אינם רואים מודעות לעולם.",
+      "bodyGpc": "לצורך פרסום מותאם אישית. הדפדפן שלכם שולח אות Global Privacy Control, ולכן אפשרות זו נשארת כבויה — אנחנו מכבדים את האות הזה ולחיצה כאן לא יכולה לעקוף אותו.",
+      "managedByGoogle": "מנוהל בהודעת ההסכמה של Google",
+      "openGoogleMessage": "שינוי בחירות המודעות"
+    },
+    "gpcDetected": "זוהה אות Global Privacy Control. הוצאנו אתכם אוטומטית מכל מכירה או שיתוף של המידע האישי שלכם, ותיעדנו זאת.",
+    "doNotSell": {
+      "title": "אל תמכרו או תשתפו את המידע האישי שלי",
+      "body": "אנחנו לא מוכרים את המידע האישי שלכם. פעולה זו מוציאה אתכם מכל שיתוף לצורכי פרסום, כעת ובעתיד. ניתוח נתונים מבית ראשון הוא בחירה נפרדת שמופיעה למעלה.",
+      "action": "צאו מהתוכנית",
+      "done": "יצאתם מהתוכנית"
+    },
+    "yourData": {
+      "title": "הנתונים שלכם",
+      "body": "הורידו עותק של כל מה שמערכת הניתוח שלנו מחזיקה על הדפדפן הזה, או מחקו אותו לצמיתות. אם אתם מחוברים, שתי הפעולות חלות על כל מכשיר המקושר לחשבון שלכם; אחרת, הן חלות רק על הדפדפן הזה.",
+      "export": "ייצוא הנתונים שלי",
+      "exporting": "מכינים את הייצוא שלכם…",
+      "delete": "מחיקת הנתונים שלי",
+      "deleting": "מוחקים…",
+      "deleteConfirmBody": "פעולה זו מוחקת לצמיתות את היסטוריית הניתוח שלכם — אירועים, ביקורים ופרופיל המבקר שלכם — ולא ניתן לבטל אותה. רשומות של בחירות ההסכמה שלכם נשמרות, מכיוון שהחוק מחייב אותנו להיות מסוגלים להוכיח אותן. הקלידו DELETE כדי לאשר.",
+      "deleteConfirmPlaceholder": "הקלידו DELETE כדי לאשר",
+      "deleteConfirmAction": "מחיקה לצמיתות",
+      "deletedSummary": "בוצע. מחקנו {{events}} אירועים על פני {{sessions}} ביקורים, ולדפדפן הזה הוענק מזהה אנונימי חדש לגמרי.",
+      "deletedNote": "רשומות של בחירות ההסכמה שלכם נשמרות כהוכחה נדרשת על פי חוק. הגדרת ההסכמה עצמה לא משתנה — אם ניתוח הנתונים פעיל, פעילות חדשה נאספת תחת המזהה החדש; תוכלו לכבות זאת למעלה בכל עת.",
+      "error": "זה לא הצליח. נסו שוב בעוד רגע — שום דבר לא השתנה אם לא ראיתם אישור."
+    },
+    "policyPrefix": "כל הפרטים על מה שאנחנו אוספים, למה, ולכמה זמן אנחנו שומרים זאת:",
+    "policyLink": "מדיניות הפרטיות",
+    "cancel": "ביטול",
+    "save": "שמירת ההעדפות"
+  },
+  "toasts": {
+    "conversionStarted": "ההמרה החלה בהצלחה",
+    "conversionStartedDescription": "מזהה משימה: {{jobId}} - הקובץ שלכם בעיבוד",
+    "transcriptionStarted": "התמלול החל",
+    "transcriptionStartedDescription": "מזהה משימה: {{jobId}} - יוצרים תמלול",
+    "transcodeStarted": "המרת הקידוד החלה",
+    "translationStarted": "תרגום הכתוביות החל",
+    "jobStarted": "המשימה החלה",
+    "stitchStarted": "משימת האיחוי החלה",
+    "jobIdDescription": "מזהה משימה: {{jobId}}",
+    "conversionCompleted": "ההמרה הושלמה בהצלחה!",
+    "readyForDownload": "הקובץ שלכם מוכן להורדה",
+    "uploadingFile": "מעלים את {{fileName}}…",
+    "uploadingFileProgress": "מעלים את {{fileName}}… {{percent}}%",
+    "processingFile": "מעבדים את {{fileName}}…",
+    "buildingPreview": "בונים תצוגה מקדימה…",
+    "assetAdded": "{{fileName}} נוסף",
+    "audioAdded": "האודיו נוסף",
+    "processingAudio": "מעבדים אודיו…",
+    "captionsReady": "הכתוביות מוכנות",
+    "binUpdateFailed": "Couldn't update the media bin",
+    "assetDeleteFailed": "Couldn't delete that media"
+  },
+  "resultPanel": {
+    "ariaLabel": "Result",
+    "download": "Download",
+    "downloadFailed": "Download failed. Try again.",
+    "downloadStatus": {
+      "preparing": "מכינים את ההורדה…",
+      "started": "ההורדה התחילה — בדקו את ההורדות בדפדפן.",
+      "startedWithSize": "ההורדה התחילה ({{size}}) — בדקו את ההורדות בדפדפן.",
+      "failed": "לא ניתן היה להתחיל את ההורדה.",
+      "gone": "התוצאה הזו כבר לא זמינה להורדה.",
+      "retry": "נסו שוב",
+      "noRecharge": "הורדה חוזרת אף פעם לא מריצה את העבודה מחדש ולא גובה עליה."
+    },
+    "compare": "Compare",
+    "original": "Original",
+    "result": "Result",
+    "runAnother": "Run another",
+    "size": "Size",
+    "keepsUntil": "Keeps until",
+    "loading": "Loading preview…",
+    "loadFailed": "Could not load the result.",
+    "retry": "Try again",
+    "kind": {
+      "image": "Image",
+      "gif": "Animated GIF",
+      "video": "Video",
+      "audio": "Audio",
+      "transcript": "Transcript",
+      "captions": "Captions",
+      "pdf": "PDF document",
+      "archive": "Archive",
+      "hls": "HLS package",
+      "dash": "DASH package",
+      "metadata": "Metadata",
+      "unknown": "File",
+      "summary": "סיכום"
+    },
+    "image": {
+      "zoom": "Zoom",
+      "fit": "Fit",
+      "transparencyGrid": "Transparency grid",
+      "dimensions": "Dimensions",
+      "originalAlt": "Original image {{fileName}}",
+      "resultAlt": "Result image {{fileName}}"
+    },
+    "gif": {
+      "alt": "Animated GIF {{fileName}}"
+    },
+    "audio": {
+      "waveform": "Audio waveform"
+    },
+    "unknown": {
+      "body": "This result has no in-browser preview yet. Download it to open it.",
+      "type": "Type",
+      "size": "Size"
+    },
+    "transcript": {
+      "search": "Search transcript",
+      "searchPlaceholder": "Search…",
+      "matchCount": "{{current}} of {{total}}",
+      "noMatches": "No matches",
+      "prevMatch": "Previous match",
+      "nextMatch": "Next match",
+      "copyAll": "Copy all",
+      "copied": "Copied",
+      "format": "Format",
+      "rawPreview": "Raw text",
+      "seekTo": "Jump to {{time}}",
+      "showMore": "Show more ({{count}} left)",
+      "details": "Language, audio description and AI review"
+    },
+    "captions": {
+      "cues": "Cues",
+      "sourceCues": "Source cues",
+      "skipped": "Skipped blocks",
+      "countMismatch": "The source has {{source}} cues but the translation has {{translated}}. Extra rows are shown against an empty cell.",
+      "source": "Source",
+      "translated": "Translated",
+      "timingDiffers": "timing differs",
+      "empty": "(none)"
+    },
+    "compareModes": {
+      "label": "Compare view",
+      "slider": "Comparison position",
+      "sliderValue": "{{before}} {{beforePct}}%, {{after}} {{afterPct}}%",
+      "wipe": "Wipe",
+      "side_by_side": "Side by side",
+      "toggle": "Toggle",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "Playback controls",
+      "play": "Play",
+      "pause": "Pause",
+      "seek": "Seek",
+      "rate": "Speed",
+      "mute": "Mute",
+      "unmute": "Unmute result sound",
+      "prevFrame": "Previous frame",
+      "nextFrame": "Next frame",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps (target)",
+      "largeNotice": "Preview is capped at the container width; very large videos may play slowly.",
+      "videoOriginal": "Original video",
+      "videoResult": "Result video",
+      "audibleLabel": "Audible side",
+      "audioOriginal": "Original audio",
+      "audioResult": "Result audio",
+      "otherPeaks": "Other side waveform",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_one": "{{count}} file",
+      "summary_other": "{{count}} files",
+      "truncated": "The archive is cut short; showing what could be read.",
+      "search": "Search files",
+      "view": "View",
+      "gallery": "Gallery",
+      "list": "List",
+      "noMatches": "No files match.",
+      "play": "Play {{name}}",
+      "open": "Open",
+      "downloadEntry": "Download {{name}}",
+      "lightbox": "Image preview",
+      "previous": "Previous",
+      "next": "Next",
+      "tooLarge": "Too large to preview in the browser.",
+      "unreadable": "This archive could not be read in the browser.",
+      "noSingleEntry": "Single files cannot be downloaded from the server, so download the whole archive."
+    },
+    "pdf": {
+      "title": "PDF preview",
+      "openInNewTab": "Open in new tab",
+      "fallback": "Your browser cannot show this PDF inline."
+    },
+    "stream": {
+      "rung": "Quality",
+      "auto": "Auto",
+      "rungLabel": "{{height}}p, {{bitrate}} kbps",
+      "unsupported": "This stream cannot be played in the browser, so here is its report.",
+      "loading": "Preparing the stream",
+      "av1": "This browser cannot decode AV1."
+    },
+    "restore": {
+      "picker": "Model",
+      "original": "Original",
+      "modelOption": "{{name}}, {{duration}}s, {{size}}",
+      "failedTitle": "Models that failed",
+      "failedItem": "{{name}}: {{error}}",
+      "loading": "Loading the restored clips",
+      "download": "Download all results"
+    },
+    "summary": {
+      "loading": "טוען את הסיכום",
+      "loadFailed": "לא ניתן היה לטעון את הסיכום.",
+      "untitled": "סיכום",
+      "language": "שפה: {{language}}",
+      "chapters": "פרקים",
+      "seekTo": "דלגו אל {{time}}",
+      "topics": "נושאים",
+      "onScreenText": "טקסט על המסך",
+      "visual": "תמונה",
+      "speech": "דיבור",
+      "notes": "הערות",
+      "copyMarkdown": "העתקה כ־Markdown",
+      "copied": "הועתק",
+      "downloadMd": "הורדת ‎.md",
+      "downloadJson": "הורדת ‎.json",
+      "showAll": "הצגת הכול ({{count}})",
+      "showLess": "הצגת פחות"
+    },
+    "mp3": {
+      "button": "הורדה כ-MP3",
+      "converting": "ממיר ל-MP3…",
+      "hint": "קובץ קטן יותר, מומר בשרת שלנו. חינם ולעולם לא נספר כעבודת AI.",
+      "started": "הורדת ה-MP3 התחילה — בדקו את ההורדות בדפדפן.",
+      "startedWithSize": "הורדת ה-MP3 התחילה ({{size}}) — בדקו את ההורדות בדפדפן.",
+      "failed": "לא ניתן היה להכין את קובץ ה-MP3. נסו שוב בעוד רגע."
+    }
+  },
+  "billing": {
+    "intervalLabel": "תקופת חיוב",
+    "monthly": "חודשי",
+    "yearly": "שנתי",
+    "perMonth": "/חודש",
+    "perYear": "/שנה",
+    "currency": {
+      "label": "מטבע",
+      "panelLabel": "מטבע",
+      "lockedNote": "המנוי שלכם מחויב ב־{{currency}}. לא ניתן לשנות זאת כל עוד המנוי פעיל."
+    },
+    "yearlyBonus": "{{months}} חודשים חינם",
+    "cancelAnytime": "ביטול בכל עת",
+    "refund": "החזר כספי תוך 14 יום על התשלום הראשון",
+    "taxNote": "לא מתווסף מס",
+    "upgrade": "שדרגו לפרימיום",
+    "manage": "ניהול המנוי",
+    "operator": "ללא הגבלה (מפעיל)",
+    "unavailable": "פרימיום עדיין לא זמין",
+    "busy": "פותחים את התשלום…",
+    "cancelledNote": "התשלום בוטל. לא חויבתם.",
+    "dismiss": "סגירה",
+    "errors": {
+      "unavailable": "פרימיום עדיין לא זמין.",
+      "operator": "לחשבונות מפעיל כבר יש גישה בלתי מוגבלת.",
+      "generic": "לא ניתן היה להתחיל את התשלום. נסו שוב בעוד רגע.",
+      "alreadyOnPlan": "כבר יש לכם את המסלול הזה או מסלול גבוה יותר.",
+      "currencyLocked": "חשבון החיוב שלכם מוגדר ל־{{currency}}, ולכן המחירים מוצגים כעת ב־{{currency}}. בחרו שוב את המסלול כדי להמשיך."
+    },
+    "panel": {
+      "title": "חיוב",
+      "loading": "טוענים את פרטי החיוב…",
+      "loadFailed": "לא ניתן לטעון את פרטי החיוב. רעננו את הדף ונסו שוב.",
+      "operator": "גישת מפעיל. אין צורך במנוי.",
+      "unavailable": "מנויים עדיין לא זמינים.",
+      "grantUntil": "פרימיום הוענק על ידי הצוות עד {{date}}.",
+      "grantOpen": "פרימיום הוענק על ידי הצוות ללא תאריך סיום.",
+      "freeBody": "אתם במסלול החינמי. פרימיום מרחיב את המגבלות ומסיר פרסומות.",
+      "upgrade": "שדרגו לפרימיום",
+      "pastDueTitle": "התשלום האחרון לא עבר",
+      "pastDueBody": "הגישה לפרימיום נשמרת עד 7 ימים בזמן שאנחנו מנסים שוב. עדכנו את אמצעי התשלום כדי לשמור עליה.",
+      "intervalLabel": "חיוב",
+      "endsLabel": "Premium מסתיים ב־",
+      "renewsLabel": "מתחדש ב־",
+      "endsOn": "המנוי שלכם מסתיים ב־{{date}}.",
+      "resumeHint": "פתחו את ״ניהול המנוי״ כדי לחדש אותו.",
+      "renewsOn": "מתחדש ב־{{date}}.",
+      "updatePayment": "עדכון אמצעי תשלום",
+      "cancelledTitle": "מנוי ה־Premium שלכם בוטל",
+      "cancelledBody": "Premium נשאר שלכם עד {{date}}. לאחר מכן החשבון יעבור ל־Free ולא יתבצע חיוב נוסף.",
+      "cancelledBodyNoDate": "Premium נשאר שלכם עד סוף תקופת החיוב הנוכחית. לאחר מכן החשבון יעבור ל־Free ולא יתבצע חיוב נוסף.",
+      "planLabel": "מסלול",
+      "pro": {
+        "grantUntil": "Pro הוענק על ידי הצוות עד {{date}}.",
+        "grantOpen": "Pro הוענק על ידי הצוות ללא תאריך סיום.",
+        "pastDueBody": "הגישה ל־Pro נשמרת עד 7 ימים בזמן שאנחנו מנסים שוב. עדכנו את אמצעי התשלום כדי לשמור עליה.",
+        "endsLabel": "Pro מסתיים ב־",
+        "cancelledTitle": "מנוי ה־Pro שלכם בוטל",
+        "cancelledBody": "Pro נשאר שלכם עד {{date}}. לאחר מכן החשבון יעבור ל־Free ולא יתבצע חיוב נוסף.",
+        "cancelledBodyNoDate": "Pro נשאר שלכם עד סוף תקופת החיוב הנוכחית. לאחר מכן החשבון יעבור ל־Free ולא יתבצע חיוב נוסף."
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "מאשרים את התשלום…",
+        "body": "בדרך כלל זה לוקח כמה שניות."
+      },
+      "confirmed": {
+        "title": "ברוכים הבאים לפרימיום",
+        "body": "התשלום עבר והמסלול שלכם הוא עכשיו פרימיום."
+      },
+      "shortly": {
+        "title": "התשלום התקבל",
+        "body": "המסלול שלכם יתעדכן בקרוב. אם בעוד דקה עדיין מוצג מסלול חינמי, לחצו על הכפתור למטה."
+      },
+      "foreign": {
+        "title": "לא הצלחנו לשייך את התשלום הזה לחשבון שלכם",
+        "body": "אם שילמתם עכשיו, התחברו עם החשבון שבו השתמשתם בתשלום."
+      },
+      "failed": {
+        "title": "עדיין לא הצלחנו לאשר את התשלום",
+        "body": "המסלול יתעדכן אוטומטית לאחר אישור התשלום. נסו שוב בעוד רגע."
+      },
+      "refresh": "רענון המסלול שלי",
+      "confirmedPro": {
+        "title": "ברוכים הבאים ל־Pro",
+        "body": "התשלום עבר והמסלול שלכם הוא עכשיו Pro: המגבלות היומיות הגבוהות ביותר, והמכסה הגדולה ביותר ב־Motion עם הפצת עורך Motion."
+      }
+    },
+    "offer": {
+      "title": "התחרטתם? שמרו על Premium ב־{{price}} לחודש",
+      "resumeTitle": "התחרטתם? שמרו על Premium במחיר הנוכחי שלכם",
+      "fineprint": "היום לא מתבצע חיוב. החל מ־{{date}} תשלמו {{price}} לחודש במקום {{current}} לחודש, בכל חודש עד שתבטלו.",
+      "cta": "שמרו על Premium ב־{{price}} לחודש",
+      "resumeCta": "שמרו על Premium ב־{{price}}{{unit}}",
+      "keepAtCurrent": "שמרו על Premium ב־{{price}} לחודש",
+      "keepAtCurrentNoPrice": "שמרו על Premium במחיר הרגיל",
+      "working": "מעבד…",
+      "renewed": "Premium יתחדש ב־{{date}} ב־{{price}} לחודש",
+      "renewedNoPrice": "Premium יתחדש ב־{{date}}",
+      "renewedBare": "Premium ימשיך להתחדש",
+      "changed": "ההצעה השתנתה, הנה ההצעה העדכנית.",
+      "failed": "לא ניתן היה לעדכן את המנוי. נסו שוב.",
+      "resumePrice": "אתם משלמים כיום {{price}}{{unit}}, וזה המחיר שתמשיכו לשלם.",
+      "resumeCtaNoPrice": "שמרו על Premium",
+      "fineprintNoCurrent": "היום לא מתבצע חיוב. החל מ־{{date}} תשלמו {{price}} לחודש, בכל חודש עד שתבטלו.",
+      "resumeFineprint": "היום לא מתבצע חיוב. התשלום הבא שלכם ב־{{date}}, באותו מחיר, והמנוי יתחדש כרגיל עד שתבטלו.",
+      "unitMonth": " לחודש",
+      "unitYear": " לשנה"
+    },
+    "upgradePro": "שדרגו ל־Pro",
+    "unavailablePro": "Pro עדיין לא זמין",
+    "switchToPremium": "מעבר לפרימיום",
+    "planChange": {
+      "cancel": "לא עכשיו",
+      "upgrade": {
+        "title": "לשדרג ל־Pro עכשיו?",
+        "body": "תשלמו היום את ההפרש היחסי עבור שאר תקופת החיוב הזו. תאריך החידוש נשאר {{date}}, ומאז Pro עולה {{price}}{{unit}}.",
+        "bodyNoPrice": "תשלמו היום את ההפרש היחסי עבור שאר תקופת החיוב הזו. תאריך החידוש נשאר {{date}}.",
+        "bodyNoDate": "תשלמו היום את ההפרש היחסי עבור שאר תקופת החיוב הזו. תאריך החידוש לא משתנה.",
+        "fineprint": "Pro מתחיל מיד כשהתשלום עובר. ההחזר ל־14 יום חל על התשלום הראשון שלכם בלבד.",
+        "confirm": "שדרגו ל־Pro"
+      },
+      "downgrade": {
+        "title": "לעבור לפרימיום בסוף התקופה הזו?",
+        "body": "Pro נשאר שלכם עד {{date}}. לאחר מכן המסלול שלכם יהיה פרימיום ב־{{price}}{{unit}}.",
+        "bodyNoPrice": "Pro נשאר שלכם עד {{date}}. לאחר מכן המסלול שלכם יהיה פרימיום.",
+        "bodyNoDate": "Pro נשאר שלכם עד סוף תקופת החיוב הנוכחית. לאחר מכן המסלול שלכם יהיה פרימיום.",
+        "fineprint": "לא יינתן החזר עבור שאר התקופה הזו. אפשר להשאיר את Pro בכל עת לפני המעבר.",
+        "confirm": "מעבר לפרימיום"
+      },
+      "upgraded": "אתם ב־Pro עכשיו.",
+      "scheduled": "המסלול שלכם יעבור לפרימיום ב־{{date}}.",
+      "scheduledNoDate": "המסלול שלכם יעבור לפרימיום בסוף תקופת החיוב הזו.",
+      "kept": "אתם נשארים עם Pro.",
+      "pendingBody": "פרימיום מ־{{date}}. עד אז Pro נשאר שלכם.",
+      "keepPro": "להישאר עם Pro",
+      "dropTitle": "עוברים לפרימיום וממשיכים",
+      "dropBody": "במקום לאבד הכול, אפשר להישאר בפרימיום במחיר הרגיל שלו. חדשו את המנוי ב״ניהול המנוי״ ואז בחרו כאן ״מעבר לפרימיום״.",
+      "dropCta": "חידוש ב״ניהול המנוי״",
+      "errors": {
+        "notSubscription": "שינויי מסלול זמינים רק למנוי בתשלום. מסלול שהוענק על ידי הצוות לא ניתן לשינוי כאן.",
+        "samePlan": "אתם כבר במסלול הזה.",
+        "notAvailable": "השינוי הזה לא זמין כרגע. אם המנוי בוטל, חדשו אותו קודם ב״ניהול המנוי״.",
+        "generic": "לא ניתן היה לשנות את המסלול. נסו שוב בעוד רגע."
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "הגעתם למגבלה של היום: {{limit}}",
+      "body": "פרימיום מגדיל את המכסה היומית ומסיר פרסומות."
+    },
+    "outputHeight": {
+      "title": "הפלט הזה גבוה מהמותר במסלול שלכם",
+      "body": "ביקשתם {{requested}}p; המסלול שלכם מאפשר עד {{limit}}p."
+    },
+    "projects": {
+      "title": "הגעתם למגבלת הפרויקטים השמורים",
+      "body": "המסלול שלכם שומר עד {{limit}} פרויקטים של Darkroom."
+    },
+    "topTier": "המסלול שלכם כבר הגבוה ביותר. הקטינו את ההגדרה כדי להמשיך.",
+    "close": "אולי מאוחר יותר",
+    "signup": "יצירת חשבון חינמי",
+    "upgrade": "שדרגו לפרימיום",
+    "fileSize": {
+      "title": "הקובץ הזה גדול ממה שהתוכנית שלך מאפשרת",
+      "body": "התוכנית שלך מקבלת קבצים עד {{limit}}."
+    },
+    "premiumChange": {
+      "fileSize": "Premium מקבל קבצים עד {{value}}.",
+      "ops": "Premium מאפשר {{value}} המרות ביום.",
+      "opsUnlimited": "ב-Premium אין הגבלה יומית על המרות.",
+      "aiOps": "Premium מאפשר {{value}} משימות AI ביום.",
+      "aiOpsUnlimited": "ב-Premium אין הגבלה יומית על משימות AI.",
+      "exports": "Premium מאפשר {{value}} ייצואים ביום.",
+      "exportsUnlimited": "ב-Premium אין הגבלה יומית על ייצואים.",
+      "height": "Premium מייצא עד {{value}}p.",
+      "projects": "Premium שומר עד {{value}} פרויקטים.",
+      "projectsUnlimited": "ב-Premium אין הגבלה על פרויקטים שמורים."
+    },
+    "noHigherPlan": "אין מסלול שמגדיל את המגבלה הזו עוד. הקטינו את ההגדרה כדי להמשיך.",
+    "proNote": "שדרוג מחייב היום את ההפרש היחסי; תאריך החידוש נשאר זהה.",
+    "proChange": {
+      "ops": "Pro מאפשר {{value}} המרות ביום.",
+      "opsUnlimited": "ב-Pro אין הגבלה יומית על המרות.",
+      "aiOps": "Pro מאפשר {{value}} משימות AI ביום.",
+      "aiOpsUnlimited": "ב-Pro אין הגבלה יומית על משימות AI.",
+      "exports": "Pro מאפשר {{value}} ייצואים ביום.",
+      "exportsUnlimited": "ב-Pro אין הגבלה יומית על ייצואים."
+    }
+  },
+  "recentStrip": {
+    "title": "אחרונים",
+    "clear": "נקה אחרונים",
+    "open": "פתח את {{name}}",
+    "converter": "ממיר",
+    "expiresInHours": "יפוג בעוד {{hours}} שע׳",
+    "expiresInMinutes": "יפוג בעוד {{minutes}} דק׳",
+    "expired": "תוקף הקובץ הזה פג",
+    "openFailed": "לא ניתן לפתוח את הקובץ. נסו שוב.",
+    "signupCta": "קבצים של אורחים נמחקים לאחר 24 שעות. הירשמו כדי לשמור אותם למשך 6 חודשים.",
+    "signupAction": "הרשמה בחינם"
+  },
+  "quotaChip": {
+    "title": "לצפייה בתוכניות Premium",
+    "ops": {
+      "remaining": "נותרו {{remaining}} מתוך {{limit}} המרות להיום",
+      "empty": "כל {{limit}} ההמרות להיום נוצלו"
+    },
+    "ai_ops": {
+      "remaining": "נותרו {{remaining}} מתוך {{limit}} משימות AI להיום",
+      "empty": "כל {{limit}} משימות ה-AI להיום נוצלו"
+    },
+    "export": {
+      "remaining": "נותרו {{remaining}} מתוך {{limit}} ייצואים להיום",
+      "empty": "כל {{limit}} הייצואים להיום נוצלו"
+    },
+    "titlePro": "לצפייה בתוכניות Pro"
+  },
+  "queueLine": {
+    "text": "המשימה המתינה {{time}} בתור המשותף. משימות Premium מטופלות ראשונות.",
+    "cta": "לצפייה ב-Premium"
+  },
+  "yearlyNudge": {
+    "title": "עברו לתוכנית שנתית וקבלו {{months}} חודשים חינם",
+    "body": "שילמתם כבר כמה חודשים ברציפות. התוכנית השנתית זולה משתים-עשרה תשלומים חודשיים. אפשר לעבור בכל עת דרך פורטל החיוב.",
+    "cta": "מעבר לשנתי",
+    "dismiss": "לא, תודה"
+  },
+  "accountTour": {
+    "title": "ברוכים הבאים ל-Media Manipulator",
+    "step": "שלב {{current}} מתוך {{total}}",
+    "next": "הבא",
+    "back": "הקודם",
+    "skip": "דילוג",
+    "notNow": "לא עכשיו",
+    "setRetention": "הגדרת שמירה",
+    "keepResults": {
+      "title": "שומרים את התוצאות שלכם",
+      "body": "כל מה שתמירו כשאתם מחוברים נשמר בהיסטוריה, כך שאפשר לפתוח או להוריד אותו מאוחר יותר. אנחנו שומרים אותו למשך התקופה שתבחרו."
+    },
+    "darkroomProjects": {
+      "title": "פרויקטים ב-Darkroom",
+      "body": "פרויקטים ב-Darkroom נשמרים בחשבון שלכם ומופיעים תחת \"פרויקטים\", כך שאפשר להמשיך לערוך מכל מכשיר."
+    },
+    "retention": {
+      "title": "בחרו את תקופת השמירה",
+      "body": "אנחנו ממליצים על 6 חודשים. אפשר לבחור כל תקופה מ-24 שעות ועד שנתיים, ולשנות אותה בכל עת תחת \"פרטיות ונתונים\"."
+    },
+    "replay": "הצגת הסיור שוב",
+    "replayHint": "צפו שוב בהיכרות הקצרה עם החשבון שלכם."
+  },
+  "status": {
+    "title": "סטטוס השירות",
+    "intro": "המצב הנוכחי של השירות Media Manipulator. מתעדכן כל 10 שניות.",
+    "operational": "פועל",
+    "degraded": "תקלות חלקיות",
+    "down": "לא זמין",
+    "unknown": "הסטטוס אינו זמין",
+    "checking": "בודק...",
+    "operationalDetail": "כל המערכות פועלות כרגיל.",
+    "degradedDetail": "חלקים מהשירות נתקלים בבעיות. ייתכן שההמרות יהיו איטיות או ייכשלו.",
+    "downDetail": "השירות אינו מגיב. נסו שוב בעוד כמה דקות.",
+    "unknownDetail": "הדף לא הצליח להגיע מהדפדפן שלכם אל שירות הסטטוס. זה לא אומר שהכלים לא זמינים. ננסה שוב בעוד כמה שניות.",
+    "queueTitle": "תור עיבוד בינה מלאכותית",
+    "running": "רץ עכשיו",
+    "waiting": "ממתין",
+    "gpuOff": "עיבוד בינה מלאכותית אינו מופעל בשרת זה.",
+    "checksTitle": "רכיבים",
+    "database": "מסד נתונים",
+    "storage": "אחסון",
+    "cache": "מטמון",
+    "ok": "תקין",
+    "fail": "תקלה",
+    "basicOnly": "כרגע זמין רק הסטטוס הכללי.",
+    "lastChecked": "נבדק לאחרונה {{time}}",
+    "metaTitle": "סטטוס | Media Manipulator"
+  },
+  "share": {
+    "button": "שיתוף",
+    "revokeLinks": "ביטול קישורים",
+    "copied": "הקישור הועתק. הוא פעיל עד {{when}}.",
+    "copyManually": "ההעתקה האוטומטית נכשלה. העתיקו את הקישור: {{url}}",
+    "notAllowed": "לא ניתן לשתף סוג תוצאה זה.",
+    "expired": "תוקף הקובץ הזה פג.",
+    "limitTitle": "הגעתם למגבלת הקישורים",
+    "limitBody": "לתוצאה הזו כבר יש 5 קישורי שיתוף פעילים, המקסימום. בטלו אותם כדי ליצור קישור חדש.",
+    "revokeConfirm": "ביטול קישורים",
+    "cancel": "ביטול",
+    "signIn": "התחברו שוב כדי לשתף את התוצאה הזו.",
+    "failed": "לא ניתן היה ליצור קישור שיתוף. נסו שוב.",
+    "revoked": "כל קישורי השיתוף של התוצאה הזו בוטלו.",
+    "revokeNone": "לא היו קישורים פעילים לביטול.",
+    "revokeFailed": "לא ניתן היה לבטל את הקישורים. נסו שוב.",
+    "revokeTitle": "לבטל את כל קישורי השיתוף?",
+    "revokeBody": "כל מי שיש לו קישור לתוצאה הזו יאבד גישה מיד. לאחר מכן אפשר ליצור קישור חדש."
+  },
+  "sharedResult": {
+    "metaTitle": "תוצאה משותפת | Media Manipulator",
+    "metaDescription": "קובץ שנוצר ב-Media Manipulator ומשותף בקישור.",
+    "ogTitle": "{{fileName}}, נוצר ב-Media Manipulator",
+    "goneTitle": "תוקף הקישור פג או שהוא הוסר",
+    "goneBody": "קישורי שיתוף מפסיקים לעבוד כשתוקפם פג, כשהבעלים מבטל אותם או כשהקובץ נמחק.",
+    "goneCta": "מעבר ל-Media Manipulator",
+    "madeWith": "נוצר ב-Media Manipulator",
+    "tryIt": "נסו את זה על הקובץ שלכם",
+    "expires": "הקישור הזה פעיל עד {{when}}."
+  },
+  "planSummary": {
+    "title": "התוכניות במבט מהיר",
+    "current": "התוכנית שלכם",
+    "free": "חינמי",
+    "ops": "{{value}} פעולות ביום",
+    "opsUnlimited": "פעולות ללא הגבלה ביום",
+    "aiOps": "{{value}} משימות AI ביום",
+    "aiOpsUnlimited": "משימות AI ללא הגבלה ביום",
+    "fileSize": "קבצים עד {{value}}",
+    "compare": "השוואת כל התוכניות"
+  }
+}

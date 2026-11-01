@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { Button, Sheet, Text, TextField } from '@/ui/components';
-import { authErrorKey } from '../errors';
+import { authErrorKey, authErrorI18nKey } from '../errors';
 import type { AuthMethod } from '../methods';
 import { availableReauthMethods, reauthenticate, ReauthCancelled } from '../reauth';
-import { authT } from '../strings';
 
 /** Mounted by MA22 for account deletion. Calls `onDone(freshIdToken)` after a successful re-auth. */
 export function ReauthSheet({
@@ -16,6 +16,7 @@ export function ReauthSheet({
   onClose: () => void;
   onDone: (idToken: string) => void;
 }) {
+  const { t } = useTranslation();
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +32,7 @@ export function ReauthSheet({
       setPassword('');
       onDone(token);
     } catch (e) {
-      if (!(e instanceof ReauthCancelled)) setError(authT(`errors.${authErrorKey(e)}`));
+      if (!(e instanceof ReauthCancelled)) setError(t(authErrorI18nKey(authErrorKey(e))));
     } finally {
       setBusy(false);
     }
@@ -40,12 +41,12 @@ export function ReauthSheet({
   return (
     <Sheet visible={visible} onClose={onClose}>
       <View className="gap-3" testID="reauth-sheet">
-        <Text className="text-lg font-semibold">{authT('reauth.title')}</Text>
-        <Text className="text-muted-fg">{authT('reauth.body')}</Text>
+        <Text className="text-lg font-semibold">{t('auth.reauth.title')}</Text>
+        <Text className="text-muted-fg">{t('auth.reauth.body')}</Text>
         {methods.includes('email') ? (
           <>
             <TextField
-              label={authT('reauth.password')}
+              label={t('interface:authModal.fields.password')}
               secureTextEntry
               autoComplete="current-password"
               value={password}
@@ -53,7 +54,7 @@ export function ReauthSheet({
               error={error}
             />
             <Button
-              label={authT('reauth.withPassword')}
+              label={t('auth.reauth.withPassword')}
               loading={busy}
               disabled={password.length === 0}
               onPress={() => void run('email')}
@@ -62,7 +63,7 @@ export function ReauthSheet({
         ) : null}
         {methods.includes('google') ? (
           <Button
-            label={authT('reauth.withGoogle')}
+            label={t('auth.reauth.withGoogle')}
             variant="secondary"
             disabled={busy}
             onPress={() => void run('google')}
@@ -70,14 +71,14 @@ export function ReauthSheet({
         ) : null}
         {methods.includes('apple') ? (
           <Button
-            label={authT('reauth.withApple')}
+            label={t('auth.reauth.withApple')}
             variant="secondary"
             disabled={busy}
             onPress={() => void run('apple')}
           />
         ) : null}
         {error && !methods.includes('email') ? <Text className="text-danger">{error}</Text> : null}
-        <Button label={authT('reauth.cancel')} variant="ghost" onPress={onClose} />
+        <Button label={t('common.cancel')} variant="ghost" onPress={onClose} />
       </View>
     </Sheet>
   );

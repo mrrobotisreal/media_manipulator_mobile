@@ -50,3 +50,24 @@ export function errorEmail(error: unknown): string | undefined {
   const value = e.customData?.email ?? e.email;
   return typeof value === 'string' ? value : undefined;
 }
+
+/** i18n key (namespace-qualified) for an `AuthErrorKey`. Reuses the web's `error:auth.*` copy where it fits. */
+export function authErrorI18nKey(key: AuthErrorKey): string {
+  // i18n-keys: error:auth.invalidCredentials, auth.errors.emailInUse, auth.errors.weakPassword, error:auth.invalidEmail, error:auth.tooManyRequests, error:auth.network, auth.errors.generic
+  switch (key) {
+    case 'invalidCredential':
+      return 'error:auth.invalidCredentials';
+    case 'emailInUse':
+      return 'auth.errors.emailInUse';
+    case 'weakPassword':
+      return 'auth.errors.weakPassword';
+    case 'invalidEmail':
+      return 'error:auth.invalidEmail';
+    case 'tooManyRequests':
+      return 'error:auth.tooManyRequests';
+    case 'network':
+      return 'error:auth.network';
+    case 'generic':
+      return 'auth.errors.generic';
+  }
+}

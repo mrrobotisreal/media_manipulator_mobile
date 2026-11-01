@@ -1,0 +1,773 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "相關工具與教學"
+  },
+  "filePreview": {
+    "showResult": "顯示結果"
+  },
+  "authModal": {
+    "defaultTitle": "建立免費帳號",
+    "defaultDescription": "保留你的記錄、儲存 Darkroom 專案，並取得更高的每日額度。",
+    "signInTitle": "歡迎回來",
+    "signInDescription": "你的記錄、已儲存的 Studio 專案與每日額度都還在原處。",
+    "tabs": {
+      "signup": "建立帳號",
+      "signin": "登入"
+    },
+    "fields": {
+      "fullName": "全名",
+      "fullNamePlaceholder": "王小明",
+      "email": "電子郵件",
+      "emailPlaceholder": "john@example.com",
+      "password": "密碼",
+      "passwordPlaceholderSignup": "至少 6 個字元",
+      "passwordPlaceholderSignin": "你的密碼"
+    },
+    "actions": {
+      "createAccount": "建立免費帳號",
+      "creatingAccount": "正在建立帳號...",
+      "signIn": "登入",
+      "signingIn": "登入中..."
+    },
+    "googleSignIn": "使用 Google 帳號繼續",
+    "orDivider": "或",
+    "terms": "註冊即表示你同意我們的<tos>服務條款</tos>與<privacy>隱私權政策</privacy>",
+    "toast": {
+      "welcome": "歡迎！",
+      "welcomeBack": "歡迎回來！",
+      "welcomeMM": "歡迎使用 Media Manipulator！",
+      "accountCreated": "帳號已建立！",
+      "signedIn": "登入成功。",
+      "googleSuccess": "已成功使用 Google 帳號登入。",
+      "authFailed": "驗證失敗",
+      "nameRequired": "請輸入姓名",
+      "nameRequiredDesc": "請輸入你的姓名。",
+      "appleSuccess": "已成功使用 Apple 登入。"
+    },
+    "contextual": {
+      "signupTitle": "你今天的 {{limit}} 次免費轉換已用完",
+      "signupBody": "免費帳號可提高你的每日額度、保留轉換記錄，並儲存 Darkroom 專案。",
+      "premiumTitle": "你已達到今天 {{limit}} 次的上限",
+      "premiumBody": "Premium 可提高你的每日額度、解鎖 4K 匯出與優先處理，並移除廣告。",
+      "resets": "你目前的額度將於{{when}}重設。"
+    },
+    "plans": {
+      "freeTitle": "免費帳號能為你提供",
+      "premiumTitle": "Premium",
+      "premiumPrice": "{{price}}/月",
+      "premiumUpgrade": "升級至 Premium",
+      "comparePlans": "比較所有方案",
+      "opsPerDay": "每天 {{count}} 次操作",
+      "opsPerDayUnlimited": "每天無限次操作",
+      "maxFileSize": "檔案最大 {{size}}",
+      "maxVideoLength": "影片最長 {{duration}}",
+      "maxOutput": "輸出最高 {{height}}p",
+      "studioProjects": "{{count}} 個已儲存的 Studio 專案",
+      "studioProjectsUnlimited": "無限個已儲存的 Studio 專案",
+      "retention": "檔案保留多久由你決定：24 小時到 2 年",
+      "priorityGpu": "優先處理",
+      "noAds": "無廣告",
+      "retentionGuest": "檔案保留 24 小時"
+    },
+    "loadingPlans": "正在載入方案…",
+    "appleSignIn": "使用 Apple 繼續",
+    "forgotPassword": "忘記密碼？",
+    "reset": {
+      "title": "重設密碼",
+      "body": "請輸入你的帳號電子郵件，我們會寄給你一個連結。",
+      "submit": "傳送重設連結",
+      "sending": "傳送中…",
+      "sent": "如果該電子郵件對應的帳號存在，我們已寄出重設密碼的連結。",
+      "back": "返回登入"
+    },
+    "link": {
+      "notice": "此電子郵件已透過其他登入方式註冊。請使用該方式登入以將兩者連結。",
+      "linked": "帳號已連結。你現在可以使用任一方式登入。"
+    }
+  },
+  "imageCropModal": {
+    "title": "裁切圖片",
+    "subtitle": "拖曳以調整裁切區域，然後點選「套用」。",
+    "instructions": "拖曳裁切區域以調整位置，或拖曳右下角以調整大小。較暗的區域將被移除。",
+    "previewAlt": "裁切預覽",
+    "cropArea": "裁切區域：{{width}} × {{height}} 像素",
+    "apply": "套用裁切",
+    "cancel": "取消",
+    "reset": "重設"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "剪輯影片",
+    "titleAudio": "剪輯音訊",
+    "instructions": "拖曳時間軸上的控制點，選取你想保留的部分。灰色區域將被移除。",
+    "audioFile": "音訊檔案",
+    "startLabel": "開始時間",
+    "endLabel": "結束時間",
+    "durationLabel": "長度",
+    "finalDuration": "最終長度：{{duration}}",
+    "apply": "套用剪輯",
+    "cancel": "取消",
+    "reset": "重設",
+    "playPreview": "播放預覽",
+    "pausePreview": "暫停"
+  },
+  "removeObjectOverlay": {
+    "title": "移除物件",
+    "instructions": "在想移除的物件上畫出矩形。LaMa 修復模型會重建背景。",
+    "rectangleCount_other": "已選取 {{count}} 個區域",
+    "addRegion": "新增區域",
+    "clearRegions": "全部清除",
+    "apply": "移除物件",
+    "cancel": "取消",
+    "undo": "復原",
+    "previewAlt": "標記要移除的區域",
+    "dragHint": "拖曳以設定大小，然後放開。使用控制點微調。",
+    "removeRectangle": "移除矩形 {{number}}"
+  },
+  "faceSelectionOverlay": {
+    "title": "選擇要模糊的臉部",
+    "instructions": "點選每一張你想套用隱私效果的臉。再點一次即可取消選取。",
+    "selectAll": "全選",
+    "clearSelection": "清除選取",
+    "apply": "套用",
+    "cancel": "取消",
+    "selectedCount_other": "已選取 {{count}} 張臉",
+    "noFacesDetected": "在這張圖片中沒有偵測到臉部。",
+    "previewAlt": "偵測到的臉部預覽",
+    "faceAria": "臉部 {{label}}",
+    "faceSelectedAria": "臉部 {{label}}（已選取）"
+  },
+  "mobileAnchorAd": {
+    "label": "廣告"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV：讓創意成真",
+    "creatvCreativeAlt": "快來看看 CreaTV！讓創意成真的地方。"
+  },
+  "alternativeAdBanner": {
+    "placeholder": "{{network}} 廣告預留位置 - {{position}}",
+    "placeholderFormat": "格式：{{format}} | 版位：{{slot}}",
+    "placeholderProduction": "{{network}} 廣告將在正式環境中顯示於此"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "步驟 {{number}}",
+    "defaultTitle": "運作方式"
+  },
+  "privacyPolicyComponent": {
+    "title": "隱私權一覽",
+    "summary": "檔案在我們的伺服器上處理，絕不會傳送給第三方 AI 供應商。未登入帳號時保留 24 小時；使用免費帳號可自行選擇 24 小時到 2 年。",
+    "learnMore": "閱讀完整的隱私權政策"
+  },
+  "quotaMeter": {
+    "label": "今天",
+    "aiLabel": "AI",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "今天還剩 {{remaining}} / {{limit}} 次",
+    "atLimit": "已達每日上限",
+    "unlimited": "此帳號沒有每日上限",
+    "resets": "{{when}}重設",
+    "moreCta": "取得更多"
+  },
+  "accountMenu": {
+    "signIn": "登入",
+    "account": "帳號",
+    "signOut": "登出",
+    "signOutFailed": "無法將你登出",
+    "tier": {
+      "anonymous": "訪客",
+      "free": "免費",
+      "premium": "Premium",
+      "operator": "營運者",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · 於 {{date}} 結束",
+    "tierEndsPro": "Pro · 於 {{date}} 結束"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "檔案最大 {{size}}",
+    "fileLimitMoreFree": "更大的檔案需要免費帳號",
+    "fileLimitMorePremium": "更大的檔案需要 Premium",
+    "nudgeTitle": "這一個完成了",
+    "nudgeBodyFree": "免費帳號可提供更高的每日額度，並保留你的記錄。",
+    "nudgeBodyPremium": "Premium 另外提供 4K 匯出、優先處理與無廣告體驗。",
+    "nudgeAction": "看看你能獲得什麼"
+  },
+  "consentBanner": {
+    "label": "Cookie 與分析選項",
+    "body": "我們使用尊重隱私的第一方分析，以了解哪些工具被使用、在哪裡出了問題。你的檔案絕不會包含在內，而且你隨時可以變更這項設定。",
+    "bodyGdpr": "在我們進行任何測量之前，需要先取得你的同意。我們使用第一方分析來了解哪些工具被使用、在哪裡出了問題。在你做出選擇之前不會收集任何資料，你的檔案也絕不會包含在內。",
+    "privacyLink": "閱讀隱私權政策",
+    "more": "更多",
+    "customize": "自訂",
+    "accept": "接受",
+    "decline": "拒絕"
+  },
+  "consentPrefs": {
+    "title": "隱私權偏好設定",
+    "subtitle": "選擇 Media Manipulator 可以測量哪些內容。儲存後變更會立即生效。",
+    "necessary": {
+      "title": "絕對必要",
+      "body": "你的主題選擇，以及一組匿名的裝置與造訪 ID，用來執行免費方案的限制並防止濫用。不使用 Cookie、不用於廣告，而且無法關閉，否則工具將無法運作。",
+      "always": "一律開啟"
+    },
+    "analytics": {
+      "title": "分析",
+      "body": "你使用哪些工具、轉換是否成功、頁面載入速度，以及我們應該修正的錯誤。第一方資料，保留 13 個月，絕不出售。不含檔案名稱，也不含檔案內容。"
+    },
+    "advertising": {
+      "title": "廣告",
+      "body": "允許 Google 對部分工具頁面上向免費使用者與未登入訪客顯示的廣告進行個人化。是否出現廣告不取決於此開關；關閉代表廣告不會被個人化。Premium 與 Pro 使用者永遠不會看到廣告。",
+      "bodyGdpr": "在您所在的地區，有關廣告的選擇是在 Google 的同意訊息中進行，而不是在這裡；此面板僅涵蓋我們自己的分析。在您於該處做出選擇之前，工具頁面上的任何廣告都不會被個人化。Premium 與 Pro 使用者永遠不會看到廣告。",
+      "bodyGpc": "用於個人化廣告。你的瀏覽器正在傳送 Global Privacy Control 訊號，因此這項設定會保持關閉。我們尊重這個訊號，在這裡點選也無法覆寫它。",
+      "managedByGoogle": "由 Google 同意訊息管理",
+      "openGoogleMessage": "變更廣告選擇"
+    },
+    "gpcDetected": "偵測到 Global Privacy Control。我們已自動為你選擇退出任何對個人資料的出售或分享，並記錄了這項操作。",
+    "doNotSell": {
+      "title": "請勿出售或分享我的個人資料",
+      "body": "我們不會出售你的個人資料。這項設定會讓你退出現在與未來任何以廣告為目的的分享。第一方分析是上方另外一項獨立的選擇。",
+      "action": "選擇退出",
+      "done": "你已選擇退出"
+    },
+    "yourData": {
+      "title": "你的資料",
+      "body": "下載我們的分析系統所持有關於此瀏覽器的所有資料副本，或永久刪除它。如果你已登入，兩者都涵蓋與你帳號連結的每一部裝置；否則只涵蓋此瀏覽器。",
+      "export": "匯出我的資料",
+      "exporting": "正在準備匯出…",
+      "delete": "刪除我的資料",
+      "deleting": "刪除中…",
+      "deleteConfirmBody": "這會永久刪除你的分析記錄（事件、造訪與你的訪客檔案），且無法復原。你的同意選擇記錄會保留，因為法律要求我們必須能證明這些選擇。請輸入 DELETE 以確認。",
+      "deleteConfirmPlaceholder": "輸入 DELETE 以確認",
+      "deleteConfirmAction": "永久刪除",
+      "deletedSummary": "完成。我們已刪除 {{sessions}} 次造訪中的 {{events}} 個事件，並為此瀏覽器指派了全新的匿名 ID。",
+      "deletedNote": "你的同意選擇記錄會依法律要求保留作為證明。你的同意設定本身並未改變：如果分析功能為開啟，新的活動會以新的 ID 收集；你隨時可以在上方關閉它。",
+      "error": "操作失敗。請稍後再試一次。如果你沒有看到確認訊息，表示什麼都沒有改變。"
+    },
+    "policyPrefix": "關於我們收集什麼、為什麼收集，以及保留多久的完整說明：",
+    "policyLink": "隱私權政策",
+    "cancel": "取消",
+    "save": "儲存偏好設定"
+  },
+  "toasts": {
+    "conversionStarted": "轉換已成功開始",
+    "conversionStartedDescription": "工作 ID：{{jobId}} - 你的檔案正在處理中",
+    "transcriptionStarted": "轉錄已開始",
+    "transcriptionStartedDescription": "工作 ID：{{jobId}} - 正在產生逐字稿",
+    "transcodeStarted": "轉碼已開始",
+    "translationStarted": "字幕翻譯已開始",
+    "jobStarted": "工作已開始",
+    "stitchStarted": "合併工作已開始",
+    "jobIdDescription": "工作 ID：{{jobId}}",
+    "conversionCompleted": "轉換成功完成！",
+    "readyForDownload": "你的檔案已可下載",
+    "uploadingFile": "正在上傳 {{fileName}}…",
+    "uploadingFileProgress": "正在上傳 {{fileName}}… {{percent}}%",
+    "processingFile": "正在處理 {{fileName}}…",
+    "buildingPreview": "正在建立預覽…",
+    "assetAdded": "已新增 {{fileName}}",
+    "audioAdded": "已新增音訊",
+    "processingAudio": "正在處理音訊…",
+    "captionsReady": "字幕已就緒",
+    "binUpdateFailed": "無法更新媒體庫",
+    "assetDeleteFailed": "無法刪除該媒體"
+  },
+  "resultPanel": {
+    "ariaLabel": "結果",
+    "download": "下載",
+    "downloadFailed": "下載失敗，請再試一次。",
+    "downloadStatus": {
+      "preparing": "正在準備下載…",
+      "started": "下載已開始，請查看瀏覽器的下載清單。",
+      "startedWithSize": "下載已開始（{{size}}），請查看瀏覽器的下載清單。",
+      "failed": "無法開始下載。",
+      "gone": "此結果已無法下載。",
+      "retry": "重試",
+      "noRecharge": "重新下載不會重新執行工作，也不會計費。"
+    },
+    "compare": "比較",
+    "original": "原始",
+    "result": "結果",
+    "runAnother": "再執行一次",
+    "size": "大小",
+    "keepsUntil": "保留至",
+    "loading": "正在載入預覽…",
+    "loadFailed": "無法載入結果。",
+    "retry": "再試一次",
+    "kind": {
+      "image": "圖片",
+      "gif": "動態 GIF",
+      "video": "影片",
+      "audio": "音訊",
+      "transcript": "逐字稿",
+      "captions": "字幕",
+      "pdf": "PDF 文件",
+      "archive": "壓縮檔",
+      "hls": "HLS 套件",
+      "dash": "DASH 套件",
+      "metadata": "中繼資料",
+      "unknown": "檔案",
+      "summary": "摘要"
+    },
+    "image": {
+      "zoom": "縮放",
+      "fit": "符合視窗",
+      "transparencyGrid": "透明格線",
+      "dimensions": "尺寸",
+      "originalAlt": "原始圖片 {{fileName}}",
+      "resultAlt": "結果圖片 {{fileName}}"
+    },
+    "gif": {
+      "alt": "動態 GIF {{fileName}}"
+    },
+    "audio": {
+      "waveform": "音訊波形"
+    },
+    "unknown": {
+      "body": "這個結果目前還沒有瀏覽器內預覽。請下載後開啟。",
+      "type": "類型",
+      "size": "大小"
+    },
+    "transcript": {
+      "search": "搜尋逐字稿",
+      "searchPlaceholder": "搜尋…",
+      "matchCount": "第 {{current}} 個，共 {{total}} 個",
+      "noMatches": "沒有相符的結果",
+      "prevMatch": "上一個相符項目",
+      "nextMatch": "下一個相符項目",
+      "copyAll": "全部複製",
+      "copied": "已複製",
+      "format": "格式",
+      "rawPreview": "原始文字",
+      "seekTo": "跳至 {{time}}",
+      "showMore": "顯示更多（還有 {{count}} 個）",
+      "details": "語言、音訊描述與 AI 審閱"
+    },
+    "captions": {
+      "cues": "字幕段",
+      "sourceCues": "來源字幕段",
+      "skipped": "略過的區塊",
+      "countMismatch": "來源有 {{source}} 個字幕段，但翻譯有 {{translated}} 個。多出的列會對應到空白儲存格顯示。",
+      "source": "來源",
+      "translated": "翻譯",
+      "timingDiffers": "時間不同",
+      "empty": "（無）"
+    },
+    "compareModes": {
+      "label": "比較檢視",
+      "slider": "比較位置",
+      "sliderValue": "{{before}} {{beforePct}}%，{{after}} {{afterPct}}%",
+      "wipe": "擦拭",
+      "side_by_side": "並排",
+      "toggle": "切換",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "播放控制",
+      "play": "播放",
+      "pause": "暫停",
+      "seek": "搜尋位置",
+      "rate": "速度",
+      "mute": "靜音",
+      "unmute": "取消結果靜音",
+      "prevFrame": "上一個影格",
+      "nextFrame": "下一個影格",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps（目標）",
+      "largeNotice": "預覽的寬度以容器為上限；非常大的影片可能播放較慢。",
+      "videoOriginal": "原始影片",
+      "videoResult": "結果影片",
+      "audibleLabel": "有聲的一側",
+      "audioOriginal": "原始音訊",
+      "audioResult": "結果音訊",
+      "otherPeaks": "另一側的波形",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_other": "{{count}} 個檔案",
+      "truncated": "壓縮檔不完整；只顯示可讀取的部分。",
+      "search": "搜尋檔案",
+      "view": "檢視",
+      "gallery": "圖庫",
+      "list": "清單",
+      "noMatches": "沒有相符的檔案。",
+      "play": "播放 {{name}}",
+      "open": "開啟",
+      "downloadEntry": "下載 {{name}}",
+      "lightbox": "圖片預覽",
+      "previous": "上一個",
+      "next": "下一個",
+      "tooLarge": "檔案太大，無法在瀏覽器中預覽。",
+      "unreadable": "無法在瀏覽器中讀取這個壓縮檔。",
+      "noSingleEntry": "無法從伺服器下載單一檔案，請下載整個壓縮檔。"
+    },
+    "pdf": {
+      "title": "PDF 預覽",
+      "openInNewTab": "在新分頁開啟",
+      "fallback": "你的瀏覽器無法內嵌顯示這份 PDF。"
+    },
+    "stream": {
+      "rung": "品質",
+      "auto": "自動",
+      "rungLabel": "{{height}}p，{{bitrate}} kbps",
+      "unsupported": "這個串流無法在瀏覽器中播放，以下是它的報告。",
+      "loading": "正在準備串流",
+      "av1": "此瀏覽器無法解碼 AV1。"
+    },
+    "restore": {
+      "picker": "模型",
+      "original": "原始",
+      "modelOption": "{{name}}，{{duration}} 秒，{{size}}",
+      "failedTitle": "失敗的模型",
+      "failedItem": "{{name}}：{{error}}",
+      "loading": "正在載入修復後的片段",
+      "download": "下載所有結果"
+    },
+    "summary": {
+      "loading": "正在載入摘要",
+      "loadFailed": "無法載入摘要。",
+      "untitled": "摘要",
+      "language": "語言：{{language}}",
+      "chapters": "章節",
+      "seekTo": "跳至 {{time}}",
+      "topics": "主題",
+      "onScreenText": "畫面文字",
+      "visual": "畫面",
+      "speech": "語音",
+      "notes": "備註",
+      "copyMarkdown": "複製為 Markdown",
+      "copied": "已複製",
+      "downloadMd": "下載 .md",
+      "downloadJson": "下載 .json",
+      "showAll": "顯示全部（{{count}}）",
+      "showLess": "收合"
+    },
+    "mp3": {
+      "button": "下載為 MP3",
+      "converting": "正在轉換為 MP3…",
+      "hint": "檔案更小，在我們的伺服器上轉換。免費，且不會計入 AI 工作。",
+      "started": "MP3 下載已開始，請查看瀏覽器的下載清單。",
+      "startedWithSize": "MP3 下載已開始（{{size}}），請查看瀏覽器的下載清單。",
+      "failed": "無法準備 MP3，請稍後再試。"
+    }
+  },
+  "billing": {
+    "intervalLabel": "計費週期",
+    "monthly": "每月",
+    "yearly": "每年",
+    "perMonth": "/月",
+    "perYear": "/年",
+    "currency": {
+      "label": "幣別",
+      "panelLabel": "幣別",
+      "lockedNote": "你的訂閱以 {{currency}} 計費。訂閱有效期間無法變更。"
+    },
+    "yearlyBonus": "免費 {{months}} 個月",
+    "cancelAnytime": "隨時可取消",
+    "refund": "首次付款享 14 天退款",
+    "taxNote": "不另外加收稅金",
+    "upgrade": "升級至 Premium",
+    "manage": "管理訂閱",
+    "operator": "無限制（營運者）",
+    "unavailable": "Premium 尚未開放",
+    "busy": "正在開啟結帳頁面…",
+    "cancelledNote": "結帳已取消。你沒有被扣款。",
+    "dismiss": "關閉",
+    "errors": {
+      "unavailable": "Premium 尚未開放。",
+      "operator": "營運者帳號已擁有無限制的存取權。",
+      "generic": "無法開始結帳，請稍後再試。",
+      "alreadyOnPlan": "你已擁有此方案或更高階的方案。",
+      "currencyLocked": "你的帳單帳戶設定為 {{currency}}，因此價格現在以 {{currency}} 顯示。請重新選擇方案以繼續。"
+    },
+    "panel": {
+      "title": "帳單",
+      "loading": "正在載入你的帳單資訊…",
+      "loadFailed": "無法載入你的帳單資訊。請重新載入再試一次。",
+      "operator": "營運者存取權，不需要訂閱。",
+      "unavailable": "訂閱功能尚未開放。",
+      "grantUntil": "團隊授予的 Premium，有效至 {{date}}。",
+      "grantOpen": "團隊授予的 Premium，沒有結束日期。",
+      "freeBody": "你目前使用免費方案。Premium 可提高你的限額並移除廣告。",
+      "upgrade": "升級至 Premium",
+      "pastDueTitle": "你最近一次付款未成功",
+      "pastDueBody": "在我們重試期間，Premium 存取權最多可延續 7 天。請更新付款方式以保留它。",
+      "intervalLabel": "計費",
+      "endsLabel": "Premium 結束於",
+      "renewsLabel": "續訂日期",
+      "endsOn": "你的訂閱將於 {{date}} 結束。",
+      "resumeHint": "開啟「管理訂閱」即可恢復。",
+      "renewsOn": "將於 {{date}} 續訂。",
+      "updatePayment": "更新付款方式",
+      "cancelledTitle": "你的 Premium 方案已取消",
+      "cancelledBody": "你可以繼續使用 Premium 至 {{date}}。之後你的帳號會切換為免費方案，不再收取任何費用。",
+      "cancelledBodyNoDate": "你可以繼續使用 Premium 至目前計費週期結束。之後你的帳號會切換為免費方案，不再收取任何費用。",
+      "planLabel": "方案",
+      "pro": {
+        "grantUntil": "團隊授予的 Pro，有效至 {{date}}。",
+        "grantOpen": "團隊授予的 Pro，沒有結束日期。",
+        "pastDueBody": "在我們重試期間，Pro 存取權最多可延續 7 天。請更新付款方式以保留它。",
+        "endsLabel": "Pro 結束於",
+        "cancelledTitle": "你的 Pro 方案已取消",
+        "cancelledBody": "你可以繼續使用 Pro 至 {{date}}。之後你的帳號會切換為免費方案，不再收取任何費用。",
+        "cancelledBodyNoDate": "你可以繼續使用 Pro 至目前計費週期結束。之後你的帳號會切換為免費方案，不再收取任何費用。"
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "正在確認你的付款…",
+        "body": "這通常只需要幾秒鐘。"
+      },
+      "confirmed": {
+        "title": "歡迎加入 Premium",
+        "body": "你的付款已成功，你的方案現在是 Premium。"
+      },
+      "shortly": {
+        "title": "已收到付款",
+        "body": "你的方案很快就會更新。如果一分鐘後仍顯示為免費方案，請在下方重新整理。"
+      },
+      "foreign": {
+        "title": "我們無法將這筆付款對應到你的帳號",
+        "body": "如果你剛剛付款，請使用結帳時所用的帳號登入。"
+      },
+      "failed": {
+        "title": "我們尚未能確認你的付款",
+        "body": "付款確認後，你的方案會自動更新。請稍後再試。"
+      },
+      "refresh": "重新整理我的方案",
+      "confirmedPro": {
+        "title": "歡迎加入 Pro",
+        "body": "你的付款已成功，你的方案現在是 Pro：最高的每日限額，以及隨著 Motion 編輯器推出而提供的最大 Motion 額度。"
+      }
+    },
+    "offer": {
+      "title": "改變主意了？以每月 {{price}} 保留 Premium",
+      "resumeTitle": "改變主意了？以目前的價格保留 Premium",
+      "fineprint": "今天不會收費。從 {{date}} 起，你每月支付 {{price}} 而非 {{current}}，每月持續至你取消為止。",
+      "cta": "以每月 {{price}} 保留 Premium",
+      "resumeCta": "以 {{price}}{{unit}} 保留 Premium",
+      "keepAtCurrent": "以每月 {{price}} 保留 Premium",
+      "keepAtCurrentNoPrice": "以原價保留 Premium",
+      "working": "處理中…",
+      "renewed": "Premium 將於 {{date}} 以每月 {{price}} 續訂",
+      "renewedNoPrice": "Premium 將於 {{date}} 續訂",
+      "renewedBare": "Premium 將持續續訂",
+      "changed": "優惠內容已變更，這是目前的優惠。",
+      "failed": "無法更新你的訂閱，請再試一次。",
+      "resumePrice": "你今天支付 {{price}}{{unit}}，之後也維持這個價格。",
+      "resumeCtaNoPrice": "保留 Premium",
+      "fineprintNoCurrent": "今天不會收費。從 {{date}} 起，你每月支付 {{price}}，每月持續至你取消為止。",
+      "resumeFineprint": "今天不會收費。你的下一次付款在 {{date}}，價格相同，並會照常續訂至你取消為止。",
+      "unitMonth": "/月",
+      "unitYear": "/年"
+    },
+    "upgradePro": "升級至 Pro",
+    "unavailablePro": "Pro 尚未開放",
+    "switchToPremium": "切換至 Premium",
+    "planChange": {
+      "cancel": "暫時不要",
+      "upgrade": {
+        "title": "現在升級至 Pro？",
+        "body": "你今天支付本計費週期剩餘天數按比例計算的差額。你的續訂日期仍為 {{date}}，之後 Pro 的費用為 {{price}}{{unit}}。",
+        "bodyNoPrice": "你今天支付本計費週期剩餘天數按比例計算的差額。你的續訂日期仍為 {{date}}。",
+        "bodyNoDate": "你今天支付本計費週期剩餘天數按比例計算的差額。你的續訂日期不會改變。",
+        "fineprint": "付款成功後 Pro 立即生效。14 天退款僅適用於你的首次付款。",
+        "confirm": "升級至 Pro"
+      },
+      "downgrade": {
+        "title": "在本週期結束時切換至 Premium？",
+        "body": "你可以繼續使用 Pro 至 {{date}}。之後你的方案為 Premium，費用為 {{price}}{{unit}}。",
+        "bodyNoPrice": "你可以繼續使用 Pro 至 {{date}}。之後你的方案為 Premium。",
+        "bodyNoDate": "你可以繼續使用 Pro 至目前計費週期結束。之後你的方案為 Premium。",
+        "fineprint": "本週期剩餘的費用不會退還。在切換之前，你隨時可以選擇保留 Pro。",
+        "confirm": "切換至 Premium"
+      },
+      "upgraded": "你現在使用的是 Pro。",
+      "scheduled": "你的方案將於 {{date}} 切換至 Premium。",
+      "scheduledNoDate": "你的方案將在本計費週期結束時切換至 Premium。",
+      "kept": "你將保留 Pro。",
+      "pendingBody": "從 {{date}} 起為 Premium。在那之前你仍保有 Pro。",
+      "keepPro": "保留 Pro",
+      "dropTitle": "降級至 Premium 並繼續使用",
+      "dropBody": "與其失去一切，你可以用原價繼續使用 Premium。請先在「管理訂閱」中恢復你的訂閱，然後在這裡選擇「切換至 Premium」。",
+      "dropCta": "在「管理訂閱」中恢復",
+      "errors": {
+        "notSubscription": "只有付費訂閱才能變更方案。由團隊授予的方案無法在這裡變更。",
+        "samePlan": "你已經在使用此方案。",
+        "notAvailable": "目前無法進行此變更。如果你的訂閱已取消，請先在「管理訂閱」中恢復它。",
+        "generic": "無法變更你的方案，請稍後再試。"
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "你已達到今天 {{limit}} 次的上限",
+      "body": "Premium 可提高你的每日額度並移除廣告。"
+    },
+    "outputHeight": {
+      "title": "這個輸出高度超過你的方案允許範圍",
+      "body": "你要求的是 {{requested}}p；你的方案最高允許 {{limit}}p。"
+    },
+    "projects": {
+      "title": "你已達到已儲存專案的上限",
+      "body": "你的方案最多可保留 {{limit}} 個已儲存的 Darkroom 專案。"
+    },
+    "topTier": "你的方案已經是最高等級。請調低設定以繼續。",
+    "close": "下次再說",
+    "signup": "建立免費帳號",
+    "upgrade": "升級至 Premium",
+    "fileSize": {
+      "title": "這個檔案超過你的方案允許的大小",
+      "body": "你的方案接受最大 {{limit}} 的檔案。"
+    },
+    "premiumChange": {
+      "fileSize": "Premium 接受最大 {{value}} 的檔案。",
+      "ops": "Premium 每天允許 {{value}} 次轉換。",
+      "opsUnlimited": "Premium 沒有每日轉換上限。",
+      "aiOps": "Premium 每天允許 {{value}} 個 AI 工作。",
+      "aiOpsUnlimited": "Premium 沒有每日 AI 工作上限。",
+      "exports": "Premium 每天允許 {{value}} 次匯出。",
+      "exportsUnlimited": "Premium 沒有每日匯出上限。",
+      "height": "Premium 最高可輸出 {{value}}p。",
+      "projects": "Premium 最多可保留 {{value}} 個已儲存的專案。",
+      "projectsUnlimited": "Premium 沒有已儲存專案的上限。"
+    },
+    "noHigherPlan": "沒有任何方案能進一步提高這個限額。請調低設定以繼續。",
+    "proNote": "升級時今天會收取按比例計算的差額；你的續訂日期維持不變。",
+    "proChange": {
+      "ops": "Pro 每天允許 {{value}} 次轉換。",
+      "opsUnlimited": "Pro 沒有每日轉換上限。",
+      "aiOps": "Pro 每天允許 {{value}} 個 AI 工作。",
+      "aiOpsUnlimited": "Pro 沒有每日 AI 工作上限。",
+      "exports": "Pro 每天允許 {{value}} 次匯出。",
+      "exportsUnlimited": "Pro 沒有每日匯出上限。"
+    }
+  },
+  "recentStrip": {
+    "title": "最近",
+    "clear": "清除最近項目",
+    "open": "開啟 {{name}}",
+    "converter": "轉換器",
+    "expiresInHours": "{{hours}} 小時後到期",
+    "expiresInMinutes": "{{minutes}} 分鐘後到期",
+    "expired": "此檔案已到期",
+    "openFailed": "無法開啟此檔案，請再試一次。",
+    "signupCta": "訪客的檔案會在 24 小時後刪除。註冊即可將這些檔案保留 6 個月。",
+    "signupAction": "免費註冊"
+  },
+  "quotaChip": {
+    "title": "查看 Premium 方案",
+    "ops": {
+      "remaining": "今天還剩 {{remaining}} / {{limit}} 次轉換",
+      "empty": "今天的 {{limit}} 次轉換已全部用完"
+    },
+    "ai_ops": {
+      "remaining": "今天還剩 {{remaining}} / {{limit}} 個 AI 工作",
+      "empty": "今天的 {{limit}} 個 AI 工作已全部用完"
+    },
+    "export": {
+      "remaining": "今天還剩 {{remaining}} / {{limit}} 次匯出",
+      "empty": "今天的 {{limit}} 次匯出已全部用完"
+    },
+    "titlePro": "查看 Pro 方案"
+  },
+  "queueLine": {
+    "text": "這個工作在共用佇列中等了 {{time}}。Premium 的工作會優先處理。",
+    "cta": "查看 Premium"
+  },
+  "yearlyNudge": {
+    "title": "改為年繳，免費獲得 {{months}} 個月",
+    "body": "你已連續支付了好幾個月。年繳方案比十二次月繳更便宜。你隨時可以在帳單入口網站切換。",
+    "cta": "改為年繳",
+    "dismiss": "不用了，謝謝"
+  },
+  "accountTour": {
+    "title": "歡迎使用 Media Manipulator",
+    "step": "第 {{current}} 步，共 {{total}} 步",
+    "next": "下一步",
+    "back": "上一步",
+    "skip": "略過",
+    "notNow": "暫時不要",
+    "setRetention": "設定保留期限",
+    "keepResults": {
+      "title": "保留你的結果",
+      "body": "你登入後轉換的所有內容都會儲存到「記錄」，方便你之後重新開啟或下載。我們會依你選擇的期限保留。"
+    },
+    "darkroomProjects": {
+      "title": "Darkroom 專案",
+      "body": "Darkroom 專案會儲存到你的帳號並列在「專案」底下，讓你在任何裝置上都能接續編輯。"
+    },
+    "retention": {
+      "title": "選擇你的保留期限",
+      "body": "我們建議 6 個月。你可以選擇 24 小時到 2 年之間的任何期限，並隨時在「隱私與資料」中變更。"
+    },
+    "replay": "重看導覽",
+    "replayHint": "再次觀看帳號的簡短介紹。"
+  },
+  "status": {
+    "title": "服務狀態",
+    "intro": "Media Manipulator 服務的即時狀態。每 10 秒更新一次。",
+    "operational": "正常運作",
+    "degraded": "效能下降",
+    "down": "停止服務",
+    "unknown": "無法取得狀態",
+    "checking": "檢查中...",
+    "operationalDetail": "所有系統運作正常。",
+    "degradedDetail": "部分服務出現問題。轉換可能變慢或失敗。",
+    "downDetail": "服務沒有回應。請幾分鐘後再試一次。",
+    "unknownDetail": "此頁面剛才無法從你的瀏覽器連線到狀態服務，但這不代表工具已停止服務。幾秒後會再試一次。",
+    "queueTitle": "AI 處理佇列",
+    "running": "執行中",
+    "waiting": "等待中",
+    "gpuOff": "此伺服器未啟用 AI 處理。",
+    "checksTitle": "元件",
+    "database": "資料庫",
+    "storage": "儲存空間",
+    "cache": "快取",
+    "ok": "正常",
+    "fail": "有問題",
+    "basicOnly": "目前只能提供整體狀態。",
+    "lastChecked": "上次檢查：{{time}}",
+    "metaTitle": "服務狀態 | Media Manipulator"
+  },
+  "share": {
+    "button": "分享",
+    "revokeLinks": "撤銷連結",
+    "copied": "連結已複製。有效期至{{when}}。",
+    "copyManually": "無法自動複製。請複製此連結：{{url}}",
+    "notAllowed": "這類結果無法分享。",
+    "expired": "此檔案已到期。",
+    "limitTitle": "已達分享上限",
+    "limitBody": "這個結果已有 5 個有效的分享連結，這是上限。請撤銷它們以建立新連結。",
+    "revokeConfirm": "撤銷連結",
+    "cancel": "取消",
+    "signIn": "請重新登入以分享此結果。",
+    "failed": "無法建立分享連結，請再試一次。",
+    "revoked": "此結果的所有分享連結都已撤銷。",
+    "revokeNone": "沒有可撤銷的有效連結。",
+    "revokeFailed": "無法撤銷連結，請再試一次。",
+    "revokeTitle": "撤銷所有分享連結？",
+    "revokeBody": "任何持有此結果連結的人會立即失去存取權。之後你可以建立新的連結。"
+  },
+  "sharedResult": {
+    "metaTitle": "分享的結果 | Media Manipulator",
+    "metaDescription": "以 Media Manipulator 製作並透過連結分享的檔案。",
+    "ogTitle": "以 Media Manipulator 製作的 {{fileName}}",
+    "goneTitle": "此連結已到期或已被移除",
+    "goneBody": "分享連結在到期、被擁有者撤銷或檔案被刪除時就會失效。",
+    "goneCta": "前往 Media Manipulator",
+    "madeWith": "以 Media Manipulator 製作",
+    "tryIt": "用你的檔案試試看",
+    "expires": "此連結有效期至{{when}}。"
+  },
+  "planSummary": {
+    "title": "方案一覽",
+    "current": "你的方案",
+    "free": "免費",
+    "ops": "每天 {{value}} 次操作",
+    "opsUnlimited": "每天無限次操作",
+    "aiOps": "每天 {{value}} 個 AI 工作",
+    "aiOpsUnlimited": "每天無限個 AI 工作",
+    "fileSize": "檔案最大 {{value}}",
+    "compare": "比較所有方案"
+  }
+}

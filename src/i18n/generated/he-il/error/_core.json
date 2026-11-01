@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "אירעה שגיאה לא ידועה. נסו שוב.",
+    "unexpected": "משהו השתבש. נסו שוב.",
+    "networkOffline": "נראה שאתם לא מחוברים לאינטרנט. בדקו את החיבור ונסו שוב.",
+    "tryAgainLater": "נסו שוב בעוד רגע.",
+    "missingFile": "לא נבחר קובץ.",
+    "missingField": "שדה זה הוא חובה."
+  },
+  "upload": {
+    "fileTooLarge": "הקובץ גדול מדי.",
+    "unsupportedFormat": "פורמט קובץ לא נתמך.",
+    "uploadFailed": "ההעלאה נכשלה. נסו שוב.",
+    "missingFile": "בחרו קובץ תחילה."
+  },
+  "conversion": {
+    "failed": "ההמרה נכשלה.",
+    "failedTryAgain": "ההמרה נכשלה. נסו שוב.",
+    "previewFailed": "טעינת התצוגה המקדימה של התמונה שהומרה נכשלה",
+    "downloadFailed": "ההורדה נכשלה. נסו שוב."
+  },
+  "transcribe": {
+    "failed": "התמלול נכשל.",
+    "failedTryAgain": "התמלול נכשל. נסו שוב."
+  },
+  "transcode": {
+    "failed": "הטרנסקוד נכשל.",
+    "failedTryAgain": "הטרנסקוד נכשל. נסו שוב."
+  },
+  "validation": {
+    "required": "שדה זה הוא חובה.",
+    "invalidNumber": "הזינו מספר תקין.",
+    "outOfRange": "הערך חייב להיות בין {{min}} ל-{{max}}.",
+    "tooShort": "חייב לכלול לפחות {{count}} תווים.",
+    "tooLong": "יכול לכלול לכל היותר {{count}} תווים.",
+    "invalidEmail": "הזינו כתובת אימייל תקינה.",
+    "invalidUrl": "הזינו כתובת URL תקינה."
+  },
+  "auth": {
+    "signInFailed": "ההתחברות נכשלה. נסו שוב.",
+    "signUpFailed": "ההרשמה נכשלה. נסו שוב.",
+    "passwordTooShort": "הסיסמה חייבת לכלול לפחות 8 תווים.",
+    "passwordsDoNotMatch": "הסיסמאות לא תואמות.",
+    "invalidCredentials": "כתובת האימייל או הסיסמה שגויות.",
+    "emailRequired": "יש להזין כתובת אימייל.",
+    "passwordRequired": "יש להזין סיסמה.",
+    "tryAgain": "נסו שוב.",
+    "userNotFound": "לא נמצא חשבון עם כתובת האימייל הזו.",
+    "wrongPassword": "הסיסמה שגויה.",
+    "emailAlreadyInUse": "כבר קיים חשבון עם כתובת האימייל הזו.",
+    "weakPassword": "הסיסמה צריכה לכלול לפחות 6 תווים.",
+    "invalidEmail": "הזינו כתובת אימייל תקינה.",
+    "tooManyRequests": "יותר מדי ניסיונות. המתינו כמה דקות ונסו שוב.",
+    "network": "שגיאת רשת. בדקו את החיבור ונסו שוב."
+  },
+  "ad": {
+    "loadFailed": "טעינת הפרסומת נכשלה."
+  },
+  "forms": {
+    "fixErrors": "תקנו את השגיאות הבאות:",
+    "invalidValue": "ערך לא תקין",
+    "fieldRequired": "שדה זה הוא חובה.",
+    "invalidNumber": "הזינו מספר תקין.",
+    "outOfRange": "הערך חייב להיות בין {{min}} ל-{{max}}.",
+    "faceDetectFailed": "זיהוי הפנים נכשל. נסו שוב.",
+    "removeObjectFailed": "הסרת האובייקט נכשלה. נסו שוב.",
+    "imageForm": {
+      "noFile": "בחרו תמונה תחילה.",
+      "exifLoadFailed": "לא ניתן היה לקרוא את נתוני ה־EXIF של קובץ זה."
+    },
+    "videoForm": {
+      "noFile": "בחרו סרטון תחילה."
+    },
+    "audioForm": {
+      "noFile": "בחרו קובץ אודיו תחילה."
+    },
+    "transcribe": {
+      "noFile": "בחרו קובץ מדיה תחילה.",
+      "invalidLanguage": "הזינו קוד שפה תקין בתקן BCP-47."
+    },
+    "transcode": {
+      "probeFailed": "בדיקת קובץ המקור נכשלה. נסו קובץ אחר."
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "תרגום הכתוביות נכשל.",
+      "missingFile": "העלו קובץ כתוביות תחילה."
+    },
+    "stitchAudioToVideo": {
+      "failed": "חיבור האודיו לווידאו נכשל.",
+      "missingTracks": "הוסיפו לפחות רצועת אודיו אחת."
+    },
+    "extract": {
+      "failed": "החילוץ נכשל.",
+      "noStreams": "לא נמצאו זרמים מתאימים בקובץ זה."
+    }
+  },
+  "errorBoundary": {
+    "title": "משהו השתבש",
+    "body": "שגיאה בלתי צפויה הפריעה לטעינת העמוד. הקבצים שלכם לא אבדו — תוכלו לנסות שוב, ואם הבעיה נמשכת, טענו את העמוד מחדש.",
+    "tryAgain": "ניסיון נוסף",
+    "goHome": "מעבר לדף הבית"
+  },
+  "toasts": {
+    "conversionStartFailed": "הפעלת ההמרה נכשלה.",
+    "transcriptionStartFailed": "הפעלת התמלול נכשלה.",
+    "transcodeStartFailed": "הפעלת הטרנסקוד נכשלה.",
+    "videoAnalysisFailed": "ניתוח הווידאו נכשל.",
+    "translationStartFailed": "הפעלת התרגום נכשלה.",
+    "scanStartFailed": "הפעלת הסריקה נכשלה.",
+    "jobStartFailed": "הפעלת המשימה נכשלה.",
+    "stitchStartFailed": "הפעלת משימת החיבור נכשלה.",
+    "restorationStartFailed": "הפעלת השחזור נכשלה.",
+    "identificationFailed": "זיהוי הקובץ נכשל.",
+    "jobStatusCheckFailed": "בדיקת סטטוס המשימה נכשלה.",
+    "exportStartFailed": "הפעלת הייצוא נכשלה.",
+    "exportFailed": "הייצוא נכשל.",
+    "saveProjectFailed": "שמירת הפרויקט נכשלה.",
+    "createProjectFailed": "יצירת הפרויקט נכשלה.",
+    "uploadFailed": "ההעלאה נכשלה.",
+    "audioProcessingFailed": "עיבוד האודיו נכשל.",
+    "unexpectedFallback": "אירעה שגיאה בלתי צפויה.",
+    "conversionFailedFallback": "תהליך ההמרה נתקל בשגיאה.",
+    "unableToGetProgress": "לא ניתן היה לקבל את התקדמות ההמרה."
+  }
+}

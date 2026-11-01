@@ -1,0 +1,248 @@
+{
+  "common": {
+    "brand": "Media Manipulator",
+    "brandTagline": "画像・動画・音声ファイルをかんたんに変換",
+    "loading": "読み込み中…",
+    "loadingShort": "読み込み中...",
+    "tryAgain": "再試行",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "back": "戻る",
+    "next": "次へ",
+    "save": "保存",
+    "saving": "保存中...",
+    "submit": "送信",
+    "submitting": "送信中...",
+    "download": "ダウンロード",
+    "preview": "プレビュー",
+    "remove": "削除",
+    "clear": "クリア",
+    "reset": "リセット",
+    "apply": "適用",
+    "enable": "有効にする",
+    "disable": "無効にする",
+    "yes": "はい",
+    "no": "いいえ",
+    "more": "もっと見る",
+    "less": "閉じる",
+    "and": "と",
+    "or": "または",
+    "of": "の",
+    "to": "〜まで",
+    "from": "〜から",
+    "by": "による",
+    "in": "内",
+    "with": "付き",
+    "all": "すべて",
+    "none": "なし",
+    "off": "オフ",
+    "on": "オン",
+    "optional": "任意",
+    "required": "必須",
+    "auto": "自動",
+    "manual": "手動",
+    "default": "デフォルト",
+    "advanced": "詳細設定",
+    "basic": "基本",
+    "settings": "設定",
+    "options": "オプション",
+    "search": "検索",
+    "filter": "フィルター",
+    "selected": "選択済み",
+    "step": "ステップ",
+    "minutes": "分",
+    "seconds": "秒",
+    "items": "件",
+    "showAll": "すべて表示",
+    "showMore": "もっと見る",
+    "showLess": "折りたたむ",
+    "retentionPromise": "ファイルの保存期間はご自身で選べます。ゲストはデフォルトで24時間、無料アカウントなら最長2年まで",
+    "retentionPromiseShort": "ゲストのファイルは24時間保存されます。無料アカウントなら24時間から2年までの間で選べます"
+  },
+  "units": {
+    "bytes": "B",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "pixels": "px",
+    "percent": "%",
+    "kbps": "kbps",
+    "fps": "fps",
+    "hz": "Hz",
+    "khz": "kHz"
+  },
+  "duration": {
+    "zero": "0秒",
+    "hours_other": "{{count}}時間",
+    "minutes_other": "{{count}}分",
+    "seconds_other": "{{count}}秒"
+  },
+  "topNav": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "about": "概要",
+    "howItWorks": "仕組み",
+    "tutorials": "チュートリアル",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "blog": "ブログ",
+    "links": {
+      "homeDescription": "ファイルを変換できるホームページ",
+      "toolsDescription": "メディアファイルの変換・圧縮・文字起こし・クリーンアップができる無料オンラインツール",
+      "aboutDescription": "プロジェクトと開発者について詳しく知る概要ページ",
+      "howItWorksDescription": "変換処理の仕組みについて詳しく知るページ",
+      "tutorialsDescription": "音声・動画・画像コンバーターとそのAIツールのステップバイステップのチュートリアル",
+      "privacyPolicyDescription": "プロジェクトのプライバシーポリシーについて詳しく知るページ",
+      "termsOfServiceDescription": "プロジェクトの利用規約について詳しく知るページ",
+      "blogDescription": "プロジェクトの最新ニュースやアップデートを読めるブログページ"
+    },
+    "navigationLabel": "ナビゲーション",
+    "language": "言語",
+    "selectLanguage": "言語を選択",
+    "voices": "ボイス",
+    "contact": "お問い合わせ",
+    "pricing": "料金"
+  },
+  "footer": {
+    "tagline": "画像・動画・音声ファイルの編集、変換、圧縮、解析、文字起こし、要約などを行う、ブラウザベースおよびサーバー支援型のツール群です。",
+    "contact": "お問い合わせ：",
+    "explore": "探す",
+    "legal": "法的情報",
+    "doNotSell": "個人情報を販売・共有しない",
+    "cookieSettings": "Cookie設定",
+    "copyright": "© {{year}} Media Manipulator（CreaTV Ltd.の製品）。All rights reserved.",
+    "operatedBy": "運営：CreaTV Ltd. · 米国コロラド州",
+    "changelog": "更新履歴",
+    "status": "稼働状況",
+    "licenses": "オープンソースライセンス"
+  },
+  "languageSelector": {
+    "label": "言語",
+    "current": "現在の言語：{{language}}",
+    "select": "言語を選択してください"
+  },
+  "home": {
+    "contentStudioCta": {
+      "title": "Darkroom",
+      "badge": "新登場",
+      "body": "マルチトラックのタイムラインで動画と音声を編集・重ね合わせ・ミックスし、MP4で書き出せます。Premiere Pro風のエディターがブラウザでそのまま使えます。",
+      "cta": "Darkroomを試す"
+    },
+    "hero": {
+      "title": "無料オンラインのメディア変換・編集・文字起こし・メタデータツール",
+      "subtitle": "画像・動画・音声ファイルの変換、圧縮、編集、文字起こし、要約、メタデータの確認、クリーンアップをブラウザから直接行えます。",
+      "popularLabel": "人気のツール",
+      "allTools": "すべてのツール",
+      "removeExif": "EXIFを削除",
+      "compressVideo": "動画を圧縮",
+      "transcribeVideo": "動画を文字起こし",
+      "transcodeHls": "トランスコード → HLS",
+      "transcodeDash": "トランスコード → DASH",
+      "webpToJpg": "WebP → JPG",
+      "wavToMp3": "WAV → MP3",
+      "compressImage": "画像を圧縮",
+      "resizeImage": "画像をリサイズ",
+      "extractAudio": "音声を抽出"
+    },
+    "upload": {
+      "title": "ファイルをアップロード",
+      "dragDrop": "ここにファイルをドラッグ＆ドロップ",
+      "orClickSelect": "またはクリックしてパソコンから選択",
+      "chooseFile": "ファイルを選択",
+      "unsupportedFile": "対応していないファイル形式です。画像、動画、または音声ファイルを選択してください。"
+    },
+    "options": {
+      "transcriptionOptions": "文字起こしオプション",
+      "transcodeOptions": "トランスコードオプション",
+      "conversionOptions": "変換オプション",
+      "documentScanOptions": "文書スキャンオプション",
+      "convert": "変換する",
+      "transcribe": "文字起こしする",
+      "transcode": "トランスコードする",
+      "scanDocument": "PDF / Wordにスキャン（AI）"
+    },
+    "history": {
+      "title": "変換履歴",
+      "subtitle": "このセッションで変換した画像・動画・音声の結果を再度開いたりダウンロードしたりできます。",
+      "newConversion": "新しい変換",
+      "transcriptBadge": "文字起こし",
+      "preview": "プレビュー",
+      "download": "ダウンロード",
+      "itemLabel": "#{{number}} {{filename}}",
+      "startedProcessing": "{{time}}に開始し、まだ処理中です",
+      "completedAt": "{{time}}に完了",
+      "transcriptionFailed": "文字起こしに失敗しました",
+      "conversionFailed": "変換に失敗しました"
+    },
+    "result": {
+      "transcriptResult": "文字起こし結果",
+      "convertedPreview": "変換後ファイルのプレビュー",
+      "transcriptSubtitle": "{{filename}}の文字起こしとAIレビューです。",
+      "convertedSubtitle": "{{filename}}のオリジナルと編集後の最終版を切り替えて確認できます。",
+      "original": "オリジナル",
+      "final": "最終版"
+    },
+    "progress": {
+      "preparingUpload": "安全なアップロードを準備中...",
+      "uploadingToS3": "ファイルをS3へ直接アップロード中...",
+      "finalizing": "アップロードしたファイルをサーバーに配置中...",
+      "startingTranscription": "文字起こしを開始中...",
+      "startingConversion": "変換を開始中...",
+      "converting": "変換中...",
+      "percentComplete": "{{percent}}%完了",
+      "conversionFailed": "変換に失敗しました。もう一度お試しください。"
+    },
+    "download": {
+      "downloadAs": "{{filename}}をダウンロード",
+      "fileWillBeDownloaded": "次のファイル名でダウンロードされます：{{filename}}"
+    },
+    "fileLoadingConverter": "コンバーターを読み込み中…",
+    "gettingStarted": {
+      "title": "4ステップで始める",
+      "step1": {
+        "title": "ファイルをアップロード",
+        "body": "画像・動画・音声ファイルを左側のアップロード領域にドラッグするか、<em>ファイルを選択</em>をクリックします。ゲストのファイルは24時間保存されます。無料アカウントなら24時間から2年までの間で選べます。"
+      },
+      "step2": {
+        "title": "ここで設定を選ぶ",
+        "body": "ファイルを選択すると、右側のパネルが画像・動画・音声に応じたコンバーターに切り替わります。形式を選び、フィルターを調整し、必要ならAI処理を有効にします。"
+      },
+      "step3": {
+        "title": "変換",
+        "body": "<em>ファイルを変換</em>をクリックします。進行状況バーをご覧ください。ジョブは当社のGPUサーバーでリアルタイムに実行されます。"
+      },
+      "step4": {
+        "title": "プレビューしてダウンロード",
+        "body": "結果は準備ができると自動的にプレビューされます。オリジナルと最終版を切り替えて確認し、ダウンロードをクリックしてください。"
+      }
+    },
+    "localAi": {
+      "title": "ローカルAIツールを搭載",
+      "body": "顔のぼかし、背景の除去、AIアップスケール、OCRによるテキスト／個人情報のマスキング、音声クリーンアップ、ボーカル分離、カラオケ用ボーカル除去は、すべて当社自身のGPUサーバーで実行されます。第三者のAIプロバイダーがファイルを見ることはありません。"
+    },
+    "notSure": {
+      "title": "どこから始めればいいか迷っていますか？",
+      "body": "ステップバイステップのチュートリアルで、音声・動画・画像コンバーターのすべての設定（AIツールを含む）を順に解説しています。",
+      "cta": "チュートリアルを見る"
+    },
+    "howItWorks": {
+      "title": "仕組み",
+      "body": "Media Manipulatorは、標準的な変換にはFFmpegとImageMagickを、オプションのAI処理にはローカルGPU上の専用AIモデルを使用しています。すべての処理は当社が管理するサーバーで行われます。詳しくは詳細ページをご覧ください。",
+      "cta": "仕組みを読む"
+    }
+  },
+  "notFound": {
+    "preTitle": "テレメトリー喪失",
+    "title": "この船にそのセクターは存在しません",
+    "body": "入力された座標は、航法コンソール上のどこにも対応していません。以下のルートのいずれかを試すか、メインブリッジに戻って実在するツールを選んでください。",
+    "links": {
+      "home": "基地に戻る",
+      "tools": "ツール一覧",
+      "tutorials": "チュートリアル"
+    }
+  },
+  "themeToggle": {
+    "toggle": "テーマを切り替え"
+  }
+}

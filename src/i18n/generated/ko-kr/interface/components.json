@@ -1,0 +1,773 @@
+{
+  "relatedLinks": {
+    "defaultTitle": "관련 도구 및 튜토리얼"
+  },
+  "filePreview": {
+    "showResult": "결과 보기"
+  },
+  "authModal": {
+    "defaultTitle": "무료 계정 만들기",
+    "defaultDescription": "기록을 보관하고, Darkroom 프로젝트를 저장하고, 더 넉넉한 일일 사용량을 받아 보세요.",
+    "signInTitle": "다시 오신 것을 환영합니다",
+    "signInDescription": "기록, 저장된 Studio 프로젝트, 일일 사용량이 그대로 보관되어 있어요.",
+    "tabs": {
+      "signup": "계정 만들기",
+      "signin": "로그인"
+    },
+    "fields": {
+      "fullName": "이름",
+      "fullNamePlaceholder": "홍길동",
+      "email": "이메일",
+      "emailPlaceholder": "hong@example.com",
+      "password": "비밀번호",
+      "passwordPlaceholderSignup": "6자 이상",
+      "passwordPlaceholderSignin": "비밀번호"
+    },
+    "actions": {
+      "createAccount": "무료 계정 만들기",
+      "creatingAccount": "계정 만드는 중...",
+      "signIn": "로그인",
+      "signingIn": "로그인 중..."
+    },
+    "googleSignIn": "Google로 계속하기",
+    "orDivider": "또는",
+    "terms": "가입하면 <tos>서비스 이용약관</tos> 및 <privacy>개인정보 처리방침</privacy>에 동의하는 것으로 간주됩니다",
+    "toast": {
+      "welcome": "환영합니다!",
+      "welcomeBack": "다시 오신 것을 환영합니다!",
+      "welcomeMM": "Media Manipulator에 오신 것을 환영합니다!",
+      "accountCreated": "계정이 만들어졌습니다!",
+      "signedIn": "로그인되었습니다.",
+      "googleSuccess": "Google 계정으로 로그인되었습니다.",
+      "authFailed": "인증 실패",
+      "nameRequired": "이름이 필요합니다",
+      "nameRequiredDesc": "이름을 입력해 주세요.",
+      "appleSuccess": "Apple 계정으로 로그인되었습니다."
+    },
+    "contextual": {
+      "signupTitle": "오늘 무료 변환 {{limit}}회를 모두 사용했어요",
+      "signupBody": "무료 계정을 만들면 일일 사용량이 늘어나고, 변환 기록이 보관되고, Darkroom 프로젝트가 저장돼요.",
+      "premiumTitle": "오늘의 한도 {{limit}}회에 도달했어요",
+      "premiumBody": "Premium은 일일 사용량을 늘리고, 4K 내보내기와 우선 처리를 제공하며, 광고를 없애 줘요.",
+      "resets": "현재 사용량은 {{when}} 초기화돼요."
+    },
+    "plans": {
+      "freeTitle": "무료 계정의 혜택",
+      "premiumTitle": "Premium",
+      "premiumPrice": "월 {{price}}",
+      "premiumUpgrade": "Premium으로 업그레이드",
+      "comparePlans": "모든 요금제 비교",
+      "opsPerDay": "하루 {{count}}회 작업",
+      "opsPerDayUnlimited": "하루 작업 횟수 무제한",
+      "maxFileSize": "최대 {{size}} 파일",
+      "maxVideoLength": "최대 {{duration}} 동영상",
+      "maxOutput": "최대 {{height}}p 출력",
+      "studioProjects": "저장 가능한 Studio 프로젝트 {{count}}개",
+      "studioProjectsUnlimited": "저장 가능한 Studio 프로젝트 무제한",
+      "retention": "파일 보관 기간을 24시간부터 2년까지 직접 선택",
+      "priorityGpu": "우선 처리",
+      "noAds": "광고 없음",
+      "retentionGuest": "파일 24시간 보관"
+    },
+    "loadingPlans": "요금제 불러오는 중…",
+    "appleSignIn": "Apple로 계속하기",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "reset": {
+      "title": "비밀번호 재설정",
+      "body": "계정 이메일을 입력하시면 링크를 보내 드려요.",
+      "submit": "재설정 링크 보내기",
+      "sending": "보내는 중…",
+      "sent": "해당 이메일로 등록된 계정이 있다면 비밀번호 재설정 링크를 보냈어요.",
+      "back": "로그인으로 돌아가기"
+    },
+    "link": {
+      "notice": "이 이메일은 이미 다른 로그인 방식으로 등록되어 있어요. 해당 방식으로 로그인하면 두 방식을 연결할 수 있어요.",
+      "linked": "계정이 연결되었어요. 이제 두 방식 모두로 로그인할 수 있어요."
+    }
+  },
+  "imageCropModal": {
+    "title": "이미지 자르기",
+    "subtitle": "드래그해서 자를 영역을 조정한 뒤 적용을 클릭하세요.",
+    "instructions": "자를 영역을 드래그해서 위치를 잡거나, 오른쪽 아래 모서리를 드래그해서 크기를 조정하세요. 어두운 영역은 제거됩니다.",
+    "previewAlt": "자르기 미리보기",
+    "cropArea": "자를 영역: {{width}} × {{height}} 픽셀",
+    "apply": "자르기 적용",
+    "cancel": "취소",
+    "reset": "초기화"
+  },
+  "mediaTrimModal": {
+    "titleVideo": "동영상 자르기",
+    "titleAudio": "오디오 자르기",
+    "instructions": "타임라인의 핸들을 드래그해서 남길 구간을 선택하세요. 회색 영역은 제거됩니다.",
+    "audioFile": "오디오 파일",
+    "startLabel": "시작 시간",
+    "endLabel": "종료 시간",
+    "durationLabel": "길이",
+    "finalDuration": "최종 길이: {{duration}}",
+    "apply": "자르기 적용",
+    "cancel": "취소",
+    "reset": "초기화",
+    "playPreview": "미리보기 재생",
+    "pausePreview": "일시정지"
+  },
+  "removeObjectOverlay": {
+    "title": "개체 제거",
+    "instructions": "제거할 개체 위에 사각형을 그리세요. LaMa 인페인팅이 배경을 다시 채워 줍니다.",
+    "rectangleCount_other": "{{count}}개 영역 선택됨",
+    "addRegion": "영역 추가",
+    "clearRegions": "모두 지우기",
+    "apply": "개체 제거",
+    "cancel": "취소",
+    "undo": "실행 취소",
+    "previewAlt": "제거할 영역 표시",
+    "dragHint": "드래그해서 크기를 정한 뒤 놓으세요. 핸들로 세밀하게 조정할 수 있어요.",
+    "removeRectangle": "사각형 {{number}} 제거"
+  },
+  "faceSelectionOverlay": {
+    "title": "흐리게 처리할 얼굴 선택",
+    "instructions": "개인정보 보호 효과를 적용할 얼굴을 각각 탭하세요. 다시 탭하면 선택이 해제됩니다.",
+    "selectAll": "모두 선택",
+    "clearSelection": "선택 해제",
+    "apply": "적용",
+    "cancel": "취소",
+    "selectedCount_other": "얼굴 {{count}}개 선택됨",
+    "noFacesDetected": "이 이미지에서 얼굴을 찾지 못했습니다.",
+    "previewAlt": "감지된 얼굴 미리보기",
+    "faceAria": "얼굴 {{label}}",
+    "faceSelectedAria": "얼굴 {{label}} (선택됨)"
+  },
+  "mobileAnchorAd": {
+    "label": "광고"
+  },
+  "adBanner": {
+    "creatvAriaLabel": "CreaTV — 아이디어에 생명을 불어넣다",
+    "creatvCreativeAlt": "CreaTV를 만나 보세요! 아이디어가 현실이 되는 곳."
+  },
+  "alternativeAdBanner": {
+    "placeholder": "{{network}} 광고 자리 - {{position}}",
+    "placeholderFormat": "형식: {{format}} | 슬롯: {{slot}}",
+    "placeholderProduction": "프로덕션 환경에서는 여기에 {{network}} 광고가 표시됩니다"
+  },
+  "toolFlowDiagram": {
+    "stepLabel": "{{number}}단계",
+    "defaultTitle": "작동 방식"
+  },
+  "privacyPolicyComponent": {
+    "title": "개인정보 보호 한눈에 보기",
+    "summary": "파일은 저희 서버에서 처리되며 제3자 AI 제공업체로 전송되지 않습니다. 계정이 없으면 24시간 보관되고, 무료 계정이 있으면 24시간부터 2년까지 직접 선택할 수 있습니다.",
+    "learnMore": "개인정보 처리방침 전문 읽기"
+  },
+  "quotaMeter": {
+    "label": "오늘",
+    "aiLabel": "AI",
+    "readout": "{{used}} / {{limit}}",
+    "empty": "—",
+    "remaining": "오늘 {{limit}}회 중 {{remaining}}회 남음",
+    "atLimit": "일일 한도 도달",
+    "unlimited": "이 계정에는 일일 한도가 없습니다",
+    "resets": "{{when}} 초기화",
+    "moreCta": "더 받기"
+  },
+  "accountMenu": {
+    "signIn": "로그인",
+    "account": "계정",
+    "signOut": "로그아웃",
+    "signOutFailed": "로그아웃하지 못했습니다",
+    "tier": {
+      "anonymous": "비회원",
+      "free": "무료",
+      "premium": "Premium",
+      "operator": "운영자",
+      "pro": "Pro"
+    },
+    "tierEnds": "Premium · {{date}} 종료",
+    "tierEndsPro": "Pro · {{date}} 종료"
+  },
+  "upgradeSurfaces": {
+    "fileLimit": "최대 {{size}} 파일",
+    "fileLimitMoreFree": "더 큰 파일은 무료 계정이 필요해요",
+    "fileLimitMorePremium": "더 큰 파일은 Premium이 필요해요",
+    "nudgeTitle": "완료됐어요",
+    "nudgeBodyFree": "무료 계정을 만들면 일일 사용량이 늘어나고 기록이 보관돼요.",
+    "nudgeBodyPremium": "Premium은 4K 내보내기, 우선 처리, 광고 없는 환경을 더해 줘요.",
+    "nudgeAction": "혜택 보기"
+  },
+  "consentBanner": {
+    "label": "쿠키 및 분석 선택",
+    "body": "저희는 어떤 도구가 사용되고 어디서 문제가 생기는지 파악하기 위해 개인정보를 존중하는 자체 분석을 사용해요. 파일은 절대 포함되지 않으며, 언제든지 설정을 바꿀 수 있어요.",
+    "bodyGdpr": "측정을 시작하기 전에 동의가 필요해요. 어떤 도구가 사용되고 어디서 문제가 생기는지 파악하기 위해 자체 분석을 사용하지만, 선택하기 전까지는 아무것도 수집하지 않으며 파일은 절대 포함되지 않아요.",
+    "privacyLink": "개인정보 처리방침 읽기",
+    "more": "더보기",
+    "customize": "직접 설정",
+    "accept": "동의",
+    "decline": "거부"
+  },
+  "consentPrefs": {
+    "title": "개인정보 환경설정",
+    "subtitle": "Media Manipulator가 측정할 수 있는 항목을 선택하세요. 변경 사항은 저장 즉시 적용됩니다.",
+    "necessary": {
+      "title": "필수",
+      "body": "테마 선택과, 무료 등급 한도를 적용하고 악용을 차단하기 위한 익명의 기기 및 방문 ID입니다. 쿠키도 없고 광고에 사용되지도 않으며, 끄면 도구가 작동하지 않으므로 끌 수 없습니다.",
+      "always": "항상 켜짐"
+    },
+    "analytics": {
+      "title": "분석",
+      "body": "어떤 도구를 사용했는지, 변환이 성공했는지, 페이지 로딩 속도는 어떤지, 고쳐야 할 오류는 무엇인지를 측정합니다. 자체 분석이며 13개월 동안 보관되고 절대 판매되지 않습니다. 파일 이름과 파일 내용은 수집하지 않습니다."
+    },
+    "advertising": {
+      "title": "광고",
+      "body": "일부 도구 페이지에서 무료 및 로그아웃 상태의 방문자에게 표시되는 광고를 Google이 맞춤 설정할 수 있게 합니다. 광고 표시 여부는 이 스위치와 무관하며, 끄면 광고가 맞춤 설정되지 않습니다. Premium 및 Pro에는 광고가 표시되지 않습니다.",
+      "bodyGdpr": "귀하의 지역에서는 광고 관련 선택을 여기가 아니라 Google의 동의 메시지에서 합니다. 이 패널은 당사 자체 분석을 다룹니다. 그곳에서 선택하기 전까지 도구 페이지의 광고는 맞춤 설정되지 않습니다. Premium 및 Pro에는 광고가 표시되지 않습니다.",
+      "bodyGpc": "맞춤형 광고를 위한 항목입니다. 브라우저가 Global Privacy Control 신호를 보내고 있으므로 이 항목은 꺼진 상태로 유지됩니다. 저희는 이 신호를 존중하며, 여기를 클릭해도 신호를 무시할 수 없습니다.",
+      "managedByGoogle": "Google 동의 메시지에서 관리",
+      "openGoogleMessage": "광고 선택 변경"
+    },
+    "gpcDetected": "Global Privacy Control이 감지되었습니다. 개인정보의 판매 또는 공유에서 자동으로 제외 처리했으며, 그 사실을 기록해 두었습니다.",
+    "doNotSell": {
+      "title": "내 개인정보를 판매하거나 공유하지 않기",
+      "body": "저희는 개인정보를 판매하지 않습니다. 이 설정은 현재와 미래의 광고 목적 공유에서 제외되도록 합니다. 자체 분석은 위의 별도 항목에서 선택합니다.",
+      "action": "제외하기",
+      "done": "제외되었습니다"
+    },
+    "yourData": {
+      "title": "내 데이터",
+      "body": "저희 분석 시스템이 이 브라우저에 대해 보유한 모든 데이터의 사본을 다운로드하거나 영구적으로 삭제할 수 있습니다. 로그인한 상태라면 계정에 연결된 모든 기기가 대상이고, 그렇지 않으면 이 브라우저만 대상입니다.",
+      "export": "내 데이터 내보내기",
+      "exporting": "내보내기 준비 중…",
+      "delete": "내 데이터 삭제",
+      "deleting": "삭제 중…",
+      "deleteConfirmBody": "이 작업은 이벤트, 방문 기록, 방문자 프로필을 포함한 분석 기록을 영구적으로 삭제하며 되돌릴 수 없습니다. 동의 선택 기록은 법적으로 증명할 수 있어야 하므로 보관됩니다. 확인하려면 DELETE를 입력하세요.",
+      "deleteConfirmPlaceholder": "확인하려면 DELETE 입력",
+      "deleteConfirmAction": "영구 삭제",
+      "deletedSummary": "완료되었습니다. {{sessions}}회 방문에 걸친 {{events}}개 이벤트를 삭제했고, 이 브라우저에는 완전히 새로운 익명 ID가 부여되었습니다.",
+      "deletedNote": "동의 선택 기록은 법적으로 요구되는 증빙으로 보관됩니다. 동의 설정 자체는 바뀌지 않았으므로, 분석이 켜져 있다면 새 활동은 새 ID로 수집됩니다. 위에서 언제든지 끌 수 있습니다.",
+      "error": "작업에 실패했습니다. 잠시 후 다시 시도해 주세요. 확인 메시지가 표시되지 않았다면 아무것도 변경되지 않았습니다."
+    },
+    "policyPrefix": "무엇을 왜 수집하고 얼마나 보관하는지에 대한 자세한 내용:",
+    "policyLink": "개인정보 처리방침",
+    "cancel": "취소",
+    "save": "환경설정 저장"
+  },
+  "toasts": {
+    "conversionStarted": "변환이 시작되었습니다",
+    "conversionStartedDescription": "작업 ID: {{jobId}} - 파일을 처리하고 있습니다",
+    "transcriptionStarted": "전사가 시작되었습니다",
+    "transcriptionStartedDescription": "작업 ID: {{jobId}} - 전사본을 생성하고 있습니다",
+    "transcodeStarted": "트랜스코딩이 시작되었습니다",
+    "translationStarted": "자막 번역이 시작되었습니다",
+    "jobStarted": "작업이 시작되었습니다",
+    "stitchStarted": "합치기 작업이 시작되었습니다",
+    "jobIdDescription": "작업 ID: {{jobId}}",
+    "conversionCompleted": "변환이 완료되었습니다!",
+    "readyForDownload": "파일을 다운로드할 수 있습니다",
+    "uploadingFile": "{{fileName}} 업로드 중…",
+    "uploadingFileProgress": "{{fileName}} 업로드 중… {{percent}}%",
+    "processingFile": "{{fileName}} 처리 중…",
+    "buildingPreview": "미리보기 생성 중…",
+    "assetAdded": "{{fileName}} 추가됨",
+    "audioAdded": "오디오 추가됨",
+    "processingAudio": "오디오 처리 중…",
+    "captionsReady": "자막 준비 완료",
+    "binUpdateFailed": "미디어 보관함을 업데이트하지 못했습니다",
+    "assetDeleteFailed": "해당 미디어를 삭제하지 못했습니다"
+  },
+  "resultPanel": {
+    "ariaLabel": "결과",
+    "download": "다운로드",
+    "downloadFailed": "다운로드에 실패했습니다. 다시 시도해 주세요.",
+    "downloadStatus": {
+      "preparing": "다운로드 준비 중…",
+      "started": "다운로드가 시작되었습니다. 브라우저의 다운로드 목록을 확인하세요.",
+      "startedWithSize": "다운로드가 시작되었습니다({{size}}). 브라우저의 다운로드 목록을 확인하세요.",
+      "failed": "다운로드를 시작하지 못했습니다.",
+      "gone": "이 결과는 더 이상 다운로드할 수 없습니다.",
+      "retry": "다시 시도",
+      "noRecharge": "다시 다운로드해도 작업이 재실행되거나 요금이 부과되지 않습니다."
+    },
+    "compare": "비교",
+    "original": "원본",
+    "result": "결과",
+    "runAnother": "다른 작업 실행",
+    "size": "크기",
+    "keepsUntil": "보관 기한",
+    "loading": "미리보기 불러오는 중…",
+    "loadFailed": "결과를 불러올 수 없습니다.",
+    "retry": "다시 시도",
+    "kind": {
+      "image": "이미지",
+      "gif": "애니메이션 GIF",
+      "video": "동영상",
+      "audio": "오디오",
+      "transcript": "전사본",
+      "captions": "자막",
+      "pdf": "PDF 문서",
+      "archive": "압축 파일",
+      "hls": "HLS 패키지",
+      "dash": "DASH 패키지",
+      "metadata": "메타데이터",
+      "unknown": "파일",
+      "summary": "요약"
+    },
+    "image": {
+      "zoom": "확대/축소",
+      "fit": "맞춤",
+      "transparencyGrid": "투명 격자",
+      "dimensions": "크기",
+      "originalAlt": "원본 이미지 {{fileName}}",
+      "resultAlt": "결과 이미지 {{fileName}}"
+    },
+    "gif": {
+      "alt": "애니메이션 GIF {{fileName}}"
+    },
+    "audio": {
+      "waveform": "오디오 파형"
+    },
+    "unknown": {
+      "body": "이 결과는 아직 브라우저에서 미리 볼 수 없습니다. 다운로드해서 열어 보세요.",
+      "type": "유형",
+      "size": "크기"
+    },
+    "transcript": {
+      "search": "전사본 검색",
+      "searchPlaceholder": "검색…",
+      "matchCount": "{{total}}개 중 {{current}}번째",
+      "noMatches": "일치하는 항목 없음",
+      "prevMatch": "이전 결과",
+      "nextMatch": "다음 결과",
+      "copyAll": "모두 복사",
+      "copied": "복사됨",
+      "format": "형식",
+      "rawPreview": "원문 텍스트",
+      "seekTo": "{{time}}(으)로 이동",
+      "showMore": "더 보기 ({{count}}개 남음)",
+      "details": "언어, 오디오 설명 및 AI 검토"
+    },
+    "captions": {
+      "cues": "자막 항목",
+      "sourceCues": "원본 자막 항목",
+      "skipped": "건너뛴 블록",
+      "countMismatch": "원본에는 자막 항목이 {{source}}개 있지만 번역본에는 {{translated}}개 있습니다. 남는 행은 빈 칸과 나란히 표시됩니다.",
+      "source": "원본",
+      "translated": "번역본",
+      "timingDiffers": "타이밍 다름",
+      "empty": "(없음)"
+    },
+    "compareModes": {
+      "label": "비교 보기",
+      "slider": "비교 위치",
+      "sliderValue": "{{before}} {{beforePct}}%, {{after}} {{afterPct}}%",
+      "wipe": "와이프",
+      "side_by_side": "나란히 보기",
+      "toggle": "전환",
+      "ab": "A/B",
+      "a": "A",
+      "b": "B",
+      "transport": "재생 컨트롤",
+      "play": "재생",
+      "pause": "일시정지",
+      "seek": "탐색",
+      "rate": "속도",
+      "mute": "음소거",
+      "unmute": "결과 소리 켜기",
+      "prevFrame": "이전 프레임",
+      "nextFrame": "다음 프레임",
+      "fpsValue": "{{fps}} fps",
+      "fpsTarget": "{{fps}} fps (목표)",
+      "largeNotice": "미리보기는 컨테이너 너비로 제한됩니다. 아주 큰 동영상은 재생이 느릴 수 있습니다.",
+      "videoOriginal": "원본 동영상",
+      "videoResult": "결과 동영상",
+      "audibleLabel": "소리가 나는 쪽",
+      "audioOriginal": "원본 오디오",
+      "audioResult": "결과 오디오",
+      "otherPeaks": "반대쪽 파형",
+      "time": "{{current}} / {{total}}"
+    },
+    "archive": {
+      "summary_other": "파일 {{count}}개",
+      "truncated": "압축 파일이 잘려 있어 읽을 수 있는 부분만 표시합니다.",
+      "search": "파일 검색",
+      "view": "보기",
+      "gallery": "갤러리",
+      "list": "목록",
+      "noMatches": "일치하는 파일이 없습니다.",
+      "play": "{{name}} 재생",
+      "open": "열기",
+      "downloadEntry": "{{name}} 다운로드",
+      "lightbox": "이미지 미리보기",
+      "previous": "이전",
+      "next": "다음",
+      "tooLarge": "브라우저에서 미리 보기에는 너무 큽니다.",
+      "unreadable": "이 압축 파일은 브라우저에서 읽을 수 없습니다.",
+      "noSingleEntry": "개별 파일은 서버에서 다운로드할 수 없으므로 압축 파일 전체를 다운로드하세요."
+    },
+    "pdf": {
+      "title": "PDF 미리보기",
+      "openInNewTab": "새 탭에서 열기",
+      "fallback": "이 브라우저에서는 PDF를 바로 표시할 수 없습니다."
+    },
+    "stream": {
+      "rung": "화질",
+      "auto": "자동",
+      "rungLabel": "{{height}}p, {{bitrate}} kbps",
+      "unsupported": "이 스트림은 브라우저에서 재생할 수 없어 보고서를 대신 표시합니다.",
+      "loading": "스트림 준비 중",
+      "av1": "이 브라우저는 AV1을 디코딩할 수 없습니다."
+    },
+    "restore": {
+      "picker": "모델",
+      "original": "원본",
+      "modelOption": "{{name}}, {{duration}}초, {{size}}",
+      "failedTitle": "실패한 모델",
+      "failedItem": "{{name}}: {{error}}",
+      "loading": "복원된 클립 불러오는 중",
+      "download": "모든 결과 다운로드"
+    },
+    "summary": {
+      "loading": "요약 불러오는 중",
+      "loadFailed": "요약을 불러올 수 없어요.",
+      "untitled": "요약",
+      "language": "언어: {{language}}",
+      "chapters": "챕터",
+      "seekTo": "{{time}}(으)로 이동",
+      "topics": "주제",
+      "onScreenText": "화면 속 텍스트",
+      "visual": "화면",
+      "speech": "음성",
+      "notes": "참고",
+      "copyMarkdown": "Markdown으로 복사",
+      "copied": "복사됨",
+      "downloadMd": ".md 다운로드",
+      "downloadJson": ".json 다운로드",
+      "showAll": "모두 보기 ({{count}})",
+      "showLess": "간략히 보기"
+    },
+    "mp3": {
+      "button": "MP3로 다운로드",
+      "converting": "MP3로 변환 중…",
+      "hint": "더 작은 파일을 서버에서 변환합니다. 무료이며 AI 작업으로 집계되지 않습니다.",
+      "started": "MP3 다운로드가 시작되었습니다. 브라우저의 다운로드 목록을 확인하세요.",
+      "startedWithSize": "MP3 다운로드가 시작되었습니다({{size}}). 브라우저의 다운로드 목록을 확인하세요.",
+      "failed": "MP3를 준비하지 못했습니다. 잠시 후 다시 시도하세요."
+    }
+  },
+  "billing": {
+    "intervalLabel": "결제 주기",
+    "monthly": "월간",
+    "yearly": "연간",
+    "perMonth": "/월",
+    "perYear": "/년",
+    "currency": {
+      "label": "통화",
+      "panelLabel": "통화",
+      "lockedNote": "구독은 {{currency}}(으)로 결제됩니다. 구독이 활성 상태인 동안에는 변경할 수 없습니다."
+    },
+    "yearlyBonus": "{{months}}개월 무료",
+    "cancelAnytime": "언제든지 해지 가능",
+    "refund": "첫 결제는 14일 이내 환불 가능",
+    "taxNote": "세금이 추가로 부과되지 않습니다",
+    "upgrade": "Premium으로 업그레이드",
+    "manage": "구독 관리",
+    "operator": "무제한 (운영자)",
+    "unavailable": "Premium은 아직 이용할 수 없습니다",
+    "busy": "결제 페이지 여는 중…",
+    "cancelledNote": "결제가 취소되었습니다. 요금이 청구되지 않았습니다.",
+    "dismiss": "닫기",
+    "errors": {
+      "unavailable": "Premium은 아직 이용할 수 없습니다.",
+      "operator": "운영자 계정은 이미 무제한으로 이용할 수 있습니다.",
+      "generic": "결제를 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.",
+      "alreadyOnPlan": "이미 이 요금제 또는 상위 요금제를 이용 중입니다.",
+      "currencyLocked": "결제 계정의 통화가 {{currency}}(으)로 설정되어 있어 가격을 {{currency}}(으)로 표시합니다. 계속하려면 요금제를 다시 선택해 주세요."
+    },
+    "panel": {
+      "title": "결제",
+      "loading": "결제 정보 불러오는 중…",
+      "loadFailed": "결제 정보를 불러오지 못했습니다. 새로고침해서 다시 시도해 주세요.",
+      "operator": "운영자 권한입니다. 구독이 필요하지 않습니다.",
+      "unavailable": "구독은 아직 이용할 수 없습니다.",
+      "grantUntil": "팀에서 {{date}}까지 Premium을 부여했습니다.",
+      "grantOpen": "팀에서 종료일 없이 Premium을 부여했습니다.",
+      "freeBody": "무료 요금제를 이용 중입니다. Premium은 한도를 늘리고 광고를 없애 줍니다.",
+      "upgrade": "Premium으로 업그레이드",
+      "pastDueTitle": "마지막 결제가 처리되지 않았습니다",
+      "pastDueBody": "재시도하는 동안 최대 7일간 Premium 이용이 유지됩니다. 계속 이용하려면 결제 수단을 업데이트해 주세요.",
+      "intervalLabel": "결제 주기",
+      "endsLabel": "Premium 종료일",
+      "renewsLabel": "갱신일",
+      "endsOn": "구독이 {{date}}에 종료됩니다.",
+      "resumeHint": "다시 시작하려면 구독 관리를 여세요.",
+      "renewsOn": "{{date}}에 갱신됩니다.",
+      "updatePayment": "결제 수단 업데이트",
+      "cancelledTitle": "Premium 요금제가 해지되었습니다",
+      "cancelledBody": "{{date}}까지 Premium을 이용할 수 있습니다. 그 이후에는 계정이 무료 요금제로 전환되며 더 이상 요금이 청구되지 않습니다.",
+      "cancelledBodyNoDate": "현재 결제 기간이 끝날 때까지 Premium을 이용할 수 있습니다. 그 이후에는 계정이 무료 요금제로 전환되며 더 이상 요금이 청구되지 않습니다.",
+      "planLabel": "요금제",
+      "pro": {
+        "grantUntil": "팀에서 {{date}}까지 Pro를 부여했습니다.",
+        "grantOpen": "팀에서 종료일 없이 Pro를 부여했습니다.",
+        "pastDueBody": "재시도하는 동안 최대 7일간 Pro 이용이 유지됩니다. 계속 이용하려면 결제 수단을 업데이트해 주세요.",
+        "endsLabel": "Pro 종료일",
+        "cancelledTitle": "Pro 요금제가 해지되었습니다",
+        "cancelledBody": "{{date}}까지 Pro를 이용할 수 있습니다. 그 이후에는 계정이 무료 요금제로 전환되며 더 이상 요금이 청구되지 않습니다.",
+        "cancelledBodyNoDate": "현재 결제 기간이 끝날 때까지 Pro를 이용할 수 있습니다. 그 이후에는 계정이 무료 요금제로 전환되며 더 이상 요금이 청구되지 않습니다."
+      }
+    },
+    "return": {
+      "waiting": {
+        "title": "결제 확인 중…",
+        "body": "보통 몇 초 정도 걸립니다."
+      },
+      "confirmed": {
+        "title": "Premium에 오신 것을 환영합니다",
+        "body": "결제가 완료되었고 이제 Premium 요금제를 이용하실 수 있습니다."
+      },
+      "shortly": {
+        "title": "결제가 접수되었습니다",
+        "body": "요금제가 곧 업데이트됩니다. 1분 뒤에도 무료로 표시되면 아래에서 새로고침해 주세요."
+      },
+      "foreign": {
+        "title": "이 결제를 회원님의 계정과 연결하지 못했습니다",
+        "body": "방금 결제하셨다면 결제 시 사용한 계정으로 로그인해 주세요."
+      },
+      "failed": {
+        "title": "아직 결제를 확인하지 못했습니다",
+        "body": "결제가 확인되면 요금제가 자동으로 업데이트됩니다. 잠시 후 다시 시도해 주세요."
+      },
+      "refresh": "내 요금제 새로고침",
+      "confirmedPro": {
+        "title": "Pro에 오신 것을 환영합니다",
+        "body": "결제가 완료되었고 이제 Pro 요금제를 이용하실 수 있습니다. 가장 높은 일일 한도와 함께, Motion 편집기가 출시되면 가장 넉넉한 Motion 사용량을 받으실 수 있습니다."
+      }
+    },
+    "offer": {
+      "title": "마음이 바뀌셨나요? 월 {{price}}에 Premium을 계속 이용하세요",
+      "resumeTitle": "마음이 바뀌셨나요? 현재 가격 그대로 Premium을 계속 이용하세요",
+      "fineprint": "오늘은 아무 요금도 청구되지 않습니다. {{date}}부터는 월 {{current}} 대신 월 {{price}}을(를) 해지하실 때까지 매달 결제하게 됩니다.",
+      "cta": "월 {{price}}에 Premium 계속 이용",
+      "resumeCta": "{{price}}{{unit}}에 Premium 계속 이용",
+      "keepAtCurrent": "월 {{price}}에 Premium 계속 이용",
+      "keepAtCurrentNoPrice": "정가로 Premium 계속 이용",
+      "working": "처리 중…",
+      "renewed": "Premium이 {{date}}에 월 {{price}}로 갱신됩니다",
+      "renewedNoPrice": "Premium이 {{date}}에 갱신됩니다",
+      "renewedBare": "Premium이 계속 갱신됩니다",
+      "changed": "혜택 내용이 바뀌었습니다. 현재 혜택은 다음과 같습니다.",
+      "failed": "구독을 업데이트하지 못했습니다. 다시 시도해 주세요.",
+      "resumePrice": "오늘 {{price}}{{unit}}을(를) 결제하며, 이후에도 같은 가격을 계속 결제합니다.",
+      "resumeCtaNoPrice": "Premium 계속 이용",
+      "fineprintNoCurrent": "오늘은 아무 요금도 청구되지 않습니다. {{date}}부터는 해지하실 때까지 매달 월 {{price}}을(를) 결제하게 됩니다.",
+      "resumeFineprint": "오늘은 아무 요금도 청구되지 않습니다. 다음 결제는 {{date}}에 같은 가격으로 이루어지며, 해지하실 때까지 평소처럼 갱신됩니다.",
+      "unitMonth": "/월",
+      "unitYear": "/년"
+    },
+    "upgradePro": "Pro로 업그레이드",
+    "unavailablePro": "Pro는 아직 이용할 수 없습니다",
+    "switchToPremium": "Premium으로 전환",
+    "planChange": {
+      "cancel": "나중에",
+      "upgrade": {
+        "title": "지금 Pro로 업그레이드할까요?",
+        "body": "이번 결제 기간의 남은 일수에 대한 차액을 오늘 결제합니다. 갱신일은 {{date}}로 유지되며, 그때부터 Pro 요금은 {{price}}{{unit}}입니다.",
+        "bodyNoPrice": "이번 결제 기간의 남은 일수에 대한 차액을 오늘 결제합니다. 갱신일은 {{date}}로 유지됩니다.",
+        "bodyNoDate": "이번 결제 기간의 남은 일수에 대한 차액을 오늘 결제합니다. 갱신일은 바뀌지 않습니다.",
+        "fineprint": "결제가 완료되는 즉시 Pro가 시작됩니다. 14일 환불은 첫 결제에만 적용됩니다.",
+        "confirm": "Pro로 업그레이드"
+      },
+      "downgrade": {
+        "title": "이번 기간이 끝나면 Premium으로 전환할까요?",
+        "body": "{{date}}까지 Pro를 이용할 수 있습니다. 그 이후에는 요금제가 {{price}}{{unit}}의 Premium으로 바뀝니다.",
+        "bodyNoPrice": "{{date}}까지 Pro를 이용할 수 있습니다. 그 이후에는 요금제가 Premium으로 바뀝니다.",
+        "bodyNoDate": "현재 결제 기간이 끝날 때까지 Pro를 이용할 수 있습니다. 그 이후에는 요금제가 Premium으로 바뀝니다.",
+        "fineprint": "이번 기간의 남은 일수에 대해서는 환불되지 않습니다. 전환 전까지는 언제든지 Pro를 유지할 수 있습니다.",
+        "confirm": "Premium으로 전환"
+      },
+      "upgraded": "이제 Pro를 이용 중입니다.",
+      "scheduled": "{{date}}에 요금제가 Premium으로 전환됩니다.",
+      "scheduledNoDate": "이번 결제 기간이 끝나면 요금제가 Premium으로 전환됩니다.",
+      "kept": "Pro를 유지합니다.",
+      "pendingBody": "{{date}}부터 Premium입니다. 그때까지는 Pro를 이용할 수 있습니다.",
+      "keepPro": "Pro 유지",
+      "dropTitle": "Premium으로 내려서 계속 이용하기",
+      "dropBody": "모든 혜택을 잃는 대신 정가로 Premium을 유지할 수 있습니다. 구독 관리에서 구독을 다시 시작한 뒤, 여기서 Premium으로 전환을 선택하세요.",
+      "dropCta": "구독 관리에서 다시 시작",
+      "errors": {
+        "notSubscription": "요금제 변경은 유료 구독에만 적용됩니다. 팀에서 부여한 요금제는 여기서 변경할 수 없습니다.",
+        "samePlan": "이미 이 요금제를 이용 중입니다.",
+        "notAvailable": "지금은 이 변경을 할 수 없습니다. 구독이 해지된 상태라면 먼저 구독 관리에서 다시 시작해 주세요.",
+        "generic": "요금제를 변경하지 못했습니다. 잠시 후 다시 시도해 주세요."
+      }
+    }
+  },
+  "upgradeInterstitial": {
+    "quota": {
+      "title": "오늘의 한도 {{limit}}회에 도달했어요",
+      "body": "Premium은 일일 사용량을 늘리고 광고를 없애 줘요."
+    },
+    "outputHeight": {
+      "title": "이 출력은 요금제에서 허용하는 높이를 넘어요",
+      "body": "{{requested}}p를 요청하셨지만, 현재 요금제는 최대 {{limit}}p까지 허용해요."
+    },
+    "projects": {
+      "title": "저장 프로젝트 한도에 도달했어요",
+      "body": "현재 요금제는 Darkroom 프로젝트를 최대 {{limit}}개까지 저장할 수 있어요."
+    },
+    "topTier": "이미 최상위 요금제예요. 계속하려면 설정값을 낮춰 주세요.",
+    "close": "나중에",
+    "signup": "무료 계정 만들기",
+    "upgrade": "Premium으로 업그레이드",
+    "fileSize": {
+      "title": "이 파일은 요금제에서 허용하는 크기를 넘어요",
+      "body": "현재 요금제는 최대 {{limit}} 파일까지 받을 수 있어요."
+    },
+    "premiumChange": {
+      "fileSize": "Premium은 최대 {{value}} 파일까지 받을 수 있어요.",
+      "ops": "Premium은 하루 {{value}}회 변환이 가능해요.",
+      "opsUnlimited": "Premium은 일일 변환 한도가 없어요.",
+      "aiOps": "Premium은 하루 {{value}}회 AI 작업이 가능해요.",
+      "aiOpsUnlimited": "Premium은 일일 AI 작업 한도가 없어요.",
+      "exports": "Premium은 하루 {{value}}회 내보내기가 가능해요.",
+      "exportsUnlimited": "Premium은 일일 내보내기 한도가 없어요.",
+      "height": "Premium은 최대 {{value}}p까지 출력할 수 있어요.",
+      "projects": "Premium은 프로젝트를 최대 {{value}}개까지 저장할 수 있어요.",
+      "projectsUnlimited": "Premium은 저장 프로젝트 한도가 없어요."
+    },
+    "noHigherPlan": "이 한도를 더 늘려 주는 요금제는 없어요. 계속하려면 설정값을 낮춰 주세요.",
+    "proNote": "업그레이드하면 차액이 오늘 청구되고 갱신일은 그대로 유지돼요.",
+    "proChange": {
+      "ops": "Pro는 하루 {{value}}회 변환이 가능해요.",
+      "opsUnlimited": "Pro는 일일 변환 한도가 없어요.",
+      "aiOps": "Pro는 하루 {{value}}회 AI 작업이 가능해요.",
+      "aiOpsUnlimited": "Pro는 일일 AI 작업 한도가 없어요.",
+      "exports": "Pro는 하루 {{value}}회 내보내기가 가능해요.",
+      "exportsUnlimited": "Pro는 일일 내보내기 한도가 없어요."
+    }
+  },
+  "recentStrip": {
+    "title": "최근",
+    "clear": "최근 항목 지우기",
+    "open": "{{name}} 열기",
+    "converter": "변환기",
+    "expiresInHours": "{{hours}}시간 후 만료",
+    "expiresInMinutes": "{{minutes}}분 후 만료",
+    "expired": "이 파일은 만료되었습니다",
+    "openFailed": "이 파일을 열 수 없습니다. 다시 시도해 주세요.",
+    "signupCta": "비회원의 파일은 24시간 후 삭제됩니다. 가입하면 6개월 동안 보관할 수 있어요.",
+    "signupAction": "무료 가입"
+  },
+  "quotaChip": {
+    "title": "Premium 요금제 보기",
+    "ops": {
+      "remaining": "오늘 변환 {{limit}}회 중 {{remaining}}회 남음",
+      "empty": "오늘 변환 {{limit}}회를 모두 사용함"
+    },
+    "ai_ops": {
+      "remaining": "오늘 AI 작업 {{limit}}회 중 {{remaining}}회 남음",
+      "empty": "오늘 AI 작업 {{limit}}회를 모두 사용함"
+    },
+    "export": {
+      "remaining": "오늘 내보내기 {{limit}}회 중 {{remaining}}회 남음",
+      "empty": "오늘 내보내기 {{limit}}회를 모두 사용함"
+    },
+    "titlePro": "Pro 요금제 보기"
+  },
+  "queueLine": {
+    "text": "이 작업은 공용 대기열에서 {{time}} 동안 기다렸어요. Premium 작업이 먼저 처리돼요.",
+    "cta": "Premium 보기"
+  },
+  "yearlyNudge": {
+    "title": "연간 결제로 바꾸고 {{months}}개월을 무료로 받으세요",
+    "body": "여러 달 연속으로 결제하셨네요. 연간 요금제는 월간 결제 12회보다 저렴해요. 결제 포털에서 언제든지 바꿀 수 있어요.",
+    "cta": "연간 결제로 전환",
+    "dismiss": "괜찮아요"
+  },
+  "accountTour": {
+    "title": "Media Manipulator에 오신 것을 환영합니다",
+    "step": "{{total}}단계 중 {{current}}단계",
+    "next": "다음",
+    "back": "뒤로",
+    "skip": "건너뛰기",
+    "notNow": "나중에",
+    "setRetention": "보관 기간 설정",
+    "keepResults": {
+      "title": "결과 보관하기",
+      "body": "로그인한 상태에서 변환한 모든 결과는 기록에 저장되므로 나중에 다시 열거나 다운로드할 수 있어요. 직접 선택한 기간 동안 보관해 드려요."
+    },
+    "darkroomProjects": {
+      "title": "Darkroom 프로젝트",
+      "body": "Darkroom 프로젝트는 계정에 저장되어 프로젝트 목록에 표시되므로, 어떤 기기에서든 편집을 이어서 할 수 있어요."
+    },
+    "retention": {
+      "title": "보관 기간 선택",
+      "body": "6개월을 추천해요. 24시간부터 2년까지 원하는 기간을 고를 수 있고, 개인정보 및 데이터에서 언제든지 바꿀 수 있어요."
+    },
+    "replay": "안내 다시 보기",
+    "replayHint": "계정에 대한 짧은 소개를 다시 확인하세요."
+  },
+  "status": {
+    "title": "서비스 상태",
+    "intro": "Media Manipulator 서비스의 실시간 상태입니다. 10초마다 업데이트됩니다.",
+    "operational": "정상",
+    "degraded": "일부 장애",
+    "down": "중단",
+    "unknown": "상태를 확인할 수 없음",
+    "checking": "확인 중...",
+    "operationalDetail": "모든 시스템이 정상적으로 작동하고 있습니다.",
+    "degradedDetail": "서비스 일부에 문제가 있습니다. 변환이 느리거나 실패할 수 있습니다.",
+    "downDetail": "서비스가 응답하지 않습니다. 몇 분 후 다시 시도해 주세요.",
+    "unknownDetail": "방금 브라우저에서 상태 서비스에 연결하지 못했습니다. 도구가 중단되었다는 뜻은 아닙니다. 몇 초 후 다시 시도합니다.",
+    "queueTitle": "AI 처리 대기열",
+    "running": "실행 중",
+    "waiting": "대기 중",
+    "gpuOff": "이 서버에서는 AI 처리가 활성화되어 있지 않습니다.",
+    "checksTitle": "구성 요소",
+    "database": "데이터베이스",
+    "storage": "스토리지",
+    "cache": "캐시",
+    "ok": "정상",
+    "fail": "문제",
+    "basicOnly": "지금은 전체 상태만 확인할 수 있습니다.",
+    "lastChecked": "마지막 확인 {{time}}",
+    "metaTitle": "서비스 상태 | Media Manipulator"
+  },
+  "share": {
+    "button": "공유",
+    "revokeLinks": "링크 취소",
+    "copied": "링크가 복사되었습니다. {{when}}까지 유효합니다.",
+    "copyManually": "자동으로 복사하지 못했습니다. 이 링크를 복사하세요: {{url}}",
+    "notAllowed": "이 유형의 결과는 공유할 수 없습니다.",
+    "expired": "이 파일은 만료되었습니다.",
+    "limitTitle": "공유 한도 도달",
+    "limitBody": "이 결과에는 이미 최대치인 5개의 공유 링크가 활성화되어 있습니다. 새 링크를 만들려면 기존 링크를 취소하세요.",
+    "revokeConfirm": "링크 취소",
+    "cancel": "취소",
+    "signIn": "이 결과를 공유하려면 다시 로그인해 주세요.",
+    "failed": "공유 링크를 만들지 못했습니다. 다시 시도해 주세요.",
+    "revoked": "이 결과의 모든 공유 링크가 취소되었습니다.",
+    "revokeNone": "취소할 활성 링크가 없습니다.",
+    "revokeFailed": "링크를 취소하지 못했습니다. 다시 시도해 주세요.",
+    "revokeTitle": "모든 공유 링크를 취소할까요?",
+    "revokeBody": "이 결과의 링크를 가진 모든 사람이 즉시 접근할 수 없게 됩니다. 이후에 새 링크를 만들 수 있습니다."
+  },
+  "sharedResult": {
+    "metaTitle": "공유된 결과 | Media Manipulator",
+    "metaDescription": "Media Manipulator로 만들어 링크로 공유된 파일입니다.",
+    "ogTitle": "Media Manipulator로 만든 {{fileName}}",
+    "goneTitle": "이 링크는 만료되었거나 삭제되었습니다",
+    "goneBody": "공유 링크는 만료되거나, 소유자가 취소하거나, 파일이 삭제되면 작동하지 않습니다.",
+    "goneCta": "Media Manipulator로 이동",
+    "madeWith": "Media Manipulator로 제작",
+    "tryIt": "내 파일로 사용해 보기",
+    "expires": "이 링크는 {{when}}까지 유효합니다."
+  },
+  "planSummary": {
+    "title": "요금제 한눈에 보기",
+    "current": "내 요금제",
+    "free": "무료",
+    "ops": "하루 {{value}}회 작업",
+    "opsUnlimited": "하루 작업 횟수 무제한",
+    "aiOps": "하루 {{value}}회 AI 작업",
+    "aiOpsUnlimited": "하루 AI 작업 횟수 무제한",
+    "fileSize": "최대 {{value}} 파일",
+    "compare": "모든 요금제 비교"
+  }
+}

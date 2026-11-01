@@ -1,0 +1,751 @@
+{
+  "transcribeForm": {
+    "outputFormatTitle": "Định dạng đầu ra của bản chép lời",
+    "intro": "Chúng tôi chép lời {{mediaKind}} trên máy chủ GPU riêng bằng whisper-ctranslate2. Bản tóm tắt và đánh giá an toàn tự động chạy ngay khi bản chép lời sẵn sàng.",
+    "mediaKind": {
+      "video": "video",
+      "audio": "âm thanh"
+    },
+    "languageLabel": "Gợi ý ngôn ngữ (tùy chọn)",
+    "languagePlaceholder": "ví dụ: en, es, ja (để trống để tự nhận diện)",
+    "languageHint": "Mã ngắn BCP-47. Để trống để whisper tự nhận diện ngôn ngữ nói.",
+    "languageTooltip": "Mã ngắn BCP-47 (ví dụ: en, es, ja, de, fr). Để trống để whisper tự nhận diện ngôn ngữ nói. Cung cấp đúng gợi ý có thể cải thiện độ chính xác của bản chép lời với các đoạn ngắn.",
+    "transcribing": "Đang chép lời...",
+    "submit": "Chép lời tệp",
+    "format": {
+      "vtt": {
+        "label": "Phụ đề (VTT)",
+        "description": "Phụ đề có mã thời gian cho trình phát video và công cụ trợ năng."
+      },
+      "srt": {
+        "label": "Phụ đề (SRT)",
+        "description": "Phụ đề SubRip tương thích với YouTube, Premiere, DaVinci Resolve và hầu hết các trình biên tập video."
+      },
+      "txt": {
+        "label": "Văn bản thuần",
+        "description": "Văn bản chép lời liên tục, phù hợp để đọc hoặc chỉnh sửa thêm."
+      },
+      "json": {
+        "label": "JSON có cấu trúc",
+        "description": "Bản chép lời chia đoạn kèm dữ liệu thời gian cho các bước xử lý tiếp theo."
+      }
+    },
+    "formatTooltip": {
+      "vtt": "<strong>VTT</strong> — phụ đề có mã thời gian cho trình phát video HTML5 và công cụ trợ năng.",
+      "txt": "<strong>Văn bản thuần</strong> — văn bản chép lời liên tục để đọc hoặc chỉnh sửa thêm.",
+      "json": "<strong>JSON có cấu trúc</strong> — bản chép lời chia đoạn kèm dữ liệu thời gian cho các quy trình xử lý tiếp theo."
+    }
+  },
+  "audioForm": {
+    "converting": "Đang chuyển đổi...",
+    "submit": "Chuyển đổi tệp",
+    "trimStatus": "Cắt đoạn: {{start}} - {{end}} ({{duration}})",
+    "ai": {
+      "title": "Công cụ âm thanh AI",
+      "tooltipIntro": "Mỗi tác vụ chạy một thao tác AI, trên máy chủ GPU cục bộ của chúng tôi. Chuỗi xử lý FFmpeg tiêu chuẩn được bỏ qua trong tác vụ đó.",
+      "tooltipCleanVoice": "<strong>Làm sạch giọng nói</strong> — khử nhiễu DeepFilterNet + chuỗi tinh chỉnh chuẩn phát sóng (lọc cao/thấp, độ ồn, limiter).",
+      "tooltipRemoveNoise": "<strong>Loại bỏ tiếng ồn nền</strong> — khử nhiễu DeepFilterNet không kèm chuỗi tinh chỉnh.",
+      "tooltipIsolateVocals": "<strong>Tách giọng hát</strong> — stem giọng hát Demucs htdemucs (mặc định cùng định dạng với tệp của bạn).",
+      "tooltipRemoveVocals": "<strong>Loại bỏ giọng hát / Karaoke</strong> — stem nhạc nền Demucs.",
+      "intro": "Công cụ âm thanh AI chạy dưới dạng tác vụ GPU và có thể mất nhiều thời gian hơn chuyển đổi cơ bản.",
+      "operationLabel": "Thao tác",
+      "operations": {
+        "none": "Không (chuyển đổi tiêu chuẩn)",
+        "clean_voice": "Làm sạch giọng nói",
+        "remove_background_noise": "Loại bỏ tiếng ồn nền",
+        "isolate_vocals": "Tách giọng hát",
+        "remove_vocals": "Loại bỏ giọng hát / Karaoke"
+      },
+      "aiActiveNote": "Bitrate, EQ và các tùy chọn âm thanh tiêu chuẩn khác được bỏ qua khi chọn một thao tác AI.",
+      "presetLocked": "Thiết lập sẵn cho công cụ này"
+    },
+    "stemFormat": {
+      "label": "Định dạng đầu ra",
+      "options": {
+        "auto": "Giống tệp gốc (khuyên dùng)",
+        "autoWithFormat": "Giống tệp gốc: {{format}} (khuyên dùng)",
+        "mp3": "MP3 (320 kbps)",
+        "flac": "FLAC (không mất dữ liệu)",
+        "wav": "WAV (không mất dữ liệu, lớn nhất)"
+      },
+      "withEstimate": "{{label}} · khoảng {{size}}",
+      "help": "Dung lượng chỉ là ước tính. Tệp MP3 vẫn là MP3; tệp không mất dữ liệu (WAV, FLAC, AIFF) sẽ trả về dạng FLAC.",
+      "helpNoEstimate": "Tệp MP3 vẫn là MP3; tệp không mất dữ liệu (WAV, FLAC, AIFF) sẽ trả về dạng FLAC. Chọn FLAC hoặc WAV để giữ nguyên chất lượng.",
+      "wavHint": "Tệp WAV sẽ khoảng {{size}}. Đây là bản tải rất lớn; FLAC không mất dữ liệu và nhỏ hơn khoảng một nửa."
+    }
+  },
+  "videoForm": {
+    "converting": "Đang chuyển đổi...",
+    "submit": "Chuyển đổi tệp",
+    "trimStatus": "Cắt đoạn: {{start}} - {{end}} ({{duration}})"
+  },
+  "imageForm": {
+    "converting": "Đang chuyển đổi...",
+    "submit": "Chuyển đổi tệp",
+    "cropStatus": "Vùng cắt: {{width}}×{{height}} pixel tại ({{x}}, {{y}})",
+    "vectorize": {
+      "title": "Vector hóa (PNG → SVG)",
+      "note": "Vector hóa đồ lại hình ảnh của bạn thành các đường vector thực sự. Hiệu quả nhất với logo, biểu tượng, chữ ký và nét vẽ đen trắng — không phải ảnh chụp.",
+      "thresholdLabel": "Ngưỡng đen/trắng",
+      "thresholdTooltip": "Các pixel tối hơn ngưỡng này được đồ thành hình tô đặc. Tăng để bắt thêm chi tiết, giảm để chỉ giữ các hình đậm nhất."
+    },
+    "ico": {
+      "note": "Một tệp .ico đa kích thước được tạo, chứa các biểu tượng 16, 32, 48, 64, 128 và 256 px — lý tưởng cho favicon và biểu tượng ứng dụng Windows."
+    },
+    "ai": {
+      "title": "Công cụ hình ảnh AI",
+      "tooltipIntro": "Mỗi tác vụ chạy một thao tác AI, trên máy chủ GPU cục bộ của chúng tôi. Quy trình ImageMagick tiêu chuẩn được bỏ qua trong tác vụ đó.",
+      "tooltipFacePrivacy": "<strong>Bảo vệ khuôn mặt</strong> — phát hiện và che khuôn mặt (làm mờ, pixel hóa hoặc hộp đen).",
+      "tooltipRemoveBackground": "<strong>Xóa nền</strong> — xuất PNG trong suốt qua rembg + BiRefNet/ISNet/U2Net.",
+      "tooltipAiUpscale": "<strong>Nâng cấp bằng AI</strong> — Real-ESRGAN ncnn Vulkan 2x hoặc 4x.",
+      "tooltipRedactText": "<strong>Che văn bản / thông tin cá nhân</strong> — che dựa trên OCR.",
+      "tooltipRemoveObject": "<strong>Xóa đối tượng</strong> — vẽ hình chữ nhật lên các đối tượng không mong muốn; inpainting LaMa tái tạo vùng phía sau chúng.",
+      "intro": "Công cụ AI chạy một thao tác cho mỗi lần chuyển đổi. Để có kết quả tốt nhất, hãy xem trước đầu ra trước khi đăng nội dung nhạy cảm.",
+      "operationLabel": "Thao tác",
+      "operations": {
+        "none": "Không (chuyển đổi tiêu chuẩn)",
+        "face_privacy": "Làm mờ / Pixel hóa khuôn mặt",
+        "remove_background": "Xóa nền",
+        "ai_upscale": "Nâng cấp bằng AI",
+        "redact_text": "Che văn bản / thông tin cá nhân",
+        "remove_object": "Xóa đối tượng (inpainting LaMa)"
+      },
+      "faceMode": {
+        "label": "Chế độ khuôn mặt",
+        "blur": "Làm mờ",
+        "pixelate": "Pixel hóa",
+        "blackbox": "Hộp đen"
+      },
+      "selectiveFaces": {
+        "title": "Chọn lọc khuôn mặt",
+        "tooltipDefault": "Mặc định áp dụng hiệu ứng đã chọn cho mọi khuôn mặt được phát hiện.",
+        "tooltipDetect": "Dùng <strong>Phát hiện khuôn mặt</strong> để xem trước các khung và chọn khuôn mặt cần che hoặc bỏ qua.",
+        "tooltipExpire": "Khung khuôn mặt được lưu tạm thời để chọn và tự động hết hạn.",
+        "selectionModeLabel": "Chế độ chọn",
+        "selectionMode": {
+          "all": "Tất cả khuôn mặt được phát hiện",
+          "only_selected": "Chỉ khuôn mặt đã chọn",
+          "all_except_selected": "Tất cả trừ khuôn mặt đã chọn"
+        },
+        "detecting": "Đang phát hiện…",
+        "reDetect": "Phát hiện lại khuôn mặt",
+        "detect": "Phát hiện khuôn mặt",
+        "selectAll": "Chọn tất cả",
+        "clearSelection": "Bỏ chọn",
+        "chooseFile": "Hãy chọn một hình ảnh trước để phát hiện khuôn mặt.",
+        "noFaces": "Không phát hiện khuôn mặt nào. Bạn vẫn có thể chạy bảo vệ khuôn mặt mặc định khi chuyển đổi, hoặc thử hình ảnh khác.",
+        "detected_other": "Đã phát hiện {{count}} khuôn mặt. Đã chọn: {{selected}}.",
+        "defaultNote": "Mặc định: áp dụng cho mọi khuôn mặt được phát hiện. Dùng Phát hiện khuôn mặt để chọn khuôn mặt cụ thể."
+      },
+      "background": {
+        "modelLabel": "Mô hình xóa nền",
+        "models": {
+          "birefnet-general": "BiRefNet General (khuyên dùng)",
+          "birefnet-general-lite": "BiRefNet General Lite",
+          "birefnet-portrait": "BiRefNet Portrait",
+          "isnet-general-use": "ISNet General Use",
+          "u2net": "U2Net",
+          "u2netp": "U2Net Lite",
+          "u2net_human_seg": "U2Net Human Segmentation"
+        },
+        "pngNote": "Đầu ra luôn là PNG để giữ độ trong suốt."
+      },
+      "upscale": {
+        "scaleLabel": "Tỷ lệ",
+        "scale4x": "4x",
+        "scale2x": "2x",
+        "modelLabel": "Mô hình",
+        "models": {
+          "realesrgan-x4plus": "realesrgan-x4plus (ảnh chụp)",
+          "realesrgan-x4plus-anime": "realesrgan-x4plus-anime",
+          "realesr-animevideov3": "realesr-animevideov3"
+        },
+        "experimentalNote": "4x là mặc định và cho kết quả nhất quán nhất. 2x chạy cùng mô hình ở một nửa tỷ lệ và có thể trông hơi bị cắt ở một số ảnh.",
+        "pngNote": "Đầu ra mặc định là PNG."
+      },
+      "removeObject": {
+        "title": "Đánh dấu đối tượng cần xóa",
+        "tooltipDraw": "Nhấp và kéo trên hình ảnh để thêm một hình chữ nhật lên mỗi đối tượng bạn muốn xóa. Kéo thân hình chữ nhật để di chuyển, hoặc kéo các điểm kéo để đổi kích thước.",
+        "tooltipResult": "Inpainting LaMa tái tạo vùng phía sau mỗi hình chữ nhật. Để có kết quả tốt nhất, hãy vẽ khung sát đối tượng — hình chữ nhật lớn buộc mô hình phải tự bịa thêm nhiều nền hơn.",
+        "tooltipTip": "Mẹo: nhiều hình chữ nhật nhỏ thường cho kết quả sạch hơn một hình khổng lồ.",
+        "clearAll": "Xóa tất cả",
+        "chooseFile": "Hãy chọn một hình ảnh trước để bắt đầu đánh dấu đối tượng.",
+        "atLeastOne": "Thêm ít nhất một hình chữ nhật bao quanh đối tượng bạn muốn xóa.",
+        "readyToInpaint_other": "{{count}} hình chữ nhật sẵn sàng để inpaint.",
+        "formatNote": "Đầu ra LaMa giữ nguyên định dạng đầu ra bạn đã chọn (JPG, PNG, WebP, GIF). Bộ lọc, chữ phủ và tông màu được bỏ qua trong thao tác này."
+      },
+      "redact": {
+        "detectLabel": "Phát hiện",
+        "detect": {
+          "pii": "Chỉ thông tin cá nhân",
+          "all-text": "Tất cả văn bản"
+        },
+        "redactionLabel": "Kiểu che",
+        "redaction": {
+          "blackbox": "Hộp đen",
+          "blur": "Làm mờ",
+          "pixelate": "Pixel hóa"
+        },
+        "ocrNote": "Che bằng OCR chỉ ở mức tốt nhất có thể. Vui lòng kiểm tra đầu ra trước khi chia sẻ."
+      },
+      "aiActiveNote": "Định dạng, bộ lọc và các tùy chọn hình ảnh tiêu chuẩn khác được bỏ qua khi chọn một thao tác AI.",
+      "operationLocked": "Thiết lập sẵn cho công cụ này"
+    },
+    "textOverlay": {
+      "title": "Chữ phủ",
+      "tooltipAria": "Về chữ phủ",
+      "tooltip": "Ghi một hình mờ hoặc chú thích lên hình ảnh đầu ra. Nhập văn bản, rồi chọn cỡ (8–512 px), vị trí neo (góc/cạnh/giữa), màu chữ và màu viền, độ dày viền và độ lệch pixel so với điểm neo. Để trống văn bản để bỏ qua chữ phủ.",
+      "overlayText": "Văn bản phủ",
+      "overlayPlaceholder": "Văn bản tùy chọn để vẽ lên hình ảnh",
+      "size": "Cỡ chữ",
+      "position": "Vị trí",
+      "textColor": "Màu chữ",
+      "strokeColor": "Màu viền",
+      "strokeWidth": "Độ dày viền",
+      "xOffset": "Độ lệch X",
+      "yOffset": "Độ lệch Y",
+      "gravity": {
+        "NorthWest": "Trên trái",
+        "North": "Trên",
+        "NorthEast": "Trên phải",
+        "West": "Trái",
+        "Center": "Giữa",
+        "East": "Phải",
+        "SouthWest": "Dưới trái",
+        "South": "Dưới",
+        "SouthEast": "Dưới phải"
+      }
+    },
+    "metadata": {
+      "title": "Siêu dữ liệu",
+      "intro": "Chọn giữ, loại bỏ hoặc ghi lại siêu dữ liệu hình ảnh.",
+      "tooltipKeep": "<strong>Giữ toàn bộ siêu dữ liệu</strong> — giữ nguyên mọi trường EXIF/IPTC/XMP/GPS từ bản gốc.",
+      "tooltipStrip": "<strong>Loại bỏ toàn bộ siêu dữ liệu</strong> — xóa các trường máy ảnh, GPS, phần mềm và dấu thời gian. Khuyên dùng trước khi chia sẻ ảnh lên mạng.",
+      "tooltipCustom": "<strong>Siêu dữ liệu tùy chỉnh</strong> — loại bỏ trước, rồi chỉ ghi lại các trường bạn cung cấp (tiêu đề, tác giả, bản quyền, từ khóa IPTC, trường GPS, v.v.).",
+      "modeLabel": "Chế độ siêu dữ liệu",
+      "modes": {
+        "keep": "Giữ toàn bộ siêu dữ liệu",
+        "strip": "Loại bỏ toàn bộ siêu dữ liệu",
+        "custom": "Siêu dữ liệu tùy chỉnh"
+      },
+      "fields": {
+        "title": "Tiêu đề",
+        "author": "Nghệ sĩ / Tác giả",
+        "description": "Mô tả",
+        "copyright": "Bản quyền",
+        "comment": "Ghi chú người dùng",
+        "keywords": "Từ khóa"
+      },
+      "exifFields": "Trường EXIF / TIFF",
+      "gpsFields": "Trường GPS / Vị trí",
+      "showAdvanced": "Hiện siêu dữ liệu nâng cao / thiết bị",
+      "hideAdvanced": "Ẩn siêu dữ liệu nâng cao / thiết bị",
+      "gps": {
+        "title": "Tùy chọn GPS / Vị trí",
+        "tooltipAria": "Về tùy chọn GPS / vị trí",
+        "tooltip": "Xóa hoặc thay thế siêu dữ liệu GPS do máy ảnh hoặc điện thoại lưu. Bạn cũng có thể chỉ loại bỏ hướng chụp, dấu thời gian GPS, độ cao hoặc các trường điểm đến. Chế độ thay thế cho phép bạn ghim vĩ độ/kinh độ/độ cao khác và tùy chọn làm tròn độ chính xác để bảo vệ riêng tư.",
+        "removeLocationData": "Xóa dữ liệu vị trí",
+        "replaceLocationData": "Thay thế dữ liệu vị trí",
+        "roundPrecision": "Làm tròn độ chính xác vị trí",
+        "removeCaptureDirection": "Xóa hướng chụp",
+        "removeTimestamp": "Xóa dấu thời gian GPS",
+        "removeAltitude": "Xóa độ cao",
+        "removeDestination": "Xóa các trường điểm đến",
+        "latitude": "Vĩ độ",
+        "longitude": "Kinh độ",
+        "altitude": "Độ cao",
+        "precisionDecimals": "Số chữ số thập phân"
+      }
+    },
+    "_obsoletePlaceholder": ""
+  },
+  "videoTranscodeForm": {
+    "premiumTooltip": "Đăng ký tài khoản Premium để mở khóa toàn bộ tính năng chuyển mã.",
+    "premiumBadge": "Premium",
+    "tooSmallBadge": "Quá nhỏ",
+    "protocol": {
+      "title": "Giao thức",
+      "tooltipAria": "Về giao thức chuyển mã",
+      "tooltipHls": "<strong>HLS</strong> — Apple HTTP Live Streaming. H.264/AAC, master.m3u8 + các biến thể theo từng mức chất lượng + phân đoạn .ts. Phát được ở mọi nơi.",
+      "tooltipDash": "<strong>DASH</strong> — phát trực tuyến thích ứng MPEG-DASH. AV1 (nhỏ nhất, hiện đại) hoặc VP9 (hỗ trợ rộng hơn); manifest.mpd + phân đoạn .m4s.",
+      "hlsSub": "H.264 / AAC · .m3u8 · mọi nơi",
+      "dashSub": "AV1 hoặc VP9 · .mpd · web hiện đại",
+      "av1Sub": "Khuyên dùng · tệp nhỏ hơn",
+      "vp9Sub": "Hỗ trợ phát rộng hơn"
+    },
+    "analyze": {
+      "intro": "Chúng tôi sẽ tải video của bạn lên và chạy <code>ffprobe</code> để nhận diện độ phân giải, codec, âm thanh và các mức chất lượng mà nguồn của bạn hỗ trợ.",
+      "uploadingPercent": "Đang tải lên {{percent}}%",
+      "analyzingSource": "Đang phân tích nguồn...",
+      "preparingUpload": "Đang chuẩn bị tải lên...",
+      "analyzeVideo": "Phân tích video"
+    },
+    "report": {
+      "title": "Báo cáo video nguồn",
+      "resolution": "Độ phân giải",
+      "maxQuality": "Chất lượng tối đa",
+      "fps": "FPS",
+      "duration": "Thời lượng",
+      "audio": "Âm thanh",
+      "videoCodec": "Codec video",
+      "audioCodec": "Codec âm thanh",
+      "container": "Định dạng chứa",
+      "fileSize": "Kích thước tệp",
+      "yes": "Có",
+      "no": "Không"
+    },
+    "rungs": {
+      "title": "Mức chất lượng",
+      "tooltipAria": "Về mức chất lượng",
+      "tooltip": "Mỗi mức được chọn trở thành một bản kết xuất trong gói HLS/DASH cuối cùng. Các mức Premium (144p/240p/1080p/2160p) có sẵn với Premium.",
+      "defaultsNote": "Mặc định: 360p + 480p + 720p khi video nguồn hỗ trợ."
+    },
+    "captions": {
+      "disabledTooltip": "Phụ đề cần có bản âm thanh. Video này có vẻ không có âm thanh.",
+      "enabledTooltip": "Tạo phụ đề VTT từ bản âm thanh bằng whisper-ctranslate2. Mặc định tắt.",
+      "generateCaptions": "Tạo phụ đề",
+      "captionsSub": "Phụ đề VTT tự động tạo từ bản âm thanh. Mặc định tắt.",
+      "generateStoryboards": "Tạo storyboard",
+      "storyboardsSub": "Hình thu nhỏ dạng sprite sheet để tua + chỉ mục WebVTT. Mặc định tắt."
+    },
+    "translations": {
+      "title": "Bản dịch phụ đề bổ sung",
+      "tooltipAria": "Về bản dịch phụ đề bổ sung",
+      "tooltip1": "Bản phụ đề chính là bản chép lời của whisper theo ngôn ngữ nguồn tự nhận diện. Thêm tối đa {{max}} ngôn ngữ nữa và chúng tôi sẽ dịch các đoạn qua mô hình văn bản Ollama của bạn.",
+      "tooltip2": "Mỗi bản dịch trở thành một VTT riêng cùng một bản kết xuất phụ đề HLS (EXT-X-MEDIA) và AdaptationSet văn bản DASH, để trình phát hiển thị bộ chọn phụ đề.",
+      "primaryNote": "Bản chính: ngôn ngữ nguồn tự nhận diện. Thêm tối đa {{max}} bản dịch.",
+      "backendUnreachable": "Không kết nối được với hệ thống dịch (Ollama). Các ngôn ngữ đã chọn sẽ bị bỏ qua khi chạy tác vụ.",
+      "removeLanguage": "Xóa ngôn ngữ",
+      "addLanguage": "+ Thêm ngôn ngữ dịch ({{count}}/{{max}})"
+    },
+    "bundle": {
+      "title": "Định dạng tải xuống",
+      "tooltipAria": "Về định dạng tải xuống",
+      "tooltipTargz": "<strong>.tar.gz</strong> — nhỏ hơn với các playlist nhiều văn bản, phổ biến trên macOS/Linux, và Windows 10+ giải nén trực tiếp bằng lệnh <code>tar</code> tích hợp.",
+      "tooltipZip": "<strong>.zip</strong> — lựa chọn mặc định an toàn nếu bạn dùng Windows cũ hoặc chỉ muốn nhấp đúp để giải nén mà không cần nghĩ ngợi. Hơi lớn hơn; mọi thứ bên trong đều giống hệt.",
+      "defaultBadge": "Mặc định",
+      "targzSub": "Nhỏ hơn · macOS/Linux/Win 10+ hỗ trợ sẵn",
+      "zipSub": "Thân thiện hơn trên Windows · nhấp đúp để giải nén"
+    },
+    "start": {
+      "starting": "Đang bắt đầu chuyển mã...",
+      "startButton": "Bắt đầu chuyển mã {{protocol}} (đầu ra: {{format}})"
+    },
+    "tooSmall": "Video này thấp hơn mức tối thiểu 360p để chuyển mã miễn phí. Vui lòng tải lên video từ 360p trở lên.",
+    "progress": {
+      "title": "Tiến trình quy trình",
+      "failed": "Chuyển mã thất bại."
+    },
+    "downloadPackage": "Tải xuống {{filename}}"
+  },
+  "pdfForm": {
+    "outputFormat": {
+      "label": "Định dạng hình ảnh đầu ra",
+      "tooltip": "Chọn JPG cho tệp nhỏ, phù hợp với ảnh chụp, hoặc PNG cho trang sắc nét, không mất dữ liệu (tốt nhất cho văn bản và nét vẽ).",
+      "locked": "Khóa ở {{format}} cho công cụ này"
+    },
+    "dpi": {
+      "label": "Chất lượng kết xuất (DPI)",
+      "tooltip": "DPI cao hơn cho hình ảnh sắc nét hơn, lớn hơn. 150 DPI là mặc định tốt; dùng 300 cho đầu ra chất lượng in."
+    },
+    "pages": {
+      "label": "Trang cần chuyển đổi",
+      "tooltip": "Chuyển đổi mọi trang (tải xuống dưới dạng ZIP chứa hình ảnh) hoặc chỉ trang đầu (tải xuống dưới dạng một hình ảnh).",
+      "all": "Tất cả các trang (ZIP)",
+      "allHint": "Một hình ảnh cho mỗi trang, đóng gói thành một tệp .zip để tải xuống.",
+      "first": "Chỉ trang đầu",
+      "firstHint": "Chỉ kết xuất trang 1 thành một hình ảnh."
+    },
+    "quality": {
+      "label": "Chất lượng JPG (%)",
+      "tooltip": "Chất lượng nén JPEG từ 1–100. 90 là mặc định cân bằng; giá trị thấp hơn giảm kích thước tệp nhưng mất chi tiết."
+    },
+    "submit": "Chuyển đổi PDF",
+    "converting": "Đang chuyển đổi…"
+  },
+  "conversionOptions": {
+    "image": {
+      "cropping": {
+        "title": "Cắt hình ảnh",
+        "tooltipAria": "Về cắt hình ảnh",
+        "tooltip": "Mở bộ chọn vùng cắt trực quan để chỉ giữ một phần hình ảnh. Cắt chạy trước đổi kích thước và bộ lọc, nên kích thước bạn đặt bên dưới áp dụng cho vùng đã cắt. Bỏ qua nếu bạn muốn giữ toàn bộ hình ảnh.",
+        "selectPortion": "Chọn phần hình ảnh bạn muốn giữ",
+        "editCrop": "Sửa vùng cắt",
+        "cropImage": "Cắt hình ảnh"
+      },
+      "format": {
+        "label": "Định dạng",
+        "tooltipAria": "Về định dạng hình ảnh",
+        "tooltip": "Loại tệp đầu ra. JPG tốt nhất cho ảnh chụp, PNG giữ độ trong suốt và rất hợp với đồ họa, WebP là định dạng hiện đại nhỏ hơn, còn GIF dành cho các trường hợp cũ hoặc ảnh động.",
+        "locked": "Khóa ở {{format}} cho công cụ này"
+      },
+      "resizeEmphasis": "Đặt chiều rộng và/hoặc chiều cao mục tiêu bên dưới. Để trống một trường để co giãn theo tỷ lệ và giữ nguyên tỷ lệ khung hình gốc.",
+      "quality": {
+        "label": "Chất lượng (%)",
+        "tooltipAria": "Về chất lượng hình ảnh",
+        "tooltip": "Chất lượng nén cho đầu ra JPG và WebP (1–100). 85 là mặc định cân bằng. Giá trị thấp hơn giảm kích thước tệp nhưng gây nhiễu; giá trị trên 95 hiếm khi thấy khác biệt. Bỏ qua với PNG và GIF."
+      },
+      "width": {
+        "label": "Chiều rộng (px)",
+        "tooltipAria": "Về chiều rộng hình ảnh",
+        "tooltip": "Chiều rộng mục tiêu tính bằng pixel. Để trống để giữ chiều rộng gốc hoặc co giãn theo tỷ lệ dựa trên trường Chiều cao. Hình ảnh được tự động xoay đúng hướng theo EXIF trước khi đổi kích thước, nên kích thước khớp với những gì bạn thấy trong bản xem trước.",
+        "placeholder": "Tự động"
+      },
+      "height": {
+        "label": "Chiều cao (px)",
+        "tooltipAria": "Về chiều cao hình ảnh",
+        "tooltip": "Chiều cao mục tiêu tính bằng pixel. Để trống để giữ chiều cao gốc hoặc co giãn theo tỷ lệ dựa trên trường Chiều rộng. Đặt cả Chiều rộng và Chiều cao sẽ ép kích thước chính xác và có thể làm méo hình ảnh.",
+        "placeholder": "Tự động"
+      },
+      "filter": {
+        "label": "Bộ lọc",
+        "tooltipAria": "Về bộ lọc hình ảnh",
+        "tooltip": "Áp dụng một hiệu ứng ImageMagick lên đầu ra: thang xám, nâu đỏ, làm mờ/làm nét, xoáy, méo thùng, sơn dầu, cổ điển, dập nổi, than chì, phác thảo, hoặc xoay cố định. Chọn Không để bỏ qua bộ lọc.",
+        "options": {
+          "none": "Không",
+          "grayscale": "Thang xám",
+          "sepia": "Nâu đỏ",
+          "blur": "Làm mờ",
+          "sharpen": "Làm nét",
+          "swirl": "Xoáy",
+          "barrel-distortion": "Méo thùng",
+          "oil-painting": "Sơn dầu",
+          "vintage": "Cổ điển",
+          "emboss": "Dập nổi",
+          "charcoal": "Than chì",
+          "sketch": "Phác thảo",
+          "rotate-45º": "Xoay 45º",
+          "rotate-90º": "Xoay 90º",
+          "rotate-180º": "Xoay 180º",
+          "rotate-270º": "Xoay 270º"
+        }
+      },
+      "tint": {
+        "label": "Màu phủ",
+        "tooltipAria": "Về màu phủ",
+        "tooltip": "Phủ một lớp màu 30% lên hình ảnh. Hữu ích cho hình thu nhỏ có thương hiệu hoặc hiệu ứng hai tông màu. Để bộ chọn màu ở đen (#000000) để bỏ qua lớp phủ."
+      }
+    },
+    "audio": {
+      "trimming": {
+        "title": "Cắt đoạn âm thanh",
+        "tooltipAria": "Về cắt đoạn âm thanh",
+        "tooltip": "Mở trình phát dạng sóng để chọn thời điểm bắt đầu và kết thúc. Chỉ đoạn đã chọn được mã hóa vào tệp đầu ra.",
+        "selectPortion": "Chọn phần âm thanh bạn muốn giữ",
+        "editTrim": "Sửa đoạn cắt",
+        "trimAudio": "Cắt đoạn âm thanh"
+      },
+      "format": {
+        "label": "Định dạng",
+        "tooltipAria": "Về định dạng âm thanh",
+        "tooltip": "Codec/định dạng chứa đầu ra. MP3 được hỗ trợ ở mọi nơi; WAV/FLAC/ALAC không mất dữ liệu; AAC hiệu quả cho phát trực tuyến; OGG, Opus, AC3 và DTS dành cho các quy trình cụ thể."
+      },
+      "bitrate": {
+        "label": "Bitrate (kbps)",
+        "tooltipAria": "Về bitrate âm thanh",
+        "tooltip": "Kiểm soát chất lượng nén so với kích thước tệp cho các định dạng mất dữ liệu. 128 kbps đủ cho podcast, 192–256 kbps là mặc định tốt cho nhạc, và 320 kbps là chất lượng MP3 tối đa. Bỏ qua với WAV, FLAC và ALAC (không mất dữ liệu)."
+      },
+      "speed": {
+        "label": "Hệ số tốc độ",
+        "tooltipAria": "Về hệ số tốc độ âm thanh",
+        "tooltip": "Nhịp phát từ 0,25x (chậm) đến 4x (nhanh). Cao độ được giữ nguyên bằng bộ lọc atempo của FFmpeg, tự động nối chuỗi với các giá trị cực đoan."
+      },
+      "volume": {
+        "label": "Hệ số âm lượng",
+        "tooltipAria": "Về hệ số âm lượng",
+        "tooltip": "Hệ số khuếch đại tuyến tính từ 0,1x đến 2x. 1,0 giữ nguyên mức. Để kiểm soát dB chi tiết hơn, dùng thanh trượt Khuếch đại trong Hiệu ứng âm thanh nâng cao."
+      }
+    },
+    "video": {
+      "trimming": {
+        "title": "Cắt đoạn video",
+        "tooltipAria": "Về cắt đoạn video",
+        "tooltip": "Mở trình phát để tua qua video và chọn thời điểm bắt đầu/kết thúc. Chỉ đoạn đó được mã hóa vào đầu ra. Cắt đoạn hoạt động bất kể codec đầu ra — kể cả GIF động.",
+        "selectPortion": "Chọn phần video bạn muốn giữ",
+        "editTrim": "Sửa đoạn cắt",
+        "trimVideo": "Cắt đoạn video"
+      },
+      "format": {
+        "label": "Định dạng",
+        "tooltipAria": "Về định dạng video",
+        "tooltip": "Định dạng chứa và codec đầu ra. MP4 (H.264+AAC) là mặc định an toàn nhất cho web. WebM dùng VP9+Opus và rất hợp để nhúng trên web mở. MOV/MKV/AVI/WMV/FLV dành cho các quy trình cụ thể; ProRes/DNxHD là codec dựng phim bitrate cao. GIF (động) thu nhỏ và tạo bảng màu cho đoạn clip qua ffmpeg + gifsicle — hoàn hảo cho các vòng lặp ngắn, không tiếng.",
+        "locked": "Khóa ở {{format}} cho công cụ này",
+        "options": {
+          "mp4": "MP4",
+          "webm": "WebM",
+          "avi": "AVI",
+          "mov": "MOV",
+          "mkv": "MKV",
+          "flv": "FLV",
+          "wmv": "WMV",
+          "prores": "ProRes (MOV)",
+          "dnxhd": "DNxHR (MOV)",
+          "gif": "GIF (động)"
+        }
+      },
+      "quality": {
+        "label": "Chất lượng",
+        "tooltipAria": "Về chất lượng video",
+        "tooltip": "Chọn một thiết lập CRF x264 bên dưới. Thấp ≈ CRF 30 (tệp nhỏ), Trung bình ≈ CRF 23 (mặc định cân bằng), Cao ≈ CRF 18 (gần như không thấy khác biệt với hầu hết cảnh quay). Bỏ qua với đầu ra GIF — dùng bảng GIF bên dưới để tinh chỉnh kích thước bảng màu và tốc độ khung hình.",
+        "options": {
+          "low": "Thấp",
+          "medium": "Trung bình",
+          "high": "Cao"
+        }
+      },
+      "width": {
+        "label": "Chiều rộng (px)",
+        "tooltipAria": "Về chiều rộng video",
+        "tooltip": "Chiều rộng đầu ra mục tiêu tính bằng pixel. Để trống để giữ nguyên gốc hoặc co giãn theo tỷ lệ từ chiều cao. Kết hợp với Giữ tỷ lệ khung hình để tránh méo. Khi định dạng là GIF, để trống sẽ dùng chiều rộng từ bảng GIF động bên dưới.",
+        "placeholder": "Tự động"
+      },
+      "height": {
+        "label": "Chiều cao (px)",
+        "tooltipAria": "Về chiều cao video",
+        "tooltip": "Chiều cao đầu ra mục tiêu tính bằng pixel. Để trống để giữ nguyên gốc hoặc co giãn theo tỷ lệ từ chiều rộng. Bỏ qua với đầu ra GIF — chiều cao được tính từ chiều rộng để giữ tỷ lệ khung hình (và làm tròn thành bội số của 4).",
+        "placeholder": "Tự động",
+        "placeholderGif": "Tự động (theo chiều rộng)"
+      },
+      "speed": {
+        "label": "Hệ số tốc độ",
+        "tooltipAria": "Về hệ số tốc độ",
+        "tooltip": "Tốc độ phát từ 0,25x (chuyển động chậm) đến 4x (nhanh). PTS video và nhịp âm thanh được điều chỉnh cùng nhau để kết quả luôn đồng bộ. Với đầu ra GIF, hãy điều chỉnh cảm giác phát bằng Tốc độ khung hình và Độ trễ khung hình trong bảng GIF động."
+      },
+      "preserveAspectRatio": {
+        "label": "Giữ tỷ lệ khung hình",
+        "tooltipAria": "Về giữ tỷ lệ khung hình",
+        "tooltip": "Khi đặt cả Chiều rộng và Chiều cao, tùy chọn này dùng phép co giãn FFmpeg force_original_aspect_ratio=decrease để video vừa trong khung mà không bị méo. Tắt để ép kích thước chính xác (có thể bị méo). Đầu ra GIF luôn giữ tỷ lệ khung hình."
+      },
+      "gif": {
+        "title": "Cài đặt GIF động",
+        "tooltipAria": "Về cài đặt GIF động",
+        "tooltip": "Chuyển đổi GIF chạy qua hai giai đoạn: ffmpeg thu nhỏ video và lấy mẫu theo tốc độ khung hình đã chọn, rồi gifsicle lượng tử hóa bảng màu và tối ưu đầu ra. Các điều khiển Chất lượng, Chiều cao và Tốc độ ở phần Chuyển đổi/Chép lời phía trên được bỏ qua với GIF vì bảng này thay thế chúng.",
+        "subtitle": "Tinh chỉnh quy trình ffmpeg → gifsicle. Mặc định khớp với thiết lập quay màn hình tốt (rộng 900px, 12 fps, 128 màu).",
+        "width": {
+          "label": "Chiều rộng (px)",
+          "tooltipAria": "Về chiều rộng GIF",
+          "tooltip": "Chiều rộng đầu ra tính bằng pixel. Chiều cao được tính tự động để giữ tỷ lệ khung hình (làm tròn thành bội số của 4 cho ffmpeg). 480–900 là khoảng tốt cho quay màn hình; giá trị nhỏ hơn giảm kích thước tệp rất nhanh."
+        },
+        "fps": {
+          "label": "Tốc độ khung hình (fps)",
+          "tooltipAria": "Về tốc độ khung hình GIF",
+          "tooltip": "Số khung hình mỗi giây ffmpeg lấy mẫu từ video nguồn trước khi chuyển cho gifsicle. 12 fps trông mượt với bản ghi màn hình; tăng lên 18–24 cho clip nhiều chuyển động, giảm xuống 8–10 để thu nhỏ tệp."
+        },
+        "colors": {
+          "label": "Số màu",
+          "tooltipAria": "Về số màu GIF",
+          "tooltip": "Kích thước bảng màu tối đa mà gifsicle lượng tử hóa (2–256). 128 là mặc định tốt; giảm xuống 64 để thu nhỏ tệp với cảnh giao diện phẳng, tăng lên 256 cho clip ảnh chụp có chuyển màu mượt."
+        },
+        "delay": {
+          "label": "Độ trễ khung hình",
+          "tooltipAria": "Về độ trễ khung hình GIF",
+          "tooltip": "Độ trễ giữa các khung hình của gifsicle tính bằng 1/100 giây. Thấp hơn = phát nhanh hơn. 3 (= 30ms) cho cảm giác quay màn hình nhanh gọn; 6–10 tạo vòng lặp chậm hơn, thong thả hơn. Độc lập với tốc độ lấy mẫu ffmpeg ở trên."
+        },
+        "optimize": {
+          "label": "Mức tối ưu",
+          "tooltipAria": "Về mức tối ưu GIF",
+          "tooltip": "Mức gifsicle --optimize. 1 nhanh nhất với đầu ra lớn nhất, 3 chậm nhất với đầu ra nhỏ nhất. Giữ ở 3 trừ khi bạn đang thử đi thử lại một clip dài và muốn bản nháp nhanh.",
+          "options": {
+            "1": "1 — nhanh, tệp lớn hơn",
+            "2": "2 — cân bằng",
+            "3": "3 — nhỏ nhất, chậm hơn"
+          }
+        }
+      }
+    }
+  },
+  "advancedAudioEffects": {
+    "title": "Hiệu ứng âm thanh nâng cao",
+    "tooltipAria": "Về Hiệu ứng âm thanh nâng cao",
+    "tooltipIntro": "Chuỗi xử lý âm thanh thủ công, chia thành bốn phần có thể mở rộng:",
+    "tooltipBasic": "<strong>Xử lý âm thanh cơ bản</strong> — chuẩn hóa, khuếch đại, fade in/out, thiết lập EQ, độ rộng stereo/pan/cân bằng.",
+    "tooltipTime": "<strong>Hiệu ứng theo thời gian</strong> — reverb, delay và điều biến (chorus, flanger, tremolo, vibrato).",
+    "tooltipRestoration": "<strong>Phục hồi & dọn dẹp</strong> — giảm nhiễu, khử ù, khử clip, loại bỏ khoảng lặng.",
+    "tooltipAdvanced": "<strong>Âm thanh nâng cao</strong> — dịch cao độ, kéo giãn thời gian, âm thanh không gian.",
+    "sections": {
+      "basic": {
+        "title": "Xử lý âm thanh cơ bản",
+        "description": "Điều khiển âm lượng, EQ, dynamics và xử lý stereo"
+      },
+      "time": {
+        "title": "Hiệu ứng theo thời gian",
+        "description": "Reverb, delay, echo và các hiệu ứng điều biến"
+      },
+      "restoration": {
+        "title": "Phục hồi & dọn dẹp",
+        "description": "Giảm nhiễu, khử ù, khử clip và phát hiện khoảng lặng"
+      },
+      "advanced": {
+        "title": "Xử lý nâng cao",
+        "description": "Dịch cao độ, kéo giãn thời gian, âm thanh không gian và xử lý phổ"
+      }
+    },
+    "volumeDynamics": {
+      "title": "Âm lượng & Dynamics",
+      "tooltip": "Khuếch đại theo decibel (-60 đến +60), áp dụng thời lượng fade in/out và bật/tắt chuẩn hóa độ ồn. Dùng Khuếch đại để cân mức và Chuẩn hóa khi bạn muốn độ ồn cảm nhận đồng đều."
+    },
+    "equalizer": {
+      "title": "Bộ cân bằng (EQ)",
+      "tooltip": "Chọn một thiết lập ánh xạ sang chuỗi bộ lọc equalizer đa băng tần của FFmpeg: tăng bass, tăng treble, giọng hát, cổ điển, rock hoặc jazz. Chọn 'không' để giữ nguyên EQ.",
+      "enable": "Bật EQ",
+      "presetLabel": "Thiết lập EQ",
+      "presets": {
+        "none": "Không",
+        "bass-boost": "Tăng bass",
+        "treble-boost": "Tăng treble",
+        "vocal": "Tăng cường giọng hát",
+        "classical": "Cổ điển",
+        "rock": "Rock",
+        "jazz": "Jazz"
+      }
+    },
+    "stereo": {
+      "title": "Xử lý stereo",
+      "tooltip": "Điều chỉnh pan (-100 trái đến +100 phải), độ rộng stereo (0 = mono, 100 = gốc, tối đa 200 = rộng hơn), bật/tắt chuyển sang mono, và tùy chọn hoán đổi kênh trái/phải.",
+      "pan": "Pan",
+      "leftRight": "Trái ← → Phải",
+      "stereoWidth": "Độ rộng stereo",
+      "widthRange": "0% đến 200%"
+    },
+    "reverb": {
+      "title": "Reverb",
+      "tooltip": "Thêm không gian cho âm thanh. Chọn room (nhỏ), hall (lớn), plate (studio cổ điển) hoặc spring (kiểu ampli guitar). Kích thước phòng, độ hấp thụ và mức wet/dry tinh chỉnh hiệu ứng.",
+      "enable": "Bật Reverb",
+      "typeLabel": "Loại reverb",
+      "types": {
+        "none": "Không",
+        "room": "Room",
+        "hall": "Hall",
+        "plate": "Plate",
+        "spring": "Spring"
+      },
+      "roomSize": "Kích thước phòng",
+      "roomRange": "0% đến 100%",
+      "wetDry": "Tỷ lệ Wet/Dry",
+      "dryWet": "Dry ← → Wet"
+    },
+    "delay": {
+      "title": "Delay & Echo",
+      "tooltip": "Thêm một bản sao bị trễ của tín hiệu. Echo là một lần lặp; multi-tap thêm nhiều tiếng vọng lệch nhau; ping-pong nảy qua lại giữa trái và phải. Thời gian (ms), % hồi tiếp và mức wet định hình các lần lặp.",
+      "enable": "Bật Delay",
+      "typeLabel": "Loại delay",
+      "types": {
+        "none": "Không",
+        "echo": "Echo đơn",
+        "multi-tap": "Multi-tap",
+        "ping-pong": "Ping-Pong"
+      },
+      "delayTime": "Thời gian delay (ms)",
+      "feedback": "Hồi tiếp (%)",
+      "feedbackRange": "0% đến 95%"
+    },
+    "restoration": {
+      "noiseReduction": "Giảm nhiễu",
+      "deHum": "Khử ù (50/60Hz)",
+      "declip": "Khử clip âm thanh",
+      "silenceDetection": "Phát hiện khoảng lặng"
+    },
+    "advanced": {
+      "pitchShift": "Dịch cao độ (nửa cung)",
+      "pitchValue": "{{value}} nửa cung",
+      "pitchRange": "-24 đến +24 nửa cung",
+      "timeStretch": "Hệ số kéo giãn thời gian",
+      "timeStretchValue": "tốc độ {{value}}x",
+      "timeStretchRange": "tốc độ 0,25x đến 4x",
+      "spatialAudio": "Âm thanh không gian",
+      "spatial": {
+        "none": "Không",
+        "binaural": "Binaural",
+        "surround": "Surround",
+        "3d": "Âm thanh 3D"
+      },
+      "spectral": "Xử lý phổ",
+      "spectralOptions": {
+        "none": "Không",
+        "vocoder": "Vocoder",
+        "formant": "Bộ lọc formant",
+        "convolution": "Tích chập"
+      }
+    },
+    "labels": {
+      "amplify": "Khuếch đại (dB)",
+      "amplifyRange": "-60dB đến +60dB",
+      "normalize": "Chuẩn hóa âm thanh",
+      "fadeIn": "Fade In (giây)",
+      "fadeOut": "Fade Out (giây)"
+    }
+  },
+  "advancedVideoEffects": {
+    "title": "Hiệu ứng video nâng cao",
+    "tooltipAria": "Về Hiệu ứng video nâng cao",
+    "tooltipIntro": "Chuỗi bộ lọc video thủ công, chia thành bốn phần có thể mở rộng:",
+    "tooltipVisual": "<strong>Hiệu ứng hình ảnh</strong> — chỉnh màu, làm mờ/làm nét, nhiễu và bộ lọc nghệ thuật.",
+    "tooltipTransform": "<strong>Biến đổi</strong> — xoay, lật, cắt tùy chỉnh, đệm/letterbox.",
+    "tooltipTemporal": "<strong>Hiệu ứng thời gian</strong> — đảo ngược, ping-pong, chuyển đổi tốc độ khung hình, chống rung.",
+    "tooltipAdvanced": "<strong>Xử lý nâng cao</strong> — khử xen kẽ, ánh xạ tông HDR, chuyển đổi không gian màu.",
+    "sections": {
+      "visual": {
+        "title": "Hiệu ứng hình ảnh",
+        "description": "Chỉnh màu, làm mờ/làm nét, hiệu ứng nghệ thuật và kiểm soát nhiễu"
+      },
+      "transform": {
+        "title": "Biến đổi hình học",
+        "description": "Xoay, lật, cắt và đệm"
+      },
+      "temporal": {
+        "title": "Hiệu ứng thời gian",
+        "description": "Điều khiển tốc độ, đảo ngược, tốc độ khung hình và chống rung"
+      },
+      "advanced": {
+        "title": "Xử lý nâng cao",
+        "description": "Khử xen kẽ, xử lý HDR và chuyển đổi không gian màu"
+      }
+    },
+    "colorExposure": {
+      "title": "Màu sắc & Phơi sáng",
+      "tooltip": "Điều chỉnh độ sáng, độ tương phản, độ bão hòa, sắc độ, gamma, phơi sáng và khôi phục vùng tối/vùng sáng. Các mục này ánh xạ sang bộ lọc eq và curves của FFmpeg và gộp thành một lượt chỉnh màu duy nhất."
+    },
+    "blurSharpen": {
+      "title": "Làm mờ & Làm nét",
+      "tooltip": "Thêm làm mờ Gaussian (sigma 0–50), làm mờ chuyển động với góc và khoảng cách, hoặc làm nét unsharp-mask với bán kính, mức độ và ngưỡng điều chỉnh được."
+    },
+    "labels": {
+      "brightness": "Độ sáng",
+      "contrast": "Độ tương phản",
+      "saturation": "Độ bão hòa",
+      "hue": "Sắc độ",
+      "gaussianBlur": "Làm mờ Gaussian",
+      "artisticEffect": "Hiệu ứng nghệ thuật",
+      "rotation": "Xoay (độ)",
+      "flipHorizontal": "Lật ngang",
+      "flipVertical": "Lật dọc",
+      "reverseVideo": "Đảo ngược video",
+      "pingPong": "Vòng lặp Ping-Pong",
+      "targetFrameRate": "Tốc độ khung hình mục tiêu",
+      "stabilization": "Chống rung video",
+      "deinterlace": "Khử xen kẽ video",
+      "outputColorSpace": "Không gian màu đầu ra"
+    },
+    "ranges": {
+      "hundred": "-100 đến +100",
+      "hue": "-180° đến +180°",
+      "blur": "0 đến 50px"
+    },
+    "artistic": {
+      "none": "Không",
+      "oil-painting": "Sơn dầu",
+      "watercolor": "Màu nước",
+      "sketch": "Phác thảo",
+      "emboss": "Dập nổi",
+      "edge-detection": "Phát hiện cạnh",
+      "posterize": "Poster hóa"
+    },
+    "colorSpace": {
+      "rec709": "Rec.709 (Tiêu chuẩn)",
+      "rec2020": "Rec.2020 (HDR)",
+      "srgb": "sRGB",
+      "p3": "Display P3"
+    },
+    "autoPlaceholder": "Tự động"
+  }
+}

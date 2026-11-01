@@ -15,7 +15,9 @@
     "format": "prettier --write .",
     "test": "jest",
     "doctor": "expo-doctor",
-    "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor"
+    "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor && node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main",
+    "i18n:sync": "node scripts/sync-web-i18n.mjs --ref main",
+    "i18n:check": "node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.2",
@@ -44,10 +46,12 @@
     "expo-status-bar": "~57.0.1",
     "expo-system-ui": "~57.0.4",
     "expo-updates": "~57.0.26",
+    "i18next": "^26.6.0",
     "lucide-react-native": "^1.66.0",
     "nativewind": "^4.2.7",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-i18next": "^17.1.10",
     "react-native": "0.86.3",
     "react-native-gesture-handler": "~2.32.0",
     "react-native-mmkv": "^4.3.2",

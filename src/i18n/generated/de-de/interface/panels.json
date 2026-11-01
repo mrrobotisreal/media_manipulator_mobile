@@ -1,0 +1,1418 @@
+{
+  "transcribeResultView": {
+    "loading": "Transkriptionsergebnis wird geladen...",
+    "noResult": "Für diesen Job ist kein Transkriptionsergebnis verfügbar.",
+    "complete": "Transkription abgeschlossen",
+    "outputFormat": "Ausgabeformat:",
+    "language": "Sprache: {{language}}",
+    "duration": "Dauer: {{duration}}",
+    "noAudioStream": "Kein Audiostream",
+    "noSpeech": "Keine erkennbare Sprache",
+    "nothingToTranscribe": "Nichts zu transkribieren",
+    "noTranscriptGenerated": "Für diese Datei konnte kein Transkript erstellt werden.",
+    "transcriptHeader_one": "Transkript ({{count}} Segment)",
+    "transcriptHeader_other": "Transkript ({{count}} Segmente)",
+    "aiSummaryTitle": "KI-Zusammenfassung & Sicherheitsprüfung",
+    "analysisRunning": "Zusammenfassung und Sicherheitsprüfung laufen im Hintergrund...",
+    "analysisError": "Analysefehler: {{error}}",
+    "summary": "Zusammenfassung",
+    "extendedSummary": "Erweiterte Zusammenfassung",
+    "safetyBadge": "Sicherheit: {{rating}}",
+    "harmfulFlagged": "Möglicherweise schädliche Inhalte erkannt",
+    "harmfulNone": "Keine schädlichen Inhalte markiert",
+    "sentimentBadge": "Stimmung: {{label}}",
+    "notesLabel": "Notizen: {{notes}}",
+    "summaryPending": "Zusammenfassung und Sicherheitsprüfung erscheinen hier, sobald der Analysejob abgeschlossen ist.",
+    "unknown": "unbekannt"
+  },
+  "summarize": {
+    "loading": "Es wird geprüft, ob Zusammenfassungen verfügbar sind…",
+    "unavailable": "Video- und Audiozusammenfassungen sind vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut; die Transkriptionsseiten funktionieren weiterhin.",
+    "notInPlan": "Zusammenfassungen sind in Ihrem Tarif nicht enthalten.",
+    "signIn": {
+      "title": "Zum Zusammenfassen anmelden",
+      "body": "Zusammenfassungen laufen auf unserem eigenen GPU-Server und erfordern ein kostenloses Konto. Melden Sie sich an oder erstellen Sie eines und laden Sie dann Ihre Datei hoch.",
+      "button": "Anmelden",
+      "signup": "Kostenloses Konto erstellen"
+    },
+    "uploadHintVideo": "eine Video- oder Audiodatei",
+    "uploadHintAudio": "eine Audiodatei",
+    "outputLanguage": "Sprache der Zusammenfassung",
+    "sameAsSpeech": "Wie die gesprochene Sprache",
+    "depth": {
+      "label": "Detailgrad",
+      "standard": "Standard",
+      "deep": "Ausführlich",
+      "hint": "Ausführlich erstellt die Zusammenfassung mit einem größeren Modell. Das dauert länger."
+    },
+    "note": "Verbraucht einen KI-Job Ihres Tageskontingents. Ein fehlgeschlagener Job wird nicht angerechnet.",
+    "noteFrames": "Ihr Tarif liest bis zu {{frames}} Einzelbilder des Videos. Verbraucht einen KI-Job Ihres Tageskontingents; ein fehlgeschlagener Job wird nicht angerechnet.",
+    "start": "Zusammenfassen",
+    "stagesTitle": "Fortschritt",
+    "stages": {
+      "probe": "Datei wird gelesen",
+      "audio": "Sprache wird transkribiert",
+      "frames": "Einzelbilder werden ausgewählt",
+      "vision": "Einzelbilder werden beschrieben",
+      "synthesis": "Zusammenfassung wird geschrieben",
+      "render": "Ergebnis wird formatiert"
+    },
+    "status": {
+      "pending": "Wartet",
+      "processing": "In Bearbeitung",
+      "completed": "Fertig",
+      "skipped": "Übersprungen",
+      "failed": "Fehlgeschlagen"
+    },
+    "framesCount": "Einzelbilder: {{count}}",
+    "errors": {
+      "signin_required": "Zum Zusammenfassen anmelden.",
+      "summary_not_in_plan": "Zusammenfassungen sind in Ihrem Tarif nicht enthalten.",
+      "summary_unavailable": "Zusammenfassungen sind vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.",
+      "unreadable_media": "Diese Datei konnte nicht als Audio oder Video gelesen werden.",
+      "no_audio_or_video": "Diese Datei enthält kein Audio und kein Video zum Zusammenfassen.",
+      "file_too_large": "Diese Datei ist größer oder länger, als Ihr Tarif erlaubt.",
+      "upload_not_found": "Der Upload wurde nicht gefunden. Bitte versuchen Sie es erneut.",
+      "quota_exceeded": "Sie haben alle KI-Jobs für heute verbraucht.",
+      "invalid_request": "Die Anfrage wurde nicht akzeptiert. Laden Sie die Seite neu und versuchen Sie es erneut.",
+      "unknown": "Die Zusammenfassung konnte nicht gestartet werden. Bitte versuchen Sie es erneut."
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "Legen Sie Ihre {{hint}}-Datei hier ab",
+    "selectHint": "oder klicken Sie, um eine Datei von Ihrem Computer auszuwählen. Dateien werden für Gäste 24 Stunden aufbewahrt; mit einem kostenlosen Konto wählen Sie 24 Stunden bis 2 Jahre.",
+    "selectFile": "Datei auswählen",
+    "removeFile": "Datei entfernen",
+    "uploadingPercent": "Wird hochgeladen {{percent}}%",
+    "workingOnFile": "Ihre Datei wird bearbeitet…",
+    "previewResult": "Ergebnisvorschau",
+    "downloadResult": "Ergebnis herunterladen",
+    "jobFailed": "Job fehlgeschlagen. Versuchen Sie eine andere Datei oder laden Sie die Seite neu.",
+    "resultPreview": "Ergebnisvorschau",
+    "toggleHint": "Zwischen dem Originaleingang und dem fertigen Ergebnis wechseln.",
+    "closePreview": "Vorschau schließen",
+    "loadingPreview": "Vorschau wird geladen…",
+    "zipPreviewTitle": "Vorschau für ZIP-Downloads nicht verfügbar",
+    "zipPreviewBody": "Dieses Ergebnis ist als ZIP-Archiv verpackt. Laden Sie es herunter und entpacken Sie es lokal, um den Inhalt anzusehen."
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "Eingebetteter Medienkonverter",
+    "tryItNow": "Jetzt ausprobieren",
+    "recommendedOutput": "Empfohlene Ausgabe:",
+    "outputFormat": "Ausgabeformat:",
+    "outputLocked": "Ausgabe für dieses Tool festgelegt:",
+    "expectedInput": "Erwartete Eingabe:",
+    "accepts": "Akzeptiert:",
+    "dragDrop": "Ziehen Sie eine {{kind}}-Datei hierher",
+    "mediaKinds": {
+      "image": "Bild",
+      "video": "Video",
+      "audio": "Audio",
+      "pdf": "PDF"
+    },
+    "selectHint": "oder klicken Sie, um eine Datei von Ihrem Computer auszuwählen. Dateien werden für Gäste 24 Stunden aufbewahrt; mit einem kostenlosen Konto wählen Sie 24 Stunden bis 2 Jahre.",
+    "selectFile": "Datei auswählen",
+    "removeFile": "Datei entfernen",
+    "uploadingPercent": "Wird hochgeladen {{percent}}%",
+    "workingOnFile": "Ihre Datei wird bearbeitet…",
+    "downloadFilename": "{{filename}} herunterladen",
+    "transcribeFailed": "Transkription fehlgeschlagen.",
+    "conversionFailed": "Konvertierung fehlgeschlagen.",
+    "tryAgainOrOpen": "Versuchen Sie es erneut oder öffnen Sie den vollständigen Konverter.",
+    "needFullPrefix": "Benötigen Sie den vollen Funktionsumfang?",
+    "openFullConverter": "Vollständigen Konverter öffnen",
+    "needFullSuffix": "— er enthält den Konvertierungsverlauf, den Transkriptionsablauf und die KI-Tools."
+  },
+  "extractAudio": {
+    "title": "Audio extrahieren",
+    "subtitle": "Extrahieren Sie die Audiospur aus einer Videodatei und speichern Sie sie als MP3, WAV, AAC, OGG oder FLAC.",
+    "formatLabel": "Audio-Ausgabeformat",
+    "outputLocked": "Für dieses Tool auf {{format}} festgelegt",
+    "expectedInput": "Erwartete Eingabe: {{format}}",
+    "submit": "Audio extrahieren",
+    "running": "Wird extrahiert…",
+    "success": "Audio extrahiert. Verwenden Sie die Download-Schaltfläche, um es zu speichern.",
+    "uploadHint": "Videodatei",
+    "note": "Die extrahierte Spur behält die volle Dauer und Qualität des Originals. Videos ohne Audio führen zu einer eindeutigen Fehlermeldung.",
+    "formats": {
+      "mp3": "MP3 (kompakt, überall abspielbar)",
+      "wav": "WAV (verlustfrei, groß)",
+      "m4a": "M4A (AAC — gute Qualität, kompakt)",
+      "aac": "AAC (roh)",
+      "flac": "FLAC (verlustfrei)",
+      "ogg": "OGG (Vorbis)"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "Videodatei",
+    "expectedInput": "Erwartete Eingabe: {{format}}",
+    "levelLabel": "Kompressionsstufe",
+    "levels": {
+      "smallest": "Kleinste Datei",
+      "balanced": "Ausgewogen (empfohlen)",
+      "high_quality": "Hohe Qualität"
+    },
+    "levelHints": {
+      "smallest": "Maximale Verkleinerung für E-Mail und Chat. Sichtbarer Qualitätsverlust bei detailreichem Material möglich.",
+      "balanced": "Ein guter Kompromiss aus Größe und Qualität für die meisten Videos und Social-Media-Uploads.",
+      "high_quality": "Behält die meisten Details. Kleiner als das Original, aber nicht so stark."
+    },
+    "formatLabel": "Ausgabeformat",
+    "outputLocked": "Für dieses Tool auf {{format}} festgelegt",
+    "resolutionLabel": "Auflösung",
+    "resolutions": {
+      "keep": "Original beibehalten",
+      "1080": "1080p (Full HD)",
+      "720": "720p (HD)",
+      "480": "480p (SD)"
+    },
+    "codecLabel": "Codec",
+    "codecs": {
+      "h264": "H.264 (beste Kompatibilität)",
+      "h265": "H.265 / HEVC (kleiner, moderne Geräte)"
+    },
+    "stripAudio": "Audiospur entfernen für eine noch kleinere Datei",
+    "note": "Wir kodieren das Video in der gewählten Stufe neu. Die MP4-Ausgabe verwendet H.264 + AAC mit Faststart für sofortige Wiedergabe.",
+    "running": "Wird komprimiert…",
+    "submit": "Video komprimieren"
+  },
+  "videoTrimmer": {
+    "uploadHint": "Videodatei",
+    "expectedInput": "Erwartete Eingabe: {{format}}",
+    "startLabel": "Start (Sekunden)",
+    "endLabel": "Ende (Sekunden)",
+    "durationLabel": "Clip-Länge: {{duration}}",
+    "invalidRange": "Legen Sie eine Endzeit fest, die nach der Startzeit liegt.",
+    "pickRange": "Bereich visuell auswählen",
+    "formatLabel": "Ausgabeformat",
+    "outputLocked": "Für dieses Tool auf {{format}} festgelegt",
+    "reencodeLabel": "Für einen bildgenauen Schnitt neu kodieren",
+    "reencodeHint": "Die Neukodierung schneidet exakt an Ihren Zeitpunkten, ist aber langsamer und kann die Dateigröße leicht verändern.",
+    "note": "Wir behalten die Originalqualität mit einem schnellen, verlustfreien Schnitt bei, wann immer möglich (keine Neukodierung).",
+    "running": "Wird geschnitten…",
+    "submit": "Video schneiden",
+    "submitCut": "Video schneiden"
+  },
+  "videoTransform": {
+    "uploadHint": "Videodatei",
+    "expectedInput": "Erwartete Eingabe: {{format}}",
+    "autoPlaceholder": "Automatisch",
+    "widthLabel": "Breite (px)",
+    "heightLabel": "Höhe (px)",
+    "preserveAspect": "Seitenverhältnis beibehalten (in den Rahmen einpassen)",
+    "resizeNote": "Lassen Sie ein Feld leer, um das andere proportional zu skalieren. Maximal 4096 px pro Seite.",
+    "rotationLabel": "Drehung",
+    "rotations": {
+      "90": "90° im Uhrzeigersinn",
+      "180": "180° (auf den Kopf gestellt)",
+      "270": "90° gegen den Uhrzeigersinn"
+    },
+    "flipH": "Horizontal spiegeln",
+    "flipV": "Vertikal spiegeln",
+    "rotateNote": "Korrigiert seitlich oder auf dem Kopf stehende Videos. Bei 90° und 270° werden Breite und Höhe vertauscht.",
+    "cropX": "Linker Versatz (X, px)",
+    "cropY": "Oberer Versatz (Y, px)",
+    "cropW": "Zuschnittbreite (px)",
+    "cropH": "Zuschnitthöhe (px)",
+    "cropNote": "Geben Sie das beizubehaltende Rechteck in Pixel von der oberen linken Ecke aus an. Breite und Höhe sind erforderlich.",
+    "formatLabel": "Ausgabeformat",
+    "outputLocked": "Für dieses Tool auf {{format}} festgelegt",
+    "running": "Wird verarbeitet…",
+    "submit": {
+      "crop": "Video zuschneiden",
+      "resize": "Video skalieren",
+      "rotate": "Video drehen"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "Video extrahieren (ohne Audio)",
+    "subtitle": "Entfernen Sie die Audiospur aus einer Videodatei und behalten Sie nur den Videostream.",
+    "uploadHint": "Videodatei",
+    "formatLabel": "Ausgabecontainer",
+    "formats": {
+      "mp4": "MP4 (empfohlen)",
+      "webm": "WebM"
+    },
+    "note": "Der Videostream wird nach Möglichkeit stream-kopiert — kein Qualitätsverlust. Wir kodieren nur neu, wenn der Zielcontainer es erfordert.",
+    "submit": "Audio aus Video entfernen",
+    "running": "Audio wird entfernt…",
+    "success": "Videostream extrahiert."
+  },
+  "extractFrames": {
+    "title": "Einzelbilder extrahieren",
+    "subtitle": "Speichern Sie einzelne Bilder aus einem Video als PNG-, JPG- oder WebP-Dateien.",
+    "uploadHint": "Videodatei",
+    "modeLabel": "Extraktionsmodus",
+    "modes": {
+      "every_n_seconds": "Alle N Sekunden",
+      "fps": "Bestimmte Bilder pro Sekunde",
+      "timestamp": "Bestimmte Zeitstempel"
+    },
+    "secondsBetween": "Sekunden zwischen Bildern",
+    "fpsLabel": "Bilder pro Sekunde",
+    "timestampsLabel": "Zeitstempel in Sekunden (durch Komma getrennt)",
+    "timestampsPlaceholder": "z. B. 1, 5.5, 12, 30",
+    "imageFormatLabel": "Bildformat",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG (verlustfrei)",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "Maximale Anzahl Einzelbilder",
+    "zipNote": "Die Einzelbilder werden zum Download in einem einzigen ZIP gebündelt. Wir begrenzen die Anzahl, damit Jobs schnell und vorhersehbar bleiben; erhöhen Sie das Limit, falls Sie wirklich mehr benötigen.",
+    "submit": "Einzelbilder extrahieren",
+    "running": "Einzelbilder werden extrahiert…",
+    "success": "Einzelbilder extrahiert. Laden Sie das ZIP unten herunter."
+  },
+  "captionTranslator": {
+    "title": "Untertitel übersetzen",
+    "subtitle": "Laden Sie eine VTT-, SRT- oder TXT-Untertiteldatei hoch und übersetzen Sie sie in eine andere Sprache.",
+    "dropHere": "Legen Sie Ihre .srt- oder .vtt-Datei hier ab",
+    "privacyNote": "Dateien werden für Gäste 24 Stunden aufbewahrt; mit einem kostenlosen Konto wählen Sie 24 Stunden bis 2 Jahre. Wir senden Ihre Untertitel nicht an KI-Anbieter Dritter.",
+    "selectCaptionFile": "Untertiteldatei auswählen",
+    "removeFile": "Datei entfernen",
+    "sourceLanguage": "Ausgangssprache",
+    "targetLanguage": "Zielsprache",
+    "autoDetect": "Automatisch erkennen (empfohlen)",
+    "outputFormat": "Ausgabeformat",
+    "sameAsInput": "Wie Eingabe ({{format}})",
+    "formats": {
+      "srt": "SRT (SubRip)",
+      "vtt": "VTT (WebVTT)"
+    },
+    "timingNote": "Timing und Reihenfolge der Cues bleiben exakt erhalten — nur der Cue-Text wird übersetzt.",
+    "translating": "Wird übersetzt…",
+    "translateCaptions": "Untertitel übersetzen",
+    "uploadingPercent": "Wird hochgeladen {{percent}}%",
+    "translatingWithModel": "Übersetzung mit lokalem KI-Modell läuft…",
+    "downloadTranslated": "Übersetzte Untertitel herunterladen",
+    "translationFailed": "Übersetzung fehlgeschlagen. Versuchen Sie eine kleinere Datei oder eine andere Zielsprache."
+  },
+  "stitchAudioToVideo": {
+    "title": "Audio mit Video zusammenfügen",
+    "subtitle": "Fügen Sie Audiospuren zu einer Videodatei hinzu oder ersetzen Sie sie.",
+    "dropBaseVideo": "Legen Sie Ihr Basisvideo hier ab",
+    "intro": "Wählen Sie zuerst das Video aus — als Nächstes fügen Sie Audiospuren (Voiceover, Musik, Erzählung) hinzu.",
+    "selectVideo": "Video auswählen",
+    "removeBaseVideo": "Basisvideo entfernen",
+    "audioTracks": "Audiospuren",
+    "removeTrack": "Spur entfernen",
+    "volume": "Lautstärke",
+    "startOffset": "Startversatz (Sekunden)",
+    "loopTrack": "Diese Spur in einer Schleife an die Videolänge anpassen",
+    "addAudioTrack": "Audiospur hinzufügen ({{count}}/{{max}})",
+    "audioModeLabel": "Audiomodus",
+    "audioModes": {
+      "mix": "Mit vorhandenem Audio mischen",
+      "replace": "Originalaudio ersetzen"
+    },
+    "outputLengthLabel": "Ausgabelänge",
+    "outputLength": {
+      "video": "Auf Videodauer kürzen",
+      "longest": "An längste Eingabe anpassen"
+    },
+    "stitching": "Audio und Video werden zusammengefügt…",
+    "addAudioToVideo": "Audio zu Video hinzufügen",
+    "uploadingPercent": "Wird hochgeladen {{percent}}%",
+    "mixingOnServer": "Wird auf dem Server gemischt…",
+    "downloadStitched": "Zusammengefügtes Video herunterladen",
+    "stitchFailed": "Zusammenfügen fehlgeschlagen. Prüfen Sie, ob Ihre Audiodateien gültig sind, und versuchen Sie es erneut."
+  },
+  "aiVideoTools": {
+    "title": "KI-Video-Tools",
+    "tooltipIntro": "Die KI-Video-Tools umfassen derzeit <strong>KI-Bildinterpolation</strong>, die neue Zwischenbilder erzeugt, damit Bewegungen flüssiger wiedergegeben werden.",
+    "tooltipBestFor": "Am besten geeignet, um Material mit 24/30 fps auf 60 fps oder 60 fps auf 120 fps zu bringen. Dies ist GPU-intensiv und gibt derzeit immer MP4 aus.",
+    "intro": "Die KI-Bildinterpolation erzeugt Zwischenbilder für flüssigere Bewegungen. Am besten für Clips mit 24/30 fps → 60 fps oder 60 fps → 120 fps.",
+    "gpuNote": "Dies ist GPU-intensiv und gibt derzeit MP4 aus. Verwenden Sie bei langen oder 4K-Videos zunächst eine niedrigere maximale Verarbeitungshöhe. Dies unterscheidet sich von einfacher FPS-Konvertierung — die KI-Interpolation synthetisiert neue Bilder, statt sie zu duplizieren, und umgeht in v1 die meisten anderen visuellen / zeitlichen Filter.",
+    "operationLabel": "Vorgang",
+    "operations": {
+      "none_short": "Keiner",
+      "frame_interpolation": "KI-Bildinterpolation"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "Ziel-Bildrate",
+      "modelLabel": "RIFE-Modell",
+      "models": {
+        "rife-v4.6": "RIFE v4.6 — empfohlen",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3 — Kompatibilität"
+      },
+      "qualityLabel": "Qualität",
+      "qualityOptions": {
+        "low": "Niedrig — schnellere Kodierung",
+        "medium": "Mittel — ausgewogen",
+        "high": "Hoch — langsamere Kodierung"
+      },
+      "maxHeightLabel": "Maximale Verarbeitungshöhe",
+      "preserveAudio": "Audiospur der Quelle beibehalten"
+    },
+    "notes": {
+      "mp4": "Die Ausgabe ist in v1 immer MP4 (H.264 + AAC).",
+      "trim": "Schneiden ist bei KI-Bildinterpolation in v1 deaktiviert — schneiden Sie den Clip bei Bedarf vorher separat.",
+      "artifacts": "Schnelle Bewegungen, Schnitte, Haare, Hände, Räder und Verdeckungen können Interpolationsartefakte zeigen. Vor der Veröffentlichung prüfen."
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "Timeline zur Ausschnittauswahl",
+      "startHandle": "Auswahlbeginn",
+      "endHandle": "Auswahlende",
+      "playSelection": "Auswahl abspielen",
+      "pause": "Pause",
+      "start": "Start",
+      "end": "Ende",
+      "startTime": "Startzeit (m:ss.t)",
+      "endTime": "Endzeit (m:ss.t)",
+      "nudgeBack": "0,1 Sekunden zurück",
+      "nudgeForward": "0,1 Sekunden vor",
+      "selected": "ausgewählt",
+      "frames": "Einzelbilder",
+      "estimate": "geschätzt",
+      "fpsAssumption": "die Bildschätzung geht von 30 fps aus — der Server verwendet die tatsächliche Bildrate Ihres Videos",
+      "overRecommended": "Auswahlen über {{seconds}}s funktionieren, aber die Verarbeitungszeit steigt schnell an — kürzere Ausschnitte liefern vergleichbar gute Ergebnisse.",
+      "overFrameBudget": "Diese Auswahl überschreitet wahrscheinlich das {{maxFrames}}-Bilder-Limit bei 30 fps. Wenn die tatsächliche Bildrate Ihres Videos höher als ~30 fps ist, verkürzen Sie die Auswahl."
+    },
+    "picker": {
+      "title": "Restaurierungsmodelle",
+      "selectAll": "Alle auswählen",
+      "selectNone": "Keine",
+      "frameGroup": "Frame-by-Frame-Optimierer — enthält optimierte Einzelbilder + Video",
+      "videoGroup": "Video-Restaurierungsmodelle — nur Video",
+      "unavailable": "Auf diesem Server nicht verfügbar",
+      "includeFrames": "Optimierte Einzelbilder einschließen (PNG)",
+      "includeFramesHint": "Fügt dem Download jedes optimierte Einzelbild der Frame-by-Frame-Modelle hinzu, neben den Videos.",
+      "includeFramesWarning": "Einzelbilder können die Downloadgröße vervielfachen — ein 10-Sekunden-Clip kann pro Modell Hunderte großer PNGs hinzufügen.",
+      "noneSelected": "Wählen Sie mindestens ein Modell aus, um fortzufahren.",
+      "runningTotal": "{{count}} Modell(e) ausgewählt · geschätzte Gesamtverarbeitungszeit {{estimate}}"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "Schneller GAN-Upscaler — die schnelle Basisreferenz, die in jedem Vergleich enthalten sein sollte."
+      },
+      "swinir": {
+        "description": "Transformer-basierte Real-World-SR — starke Texturen, langsamer als Real-ESRGAN."
+      },
+      "hat": {
+        "description": "Hybrid-Attention-SR-GAN — oft die schärfsten Standbilder, das langsamste Modell der Gruppe A."
+      },
+      "basicvsrpp": {
+        "description": "Rekurrente Video-SR — nutzt benachbarte Einzelbilder für zeitliche Konsistenz."
+      },
+      "rvrt": {
+        "description": "Rekurrenter Video-Restaurierungs-Transformer — starke Details mit Bewegungserkennung."
+      },
+      "vrt": {
+        "description": "Video-Restaurierungs-Transformer — Spitzenqualität bei vielen Clips, mit Abstand am langsamsten."
+      }
+    },
+    "panel": {
+      "loading": "Serverfähigkeiten werden geprüft…",
+      "disabled": "Die KI-Videorestaurierung ist auf diesem Server vorübergehend nicht verfügbar.",
+      "notAVideo": "Bitte wählen Sie eine Videodatei aus.",
+      "tooLarge": "Dieses Video überschreitet das Upload-Limit von {{max}}.",
+      "dropTitle": "Video hier ablegen oder zum Auswählen klicken",
+      "dropHint": "Sie wählen einen kurzen Ausschnitt (bis zu 15 s) zur Restaurierung — lange Videos sind kein Problem.",
+      "fileLabel": "Datei:",
+      "changeFile": "Datei ändern",
+      "preparingUpload": "Upload wird vorbereitet…",
+      "uploading": "Wird in sicheren Speicher hochgeladen… {{percent}}%",
+      "startingJob": "Restaurierungsjob wird gestartet…",
+      "submit": "Ausschnitt mit {{count}} Modell(en) restaurieren",
+      "modelFailedBadge": "fehlgeschlagen — andere Modelle laufen weiter",
+      "genericFailure": "Restaurierung fehlgeschlagen. Bitte versuchen Sie es mit einem kürzeren Ausschnitt erneut.",
+      "startOver": "Neu starten",
+      "completedTitle": "Restaurierung abgeschlossen — Ihr Vergleichspaket ist bereit.",
+      "modelSucceeded": "erfolgreich",
+      "modelFailed": "fehlgeschlagen (siehe FAILED.txt im Paket)",
+      "download": "Ergebnisse herunterladen",
+      "downloadAgain": "Erneut herunterladen",
+      "downloadSize": "Paketgröße: {{size}}",
+      "downloadSizeHint": "Dieses Archiv ist groß — stellen Sie sicher, dass mindestens {{size}} freier Speicherplatz vorhanden ist, bevor Sie herunterladen.",
+      "linkExpiresIn": "Link läuft ab in {{countdown}}",
+      "linkExpired": "Download-Link abgelaufen — führen Sie die Restaurierung erneut aus",
+      "restoreAnother": "Weiteren Ausschnitt restaurieren"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "Zuschnitt (optional)",
+      "useEntireImage": "Gesamtes Bild verwenden",
+      "previewAlt": "Hochgeladenes Bild",
+      "regionLabel": "Zuschnittbereich — zum Verschieben ziehen, mit den Pfeiltasten feinjustieren",
+      "dragHint": "Ziehen Sie auf dem Bild, um einen Bereich zu fokussieren, oder behalten Sie das gesamte Bild bei",
+      "cropReadout": "Zuschnitt: {{w}}×{{h}} px",
+      "fullReadout": "Gesamtes Bild: {{w}}×{{h}} px",
+      "outputReadout": "geschätzte Ausgabe {{w}}×{{h}} px bei {{scale}}x",
+      "overBudget": "Dieser Zuschnitt und diese Skalierung würden das Ausgabegrößenlimit überschreiten. Wählen Sie 2x oder einen kleineren Zuschnitt."
+    },
+    "picker": {
+      "precleanToggle": "Vorreinigung (detailtreue Bereinigung)",
+      "precleanToggleHint": "Entfernt Kompressionsartefakte, Rauschen und Bewegungsunschärfe, ohne neue Details zu synthetisieren — vor der Optimierung ausführen.",
+      "precleanOrderNote": "Die Bereinigung läuft immer in der Reihenfolge Artefaktentfernung → Entrauschen → Entschärfen, jeweils auf dem vorherigen Ergebnis, unabhängig von der Auswahlreihenfolge.",
+      "precleanBaseHint": "Das bereinigte Bild wird zur Basis, auf der jedes untenstehende Modell läuft.",
+      "fbcnnQf": "FBCNN-Qualitätsfaktor",
+      "fbcnnQfAuto": "Automatisch",
+      "fbcnnQfHint": "leer = automatisch; niedriger geht von stärkerer Kompression aus",
+      "generalGroup": "Restaurierungs- und Upscaling-Modelle",
+      "faceToggle": "Gesichtsoptimierung",
+      "faceToggleHint": "Fügt GFPGAN und/oder CodeFormer zur Gesichtsrekonstruktion hinzu.",
+      "previewFaces": "Erkannte Gesichter anzeigen",
+      "facesDetected": "{{count}} Gesicht(er) erkannt.",
+      "fidelityLabel": "CodeFormer-Fidelity (w)",
+      "fidelityHint": "Niedriger = ansprechender, höher = näher am Original. Standard 0,70.",
+      "chainToggle": "Verkettung: Gesichtsmodelle erneut auf jedem hochskalierten Ergebnis ausführen",
+      "chainHint": "Erzeugt zusätzlich zur Ausführung auf der Quelle auch eine gesichtsoptimierte Version der Ausgabe jedes Upscalers.",
+      "generativeWarning": "Gesichtsoptimierung ist eine generative Rekonstruktion — optimierte Gesichter werden zur Klarheit synthetisiert und sind KEINE originalgetreue Wiederherstellung zu Identifikationszwecken.",
+      "noneSelected": "Wählen Sie mindestens ein Modell aus, um fortzufahren.",
+      "totalOutputs": "{{count}} Ausgabe(n) werden erzeugt.",
+      "overBudget": "Diese Auswahl würde mehr als das Maximum von {{max}} Ausgaben erzeugen. Deaktivieren Sie einige Modelle oder schalten Sie die Verkettung aus.",
+      "unavailable": "Auf diesem Server nicht verfügbar"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "Blinde JPEG-/Kompressionsartefaktentfernung (1x, nicht generativ)."
+      },
+      "scunet": {
+        "description": "Blinde Rauschunterdrückung bei echtem Bildrauschen — PSNR-Variante, keine halluzinierte Textur (1x)."
+      },
+      "nafnet": {
+        "description": "Bewegungsunschärfe-Entfernung (GoPro-Gewichte, 1x)."
+      },
+      "realesrgan": {
+        "description": "Schneller GAN-Upscaler — die schnelle Basisreferenz, die in jedem Vergleich enthalten sein sollte."
+      },
+      "swinir": {
+        "description": "Transformer-basierte Real-World-SR — starke Texturen, langsamer als Real-ESRGAN."
+      },
+      "hat": {
+        "description": "Hybrid-Attention-SR-GAN — oft das schärfste Ergebnis."
+      },
+      "gfpgan": {
+        "description": "GFPGAN v1.4 Gesichtsrestaurierung — generative Rekonstruktion."
+      },
+      "codeformer": {
+        "description": "CodeFormer-Gesichtsrestaurierung mit Fidelity-Regler — generative Rekonstruktion."
+      }
+    },
+    "panel": {
+      "loading": "Serverfähigkeiten werden geprüft…",
+      "disabled": "Die KI-Bildrestaurierung ist auf diesem Server vorübergehend nicht verfügbar.",
+      "notAnImage": "Bitte wählen Sie eine Bilddatei aus.",
+      "tooLarge": "Dieses Bild überschreitet das Upload-Limit von {{max}}.",
+      "dropTitle": "Bild hier ablegen oder zum Auswählen klicken",
+      "dropHint": "PNG, JPEG, WebP, TIFF oder BMP. Sie können nach dem Hochladen einen Bereich zuschneiden.",
+      "fileLabel": "Datei:",
+      "changeFile": "Datei ändern",
+      "scaleLabel": "Ausgabeskalierung",
+      "scaleAuto": "Automatisch",
+      "scaleHint": "Automatisch wählt 4x für kleine Zuschnitte (≤540 px hoch) und sonst 2x. Modelle laufen nativ mit 4x; 2x skaliert mit Lanczos herunter.",
+      "preparingUpload": "Wird vorbereitet…",
+      "uploading": "Wird hochgeladen… {{percent}}%",
+      "startingJob": "Restaurierungsjob wird gestartet…",
+      "submit": "Mit {{count}} Modell(en) restaurieren",
+      "unitFailedBadge": "fehlgeschlagen — andere Modelle laufen weiter",
+      "genericFailure": "Restaurierung fehlgeschlagen. Bitte versuchen Sie es mit einem kleineren Zuschnitt oder weniger Modellen erneut.",
+      "startOver": "Neu starten",
+      "completedTitle": "Restaurierung abgeschlossen — vergleichen Sie Ihre Ergebnisse unten.",
+      "download": "Alle Ergebnisse herunterladen",
+      "downloadAgain": "Erneut herunterladen",
+      "downloadSize": "Paketgröße: {{size}}",
+      "restoreAnother": "Weiteres Bild restaurieren"
+    },
+    "results": {
+      "includedInDownload": "Im Download enthalten",
+      "fidelityBadge": "nicht generative Bereinigung",
+      "generativeBadge": "generativ — kein Beweismittel",
+      "originalCaption": "Original (vorbereitet) · {{w}}×{{h}}",
+      "failed": "Dieses Modell ist fehlgeschlagen",
+      "compareOriginal": "Original"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "Audiodatei",
+    "previewTitle": "Wellenform-Vorschau",
+    "sizeQualifiers": {
+      "small": "klein",
+      "medium": "mittel",
+      "large": "groß",
+      "xl": "extra groß"
+    },
+    "presets": {
+      "10x1": "10:1 — Breite Wellenform (empfohlen)",
+      "8x1": "8:1 — Breite Wellenform",
+      "6x1": "6:1 — Ausgewogene breite Wellenform",
+      "16x9": "16:9 — Standard Video-/Social-Vorschau",
+      "1x1": "1:1 — Quadratische Social-Vorschau"
+    },
+    "sizeLabel": "{{width}}×{{height}} ({{qualifier}})",
+    "modes": {
+      "point": {
+        "label": "Punkt",
+        "description": "Ein einzelner Punkt pro Sample — klar und minimalistisch."
+      },
+      "line": {
+        "label": "Linie",
+        "description": "Ein vertikaler Balken pro Sample — kräftigere Wirkung."
+      },
+      "p2p": {
+        "label": "Punkt zu Punkt",
+        "description": "Ein Punkt pro Sample plus Verbindungslinien — fließende Optik."
+      },
+      "cline": {
+        "label": "Zentrierte Linie",
+        "description": "Vertikale Linie auf der Achse zentriert — symmetrische Optik."
+      }
+    },
+    "output": "Ausgabe",
+    "outputOptions": {
+      "video": "Wellenform-Video",
+      "image": "Wellenform-Bild",
+      "both": "Beides (ZIP)"
+    },
+    "bothNote": "Beide Ausgaben werden mit einem Klick in eine einzige .zip-Datei zum Download verpackt.",
+    "includeAudio": "Original-Audio in erzeugtes Wellenform-Video einbetten",
+    "includeAudioNote": "Das Wellenform-Video wird synchron mit dem Quellaudio abgespielt — perfekt für Audiogramme, Musikvorschauen und Podcast-Clips. Deaktivieren Sie dies für eine stumme Wellenform.",
+    "videoFormat": "Videoformat",
+    "videoFormats": {
+      "mp4": "MP4 (empfohlen)",
+      "webm": "WebM"
+    },
+    "imageFormat": "Bildformat",
+    "imageFormats": {
+      "png": "PNG (empfohlen)",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "Seitenverhältnis & Größe",
+    "useCustomSize": "Benutzerdefinierte Breite / Höhe verwenden",
+    "widthPlaceholder": "Breite",
+    "heightPlaceholder": "Höhe",
+    "advancedSettings": "Erweiterte Wellenform-Einstellungen",
+    "renderMode": "Rendermodus",
+    "renderModeNote": "Der Rendermodus gilt für das Wellenform-Video. Die Bildausgabe verwendet einen Standbild-Renderer, der die Modus-Einstellung ignoriert.",
+    "frameRate": "Bildrate",
+    "useFrameRate": "Bildrate verwenden",
+    "useSamples": "Samples pro Spalte (n) verwenden",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps (Standard)",
+    "samplesPlaceholder": "z. B. 64",
+    "frameRateNote": "Wählen Sie entweder die Ausgabe-Bildrate <em>oder</em> die Anzahl der pro Spalte gezeichneten Audio-Samples. Nicht beides.",
+    "splitChannels": "Stereokanäle trennen (links und rechts separat zeichnen)",
+    "primaryColor": "Primärfarbe",
+    "secondaryColor": "Sekundärfarbe (Split-Modus)",
+    "scale": "Skalierung",
+    "scaleOptions": {
+      "lin": "lin — am direktesten/genauesten",
+      "log": "log — macht leise Passagen sichtbarer",
+      "sqrt": "sqrt — sanfte Anhebung leiser Passagen",
+      "cbrt": "cbrt — stärkere Anhebung leiser Passagen"
+    },
+    "draw": "Zeichnen",
+    "drawOptions": {
+      "scale": "Skalierung (Standard)",
+      "full": "voll"
+    },
+    "generating": "Wellenform wird erzeugt…",
+    "generate": "Wellenform erzeugen"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "KI-Dokumentenscan wird geladen…",
+      "disabled": "Die Dokumentenerkennung ist derzeit nicht verfügbar.",
+      "notAnImage": "Bitte fügen Sie Bilddateien hinzu (PNG, JPEG, WebP, TIFF, BMP oder HEIC).",
+      "tooLarge": "Jedes Bild muss kleiner als {{max}} sein.",
+      "tooManyPages": "Sie können höchstens {{max}} Seiten hinzufügen.",
+      "dropTitle": "Gescannte Seiten hinzufügen",
+      "dropHint": "Gedruckte Dokumente oder handschriftliche Notizen — legen Sie ein oder mehrere Bilder ab oder klicken Sie zum Auswählen.",
+      "uploading": "Wird hochgeladen… {{percent}}%",
+      "startingJob": "Scan wird gestartet…",
+      "preparingUpload": "Wird vorbereitet…",
+      "submit": "{{count}} Seite(n) scannen",
+      "genericFailure": "Beim Scannen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "startOver": "Neu starten",
+      "completedTitle": "Ihr Dokument ist fertig.",
+      "viewResult": "Ergebnis anzeigen",
+      "scanAnother": "Weiteres scannen"
+    },
+    "options": {
+      "contentMode": "Inhaltstyp",
+      "modeAuto": "Automatisch (pro Seite erkennen)",
+      "modePrinted": "Gedrucktes Dokument",
+      "modeHandwriting": "Handschrift",
+      "printedUnavailable": "OCR für Druckschrift ist auf diesem Server nicht verfügbar.",
+      "handwritingUnavailable": "Die Handschrifttranskription ist derzeit offline.",
+      "outputs": "Ausgaben",
+      "pdfAlways": "Durchsuchbares PDF (immer)",
+      "docx": "Bearbeitbares Word-Dokument (.docx)",
+      "unavailable": "nicht verfügbar",
+      "language": "Sprache (Druckschrift-OCR)",
+      "printedCleanup": "Bereinigung gedruckter Seiten",
+      "deskew": "Entschrägung",
+      "rotate": "Automatisch drehen",
+      "clean": "Bereinigen (Sprenkel entfernen)",
+      "structureEngine": "DOCX-Struktur-Engine",
+      "enginePaddle": "PaddleOCR-VL (bevorzugt)",
+      "engineDocling": "Docling (Ausweichlösung)",
+      "engineTrocr": "TrOCR (Ausweichlösung)",
+      "preclean": "Niedrig aufgelöste Scans vor dem Lesen verbessern",
+      "precleanHint": "Skaliert unscharfe Handyscans von Notizen hoch — hilft der Handschrifterkennung. Standardmäßig aktiviert bei Handschrift/Automatisch.",
+      "handwritingTitle": "Handschrift-Optionen",
+      "verify": "Mit KI überprüfen",
+      "verifyHint": "Ein zweiter Durchgang liest nur die als unsicher markierten Token erneut; er verändert nie sicheren Text und erfindet nichts.",
+      "secondOpinion": "Zweitmeinung",
+      "secondOpinionHint": "Ein unabhängiges Erkennungssystem liest die Handschrift erneut; Abweichungen werden markiert, nie stillschweigend zusammengeführt.",
+      "summary": "KI-Zusammenfassung (separate Datei)",
+      "summaryHint": "Optional. Schreibt eine separate, deutlich gekennzeichnete Zusammenfassung — sie ersetzt nie die wortgetreue Transkription."
+    },
+    "pageOrder": {
+      "title": "Seiten ({{count}})",
+      "hint": "Ziehen Sie die Seiten, um sie vor dem Scannen neu anzuordnen.",
+      "pageLabel": "Seite {{n}}",
+      "remove": "Seite entfernen",
+      "drag": "Zum Neuanordnen ziehen"
+    },
+    "viewer": {
+      "title": "Ihr gescanntes Dokument",
+      "description": "Gedruckte Seiten enthalten eine originalgetreue, durchsuchbare Textebene; Handschriftseiten sind maschinelle Transkriptionen — bitte mit dem Original abgleichen.",
+      "confidenceTitle": "Handschrifttranskription — mit dem Original abgleichen",
+      "confidenceNote": "{{pages}} Handschriftseite(n) transkribiert · {{tokens}} Token als unsicher markiert ([illegible] / [?]).",
+      "noPdf": "Für diesen Job wurde kein PDF erstellt.",
+      "downloadPdf": "PDF herunterladen",
+      "downloadDocx": "Word-Dokument herunterladen (.docx)",
+      "downloadSummary": "KI-Zusammenfassung herunterladen"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}} (Beta)",
+    "untitled": "Unbenannte Zeichnung",
+    "projectName": "Projektname",
+    "backHome": "Zurück zu Media Manipulator",
+    "invalidProject": "Dieser Projektlink ist ungültig. Projekte werden vorerst nur in diesem Browser gespeichert.",
+    "newProject": "Neue Zeichnung beginnen",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "zoomFit": "An Bildschirm anpassen",
+    "canvas": {
+      "label": "Zeichenfläche"
+    },
+    "tools": {
+      "label": "Werkzeuge",
+      "select": "Auswählen",
+      "node": "Knoten bearbeiten",
+      "rect": "Rechteck",
+      "ellipse": "Ellipse",
+      "line": "Linie",
+      "pen": "Zeichenstift",
+      "text": "Text",
+      "hand": "Verschieben",
+      "textPlaceholder": "Text eingeben, dann Enter drücken"
+    },
+    "import": {
+      "button": "Importieren",
+      "done_one": "{{count}} Ebene importiert",
+      "done_other": "{{count}} Ebenen importiert",
+      "tooLarge": "Diese Datei ist größer als 4 MB.",
+      "warningsTitle_one": "{{count}} Hinweis zum Import",
+      "warningsTitle_other": "{{count}} Hinweise zum Import",
+      "errors": {
+        "too_large": "Diese SVG-Datei ist größer als 4 MB.",
+        "not_svg": "Diese Datei ist kein SVG-Bild.",
+        "malformed": "Diese SVG-Datei konnte nicht gelesen werden. Möglicherweise ist sie beschädigt.",
+        "entities": "SVGs, die XML-Entitäten deklarieren, können nicht importiert werden.",
+        "too_complex": "Diese SVG-Datei hat zu viele Ebenen zum Bearbeiten.",
+        "json": "Diese Datei ist kein Motion-Dokument, das diese Version öffnen kann."
+      },
+      "warnings": {
+        "script_removed": "Skript entfernt:",
+        "event_handler_removed": "Ereignishandler entfernt:",
+        "external_reference_removed": "Externer Verweis entfernt:",
+        "unsafe_content_removed": "Unsicherer Inhalt entfernt:",
+        "unsupported_element": "Unverändert beibehalten (nicht bearbeitbar):",
+        "style_dropped": "Stil nicht unterstützt:",
+        "invalid_value": "Wert ignoriert:",
+        "dangling_reference": "Fehlender Verweis entfernt:"
+      }
+    },
+    "export": {
+      "svg": "SVG exportieren",
+      "open": "Export"
+    },
+    "draft": {
+      "title": "Nicht gespeicherte Änderungen wiederherstellen?",
+      "description": "Diese Zeichnung enthält in diesem Browser gespeicherte Änderungen, die nicht exportiert wurden.",
+      "from": "{{name}}, {{time}}",
+      "layers_one": "{{count}} Ebene",
+      "layers_other": "{{count}} Ebenen",
+      "recover": "Wiederherstellen",
+      "discard": "Verwerfen"
+    },
+    "layers": {
+      "title": "Ebenen",
+      "empty": "Zeichnen Sie eine Form oder importieren Sie eine SVG-Datei, um zu beginnen.",
+      "group": "Gruppieren",
+      "ungroup": "Gruppierung aufheben",
+      "delete": "Löschen",
+      "rename": "Ebenenname",
+      "lock": "Sperren",
+      "unlock": "Entsperren",
+      "hide": "Ausblenden",
+      "show": "Einblenden",
+      "expand": "Gruppe aufklappen",
+      "collapse": "Gruppe zuklappen",
+      "raw": "Unverändert beibehalten",
+      "rawHint": "Genau wie importiert beibehalten; nicht bearbeitbar",
+      "masked": "Hat eine Maske",
+      "clipped": "Hat einen Beschneidungspfad",
+      "maskDef": "Maske {{id}}",
+      "clipDef": "Beschneidungspfad {{id}}"
+    },
+    "layerTypes": {
+      "group": "Gruppe",
+      "path": "Pfad",
+      "rect": "Rechteck",
+      "ellipse": "Ellipse",
+      "line": "Linie",
+      "polyline": "Polylinie",
+      "polygon": "Polygon",
+      "text": "Text",
+      "image": "Bild",
+      "use": "Instanz",
+      "raw": "Unverändert beibehalten"
+    },
+    "inspector": {
+      "title": "Inspektor",
+      "canvas": "Zeichenfläche",
+      "background": "Hintergrund",
+      "emptyHint": "Wählen Sie eine Ebene aus, um sie zu bearbeiten. Mit Shift-Klick wählen Sie mehrere aus.",
+      "selection": "Auswahl",
+      "layersSelected_one": "{{count}} Ebene",
+      "layersSelected_other": "{{count}} Ebenen",
+      "transform": "Transformation",
+      "geometry": "Geometrie",
+      "appearance": "Darstellung",
+      "text": "Text",
+      "width": "Breite",
+      "height": "Höhe",
+      "scaleX": "Skalierung X",
+      "scaleY": "Skalierung Y",
+      "rotation": "Drehung",
+      "skewX": "Neigung",
+      "anchorX": "Ankerpunkt X",
+      "anchorY": "Ankerpunkt Y",
+      "cornerRadius": "Eckenradius",
+      "reference": "Instanz von",
+      "pathHint": "Verwenden Sie das Werkzeug „Knoten bearbeiten“ (A), um Punkte und Griffe zu verschieben.",
+      "rawHint": "Dieser Teil der SVG-Datei nutzt Funktionen, die der Editor noch nicht ändern kann. Er wird genau wie importiert beibehalten und unverändert exportiert.",
+      "markupSize": "Markup",
+      "fill": "Füllung",
+      "stroke": "Kontur",
+      "strokeWidth": "Konturbreite",
+      "opacity": "Deckkraft",
+      "none": "Keine",
+      "colorValue": "Wert für {{label}}",
+      "solid": "Einfarbig",
+      "linear": "Linear",
+      "radial": "Radial",
+      "fontSize": "Schriftgröße",
+      "fontFamily": "Schriftart",
+      "fontWeight": "Schriftstärke",
+      "letterSpacing": "Zeichenabstand",
+      "textAnchor": "Ausrichtung",
+      "alignStart": "Anfang",
+      "alignMiddle": "Mitte",
+      "alignEnd": "Ende",
+      "regular": "Normal",
+      "bold": "Fett",
+      "maskSection": "Maske und Beschneidung",
+      "maskHint": "Die obere Ebene wird zur Maske oder zum Beschneidungspfad der unteren.",
+      "useAsMask": "Als Maske verwenden",
+      "useAsClip": "Als Beschneidung verwenden",
+      "releaseMask": "Maske auflösen",
+      "releaseClip": "Beschneidungspfad auflösen",
+      "skewY": "Neigung Y"
+    },
+    "gradient": {
+      "stops": "Verlaufsstopps",
+      "stop": "Stopp {{index}} bei {{offset}} %",
+      "stopColor": "Stoppfarbe",
+      "removeStop": "Stopp entfernen",
+      "addStop": "Stopp hinzufügen",
+      "offset": "Position",
+      "angle": "Winkel",
+      "radius": "Radius",
+      "centreX": "Mittelpunkt X",
+      "centreY": "Mittelpunkt Y"
+    },
+    "properties": {
+      "x": "Position X",
+      "y": "Position Y",
+      "scaleX": "Skalierung X",
+      "scaleY": "Skalierung Y",
+      "rotation": "Drehung",
+      "skewX": "Neigung X",
+      "skewY": "Neigung Y",
+      "anchorX": "Ankerpunkt X",
+      "anchorY": "Ankerpunkt Y",
+      "opacity": "Deckkraft",
+      "fill": "Füllung",
+      "stroke": "Kontur",
+      "strokeWidth": "Konturbreite",
+      "strokeDashoffset": "Einzeichnen (Strichversatz)",
+      "d": "Form (Morphing)",
+      "motionPath": "Bewegungspfad",
+      "stopColor": "Verlaufsstopp {{n}} Farbe",
+      "stopOffset": "Verlaufsstopp {{n}} Position",
+      "blur": "Weichzeichner"
+    },
+    "timeline": {
+      "title": "Zeitleiste",
+      "play": "Wiedergabe (Leertaste)",
+      "pause": "Pause (Leertaste)",
+      "toStart": "Zum Anfang (Pos1)",
+      "toEnd": "Zum Ende (Ende)",
+      "loop": "Schleife",
+      "autokey": "Auto-Keyframe",
+      "autokeyHint": "Wenn aktiviert, fügt jede Änderung einer Eigenschaft auf der Zeichenfläche oder im Inspektor einen Keyframe am Abspielkopf hinzu.",
+      "duration": "Länge",
+      "playhead": "Abspielkopf",
+      "setIn": "Anfang des Wiedergabebereichs am Abspielkopf setzen",
+      "setOut": "Ende des Wiedergabebereichs am Abspielkopf setzen",
+      "clearRange": "Wiedergabebereich löschen",
+      "inMarker": "Anfang des Wiedergabebereichs",
+      "outMarker": "Ende des Wiedergabebereichs",
+      "addKeys": "Keyframes für die ausgewählten Ebenen am Abspielkopf hinzufügen",
+      "copyKeys": "Keyframes kopieren",
+      "pasteKeys": "Keyframes am Abspielkopf einfügen",
+      "deleteKeys": "Keyframes löschen",
+      "zoomIn": "Zeitleiste vergrößern",
+      "zoomOut": "Zeitleiste verkleinern",
+      "empty": "Zeichnen oder importieren Sie eine Form und animieren Sie sie dann hier.",
+      "animate": "{{property}} animieren",
+      "stopAnimating": "Animation von {{property}} beenden",
+      "addKeyHere": "Keyframe für {{property}} am Abspielkopf hinzufügen",
+      "removeKeyHere": "Keyframe für {{property}} am Abspielkopf entfernen",
+      "key": "Keyframe für {{property}} bei {{time}}",
+      "layerKey": "Keyframes von {{layer}} bei {{time}}",
+      "maskContent": "Maske: {{layer}}",
+      "clipContent": "Beschneidung: {{layer}}"
+    },
+    "easing": {
+      "title": "Easing",
+      "presets": "Easing-Vorgaben",
+      "linear": "Linear",
+      "easeIn": "Ease In",
+      "easeOut": "Ease Out",
+      "easeBoth": "Ease In-Out",
+      "hold": "Hold",
+      "custom": "Kurve",
+      "curve": "Easing-Kurve",
+      "handle": "Kurvengriff {{name}}",
+      "mixed": "Die ausgewählten Keyframes verwenden unterschiedliches Easing. Wählen Sie eines aus, um es auf alle anzuwenden.",
+      "applies_one": "Easing des Segments nach {{count}} Keyframe.",
+      "applies_other": "Easing der Segmente nach {{count}} Keyframes."
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "Ein animiertes GIF, das überall abgespielt wird. 256 Farben, eine globale Palette."
+        },
+        "png_sequence": {
+          "title": "PNG-Sequenz (.zip)",
+          "hint": "Jedes Bild als PNG mit Transparenz, gezippt, für Videoeditoren und Spiele-Engines."
+        },
+        "mp4": {
+          "title": "MP4-Video",
+          "hint": "H.264- (oder AV1-)Video, in Ihrem Browser kodiert. Ohne Ton."
+        },
+        "webm": {
+          "title": "WebM-Video",
+          "hint": "VP9- (oder AV1-)Video, in Ihrem Browser kodiert. Ohne Ton."
+        }
+      },
+      "block": {
+        "locked": "Ihr Tarif enthält dieses Format nicht.",
+        "notOnAnyPlan": "Noch in keinem Tarif verfügbar.",
+        "useChromium": "Verwenden Sie Chrome oder Edge für den Videoexport",
+        "noCodec": "Dieser Browser kann dieses Videoformat nicht kodieren. Versuchen Sie das andere Videoformat oder Chrome bzw. Edge."
+      },
+      "size": "Größe",
+      "sizeOption": "{{height}}p ({{width}} × {{height}})",
+      "fps": "Bilder pro Sekunde",
+      "from": "Von (s)",
+      "to": "Bis (s)",
+      "gif": {
+        "loop": "Schleife",
+        "forever": "Endlos",
+        "plays_one": "{{count}}-mal abspielen",
+        "plays_other": "{{count}}-mal abspielen",
+        "dither": "Dithering (weichere Verläufe, größere Datei)",
+        "transparent": "Transparenter Hintergrund"
+      },
+      "summary": "{{width}} × {{height}} px, {{frames}} Bilder, {{seconds}} s, ca. {{size}}",
+      "flattenWhite": "Die Zeichenfläche ist transparent; Videos unterstützen keine Transparenz, daher werden die Bilder auf Weiß gesetzt.",
+      "clamped": {
+        "height": "Größe durch Ihren Tarif auf {{height}}p begrenzt.",
+        "fps": "Bildrate auf {{fps}} fps begrenzt.",
+        "duration": "Länge durch Ihren Tarif auf {{seconds}} s begrenzt."
+      },
+      "tooLarge": "Dieser Export wäre größer als 2 GB. Verringern Sie Größe, Bildrate oder Länge.",
+      "cancelCounts": "Wenn Sie nach dem Start des Exports abbrechen, wird trotzdem ein Export Ihres Tageskontingents verbraucht.",
+      "preparing": "Wird vorbereitet…",
+      "progress": "Bild {{done}} von {{total}} wird gerendert",
+      "progressLabel": "Exportfortschritt",
+      "finalizing": "Datei wird abgeschlossen…",
+      "cancel": "Abbrechen",
+      "cancelled": "Export abgebrochen. Es wurde nichts heruntergeladen.",
+      "failed": {
+        "tooLarge": "Die Datei wurde größer als 2 GB, daher wurde der Export gestoppt. Verringern Sie Größe, Bildrate oder Länge.",
+        "codec": "Dieser Browser kann Video in dieser Größe und Bildrate nicht kodieren. Versuchen Sie eine kleinere Größe oder Chrome bzw. Edge.",
+        "unsafe": "Diese Zeichnung enthält externe Inhalte, die nicht in Bilder gerendert werden können. Entfernen Sie sie und versuchen Sie es erneut.",
+        "error": "Der Export ist im Browser fehlgeschlagen. Versuchen Sie es erneut oder wählen Sie eine kleinere Größe."
+      },
+      "capHeight": "Ihr Tarif exportiert Rasterdateien bis {{max}}p.",
+      "capFps": "Ihr Tarif exportiert bis zu {{max}} Bilder pro Sekunde."
+    },
+    "exportDialog": {
+      "title": "Export",
+      "description": "Exporte werden in Ihrem Browser erstellt. Animierte Exporte zählen zu Ihrem Tageskontingent; statisches SVG ist immer kostenlos.",
+      "formats": "Exportformat",
+      "animated": "Animiertes SVG",
+      "animatedHint": "Eine SVG-Datei mit ihrer Animation. Wenn möglich reines CSS, sonst ein kleines eingebettetes Skript.",
+      "static": "Statisches SVG",
+      "staticHint": "Das Bild am Abspielkopf, ohne Animation. Kostenlos, wird nie angerechnet.",
+      "export": "Export",
+      "unsupported": "Diese Animation nutzt Effekte, die animiertes SVG noch nicht exportieren kann.",
+      "doneStatic": "Statisches SVG heruntergeladen.",
+      "done_one": "Heruntergeladen. Heute noch {{count}} animierter Export übrig.",
+      "done_other": "Heruntergeladen. Heute noch {{count}} animierte Exporte übrig.",
+      "doneUnlimited": "Heruntergeladen.",
+      "limit_one": "Sie haben Ihren {{count}} animierten Export für heute verbraucht.",
+      "limit_other": "Sie haben Ihre {{count}} animierten Exporte für heute verbraucht.",
+      "locked": "Ihr Tarif enthält dieses Format nicht.",
+      "capDuration": "Ihr Tarif exportiert Animationen bis zu {{seconds}} s Länge. Kürzen Sie die Animation oder wechseln Sie zu einem höheren Tarif.",
+      "capOther": "Dieser Export ist größer, als Ihr Tarif erlaubt.",
+      "unavailable": "Exporte sind derzeit nicht verfügbar. Es wurde nichts angerechnet; versuchen Sie es gleich noch einmal.",
+      "upgrade": "Tarife ansehen",
+      "runtimeCss": "Reines CSS, kein Skript.",
+      "runtimeAnimeBecause": "Verwendet ein {{size}}-KB-Skript (anime.js, MIT), weil: {{reasons}}.",
+      "runtimeAnimeChosen": "Verwendet ein {{size}}-KB-Skript (anime.js, MIT).",
+      "scriptImgNote": "Skripte laufen, wenn die SVG-Datei direkt geöffnet oder inline in eine Seite eingefügt wird, nicht aber innerhalb eines <img>-Tags (dort wird das erste Bild angezeigt).",
+      "forceAnime": "Skript-Laufzeit verwenden",
+      "reasons": {
+        "morph": "Form-Morphing",
+        "stopOffset": "Position von Verlaufsstopps",
+        "blur": "Weichzeichner (Safari)",
+        "motionRotate": "Pfaddrehung mit einer Drehungsspur"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "Für LottieFiles, lottie-web sowie die Lottie-Player für iOS, Android und Flutter. Funktionen, die Lottie nicht abbilden kann, werden nach dem Download aufgelistet."
+        },
+        "react_tsx": {
+          "title": "React-Komponente (.tsx)",
+          "hint": "Eine Komponentendatei mit eingebettetem SVG. Benötigt nur React, plus das anime.js-Paket, wenn die Skript-Laufzeit verwendet wird."
+        },
+        "js": {
+          "title": "JavaScript-Modul (.js)",
+          "hint": "Ein reines ES-Modul mit mount, play, pause und seek. Kein Framework."
+        },
+        "ts": {
+          "title": "TypeScript-Modul (.ts)",
+          "hint": "Das JavaScript-Modul mit Typen."
+        },
+        "flutter": {
+          "title": "Flutter-Widget (.dart)",
+          "hint": "Ein natives flutter_svg-Widget, wenn die Animation sich nur bewegt, ein- und ausblendet und umfärbt; andernfalls ein WebView-Player."
+        }
+      },
+      "emitted": {
+        "css": "Mit CSS animiert, kein Skript.",
+        "anime": "Mit anime.js animiert (MIT, als Abhängigkeit importiert).",
+        "animeBecause": "Mit anime.js animiert (MIT, als Abhängigkeit importiert), weil: {{reasons}}."
+      },
+      "flutter": {
+        "native": "Natives Widget erzeugt (flutter_svg und ein AnimationController): Die Animation verwendet nur Transformation, Deckkraft und Farbe.",
+        "webview": "WebView-Player (webview_flutter) erzeugt, weil {{reasons}}. Eine WebView hat einen undurchsichtigen Hintergrund und ist schwerer als ein natives Widget."
+      },
+      "flutterReasons": {
+        "morph": "eine Form gemorpht wird",
+        "mask": "eine Maske oder ein Beschneidungspfad animiert wird",
+        "blur": "ein Weichzeichner animiert wird",
+        "motionPath": "sie sich entlang eines Bewegungspfads bewegt",
+        "drawOn": "eine Kontur eingezeichnet wird",
+        "gradient": "Verlaufsstopps animiert werden",
+        "symbol": "Ebenen innerhalb eines Symbols animiert werden",
+        "raw": "sie SVG-Markup enthält, das der Editor unverändert beibehält"
+      }
+    },
+    "gate": {
+      "locked": "In Ihrem Tarif gesperrt",
+      "requires": {
+        "free": "Mit einem kostenlosen Konto enthalten.",
+        "premium": "In Premium enthalten.",
+        "pro": "In Pro enthalten."
+      },
+      "cta": {
+        "signup": "Kostenlos anmelden",
+        "premium": "Auf Premium upgraden",
+        "pro": "Auf Pro upgraden"
+      }
+    },
+    "projects": {
+      "save": "Speichern",
+      "saveToAccount": "Im Konto speichern",
+      "status": {
+        "local": "Nur in diesem Browser",
+        "saved": "Gespeichert",
+        "saving": "Wird gespeichert…",
+        "retrying": "Neuer Versuch…",
+        "offline": "Offline, Änderungen bleiben hier erhalten",
+        "conflict": "Anderswo geändert",
+        "failed": "Nicht gespeichert"
+      },
+      "signIn": "Anmelden",
+      "signInTitle": "Melden Sie sich an, um in Ihrem Konto zu speichern",
+      "signInBody": "Ohne Konto bleiben Projekte in diesem Browser. Melden Sie sich an (in einem neuen Tab, dann kommen Sie zurück), um dieses Projekt in Ihrem Konto zu speichern, oder laden Sie es als Datei herunter, die Sie später wieder öffnen können.",
+      "downloadJson": ".json herunterladen",
+      "limit_one": "Ihr Tarif speichert {{count}} Projekt. Löschen Sie eines in Ihrem Konto oder wechseln Sie zu einem höheren Tarif.",
+      "limit_other": "Ihr Tarif speichert {{count}} Projekte. Löschen Sie eines in Ihrem Konto oder wechseln Sie zu einem höheren Tarif.",
+      "saveFailed": "Dieses Projekt konnte nicht in Ihrem Konto gespeichert werden. Ihre Änderungen bleiben in diesem Browser erhalten.",
+      "open": {
+        "signin": "Melden Sie sich an, um dieses Projekt zu öffnen. Kontoprojekte sind nur für ihren Eigentümer sichtbar.",
+        "notFound": "Dieses Projekt existiert nicht oder gehört zu einem anderen Konto.",
+        "failed": "Dieses Projekt konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und laden Sie die Seite neu.",
+        "unreadable": "Dieses Projekt wurde mit einer neueren Version gespeichert und kann hier nicht geöffnet werden."
+      },
+      "conflict": {
+        "title": "Dieses Projekt wurde in einem anderen Tab oder auf einem anderen Gerät geändert.",
+        "reload": "Andere Version laden",
+        "keep": "Meine behalten",
+        "reloadTitle": "Ihre Version ersetzen?",
+        "reloadBody": "Beim Neuladen wird die anderswo gespeicherte Kopie geöffnet und die Änderungen in diesem Tab werden verworfen. Laden Sie zuerst Ihre Version herunter, wenn Sie sie behalten möchten.",
+        "downloadMine": "Meine Version herunterladen",
+        "reloadConfirm": "Andere Version laden",
+        "reloadFailed": "Die gespeicherte Kopie konnte nicht geladen werden. Versuchen Sie es erneut."
+      }
+    },
+    "animators": {
+      "title": "Animieren",
+      "selectOne": "Wählen Sie eine Ebene aus, um sie zu animieren.",
+      "drawOn": "Einzeichnen",
+      "drawOnHint": "Die Kontur von Anfang bis Ende einzeichnen (Strichversatz).",
+      "motionPath": "Bewegungspfad",
+      "motionPathHint": "Die Ebene entlang eines Pfads bewegen. Wählen Sie einen Pfad aus oder zeichnen Sie einen mit dem Zeichenstift.",
+      "morph": "Morphing",
+      "morphHint": "Diesen Pfad in eine andere Form überführen. Wählen Sie die Zielform.",
+      "gradient": "Verlauf",
+      "gradientHint": "Die Farben des Verlaufs dieser Ebene animieren (eine Spur pro Stopp).",
+      "maskClip": "Maske/Beschneidung",
+      "maskClipHint": "Die Masken- oder Beschneidungsform der Ebene mit eigenen Spuren animieren.",
+      "blur": "Weichzeichner",
+      "blurHint": "Die Ebene im Zeitverlauf weichzeichnen.",
+      "blurAmount": "Stärke des Weichzeichners",
+      "pickGuide": "Entlang welches Pfads bewegen?",
+      "pickTarget": "In welche Form überführen?",
+      "noShapes": "Noch keine weiteren Formen.",
+      "drawWithPen": "Mit dem Zeichenstift eine neue zeichnen",
+      "autoOrient": "Mit dem Pfad drehen",
+      "spanHint": "Animatoren laufen vom Abspielkopf bis zum Ende. Passen Sie ihre Keyframes in der Zeitleiste an.",
+      "notApplied": "Dieser Animator ist für diese Ebene nicht anwendbar.",
+      "morphFailed": "Diese beiden Formen können nicht gemorpht werden."
+    },
+    "lottie": {
+      "supportSummary": "Was Lottie nicht abbilden kann",
+      "document": "gesamte Animation",
+      "warningsTitle_one": "{{count}} Element wurde nicht übernommen",
+      "warningsTitle_other": "{{count}} Elemente wurden nicht übernommen",
+      "unsupported": {
+        "maskAdvanced": "Masken, die keine einfachen weißen oder schwarzen Formen sind, und Masken auf verschachtelten Ebenen",
+        "filter": "Weichzeichner und andere Filter",
+        "text": "Text (benötigt Schriftumrisse; wandeln Sie Text zuerst in Pfade um)",
+        "image": "Bilder, die nicht eingebettet sind, oder Bilder innerhalb einer Gruppe",
+        "useComplex": "Wiederverwendete Symbole mit eigener Größe oder viewBox",
+        "raw": "SVG-Markup, das der Editor unverändert beibehält",
+        "cssOnly": "Mischmodi, Markierungen und andere reine CSS-Stile",
+        "strokeGradientAnimation": "Animierte Verläufe auf Konturen",
+        "gradientShape": "Wiederholte, fokale oder gestreckte Verläufe",
+        "paint": "Füllungen, die weder eine Farbe noch ein Verlauf sind",
+        "skew": "Neigung auf beiden Achsen gleichzeitig",
+        "morph": "Form-Morphings, die die Anzahl der Teilpfade ändern",
+        "playOnce": "Einmal abspielen (Lottie-Player wiederholen standardmäßig)",
+        "expression": "Ausdrücke (die Keyframe-Werte werden verwendet)",
+        "effect": "Ebeneneffekte wie Weichzeichner oder Schlagschatten",
+        "textLayer": "Textebenen (als leere, benannte Gruppen beibehalten)",
+        "timeRemap": "Zeit-Neuzuordnung",
+        "threeD": "3D-Ebenen und 3D-Drehung",
+        "blendMode": "Andere Mischmodi als Normal",
+        "matte": "Spur-Mattes",
+        "maskMode": "Andere Maskenmodi als Addieren und Subtrahieren",
+        "modifier": "Wiederholer, abgerundete Ecken und andere Formmodifikatoren",
+        "imageExternal": "Bilder, die nicht in die Datei eingebettet sind",
+        "spatialTangents": "Gekrümmte Bewegungspfade (die Ebene bewegt sich in geraden Linien)",
+        "layerTiming": "Ein- und Ausstiegspunkte einer Ebene, deren Deckkraft animiert ist",
+        "unknownLayer": "Ebenentypen, die der Editor nicht zeichnet",
+        "unknownShape": "Unbekannte Formelemente",
+        "autoOrient": "Automatische Ausrichtung entlang des Pfads",
+        "skewAxis": "Neigung entlang einer schrägen Achse",
+        "polystar": "Abgerundete oder animierte Sterne und Polygone (als einfache Kontur gezeichnet)",
+        "trimComplex": "Pfadbeschneidungen, die mehr tun als ein- oder auszuzeichnen",
+        "gradientAnimation": "Animierte Verlaufspositionen und animierte Konturverläufe",
+        "multipleStyles": "Mehrere Füllungen oder Konturen an einer Form (die nächstliegende wird verwendet)",
+        "styleOpacity": "Animierte Füllungs- oder Konturdeckkraft bei Verläufen",
+        "morphCounts": "Formschlüssel mit unterschiedlicher Punktzahl (Zwischenbilder weichen ab)"
+      },
+      "import": {
+        "warningsTitle_one": "{{count}} Element konnte nicht importiert werden",
+        "warningsTitle_other": "{{count}} Elemente konnten nicht importiert werden",
+        "warningsBody": "Die Animation kann geöffnet werden. Diese Teile der Lottie-Datei werden nicht unterstützt und wurden weggelassen oder vereinfacht:",
+        "open": "Animation öffnen",
+        "unavailable": "Der Lottie-Import ist auf dieser Website nicht verfügbar.",
+        "refused": {
+          "limit": "Sie haben Ihre Exporte und Importe für heute verbraucht.",
+          "locked": "Ihr Tarif enthält keinen Lottie-Import.",
+          "cap": "Diese Datei ist größer, als Ihr Tarif erlaubt.",
+          "unavailable": "Der Import ist derzeit nicht verfügbar. Es wurde nichts angerechnet; versuchen Sie es gleich noch einmal."
+        },
+        "errors": {
+          "too_large": "Diese Datei ist größer als 4 MB.",
+          "not_json": "Diese Datei konnte nicht als JSON gelesen werden.",
+          "not_lottie": "Diese Datei ist keine Lottie-Animation.",
+          "too_complex": "Diese Animation hat zu viele Ebenen, Keyframes oder Punkte.",
+          "invalid": "Diese Lottie-Datei konnte nicht in eine Animation umgewandelt werden."
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "Ziehen Sie eine Bild-, Video-, Audio- oder PDF-Datei hierher",
+    "hint": "oder klicken Sie, um eine Datei auszuwählen. Die Datei wird nur für ihre Metadaten gelesen und nach der Analyse gelöscht; nichts wird konvertiert.",
+    "largeFile": "Dateien über {{size}} werden nur auf Anfrage geprüft, damit ein großes Video nicht versehentlich hochgeladen wird.",
+    "failed": "Die Datei konnte nicht geprüft werden. Möglicherweise wird der Typ nicht unterstützt oder die Datei ist für Ihren Tarif zu groß."
+  },
+  "voiceTools": {
+    "loading": "Die Stimmwerkzeuge werden geladen…",
+    "unavailable": {
+      "title": "Stimmen ist derzeit nicht verfügbar",
+      "body": "Die Stimm-Engine ist ausgeschaltet oder startet gerade neu, daher kann dieses Werkzeug im Moment nicht laufen. Es wurde nichts gezählt. Bitte versuchen Sie es später erneut.",
+      "shiftStillWorks": "Der Tonhöhenverschieber unten benötigt die Stimm-Engine nicht und funktioniert weiterhin."
+    },
+    "warmingUp": "Die Stimm-Engine wird aufgewärmt; die erste Anfrage kann bis zu 20 Sekunden dauern.",
+    "honesty": "Sprache, die mit einer gespeicherten oder voreingestellten Stimme erzeugt wird, trägt ein unhörbares Wasserzeichen; mit dem Verschieber veränderte Audiodaten nicht. Verwenden Sie nur Ihre eigene Stimme oder eine Stimme, die Sie verwenden dürfen. Nichts, was Sie aufnehmen oder erzeugen, wird zum Training eines Modells verwendet, und die Stimm-Engines laufen auf unseren eigenen Servern.",
+    "signIn": {
+      "title": "Melden Sie sich an, um eine Stimme zu speichern",
+      "body": "Eine gespeicherte Stimme braucht eine zugehörige Person als Inhaber und einen Einwilligungsnachweis. Deshalb setzen das Klonen einer Stimme, das Behalten einer entworfenen Stimme, das Umwandeln in eine Stimme und Meine Stimmen ein Konto voraus. Bis zur Anmeldung wird nichts hochgeladen.",
+      "cta": "Anmelden"
+    },
+    "recorder": {
+      "record": "Aufnehmen",
+      "recording": "Aufnahme läuft",
+      "stop": "Stopp",
+      "cancel": "Aufnahme abbrechen",
+      "level": "Mikrofonpegel",
+      "or": "oder",
+      "upload": "Audiodatei hochladen",
+      "remove": "Entfernen",
+      "recorded": "Ihre Aufnahme, {{duration}}",
+      "uploaded": "{{name}}, {{duration}}",
+      "measuring": "Länge der Datei wird gelesen…",
+      "unknownLength": "Die Länge dieser Datei konnte im Browser nicht gelesen werden; der Server prüft sie.",
+      "tooShort": "Die Aufnahme ist {{seconds}} Sekunden lang. Eine Stimme braucht mindestens 5 Sekunden Sprache.",
+      "tooLong": "Die Aufnahme ist {{seconds}} Sekunden lang. Halten Sie sie bei höchstens 60 Sekunden.",
+      "referenceHint": "Nehmen Sie 5 bis 60 Sekunden klare Sprache in einem ruhigen Raum auf oder laden Sie sie hoch. Lesen Sie ein paar natürliche Sätze.",
+      "inputHint": "Nehmen Sie die Sprache, die Sie ändern möchten, auf oder laden Sie sie hoch.",
+      "micDenied": "Der Mikrofonzugriff wurde blockiert. Erlauben Sie das Mikrofon für diese Website in der Adressleiste Ihres Browsers oder laden Sie stattdessen eine Datei hoch.",
+      "micHostBlocked": "Die Seite, in die dieses Werkzeug eingebettet ist, erlaubt keinen Mikrofonzugriff. Laden Sie stattdessen eine Datei hoch.",
+      "micUnavailable": "Aufnehmen ist in diesem Browser nicht möglich. Laden Sie stattdessen eine Audiodatei hoch."
+    },
+    "consent": {
+      "label": "Das ist meine Stimme, oder ich habe die ausdrückliche Erlaubnis der Person, der diese Stimme gehört.",
+      "note": "Wir speichern den Zeitpunkt Ihrer Bestätigung und die Version dieses Textes ({{version}}) zusammen mit der Stimme. Siehe Abschnitt 8.11 der Nutzungsbedingungen."
+    },
+    "clone": {
+      "title": "Stimme aus einer Aufnahme erstellen",
+      "nameLabel": "Name der Stimme",
+      "namePlaceholder": "Meine Stimme",
+      "languageLabel": "Sprache der Aufnahme",
+      "create": "Stimme erstellen",
+      "creating": "Ihre Stimme wird erstellt…",
+      "created": "Stimme erstellt. Hören Sie sich die Vorschau unter Meine Stimmen an.",
+      "signInToCreate": "Anmelden, um die Stimme zu erstellen",
+      "limitReached": "Sie haben {{used}} von {{limit}} Stimmen in Ihrem Tarif gespeichert. Löschen Sie eine unter Konto, Stimmen, oder wechseln Sie auf einen höheren Tarif, um mehr zu speichern.",
+      "noSaving": "In Ihrem Tarif können keine Stimmen gespeichert werden.",
+      "usage": "{{used}} von {{limit}} Stimmen gespeichert",
+      "usageUnlimited": "{{used}} Stimmen gespeichert"
+    },
+    "myVoices": {
+      "title": "Meine Stimmen",
+      "empty": "Noch keine gespeicherten Stimmen.",
+      "preview": "Vorschau von {{name}}",
+      "use": "Diese Stimme verwenden",
+      "inUse": "Ausgewählt",
+      "manage": "Stimmen im Konto verwalten",
+      "kinds": {
+        "cloned": "Geklont",
+        "designed": "Entworfen",
+        "preset": "Voreingestellt"
+      }
+    },
+    "picker": {
+      "label": "Stimme",
+      "saved": "Meine Stimmen",
+      "presets": "Voreingestellte Stimmen",
+      "none": "Es sind noch keine Stimmen verfügbar."
+    },
+    "speak": {
+      "title": "Sprache erzeugen",
+      "textLabel": "Zu sprechender Text",
+      "placeholder": "Geben Sie ein, was die Stimme sagen soll.",
+      "counter": "{{used}} von {{max}} Zeichen",
+      "overLimit": "Das ist länger, als Ihr Tarif pro Anfrage erlaubt ({{max}} Zeichen).",
+      "languageLabel": "Sprache",
+      "exaggerationLabel": "Emotion",
+      "exaggerationHint": "Niedriger ist ruhiger, höher ist ausdrucksstärker.",
+      "generate": "Sprache erzeugen",
+      "generating": "Wird erzeugt…",
+      "notAllowed": "Ihr Tarif enthält keine Spracherzeugung."
+    },
+    "designer": {
+      "title": "Eine Stimme beschreiben",
+      "descriptionLabel": "Beschreibung",
+      "placeholder": "Warm, tief, leicht rau, mittleren Alters, ruhig",
+      "hint": "Beschreiben Sie, wie die Stimme klingen soll. Die Engine versteht Beschreibungen auf Englisch am besten; die Chips unten ergänzen gängige Merkmale.",
+      "languageLabel": "Sprache der Vorschau",
+      "languageNote": "Eine entworfene Stimme wird in einer dieser Sprachen erstellt; sobald sie behalten wird, kann sie alle Sprachen des Sprachwerkzeugs sprechen.",
+      "chipGroups": {
+        "gender": "Geschlecht",
+        "age": "Alter",
+        "accent": "Akzent",
+        "tone": "Klang",
+        "pace": "Tempo"
+      },
+      "chips": {
+        "female": "Weiblich",
+        "male": "Männlich",
+        "neutral": "Androgyn",
+        "young": "Junger Erwachsener",
+        "middleAged": "Mittleren Alters",
+        "older": "Älter",
+        "american": "Amerikanisch",
+        "british": "Britisch",
+        "australian": "Australisch",
+        "irish": "Irisch",
+        "warm": "Warm",
+        "bright": "Hell",
+        "deep": "Tief",
+        "raspy": "Rau",
+        "soft": "Weich",
+        "slow": "Langsam",
+        "measured": "Bedächtig",
+        "fast": "Schnell"
+      },
+      "preview": "Vorschau",
+      "previewing": "Vorschau wird erzeugt…",
+      "previewsLeft": "Verbleibende Vorschauen: {{left}} von {{max}}",
+      "previewsUsed": "Sie haben die 3 Vorschauen für diese Beschreibung verbraucht. Behalten Sie die Stimme oder ändern Sie die Beschreibung, um erneut eine Vorschau zu erzeugen.",
+      "previewLabel": "Vorschau der beschriebenen Stimme",
+      "keepTitle": "Diese Stimme behalten",
+      "nameLabel": "Name der Stimme",
+      "keep": "Diese Stimme behalten",
+      "keeping": "Stimme wird gespeichert…",
+      "kept": "Stimme gespeichert. Sie befindet sich jetzt unter Meine Stimmen.",
+      "signInToKeep": "Anmelden, um diese Stimme zu behalten"
+    },
+    "changer": {
+      "modeLabel": "Art der Änderung",
+      "modes": {
+        "shift": "Verschieben (sofort)",
+        "convert": "In eine Stimme umwandeln (KI)"
+      },
+      "shiftHint": "Verschiebt Tonhöhe und Formant sofort mit rubberband. Zählt als ein Vorgang. Das Ergebnis trägt kein Wasserzeichen.",
+      "convertHint": "Lässt die Aufnahme wie eine gespeicherte oder voreingestellte Stimme klingen. Zählt als ein KI-Auftrag. Das Ergebnis trägt ein unhörbares Wasserzeichen.",
+      "convertNotInPlan": "Das Umwandeln in eine Stimme ist nicht Teil Ihres Tarifs.",
+      "upgrade": "Tarife ansehen",
+      "signInToConvert": "Anmelden, um in eine Stimme umzuwandeln",
+      "targetLabel": "Umwandeln in",
+      "convert": "Umwandeln",
+      "converting": "Wird umgewandelt…"
+    },
+    "shifter": {
+      "semitonesLabel": "Tonhöhe",
+      "semitonesValue": "{{value}} Halbtöne",
+      "formantLabel": "Formant",
+      "formants": {
+        "preserved": "Charakter der Stimme beibehalten",
+        "shifted": "Mit der Tonhöhe verschieben"
+      },
+      "presetsLabel": "Voreinstellungen",
+      "presets": {
+        "deeper": "Tiefer",
+        "higher": "Höher",
+        "child": "Kindlich",
+        "elder": "Älter",
+        "telephone": "Telefon"
+      },
+      "shift": "Stimme verschieben",
+      "shifting": "Wird verschoben…"
+    },
+    "result": {
+      "working": "Wird bearbeitet…",
+      "failed": "Der Stimmauftrag ist fehlgeschlagen. Er wurde nicht gezählt.",
+      "downloadMp3": "MP3 herunterladen",
+      "downloadWav": "WAV herunterladen",
+      "wavPreparing": "WAV wird vorbereitet…",
+      "wavFailed": "Die WAV-Datei konnte in diesem Browser nicht erstellt werden. Laden Sie stattdessen die MP3 herunter.",
+      "wavNote": "Die WAV-Datei wird in Ihrem Browser aus der MP3 dekodiert.",
+      "another": "Neu beginnen"
+    },
+    "darkroom": {
+      "title": "Voiceover erzeugen",
+      "description": "Geben Sie einen Text ein und wählen Sie eine Stimme und eine Sprache. Das Voiceover wird den Medien dieses Projekts hinzugefügt und an der Wiedergabeposition platziert.",
+      "placeholder": "Geben Sie den Voiceover-Text ein.",
+      "generate": "Voiceover erzeugen",
+      "presetsOnly": "Ohne Anmeldung können Sie die voreingestellten Stimmen verwenden. Melden Sie sich an, um eine gespeicherte Stimme zu nutzen.",
+      "added": "Voiceover an der Wiedergabeposition hinzugefügt",
+      "noAsset": "Das Voiceover wurde erzeugt, konnte aber nicht zum Projekt hinzugefügt werden. Versuchen Sie es erneut."
+    },
+    "errors": {
+      "sign_in_required": "Melden Sie sich an, um Ihre eigenen Stimmen zu speichern und zu verwenden.",
+      "consent_required": "Setzen Sie das Häkchen, um zu bestätigen, dass dies Ihre Stimme ist oder dass Sie die ausdrückliche Erlaubnis der sprechenden Person haben.",
+      "reference_required": "Nehmen Sie zuerst 5 bis 60 Sekunden Sprache auf oder laden Sie sie hoch.",
+      "reference_too_short": "Die Aufnahme muss mindestens 5 Sekunden lang sein.",
+      "reference_too_long": "Die Aufnahme darf höchstens 60 Sekunden lang sein.",
+      "reference_too_large": "Die Aufnahmedatei ist zu groß.",
+      "no_speech_detected": "In dieser Aufnahme war keine Sprache zu hören. Nehmen Sie ein paar Sätze in einem ruhigen Raum auf.",
+      "not_audio": "Diese Datei ist keine Aufnahme, die wir lesen können.",
+      "name_invalid": "Geben Sie der Stimme einen Namen mit 1 bis 60 Zeichen.",
+      "language_not_supported": "Diese Sprache wird für diese Stimme nicht unterstützt.",
+      "voice_limit": "Sie haben die Anzahl gespeicherter Stimmen in Ihrem Tarif erreicht ({{limit}}). Löschen Sie eine oder wechseln Sie auf einen höheren Tarif, um mehr zu speichern.",
+      "text_required": "Geben Sie einen Text zum Sprechen ein.",
+      "text_too_long": "Ihr Tarif erlaubt bis zu {{limit}} Zeichen pro Anfrage.",
+      "exaggeration_invalid": "Die Emotion muss zwischen 0,25 und 2 liegen.",
+      "voice_convert_not_in_plan": "Das Umwandeln in eine Stimme ist in Ihrem Tarif nicht enthalten.",
+      "voice_input_too_long": "Ihr Tarif erlaubt hier Aufnahmen von bis zu {{limit}} Sekunden.",
+      "input_required": "Fügen Sie die Aufnahme hinzu, die Sie ändern möchten.",
+      "input_too_large": "Die Aufnahme ist für Ihren Tarif zu groß.",
+      "voice_required": "Wählen Sie eine Stimme, in die umgewandelt werden soll.",
+      "voice_not_found": "Diese Stimme existiert nicht mehr.",
+      "preset_not_found": "Diese voreingestellte Stimme ist nicht verfügbar.",
+      "description_required": "Beschreiben Sie die gewünschte Stimme.",
+      "description_too_long": "Halten Sie die Beschreibung unter 1000 Zeichen.",
+      "preview_limit": "Sie haben diese Beschreibung in dieser Stunde dreimal als Vorschau erzeugt. Behalten Sie die Stimme oder ändern Sie die Beschreibung.",
+      "session_required": "Vorschauen brauchen eine Browsersitzung. Laden Sie die Seite neu und versuchen Sie es erneut.",
+      "semitones_invalid": "Die Tonhöhe muss zwischen -12 und 12 Halbtönen liegen.",
+      "shift_invalid": "Diese Verschiebungseinstellungen sind ungültig.",
+      "voices_unavailable": "Die Stimm-Engine ist derzeit nicht verfügbar. Es wurde nichts gezählt; versuchen Sie es in Kürze erneut.",
+      "voices_storage_unavailable": "Gespeicherte Stimmen sind vorübergehend nicht verfügbar. Es wurde nichts gezählt.",
+      "voices_timeout": "Die Stimm-Engine hat zu lange gebraucht. Es wurde nichts gezählt.",
+      "voice_request_refused": "Die Stimm-Engine hat diese Anfrage abgelehnt.",
+      "upload_failed": "Der Upload ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "job_failed": "Der Auftrag konnte nicht gestartet werden. Bitte versuchen Sie es erneut.",
+      "invalid_body": "Etwas in der Anfrage war ungültig. Laden Sie die Seite neu und versuchen Sie es erneut.",
+      "rate_limited": "Zu viele Stimmanfragen in der letzten Stunde. Bitte versuchen Sie es später erneut.",
+      "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    }
+  }
+}

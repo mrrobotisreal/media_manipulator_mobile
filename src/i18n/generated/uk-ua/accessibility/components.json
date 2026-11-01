@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "Попередній перегляд"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "Про формат вихідного зображення",
+    "dpiTooltip": "Про якість рендерингу (DPI)",
+    "pagesTooltip": "Про вибір сторінок",
+    "qualityTooltip": "Про якість JPG"
+  },
+  "ad": {
+    "label": "Реклама",
+    "close": "Закрити рекламу"
+  },
+  "modals": {
+    "close": "Закрити",
+    "previousStep": "Попередній крок",
+    "nextStep": "Наступний крок"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "Маркер верхнього лівого кута",
+    "topRightHandle": "Маркер верхнього правого кута",
+    "bottomLeftHandle": "Маркер нижнього лівого кута",
+    "bottomRightHandle": "Маркер нижнього правого кута"
+  },
+  "mediaTrimModal": {
+    "scrubber": "Повзунок обрізки",
+    "playToggle": "Відтворити / призупинити попередній перегляд"
+  },
+  "overlays": {
+    "canvas": "Область виділення",
+    "removeRegion": "Видалити цю область",
+    "previousPage": "Попередня сторінка",
+    "nextPage": "Наступна сторінка"
+  },
+  "quotaMeter": {
+    "gauge": "Використано {{used}} / {{limit}} операцій на день",
+    "gaugeUnlimited": "Денний ліміт операцій не встановлено",
+    "aiGauge": "{{label}} {{used}} / {{limit}}: використано ШІ-завдань за день",
+    "openUpgrade": "Дізнатися, як збільшити денний ліміт",
+    "openAccount": "Відкрити акаунт"
+  },
+  "accountMenu": {
+    "open": "Меню акаунта"
+  }
+}

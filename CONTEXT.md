@@ -17,6 +17,11 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Quota observation**: on every 2xx the baseQuery reads `X-MM-Tier` / `X-MM-Quota-*` and dispatches `quota/observed`; on other failures it invalidates the `Account` tag instead.
 - **Token provider**: `setIdTokenProvider(fn)` in `src/api/authToken.ts`; MA04 registers Firebase's `getIdToken`. `buildHeaders()` (in `baseQuery.ts`) is the only place request headers are built, including for uploads, SSE and downloads.
 
+- **Web shard**: a JSON file copied by `scripts/sync-web-i18n.mjs` from the web's `i18n/locales/<code>/` into `src/i18n/generated/`; namespaces `interface`, `error`, `accessibility`. Read-only here; translator-workbench edits arrive on the next sync.
+- **App shard**: `locales/<code>/app.json`, namespace `app` (default); app-only strings, keys grouped by screen, present in all 18 locales.
+- **Locale override**: `settings.locale` (null = follow the system); resolved by `resolveLocale` and applied by `setAppLocale`.
+- **RTL reload**: switching to or from he-IL / ar-SA flips layout direction, which needs a confirm sheet, `I18nManager.forceRTL` and `Updates.reloadAsync()`; same-direction switches are live.
+
 ## Layout
 
 `app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`.

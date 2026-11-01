@@ -1,0 +1,1418 @@
+{
+  "transcribeResultView": {
+    "loading": "Loading transcript result...",
+    "noResult": "No transcript result is available for this job.",
+    "complete": "Transcription complete",
+    "outputFormat": "Output format:",
+    "language": "Language: {{language}}",
+    "duration": "Duration: {{duration}}",
+    "noAudioStream": "No audio stream",
+    "noSpeech": "No recognizable speech",
+    "nothingToTranscribe": "Nothing to transcribe",
+    "noTranscriptGenerated": "No transcript could be generated for this file.",
+    "transcriptHeader_one": "Transcript ({{count}} segment)",
+    "transcriptHeader_other": "Transcript ({{count}} segments)",
+    "aiSummaryTitle": "AI summary & safety review",
+    "analysisRunning": "Running summary and safety review in the background...",
+    "analysisError": "Analysis error: {{error}}",
+    "summary": "Summary",
+    "extendedSummary": "Extended summary",
+    "safetyBadge": "Safety: {{rating}}",
+    "harmfulFlagged": "Potentially harmful content detected",
+    "harmfulNone": "No harmful content flagged",
+    "sentimentBadge": "Sentiment: {{label}}",
+    "notesLabel": "Notes: {{notes}}",
+    "summaryPending": "Summary and safety review will appear here once the analysis job finishes.",
+    "unknown": "unknown"
+  },
+  "summarize": {
+    "loading": "Checking whether summaries are available…",
+    "unavailable": "Video and audio summaries are temporarily unavailable. Please try again later; the Transcribe pages still work.",
+    "notInPlan": "Summaries are not included in your plan.",
+    "signIn": {
+      "title": "Sign in to summarize",
+      "body": "Summaries run on our own GPU server and need a free account. Sign in or create one, then upload your file.",
+      "button": "Sign in",
+      "signup": "Create a free account"
+    },
+    "uploadHintVideo": "a video or audio file",
+    "uploadHintAudio": "an audio file",
+    "outputLanguage": "Summary language",
+    "sameAsSpeech": "Same as the speech",
+    "depth": {
+      "label": "Depth",
+      "standard": "Standard",
+      "deep": "Deep",
+      "hint": "Deep writes the summary with a larger model. It takes longer."
+    },
+    "note": "Uses one AI job from your daily allowance. A failed job is not counted.",
+    "noteFrames": "Your plan reads up to {{frames}} frames of the video. Uses one AI job from your daily allowance; a failed job is not counted.",
+    "start": "Summarize",
+    "stagesTitle": "Progress",
+    "stages": {
+      "probe": "Reading the file",
+      "audio": "Transcribing the speech",
+      "frames": "Choosing frames",
+      "vision": "Describing the frames",
+      "synthesis": "Writing the summary",
+      "render": "Formatting the result"
+    },
+    "status": {
+      "pending": "Waiting",
+      "processing": "In progress",
+      "completed": "Done",
+      "skipped": "Skipped",
+      "failed": "Failed"
+    },
+    "framesCount": "Frames: {{count}}",
+    "errors": {
+      "signin_required": "Sign in to summarize.",
+      "summary_not_in_plan": "Summaries are not included in your plan.",
+      "summary_unavailable": "Summaries are temporarily unavailable. Please try again later.",
+      "unreadable_media": "This file could not be read as audio or video.",
+      "no_audio_or_video": "This file has no audio or video to summarize.",
+      "file_too_large": "This file is larger or longer than your plan allows.",
+      "upload_not_found": "The upload could not be found. Please try again.",
+      "quota_exceeded": "You have used all of today's AI jobs.",
+      "invalid_request": "The request was not accepted. Reload the page and try again.",
+      "unknown": "The summary could not be started. Please try again."
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "Drop your {{hint}} here",
+    "selectHint": "or click to select from your computer. Files are kept 24 hours for guests; with a free account you choose 24 hours to 2 years.",
+    "selectFile": "Select file",
+    "removeFile": "Remove file",
+    "uploadingPercent": "Uploading {{percent}}%",
+    "workingOnFile": "Working on your file…",
+    "previewResult": "Preview result",
+    "downloadResult": "Download result",
+    "jobFailed": "Job failed. Try a different file or refresh.",
+    "resultPreview": "Result preview",
+    "toggleHint": "Toggle between the original input and the finalized result.",
+    "closePreview": "Close preview",
+    "loadingPreview": "Loading preview…",
+    "zipPreviewTitle": "Preview not available for ZIP downloads",
+    "zipPreviewBody": "This result is packaged as a ZIP archive. Download it and extract locally to view the contents."
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "Embedded media converter",
+    "tryItNow": "Try it now",
+    "recommendedOutput": "Recommended output:",
+    "outputFormat": "Output format:",
+    "outputLocked": "Output locked for this tool:",
+    "expectedInput": "Expected input:",
+    "accepts": "Accepts:",
+    "dragDrop": "Drag and drop a {{kind}} file here",
+    "mediaKinds": {
+      "image": "image",
+      "video": "video",
+      "audio": "audio",
+      "pdf": "PDF"
+    },
+    "selectHint": "or click to select from your computer. Files are kept 24 hours for guests; with a free account you choose 24 hours to 2 years.",
+    "selectFile": "Select file",
+    "removeFile": "Remove file",
+    "uploadingPercent": "Uploading {{percent}}%",
+    "workingOnFile": "Working on your file…",
+    "downloadFilename": "Download {{filename}}",
+    "transcribeFailed": "Transcription failed.",
+    "conversionFailed": "Conversion failed.",
+    "tryAgainOrOpen": "Try again or open the full converter.",
+    "needFullPrefix": "Need the full feature set?",
+    "openFullConverter": "Open the full converter",
+    "needFullSuffix": "— it includes the conversion history, transcript flow, and AI tools."
+  },
+  "extractAudio": {
+    "title": "Extract audio",
+    "subtitle": "Pull the audio track out of a video file and save it as MP3, WAV, AAC, OGG, or FLAC.",
+    "formatLabel": "Output audio format",
+    "outputLocked": "Locked to {{format}} for this tool",
+    "expectedInput": "Expected input: {{format}}",
+    "submit": "Extract audio",
+    "running": "Extracting…",
+    "success": "Audio extracted. Use the download button to save it.",
+    "uploadHint": "video file",
+    "note": "The extracted track keeps the source's full duration and quality. Videos with no audio will return a clear error.",
+    "formats": {
+      "mp3": "MP3 (compact, plays everywhere)",
+      "wav": "WAV (lossless, large)",
+      "m4a": "M4A (AAC — good quality, compact)",
+      "aac": "AAC (raw)",
+      "flac": "FLAC (lossless)",
+      "ogg": "OGG (Vorbis)"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "video file",
+    "expectedInput": "Expected input: {{format}}",
+    "levelLabel": "Compression level",
+    "levels": {
+      "smallest": "Smallest file",
+      "balanced": "Balanced (recommended)",
+      "high_quality": "High quality"
+    },
+    "levelHints": {
+      "smallest": "Maximum shrink for email and chat. Some visible quality loss on detailed footage.",
+      "balanced": "A good size-to-quality trade-off for most videos and social uploads.",
+      "high_quality": "Keeps the most detail. Smaller than the source, but not by as much."
+    },
+    "formatLabel": "Output format",
+    "outputLocked": "Locked to {{format}} for this tool",
+    "resolutionLabel": "Resolution",
+    "resolutions": {
+      "keep": "Keep original",
+      "1080": "1080p (Full HD)",
+      "720": "720p (HD)",
+      "480": "480p (SD)"
+    },
+    "codecLabel": "Codec",
+    "codecs": {
+      "h264": "H.264 (most compatible)",
+      "h265": "H.265 / HEVC (smaller, modern devices)"
+    },
+    "stripAudio": "Remove the audio track for an even smaller file",
+    "note": "We re-encode the video at the chosen level. MP4 output uses H.264 + AAC with faststart for instant playback.",
+    "running": "Compressing…",
+    "submit": "Compress video"
+  },
+  "videoTrimmer": {
+    "uploadHint": "video file",
+    "expectedInput": "Expected input: {{format}}",
+    "startLabel": "Start (seconds)",
+    "endLabel": "End (seconds)",
+    "durationLabel": "Clip length: {{duration}}",
+    "invalidRange": "Set an end time later than the start time.",
+    "pickRange": "Pick range visually",
+    "formatLabel": "Output format",
+    "outputLocked": "Locked to {{format}} for this tool",
+    "reencodeLabel": "Re-encode for a frame-accurate cut",
+    "reencodeHint": "Re-encoding cuts exactly at your times but is slower and may change the file size slightly.",
+    "note": "We keep the original quality with a fast, lossless cut whenever possible (no re-encode).",
+    "running": "Trimming…",
+    "submit": "Trim video",
+    "submitCut": "Cut video"
+  },
+  "videoTransform": {
+    "uploadHint": "video file",
+    "expectedInput": "Expected input: {{format}}",
+    "autoPlaceholder": "Auto",
+    "widthLabel": "Width (px)",
+    "heightLabel": "Height (px)",
+    "preserveAspect": "Preserve aspect ratio (fit within the box)",
+    "resizeNote": "Leave one field blank to scale the other proportionally. Max 4096 px per side.",
+    "rotationLabel": "Rotation",
+    "rotations": {
+      "90": "90° clockwise",
+      "180": "180° (upside down)",
+      "270": "90° counter-clockwise"
+    },
+    "flipH": "Flip horizontally",
+    "flipV": "Flip vertically",
+    "rotateNote": "Fixes sideways or upside-down videos. 90° and 270° swap width and height.",
+    "cropX": "Left offset (X, px)",
+    "cropY": "Top offset (Y, px)",
+    "cropW": "Crop width (px)",
+    "cropH": "Crop height (px)",
+    "cropNote": "Enter the rectangle to keep, in pixels from the top-left corner. Width and height are required.",
+    "formatLabel": "Output format",
+    "outputLocked": "Locked to {{format}} for this tool",
+    "running": "Processing…",
+    "submit": {
+      "crop": "Crop video",
+      "resize": "Resize video",
+      "rotate": "Rotate video"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "Extract video (no audio)",
+    "subtitle": "Strip the audio track from a video file, keeping only the video stream.",
+    "uploadHint": "video file",
+    "formatLabel": "Output container",
+    "formats": {
+      "mp4": "MP4 (recommended)",
+      "webm": "WebM"
+    },
+    "note": "The video stream is stream-copied wherever possible — no quality loss. We re-encode only if the destination container needs it.",
+    "submit": "Remove audio from video",
+    "running": "Stripping audio…",
+    "success": "Video stream extracted."
+  },
+  "extractFrames": {
+    "title": "Extract frames",
+    "subtitle": "Save individual frames from a video as PNG, JPG, or WebP images.",
+    "uploadHint": "video file",
+    "modeLabel": "Extraction mode",
+    "modes": {
+      "every_n_seconds": "Every N seconds",
+      "fps": "Specific frames per second",
+      "timestamp": "Specific timestamps"
+    },
+    "secondsBetween": "Seconds between frames",
+    "fpsLabel": "Frames per second",
+    "timestampsLabel": "Timestamps in seconds (comma-separated)",
+    "timestampsPlaceholder": "e.g. 1, 5.5, 12, 30",
+    "imageFormatLabel": "Image format",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG (lossless)",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "Max frames",
+    "zipNote": "Frames are bundled into a single ZIP for download. We cap the count to keep jobs fast and predictable; raise the limit if you really need more.",
+    "submit": "Extract frames",
+    "running": "Extracting frames…",
+    "success": "Frames extracted. Download the ZIP below."
+  },
+  "captionTranslator": {
+    "title": "Translate captions",
+    "subtitle": "Upload a VTT, SRT, or TXT caption file and translate it to another language.",
+    "dropHere": "Drop your .srt or .vtt file here",
+    "privacyNote": "Files are kept 24 hours for guests; with a free account you choose 24 hours to 2 years. We do not send your captions to third-party AI providers.",
+    "selectCaptionFile": "Select caption file",
+    "removeFile": "Remove file",
+    "sourceLanguage": "Source language",
+    "targetLanguage": "Target language",
+    "autoDetect": "Auto-detect (recommended)",
+    "outputFormat": "Output format",
+    "sameAsInput": "Same as input ({{format}})",
+    "formats": {
+      "srt": "SRT (SubRip)",
+      "vtt": "VTT (WebVTT)"
+    },
+    "timingNote": "Cue timing and ordering are preserved exactly — only the cue text is translated.",
+    "translating": "Translating…",
+    "translateCaptions": "Translate captions",
+    "uploadingPercent": "Uploading {{percent}}%",
+    "translatingWithModel": "Translating with local AI model…",
+    "downloadTranslated": "Download translated captions",
+    "translationFailed": "Translation failed. Try a smaller file or a different target language."
+  },
+  "stitchAudioToVideo": {
+    "title": "Stitch audio onto a video",
+    "subtitle": "Add or replace audio tracks on a video file.",
+    "dropBaseVideo": "Drop your base video here",
+    "intro": "Pick the video first — you'll add audio tracks (voiceover, music, narration) next.",
+    "selectVideo": "Select video",
+    "removeBaseVideo": "Remove base video",
+    "audioTracks": "Audio tracks",
+    "removeTrack": "Remove track",
+    "volume": "Volume",
+    "startOffset": "Start offset (seconds)",
+    "loopTrack": "Loop this track to match the video length",
+    "addAudioTrack": "Add audio track ({{count}}/{{max}})",
+    "audioModeLabel": "Audio mode",
+    "audioModes": {
+      "mix": "Mix with existing audio",
+      "replace": "Replace original audio"
+    },
+    "outputLengthLabel": "Output length",
+    "outputLength": {
+      "video": "Trim to video duration",
+      "longest": "Match longest input"
+    },
+    "stitching": "Stitching audio + video…",
+    "addAudioToVideo": "Add audio to video",
+    "uploadingPercent": "Uploading {{percent}}%",
+    "mixingOnServer": "Mixing on the server…",
+    "downloadStitched": "Download stitched video",
+    "stitchFailed": "Stitch failed. Check that your audio files are valid and try again."
+  },
+  "aiVideoTools": {
+    "title": "AI Video Tools",
+    "tooltipIntro": "AI Video Tools currently includes <strong>AI Frame Interpolation</strong>, which generates new in-between frames so motion plays back more smoothly.",
+    "tooltipBestFor": "Best for taking 24/30fps footage up to 60fps or 60fps up to 120fps. This is GPU-heavy and currently always outputs MP4.",
+    "intro": "AI frame interpolation creates in-between frames for smoother motion. Best for 24/30fps → 60fps or 60fps → 120fps clips.",
+    "gpuNote": "This is GPU-heavy and currently outputs MP4. For long or 4K videos, use a lower max processing height first. This is different from basic FPS conversion — AI interpolation synthesizes new frames rather than duplicating them, and bypasses most other visual / temporal filters in v1.",
+    "operationLabel": "Operation",
+    "operations": {
+      "none_short": "None",
+      "frame_interpolation": "AI Frame Interpolation"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "Target frame rate",
+      "modelLabel": "RIFE model",
+      "models": {
+        "rife-v4.6": "RIFE v4.6 — recommended",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3 — compatibility"
+      },
+      "qualityLabel": "Quality",
+      "qualityOptions": {
+        "low": "Low — faster encode",
+        "medium": "Medium — balanced",
+        "high": "High — slower encode"
+      },
+      "maxHeightLabel": "Max processing height",
+      "preserveAudio": "Preserve audio track from the source"
+    },
+    "notes": {
+      "mp4": "Output is always MP4 (H.264 + AAC) in v1.",
+      "trim": "Trim is disabled with AI frame interpolation in v1 — trim the clip separately first if needed.",
+      "artifacts": "Fast motion, scene cuts, hair, hands, wheels, and occlusions can show interpolation artifacts. Preview before publishing."
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "Snippet selection timeline",
+      "startHandle": "Selection start",
+      "endHandle": "Selection end",
+      "playSelection": "Play selection",
+      "pause": "Pause",
+      "start": "Start",
+      "end": "End",
+      "startTime": "Start time (m:ss.t)",
+      "endTime": "End time (m:ss.t)",
+      "nudgeBack": "Nudge back 0.1 seconds",
+      "nudgeForward": "Nudge forward 0.1 seconds",
+      "selected": "selected",
+      "frames": "frames",
+      "estimate": "est.",
+      "fpsAssumption": "frame estimate assumes 30fps — the server uses your video's real frame rate",
+      "overRecommended": "Selections longer than {{seconds}}s work, but processing time grows fast — shorter snippets compare just as well.",
+      "overFrameBudget": "This selection likely exceeds the {{maxFrames}}-frame cap at 30fps. If your video's real frame rate is higher than ~30fps, shorten the selection."
+    },
+    "picker": {
+      "title": "Restoration models",
+      "selectAll": "Select all",
+      "selectNone": "None",
+      "frameGroup": "Frame-by-Frame Enhancers — includes enhanced frames + video",
+      "videoGroup": "Video Restoration Models — video only",
+      "unavailable": "Not available on this server",
+      "includeFrames": "Include enhanced frames (PNG)",
+      "includeFramesHint": "Adds every enhanced frame from the frame-by-frame models to the download, next to the videos.",
+      "includeFramesWarning": "Frames can multiply the download size — a 10s clip can add hundreds of large PNGs per model.",
+      "noneSelected": "Select at least one model to continue.",
+      "runningTotal": "{{count}} model(s) selected · {{estimate}} total processing estimate"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "Fast GAN upscaler — the quick baseline every comparison should include."
+      },
+      "swinir": {
+        "description": "Transformer-based real-world SR — strong textures, slower than Real-ESRGAN."
+      },
+      "hat": {
+        "description": "Hybrid attention SR GAN — often the sharpest stills, the slowest of Group A."
+      },
+      "basicvsrpp": {
+        "description": "Recurrent video SR — uses neighboring frames for temporal consistency."
+      },
+      "rvrt": {
+        "description": "Recurrent video restoration transformer — strong detail with motion awareness."
+      },
+      "vrt": {
+        "description": "Video restoration transformer — top quality on many clips, by far the slowest."
+      }
+    },
+    "panel": {
+      "loading": "Checking server capabilities…",
+      "disabled": "AI Video Restoration is temporarily unavailable on this server.",
+      "notAVideo": "Please choose a video file.",
+      "tooLarge": "This video exceeds the {{max}} upload limit.",
+      "dropTitle": "Drop a video here, or click to choose",
+      "dropHint": "You'll pick a short snippet (up to 15s) to restore — long videos are fine.",
+      "fileLabel": "File:",
+      "changeFile": "Change file",
+      "preparingUpload": "Preparing upload…",
+      "uploading": "Uploading to secure storage… {{percent}}%",
+      "startingJob": "Starting restoration job…",
+      "submit": "Restore snippet with {{count}} model(s)",
+      "modelFailedBadge": "failed — other models continue",
+      "genericFailure": "Restoration failed. Please try again with a shorter snippet.",
+      "startOver": "Start over",
+      "completedTitle": "Restoration complete — your comparison package is ready.",
+      "modelSucceeded": "succeeded",
+      "modelFailed": "failed (see FAILED.txt in the package)",
+      "download": "Download results",
+      "downloadAgain": "Download again",
+      "downloadSize": "Package size: {{size}}",
+      "downloadSizeHint": "This archive is large — make sure you have at least {{size}} of free disk space before downloading.",
+      "linkExpiresIn": "link expires in {{countdown}}",
+      "linkExpired": "download link expired — run the restoration again",
+      "restoreAnother": "Restore another snippet"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "Crop (optional)",
+      "useEntireImage": "Use entire image",
+      "previewAlt": "Uploaded image",
+      "regionLabel": "Crop region — drag to move, use arrow keys to nudge",
+      "dragHint": "Drag on the image to focus on a region, or keep the whole image",
+      "cropReadout": "Crop: {{w}}×{{h}} px",
+      "fullReadout": "Whole image: {{w}}×{{h}} px",
+      "outputReadout": "estimated output {{w}}×{{h}} px at {{scale}}x",
+      "overBudget": "That crop and scale would exceed the output size limit. Choose 2x or a smaller crop."
+    },
+    "picker": {
+      "precleanToggle": "Pre-clean (fidelity-preserving cleanup)",
+      "precleanToggleHint": "Removes compression artifacts, noise, and motion blur without synthesizing new detail — run before enhancement.",
+      "precleanOrderNote": "Cleanup always runs artifact removal → denoise → deblur, each on the previous result, regardless of selection order.",
+      "precleanBaseHint": "The cleaned image becomes the base every model below runs on.",
+      "fbcnnQf": "FBCNN quality factor",
+      "fbcnnQfAuto": "Auto",
+      "fbcnnQfHint": "blank = automatic; lower assumes heavier compression",
+      "generalGroup": "Restoration & upscaling models",
+      "faceToggle": "Face enhancement",
+      "faceToggleHint": "Adds GFPGAN and/or CodeFormer to reconstruct faces.",
+      "previewFaces": "Preview detected faces",
+      "facesDetected": "{{count}} face(s) detected.",
+      "fidelityLabel": "CodeFormer fidelity (w)",
+      "fidelityHint": "Lower = prettier, higher = closer to the input. Default 0.70.",
+      "chainToggle": "Chain: re-run face models on each upscaled result",
+      "chainHint": "Also produces a face-enhanced version of every upscaler's output, in addition to running on the source.",
+      "generativeWarning": "Face enhancement is a generative reconstruction — enhanced faces are synthesized for clarity and leads, NOT a faithful recovery for identification.",
+      "noneSelected": "Select at least one model to continue.",
+      "totalOutputs": "{{count}} output(s) will be produced.",
+      "overBudget": "That selection would produce more than the {{max}} output maximum. Deselect some models or turn off chaining.",
+      "unavailable": "Not available on this server"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "Blind JPEG / compression-artifact removal (1x, non-generative)."
+      },
+      "scunet": {
+        "description": "Blind real-noise denoising — PSNR variant, no hallucinated texture (1x)."
+      },
+      "nafnet": {
+        "description": "Motion deblurring (GoPro weights, 1x)."
+      },
+      "realesrgan": {
+        "description": "Fast GAN upscaler — the quick baseline every comparison should include."
+      },
+      "swinir": {
+        "description": "Transformer-based real-world SR — strong textures, slower than Real-ESRGAN."
+      },
+      "hat": {
+        "description": "Hybrid attention SR GAN — often the sharpest result."
+      },
+      "gfpgan": {
+        "description": "GFPGAN v1.4 face restoration — generative reconstruction."
+      },
+      "codeformer": {
+        "description": "CodeFormer face restoration with a fidelity dial — generative reconstruction."
+      }
+    },
+    "panel": {
+      "loading": "Checking server capabilities…",
+      "disabled": "AI Image Restoration is temporarily unavailable on this server.",
+      "notAnImage": "Please choose an image file.",
+      "tooLarge": "This image exceeds the {{max}} upload limit.",
+      "dropTitle": "Drop an image here, or click to choose",
+      "dropHint": "PNG, JPEG, WebP, TIFF, or BMP. You can crop to a region after uploading.",
+      "fileLabel": "File:",
+      "changeFile": "Change file",
+      "scaleLabel": "Output scale",
+      "scaleAuto": "Auto",
+      "scaleHint": "Auto picks 4x for small crops (≤540px tall) and 2x otherwise. Models run native 4x; 2x downscales with Lanczos.",
+      "preparingUpload": "Preparing…",
+      "uploading": "Uploading… {{percent}}%",
+      "startingJob": "Starting restoration job…",
+      "submit": "Restore with {{count}} model(s)",
+      "unitFailedBadge": "failed — other models continue",
+      "genericFailure": "Restoration failed. Please try again with a smaller crop or fewer models.",
+      "startOver": "Start over",
+      "completedTitle": "Restoration complete — compare your results below.",
+      "download": "Download all results",
+      "downloadAgain": "Download again",
+      "downloadSize": "Package size: {{size}}",
+      "restoreAnother": "Restore another image"
+    },
+    "results": {
+      "includedInDownload": "Included in download",
+      "fidelityBadge": "non-generative cleanup",
+      "generativeBadge": "generative — not evidence",
+      "originalCaption": "Original (prepared) · {{w}}×{{h}}",
+      "failed": "This model failed",
+      "compareOriginal": "Original"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "audio file",
+    "previewTitle": "Waveform preview",
+    "sizeQualifiers": {
+      "small": "small",
+      "medium": "medium",
+      "large": "large",
+      "xl": "extra large"
+    },
+    "presets": {
+      "10x1": "10:1 — Wide waveform (recommended)",
+      "8x1": "8:1 — Wide waveform",
+      "6x1": "6:1 — Balanced wide waveform",
+      "16x9": "16:9 — Standard video / social preview",
+      "1x1": "1:1 — Square social preview"
+    },
+    "sizeLabel": "{{width}}×{{height}} ({{qualifier}})",
+    "modes": {
+      "point": {
+        "label": "Point",
+        "description": "A single dot per sample — clean and minimal."
+      },
+      "line": {
+        "label": "Line",
+        "description": "A vertical bar per sample — bolder presence."
+      },
+      "p2p": {
+        "label": "Point to point",
+        "description": "A dot per sample plus connecting lines — flowing look."
+      },
+      "cline": {
+        "label": "Centered line",
+        "description": "Vertical line centered on the axis — symmetrical look."
+      }
+    },
+    "output": "Output",
+    "outputOptions": {
+      "video": "Waveform video",
+      "image": "Waveform image",
+      "both": "Both (ZIP)"
+    },
+    "bothNote": "Both outputs will be packaged into a single .zip you can download in one click.",
+    "includeAudio": "Include original audio with generated waveform video",
+    "includeAudioNote": "The waveform video will play in sync with the source audio — perfect for audiograms, music previews, and podcast clips. Turn off for a silent waveform.",
+    "videoFormat": "Video format",
+    "videoFormats": {
+      "mp4": "MP4 (recommended)",
+      "webm": "WebM"
+    },
+    "imageFormat": "Image format",
+    "imageFormats": {
+      "png": "PNG (recommended)",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "Aspect ratio & size",
+    "useCustomSize": "Use custom width / height",
+    "widthPlaceholder": "Width",
+    "heightPlaceholder": "Height",
+    "advancedSettings": "Advanced waveform settings",
+    "renderMode": "Render mode",
+    "renderModeNote": "Render mode applies to the waveform video. Image output uses a still-frame renderer that ignores the mode setting.",
+    "frameRate": "Frame rate",
+    "useFrameRate": "Use frame rate",
+    "useSamples": "Use samples per column (n)",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps (default)",
+    "samplesPlaceholder": "e.g. 64",
+    "frameRateNote": "Choose either the output frame rate <em>or</em> the number of audio samples drawn per column. Not both.",
+    "splitChannels": "Split stereo channels (draw left and right separately)",
+    "primaryColor": "Primary color",
+    "secondaryColor": "Secondary color (split mode)",
+    "scale": "Scale",
+    "scaleOptions": {
+      "lin": "lin — most direct/accurate",
+      "log": "log — makes quiet parts more visible",
+      "sqrt": "sqrt — gentle boost to quiet parts",
+      "cbrt": "cbrt — stronger boost to quiet parts"
+    },
+    "draw": "Draw",
+    "drawOptions": {
+      "scale": "scale (default)",
+      "full": "full"
+    },
+    "generating": "Generating waveform…",
+    "generate": "Generate waveform"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "Loading AI Document Scan…",
+      "disabled": "Document scanning is currently unavailable.",
+      "notAnImage": "Please add image files (PNG, JPEG, WebP, TIFF, BMP, or HEIC).",
+      "tooLarge": "Each image must be under {{max}}.",
+      "tooManyPages": "You can add at most {{max}} pages.",
+      "dropTitle": "Add scanned pages",
+      "dropHint": "Printed documents or handwritten notes — drop one or more images, or click to choose.",
+      "uploading": "Uploading… {{percent}}%",
+      "startingJob": "Starting the scan…",
+      "preparingUpload": "Preparing…",
+      "submit": "Scan {{count}} page(s)",
+      "genericFailure": "Something went wrong while scanning. Please try again.",
+      "startOver": "Start over",
+      "completedTitle": "Your document is ready.",
+      "viewResult": "View result",
+      "scanAnother": "Scan another"
+    },
+    "options": {
+      "contentMode": "Content type",
+      "modeAuto": "Auto (detect per page)",
+      "modePrinted": "Printed document",
+      "modeHandwriting": "Handwriting",
+      "printedUnavailable": "Printed OCR is unavailable on this server.",
+      "handwritingUnavailable": "Handwriting transcription is offline right now.",
+      "outputs": "Outputs",
+      "pdfAlways": "Searchable PDF (always)",
+      "docx": "Editable Word (.docx)",
+      "unavailable": "unavailable",
+      "language": "Language (printed OCR)",
+      "printedCleanup": "Printed page cleanup",
+      "deskew": "Deskew",
+      "rotate": "Auto-rotate",
+      "clean": "Clean (remove speckle)",
+      "structureEngine": "DOCX structure engine",
+      "enginePaddle": "PaddleOCR-VL (preferred)",
+      "engineDocling": "Docling (fallback)",
+      "engineTrocr": "TrOCR (fallback)",
+      "preclean": "Enhance low-resolution scans before reading",
+      "precleanHint": "Upscales blurry phone scans of notes — helps handwriting recognition. On by default for handwriting/auto.",
+      "handwritingTitle": "Handwriting options",
+      "verify": "Verify with AI",
+      "verifyHint": "A second pass re-reads only the tokens marked uncertain; it never alters confident text or invents content.",
+      "secondOpinion": "Second opinion",
+      "secondOpinionHint": "An independent recognizer re-reads handwriting; disagreements are flagged, never silently merged.",
+      "summary": "AI summary (separate file)",
+      "summaryHint": "Optional. Writes a separate, clearly-labeled summary — it never replaces the verbatim transcription."
+    },
+    "pageOrder": {
+      "title": "Pages ({{count}})",
+      "hint": "Drag pages to reorder them before scanning.",
+      "pageLabel": "Page {{n}}",
+      "remove": "Remove page",
+      "drag": "Drag to reorder"
+    },
+    "viewer": {
+      "title": "Your scanned document",
+      "description": "Printed pages carry a faithful searchable text layer; handwriting pages are machine transcriptions — verify against the original.",
+      "confidenceTitle": "Handwriting transcription — verify against the original",
+      "confidenceNote": "{{pages}} handwriting page(s) transcribed · {{tokens}} token(s) marked uncertain ([illegible] / [?]).",
+      "noPdf": "No PDF was produced for this job.",
+      "downloadPdf": "Download PDF",
+      "downloadDocx": "Download Word (.docx)",
+      "downloadSummary": "Download AI summary"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}} (beta)",
+    "untitled": "Untitled drawing",
+    "projectName": "Project name",
+    "backHome": "Back to Media Manipulator",
+    "invalidProject": "This project link is not valid. Projects are stored in this browser only for now.",
+    "newProject": "Start a new drawing",
+    "undo": "Undo",
+    "redo": "Redo",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "zoomFit": "Fit to screen",
+    "canvas": {
+      "label": "Drawing canvas"
+    },
+    "tools": {
+      "label": "Tools",
+      "select": "Select",
+      "node": "Edit nodes",
+      "rect": "Rectangle",
+      "ellipse": "Ellipse",
+      "line": "Line",
+      "pen": "Pen",
+      "text": "Text",
+      "hand": "Pan",
+      "textPlaceholder": "Type, then press Enter"
+    },
+    "import": {
+      "button": "Import",
+      "done_one": "Imported {{count}} layer",
+      "done_other": "Imported {{count}} layers",
+      "tooLarge": "That file is larger than 4 MB.",
+      "warningsTitle_one": "{{count}} note from the import",
+      "warningsTitle_other": "{{count}} notes from the import",
+      "errors": {
+        "too_large": "That SVG is larger than 4 MB.",
+        "not_svg": "That file is not an SVG image.",
+        "malformed": "That SVG could not be read. It may be damaged.",
+        "entities": "SVGs that declare XML entities cannot be imported.",
+        "too_complex": "That SVG has too many layers to edit.",
+        "json": "That file is not a Motion document this version can open."
+      },
+      "warnings": {
+        "script_removed": "Script removed:",
+        "event_handler_removed": "Event handler removed:",
+        "external_reference_removed": "External reference removed:",
+        "unsafe_content_removed": "Unsafe content removed:",
+        "unsupported_element": "Kept as-is (not editable):",
+        "style_dropped": "Style not supported:",
+        "invalid_value": "Value ignored:",
+        "dangling_reference": "Missing reference dropped:"
+      }
+    },
+    "export": {
+      "svg": "Export SVG",
+      "open": "Export"
+    },
+    "draft": {
+      "title": "Recover unsaved changes?",
+      "description": "This drawing has changes saved in this browser that were not exported.",
+      "from": "{{name}}, {{time}}",
+      "layers_one": "{{count}} layer",
+      "layers_other": "{{count}} layers",
+      "recover": "Recover",
+      "discard": "Discard"
+    },
+    "layers": {
+      "title": "Layers",
+      "empty": "Draw a shape or import an SVG to get started.",
+      "group": "Group",
+      "ungroup": "Ungroup",
+      "delete": "Delete",
+      "rename": "Layer name",
+      "lock": "Lock",
+      "unlock": "Unlock",
+      "hide": "Hide",
+      "show": "Show",
+      "expand": "Expand group",
+      "collapse": "Collapse group",
+      "raw": "Kept as-is",
+      "rawHint": "Kept exactly as imported; not editable",
+      "masked": "Has a mask",
+      "clipped": "Has a clip path",
+      "maskDef": "Mask {{id}}",
+      "clipDef": "Clip path {{id}}"
+    },
+    "layerTypes": {
+      "group": "Group",
+      "path": "Path",
+      "rect": "Rectangle",
+      "ellipse": "Ellipse",
+      "line": "Line",
+      "polyline": "Polyline",
+      "polygon": "Polygon",
+      "text": "Text",
+      "image": "Image",
+      "use": "Instance",
+      "raw": "Kept as-is"
+    },
+    "inspector": {
+      "title": "Inspector",
+      "canvas": "Canvas",
+      "background": "Background",
+      "emptyHint": "Select a layer to edit it. Shift-click to select several.",
+      "selection": "Selection",
+      "layersSelected_one": "{{count}} layer",
+      "layersSelected_other": "{{count}} layers",
+      "transform": "Transform",
+      "geometry": "Geometry",
+      "appearance": "Appearance",
+      "text": "Text",
+      "width": "Width",
+      "height": "Height",
+      "scaleX": "Scale X",
+      "scaleY": "Scale Y",
+      "rotation": "Rotation",
+      "skewX": "Skew",
+      "anchorX": "Anchor X",
+      "anchorY": "Anchor Y",
+      "cornerRadius": "Corner radius",
+      "reference": "Instance of",
+      "pathHint": "Use the Edit nodes tool (A) to move points and handles.",
+      "rawHint": "This part of the SVG uses features the editor cannot change yet. It is kept exactly as imported and exported unchanged.",
+      "markupSize": "Markup",
+      "fill": "Fill",
+      "stroke": "Stroke",
+      "strokeWidth": "Stroke width",
+      "opacity": "Opacity",
+      "none": "None",
+      "colorValue": "{{label}} value",
+      "solid": "Solid",
+      "linear": "Linear",
+      "radial": "Radial",
+      "fontSize": "Font size",
+      "fontFamily": "Font",
+      "fontWeight": "Weight",
+      "letterSpacing": "Letter spacing",
+      "textAnchor": "Alignment",
+      "alignStart": "Start",
+      "alignMiddle": "Middle",
+      "alignEnd": "End",
+      "regular": "Regular",
+      "bold": "Bold",
+      "maskSection": "Mask and clip",
+      "maskHint": "The upper layer becomes the mask or clip path of the lower one.",
+      "useAsMask": "Use as mask",
+      "useAsClip": "Use as clip",
+      "releaseMask": "Release mask",
+      "releaseClip": "Release clip path",
+      "skewY": "Skew Y"
+    },
+    "gradient": {
+      "stops": "Gradient stops",
+      "stop": "Stop {{index}} at {{offset}}%",
+      "stopColor": "Stop colour",
+      "removeStop": "Remove stop",
+      "addStop": "Add stop",
+      "offset": "Position",
+      "angle": "Angle",
+      "radius": "Radius",
+      "centreX": "Centre X",
+      "centreY": "Centre Y"
+    },
+    "properties": {
+      "x": "Position X",
+      "y": "Position Y",
+      "scaleX": "Scale X",
+      "scaleY": "Scale Y",
+      "rotation": "Rotation",
+      "skewX": "Skew X",
+      "skewY": "Skew Y",
+      "anchorX": "Anchor X",
+      "anchorY": "Anchor Y",
+      "opacity": "Opacity",
+      "fill": "Fill",
+      "stroke": "Stroke",
+      "strokeWidth": "Stroke width",
+      "strokeDashoffset": "Draw on (dash offset)",
+      "d": "Shape (morph)",
+      "motionPath": "Motion path",
+      "stopColor": "Gradient stop {{n}} colour",
+      "stopOffset": "Gradient stop {{n}} position",
+      "blur": "Blur"
+    },
+    "timeline": {
+      "title": "Timeline",
+      "play": "Play (Space)",
+      "pause": "Pause (Space)",
+      "toStart": "Go to start (Home)",
+      "toEnd": "Go to end (End)",
+      "loop": "Loop",
+      "autokey": "Auto-key",
+      "autokeyHint": "When on, changing any property on the canvas or in the inspector adds a keyframe at the playhead.",
+      "duration": "Length",
+      "playhead": "Playhead",
+      "setIn": "Set play range start at the playhead",
+      "setOut": "Set play range end at the playhead",
+      "clearRange": "Clear play range",
+      "inMarker": "Play range start",
+      "outMarker": "Play range end",
+      "addKeys": "Add keyframes at the playhead for the selected layers",
+      "copyKeys": "Copy keyframes",
+      "pasteKeys": "Paste keyframes at the playhead",
+      "deleteKeys": "Delete keyframes",
+      "zoomIn": "Zoom timeline in",
+      "zoomOut": "Zoom timeline out",
+      "empty": "Draw or import a shape, then animate it here.",
+      "animate": "Animate {{property}}",
+      "stopAnimating": "Stop animating {{property}}",
+      "addKeyHere": "Add a {{property}} keyframe at the playhead",
+      "removeKeyHere": "Remove the {{property}} keyframe at the playhead",
+      "key": "{{property}} keyframe at {{time}}",
+      "layerKey": "{{layer}} keyframes at {{time}}",
+      "maskContent": "Mask: {{layer}}",
+      "clipContent": "Clip: {{layer}}"
+    },
+    "easing": {
+      "title": "Easing",
+      "presets": "Easing presets",
+      "linear": "Linear",
+      "easeIn": "Ease in",
+      "easeOut": "Ease out",
+      "easeBoth": "Ease in-out",
+      "hold": "Hold",
+      "custom": "Curve",
+      "curve": "Easing curve",
+      "handle": "Curve handle {{name}}",
+      "mixed": "The selected keyframes use different easings. Pick one to apply it to all of them.",
+      "applies_one": "Easing of the segment after {{count}} keyframe.",
+      "applies_other": "Easing of the segments after {{count}} keyframes."
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "An animated GIF that plays everywhere. 256 colours, one global palette."
+        },
+        "png_sequence": {
+          "title": "PNG sequence (.zip)",
+          "hint": "Every frame as a PNG with transparency, zipped, for video editors and game engines."
+        },
+        "mp4": {
+          "title": "MP4 video",
+          "hint": "H.264 (or AV1) video, encoded in your browser. No audio."
+        },
+        "webm": {
+          "title": "WebM video",
+          "hint": "VP9 (or AV1) video, encoded in your browser. No audio."
+        }
+      },
+      "block": {
+        "locked": "Your plan does not include this format.",
+        "notOnAnyPlan": "Not available on any plan yet.",
+        "useChromium": "Use Chrome or Edge for video export",
+        "noCodec": "This browser cannot encode this video format. Try the other video format, or Chrome or Edge."
+      },
+      "size": "Size",
+      "sizeOption": "{{height}}p ({{width}} × {{height}})",
+      "fps": "Frames per second",
+      "from": "From (s)",
+      "to": "To (s)",
+      "gif": {
+        "loop": "Loop",
+        "forever": "Forever",
+        "plays_one": "Play {{count}} time",
+        "plays_other": "Play {{count}} times",
+        "dither": "Dither (smoother gradients, larger file)",
+        "transparent": "Transparent background"
+      },
+      "summary": "{{width}} × {{height}} px, {{frames}} frames, {{seconds}} s, about {{size}}",
+      "flattenWhite": "The canvas is transparent; video has no transparency, so frames are placed on white.",
+      "clamped": {
+        "height": "Size limited to {{height}}p by your plan.",
+        "fps": "Frame rate limited to {{fps}} fps.",
+        "duration": "Length limited to {{seconds}} s by your plan."
+      },
+      "tooLarge": "This export would be larger than 2 GB. Lower the size, frame rate or length.",
+      "cancelCounts": "Cancelling after the export has started still uses one export from your daily allowance.",
+      "preparing": "Preparing…",
+      "progress": "Rendering frame {{done}} of {{total}}",
+      "progressLabel": "Export progress",
+      "finalizing": "Finishing the file…",
+      "cancel": "Cancel",
+      "cancelled": "Export cancelled. Nothing was downloaded.",
+      "failed": {
+        "tooLarge": "The file grew larger than 2 GB, so the export was stopped. Lower the size, frame rate or length.",
+        "codec": "This browser cannot encode video at this size and frame rate. Try a smaller size, or Chrome or Edge.",
+        "unsafe": "This drawing contains external content that cannot be rendered to frames. Remove it and try again.",
+        "error": "The export failed in the browser. Try again, or try a smaller size."
+      },
+      "capHeight": "Your plan exports raster files up to {{max}}p.",
+      "capFps": "Your plan exports up to {{max}} frames per second."
+    },
+    "exportDialog": {
+      "title": "Export",
+      "description": "Exports are made in your browser. Animated exports count toward your daily allowance; static SVG is always free.",
+      "formats": "Export format",
+      "animated": "Animated SVG",
+      "animatedHint": "One SVG file with its animation. Pure CSS when possible, otherwise a small inline script.",
+      "static": "Static SVG",
+      "staticHint": "The frame at the playhead, without animation. Free, never counted.",
+      "export": "Export",
+      "unsupported": "This animation uses effects that animated SVG cannot export yet.",
+      "doneStatic": "Static SVG downloaded.",
+      "done_one": "Downloaded. {{count}} animated export left today.",
+      "done_other": "Downloaded. {{count}} animated exports left today.",
+      "doneUnlimited": "Downloaded.",
+      "limit_one": "You have used your {{count}} animated export for today.",
+      "limit_other": "You have used your {{count}} animated exports for today.",
+      "locked": "Your plan does not include this format.",
+      "capDuration": "Your plan exports animations up to {{seconds}} s long. Shorten the animation or upgrade.",
+      "capOther": "This export is larger than your plan allows.",
+      "unavailable": "Exports are unavailable right now. Nothing was counted; try again in a moment.",
+      "upgrade": "See plans",
+      "runtimeCss": "Pure CSS, no script.",
+      "runtimeAnimeBecause": "Uses a {{size}} KB script (anime.js, MIT) because: {{reasons}}.",
+      "runtimeAnimeChosen": "Uses a {{size}} KB script (anime.js, MIT).",
+      "scriptImgNote": "Scripts run when the SVG is opened directly or placed inline in a page, not inside an <img> tag (that shows the first frame).",
+      "forceAnime": "Use the script runtime",
+      "reasons": {
+        "morph": "shape morph",
+        "stopOffset": "gradient stop position",
+        "blur": "blur (Safari)",
+        "motionRotate": "path rotation with a rotation track"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "For LottieFiles, lottie-web, and the iOS, Android and Flutter Lottie players. Features Lottie cannot carry are listed after the download."
+        },
+        "react_tsx": {
+          "title": "React component (.tsx)",
+          "hint": "One component file with the SVG inline. Needs only React, plus the anime.js package when the script runtime is used."
+        },
+        "js": {
+          "title": "JavaScript module (.js)",
+          "hint": "A plain ES module with mount, play, pause and seek. No framework."
+        },
+        "ts": {
+          "title": "TypeScript module (.ts)",
+          "hint": "The JavaScript module with types."
+        },
+        "flutter": {
+          "title": "Flutter widget (.dart)",
+          "hint": "A native flutter_svg widget when the animation only moves, fades and recolours; otherwise a WebView player."
+        }
+      },
+      "emitted": {
+        "css": "Animated with CSS, no script.",
+        "anime": "Animated with anime.js (MIT, imported as a dependency).",
+        "animeBecause": "Animated with anime.js (MIT, imported as a dependency) because: {{reasons}}."
+      },
+      "flutter": {
+        "native": "Emitted the native widget (flutter_svg and an AnimationController): the animation only uses transform, opacity and colour.",
+        "webview": "Emitted the WebView player (webview_flutter) because {{reasons}}. A WebView has an opaque background and is heavier than a native widget."
+      },
+      "flutterReasons": {
+        "morph": "it morphs a shape",
+        "mask": "it animates a mask or clip path",
+        "blur": "it animates a blur",
+        "motionPath": "it moves along a motion path",
+        "drawOn": "it draws a stroke on",
+        "gradient": "it animates gradient stops",
+        "symbol": "it animates layers inside a symbol",
+        "raw": "it contains SVG markup the editor keeps as-is"
+      }
+    },
+    "gate": {
+      "locked": "Locked on your plan",
+      "requires": {
+        "free": "Included with a free account.",
+        "premium": "Included with Premium.",
+        "pro": "Included with Pro."
+      },
+      "cta": {
+        "signup": "Sign in free",
+        "premium": "Upgrade to Premium",
+        "pro": "Upgrade to Pro"
+      }
+    },
+    "projects": {
+      "save": "Save",
+      "saveToAccount": "Save to account",
+      "status": {
+        "local": "In this browser only",
+        "saved": "Saved",
+        "saving": "Saving…",
+        "retrying": "Retrying…",
+        "offline": "Offline, changes kept here",
+        "conflict": "Changed elsewhere",
+        "failed": "Not saved"
+      },
+      "signIn": "Sign in",
+      "signInTitle": "Sign in to save to your account",
+      "signInBody": "Without an account, projects stay in this browser. Sign in (in a new tab, then come back) to save this one to your account, or download it as a file you can open again later.",
+      "downloadJson": "Download .json",
+      "limit_one": "Your plan saves {{count}} project. Delete one in your account, or upgrade.",
+      "limit_other": "Your plan saves {{count}} projects. Delete one in your account, or upgrade.",
+      "saveFailed": "This project could not be saved to your account. Your changes are kept in this browser.",
+      "open": {
+        "signin": "Sign in to open this project. Account projects are only visible to their owner.",
+        "notFound": "This project does not exist, or it belongs to another account.",
+        "failed": "This project could not be loaded. Check your connection and reload the page.",
+        "unreadable": "This project was saved by a newer version and cannot be opened here."
+      },
+      "conflict": {
+        "title": "This project changed in another tab or device.",
+        "reload": "Reload theirs",
+        "keep": "Keep mine",
+        "reloadTitle": "Replace your version?",
+        "reloadBody": "Reloading opens the copy saved elsewhere and discards the changes in this tab. Download your version first if you want to keep it.",
+        "downloadMine": "Download my version",
+        "reloadConfirm": "Reload theirs",
+        "reloadFailed": "The saved copy could not be loaded. Try again."
+      }
+    },
+    "animators": {
+      "title": "Animate",
+      "selectOne": "Select one layer to animate it.",
+      "drawOn": "Draw on",
+      "drawOnHint": "Draw the stroke from start to end (stroke dash offset).",
+      "motionPath": "Motion path",
+      "motionPathHint": "Move the layer along a path. Pick a path or draw one with the pen.",
+      "morph": "Morph",
+      "morphHint": "Morph this path into another shape. Pick the target shape.",
+      "gradient": "Gradient",
+      "gradientHint": "Animate the colours of this layer's gradient (one track per stop).",
+      "maskClip": "Mask/Clip",
+      "maskClipHint": "Animate the layer's mask or clip shape with its own tracks.",
+      "blur": "Blur",
+      "blurHint": "Blur the layer in over time.",
+      "blurAmount": "Blur amount",
+      "pickGuide": "Move along which path?",
+      "pickTarget": "Morph into which shape?",
+      "noShapes": "No other shapes yet.",
+      "drawWithPen": "Draw a new one with the pen",
+      "autoOrient": "Rotate with the path",
+      "spanHint": "Animators run from the playhead to the end. Adjust their keyframes in the timeline.",
+      "notApplied": "That animator does not apply to this layer.",
+      "morphFailed": "These two shapes cannot be morphed."
+    },
+    "lottie": {
+      "supportSummary": "What Lottie cannot carry",
+      "document": "whole animation",
+      "warningsTitle_one": "{{count}} thing did not carry over",
+      "warningsTitle_other": "{{count}} things did not carry over",
+      "unsupported": {
+        "maskAdvanced": "Masks other than simple white or black shapes, and masks on nested layers",
+        "filter": "Blur and other filters",
+        "text": "Text (needs font outlines; convert text to paths first)",
+        "image": "Images that are not embedded, or images inside a group",
+        "useComplex": "Reused symbols with their own size or view box",
+        "raw": "SVG markup the editor keeps as-is",
+        "cssOnly": "Blend modes, markers and other CSS-only styles",
+        "strokeGradientAnimation": "Animated gradients on strokes",
+        "gradientShape": "Repeating, focal or stretched gradients",
+        "paint": "Paints that are not a colour or a gradient",
+        "skew": "Skew on both axes at once",
+        "morph": "Shape morphs that change the number of subpaths",
+        "playOnce": "Play once (Lottie players loop by default)",
+        "expression": "Expressions (the keyframed values are used)",
+        "effect": "Layer effects such as blur or drop shadow",
+        "textLayer": "Text layers (kept as empty, named groups)",
+        "timeRemap": "Time remapping",
+        "threeD": "3D layers and 3D rotation",
+        "blendMode": "Blend modes other than normal",
+        "matte": "Track mattes",
+        "maskMode": "Masks other than add and subtract",
+        "modifier": "Repeaters, rounded corners and other shape modifiers",
+        "imageExternal": "Images that are not embedded in the file",
+        "spatialTangents": "Curved motion paths (the layer moves in straight lines)",
+        "layerTiming": "Layer in and out points on a layer whose opacity is animated",
+        "unknownLayer": "Layer types the editor does not draw",
+        "unknownShape": "Unknown shape items",
+        "autoOrient": "Auto-orient along the path",
+        "skewAxis": "Skew along an angled axis",
+        "polystar": "Rounded or animated stars and polygons (drawn as a plain outline)",
+        "trimComplex": "Trim paths that do more than draw on or erase",
+        "gradientAnimation": "Animated gradient positions and animated stroke gradients",
+        "multipleStyles": "Several fills or strokes on one shape (the nearest is used)",
+        "styleOpacity": "Animated fill or stroke opacity on gradients",
+        "morphCounts": "Shape keys with different point counts (in-betweens will differ)"
+      },
+      "import": {
+        "warningsTitle_one": "{{count}} thing could not be imported",
+        "warningsTitle_other": "{{count}} things could not be imported",
+        "warningsBody": "The animation is ready to open. These parts of the Lottie file are not supported and were left out or simplified:",
+        "open": "Open animation",
+        "unavailable": "Lottie import is not available on this site.",
+        "refused": {
+          "limit": "You have used your exports and imports for today.",
+          "locked": "Your plan does not include Lottie import.",
+          "cap": "This file is larger than your plan allows.",
+          "unavailable": "Import is unavailable right now. Nothing was counted; try again in a moment."
+        },
+        "errors": {
+          "too_large": "That file is larger than 4 MB.",
+          "not_json": "That file could not be read as JSON.",
+          "not_lottie": "That file is not a Lottie animation.",
+          "too_complex": "That animation has too many layers, keyframes or points.",
+          "invalid": "That Lottie file could not be turned into an animation."
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "Drag and drop an image, video, audio or PDF file here",
+    "hint": "or click to select from your computer. The file is read for its metadata and deleted after analysis; nothing is converted.",
+    "largeFile": "Files over {{size}} are only inspected when you ask, so a large video is not uploaded by accident.",
+    "failed": "The file could not be inspected. It may be an unsupported type or too large for your plan."
+  },
+  "voiceTools": {
+    "loading": "Loading the voice tools…",
+    "unavailable": {
+      "title": "Voices is not available right now",
+      "body": "The voice engine is switched off or restarting, so this tool cannot run at the moment. Nothing was counted. Please try again later.",
+      "shiftStillWorks": "The pitch shifter below does not need the voice engine and still works."
+    },
+    "warmingUp": "Warming up the voice engine, the first request can take up to 20 seconds.",
+    "honesty": "Speech made with a saved or preset voice carries an inaudible watermark; audio changed with the shifter does not. Only use your own voice, or a voice you have permission to use. Nothing you record or generate is used to train any model, and the voice engines run on our own servers.",
+    "signIn": {
+      "title": "Sign in to save a voice",
+      "body": "A saved voice needs an owner and a consent record, so cloning a voice, keeping a designed voice, converting to a voice and My voices need an account. Nothing is uploaded until you sign in.",
+      "cta": "Sign in"
+    },
+    "recorder": {
+      "record": "Record",
+      "recording": "Recording",
+      "stop": "Stop",
+      "cancel": "Cancel recording",
+      "level": "Microphone level",
+      "or": "or",
+      "upload": "Upload an audio file",
+      "remove": "Remove",
+      "recorded": "Your recording, {{duration}}",
+      "uploaded": "{{name}}, {{duration}}",
+      "measuring": "Reading the length of the file…",
+      "unknownLength": "The length of this file could not be read in the browser; the server will check it.",
+      "tooShort": "The recording is {{seconds}} seconds long. A voice needs at least 5 seconds of speech.",
+      "tooLong": "The recording is {{seconds}} seconds long. Keep it to 60 seconds or less.",
+      "referenceHint": "Record or upload 5 to 60 seconds of clear speech in a quiet room. Read a few natural sentences.",
+      "inputHint": "Record or upload the speech you want to change.",
+      "micDenied": "Microphone access was blocked. Allow the microphone for this site in your browser's address bar, or upload a file instead.",
+      "micHostBlocked": "The page hosting this tool has not allowed microphone access. Upload a file instead.",
+      "micUnavailable": "Recording is not available in this browser. Upload an audio file instead."
+    },
+    "consent": {
+      "label": "This is my voice, or I have the explicit permission of the person whose voice this is.",
+      "note": "We store the time you confirm this and the version of this text ({{version}}) with the voice. See section 8.11 of the Terms."
+    },
+    "clone": {
+      "title": "Create a voice from a recording",
+      "nameLabel": "Voice name",
+      "namePlaceholder": "My voice",
+      "languageLabel": "Language of the recording",
+      "create": "Create voice",
+      "creating": "Creating your voice…",
+      "created": "Voice created. Listen to its preview under My voices.",
+      "signInToCreate": "Sign in to create the voice",
+      "limitReached": "You have saved {{used}} of {{limit}} voices on your plan. Delete one in Account, Voices, or upgrade to save more.",
+      "noSaving": "Your plan cannot save voices.",
+      "usage": "{{used}} of {{limit}} voices saved",
+      "usageUnlimited": "{{used}} voices saved"
+    },
+    "myVoices": {
+      "title": "My voices",
+      "empty": "No saved voices yet.",
+      "preview": "Preview of {{name}}",
+      "use": "Use this voice",
+      "inUse": "Selected",
+      "manage": "Manage your voices in Account",
+      "kinds": {
+        "cloned": "Cloned",
+        "designed": "Designed",
+        "preset": "Preset"
+      }
+    },
+    "picker": {
+      "label": "Voice",
+      "saved": "My voices",
+      "presets": "Preset voices",
+      "none": "No voices are available yet."
+    },
+    "speak": {
+      "title": "Generate speech",
+      "textLabel": "Text to speak",
+      "placeholder": "Type what the voice should say.",
+      "counter": "{{used}} of {{max}} characters",
+      "overLimit": "That is longer than your plan allows in one request ({{max}} characters).",
+      "languageLabel": "Language",
+      "exaggerationLabel": "Emotion",
+      "exaggerationHint": "Lower is calmer, higher is more expressive.",
+      "generate": "Generate speech",
+      "generating": "Generating…",
+      "notAllowed": "Your plan does not include speech generation."
+    },
+    "designer": {
+      "title": "Describe a voice",
+      "descriptionLabel": "Description",
+      "placeholder": "Warm, low, slightly raspy, middle-aged, calm",
+      "hint": "Describe how the voice should sound. The engine understands descriptions best in English; the chips below add common traits.",
+      "languageLabel": "Language of the preview",
+      "languageNote": "A designed voice is created in one of these languages; once kept, it can speak every language of the speech tool.",
+      "chipGroups": {
+        "gender": "Gender",
+        "age": "Age",
+        "accent": "Accent",
+        "tone": "Tone",
+        "pace": "Pace"
+      },
+      "chips": {
+        "female": "Female",
+        "male": "Male",
+        "neutral": "Androgynous",
+        "young": "Young adult",
+        "middleAged": "Middle-aged",
+        "older": "Older",
+        "american": "American",
+        "british": "British",
+        "australian": "Australian",
+        "irish": "Irish",
+        "warm": "Warm",
+        "bright": "Bright",
+        "deep": "Deep",
+        "raspy": "Raspy",
+        "soft": "Soft",
+        "slow": "Slow",
+        "measured": "Measured",
+        "fast": "Fast"
+      },
+      "preview": "Preview",
+      "previewing": "Rendering a preview…",
+      "previewsLeft": "Previews left: {{left}} of {{max}}",
+      "previewsUsed": "You have used the 3 previews for this description. Keep the voice, or change the description to preview again.",
+      "previewLabel": "Preview of the described voice",
+      "keepTitle": "Keep this voice",
+      "nameLabel": "Voice name",
+      "keep": "Keep this voice",
+      "keeping": "Saving the voice…",
+      "kept": "Voice saved. It is now under My voices.",
+      "signInToKeep": "Sign in to keep this voice"
+    },
+    "changer": {
+      "modeLabel": "How to change it",
+      "modes": {
+        "shift": "Shift (instant)",
+        "convert": "Convert to a voice (AI)"
+      },
+      "shiftHint": "Shifts the pitch and formant with rubberband, instantly. Counts as one operation. The result is not watermarked.",
+      "convertHint": "Makes the recording sound like a saved or preset voice. Counts as one AI job. The result carries an inaudible watermark.",
+      "convertNotInPlan": "Converting to a voice is not part of your plan.",
+      "upgrade": "See plans",
+      "signInToConvert": "Sign in to convert to a voice",
+      "targetLabel": "Convert to",
+      "convert": "Convert",
+      "converting": "Converting…"
+    },
+    "shifter": {
+      "semitonesLabel": "Pitch",
+      "semitonesValue": "{{value}} semitones",
+      "formantLabel": "Formant",
+      "formants": {
+        "preserved": "Keep the voice's character",
+        "shifted": "Shift with the pitch"
+      },
+      "presetsLabel": "Presets",
+      "presets": {
+        "deeper": "Deeper",
+        "higher": "Higher",
+        "child": "Child-like",
+        "elder": "Older",
+        "telephone": "Telephone"
+      },
+      "shift": "Shift voice",
+      "shifting": "Shifting…"
+    },
+    "result": {
+      "working": "Working on it…",
+      "failed": "The voice job failed. It was not counted.",
+      "downloadMp3": "Download MP3",
+      "downloadWav": "Download WAV",
+      "wavPreparing": "Preparing the WAV…",
+      "wavFailed": "The WAV could not be made in this browser. Download the MP3 instead.",
+      "wavNote": "The WAV is decoded from the MP3 in your browser.",
+      "another": "Start again"
+    },
+    "darkroom": {
+      "title": "Generate voiceover",
+      "description": "Type a script, pick a voice and a language. The voiceover is added to this project’s media and placed at the playhead.",
+      "placeholder": "Type the voiceover script.",
+      "generate": "Generate voiceover",
+      "presetsOnly": "Signed out, you can use the preset voices. Sign in to use a voice you saved.",
+      "added": "Voiceover added at the playhead",
+      "noAsset": "The voiceover was generated but could not be added to the project. Try again."
+    },
+    "errors": {
+      "sign_in_required": "Sign in to save and use your own voices.",
+      "consent_required": "Tick the box to confirm that this is your voice, or that you have the speaker's explicit permission.",
+      "reference_required": "Record or upload 5 to 60 seconds of speech first.",
+      "reference_too_short": "The recording must be at least 5 seconds long.",
+      "reference_too_long": "The recording must be 60 seconds or shorter.",
+      "reference_too_large": "The recording file is too large.",
+      "no_speech_detected": "We could not hear speech in that recording. Record a few sentences in a quiet room.",
+      "not_audio": "That file is not a recording we can read.",
+      "name_invalid": "Give the voice a name of 1 to 60 characters.",
+      "language_not_supported": "That language is not supported for this voice.",
+      "voice_limit": "You have reached the number of saved voices on your plan ({{limit}}). Delete one or upgrade to save more.",
+      "text_required": "Type something to say.",
+      "text_too_long": "Your plan allows up to {{limit}} characters per request.",
+      "exaggeration_invalid": "Emotion must be between 0.25 and 2.",
+      "voice_convert_not_in_plan": "Converting to a voice is not included in your plan.",
+      "voice_input_too_long": "Your plan allows recordings of up to {{limit}} seconds here.",
+      "input_required": "Add the recording you want to change.",
+      "input_too_large": "The recording is too large for your plan.",
+      "voice_required": "Choose one voice to convert to.",
+      "voice_not_found": "That voice no longer exists.",
+      "preset_not_found": "That preset voice is not available.",
+      "description_required": "Describe the voice you want.",
+      "description_too_long": "Keep the description under 1000 characters.",
+      "preview_limit": "You have previewed this description three times this hour. Keep the voice, or change the description.",
+      "session_required": "Previews need a browser session. Reload the page and try again.",
+      "semitones_invalid": "Pitch must be between -12 and 12 semitones.",
+      "shift_invalid": "Those shift settings are not valid.",
+      "voices_unavailable": "The voice engine is unavailable right now. Nothing was counted; try again shortly.",
+      "voices_storage_unavailable": "Saved voices are temporarily unavailable. Nothing was counted.",
+      "voices_timeout": "The voice engine took too long. Nothing was counted.",
+      "voice_request_refused": "The voice engine refused that request.",
+      "upload_failed": "The upload failed. Please try again.",
+      "job_failed": "The job could not be started. Please try again.",
+      "invalid_body": "Something in the request was not valid. Reload the page and try again.",
+      "rate_limited": "Too many voice requests in the last hour. Please try again later.",
+      "generic": "Something went wrong. Please try again."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "प्रीव्यू"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "आउटपुट इमेज फ़ॉर्मैट के बारे में",
+    "dpiTooltip": "रेंडर क्वालिटी (DPI) के बारे में",
+    "pagesTooltip": "पेज चयन के बारे में",
+    "qualityTooltip": "JPG क्वालिटी के बारे में"
+  },
+  "ad": {
+    "label": "विज्ञापन",
+    "close": "विज्ञापन बंद करें"
+  },
+  "modals": {
+    "close": "बंद करें",
+    "previousStep": "पिछला चरण",
+    "nextStep": "अगला चरण"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "ऊपर-बाएँ हैंडल",
+    "topRightHandle": "ऊपर-दाएँ हैंडल",
+    "bottomLeftHandle": "नीचे-बाएँ हैंडल",
+    "bottomRightHandle": "नीचे-दाएँ हैंडल"
+  },
+  "mediaTrimModal": {
+    "scrubber": "ट्रिम स्क्रबर",
+    "playToggle": "प्रीव्यू चलाएँ / रोकें"
+  },
+  "overlays": {
+    "canvas": "चयन कैनवास",
+    "removeRegion": "यह क्षेत्र हटाएँ",
+    "previousPage": "पिछला पेज",
+    "nextPage": "अगला पेज"
+  },
+  "quotaMeter": {
+    "gauge": "{{used}} / {{limit}} दैनिक ऑपरेशन इस्तेमाल हुए",
+    "gaugeUnlimited": "दैनिक ऑपरेशन की कोई सीमा नहीं",
+    "aiGauge": "{{label}} {{used}} / {{limit}} दैनिक AI जॉब इस्तेमाल हुए",
+    "openUpgrade": "देखें कि बड़ा दैनिक कोटा कैसे पाएँ",
+    "openAccount": "अपना अकाउंट खोलें"
+  },
+  "accountMenu": {
+    "open": "अकाउंट मेनू"
+  }
+}

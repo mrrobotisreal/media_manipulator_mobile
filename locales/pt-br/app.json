@@ -1,0 +1,84 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "retry": "Tentar novamente",
+    "close": "Fechar",
+    "continue": "Continuar",
+    "done": "Concluído",
+    "loading": "Carregando",
+    "processing": "Processando",
+    "signOut": "Sair",
+    "back": "Voltar"
+  },
+  "tabs": {
+    "tools": "Ferramentas",
+    "history": "Histórico",
+    "account": "Conta"
+  },
+  "placeholders": {
+    "toolsBody": "As ferramentas chegam no MA10.",
+    "historyBody": "Seus trabalhos vão aparecer aqui.",
+    "accountBody": "A conta chega no MA15.",
+    "errorBoundary": "Algo deu errado. Reinicie o app."
+  },
+  "language": {
+    "title": "Idioma",
+    "system": "Padrão do sistema",
+    "rtlReloadTitle": "Reinicie para mudar a direção do layout",
+    "rtlReloadBody": "O app precisa reiniciar para mostrar este idioma da direita para a esquerda.",
+    "rtlReloadBodyLtr": "O app precisa reiniciar para mostrar este idioma da esquerda para a direita.",
+    "rtlReloadConfirm": "Reiniciar agora"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Entrar no Media Manipulator",
+      "subtitle": "Use a mesma conta do media-manipulator.com.",
+      "email": "Entrar com e-mail",
+      "createAccount": "Criar uma conta",
+      "legal": "Ao continuar, você concorda com os {{terms}} e a {{privacy}}.",
+      "terms": "Termos de Uso",
+      "privacy": "Política de Privacidade",
+      "unavailable": "O login não está disponível nesta versão.",
+      "sessionExpired": "Sua sessão expirou. Entre novamente."
+    },
+    "signUp": {
+      "title": "Crie sua conta",
+      "name": "Nome",
+      "passwordHelper": "Pelo menos 8 caracteres",
+      "submit": "Criar conta",
+      "haveAccount": "Já tem uma conta? Entrar"
+    },
+    "errors": {
+      "nameRequired": "Digite seu nome (até 80 caracteres).",
+      "emailInUse": "Já existe uma conta com este e-mail. Entre nela.",
+      "weakPassword": "Escolha uma senha mais forte (pelo menos 8 caracteres).",
+      "generic": "Algo deu errado. Tente novamente."
+    },
+    "link": {
+      "title": "Vincule suas contas",
+      "linkApple": "Vincular Apple",
+      "linkAppleBody": "Vincule seu ID Apple para entrar com ele da próxima vez."
+    },
+    "verify": {
+      "banner": "Confirme seu e-mail para manter sua conta segura.",
+      "send": "Enviar link",
+      "sent": "Link enviado. Confira sua caixa de entrada."
+    },
+    "sync": {
+      "failedTitle": "Não conseguimos acessar sua conta",
+      "failedBody": "Verifique sua conexão e tente novamente. Seus arquivos e seu plano estão seguros."
+    },
+    "signOut": {
+      "confirmTitle": "Sair?",
+      "confirmBody": "Você pode entrar de novo quando quiser."
+    },
+    "reauth": {
+      "title": "Confirme que é você",
+      "body": "Para sua segurança, entre novamente para continuar.",
+      "withPassword": "Confirmar com a senha",
+      "withGoogle": "Confirmar com o Google",
+      "withApple": "Confirmar com a Apple"
+    }
+  }
+}

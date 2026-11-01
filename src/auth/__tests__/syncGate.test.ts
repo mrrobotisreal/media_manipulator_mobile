@@ -1,6 +1,6 @@
 import type { AuthIdentity } from '@/state/slices/auth';
 import { track } from '@/analytics/track';
-import { MmError } from '@/api/errors';
+import type { MmError } from '@/api/errors';
 import { clearSignInHint, createSyncGate, hintSignIn, SYNC_RETRY_DELAYS_MS } from '../syncGate';
 
 jest.mock('@/analytics/track', () => ({ track: jest.fn(), identify: jest.fn(), reset: jest.fn() }));
@@ -96,7 +96,7 @@ describe('syncGate', () => {
   });
 
   it('a 401 goes straight to syncFailed without retrying', async () => {
-    const err: MmError = { status: 401, code: 'unauthenticated', details: undefined } as MmError;
+    const err: MmError = { status: 401, code: 'unauthenticated', details: {} };
     const sync = jest.fn().mockRejectedValue(err);
     const { emit, statuses, sleeps } = setup(sync);
     emit(id());

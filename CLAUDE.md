@@ -5,7 +5,7 @@ Expo SDK 57 / React Native dev-client app. Read `CONTEXT.md`, then the planning 
 ## Run from and gates
 
 - Run from this directory. Node 24 (`.nvmrc`), npm.
-- `npm run gates` = typecheck + lint + jest + `npx expo-doctor`. Also keep `npx expo install --check` clean. Install Expo-managed packages with `npx expo install`.
+- `npm run gates` = typecheck + lint + jest + `npx expo-doctor` + both i18n checks. Also keep `npx expo install --check` clean. Install Expo-managed packages with `npx expo install`.
 
 ## Hard rules
 
@@ -15,7 +15,7 @@ Expo SDK 57 / React Native dev-client app. Read `CONTEXT.md`, then the planning 
 - Secrets: never read, print or commit `.env*`, `google-services.json`, `GoogleService-Info.plist`, keystores or tokens. Name the variable instead (`GOOGLE_SERVICES_JSON`, `GOOGLE_SERVICE_INFO_PLIST`, `EXPO_PUBLIC_*`).
 - The API (`../media_manipulator_api/`) is the source of truth for contracts; never invent endpoints.
 - Analytics event names only through `src/analytics/events.ts` once it exists (MA07).
-- User-visible strings: English literals tagged `// i18n: MA05` until MA05, then 18 locales. Use logical styles (`start`/`end`, `ps`/`pe`), never left/right.
+- User-visible strings: every new string goes through `t()` and into all 18 `locales/<code>/app.json` in the same commit (reuse a web key from `interface|error|accessibility` first; `npm run gates` enforces it). Never edit `src/i18n/generated/` (run `npm run i18n:sync`). Use logical styles (`start`/`end`, `ms`/`me`, `ps`/`pe`), never left/right (a test enforces it).
 - Use `Text`/`Button` from `src/ui/components`, not react-native's (lint-enforced in `app/` and `src/features`).
 - `useFrameworks: 'static'` (iOS) is react-native-firebase's requirement; keep it.
 - App ids: `com.mediamanipulator.app` (Android and iOS), never `com.media_manipulator.app` / `com.media-manipulator.app`.
