@@ -9,6 +9,9 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
+import { registerStateGetter } from '@/api/stateRef';
+import { setupApiListeners } from '@/api/listeners';
+import { mmApi } from '@/api/mmApi';
 import { persistConfig } from './persist';
 import auth from './slices/auth';
 import jobs from './slices/jobs';
@@ -22,6 +25,7 @@ export const rootReducer = combineReducers({
   session: persistReducer(persistConfig('session'), session),
   jobs: persistReducer(persistConfig('jobs'), jobs),
   quota,
+  [mmApi.reducerPath]: mmApi.reducer,
   settings: persistReducer(persistConfig('settings'), settings),
 });
 
@@ -31,12 +35,14 @@ export function makeStore() {
     middleware: (getDefault) =>
       getDefault({
         serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER] },
-      }),
+      }).concat(mmApi.middleware),
   });
+  registerStateGetter(() => store.getState());
   return { store, persistor: persistStore(store) };
 }
 
 export const { store, persistor } = makeStore();
+setupApiListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = typeof store;

@@ -27,6 +27,11 @@ const authSlice = createSlice({
     statusChanged(state, action: PayloadAction<AuthStatus>) {
       state.status = action.payload;
     },
+    /**
+     * Dispatched by the API baseQuery after a forced token refresh still gets 401.
+     * No state change here; MA04 listens and signs the user out.
+     */
+    sessionExpired() {},
     /** Dev-only shell skip, deleted by MA04. No-op outside __DEV__. */
     devShellEntered(state) {
       if (__DEV__) state.status = 'ready';
@@ -34,5 +39,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { statusChanged, devShellEntered } = authSlice.actions;
+export const { statusChanged, devShellEntered, sessionExpired } = authSlice.actions;
 export default authSlice.reducer;

@@ -55,3 +55,19 @@ jest.mock(
   'react-native-safe-area-context',
   () => require('react-native-safe-area-context/jest/mock').default,
 );
+
+jest.mock('expo-application', () => ({
+  nativeApplicationVersion: null,
+  nativeBuildVersion: null,
+}));
+
+jest.mock('expo-device', () => ({ osVersion: null, modelName: null }));
+
+jest.mock('expo-localization', () => ({
+  getLocales: () => [{ languageTag: 'en-US', languageCode: 'en' }],
+}));
+
+jest.mock('expo-network', () => ({
+  addNetworkStateListener: jest.fn(() => ({ remove: jest.fn() })),
+  getNetworkStateAsync: jest.fn(() => Promise.resolve({ isConnected: true })),
+}));
