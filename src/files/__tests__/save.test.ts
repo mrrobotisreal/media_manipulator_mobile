@@ -104,7 +104,7 @@ describe('Save to Photos', () => {
     const d = deps();
     await saveResult(base(d, { file: file(101 * 1024 * 1024) }));
     expect(d.evictCache).toHaveBeenCalledWith('job-1');
-    d.evictCache.mockClear();
+    (d.evictCache as jest.Mock).mockClear();
     await saveResult(base(d));
     expect(d.evictCache).not.toHaveBeenCalled();
   });

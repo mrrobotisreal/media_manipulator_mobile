@@ -26,6 +26,8 @@ export interface DownloadResultArgs {
   signal?: AbortSignal;
   /** A link already minted by a variant flow (MP3). Omitted: the plain `POST /download/:id/link`. */
   link?: DownloadLink;
+  /** The MP3 flow already emitted `download_started` at its first POST. */
+  skipStartedEvent?: boolean;
   deps?: FetchResultDeps;
   now?: () => number;
 }
@@ -48,7 +50,7 @@ export async function downloadResult(args: DownloadResultArgs): Promise<File> {
     ? { ...base, mintLink: async () => args.link as DownloadLink }
     : base;
   const started = now();
-  trackDownloadStarted(args.context, args.outputFormat, args.sizeBytes);
+  if (!args.skipStartedEvent) trackDownloadStarted(args.context, args.outputFormat, args.sizeBytes);
   try {
     const file = await fetchResultFile(
       {
