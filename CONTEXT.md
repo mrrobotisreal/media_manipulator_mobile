@@ -32,10 +32,16 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Intake** (MA11): getting a user file into the app as an `IntakeFile`: a stable `file://` copy under `cache/intake/<id>/` (never a `content://` URI), made by `src/files/intake.ts` before any check that needs the bytes. A 24 h sweep (start + foreground) deletes unreferenced copies.
 - **Share-into** (MA11): Android `ACTION_SEND` / `SEND_MULTIPLE` via `expo-share-intent` 8.x. The plugin receives `*/*` and `src/files/share-intent.ts` filters by MIME in JS; a share is held in memory until `auth.status === 'ready'`, then routed to `app/(app)/intake.tsx`. iOS share extension is MA36.
 - **Pre-flight check** (MA11): pure `src/files/preflight.ts` run before any upload: `unsupported_type`, `too_large`, `too_long`, `empty`, `too_many`, against the cached `/account/me` limits. Skipped (never guessed) while the snapshot loads; a failed duration probe never blocks.
+- **Job record** (MA12): one `JobRecord` in the persisted `jobs` slice (`src/jobs/types.ts`), keyed by **local job id**; carries the lifecycle `state`, upload/server progress, the last server snapshot and the built options (so Try again re-sends the same job). The newest 50 persist.
+- **Local job id** (MA12): `local_<uuid>`, created by `startJobs()` before the server assigns `jobId`; `findJob` accepts either id (the job route and push deep links).
+- **Job state** (MA12): `queued -> uploading -> (finalizing) -> pending | processing -> completed | failed`; side exits `rejected` (API refused the upload; MA16 renders it), `upload_failed` (retryable), `lost`, `cancelled`, `stopped`. Only `transition()` moves a record.
+- **Lost job** (MA12): a persisted `pending`/`processing` job whose `GET /job/:id` is 404 (the API's job map is in memory). `lostReason` `server_restarted` (< 24 h since accepted) or `expired`.
+- **Stop watching** (MA12): after acceptance there is no server cancel; the app drops tracking (`stopped`), the job still runs and counts. Before acceptance, Cancel aborts the upload (no job, no charge).
+- **Job engine** (MA12): `src/jobs/jobEngine.ts`, plain TypeScript over an injected `JobTransport`; one upload at a time, SSE for the watched job (fallback 2 s poll after an error or 60 s silence), 5 s poll for the rest, nothing while backgrounded. `runtime.ts` wires the real store/native modules; `useJob(id)` watches while a screen is mounted.
 
 ## Layout
 
-`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`; `src/tools` registry, search, recents (MA10); `src/files` intake, pre-flight, share-into, FileArea (MA11).
+`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`; `src/tools` registry, search, recents (MA10); `src/files` intake, pre-flight, share-into, FileArea (MA11); `src/jobs` upload transport, SSE parser, job engine, restore (MA12).
 
 ## Ids
 

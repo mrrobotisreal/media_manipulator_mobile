@@ -11,6 +11,8 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Component, useEffect, type ReactNode } from 'react';
+import { getJobEngine } from '@/jobs/runtime';
+import { isTerminal } from '@/jobs/types';
 import { startAuth } from '@/auth/gate';
 import { cleanupIntakeCache } from '@/files/intake';
 import { useShareIntentRouting } from '@/files/share-intent';
@@ -70,10 +72,9 @@ function IntakeCacheSweeper() {
     const sweep = () => {
       const jobs = store.getState().jobs;
       const referenced = new Set<string>();
-      for (const j of Object.values(jobs.byId)) {
-        if (j.intakeId && j.status !== 'completed' && j.status !== 'failed') {
-          referenced.add(j.intakeId);
-        }
+      for (const j of Object.values(jobs.byLocalId)) {
+        // Terminal jobs no longer need the copy; upload_failed keeps it for "Try again".
+        if (!isTerminal(j.state)) referenced.add(j.intakeFileId);
       }
       try {
         cleanupIntakeCache({ referencedIds: referenced });
@@ -85,6 +86,18 @@ function IntakeCacheSweeper() {
     const sub = AppState.addEventListener('change', (s) => s === 'active' && sweep());
     return () => sub.remove();
   }, []);
+  return null;
+}
+
+/** Starts the job engine (relaunch restore, AppState/NetInfo tracking) once the account is ready. */
+function JobEngineHost() {
+  const ready = useAppSelector((s) => s.auth.status === 'ready');
+  useEffect(() => {
+    if (!ready) return;
+    const engine = getJobEngine();
+    void engine.start();
+    return () => engine.stop();
+  }, [ready]);
   return null;
 }
 
@@ -122,6 +135,7 @@ export default function RootLayout() {
                   <AuthGate>
                     <ShareIntentRouter />
                     <IntakeCacheSweeper />
+                    <JobEngineHost />
                     <Stack
                       screenOptions={{
                         headerShown: false,

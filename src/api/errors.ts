@@ -16,6 +16,8 @@ export const CLIENT_ERROR_CODES = [
   'payload_too_large',
   'source_limit_exceeded',
   'contract_mismatch',
+  'interrupted',
+  'file_gone',
   'unknown',
 ] as const;
 

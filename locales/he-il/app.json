@@ -308,5 +308,36 @@
       "empty": "הקובץ ריק.",
       "tooMany": "אפשר לבחור עד {{count}} קבצים בכל פעם."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "ממתין להעלאה",
+      "uploading": "מעלה",
+      "finalizing": "מסיים את ההעלאה",
+      "pending": "ממתין לשרת",
+      "processing": "מעבד",
+      "completed": "הושלם",
+      "failed": "נכשל",
+      "rejected": "לא התקבל",
+      "upload_failed": "ההעלאה נכשלה",
+      "lost": "המשימה אבדה",
+      "cancelled": "בוטל",
+      "stopped": "המעקב הופסק"
+    },
+    "uploading": "מעלה… {{percent}}",
+    "processing": "מעבד… {{percent}}",
+    "continuingInBackground": "ממשיך ברקע",
+    "gpuNote": "משימות AI עשויות להימשך כמה דקות. אפשר לעזוב את המסך הזה.",
+    "cancel": "ביטול העלאה",
+    "stopWatching": "הפסקת מעקב",
+    "stopWatchingBody": "המשימה ממשיכה לרוץ ונספרת במכסה של היום. את התוצאה תמצא בהיסטוריה.",
+    "retry": "נסה שוב",
+    "fileGone": "הקובץ כבר לא נמצא במכשיר הזה. בחר אותו שוב כדי לנסות שוב.",
+    "lost": "השרת הופעל מחדש והמשימה אבדה. הרץ אותה שוב.",
+    "interrupted": "ההעלאה הופסקה.",
+    "queuePosition": "{{index}} מתוך {{count}}",
+    "completedPlaceholder": "הקובץ שלך מוכן. תצוגת התוצאות תגיע בעדכון הבא.",
+    "notFound": "המשימה הזו כבר לא במעקב במכשיר הזה.",
+    "rejectedBody": "השרת לא קיבל את הקובץ הזה."
   }
 }

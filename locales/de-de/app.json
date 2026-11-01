@@ -308,5 +308,36 @@
       "empty": "Diese Datei ist leer.",
       "tooMany": "Wähle höchstens {{count}} Dateien auf einmal aus."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "Wartet auf Upload",
+      "uploading": "Wird hochgeladen",
+      "finalizing": "Upload wird abgeschlossen",
+      "pending": "Wartet auf den Server",
+      "processing": "Wird verarbeitet",
+      "completed": "Abgeschlossen",
+      "failed": "Fehlgeschlagen",
+      "rejected": "Nicht akzeptiert",
+      "upload_failed": "Upload fehlgeschlagen",
+      "lost": "Auftrag verloren",
+      "cancelled": "Abgebrochen",
+      "stopped": "Beobachtung beendet"
+    },
+    "uploading": "Wird hochgeladen… {{percent}}",
+    "processing": "Wird verarbeitet… {{percent}}",
+    "continuingInBackground": "Läuft im Hintergrund weiter",
+    "gpuNote": "KI-Aufträge können einige Minuten dauern. Du kannst diesen Bildschirm verlassen.",
+    "cancel": "Upload abbrechen",
+    "stopWatching": "Nicht mehr beobachten",
+    "stopWatchingBody": "Der Auftrag läuft weiter und zählt weiterhin zum heutigen Limit. Das Ergebnis findest du im Verlauf.",
+    "retry": "Erneut versuchen",
+    "fileGone": "Die Datei ist nicht mehr auf diesem Gerät. Wähle sie erneut aus, um es noch einmal zu versuchen.",
+    "lost": "Der Server wurde neu gestartet und hat diesen Auftrag verloren. Führe ihn erneut aus.",
+    "interrupted": "Der Upload wurde unterbrochen.",
+    "queuePosition": "{{index}} von {{count}}",
+    "completedPlaceholder": "Deine Datei ist fertig. Die Ergebnisansicht kommt mit dem nächsten Update.",
+    "notFound": "Dieser Auftrag wird auf diesem Gerät nicht mehr verfolgt.",
+    "rejectedBody": "Der Server hat diese Datei nicht akzeptiert."
   }
 }

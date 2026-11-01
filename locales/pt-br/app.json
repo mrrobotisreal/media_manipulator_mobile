@@ -308,5 +308,36 @@
       "empty": "Este arquivo está vazio.",
       "tooMany": "Escolha até {{count}} arquivos por vez."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "Aguardando envio",
+      "uploading": "Enviando",
+      "finalizing": "Finalizando o envio",
+      "pending": "Aguardando o servidor",
+      "processing": "Processando",
+      "completed": "Concluído",
+      "failed": "Falhou",
+      "rejected": "Não aceito",
+      "upload_failed": "Falha no envio",
+      "lost": "Tarefa perdida",
+      "cancelled": "Cancelado",
+      "stopped": "Acompanhamento interrompido"
+    },
+    "uploading": "Enviando… {{percent}}",
+    "processing": "Processando… {{percent}}",
+    "continuingInBackground": "Continuando em segundo plano",
+    "gpuNote": "Tarefas de IA podem levar alguns minutos. Você pode sair desta tela.",
+    "cancel": "Cancelar envio",
+    "stopWatching": "Parar de acompanhar",
+    "stopWatchingBody": "A tarefa continua em andamento e conta para o limite de hoje. Você encontra o resultado em Histórico.",
+    "retry": "Tentar novamente",
+    "fileGone": "O arquivo não está mais neste dispositivo. Escolha-o novamente para tentar de novo.",
+    "lost": "O servidor reiniciou e perdeu esta tarefa. Execute-a novamente.",
+    "interrupted": "O envio foi interrompido.",
+    "queuePosition": "{{index}} de {{count}}",
+    "completedPlaceholder": "Seu arquivo está pronto. O visualizador de resultados chega na próxima atualização.",
+    "notFound": "Esta tarefa não é mais acompanhada neste dispositivo.",
+    "rejectedBody": "O servidor não aceitou este arquivo."
   }
 }

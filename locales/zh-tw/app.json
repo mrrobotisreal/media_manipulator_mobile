@@ -308,5 +308,36 @@
       "empty": "此檔案是空的。",
       "tooMany": "一次最多選擇 {{count}} 個檔案。"
     }
+  },
+  "job": {
+    "state": {
+      "queued": "等待上傳",
+      "uploading": "上傳中",
+      "finalizing": "正在完成上傳",
+      "pending": "等待伺服器",
+      "processing": "處理中",
+      "completed": "已完成",
+      "failed": "失敗",
+      "rejected": "未被接受",
+      "upload_failed": "上傳失敗",
+      "lost": "工作已遺失",
+      "cancelled": "已取消",
+      "stopped": "已停止關注"
+    },
+    "uploading": "上傳中… {{percent}}",
+    "processing": "處理中… {{percent}}",
+    "continuingInBackground": "在背景繼續",
+    "gpuNote": "AI 工作可能需要幾分鐘。你可以離開此畫面。",
+    "cancel": "取消上傳",
+    "stopWatching": "停止關注",
+    "stopWatchingBody": "工作會繼續執行，並仍計入今日額度。你可以在「記錄」中查看結果。",
+    "retry": "重試",
+    "fileGone": "該檔案已不在此裝置上。請重新選擇後再試一次。",
+    "lost": "伺服器已重新啟動，此工作已遺失。請重新執行。",
+    "interrupted": "上傳已中斷。",
+    "queuePosition": "第 {{index}} 個，共 {{count}} 個",
+    "completedPlaceholder": "你的檔案已就緒。結果檢視器將在下次更新中推出。",
+    "notFound": "此裝置已不再追蹤該工作。",
+    "rejectedBody": "伺服器未接受此檔案。"
   }
 }
