@@ -1,10 +1,12 @@
-import { Redirect, useLocalSearchParams } from 'expo-router';
-import { useEffect, useMemo } from 'react';
+import { Redirect, router, useLocalSearchParams } from 'expo-router';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
 import { FileArea } from '@/files/components/FileArea';
 import { getIntakeFiles } from '@/files/session';
+import type { IntakeFile } from '@/files/types';
+import { getJobEngine } from '@/jobs/runtime';
 import { useAppDispatch } from '@/state/hooks';
 import { toolOpened } from '@/state/slices/settings';
 import { QuotaHeaderSlot } from '@/tools/components/QuotaHeaderSlot';
@@ -22,6 +24,16 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
   const dispatch = useAppDispatch();
   const tool = getTool(toolId)!;
   const attached = useMemo(() => getIntakeFiles(intake ? intake.split(',') : []), [intake]);
+  const [files, setFiles] = useState<IntakeFile[]>(attached);
+
+  const start = useCallback(() => {
+    if (files.length === 0) return;
+    const ids = getJobEngine().startJobs(
+      files.map((file) => ({ tool, file, options: tool.optionsBuilder(tool.defaults) })),
+    );
+    const first = ids[0];
+    if (first) router.push(`/(app)/job/${first}`);
+  }, [files, tool]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));
@@ -42,10 +54,13 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
         <Text className="text-muted-fg">{t(tool.descriptionKey)}</Text>
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
         <QuotaHeaderSlot />
-        <FileArea tool={tool} initialFiles={attached} />
+        <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
         <Form value={tool.defaults} onChange={() => undefined} />
-        {/* MA12 wires Start to upload with the selected files. */}
-        <Button label={t('tool.start')} disabled />
+        <Button
+          label={t('tool.start')}
+          disabled={files.length === 0 || tool.endpoint === 'metadataInspect'}
+          onPress={start}
+        />
       </ScrollView>
     </Screen>
   );

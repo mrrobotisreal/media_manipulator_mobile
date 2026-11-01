@@ -89,3 +89,9 @@ jest.mock('expo-share-intent', () => ({
     resetShareIntent: jest.fn(),
   }),
 }));
+
+// MA12: native modules with no JS-side implementation under jest.
+jest.mock('expo-keep-awake', () => ({
+  activateKeepAwakeAsync: jest.fn(() => Promise.resolve()),
+  deactivateKeepAwake: jest.fn(() => Promise.resolve()),
+}));

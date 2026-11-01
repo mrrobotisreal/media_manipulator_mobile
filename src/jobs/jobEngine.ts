@@ -94,6 +94,7 @@ export function createJobEngine(deps: JobEngineDeps) {
 
   function startJobs(inputs: StartInput[]): string[] {
     const ids: string[] = [];
+    const batchId = inputs.length > 1 ? `batch_${deps.newId()}` : undefined;
     for (const { tool, file, options } of inputs) {
       const t = resolveTransport(tool, file.mediaKind);
       if (t === 'metadataInspect')
@@ -101,6 +102,7 @@ export function createJobEngine(deps: JobEngineDeps) {
       const localId = `local_${deps.newId()}`;
       store.put({
         localId,
+        batchId,
         toolId: tool.id,
         family: tool.family,
         analyticsSlug: tool.analyticsSlug,

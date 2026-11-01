@@ -41,6 +41,8 @@ export type LostReason = 'server_restarted' | 'expired';
 export interface JobRecord {
   /** `local_<uuid>`; the record key before and after the server assigns `jobId`. */
   localId: string;
+  /** Jobs started together from one multi-file Start share this (the "1 of N" strip). */
+  batchId?: string;
   jobId?: string;
   toolId: string;
   family: string;

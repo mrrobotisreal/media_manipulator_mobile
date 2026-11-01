@@ -11,6 +11,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Component, useEffect, type ReactNode } from 'react';
+import { getJobEngine } from '@/jobs/runtime';
 import { isTerminal } from '@/jobs/types';
 import { startAuth } from '@/auth/gate';
 import { cleanupIntakeCache } from '@/files/intake';
@@ -88,6 +89,18 @@ function IntakeCacheSweeper() {
   return null;
 }
 
+/** Starts the job engine (relaunch restore, AppState/NetInfo tracking) once the account is ready. */
+function JobEngineHost() {
+  const ready = useAppSelector((s) => s.auth.status === 'ready');
+  useEffect(() => {
+    if (!ready) return;
+    const engine = getJobEngine();
+    void engine.start();
+    return () => engine.stop();
+  }, [ready]);
+  return null;
+}
+
 /** Applies `settings.locale` once persisted settings are rehydrated. */
 function LocaleApplier() {
   useApplyLocale();
@@ -122,6 +135,7 @@ export default function RootLayout() {
                   <AuthGate>
                     <ShareIntentRouter />
                     <IntakeCacheSweeper />
+                    <JobEngineHost />
                     <Stack
                       screenOptions={{
                         headerShown: false,
