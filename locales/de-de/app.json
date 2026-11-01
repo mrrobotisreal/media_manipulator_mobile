@@ -381,5 +381,44 @@
       "stopped": "Du beobachtest diesen Auftrag nicht mehr. Das Ergebnis findest du im Verlauf."
     },
     "entryFailed": "Diese Datei konnte nicht geöffnet werden."
+  },
+  "actions": {
+    "save": "Speichern",
+    "share": "Teilen",
+    "more": "Mehr",
+    "moreTitle": "Weitere Aktionen",
+    "shareLink": "Link zum Teilen kopieren",
+    "downloadMp3": "Als MP3 herunterladen",
+    "runAnother": "Weiteren Auftrag starten",
+    "delete": "Löschen"
+  },
+  "save": {
+    "toPhotos": "In Fotos gespeichert",
+    "toFolder": "In {{folder}} gespeichert",
+    "toFiles": "In Dateien gespeichert",
+    "permissionTitle": "Media Manipulator das Hinzufügen von Fotos erlauben",
+    "permissionBody": "Media Manipulator braucht die Berechtigung, diese Datei in deiner Fotomediathek abzulegen. Deine anderen Fotos liest die App nie.",
+    "openSettings": "Einstellungen öffnen",
+    "filesInstead": "Stattdessen in Dateien speichern",
+    "failed": "Die Datei konnte nicht gespeichert werden. Versuche es erneut.",
+    "shareFailed": "Das Teilen-Menü konnte nicht geöffnet werden. Versuche es erneut."
+  },
+  "download": {
+    "progress": "Wird heruntergeladen… {{percent}}",
+    "failed": "Der Download wurde nicht abgeschlossen. Prüfe deine Verbindung und versuche es erneut.",
+    "gone": "Dieses Ergebnis steht nicht mehr zum Download bereit."
+  },
+  "mp3": {
+    "converting": "Wird in MP3 umgewandelt…",
+    "stillConverting": "Die Umwandlung läuft noch – versuche es später erneut.",
+    "failed": "Diese Datei konnte nicht in MP3 umgewandelt werden."
+  },
+  "delete": {
+    "title": "Dieses Ergebnis löschen?",
+    "body": "Es wird vom Server und aus dem Verlauf entfernt. Das lässt sich nicht rückgängig machen.",
+    "confirm": "Löschen",
+    "done": "Gelöscht",
+    "pending": "Wird gelöscht… Es kann eine Minute dauern, bis es überall verschwunden ist.",
+    "failed": "Dieses Ergebnis konnte nicht gelöscht werden. Versuche es erneut."
   }
 }

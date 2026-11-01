@@ -381,5 +381,44 @@
       "stopped": "You stopped watching this job. Its result will be in History."
     },
     "entryFailed": "This file could not be opened."
+  },
+  "actions": {
+    "save": "Save",
+    "share": "Share",
+    "more": "More",
+    "moreTitle": "More actions",
+    "shareLink": "Copy share link",
+    "downloadMp3": "Download as MP3",
+    "runAnother": "Run another",
+    "delete": "Delete"
+  },
+  "save": {
+    "toPhotos": "Saved to Photos",
+    "toFolder": "Saved to {{folder}}",
+    "toFiles": "Saved to Files",
+    "permissionTitle": "Allow Media Manipulator to add photos",
+    "permissionBody": "Media Manipulator needs permission to put this file in your photo library. It never reads your other photos.",
+    "openSettings": "Open settings",
+    "filesInstead": "Save to Files instead",
+    "failed": "Couldn't save the file. Try again.",
+    "shareFailed": "Couldn't open the share sheet. Try again."
+  },
+  "download": {
+    "progress": "Downloading… {{percent}}",
+    "failed": "The download didn't finish. Check your connection and try again.",
+    "gone": "This result is no longer available to download."
+  },
+  "mp3": {
+    "converting": "Converting to MP3…",
+    "stillConverting": "Still converting — try again later.",
+    "failed": "Couldn't convert this file to MP3."
+  },
+  "delete": {
+    "title": "Delete this result?",
+    "body": "It's removed from the server and from History. This can't be undone.",
+    "confirm": "Delete",
+    "done": "Deleted",
+    "pending": "Deleting… it may take a minute to disappear everywhere.",
+    "failed": "Couldn't delete this result. Try again."
   }
 }

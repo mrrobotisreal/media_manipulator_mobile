@@ -381,5 +381,44 @@
       "stopped": "Hai smesso di seguire questo lavoro. Il risultato sarà in Cronologia."
     },
     "entryFailed": "Impossibile aprire questo file."
+  },
+  "actions": {
+    "save": "Salva",
+    "share": "Condividi",
+    "more": "Altro",
+    "moreTitle": "Altre azioni",
+    "shareLink": "Copia link di condivisione",
+    "downloadMp3": "Scarica come MP3",
+    "runAnother": "Eseguine un altro",
+    "delete": "Elimina"
+  },
+  "save": {
+    "toPhotos": "Salvato in Foto",
+    "toFolder": "Salvato in {{folder}}",
+    "toFiles": "Salvato in File",
+    "permissionTitle": "Consenti a Media Manipulator di aggiungere foto",
+    "permissionBody": "Media Manipulator ha bisogno del permesso per inserire questo file nella tua libreria foto. Non legge mai le altre tue foto.",
+    "openSettings": "Apri impostazioni",
+    "filesInstead": "Salva invece in File",
+    "failed": "Impossibile salvare il file. Riprova.",
+    "shareFailed": "Impossibile aprire il foglio di condivisione. Riprova."
+  },
+  "download": {
+    "progress": "Download in corso… {{percent}}",
+    "failed": "Il download non è stato completato. Controlla la connessione e riprova.",
+    "gone": "Questo risultato non è più disponibile per il download."
+  },
+  "mp3": {
+    "converting": "Conversione in MP3…",
+    "stillConverting": "Conversione ancora in corso — riprova più tardi.",
+    "failed": "Impossibile convertire questo file in MP3."
+  },
+  "delete": {
+    "title": "Eliminare questo risultato?",
+    "body": "Viene rimosso dal server e dalla Cronologia. Non si può annullare.",
+    "confirm": "Elimina",
+    "done": "Eliminato",
+    "pending": "Eliminazione… potrebbe volerci un minuto prima che scompaia ovunque.",
+    "failed": "Impossibile eliminare questo risultato. Riprova."
   }
 }

@@ -381,5 +381,44 @@
       "stopped": "Vous avez arrêté le suivi de cette tâche. Son résultat sera dans l’Historique."
     },
     "entryFailed": "Ce fichier n’a pas pu être ouvert."
+  },
+  "actions": {
+    "save": "Enregistrer",
+    "share": "Partager",
+    "more": "Plus",
+    "moreTitle": "Plus d’actions",
+    "shareLink": "Copier le lien de partage",
+    "downloadMp3": "Télécharger en MP3",
+    "runAnother": "Lancer un autre traitement",
+    "delete": "Supprimer"
+  },
+  "save": {
+    "toPhotos": "Enregistré dans Photos",
+    "toFolder": "Enregistré dans {{folder}}",
+    "toFiles": "Enregistré dans Fichiers",
+    "permissionTitle": "Autoriser Media Manipulator à ajouter des photos",
+    "permissionBody": "Media Manipulator a besoin de l’autorisation d’ajouter ce fichier à votre photothèque. L’app ne lit jamais vos autres photos.",
+    "openSettings": "Ouvrir les réglages",
+    "filesInstead": "Enregistrer dans Fichiers à la place",
+    "failed": "Impossible d’enregistrer le fichier. Réessayez.",
+    "shareFailed": "Impossible d’ouvrir la feuille de partage. Réessayez."
+  },
+  "download": {
+    "progress": "Téléchargement… {{percent}}",
+    "failed": "Le téléchargement n’a pas abouti. Vérifiez votre connexion et réessayez.",
+    "gone": "Ce résultat n’est plus disponible au téléchargement."
+  },
+  "mp3": {
+    "converting": "Conversion en MP3…",
+    "stillConverting": "Conversion toujours en cours — réessayez plus tard.",
+    "failed": "Impossible de convertir ce fichier en MP3."
+  },
+  "delete": {
+    "title": "Supprimer ce résultat ?",
+    "body": "Il est supprimé du serveur et de l’historique. Cette action est irréversible.",
+    "confirm": "Supprimer",
+    "done": "Supprimé",
+    "pending": "Suppression… cela peut prendre une minute avant qu’il disparaisse partout.",
+    "failed": "Impossible de supprimer ce résultat. Réessayez."
   }
 }
