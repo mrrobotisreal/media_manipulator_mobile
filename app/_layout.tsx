@@ -11,6 +11,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Component, useEffect, type ReactNode } from 'react';
+import { isTerminal } from '@/jobs/types';
 import { startAuth } from '@/auth/gate';
 import { cleanupIntakeCache } from '@/files/intake';
 import { useShareIntentRouting } from '@/files/share-intent';
@@ -70,10 +71,9 @@ function IntakeCacheSweeper() {
     const sweep = () => {
       const jobs = store.getState().jobs;
       const referenced = new Set<string>();
-      for (const j of Object.values(jobs.byId)) {
-        if (j.intakeId && j.status !== 'completed' && j.status !== 'failed') {
-          referenced.add(j.intakeId);
-        }
+      for (const j of Object.values(jobs.byLocalId)) {
+        // Terminal jobs no longer need the copy; upload_failed keeps it for "Try again".
+        if (!isTerminal(j.state)) referenced.add(j.intakeFileId);
       }
       try {
         cleanupIntakeCache({ referencedIds: referenced });

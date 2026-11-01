@@ -308,5 +308,36 @@
       "empty": "このファイルは空です。",
       "tooMany": "一度に選択できるのは最大{{count}}個のファイルです。"
     }
+  },
+  "job": {
+    "state": {
+      "queued": "アップロード待ち",
+      "uploading": "アップロード中",
+      "finalizing": "アップロードを完了中",
+      "pending": "サーバーの応答待ち",
+      "processing": "処理中",
+      "completed": "完了",
+      "failed": "失敗",
+      "rejected": "受け付けられませんでした",
+      "upload_failed": "アップロード失敗",
+      "lost": "ジョブが失われました",
+      "cancelled": "キャンセル済み",
+      "stopped": "監視を停止しました"
+    },
+    "uploading": "アップロード中… {{percent}}",
+    "processing": "処理中… {{percent}}",
+    "continuingInBackground": "バックグラウンドで続行中",
+    "gpuNote": "AIジョブには数分かかることがあります。この画面を離れても大丈夫です。",
+    "cancel": "アップロードをキャンセル",
+    "stopWatching": "監視を停止",
+    "stopWatchingBody": "ジョブは実行され続け、本日の上限にも含まれます。結果は履歴で確認できます。",
+    "retry": "再試行",
+    "fileGone": "ファイルがこのデバイスにありません。もう一度選択して再試行してください。",
+    "lost": "サーバーが再起動し、このジョブが失われました。もう一度実行してください。",
+    "interrupted": "アップロードが中断されました。",
+    "queuePosition": "{{index}} / {{count}}",
+    "completedPlaceholder": "ファイルの準備ができました。結果ビューアーは次のアップデートで追加されます。",
+    "notFound": "このジョブはこのデバイスでは追跡されていません。",
+    "rejectedBody": "サーバーがこのファイルを受け付けませんでした。"
   }
 }

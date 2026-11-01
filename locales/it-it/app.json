@@ -308,5 +308,36 @@
       "empty": "Questo file è vuoto.",
       "tooMany": "Scegli fino a {{count}} file alla volta."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "In attesa di caricamento",
+      "uploading": "Caricamento in corso",
+      "finalizing": "Completamento del caricamento",
+      "pending": "In attesa del server",
+      "processing": "Elaborazione in corso",
+      "completed": "Completato",
+      "failed": "Non riuscito",
+      "rejected": "Non accettato",
+      "upload_failed": "Caricamento non riuscito",
+      "lost": "Lavoro perso",
+      "cancelled": "Annullato",
+      "stopped": "Monitoraggio interrotto"
+    },
+    "uploading": "Caricamento… {{percent}}",
+    "processing": "Elaborazione… {{percent}}",
+    "continuingInBackground": "Continua in background",
+    "gpuNote": "I lavori IA possono richiedere qualche minuto. Puoi lasciare questa schermata.",
+    "cancel": "Annulla caricamento",
+    "stopWatching": "Smetti di seguire",
+    "stopWatchingBody": "Il lavoro continua e conta nel limite di oggi. Troverai il risultato in Cronologia.",
+    "retry": "Riprova",
+    "fileGone": "Il file non è più su questo dispositivo. Sceglilo di nuovo per riprovare.",
+    "lost": "Il server si è riavviato e ha perso questo lavoro. Eseguilo di nuovo.",
+    "interrupted": "Il caricamento è stato interrotto.",
+    "queuePosition": "{{index}} di {{count}}",
+    "completedPlaceholder": "Il tuo file è pronto. Il visualizzatore dei risultati arriverà con il prossimo aggiornamento.",
+    "notFound": "Questo lavoro non è più monitorato su questo dispositivo.",
+    "rejectedBody": "Il server non ha accettato questo file."
   }
 }

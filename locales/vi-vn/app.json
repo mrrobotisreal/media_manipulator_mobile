@@ -308,5 +308,36 @@
       "empty": "Tệp này trống.",
       "tooMany": "Chỉ chọn tối đa {{count}} tệp mỗi lần."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "Đang chờ tải lên",
+      "uploading": "Đang tải lên",
+      "finalizing": "Đang hoàn tất tải lên",
+      "pending": "Đang chờ máy chủ",
+      "processing": "Đang xử lý",
+      "completed": "Hoàn tất",
+      "failed": "Thất bại",
+      "rejected": "Không được chấp nhận",
+      "upload_failed": "Tải lên thất bại",
+      "lost": "Tác vụ bị mất",
+      "cancelled": "Đã hủy",
+      "stopped": "Đã ngừng theo dõi"
+    },
+    "uploading": "Đang tải lên… {{percent}}",
+    "processing": "Đang xử lý… {{percent}}",
+    "continuingInBackground": "Tiếp tục chạy nền",
+    "gpuNote": "Tác vụ AI có thể mất vài phút. Bạn có thể rời khỏi màn hình này.",
+    "cancel": "Hủy tải lên",
+    "stopWatching": "Ngừng theo dõi",
+    "stopWatchingBody": "Tác vụ vẫn tiếp tục chạy và vẫn tính vào giới hạn hôm nay. Bạn sẽ thấy kết quả trong Lịch sử.",
+    "retry": "Thử lại",
+    "fileGone": "Tệp không còn trên thiết bị này. Hãy chọn lại để thử lại.",
+    "lost": "Máy chủ đã khởi động lại và làm mất tác vụ này. Hãy chạy lại.",
+    "interrupted": "Quá trình tải lên bị gián đoạn.",
+    "queuePosition": "{{index}} / {{count}}",
+    "completedPlaceholder": "Tệp của bạn đã sẵn sàng. Trình xem kết quả sẽ có ở bản cập nhật tiếp theo.",
+    "notFound": "Thiết bị này không còn theo dõi tác vụ này.",
+    "rejectedBody": "Máy chủ không chấp nhận tệp này."
   }
 }

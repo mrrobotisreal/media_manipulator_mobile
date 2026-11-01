@@ -1,4 +1,5 @@
 import { makeReadyStore } from '@/state/testing';
+import { record } from '@/jobs/testFixtures';
 import { jobUpserted } from '@/state/slices/jobs';
 import { observed } from '@/state/slices/quota';
 import { performSignOut } from '../signOut';
@@ -14,9 +15,7 @@ describe('signOut', () => {
   it('orders the calls and resets local state, keeping visitorId and rotating sessionId', async () => {
     calls.length = 0;
     const { store } = await makeReadyStore();
-    store.dispatch(
-      jobUpserted({ jobId: 'j', toolId: 't', family: 'f', status: 's', progress: 0, createdAt: 1 }),
-    );
+    store.dispatch(jobUpserted(record({ localId: 'j' })));
     store.dispatch(observed({ tier: 'pro', metric: 'ops', limit: 5, remaining: 2 }));
     const before = store.getState().session;
 

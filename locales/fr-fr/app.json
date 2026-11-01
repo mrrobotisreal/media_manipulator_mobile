@@ -308,5 +308,36 @@
       "empty": "Ce fichier est vide.",
       "tooMany": "Choisissez jusqu'à {{count}} fichiers à la fois."
     }
+  },
+  "job": {
+    "state": {
+      "queued": "En attente d’envoi",
+      "uploading": "Envoi en cours",
+      "finalizing": "Finalisation de l’envoi",
+      "pending": "En attente du serveur",
+      "processing": "Traitement en cours",
+      "completed": "Terminé",
+      "failed": "Échec",
+      "rejected": "Non accepté",
+      "upload_failed": "Échec de l’envoi",
+      "lost": "Tâche perdue",
+      "cancelled": "Annulé",
+      "stopped": "Suivi arrêté"
+    },
+    "uploading": "Envoi… {{percent}}",
+    "processing": "Traitement… {{percent}}",
+    "continuingInBackground": "Se poursuit en arrière-plan",
+    "gpuNote": "Les tâches IA peuvent prendre quelques minutes. Vous pouvez quitter cet écran.",
+    "cancel": "Annuler l’envoi",
+    "stopWatching": "Arrêter le suivi",
+    "stopWatchingBody": "La tâche continue et compte toujours dans la limite du jour. Vous trouverez le résultat dans Historique.",
+    "retry": "Réessayer",
+    "fileGone": "Le fichier n’est plus sur cet appareil. Sélectionnez-le à nouveau pour réessayer.",
+    "lost": "Le serveur a redémarré et a perdu cette tâche. Relancez-la.",
+    "interrupted": "L’envoi a été interrompu.",
+    "queuePosition": "{{index}} sur {{count}}",
+    "completedPlaceholder": "Votre fichier est prêt. La visionneuse de résultats arrive dans la prochaine mise à jour.",
+    "notFound": "Cette tâche n’est plus suivie sur cet appareil.",
+    "rejectedBody": "Le serveur n’a pas accepté ce fichier."
   }
 }
