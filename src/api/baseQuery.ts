@@ -140,7 +140,18 @@ async function attempt(
   }
 }
 
-function parseQuota(headers: Headers) {
+/** Anything with a case-insensitive `get` (fetch `Headers`, or `headerBag()` over a plain record). */
+export interface HeaderReader {
+  get(name: string): string | null;
+}
+
+/** Wraps a plain header record (expo-file-system upload results) as a case-insensitive reader. */
+export function headerBag(record: Record<string, string>): HeaderReader {
+  const lower = new Map(Object.entries(record).map(([k, v]) => [k.toLowerCase(), v]));
+  return { get: (name) => lower.get(name.toLowerCase()) ?? null };
+}
+
+export function parseQuota(headers: HeaderReader) {
   const tier = headers.get('X-MM-Tier') ?? undefined;
   const limitRaw = headers.get('X-MM-Quota-Limit');
   const remainingRaw = headers.get('X-MM-Quota-Remaining');
