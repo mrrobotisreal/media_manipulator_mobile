@@ -71,7 +71,6 @@ export function buildConfig(
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: BACKGROUND,
       },
-      navigationBar: { backgroundColor: BACKGROUND },
       ...(hasAndroidFirebase ? { googleServicesFile } : {}),
     },
     ios: {

@@ -2,7 +2,7 @@ import path from 'node:path';
 import { ANDROID_PACKAGE, IOS_BUNDLE_ID, buildConfig } from './app.config';
 
 const none = () => false;
-const fixture = path.join(__dirname, '__fixtures__', 'google-services.fixture.json');
+const fixture = path.join(__dirname, '__fixtures__', 'firebase-android.fixture.json');
 
 describe('app.config', () => {
   beforeEach(() => jest.spyOn(console, 'warn').mockImplementation(() => {}));
