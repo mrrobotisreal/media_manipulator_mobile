@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { View } from 'react-native';
+import { I18nManager, View } from 'react-native';
 import Animated, {
   Easing,
   cancelAnimation,
@@ -50,7 +50,7 @@ export function ProgressBar({
             width: '100%',
             backgroundColor: accent === 'data' ? colors.data : colors.primary,
           },
-          determinate ? { transformOrigin: 'left' } : null,
+          determinate ? { transformOrigin: I18nManager.isRTL ? 'right' : 'left' } : null,
           style,
         ]}
       />
