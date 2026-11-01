@@ -43,4 +43,20 @@ describe('app.config', () => {
     expect(c.ios?.usesAppleSignIn).toBe(true);
     expect(c.android?.googleServicesFile).toBe(fixture);
   });
+
+  it('configures Android-only share-into and blocks storage permissions', () => {
+    const c = buildConfig({}, none);
+    const share = (c.plugins ?? []).find(
+      (p) => Array.isArray(p) && p[0] === 'expo-share-intent',
+    ) as [string, Record<string, unknown>] | undefined;
+    expect(share?.[1].disableIOS).toBe(true);
+    expect(share?.[1].androidIntentFilters).toContain('*/*');
+    expect(c.android?.blockedPermissions).toEqual(
+      expect.arrayContaining([
+        'android.permission.READ_MEDIA_IMAGES',
+        'android.permission.READ_MEDIA_VIDEO',
+        'android.permission.READ_EXTERNAL_STORAGE',
+      ]),
+    );
+  });
 });
