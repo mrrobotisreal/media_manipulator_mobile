@@ -1,0 +1,48 @@
+import {
+  AUDIO_ACCEPTS,
+  IMAGE_ACCEPTS,
+  PDF_ACCEPTS,
+  VIDEO_ACCEPTS,
+  imageBase,
+  mergeAccepts,
+  row,
+} from './shared';
+
+export const metadataTools = [
+  row({
+    id: 'inspect-metadata',
+    family: 'metadata',
+    icon: 'FileSearch',
+    accepts: mergeAccepts(IMAGE_ACCEPTS, VIDEO_ACCEPTS, AUDIO_ACCEPTS, PDF_ACCEPTS),
+    endpoint: 'metadataInspect',
+    defaults: {},
+    metric: null,
+    analyticsSlug: 'inspect-metadata',
+    resultHint: 'metadata',
+    keywords: ['inspect-metadata', 'exif', 'info', 'details', 'gps'],
+  }),
+  row({
+    id: 'strip-metadata',
+    family: 'metadata',
+    icon: 'ShieldOff',
+    accepts: IMAGE_ACCEPTS,
+    endpoint: 'upload',
+    defaults: imageBase({ metadataMode: 'strip' }),
+    metric: 'ops',
+    analyticsSlug: 'remove-exif-metadata',
+    resultHint: 'image',
+    keywords: ['remove-exif-metadata', 'exif', 'privacy', 'gps', 'location'],
+  }),
+  row({
+    id: 'edit-metadata',
+    family: 'metadata',
+    icon: 'Pencil',
+    accepts: IMAGE_ACCEPTS,
+    endpoint: 'upload',
+    defaults: imageBase({ metadataMode: 'custom' }),
+    metric: 'ops',
+    analyticsSlug: 'edit-image-metadata',
+    resultHint: 'image',
+    keywords: ['edit-image-metadata', 'exif', 'author', 'title', 'gps'],
+  }),
+];

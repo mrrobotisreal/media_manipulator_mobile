@@ -16,6 +16,195 @@
     "history": "Histórico",
     "account": "Conta"
   },
+  "tools": {
+    "title": "Ferramentas",
+    "search": {
+      "placeholder": "Buscar ferramentas",
+      "empty": "Nenhuma ferramenta corresponde a “{{query}}”.",
+      "clear": "Limpar busca"
+    },
+    "recents": "Recentes",
+    "families": {
+      "image": "Imagem",
+      "video": "Vídeo",
+      "audio": "Áudio",
+      "ai": "IA",
+      "metadata": "Metadados"
+    },
+    "badge": {
+      "ai": "IA"
+    },
+    "quotaSlot": "Seu limite diário aparece aqui",
+    "items": {
+      "image-convert": {
+        "title": "Converter imagem",
+        "description": "Mude uma imagem para JPG, PNG, WebP, GIF, AVIF ou ICO."
+      },
+      "image-to-svg": {
+        "title": "Imagem para SVG",
+        "description": "Transforme uma imagem em vetor escalável."
+      },
+      "image-resize": {
+        "title": "Redimensionar imagem",
+        "description": "Defina uma nova largura e altura."
+      },
+      "image-compress": {
+        "title": "Comprimir imagem",
+        "description": "Reduza o tamanho da imagem com pouca perda."
+      },
+      "image-crop": {
+        "title": "Recortar imagem",
+        "description": "Corte a imagem só na parte que você quer."
+      },
+      "image-filter": {
+        "title": "Filtros de imagem",
+        "description": "Tons de cinza, sépia, desfoque, nitidez e mais."
+      },
+      "image-rotate": {
+        "title": "Girar imagem",
+        "description": "Gire uma imagem em 90, 180 ou 270 graus."
+      },
+      "image-text": {
+        "title": "Adicionar texto à imagem",
+        "description": "Coloque uma legenda ou marca d'água na imagem."
+      },
+      "image-to-pdf": {
+        "title": "Imagem para PDF",
+        "description": "Transforme uma imagem em um documento PDF."
+      },
+      "pdf-to-image": {
+        "title": "PDF para imagem",
+        "description": "Transforme páginas de PDF em imagens JPG ou PNG."
+      },
+      "video-convert": {
+        "title": "Converter vídeo",
+        "description": "Mude um vídeo para MP4, WebM, MOV, MKV e mais."
+      },
+      "video-compress": {
+        "title": "Comprimir vídeo",
+        "description": "Reduza um vídeo para compartilhar."
+      },
+      "video-trim": {
+        "title": "Cortar vídeo",
+        "description": "Fique só com a parte do vídeo que você quer."
+      },
+      "video-to-gif": {
+        "title": "Vídeo para GIF",
+        "description": "Transforme um clipe em um GIF animado."
+      },
+      "video-extract-audio": {
+        "title": "Extrair áudio",
+        "description": "Tire o som de um vídeo em MP3 ou outro formato."
+      },
+      "video-remove-audio": {
+        "title": "Remover áudio",
+        "description": "Crie uma cópia sem som de um vídeo."
+      },
+      "video-extract-frames": {
+        "title": "Extrair quadros",
+        "description": "Salve os quadros de um vídeo como imagens."
+      },
+      "video-transform": {
+        "title": "Cortar, redimensionar, girar",
+        "description": "Mude o formato e a orientação de um vídeo."
+      },
+      "video-speed": {
+        "title": "Alterar velocidade do vídeo",
+        "description": "Acelere, desacelere ou inverta um vídeo."
+      },
+      "video-adjust": {
+        "title": "Estabilizar e ajustar vídeo",
+        "description": "Estabilize clipes tremidos, mude FPS ou cor."
+      },
+      "audio-convert": {
+        "title": "Converter áudio",
+        "description": "Mude o áudio para MP3, WAV, AAC, FLAC e mais."
+      },
+      "audio-trim": {
+        "title": "Cortar áudio",
+        "description": "Fique só com a parte da gravação que você quer."
+      },
+      "audio-effects": {
+        "title": "Efeitos de áudio",
+        "description": "Mude velocidade, tom ou volume; normalize ou adicione reverb."
+      },
+      "audio-waveform": {
+        "title": "Forma de onda do áudio",
+        "description": "Desenhe uma imagem da onda sonora."
+      },
+      "remove-background": {
+        "title": "Remover fundo",
+        "description": "Recorte o assunto de uma foto como PNG transparente."
+      },
+      "upscale": {
+        "title": "Ampliador de imagem com IA",
+        "description": "Amplie e deixe mais nítida uma imagem pequena."
+      },
+      "blur-faces": {
+        "title": "Desfocar rostos",
+        "description": "Esconda rostos em uma foto para proteger a privacidade."
+      },
+      "redact-text": {
+        "title": "Ocultar texto na imagem",
+        "description": "Cubra texto pessoal ou todo o texto da imagem."
+      },
+      "remove-object": {
+        "title": "Remover objeto",
+        "description": "Apague de uma foto o que você não quer."
+      },
+      "clean-voice": {
+        "title": "Voz limpa",
+        "description": "Deixe a fala mais clara em uma gravação."
+      },
+      "remove-noise": {
+        "title": "Remover ruído de fundo",
+        "description": "Reduza chiado, zumbido e ruído do ambiente."
+      },
+      "isolate-vocals": {
+        "title": "Isolar vocais",
+        "description": "Extraia a voz cantada de uma música."
+      },
+      "remove-vocals": {
+        "title": "Remover vocais",
+        "description": "Crie uma versão instrumental de uma música."
+      },
+      "frame-interpolation": {
+        "title": "Vídeo suave (mais FPS)",
+        "description": "Adicione quadros para um movimento mais suave."
+      },
+      "transcribe": {
+        "title": "Transcrever",
+        "description": "Transforme a fala de áudio ou vídeo em texto e legendas."
+      },
+      "inspect-metadata": {
+        "title": "Inspecionar metadados",
+        "description": "Veja quais detalhes ocultos um arquivo contém."
+      },
+      "strip-metadata": {
+        "title": "Remover metadados",
+        "description": "Tire localização e dados da câmera de uma imagem."
+      },
+      "edit-metadata": {
+        "title": "Editar metadados",
+        "description": "Altere os detalhes salvos em uma imagem."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "Aceita: {{kinds}}",
+    "kinds": {
+      "image": "Imagens",
+      "video": "Vídeos",
+      "audio": "Áudio",
+      "pdf": "PDFs"
+    },
+    "defaultsForm": {
+      "title": "Configurações padrão",
+      "body": "Por enquanto, esta ferramenta usa as configurações padrão."
+    },
+    "fileArea": "Escolha um arquivo para começar",
+    "start": "Iniciar"
+  },
   "placeholders": {
     "toolsBody": "As ferramentas chegam no MA10.",
     "historyBody": "Seus trabalhos vão aparecer aqui.",

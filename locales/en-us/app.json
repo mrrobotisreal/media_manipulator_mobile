@@ -16,6 +16,195 @@
     "history": "History",
     "account": "Account"
   },
+  "tools": {
+    "title": "Tools",
+    "search": {
+      "placeholder": "Search tools",
+      "empty": "No tools match “{{query}}”.",
+      "clear": "Clear search"
+    },
+    "recents": "Recent",
+    "families": {
+      "image": "Image",
+      "video": "Video",
+      "audio": "Audio",
+      "ai": "AI",
+      "metadata": "Metadata"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "Your daily allowance appears here",
+    "items": {
+      "image-convert": {
+        "title": "Convert image",
+        "description": "Change a picture to JPG, PNG, WebP, GIF, AVIF or ICO."
+      },
+      "image-to-svg": {
+        "title": "Image to SVG",
+        "description": "Trace a picture into a scalable vector."
+      },
+      "image-resize": {
+        "title": "Resize image",
+        "description": "Set a new width and height."
+      },
+      "image-compress": {
+        "title": "Compress image",
+        "description": "Make a picture smaller with little quality loss."
+      },
+      "image-crop": {
+        "title": "Crop image",
+        "description": "Cut a picture down to the part you want."
+      },
+      "image-filter": {
+        "title": "Image filters",
+        "description": "Grayscale, sepia, blur, sharpen and more."
+      },
+      "image-rotate": {
+        "title": "Rotate image",
+        "description": "Turn a picture by 90, 180 or 270 degrees."
+      },
+      "image-text": {
+        "title": "Add text to image",
+        "description": "Put a caption or watermark on a picture."
+      },
+      "image-to-pdf": {
+        "title": "Image to PDF",
+        "description": "Turn a picture into a PDF document."
+      },
+      "pdf-to-image": {
+        "title": "PDF to image",
+        "description": "Turn PDF pages into JPG or PNG pictures."
+      },
+      "video-convert": {
+        "title": "Convert video",
+        "description": "Change a video to MP4, WebM, MOV, MKV and more."
+      },
+      "video-compress": {
+        "title": "Compress video",
+        "description": "Shrink a video for sharing."
+      },
+      "video-trim": {
+        "title": "Trim video",
+        "description": "Keep just the part of a video you want."
+      },
+      "video-to-gif": {
+        "title": "Video to GIF",
+        "description": "Turn a clip into an animated GIF."
+      },
+      "video-extract-audio": {
+        "title": "Extract audio",
+        "description": "Pull the sound out of a video as MP3 or other audio."
+      },
+      "video-remove-audio": {
+        "title": "Remove audio",
+        "description": "Make a silent copy of a video."
+      },
+      "video-extract-frames": {
+        "title": "Extract frames",
+        "description": "Save the frames of a video as pictures."
+      },
+      "video-transform": {
+        "title": "Crop, resize, rotate, flip",
+        "description": "Change the shape and orientation of a video."
+      },
+      "video-speed": {
+        "title": "Change video speed",
+        "description": "Speed a video up, slow it down or reverse it."
+      },
+      "video-adjust": {
+        "title": "Stabilize and adjust video",
+        "description": "Steady shaky clips, change frame rate or color."
+      },
+      "audio-convert": {
+        "title": "Convert audio",
+        "description": "Change audio to MP3, WAV, AAC, FLAC and more."
+      },
+      "audio-trim": {
+        "title": "Trim audio",
+        "description": "Keep just the part of a recording you want."
+      },
+      "audio-effects": {
+        "title": "Audio effects",
+        "description": "Change speed, pitch or volume; normalize or add reverb."
+      },
+      "audio-waveform": {
+        "title": "Audio waveform",
+        "description": "Draw a picture of the sound wave."
+      },
+      "remove-background": {
+        "title": "Remove background",
+        "description": "Cut the subject out of a photo as a transparent PNG."
+      },
+      "upscale": {
+        "title": "AI image upscaler",
+        "description": "Make a small picture bigger and sharper."
+      },
+      "blur-faces": {
+        "title": "Blur faces",
+        "description": "Hide faces in a photo to protect privacy."
+      },
+      "redact-text": {
+        "title": "Redact text in image",
+        "description": "Cover personal text or all text in a picture."
+      },
+      "remove-object": {
+        "title": "Remove object",
+        "description": "Erase something you do not want from a photo."
+      },
+      "clean-voice": {
+        "title": "Clean voice",
+        "description": "Make speech clearer in a recording."
+      },
+      "remove-noise": {
+        "title": "Remove background noise",
+        "description": "Reduce hiss, hum and room noise."
+      },
+      "isolate-vocals": {
+        "title": "Isolate vocals",
+        "description": "Pull the singing voice out of a song."
+      },
+      "remove-vocals": {
+        "title": "Remove vocals",
+        "description": "Make an instrumental version of a song."
+      },
+      "frame-interpolation": {
+        "title": "Smooth video (more FPS)",
+        "description": "Add frames so motion looks smoother."
+      },
+      "transcribe": {
+        "title": "Transcribe",
+        "description": "Turn speech in audio or video into text and captions."
+      },
+      "inspect-metadata": {
+        "title": "Inspect metadata",
+        "description": "See what hidden details a file carries."
+      },
+      "strip-metadata": {
+        "title": "Remove metadata",
+        "description": "Strip location and camera details from a picture."
+      },
+      "edit-metadata": {
+        "title": "Edit metadata",
+        "description": "Change the details stored in a picture."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "Accepts: {{kinds}}",
+    "kinds": {
+      "image": "Images",
+      "video": "Videos",
+      "audio": "Audio",
+      "pdf": "PDFs"
+    },
+    "defaultsForm": {
+      "title": "Default settings",
+      "body": "This tool runs with its default settings for now."
+    },
+    "fileArea": "Choose a file to get started",
+    "start": "Start"
+  },
   "placeholders": {
     "toolsBody": "Tools arrive in MA10.",
     "historyBody": "Your jobs will appear here.",

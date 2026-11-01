@@ -16,6 +16,195 @@
     "history": "היסטוריה",
     "account": "חשבון"
   },
+  "tools": {
+    "title": "כלים",
+    "search": {
+      "placeholder": "חיפוש כלים",
+      "empty": "אין כלים התואמים ל־„{{query}}”.",
+      "clear": "ניקוי החיפוש"
+    },
+    "recents": "אחרונים",
+    "families": {
+      "image": "תמונה",
+      "video": "וידאו",
+      "audio": "אודיו",
+      "ai": "AI",
+      "metadata": "מטא־דאטה"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "המכסה היומית שלך תופיע כאן",
+    "items": {
+      "image-convert": {
+        "title": "המרת תמונה",
+        "description": "המרת תמונה ל־JPG, PNG, WebP, GIF, AVIF או ICO."
+      },
+      "image-to-svg": {
+        "title": "תמונה ל־SVG",
+        "description": "הפיכת תמונה לווקטור הניתן להגדלה."
+      },
+      "image-resize": {
+        "title": "שינוי גודל תמונה",
+        "description": "הגדרת רוחב וגובה חדשים."
+      },
+      "image-compress": {
+        "title": "דחיסת תמונה",
+        "description": "הקטנת התמונה עם אובדן איכות מזערי."
+      },
+      "image-crop": {
+        "title": "חיתוך תמונה",
+        "description": "חיתוך התמונה לחלק הרצוי."
+      },
+      "image-filter": {
+        "title": "מסנני תמונה",
+        "description": "גווני אפור, ספיה, טשטוש, חידוד ועוד."
+      },
+      "image-rotate": {
+        "title": "סיבוב תמונה",
+        "description": "סיבוב תמונה ב־90, 180 או 270 מעלות."
+      },
+      "image-text": {
+        "title": "הוספת טקסט לתמונה",
+        "description": "הוספת כיתוב או סימן מים לתמונה."
+      },
+      "image-to-pdf": {
+        "title": "תמונה ל־PDF",
+        "description": "הפיכת תמונה למסמך PDF."
+      },
+      "pdf-to-image": {
+        "title": "PDF לתמונה",
+        "description": "הפיכת עמודי PDF לתמונות JPG או PNG."
+      },
+      "video-convert": {
+        "title": "המרת וידאו",
+        "description": "המרת וידאו ל־MP4, WebM, MOV, MKV ועוד."
+      },
+      "video-compress": {
+        "title": "דחיסת וידאו",
+        "description": "הקטנת וידאו לשיתוף."
+      },
+      "video-trim": {
+        "title": "חיתוך וידאו",
+        "description": "שמירת החלק הרצוי בלבד מהווידאו."
+      },
+      "video-to-gif": {
+        "title": "וידאו ל־GIF",
+        "description": "הפיכת קטע ל־GIF מונפש."
+      },
+      "video-extract-audio": {
+        "title": "חילוץ אודיו",
+        "description": "הוצאת הסאונד מהווידאו כ־MP3 או כאודיו אחר."
+      },
+      "video-remove-audio": {
+        "title": "הסרת אודיו",
+        "description": "יצירת עותק שקט של הווידאו."
+      },
+      "video-extract-frames": {
+        "title": "חילוץ פריימים",
+        "description": "שמירת הפריימים של הווידאו כתמונות."
+      },
+      "video-transform": {
+        "title": "חיתוך, שינוי גודל, סיבוב, היפוך",
+        "description": "שינוי הצורה והכיוון של הווידאו."
+      },
+      "video-speed": {
+        "title": "שינוי מהירות וידאו",
+        "description": "האצה, האטה או הפעלה לאחור של וידאו."
+      },
+      "video-adjust": {
+        "title": "ייצוב והתאמת וידאו",
+        "description": "ייצוב קטעים רועדים, שינוי קצב פריימים או צבע."
+      },
+      "audio-convert": {
+        "title": "המרת אודיו",
+        "description": "המרת אודיו ל־MP3, WAV, AAC, FLAC ועוד."
+      },
+      "audio-trim": {
+        "title": "חיתוך אודיו",
+        "description": "שמירת החלק הרצוי בלבד מההקלטה."
+      },
+      "audio-effects": {
+        "title": "אפקטים לאודיו",
+        "description": "שינוי מהירות, גובה צליל או עוצמה; נרמול או הוספת הדהוד."
+      },
+      "audio-waveform": {
+        "title": "גל קול",
+        "description": "ציור תמונה של גל הקול."
+      },
+      "remove-background": {
+        "title": "הסרת רקע",
+        "description": "חיתוך הנושא מהתמונה כ־PNG שקוף."
+      },
+      "upscale": {
+        "title": "הגדלת תמונה ב־AI",
+        "description": "הגדלת תמונה קטנה והפיכתה לחדה יותר."
+      },
+      "blur-faces": {
+        "title": "טשטוש פנים",
+        "description": "הסתרת פנים בתמונה להגנה על הפרטיות."
+      },
+      "redact-text": {
+        "title": "הסתרת טקסט בתמונה",
+        "description": "כיסוי טקסט אישי או כל הטקסט בתמונה."
+      },
+      "remove-object": {
+        "title": "הסרת אובייקט",
+        "description": "מחיקת דבר לא רצוי מהתמונה."
+      },
+      "clean-voice": {
+        "title": "ניקוי קול",
+        "description": "הבהרת הדיבור בהקלטה."
+      },
+      "remove-noise": {
+        "title": "הסרת רעשי רקע",
+        "description": "הפחתת שריקות, זמזום ורעשי חדר."
+      },
+      "isolate-vocals": {
+        "title": "בידוד שירה",
+        "description": "הפרדת קול השירה משיר."
+      },
+      "remove-vocals": {
+        "title": "הסרת שירה",
+        "description": "יצירת גרסה instrumental של שיר."
+      },
+      "frame-interpolation": {
+        "title": "החלקת וידאו (FPS גבוה יותר)",
+        "description": "הוספת פריימים כדי שהתנועה תיראה חלקה יותר."
+      },
+      "transcribe": {
+        "title": "תמלול",
+        "description": "הפיכת דיבור באודיו או בווידאו לטקסט ולכתוביות."
+      },
+      "inspect-metadata": {
+        "title": "בדיקת מטא־דאטה",
+        "description": "הצגת הפרטים הנסתרים שהקובץ נושא."
+      },
+      "strip-metadata": {
+        "title": "הסרת מטא־דאטה",
+        "description": "הסרת פרטי מיקום ומצלמה מתמונה."
+      },
+      "edit-metadata": {
+        "title": "עריכת מטא־דאטה",
+        "description": "שינוי הפרטים השמורים בתמונה."
+      }
+    }
+  },
+  "tool": {
+    "accepts": "סוגים נתמכים: {{kinds}}",
+    "kinds": {
+      "image": "תמונות",
+      "video": "סרטונים",
+      "audio": "אודיו",
+      "pdf": "קובצי PDF"
+    },
+    "defaultsForm": {
+      "title": "הגדרות ברירת מחדל",
+      "body": "הכלי פועל כרגע עם הגדרות ברירת המחדל שלו."
+    },
+    "fileArea": "בחר קובץ כדי להתחיל",
+    "start": "התחל"
+  },
   "placeholders": {
     "toolsBody": "הכלים יגיעו ב-MA10.",
     "historyBody": "המשימות שלך יופיעו כאן.",

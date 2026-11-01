@@ -16,6 +16,195 @@
     "history": "इतिहास",
     "account": "खाता"
   },
+  "tools": {
+    "title": "टूल्स",
+    "search": {
+      "placeholder": "टूल खोजें",
+      "empty": "“{{query}}” से कोई टूल मेल नहीं खाता।",
+      "clear": "खोज हटाएँ"
+    },
+    "recents": "हाल के",
+    "families": {
+      "image": "इमेज",
+      "video": "वीडियो",
+      "audio": "ऑडियो",
+      "ai": "AI",
+      "metadata": "मेटाडेटा"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "आपकी दैनिक सीमा यहाँ दिखेगी",
+    "items": {
+      "image-convert": {
+        "title": "इमेज कन्वर्ट करें",
+        "description": "इमेज को JPG, PNG, WebP, GIF, AVIF या ICO में बदलें।"
+      },
+      "image-to-svg": {
+        "title": "इमेज से SVG",
+        "description": "इमेज को स्केलेबल वेक्टर में बदलें।"
+      },
+      "image-resize": {
+        "title": "इमेज का आकार बदलें",
+        "description": "नई चौड़ाई और ऊँचाई तय करें।"
+      },
+      "image-compress": {
+        "title": "इमेज कंप्रेस करें",
+        "description": "क्वालिटी खोए बिना इमेज छोटी करें।"
+      },
+      "image-crop": {
+        "title": "इमेज क्रॉप करें",
+        "description": "इमेज का चाहा हुआ हिस्सा काटें।"
+      },
+      "image-filter": {
+        "title": "इमेज फ़िल्टर",
+        "description": "ग्रेस्केल, सेपिया, ब्लर, शार्प और बहुत कुछ।"
+      },
+      "image-rotate": {
+        "title": "इमेज घुमाएँ",
+        "description": "इमेज को 90, 180 या 270 डिग्री घुमाएँ।"
+      },
+      "image-text": {
+        "title": "इमेज में टेक्स्ट जोड़ें",
+        "description": "इमेज पर कैप्शन या वॉटरमार्क लगाएँ।"
+      },
+      "image-to-pdf": {
+        "title": "इमेज से PDF",
+        "description": "इमेज को PDF दस्तावेज़ में बदलें।"
+      },
+      "pdf-to-image": {
+        "title": "PDF से इमेज",
+        "description": "PDF पेजों को JPG या PNG इमेज में बदलें।"
+      },
+      "video-convert": {
+        "title": "वीडियो कन्वर्ट करें",
+        "description": "वीडियो को MP4, WebM, MOV, MKV आदि में बदलें।"
+      },
+      "video-compress": {
+        "title": "वीडियो कंप्रेस करें",
+        "description": "शेयर करने के लिए वीडियो छोटा करें।"
+      },
+      "video-trim": {
+        "title": "वीडियो ट्रिम करें",
+        "description": "वीडियो का सिर्फ़ चाहा हुआ हिस्सा रखें।"
+      },
+      "video-to-gif": {
+        "title": "वीडियो से GIF",
+        "description": "क्लिप को एनिमेटेड GIF में बदलें।"
+      },
+      "video-extract-audio": {
+        "title": "ऑडियो निकालें",
+        "description": "वीडियो की आवाज़ MP3 या अन्य ऑडियो में निकालें।"
+      },
+      "video-remove-audio": {
+        "title": "ऑडियो हटाएँ",
+        "description": "वीडियो की बिना आवाज़ वाली कॉपी बनाएँ।"
+      },
+      "video-extract-frames": {
+        "title": "फ़्रेम निकालें",
+        "description": "वीडियो के फ़्रेम इमेज के रूप में सहेजें।"
+      },
+      "video-transform": {
+        "title": "क्रॉप, रीसाइज़, रोटेट, फ़्लिप",
+        "description": "वीडियो का आकार और दिशा बदलें।"
+      },
+      "video-speed": {
+        "title": "वीडियो की गति बदलें",
+        "description": "वीडियो तेज़, धीमा या उल्टा करें।"
+      },
+      "video-adjust": {
+        "title": "वीडियो स्थिर करें और समायोजित करें",
+        "description": "हिलते क्लिप स्थिर करें, FPS या रंग बदलें।"
+      },
+      "audio-convert": {
+        "title": "ऑडियो कन्वर्ट करें",
+        "description": "ऑडियो को MP3, WAV, AAC, FLAC आदि में बदलें।"
+      },
+      "audio-trim": {
+        "title": "ऑडियो ट्रिम करें",
+        "description": "रिकॉर्डिंग का सिर्फ़ चाहा हुआ हिस्सा रखें।"
+      },
+      "audio-effects": {
+        "title": "ऑडियो इफ़ेक्ट",
+        "description": "गति, पिच या वॉल्यूम बदलें; नॉर्मलाइज़ करें या रिवर्ब जोड़ें।"
+      },
+      "audio-waveform": {
+        "title": "ऑडियो वेवफ़ॉर्म",
+        "description": "ध्वनि तरंग की तस्वीर बनाएँ।"
+      },
+      "remove-background": {
+        "title": "बैकग्राउंड हटाएँ",
+        "description": "फ़ोटो से विषय को पारदर्शी PNG में काटें।"
+      },
+      "upscale": {
+        "title": "AI इमेज अपस्केलर",
+        "description": "छोटी इमेज को बड़ा और साफ़ बनाएँ।"
+      },
+      "blur-faces": {
+        "title": "चेहरे ब्लर करें",
+        "description": "गोपनीयता के लिए फ़ोटो में चेहरे छिपाएँ।"
+      },
+      "redact-text": {
+        "title": "इमेज में टेक्स्ट छिपाएँ",
+        "description": "निजी या सारा टेक्स्ट इमेज में ढक दें।"
+      },
+      "remove-object": {
+        "title": "ऑब्जेक्ट हटाएँ",
+        "description": "फ़ोटो से अनचाही चीज़ मिटाएँ।"
+      },
+      "clean-voice": {
+        "title": "आवाज़ साफ़ करें",
+        "description": "रिकॉर्डिंग में बोली को ज़्यादा साफ़ करें।"
+      },
+      "remove-noise": {
+        "title": "बैकग्राउंड शोर हटाएँ",
+        "description": "सरसराहट, गुनगुनाहट और कमरे का शोर घटाएँ।"
+      },
+      "isolate-vocals": {
+        "title": "वोकल अलग करें",
+        "description": "गाने से गायक की आवाज़ अलग निकालें।"
+      },
+      "remove-vocals": {
+        "title": "वोकल हटाएँ",
+        "description": "गाने का इंस्ट्रुमेंटल वर्शन बनाएँ।"
+      },
+      "frame-interpolation": {
+        "title": "स्मूद वीडियो (ज़्यादा FPS)",
+        "description": "फ़्रेम जोड़ें ताकि गति ज़्यादा सहज दिखे।"
+      },
+      "transcribe": {
+        "title": "ट्रांसक्राइब करें",
+        "description": "ऑडियो या वीडियो की बोली को टेक्स्ट और कैप्शन में बदलें।"
+      },
+      "inspect-metadata": {
+        "title": "मेटाडेटा देखें",
+        "description": "देखें कि फ़ाइल में कौन-सी छिपी जानकारी है।"
+      },
+      "strip-metadata": {
+        "title": "मेटाडेटा हटाएँ",
+        "description": "इमेज से लोकेशन और कैमरा जानकारी हटाएँ।"
+      },
+      "edit-metadata": {
+        "title": "मेटाडेटा संपादित करें",
+        "description": "इमेज में सहेजी जानकारी बदलें।"
+      }
+    }
+  },
+  "tool": {
+    "accepts": "समर्थित: {{kinds}}",
+    "kinds": {
+      "image": "इमेज",
+      "video": "वीडियो",
+      "audio": "ऑडियो",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "डिफ़ॉल्ट सेटिंग्स",
+      "body": "फ़िलहाल यह टूल डिफ़ॉल्ट सेटिंग्स के साथ चलता है।"
+    },
+    "fileArea": "शुरू करने के लिए फ़ाइल चुनें",
+    "start": "शुरू करें"
+  },
   "placeholders": {
     "toolsBody": "टूल MA10 में आएँगे।",
     "historyBody": "आपके जॉब यहाँ दिखेंगे।",

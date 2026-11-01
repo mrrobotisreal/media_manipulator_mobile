@@ -16,6 +16,195 @@
     "history": "歷史記錄",
     "account": "帳號"
   },
+  "tools": {
+    "title": "工具",
+    "search": {
+      "placeholder": "搜尋工具",
+      "empty": "沒有符合「{{query}}」的工具。",
+      "clear": "清除搜尋"
+    },
+    "recents": "最近使用",
+    "families": {
+      "image": "圖片",
+      "video": "影片",
+      "audio": "音訊",
+      "ai": "AI",
+      "metadata": "中繼資料"
+    },
+    "badge": {
+      "ai": "AI"
+    },
+    "quotaSlot": "您的每日額度會顯示在這裡",
+    "items": {
+      "image-convert": {
+        "title": "轉換圖片",
+        "description": "將圖片轉換為 JPG、PNG、WebP、GIF、AVIF 或 ICO。"
+      },
+      "image-to-svg": {
+        "title": "圖片轉 SVG",
+        "description": "將圖片描繪為可縮放向量圖。"
+      },
+      "image-resize": {
+        "title": "調整圖片大小",
+        "description": "設定新的寬度和高度。"
+      },
+      "image-compress": {
+        "title": "壓縮圖片",
+        "description": "縮小圖片檔案，畫質幾乎無損。"
+      },
+      "image-crop": {
+        "title": "裁切圖片",
+        "description": "裁出您想要的部分。"
+      },
+      "image-filter": {
+        "title": "圖片濾鏡",
+        "description": "灰階、復古、模糊、銳利化等。"
+      },
+      "image-rotate": {
+        "title": "旋轉圖片",
+        "description": "將圖片旋轉 90、180 或 270 度。"
+      },
+      "image-text": {
+        "title": "為圖片加入文字",
+        "description": "在圖片上加入說明文字或浮水印。"
+      },
+      "image-to-pdf": {
+        "title": "圖片轉 PDF",
+        "description": "將圖片轉為 PDF 文件。"
+      },
+      "pdf-to-image": {
+        "title": "PDF 轉圖片",
+        "description": "將 PDF 頁面轉為 JPG 或 PNG 圖片。"
+      },
+      "video-convert": {
+        "title": "轉換影片",
+        "description": "將影片轉換為 MP4、WebM、MOV、MKV 等格式。"
+      },
+      "video-compress": {
+        "title": "壓縮影片",
+        "description": "縮小影片以便分享。"
+      },
+      "video-trim": {
+        "title": "剪裁影片",
+        "description": "只保留影片中想要的部分。"
+      },
+      "video-to-gif": {
+        "title": "影片轉 GIF",
+        "description": "將片段轉為 GIF 動圖。"
+      },
+      "video-extract-audio": {
+        "title": "擷取音訊",
+        "description": "將影片中的聲音擷取為 MP3 或其他音訊。"
+      },
+      "video-remove-audio": {
+        "title": "移除音訊",
+        "description": "產生影片的無聲副本。"
+      },
+      "video-extract-frames": {
+        "title": "擷取影格",
+        "description": "將影片的影格儲存為圖片。"
+      },
+      "video-transform": {
+        "title": "裁切、縮放、旋轉、翻轉",
+        "description": "更改影片的形狀和方向。"
+      },
+      "video-speed": {
+        "title": "變更影片速度",
+        "description": "加速、減速或倒轉影片。"
+      },
+      "video-adjust": {
+        "title": "影片防震與調整",
+        "description": "穩定晃動的畫面，調整影格率或色彩。"
+      },
+      "audio-convert": {
+        "title": "轉換音訊",
+        "description": "將音訊轉換為 MP3、WAV、AAC、FLAC 等格式。"
+      },
+      "audio-trim": {
+        "title": "剪裁音訊",
+        "description": "只保留錄音中想要的部分。"
+      },
+      "audio-effects": {
+        "title": "音訊效果",
+        "description": "調整速度、音調或音量；標準化或加入殘響。"
+      },
+      "audio-waveform": {
+        "title": "音訊波形",
+        "description": "繪製聲波圖。"
+      },
+      "remove-background": {
+        "title": "移除背景",
+        "description": "將照片主體去背，儲存為透明 PNG。"
+      },
+      "upscale": {
+        "title": "AI 圖片放大",
+        "description": "將小圖放大並變得更清晰。"
+      },
+      "blur-faces": {
+        "title": "模糊人臉",
+        "description": "隱藏照片中的人臉以保護隱私。"
+      },
+      "redact-text": {
+        "title": "遮蔽圖片中的文字",
+        "description": "遮蓋個人文字或圖片中的所有文字。"
+      },
+      "remove-object": {
+        "title": "移除物件",
+        "description": "從照片中抹除不想要的內容。"
+      },
+      "clean-voice": {
+        "title": "人聲淨化",
+        "description": "讓錄音中的語音更清晰。"
+      },
+      "remove-noise": {
+        "title": "消除背景雜音",
+        "description": "減少嘶嘶聲、嗡嗡聲和室內雜音。"
+      },
+      "isolate-vocals": {
+        "title": "分離人聲",
+        "description": "從歌曲中分離出歌聲。"
+      },
+      "remove-vocals": {
+        "title": "移除人聲",
+        "description": "製作歌曲的伴奏版本。"
+      },
+      "frame-interpolation": {
+        "title": "影片補幀(提高 FPS)",
+        "description": "增加影格數，讓動作更流暢。"
+      },
+      "transcribe": {
+        "title": "轉錄",
+        "description": "將音訊或影片中的語音轉為文字和字幕。"
+      },
+      "inspect-metadata": {
+        "title": "檢視中繼資料",
+        "description": "查看檔案中隱藏的詳細資訊。"
+      },
+      "strip-metadata": {
+        "title": "移除中繼資料",
+        "description": "清除圖片中的位置和相機資訊。"
+      },
+      "edit-metadata": {
+        "title": "編輯中繼資料",
+        "description": "更改圖片中儲存的資訊。"
+      }
+    }
+  },
+  "tool": {
+    "accepts": "支援：{{kinds}}",
+    "kinds": {
+      "image": "圖片",
+      "video": "影片",
+      "audio": "音訊",
+      "pdf": "PDF"
+    },
+    "defaultsForm": {
+      "title": "預設設定",
+      "body": "此工具目前以預設設定執行。"
+    },
+    "fileArea": "選擇檔案開始",
+    "start": "開始"
+  },
   "placeholders": {
     "toolsBody": "工具將於 MA10 推出。",
     "historyBody": "您的任務會顯示在這裡。",
