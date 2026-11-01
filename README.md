@@ -37,4 +37,6 @@ Set as EAS environment variables per profile; never committed. Public defaults a
 | `EXPO_PUBLIC_APPLE_SERVICE_ID`, `EXPO_PUBLIC_APPLE_REDIRECT_URI` | Apple sign-in                                                                                                                                                        |
 | `GOOGLE_SERVICES_JSON`, `GOOGLE_SERVICE_INFO_PLIST`              | EAS file variables (paths). Locally, `google-services.json` / `GoogleService-Info.plist` in the repo root; gitignored. Without them the app builds without Firebase. |
 
+App ids: `com.mediamanipulator.app` on Android and iOS (variants add `.dev` / `.preview`).
+
 `android/` and `ios/` are generated (CNG) and never committed.

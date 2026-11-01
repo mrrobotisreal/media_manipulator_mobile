@@ -7,9 +7,9 @@ const EAS_OWNER: string | undefined = undefined;
 
 export type Variant = 'development' | 'preview' | 'production';
 
-// Single source for the store ids; variants add a suffix. (Pending Mitch's decision, see MA02 log.)
-export const ANDROID_PACKAGE = 'com.media_manipulator.app';
-export const IOS_BUNDLE_ID = 'com.media-manipulator.app';
+// Single source for the store ids; variants add a suffix. (decided by Mitch 2026-11-01; matches Firebase and App Store Connect)
+export const ANDROID_PACKAGE = 'com.mediamanipulator.app';
+export const IOS_BUNDLE_ID = 'com.mediamanipulator.app';
 
 const BACKGROUND = '#0A0B0D';
 
