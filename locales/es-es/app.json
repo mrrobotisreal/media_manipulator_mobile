@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "Aceptar",
+    "cancel": "Cancelar",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "continue": "Continuar",
+    "done": "Hecho",
+    "loading": "Cargando",
+    "processing": "Procesando",
+    "signOut": "Cerrar sesión",
+    "back": "Atrás"
+  },
+  "tabs": {
+    "tools": "Herramientas",
+    "history": "Historial",
+    "account": "Cuenta"
+  },
+  "placeholders": {
+    "toolsBody": "Las herramientas llegan en MA10.",
+    "historyBody": "Tus trabajos aparecerán aquí.",
+    "accountBody": "La cuenta llega en MA15.",
+    "signInBody": "El inicio de sesión llega en MA04",
+    "openShell": "Abrir el entorno de la app",
+    "errorBoundary": "Algo ha salido mal. Reinicia la app."
+  },
+  "language": {
+    "title": "Idioma",
+    "system": "Predeterminado del sistema",
+    "rtlReloadTitle": "Reinicia para cambiar la dirección del diseño",
+    "rtlReloadBody": "La app debe reiniciarse para mostrar este idioma de derecha a izquierda.",
+    "rtlReloadBodyLtr": "La app debe reiniciarse para mostrar este idioma de izquierda a derecha.",
+    "rtlReloadConfirm": "Reiniciar ahora"
+  }
+}

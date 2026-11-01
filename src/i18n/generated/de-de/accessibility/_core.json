@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Startseite von Media Manipulator",
+    "openMenu": "Menü öffnen",
+    "github": "Auf GitHub ansehen",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "Design umschalten",
+    "languageMenu": "Sprache ändern",
+    "navIcon": "Media Manipulator Symbol",
+    "winappsLogo": "WinApps-Logo",
+    "creatvLogo": "CreaTV-Logo",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "Zum Inhalt springen",
+  "footer": {
+    "homeLink": "Startseite von Media Manipulator",
+    "navIcon": "Media Manipulator Symbol"
+  },
+  "home": {
+    "popularTools": "Beliebte Tools",
+    "closePreview": "Vorschau schließen"
+  },
+  "notFound": {
+    "recoveryRoutes": "Rettungsrouten"
+  },
+  "loading": {
+    "label": "Wird geladen"
+  },
+  "languageSelector": {
+    "trigger": "Sprache ändern",
+    "icon": "Übersetzungssymbol"
+  },
+  "common": {
+    "close": "Schließen",
+    "open": "Öffnen",
+    "loading": "Wird geladen",
+    "moreOptions": "Weitere Optionen"
+  },
+  "transcribeForm": {
+    "formatTooltip": "Über das Transkript-Ausgabeformat",
+    "languageTooltip": "Über den Sprachhinweis"
+  },
+  "audioForm": {
+    "aiTooltip": "Über KI-Audio-Tools"
+  },
+  "videoForm": {
+    "aiTooltip": "Über KI-Video-Tools"
+  },
+  "imageForm": {
+    "aiTooltip": "Über KI-Bild-Tools",
+    "selectiveFacesTooltip": "Über selektiven Gesichtsschutz",
+    "removeObjectTooltip": "Über das Entfernen von Objekten",
+    "metadataTooltip": "Über die Metadatenverarbeitung",
+    "vectorizeThresholdTooltip": "Über den Vektorisierungsschwellenwert"
+  }
+}

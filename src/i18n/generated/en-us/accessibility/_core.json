@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Media Manipulator home",
+    "openMenu": "Open menu",
+    "github": "View on GitHub",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "Toggle theme",
+    "languageMenu": "Change language",
+    "navIcon": "Media Manipulator Icon",
+    "winappsLogo": "WinApps Logo",
+    "creatvLogo": "CreaTV Logo",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "Skip to content",
+  "footer": {
+    "homeLink": "Media Manipulator home",
+    "navIcon": "Media Manipulator Icon"
+  },
+  "home": {
+    "popularTools": "Popular tools",
+    "closePreview": "Close preview"
+  },
+  "notFound": {
+    "recoveryRoutes": "Recovery routes"
+  },
+  "loading": {
+    "label": "Loading"
+  },
+  "languageSelector": {
+    "trigger": "Change language",
+    "icon": "Translate icon"
+  },
+  "common": {
+    "close": "Close",
+    "open": "Open",
+    "loading": "Loading",
+    "moreOptions": "More options"
+  },
+  "transcribeForm": {
+    "formatTooltip": "About transcript output format",
+    "languageTooltip": "About language hint"
+  },
+  "audioForm": {
+    "aiTooltip": "About AI Audio Tools"
+  },
+  "videoForm": {
+    "aiTooltip": "About AI Video Tools"
+  },
+  "imageForm": {
+    "aiTooltip": "About AI Image Tools",
+    "selectiveFacesTooltip": "About selective face privacy",
+    "removeObjectTooltip": "About object removal",
+    "metadataTooltip": "About metadata handling",
+    "vectorizeThresholdTooltip": "About the vectorization threshold"
+  }
+}

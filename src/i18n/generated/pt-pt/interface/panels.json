@@ -1,0 +1,1418 @@
+{
+  "transcribeResultView": {
+    "loading": "A carregar o resultado da transcrição...",
+    "noResult": "Não há nenhum resultado de transcrição disponível para esta tarefa.",
+    "complete": "Transcrição concluída",
+    "outputFormat": "Formato de saída:",
+    "language": "Idioma: {{language}}",
+    "duration": "Duração: {{duration}}",
+    "noAudioStream": "Sem fluxo de áudio",
+    "noSpeech": "Sem fala reconhecível",
+    "nothingToTranscribe": "Nada para transcrever",
+    "noTranscriptGenerated": "Não foi possível gerar uma transcrição para este ficheiro.",
+    "transcriptHeader_one": "Transcrição ({{count}} segmento)",
+    "transcriptHeader_other": "Transcrição ({{count}} segmentos)",
+    "aiSummaryTitle": "Resumo por IA e revisão de segurança",
+    "analysisRunning": "A executar o resumo e a revisão de segurança em segundo plano...",
+    "analysisError": "Erro de análise: {{error}}",
+    "summary": "Resumo",
+    "extendedSummary": "Resumo alargado",
+    "safetyBadge": "Segurança: {{rating}}",
+    "harmfulFlagged": "Detetado conteúdo potencialmente nocivo",
+    "harmfulNone": "Nenhum conteúdo nocivo assinalado",
+    "sentimentBadge": "Sentimento: {{label}}",
+    "notesLabel": "Notas: {{notes}}",
+    "summaryPending": "O resumo e a revisão de segurança aparecerão aqui assim que a tarefa de análise terminar.",
+    "unknown": "desconhecido"
+  },
+  "summarize": {
+    "loading": "A verificar se os resumos estão disponíveis…",
+    "unavailable": "Os resumos de vídeo e áudio estão temporariamente indisponíveis. Tente novamente mais tarde; as páginas de Transcrever continuam a funcionar.",
+    "notInPlan": "Os resumos não estão incluídos no seu plano.",
+    "signIn": {
+      "title": "Inicie sessão para resumir",
+      "body": "Os resumos são executados no nosso próprio servidor GPU e requerem uma conta gratuita. Inicie sessão ou crie uma e, depois, carregue o seu ficheiro.",
+      "button": "Iniciar sessão",
+      "signup": "Criar uma conta gratuita"
+    },
+    "uploadHintVideo": "um ficheiro de vídeo ou de áudio",
+    "uploadHintAudio": "um ficheiro de áudio",
+    "outputLanguage": "Idioma do resumo",
+    "sameAsSpeech": "O mesmo da fala",
+    "depth": {
+      "label": "Profundidade",
+      "standard": "Padrão",
+      "deep": "Profundo",
+      "hint": "O modo profundo escreve o resumo com um modelo maior. Demora mais tempo."
+    },
+    "note": "Utiliza uma tarefa de IA do seu limite diário. Uma tarefa falhada não é contabilizada.",
+    "noteFrames": "O seu plano lê até {{frames}} fotogramas do vídeo. Utiliza uma tarefa de IA do seu limite diário; uma tarefa falhada não é contabilizada.",
+    "start": "Resumir",
+    "stagesTitle": "Progresso",
+    "stages": {
+      "probe": "A ler o ficheiro",
+      "audio": "A transcrever a fala",
+      "frames": "A escolher fotogramas",
+      "vision": "A descrever os fotogramas",
+      "synthesis": "A escrever o resumo",
+      "render": "A formatar o resultado"
+    },
+    "status": {
+      "pending": "Em espera",
+      "processing": "Em curso",
+      "completed": "Concluído",
+      "skipped": "Ignorado",
+      "failed": "Falhou"
+    },
+    "framesCount": "Fotogramas: {{count}}",
+    "errors": {
+      "signin_required": "Inicie sessão para resumir.",
+      "summary_not_in_plan": "Os resumos não estão incluídos no seu plano.",
+      "summary_unavailable": "Os resumos estão temporariamente indisponíveis. Tente novamente mais tarde.",
+      "unreadable_media": "Não foi possível ler este ficheiro como áudio nem como vídeo.",
+      "no_audio_or_video": "Este ficheiro não tem áudio nem vídeo para resumir.",
+      "file_too_large": "Este ficheiro é maior ou mais longo do que o seu plano permite.",
+      "upload_not_found": "Não foi possível encontrar o carregamento. Tente novamente.",
+      "quota_exceeded": "Já utilizou todas as tarefas de IA de hoje.",
+      "invalid_request": "O pedido não foi aceite. Recarregue a página e tente novamente.",
+      "unknown": "Não foi possível iniciar o resumo. Tente novamente."
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "Largue aqui o seu {{hint}}",
+    "selectHint": "ou clique para selecionar a partir do seu computador. Os ficheiros são guardados 24 horas para visitantes; com uma conta gratuita, escolhe entre 24 horas e 2 anos.",
+    "selectFile": "Selecionar ficheiro",
+    "removeFile": "Remover ficheiro",
+    "uploadingPercent": "A carregar {{percent}}%",
+    "workingOnFile": "A processar o seu ficheiro…",
+    "previewResult": "Pré-visualizar resultado",
+    "downloadResult": "Transferir resultado",
+    "jobFailed": "A tarefa falhou. Experimente outro ficheiro ou atualize a página.",
+    "resultPreview": "Pré-visualização do resultado",
+    "toggleHint": "Alterne entre o ficheiro original e o resultado final.",
+    "closePreview": "Fechar pré-visualização",
+    "loadingPreview": "A carregar pré-visualização…",
+    "zipPreviewTitle": "Pré-visualização indisponível para transferências ZIP",
+    "zipPreviewBody": "Este resultado está empacotado num arquivo ZIP. Transfira-o e extraia-o localmente para ver o conteúdo."
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "Conversor multimédia incorporado",
+    "tryItNow": "Experimentar agora",
+    "recommendedOutput": "Saída recomendada:",
+    "outputFormat": "Formato de saída:",
+    "outputLocked": "Saída fixada para esta ferramenta:",
+    "expectedInput": "Entrada esperada:",
+    "accepts": "Aceita:",
+    "dragDrop": "Arraste e largue aqui um ficheiro de {{kind}}",
+    "mediaKinds": {
+      "image": "imagem",
+      "video": "vídeo",
+      "audio": "áudio",
+      "pdf": "PDF"
+    },
+    "selectHint": "ou clique para selecionar a partir do seu computador. Os ficheiros são guardados 24 horas para visitantes; com uma conta gratuita, escolhe entre 24 horas e 2 anos.",
+    "selectFile": "Selecionar ficheiro",
+    "removeFile": "Remover ficheiro",
+    "uploadingPercent": "A carregar {{percent}}%",
+    "workingOnFile": "A processar o seu ficheiro…",
+    "downloadFilename": "Transferir {{filename}}",
+    "transcribeFailed": "A transcrição falhou.",
+    "conversionFailed": "A conversão falhou.",
+    "tryAgainOrOpen": "Tente novamente ou abra o conversor completo.",
+    "needFullPrefix": "Precisa de todas as funcionalidades?",
+    "openFullConverter": "Abra o conversor completo",
+    "needFullSuffix": ": inclui o histórico de conversões, o fluxo de transcrição e as ferramentas de IA."
+  },
+  "extractAudio": {
+    "title": "Extrair áudio",
+    "subtitle": "Extraia a faixa de áudio de um ficheiro de vídeo e guarde-a como MP3, WAV, AAC, OGG ou FLAC.",
+    "formatLabel": "Formato de áudio de saída",
+    "outputLocked": "Fixado em {{format}} nesta ferramenta",
+    "expectedInput": "Entrada esperada: {{format}}",
+    "submit": "Extrair áudio",
+    "running": "A extrair…",
+    "success": "Áudio extraído. Use o botão de transferência para o guardar.",
+    "uploadHint": "ficheiro de vídeo",
+    "note": "A faixa extraída mantém a duração e a qualidade completas da origem. Vídeos sem áudio devolvem um erro explícito.",
+    "formats": {
+      "mp3": "MP3 (compacto, reproduz em todo o lado)",
+      "wav": "WAV (sem perdas, grande)",
+      "m4a": "M4A (AAC: boa qualidade, compacto)",
+      "aac": "AAC (bruto)",
+      "flac": "FLAC (sem perdas)",
+      "ogg": "OGG (Vorbis)"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "ficheiro de vídeo",
+    "expectedInput": "Entrada esperada: {{format}}",
+    "levelLabel": "Nível de compressão",
+    "levels": {
+      "smallest": "Ficheiro mais pequeno",
+      "balanced": "Equilibrado (recomendado)",
+      "high_quality": "Alta qualidade"
+    },
+    "levelHints": {
+      "smallest": "Redução máxima para e-mail e chat. Alguma perda de qualidade visível em filmagens detalhadas.",
+      "balanced": "Um bom compromisso entre tamanho e qualidade para a maioria dos vídeos e publicações nas redes sociais.",
+      "high_quality": "Mantém o máximo de detalhe. Mais pequeno do que a origem, mas não tanto."
+    },
+    "formatLabel": "Formato de saída",
+    "outputLocked": "Fixado em {{format}} nesta ferramenta",
+    "resolutionLabel": "Resolução",
+    "resolutions": {
+      "keep": "Manter a original",
+      "1080": "1080p (Full HD)",
+      "720": "720p (HD)",
+      "480": "480p (SD)"
+    },
+    "codecLabel": "Codec",
+    "codecs": {
+      "h264": "H.264 (mais compatível)",
+      "h265": "H.265 / HEVC (mais pequeno, dispositivos modernos)"
+    },
+    "stripAudio": "Remover a faixa de áudio para um ficheiro ainda mais pequeno",
+    "note": "Recodificamos o vídeo no nível escolhido. A saída MP4 usa H.264 + AAC com faststart para reprodução imediata.",
+    "running": "A comprimir…",
+    "submit": "Comprimir vídeo"
+  },
+  "videoTrimmer": {
+    "uploadHint": "ficheiro de vídeo",
+    "expectedInput": "Entrada esperada: {{format}}",
+    "startLabel": "Início (segundos)",
+    "endLabel": "Fim (segundos)",
+    "durationLabel": "Duração do clipe: {{duration}}",
+    "invalidRange": "Defina um tempo de fim posterior ao tempo de início.",
+    "pickRange": "Escolher intervalo visualmente",
+    "formatLabel": "Formato de saída",
+    "outputLocked": "Fixado em {{format}} nesta ferramenta",
+    "reencodeLabel": "Recodificar para um corte exato ao fotograma",
+    "reencodeHint": "A recodificação corta exatamente nos tempos indicados, mas é mais lenta e pode alterar ligeiramente o tamanho do ficheiro.",
+    "note": "Mantemos a qualidade original com um corte rápido e sem perdas sempre que possível (sem recodificação).",
+    "running": "A cortar…",
+    "submit": "Cortar vídeo",
+    "submitCut": "Cortar vídeo"
+  },
+  "videoTransform": {
+    "uploadHint": "ficheiro de vídeo",
+    "expectedInput": "Entrada esperada: {{format}}",
+    "autoPlaceholder": "Auto",
+    "widthLabel": "Largura (px)",
+    "heightLabel": "Altura (px)",
+    "preserveAspect": "Preservar proporção (ajustar dentro da caixa)",
+    "resizeNote": "Deixe um dos campos em branco para redimensionar o outro proporcionalmente. Máximo de 4096 px por lado.",
+    "rotationLabel": "Rotação",
+    "rotations": {
+      "90": "90° no sentido horário",
+      "180": "180° (de cabeça para baixo)",
+      "270": "90° no sentido anti-horário"
+    },
+    "flipH": "Inverter horizontalmente",
+    "flipV": "Inverter verticalmente",
+    "rotateNote": "Corrige vídeos de lado ou de cabeça para baixo. 90° e 270° trocam a largura e a altura.",
+    "cropX": "Desvio esquerdo (X, px)",
+    "cropY": "Desvio superior (Y, px)",
+    "cropW": "Largura do recorte (px)",
+    "cropH": "Altura do recorte (px)",
+    "cropNote": "Introduza o retângulo a manter, em píxeis a partir do canto superior esquerdo. A largura e a altura são obrigatórias.",
+    "formatLabel": "Formato de saída",
+    "outputLocked": "Fixado em {{format}} nesta ferramenta",
+    "running": "A processar…",
+    "submit": {
+      "crop": "Recortar vídeo",
+      "resize": "Redimensionar vídeo",
+      "rotate": "Rodar vídeo"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "Extrair vídeo (sem áudio)",
+    "subtitle": "Remova a faixa de áudio de um ficheiro de vídeo, mantendo apenas o fluxo de vídeo.",
+    "uploadHint": "ficheiro de vídeo",
+    "formatLabel": "Contentor de saída",
+    "formats": {
+      "mp4": "MP4 (recomendado)",
+      "webm": "WebM"
+    },
+    "note": "O fluxo de vídeo é copiado sem recodificação sempre que possível, sem perda de qualidade. Só recodificamos se o contentor de destino o exigir.",
+    "submit": "Remover áudio do vídeo",
+    "running": "A remover o áudio…",
+    "success": "Fluxo de vídeo extraído."
+  },
+  "extractFrames": {
+    "title": "Extrair fotogramas",
+    "subtitle": "Guarde fotogramas individuais de um vídeo como imagens PNG, JPG ou WebP.",
+    "uploadHint": "ficheiro de vídeo",
+    "modeLabel": "Modo de extração",
+    "modes": {
+      "every_n_seconds": "A cada N segundos",
+      "fps": "Número específico de fotogramas por segundo",
+      "timestamp": "Instantes específicos"
+    },
+    "secondsBetween": "Segundos entre fotogramas",
+    "fpsLabel": "Fotogramas por segundo",
+    "timestampsLabel": "Instantes em segundos (separados por vírgulas)",
+    "timestampsPlaceholder": "p. ex. 1, 5.5, 12, 30",
+    "imageFormatLabel": "Formato de imagem",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG (sem perdas)",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "Máximo de fotogramas",
+    "zipNote": "Os fotogramas são agrupados num único ZIP para transferência. Limitamos a quantidade para manter as tarefas rápidas e previsíveis; aumente o limite se realmente precisar de mais.",
+    "submit": "Extrair fotogramas",
+    "running": "A extrair fotogramas…",
+    "success": "Fotogramas extraídos. Transfira o ZIP abaixo."
+  },
+  "captionTranslator": {
+    "title": "Traduzir legendas",
+    "subtitle": "Carregue um ficheiro de legendas VTT, SRT ou TXT e traduza-o para outro idioma.",
+    "dropHere": "Largue aqui o seu ficheiro .srt ou .vtt",
+    "privacyNote": "Os ficheiros são guardados 24 horas para visitantes; com uma conta gratuita, escolhe entre 24 horas e 2 anos. Não enviamos as suas legendas a fornecedores de IA externos.",
+    "selectCaptionFile": "Selecionar ficheiro de legendas",
+    "removeFile": "Remover ficheiro",
+    "sourceLanguage": "Idioma de origem",
+    "targetLanguage": "Idioma de destino",
+    "autoDetect": "Deteção automática (recomendado)",
+    "outputFormat": "Formato de saída",
+    "sameAsInput": "Igual à entrada ({{format}})",
+    "formats": {
+      "srt": "SRT (SubRip)",
+      "vtt": "VTT (WebVTT)"
+    },
+    "timingNote": "A temporização e a ordem das entradas são preservadas exatamente; só o texto das entradas é traduzido.",
+    "translating": "A traduzir…",
+    "translateCaptions": "Traduzir legendas",
+    "uploadingPercent": "A carregar {{percent}}%",
+    "translatingWithModel": "A traduzir com o modelo de IA local…",
+    "downloadTranslated": "Transferir legendas traduzidas",
+    "translationFailed": "A tradução falhou. Experimente um ficheiro mais pequeno ou outro idioma de destino."
+  },
+  "stitchAudioToVideo": {
+    "title": "Juntar áudio a um vídeo",
+    "subtitle": "Adicione ou substitua faixas de áudio num ficheiro de vídeo.",
+    "dropBaseVideo": "Largue aqui o seu vídeo base",
+    "intro": "Escolha primeiro o vídeo. A seguir, adiciona as faixas de áudio (locução, música, narração).",
+    "selectVideo": "Selecionar vídeo",
+    "removeBaseVideo": "Remover vídeo base",
+    "audioTracks": "Faixas de áudio",
+    "removeTrack": "Remover faixa",
+    "volume": "Volume",
+    "startOffset": "Desvio inicial (segundos)",
+    "loopTrack": "Repetir esta faixa em ciclo até à duração do vídeo",
+    "addAudioTrack": "Adicionar faixa de áudio ({{count}}/{{max}})",
+    "audioModeLabel": "Modo de áudio",
+    "audioModes": {
+      "mix": "Misturar com o áudio existente",
+      "replace": "Substituir o áudio original"
+    },
+    "outputLengthLabel": "Duração da saída",
+    "outputLength": {
+      "video": "Cortar à duração do vídeo",
+      "longest": "Igualar a entrada mais longa"
+    },
+    "stitching": "A juntar áudio + vídeo…",
+    "addAudioToVideo": "Adicionar áudio ao vídeo",
+    "uploadingPercent": "A carregar {{percent}}%",
+    "mixingOnServer": "A misturar no servidor…",
+    "downloadStitched": "Transferir vídeo com áudio",
+    "stitchFailed": "A junção falhou. Verifique se os seus ficheiros de áudio são válidos e tente novamente."
+  },
+  "aiVideoTools": {
+    "title": "Ferramentas de vídeo com IA",
+    "tooltipIntro": "As ferramentas de vídeo com IA incluem atualmente a <strong>interpolação de fotogramas por IA</strong>, que gera novos fotogramas intermédios para que o movimento seja reproduzido com mais fluidez.",
+    "tooltipBestFor": "Ideal para levar filmagens de 24/30 fps até 60 fps, ou de 60 fps até 120 fps. É muito exigente para a GPU e, de momento, produz sempre MP4.",
+    "intro": "A interpolação de fotogramas por IA cria fotogramas intermédios para um movimento mais fluido. Ideal para clipes de 24/30 fps → 60 fps ou de 60 fps → 120 fps.",
+    "gpuNote": "É muito exigente para a GPU e, de momento, produz MP4. Para vídeos longos ou em 4K, use primeiro uma altura máxima de processamento mais baixa. É diferente da conversão básica de FPS: a interpolação por IA sintetiza novos fotogramas em vez de os duplicar, e ignora a maioria dos outros filtros visuais/temporais na v1.",
+    "operationLabel": "Operação",
+    "operations": {
+      "none_short": "Nenhuma",
+      "frame_interpolation": "Interpolação de fotogramas por IA"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "Taxa de fotogramas pretendida",
+      "modelLabel": "Modelo RIFE",
+      "models": {
+        "rife-v4.6": "RIFE v4.6 — recomendado",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3 — compatibilidade"
+      },
+      "qualityLabel": "Qualidade",
+      "qualityOptions": {
+        "low": "Baixa — codificação mais rápida",
+        "medium": "Média — equilibrada",
+        "high": "Alta — codificação mais lenta"
+      },
+      "maxHeightLabel": "Altura máxima de processamento",
+      "preserveAudio": "Preservar a faixa de áudio da origem"
+    },
+    "notes": {
+      "mp4": "Na v1, a saída é sempre MP4 (H.264 + AAC).",
+      "trim": "Na v1, o corte está desativado com a interpolação de fotogramas por IA. Se necessário, corte primeiro o clipe separadamente.",
+      "artifacts": "Movimentos rápidos, cortes de cena, cabelo, mãos, rodas e oclusões podem mostrar artefactos de interpolação. Pré-visualize antes de publicar."
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "Linha temporal de seleção do excerto",
+      "startHandle": "Início da seleção",
+      "endHandle": "Fim da seleção",
+      "playSelection": "Reproduzir seleção",
+      "pause": "Pausar",
+      "start": "Início",
+      "end": "Fim",
+      "startTime": "Tempo de início (m:ss.d)",
+      "endTime": "Tempo de fim (m:ss.d)",
+      "nudgeBack": "Recuar 0,1 segundos",
+      "nudgeForward": "Avançar 0,1 segundos",
+      "selected": "selecionados",
+      "frames": "fotogramas",
+      "estimate": "est.",
+      "fpsAssumption": "a estimativa de fotogramas assume 30 fps; o servidor usa a taxa de fotogramas real do seu vídeo",
+      "overRecommended": "Seleções com mais de {{seconds}} s funcionam, mas o tempo de processamento cresce depressa; excertos mais curtos comparam-se igualmente bem.",
+      "overFrameBudget": "Esta seleção provavelmente excede o limite de {{maxFrames}} fotogramas a 30 fps. Se a taxa de fotogramas real do seu vídeo for superior a ~30 fps, encurte a seleção."
+    },
+    "picker": {
+      "title": "Modelos de restauração",
+      "selectAll": "Selecionar todos",
+      "selectNone": "Nenhum",
+      "frameGroup": "Melhoradores fotograma a fotograma — inclui fotogramas melhorados + vídeo",
+      "videoGroup": "Modelos de restauração de vídeo — apenas vídeo",
+      "unavailable": "Não disponível neste servidor",
+      "includeFrames": "Incluir fotogramas melhorados (PNG)",
+      "includeFramesHint": "Adiciona à transferência todos os fotogramas melhorados dos modelos fotograma a fotograma, ao lado dos vídeos.",
+      "includeFramesWarning": "Os fotogramas podem multiplicar o tamanho da transferência: um clipe de 10 s pode acrescentar centenas de PNG grandes por modelo.",
+      "noneSelected": "Selecione pelo menos um modelo para continuar.",
+      "runningTotal": "{{count}} modelo(s) selecionado(s) · {{estimate}} de estimativa total de processamento"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "Ampliador GAN rápido: a referência rápida que todas as comparações devem incluir."
+      },
+      "swinir": {
+        "description": "Super-resolução real baseada em transformers: texturas fortes, mais lento do que o Real-ESRGAN."
+      },
+      "hat": {
+        "description": "GAN de super-resolução com atenção híbrida: muitas vezes as imagens mais nítidas, o mais lento do Grupo A."
+      },
+      "basicvsrpp": {
+        "description": "Super-resolução de vídeo recorrente: usa os fotogramas vizinhos para consistência temporal."
+      },
+      "rvrt": {
+        "description": "Transformer recorrente de restauração de vídeo: detalhe forte com perceção do movimento."
+      },
+      "vrt": {
+        "description": "Transformer de restauração de vídeo: qualidade máxima em muitos clipes, de longe o mais lento."
+      }
+    },
+    "panel": {
+      "loading": "A verificar as capacidades do servidor…",
+      "disabled": "A restauração de vídeo por IA está temporariamente indisponível neste servidor.",
+      "notAVideo": "Escolha um ficheiro de vídeo.",
+      "tooLarge": "Este vídeo excede o limite de carregamento de {{max}}.",
+      "dropTitle": "Largue aqui um vídeo, ou clique para escolher",
+      "dropHint": "Vai escolher um excerto curto (até 15 s) para restaurar; vídeos longos não são problema.",
+      "fileLabel": "Ficheiro:",
+      "changeFile": "Mudar de ficheiro",
+      "preparingUpload": "A preparar o carregamento…",
+      "uploading": "A carregar para o armazenamento seguro… {{percent}}%",
+      "startingJob": "A iniciar a tarefa de restauração…",
+      "submit": "Restaurar excerto com {{count}} modelo(s)",
+      "modelFailedBadge": "falhou — os outros modelos continuam",
+      "genericFailure": "A restauração falhou. Tente novamente com um excerto mais curto.",
+      "startOver": "Recomeçar",
+      "completedTitle": "Restauração concluída: o seu pacote de comparação está pronto.",
+      "modelSucceeded": "concluído com sucesso",
+      "modelFailed": "falhou (ver FAILED.txt no pacote)",
+      "download": "Transferir resultados",
+      "downloadAgain": "Transferir novamente",
+      "downloadSize": "Tamanho do pacote: {{size}}",
+      "downloadSizeHint": "Este arquivo é grande: certifique-se de que tem pelo menos {{size}} de espaço livre em disco antes de transferir.",
+      "linkExpiresIn": "a ligação expira em {{countdown}}",
+      "linkExpired": "a ligação de transferência expirou; execute a restauração novamente",
+      "restoreAnother": "Restaurar outro excerto"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "Recorte (opcional)",
+      "useEntireImage": "Usar a imagem inteira",
+      "previewAlt": "Imagem carregada",
+      "regionLabel": "Região de recorte: arraste para mover, use as setas do teclado para ajustar",
+      "dragHint": "Arraste sobre a imagem para focar uma região, ou mantenha a imagem inteira",
+      "cropReadout": "Recorte: {{w}}×{{h}} px",
+      "fullReadout": "Imagem inteira: {{w}}×{{h}} px",
+      "outputReadout": "saída estimada de {{w}}×{{h}} px a {{scale}}x",
+      "overBudget": "Esse recorte e essa escala excederiam o limite de tamanho da saída. Escolha 2x ou um recorte mais pequeno."
+    },
+    "picker": {
+      "precleanToggle": "Pré-limpeza (limpeza que preserva a fidelidade)",
+      "precleanToggleHint": "Remove artefactos de compressão, ruído e desfocagem de movimento sem sintetizar novo detalhe; é executada antes do melhoramento.",
+      "precleanOrderNote": "A limpeza executa sempre remoção de artefactos → redução de ruído → remoção de desfocagem, cada uma sobre o resultado anterior, independentemente da ordem de seleção.",
+      "precleanBaseHint": "A imagem limpa torna-se a base sobre a qual correm todos os modelos abaixo.",
+      "fbcnnQf": "Fator de qualidade FBCNN",
+      "fbcnnQfAuto": "Auto",
+      "fbcnnQfHint": "em branco = automático; mais baixo assume compressão mais forte",
+      "generalGroup": "Modelos de restauração e ampliação",
+      "faceToggle": "Melhoramento de rostos",
+      "faceToggleHint": "Adiciona GFPGAN e/ou CodeFormer para reconstruir rostos.",
+      "previewFaces": "Pré-visualizar rostos detetados",
+      "facesDetected": "{{count}} rosto(s) detetado(s).",
+      "fidelityLabel": "Fidelidade CodeFormer (w)",
+      "fidelityHint": "Mais baixo = mais bonito, mais alto = mais próximo da entrada. Predefinição 0,70.",
+      "chainToggle": "Encadear: voltar a executar os modelos de rostos em cada resultado ampliado",
+      "chainHint": "Produz também uma versão com rostos melhorados da saída de cada ampliador, além de correr sobre a origem.",
+      "generativeWarning": "O melhoramento de rostos é uma reconstrução generativa: os rostos melhorados são sintetizados para clareza e pistas, NÃO são uma recuperação fiel para identificação.",
+      "noneSelected": "Selecione pelo menos um modelo para continuar.",
+      "totalOutputs": "Serão produzidas {{count}} saída(s).",
+      "overBudget": "Essa seleção produziria mais do que o máximo de {{max}} saídas. Desselecione alguns modelos ou desative o encadeamento.",
+      "unavailable": "Não disponível neste servidor"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "Remoção cega de artefactos JPEG / de compressão (1x, não generativo)."
+      },
+      "scunet": {
+        "description": "Redução cega de ruído real: variante PSNR, sem textura inventada (1x)."
+      },
+      "nafnet": {
+        "description": "Remoção de desfocagem de movimento (pesos GoPro, 1x)."
+      },
+      "realesrgan": {
+        "description": "Ampliador GAN rápido: a referência rápida que todas as comparações devem incluir."
+      },
+      "swinir": {
+        "description": "Super-resolução real baseada em transformers: texturas fortes, mais lento do que o Real-ESRGAN."
+      },
+      "hat": {
+        "description": "GAN de super-resolução com atenção híbrida: muitas vezes o resultado mais nítido."
+      },
+      "gfpgan": {
+        "description": "Restauração de rostos GFPGAN v1.4: reconstrução generativa."
+      },
+      "codeformer": {
+        "description": "Restauração de rostos CodeFormer com controlo de fidelidade: reconstrução generativa."
+      }
+    },
+    "panel": {
+      "loading": "A verificar as capacidades do servidor…",
+      "disabled": "A restauração de imagem por IA está temporariamente indisponível neste servidor.",
+      "notAnImage": "Escolha um ficheiro de imagem.",
+      "tooLarge": "Esta imagem excede o limite de carregamento de {{max}}.",
+      "dropTitle": "Largue aqui uma imagem, ou clique para escolher",
+      "dropHint": "PNG, JPEG, WebP, TIFF ou BMP. Pode recortar uma região depois de carregar.",
+      "fileLabel": "Ficheiro:",
+      "changeFile": "Mudar de ficheiro",
+      "scaleLabel": "Escala de saída",
+      "scaleAuto": "Auto",
+      "scaleHint": "Auto escolhe 4x para recortes pequenos (≤540 px de altura) e 2x nos restantes casos. Os modelos correm nativamente a 4x; 2x reduz com Lanczos.",
+      "preparingUpload": "A preparar…",
+      "uploading": "A carregar… {{percent}}%",
+      "startingJob": "A iniciar a tarefa de restauração…",
+      "submit": "Restaurar com {{count}} modelo(s)",
+      "unitFailedBadge": "falhou — os outros modelos continuam",
+      "genericFailure": "A restauração falhou. Tente novamente com um recorte mais pequeno ou menos modelos.",
+      "startOver": "Recomeçar",
+      "completedTitle": "Restauração concluída: compare os seus resultados abaixo.",
+      "download": "Transferir todos os resultados",
+      "downloadAgain": "Transferir novamente",
+      "downloadSize": "Tamanho do pacote: {{size}}",
+      "restoreAnother": "Restaurar outra imagem"
+    },
+    "results": {
+      "includedInDownload": "Incluído na transferência",
+      "fidelityBadge": "limpeza não generativa",
+      "generativeBadge": "generativo — não serve de prova",
+      "originalCaption": "Original (preparado) · {{w}}×{{h}}",
+      "failed": "Este modelo falhou",
+      "compareOriginal": "Original"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "ficheiro de áudio",
+    "previewTitle": "Pré-visualização da forma de onda",
+    "sizeQualifiers": {
+      "small": "pequeno",
+      "medium": "médio",
+      "large": "grande",
+      "xl": "muito grande"
+    },
+    "presets": {
+      "10x1": "10:1 — Forma de onda larga (recomendado)",
+      "8x1": "8:1 — Forma de onda larga",
+      "6x1": "6:1 — Forma de onda larga equilibrada",
+      "16x9": "16:9 — Pré-visualização padrão para vídeo / redes sociais",
+      "1x1": "1:1 — Pré-visualização quadrada para redes sociais"
+    },
+    "sizeLabel": "{{width}}×{{height}} ({{qualifier}})",
+    "modes": {
+      "point": {
+        "label": "Ponto",
+        "description": "Um único ponto por amostra: limpo e minimalista."
+      },
+      "line": {
+        "label": "Linha",
+        "description": "Uma barra vertical por amostra: presença mais marcada."
+      },
+      "p2p": {
+        "label": "Ponto a ponto",
+        "description": "Um ponto por amostra mais linhas de ligação: aspeto fluido."
+      },
+      "cline": {
+        "label": "Linha centrada",
+        "description": "Linha vertical centrada no eixo: aspeto simétrico."
+      }
+    },
+    "output": "Saída",
+    "outputOptions": {
+      "video": "Vídeo da forma de onda",
+      "image": "Imagem da forma de onda",
+      "both": "Ambos (ZIP)"
+    },
+    "bothNote": "As duas saídas serão empacotadas num único .zip que pode transferir com um clique.",
+    "includeAudio": "Incluir o áudio original no vídeo da forma de onda gerado",
+    "includeAudioNote": "O vídeo da forma de onda será reproduzido em sincronia com o áudio de origem, perfeito para audiogramas, pré-visualizações musicais e clipes de podcast. Desative para uma forma de onda sem som.",
+    "videoFormat": "Formato de vídeo",
+    "videoFormats": {
+      "mp4": "MP4 (recomendado)",
+      "webm": "WebM"
+    },
+    "imageFormat": "Formato de imagem",
+    "imageFormats": {
+      "png": "PNG (recomendado)",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "Proporção e tamanho",
+    "useCustomSize": "Usar largura / altura personalizadas",
+    "widthPlaceholder": "Largura",
+    "heightPlaceholder": "Altura",
+    "advancedSettings": "Definições avançadas da forma de onda",
+    "renderMode": "Modo de renderização",
+    "renderModeNote": "O modo de renderização aplica-se ao vídeo da forma de onda. A saída de imagem usa um renderizador de imagem fixa que ignora esta definição.",
+    "frameRate": "Taxa de fotogramas",
+    "useFrameRate": "Usar taxa de fotogramas",
+    "useSamples": "Usar amostras por coluna (n)",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps (predefinição)",
+    "samplesPlaceholder": "p. ex. 64",
+    "frameRateNote": "Escolha a taxa de fotogramas de saída <em>ou</em> o número de amostras de áudio desenhadas por coluna. Não ambos.",
+    "splitChannels": "Separar canais estéreo (desenhar esquerdo e direito separadamente)",
+    "primaryColor": "Cor principal",
+    "secondaryColor": "Cor secundária (modo separado)",
+    "scale": "Escala",
+    "scaleOptions": {
+      "lin": "lin — a mais direta/precisa",
+      "log": "log — torna as partes mais baixas mais visíveis",
+      "sqrt": "sqrt — reforço suave das partes mais baixas",
+      "cbrt": "cbrt — reforço mais forte das partes mais baixas"
+    },
+    "draw": "Desenho",
+    "drawOptions": {
+      "scale": "scale (predefinição)",
+      "full": "full"
+    },
+    "generating": "A gerar a forma de onda…",
+    "generate": "Gerar forma de onda"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "A carregar a digitalização de documentos por IA…",
+      "disabled": "A digitalização de documentos está indisponível de momento.",
+      "notAnImage": "Adicione ficheiros de imagem (PNG, JPEG, WebP, TIFF, BMP ou HEIC).",
+      "tooLarge": "Cada imagem tem de ter menos de {{max}}.",
+      "tooManyPages": "Pode adicionar no máximo {{max}} páginas.",
+      "dropTitle": "Adicionar páginas digitalizadas",
+      "dropHint": "Documentos impressos ou notas manuscritas: largue uma ou mais imagens, ou clique para escolher.",
+      "uploading": "A carregar… {{percent}}%",
+      "startingJob": "A iniciar a digitalização…",
+      "preparingUpload": "A preparar…",
+      "submit": "Digitalizar {{count}} página(s)",
+      "genericFailure": "Algo correu mal durante a digitalização. Tente novamente.",
+      "startOver": "Recomeçar",
+      "completedTitle": "O seu documento está pronto.",
+      "viewResult": "Ver resultado",
+      "scanAnother": "Digitalizar outro"
+    },
+    "options": {
+      "contentMode": "Tipo de conteúdo",
+      "modeAuto": "Auto (detetar por página)",
+      "modePrinted": "Documento impresso",
+      "modeHandwriting": "Manuscrito",
+      "printedUnavailable": "O OCR de texto impresso está indisponível neste servidor.",
+      "handwritingUnavailable": "A transcrição de manuscritos está offline neste momento.",
+      "outputs": "Saídas",
+      "pdfAlways": "PDF pesquisável (sempre)",
+      "docx": "Word editável (.docx)",
+      "unavailable": "indisponível",
+      "language": "Idioma (OCR de texto impresso)",
+      "printedCleanup": "Limpeza de páginas impressas",
+      "deskew": "Endireitar",
+      "rotate": "Rotação automática",
+      "clean": "Limpar (remover pontos)",
+      "structureEngine": "Motor de estrutura DOCX",
+      "enginePaddle": "PaddleOCR-VL (preferido)",
+      "engineDocling": "Docling (alternativa)",
+      "engineTrocr": "TrOCR (alternativa)",
+      "preclean": "Melhorar digitalizações de baixa resolução antes da leitura",
+      "precleanHint": "Amplia digitalizações desfocadas de notas feitas com o telemóvel; ajuda o reconhecimento de manuscritos. Ativado por predefinição para manuscrito/auto.",
+      "handwritingTitle": "Opções de manuscrito",
+      "verify": "Verificar com IA",
+      "verifyHint": "Uma segunda passagem relê apenas os termos marcados como incertos; nunca altera texto fiável nem inventa conteúdo.",
+      "secondOpinion": "Segunda opinião",
+      "secondOpinionHint": "Um reconhecedor independente relê o manuscrito; as discordâncias são assinaladas, nunca fundidas em silêncio.",
+      "summary": "Resumo por IA (ficheiro separado)",
+      "summaryHint": "Opcional. Escreve um resumo separado e claramente identificado; nunca substitui a transcrição literal."
+    },
+    "pageOrder": {
+      "title": "Páginas ({{count}})",
+      "hint": "Arraste as páginas para as reordenar antes de digitalizar.",
+      "pageLabel": "Página {{n}}",
+      "remove": "Remover página",
+      "drag": "Arrastar para reordenar"
+    },
+    "viewer": {
+      "title": "O seu documento digitalizado",
+      "description": "As páginas impressas têm uma camada de texto pesquisável fiel; as páginas manuscritas são transcrições automáticas: confirme com o original.",
+      "confidenceTitle": "Transcrição de manuscrito: confirme com o original",
+      "confidenceNote": "{{pages}} página(s) manuscrita(s) transcrita(s) · {{tokens}} termo(s) marcado(s) como incerto(s) ([illegible] / [?]).",
+      "noPdf": "Não foi produzido nenhum PDF para esta tarefa.",
+      "downloadPdf": "Transferir PDF",
+      "downloadDocx": "Transferir Word (.docx)",
+      "downloadSummary": "Transferir resumo por IA"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}} (beta)",
+    "untitled": "Desenho sem título",
+    "projectName": "Nome do projeto",
+    "backHome": "Voltar ao Media Manipulator",
+    "invalidProject": "Esta ligação de projeto não é válida. Por agora, os projetos são guardados apenas neste navegador.",
+    "newProject": "Começar um novo desenho",
+    "undo": "Anular",
+    "redo": "Refazer",
+    "zoomIn": "Ampliar",
+    "zoomOut": "Reduzir",
+    "zoomFit": "Ajustar ao ecrã",
+    "canvas": {
+      "label": "Tela de desenho"
+    },
+    "tools": {
+      "label": "Ferramentas",
+      "select": "Selecionar",
+      "node": "Editar nós",
+      "rect": "Retângulo",
+      "ellipse": "Elipse",
+      "line": "Linha",
+      "pen": "Caneta",
+      "text": "Texto",
+      "hand": "Deslocar vista",
+      "textPlaceholder": "Escreva e prima Enter"
+    },
+    "import": {
+      "button": "Importar",
+      "done_one": "Importada {{count}} camada",
+      "done_other": "Importadas {{count}} camadas",
+      "tooLarge": "Esse ficheiro tem mais de 4 MB.",
+      "warningsTitle_one": "{{count}} nota da importação",
+      "warningsTitle_other": "{{count}} notas da importação",
+      "errors": {
+        "too_large": "Esse SVG tem mais de 4 MB.",
+        "not_svg": "Esse ficheiro não é uma imagem SVG.",
+        "malformed": "Não foi possível ler esse SVG. Pode estar danificado.",
+        "entities": "Não é possível importar SVG que declarem entidades XML.",
+        "too_complex": "Esse SVG tem demasiadas camadas para editar.",
+        "json": "Esse ficheiro não é um documento Motion que esta versão consiga abrir."
+      },
+      "warnings": {
+        "script_removed": "Script removido:",
+        "event_handler_removed": "Gestor de eventos removido:",
+        "external_reference_removed": "Referência externa removida:",
+        "unsafe_content_removed": "Conteúdo não seguro removido:",
+        "unsupported_element": "Mantido tal como está (não editável):",
+        "style_dropped": "Estilo não suportado:",
+        "invalid_value": "Valor ignorado:",
+        "dangling_reference": "Referência em falta descartada:"
+      }
+    },
+    "export": {
+      "svg": "Exportar SVG",
+      "open": "Exportar"
+    },
+    "draft": {
+      "title": "Recuperar alterações não guardadas?",
+      "description": "Este desenho tem alterações guardadas neste navegador que não foram exportadas.",
+      "from": "{{name}}, {{time}}",
+      "layers_one": "{{count}} camada",
+      "layers_other": "{{count}} camadas",
+      "recover": "Recuperar",
+      "discard": "Rejeitar"
+    },
+    "layers": {
+      "title": "Camadas",
+      "empty": "Desenhe uma forma ou importe um SVG para começar.",
+      "group": "Agrupar",
+      "ungroup": "Desagrupar",
+      "delete": "Eliminar",
+      "rename": "Nome da camada",
+      "lock": "Bloquear",
+      "unlock": "Desbloquear",
+      "hide": "Ocultar",
+      "show": "Mostrar",
+      "expand": "Expandir grupo",
+      "collapse": "Recolher grupo",
+      "raw": "Mantido tal como está",
+      "rawHint": "Mantido exatamente como foi importado; não editável",
+      "masked": "Tem uma máscara",
+      "clipped": "Tem um traçado de recorte",
+      "maskDef": "Máscara {{id}}",
+      "clipDef": "Traçado de recorte {{id}}"
+    },
+    "layerTypes": {
+      "group": "Grupo",
+      "path": "Traçado",
+      "rect": "Retângulo",
+      "ellipse": "Elipse",
+      "line": "Linha",
+      "polyline": "Polilinha",
+      "polygon": "Polígono",
+      "text": "Texto",
+      "image": "Imagem",
+      "use": "Instância",
+      "raw": "Mantido tal como está"
+    },
+    "inspector": {
+      "title": "Inspetor",
+      "canvas": "Tela",
+      "background": "Fundo",
+      "emptyHint": "Selecione uma camada para a editar. Shift+clique para selecionar várias.",
+      "selection": "Seleção",
+      "layersSelected_one": "{{count}} camada",
+      "layersSelected_other": "{{count}} camadas",
+      "transform": "Transformação",
+      "geometry": "Geometria",
+      "appearance": "Aspeto",
+      "text": "Texto",
+      "width": "Largura",
+      "height": "Altura",
+      "scaleX": "Escala X",
+      "scaleY": "Escala Y",
+      "rotation": "Rotação",
+      "skewX": "Inclinação",
+      "anchorX": "Âncora X",
+      "anchorY": "Âncora Y",
+      "cornerRadius": "Raio dos cantos",
+      "reference": "Instância de",
+      "pathHint": "Use a ferramenta Editar nós (A) para mover pontos e pegas.",
+      "rawHint": "Esta parte do SVG usa funcionalidades que o editor ainda não consegue alterar. É mantida exatamente como foi importada e exportada sem alterações.",
+      "markupSize": "Código",
+      "fill": "Preenchimento",
+      "stroke": "Contorno",
+      "strokeWidth": "Espessura do contorno",
+      "opacity": "Opacidade",
+      "none": "Nenhum",
+      "colorValue": "Valor de {{label}}",
+      "solid": "Sólido",
+      "linear": "Linear",
+      "radial": "Radial",
+      "fontSize": "Tamanho da letra",
+      "fontFamily": "Tipo de letra",
+      "fontWeight": "Peso",
+      "letterSpacing": "Espaçamento entre letras",
+      "textAnchor": "Alinhamento",
+      "alignStart": "Início",
+      "alignMiddle": "Centro",
+      "alignEnd": "Fim",
+      "regular": "Normal",
+      "bold": "Negrito",
+      "maskSection": "Máscara e recorte",
+      "maskHint": "A camada superior torna-se a máscara ou o traçado de recorte da inferior.",
+      "useAsMask": "Usar como máscara",
+      "useAsClip": "Usar como recorte",
+      "releaseMask": "Libertar máscara",
+      "releaseClip": "Libertar traçado de recorte",
+      "skewY": "Inclinação Y"
+    },
+    "gradient": {
+      "stops": "Pontos do gradiente",
+      "stop": "Ponto {{index}} a {{offset}}%",
+      "stopColor": "Cor do ponto",
+      "removeStop": "Remover ponto",
+      "addStop": "Adicionar ponto",
+      "offset": "Posição",
+      "angle": "Ângulo",
+      "radius": "Raio",
+      "centreX": "Centro X",
+      "centreY": "Centro Y"
+    },
+    "properties": {
+      "x": "Posição X",
+      "y": "Posição Y",
+      "scaleX": "Escala X",
+      "scaleY": "Escala Y",
+      "rotation": "Rotação",
+      "skewX": "Inclinação X",
+      "skewY": "Inclinação Y",
+      "anchorX": "Âncora X",
+      "anchorY": "Âncora Y",
+      "opacity": "Opacidade",
+      "fill": "Preenchimento",
+      "stroke": "Contorno",
+      "strokeWidth": "Espessura do contorno",
+      "strokeDashoffset": "Traçado progressivo (desvio do tracejado)",
+      "d": "Forma (morph)",
+      "motionPath": "Trajetória de movimento",
+      "stopColor": "Cor do ponto {{n}} do gradiente",
+      "stopOffset": "Posição do ponto {{n}} do gradiente",
+      "blur": "Desfocagem"
+    },
+    "timeline": {
+      "title": "Linha temporal",
+      "play": "Reproduzir (Espaço)",
+      "pause": "Pausar (Espaço)",
+      "toStart": "Ir para o início (Home)",
+      "toEnd": "Ir para o fim (End)",
+      "loop": "Ciclo",
+      "autokey": "Chave automática",
+      "autokeyHint": "Quando ativo, alterar qualquer propriedade na tela ou no inspetor adiciona um fotograma-chave na posição do cursor de reprodução.",
+      "duration": "Duração",
+      "playhead": "Cursor de reprodução",
+      "setIn": "Definir o início do intervalo de reprodução no cursor",
+      "setOut": "Definir o fim do intervalo de reprodução no cursor",
+      "clearRange": "Limpar intervalo de reprodução",
+      "inMarker": "Início do intervalo de reprodução",
+      "outMarker": "Fim do intervalo de reprodução",
+      "addKeys": "Adicionar fotogramas-chave no cursor para as camadas selecionadas",
+      "copyKeys": "Copiar fotogramas-chave",
+      "pasteKeys": "Colar fotogramas-chave no cursor",
+      "deleteKeys": "Eliminar fotogramas-chave",
+      "zoomIn": "Ampliar linha temporal",
+      "zoomOut": "Reduzir linha temporal",
+      "empty": "Desenhe ou importe uma forma e anime-a aqui.",
+      "animate": "Animar {{property}}",
+      "stopAnimating": "Parar de animar {{property}}",
+      "addKeyHere": "Adicionar um fotograma-chave de {{property}} no cursor",
+      "removeKeyHere": "Remover o fotograma-chave de {{property}} no cursor",
+      "key": "Fotograma-chave de {{property}} em {{time}}",
+      "layerKey": "Fotogramas-chave de {{layer}} em {{time}}",
+      "maskContent": "Máscara: {{layer}}",
+      "clipContent": "Recorte: {{layer}}"
+    },
+    "easing": {
+      "title": "Suavização",
+      "presets": "Predefinições de suavização",
+      "linear": "Linear",
+      "easeIn": "Suavizar entrada",
+      "easeOut": "Suavizar saída",
+      "easeBoth": "Suavizar entrada e saída",
+      "hold": "Manter",
+      "custom": "Curva",
+      "curve": "Curva de suavização",
+      "handle": "Pega da curva {{name}}",
+      "mixed": "Os fotogramas-chave selecionados usam suavizações diferentes. Escolha uma para a aplicar a todos.",
+      "applies_one": "Suavização do segmento a seguir a {{count}} fotograma-chave.",
+      "applies_other": "Suavização dos segmentos a seguir a {{count}} fotogramas-chave."
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "Um GIF animado que reproduz em todo o lado. 256 cores, uma paleta global."
+        },
+        "png_sequence": {
+          "title": "Sequência PNG (.zip)",
+          "hint": "Cada fotograma como PNG com transparência, comprimidos em zip, para editores de vídeo e motores de jogos."
+        },
+        "mp4": {
+          "title": "Vídeo MP4",
+          "hint": "Vídeo H.264 (ou AV1), codificado no seu navegador. Sem áudio."
+        },
+        "webm": {
+          "title": "Vídeo WebM",
+          "hint": "Vídeo VP9 (ou AV1), codificado no seu navegador. Sem áudio."
+        }
+      },
+      "block": {
+        "locked": "O seu plano não inclui este formato.",
+        "notOnAnyPlan": "Ainda não disponível em nenhum plano.",
+        "useChromium": "Use o Chrome ou o Edge para exportar vídeo",
+        "noCodec": "Este navegador não consegue codificar este formato de vídeo. Experimente o outro formato de vídeo, ou o Chrome ou o Edge."
+      },
+      "size": "Tamanho",
+      "sizeOption": "{{height}}p ({{width}} × {{height}})",
+      "fps": "Fotogramas por segundo",
+      "from": "De (s)",
+      "to": "Até (s)",
+      "gif": {
+        "loop": "Ciclo",
+        "forever": "Para sempre",
+        "plays_one": "Reproduzir {{count}} vez",
+        "plays_other": "Reproduzir {{count}} vezes",
+        "dither": "Pontilhado (gradientes mais suaves, ficheiro maior)",
+        "transparent": "Fundo transparente"
+      },
+      "summary": "{{width}} × {{height}} px, {{frames}} fotogramas, {{seconds}} s, cerca de {{size}}",
+      "flattenWhite": "A tela é transparente; o vídeo não tem transparência, pelo que os fotogramas são colocados sobre branco.",
+      "clamped": {
+        "height": "Tamanho limitado a {{height}}p pelo seu plano.",
+        "fps": "Taxa de fotogramas limitada a {{fps}} fps.",
+        "duration": "Duração limitada a {{seconds}} s pelo seu plano."
+      },
+      "tooLarge": "Esta exportação teria mais de 2 GB. Reduza o tamanho, a taxa de fotogramas ou a duração.",
+      "cancelCounts": "Cancelar depois de a exportação ter começado consome na mesma uma exportação da sua quota diária.",
+      "preparing": "A preparar…",
+      "progress": "A renderizar o fotograma {{done}} de {{total}}",
+      "progressLabel": "Progresso da exportação",
+      "finalizing": "A finalizar o ficheiro…",
+      "cancel": "Cancelar",
+      "cancelled": "Exportação cancelada. Nada foi transferido.",
+      "failed": {
+        "tooLarge": "O ficheiro ultrapassou os 2 GB, pelo que a exportação foi interrompida. Reduza o tamanho, a taxa de fotogramas ou a duração.",
+        "codec": "Este navegador não consegue codificar vídeo com este tamanho e taxa de fotogramas. Experimente um tamanho mais pequeno, ou o Chrome ou o Edge.",
+        "unsafe": "Este desenho contém conteúdo externo que não pode ser renderizado em fotogramas. Remova-o e tente novamente.",
+        "error": "A exportação falhou no navegador. Tente novamente, ou experimente um tamanho mais pequeno."
+      },
+      "capHeight": "O seu plano exporta ficheiros raster até {{max}}p.",
+      "capFps": "O seu plano exporta até {{max}} fotogramas por segundo."
+    },
+    "exportDialog": {
+      "title": "Exportar",
+      "description": "As exportações são feitas no seu navegador. As exportações animadas contam para a sua quota diária; o SVG estático é sempre gratuito.",
+      "formats": "Formato de exportação",
+      "animated": "SVG animado",
+      "animatedHint": "Um ficheiro SVG com a sua animação. CSS puro quando possível; caso contrário, um pequeno script incorporado.",
+      "static": "SVG estático",
+      "staticHint": "O fotograma na posição do cursor, sem animação. Gratuito, nunca contabilizado.",
+      "export": "Exportar",
+      "unsupported": "Esta animação usa efeitos que o SVG animado ainda não consegue exportar.",
+      "doneStatic": "SVG estático transferido.",
+      "done_one": "Transferido. Resta-lhe {{count}} exportação animada hoje.",
+      "done_other": "Transferido. Restam-lhe {{count}} exportações animadas hoje.",
+      "doneUnlimited": "Transferido.",
+      "limit_one": "Já utilizou a sua {{count}} exportação animada de hoje.",
+      "limit_other": "Já utilizou as suas {{count}} exportações animadas de hoje.",
+      "locked": "O seu plano não inclui este formato.",
+      "capDuration": "O seu plano exporta animações com até {{seconds}} s. Encurte a animação ou mude de plano.",
+      "capOther": "Esta exportação é maior do que o seu plano permite.",
+      "unavailable": "As exportações estão indisponíveis de momento. Nada foi contabilizado; tente novamente dentro de instantes.",
+      "upgrade": "Ver planos",
+      "runtimeCss": "CSS puro, sem script.",
+      "runtimeAnimeBecause": "Usa um script de {{size}} KB (anime.js, MIT) porque: {{reasons}}.",
+      "runtimeAnimeChosen": "Usa um script de {{size}} KB (anime.js, MIT).",
+      "scriptImgNote": "Os scripts correm quando o SVG é aberto diretamente ou colocado inline numa página, não dentro de uma etiqueta <img> (que mostra o primeiro fotograma).",
+      "forceAnime": "Usar o runtime com script",
+      "reasons": {
+        "morph": "morph de forma",
+        "stopOffset": "posição de ponto do gradiente",
+        "blur": "desfocagem (Safari)",
+        "motionRotate": "rotação ao longo da trajetória com uma faixa de rotação"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "Para LottieFiles, lottie-web e os leitores Lottie de iOS, Android e Flutter. As funcionalidades que o Lottie não consegue transportar são listadas após a transferência."
+        },
+        "react_tsx": {
+          "title": "Componente React (.tsx)",
+          "hint": "Um único ficheiro de componente com o SVG inline. Precisa apenas do React, mais o pacote anime.js quando o runtime com script é usado."
+        },
+        "js": {
+          "title": "Módulo JavaScript (.js)",
+          "hint": "Um módulo ES simples com mount, play, pause e seek. Sem framework."
+        },
+        "ts": {
+          "title": "Módulo TypeScript (.ts)",
+          "hint": "O módulo JavaScript com tipos."
+        },
+        "flutter": {
+          "title": "Widget Flutter (.dart)",
+          "hint": "Um widget flutter_svg nativo quando a animação apenas move, esbate e recolore; caso contrário, um leitor WebView."
+        }
+      },
+      "emitted": {
+        "css": "Animado com CSS, sem script.",
+        "anime": "Animado com anime.js (MIT, importado como dependência).",
+        "animeBecause": "Animado com anime.js (MIT, importado como dependência) porque: {{reasons}}."
+      },
+      "flutter": {
+        "native": "Foi gerado o widget nativo (flutter_svg e um AnimationController): a animação usa apenas transformação, opacidade e cor.",
+        "webview": "Foi gerado o leitor WebView (webview_flutter) porque {{reasons}}. Um WebView tem fundo opaco e é mais pesado do que um widget nativo."
+      },
+      "flutterReasons": {
+        "morph": "faz morph de uma forma",
+        "mask": "anima uma máscara ou um traçado de recorte",
+        "blur": "anima uma desfocagem",
+        "motionPath": "move-se ao longo de uma trajetória de movimento",
+        "drawOn": "traça um contorno progressivamente",
+        "gradient": "anima pontos de gradiente",
+        "symbol": "anima camadas dentro de um símbolo",
+        "raw": "contém código SVG que o editor mantém tal como está"
+      }
+    },
+    "gate": {
+      "locked": "Bloqueado no seu plano",
+      "requires": {
+        "free": "Incluído numa conta gratuita.",
+        "premium": "Incluído no Premium.",
+        "pro": "Incluído no Pro."
+      },
+      "cta": {
+        "signup": "Iniciar sessão gratuitamente",
+        "premium": "Passar a Premium",
+        "pro": "Passar a Pro"
+      }
+    },
+    "projects": {
+      "save": "Guardar",
+      "saveToAccount": "Guardar na conta",
+      "status": {
+        "local": "Apenas neste navegador",
+        "saved": "Guardado",
+        "saving": "A guardar…",
+        "retrying": "A tentar novamente…",
+        "offline": "Sem ligação, alterações mantidas aqui",
+        "conflict": "Alterado noutro local",
+        "failed": "Não guardado"
+      },
+      "signIn": "Iniciar sessão",
+      "signInTitle": "Inicie sessão para guardar na sua conta",
+      "signInBody": "Sem conta, os projetos ficam neste navegador. Inicie sessão (num novo separador e depois volte) para guardar este projeto na sua conta, ou transfira-o como um ficheiro que pode voltar a abrir mais tarde.",
+      "downloadJson": "Transferir .json",
+      "limit_one": "O seu plano guarda {{count}} projeto. Elimine um na sua conta, ou mude de plano.",
+      "limit_other": "O seu plano guarda {{count}} projetos. Elimine um na sua conta, ou mude de plano.",
+      "saveFailed": "Não foi possível guardar este projeto na sua conta. As suas alterações são mantidas neste navegador.",
+      "open": {
+        "signin": "Inicie sessão para abrir este projeto. Os projetos de conta só são visíveis para o respetivo proprietário.",
+        "notFound": "Este projeto não existe, ou pertence a outra conta.",
+        "failed": "Não foi possível carregar este projeto. Verifique a sua ligação e recarregue a página.",
+        "unreadable": "Este projeto foi guardado por uma versão mais recente e não pode ser aberto aqui."
+      },
+      "conflict": {
+        "title": "Este projeto foi alterado noutro separador ou dispositivo.",
+        "reload": "Recarregar a outra versão",
+        "keep": "Manter a minha",
+        "reloadTitle": "Substituir a sua versão?",
+        "reloadBody": "Recarregar abre a cópia guardada noutro local e rejeita as alterações deste separador. Transfira primeiro a sua versão se a quiser manter.",
+        "downloadMine": "Transferir a minha versão",
+        "reloadConfirm": "Recarregar a outra versão",
+        "reloadFailed": "Não foi possível carregar a cópia guardada. Tente novamente."
+      }
+    },
+    "animators": {
+      "title": "Animar",
+      "selectOne": "Selecione uma camada para a animar.",
+      "drawOn": "Traçado progressivo",
+      "drawOnHint": "Desenha o contorno do início ao fim (desvio do tracejado do contorno).",
+      "motionPath": "Trajetória de movimento",
+      "motionPathHint": "Move a camada ao longo de um traçado. Escolha um traçado ou desenhe um com a caneta.",
+      "morph": "Morph",
+      "morphHint": "Transforma este traçado noutra forma. Escolha a forma de destino.",
+      "gradient": "Gradiente",
+      "gradientHint": "Anima as cores do gradiente desta camada (uma faixa por ponto).",
+      "maskClip": "Máscara/Recorte",
+      "maskClipHint": "Anima a máscara ou a forma de recorte da camada com faixas próprias.",
+      "blur": "Desfocagem",
+      "blurHint": "Desfoca a camada progressivamente ao longo do tempo.",
+      "blurAmount": "Intensidade da desfocagem",
+      "pickGuide": "Mover ao longo de que traçado?",
+      "pickTarget": "Transformar em que forma?",
+      "noShapes": "Ainda não há outras formas.",
+      "drawWithPen": "Desenhar uma nova com a caneta",
+      "autoOrient": "Rodar com o traçado",
+      "spanHint": "Os animadores correm desde o cursor de reprodução até ao fim. Ajuste os seus fotogramas-chave na linha temporal.",
+      "notApplied": "Esse animador não se aplica a esta camada.",
+      "morphFailed": "Não é possível fazer morph entre estas duas formas."
+    },
+    "lottie": {
+      "supportSummary": "O que o Lottie não consegue transportar",
+      "document": "animação completa",
+      "warningsTitle_one": "{{count}} elemento não foi transportado",
+      "warningsTitle_other": "{{count}} elementos não foram transportados",
+      "unsupported": {
+        "maskAdvanced": "Máscaras que não sejam formas simples a branco ou preto, e máscaras em camadas aninhadas",
+        "filter": "Desfocagem e outros filtros",
+        "text": "Texto (requer contornos de letra; converta primeiro o texto em traçados)",
+        "image": "Imagens não incorporadas, ou imagens dentro de um grupo",
+        "useComplex": "Símbolos reutilizados com tamanho ou caixa de visualização próprios",
+        "raw": "Código SVG que o editor mantém tal como está",
+        "cssOnly": "Modos de mistura, marcadores e outros estilos exclusivos de CSS",
+        "strokeGradientAnimation": "Gradientes animados em contornos",
+        "gradientShape": "Gradientes repetidos, focais ou esticados",
+        "paint": "Pinturas que não sejam uma cor ou um gradiente",
+        "skew": "Inclinação em ambos os eixos ao mesmo tempo",
+        "morph": "Morphs de forma que alteram o número de subtraçados",
+        "playOnce": "Reproduzir uma vez (os leitores Lottie repetem em ciclo por predefinição)",
+        "expression": "Expressões (são usados os valores dos fotogramas-chave)",
+        "effect": "Efeitos de camada como desfocagem ou sombra projetada",
+        "textLayer": "Camadas de texto (mantidas como grupos vazios com nome)",
+        "timeRemap": "Remapeamento temporal",
+        "threeD": "Camadas 3D e rotação 3D",
+        "blendMode": "Modos de mistura diferentes de normal",
+        "matte": "Mattes de faixa",
+        "maskMode": "Máscaras que não sejam de adição ou subtração",
+        "modifier": "Repetidores, cantos arredondados e outros modificadores de forma",
+        "imageExternal": "Imagens não incorporadas no ficheiro",
+        "spatialTangents": "Trajetórias de movimento curvas (a camada move-se em linhas retas)",
+        "layerTiming": "Pontos de entrada e saída numa camada cuja opacidade está animada",
+        "unknownLayer": "Tipos de camada que o editor não desenha",
+        "unknownShape": "Itens de forma desconhecidos",
+        "autoOrient": "Orientação automática ao longo do traçado",
+        "skewAxis": "Inclinação ao longo de um eixo em ângulo",
+        "polystar": "Estrelas e polígonos arredondados ou animados (desenhados como contorno simples)",
+        "trimComplex": "Traçados cortados que fazem mais do que traçar progressivamente ou apagar",
+        "gradientAnimation": "Posições de gradiente animadas e gradientes de contorno animados",
+        "multipleStyles": "Vários preenchimentos ou contornos numa só forma (é usado o mais próximo)",
+        "styleOpacity": "Opacidade animada de preenchimento ou contorno em gradientes",
+        "morphCounts": "Chaves de forma com números de pontos diferentes (os intermédios serão diferentes)"
+      },
+      "import": {
+        "warningsTitle_one": "{{count}} elemento não pôde ser importado",
+        "warningsTitle_other": "{{count}} elementos não puderam ser importados",
+        "warningsBody": "A animação está pronta a abrir. Estas partes do ficheiro Lottie não são suportadas e foram omitidas ou simplificadas:",
+        "open": "Abrir animação",
+        "unavailable": "A importação de Lottie não está disponível neste site.",
+        "refused": {
+          "limit": "Já utilizou as suas exportações e importações de hoje.",
+          "locked": "O seu plano não inclui a importação de Lottie.",
+          "cap": "Este ficheiro é maior do que o seu plano permite.",
+          "unavailable": "A importação está indisponível de momento. Nada foi contabilizado; tente novamente dentro de instantes."
+        },
+        "errors": {
+          "too_large": "Esse ficheiro tem mais de 4 MB.",
+          "not_json": "Não foi possível ler esse ficheiro como JSON.",
+          "not_lottie": "Esse ficheiro não é uma animação Lottie.",
+          "too_complex": "Essa animação tem demasiadas camadas, fotogramas-chave ou pontos.",
+          "invalid": "Não foi possível transformar esse ficheiro Lottie numa animação."
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "Arraste e largue aqui uma imagem, um vídeo, um áudio ou um PDF",
+    "hint": "ou clique para escolher no seu computador. O ficheiro é lido apenas para extrair os metadados e eliminado após a análise; nada é convertido.",
+    "largeFile": "Os ficheiros com mais de {{size}} só são inspecionados a seu pedido, para que um vídeo grande não seja carregado por engano.",
+    "failed": "Não foi possível inspecionar o ficheiro. O tipo pode não ser suportado ou o ficheiro é demasiado grande para o seu plano."
+  },
+  "voiceTools": {
+    "loading": "A carregar as ferramentas de voz…",
+    "unavailable": {
+      "title": "As Vozes não estão disponíveis neste momento",
+      "body": "O motor de voz está desativado ou a reiniciar, pelo que esta ferramenta não pode funcionar de momento. Nada foi contabilizado. Tente novamente mais tarde.",
+      "shiftStillWorks": "O alterador de tom abaixo não precisa do motor de voz e continua a funcionar."
+    },
+    "warmingUp": "A aquecer o motor de voz; o primeiro pedido pode demorar até 20 segundos.",
+    "honesty": "A fala criada com uma voz guardada ou predefinida contém uma marca de água inaudível; o áudio alterado com o alterador de tom não a contém. Utilize apenas a sua própria voz ou uma voz que tenha autorização para usar. Nada do que grava ou gera é usado para treinar qualquer modelo, e os motores de voz funcionam nos nossos próprios servidores.",
+    "signIn": {
+      "title": "Inicie sessão para guardar uma voz",
+      "body": "Uma voz guardada precisa de um proprietário e de um registo de consentimento, pelo que clonar uma voz, manter uma voz criada, converter para uma voz e As minhas vozes exigem uma conta. Nada é carregado até iniciar sessão.",
+      "cta": "Iniciar sessão"
+    },
+    "recorder": {
+      "record": "Gravar",
+      "recording": "A gravar",
+      "stop": "Parar",
+      "cancel": "Cancelar gravação",
+      "level": "Nível do microfone",
+      "or": "ou",
+      "upload": "Carregar um ficheiro de áudio",
+      "remove": "Remover",
+      "recorded": "A sua gravação, {{duration}}",
+      "uploaded": "{{name}}, {{duration}}",
+      "measuring": "A ler a duração do ficheiro…",
+      "unknownLength": "Não foi possível ler a duração deste ficheiro no navegador; o servidor irá verificá-la.",
+      "tooShort": "A gravação tem {{seconds}} segundos. Uma voz precisa de, pelo menos, 5 segundos de fala.",
+      "tooLong": "A gravação tem {{seconds}} segundos. Mantenha-a em 60 segundos ou menos.",
+      "referenceHint": "Grave ou carregue 5 a 60 segundos de fala clara numa sala silenciosa. Leia algumas frases naturais.",
+      "inputHint": "Grave ou carregue a fala que pretende alterar.",
+      "micDenied": "O acesso ao microfone foi bloqueado. Permita o microfone para este site na barra de endereços do navegador ou carregue um ficheiro.",
+      "micHostBlocked": "A página que aloja esta ferramenta não permitiu o acesso ao microfone. Carregue um ficheiro.",
+      "micUnavailable": "A gravação não está disponível neste navegador. Carregue um ficheiro de áudio."
+    },
+    "consent": {
+      "label": "Esta é a minha voz, ou tenho a autorização explícita da pessoa a quem esta voz pertence.",
+      "note": "Guardamos com a voz a hora a que confirma isto e a versão deste texto ({{version}}). Consulte a secção 8.11 dos Termos."
+    },
+    "clone": {
+      "title": "Criar uma voz a partir de uma gravação",
+      "nameLabel": "Nome da voz",
+      "namePlaceholder": "A minha voz",
+      "languageLabel": "Idioma da gravação",
+      "create": "Criar voz",
+      "creating": "A criar a sua voz…",
+      "created": "Voz criada. Ouça a respetiva pré-visualização em As minhas vozes.",
+      "signInToCreate": "Inicie sessão para criar a voz",
+      "limitReached": "Guardou {{used}} de {{limit}} vozes do seu plano. Elimine uma em Conta, Vozes, ou mude para um plano superior para guardar mais.",
+      "noSaving": "O seu plano não permite guardar vozes.",
+      "usage": "{{used}} de {{limit}} vozes guardadas",
+      "usageUnlimited": "{{used}} vozes guardadas"
+    },
+    "myVoices": {
+      "title": "As minhas vozes",
+      "empty": "Ainda não há vozes guardadas.",
+      "preview": "Pré-visualização de {{name}}",
+      "use": "Usar esta voz",
+      "inUse": "Selecionada",
+      "manage": "Gerir as suas vozes em Conta",
+      "kinds": {
+        "cloned": "Clonada",
+        "designed": "Criada",
+        "preset": "Predefinida"
+      }
+    },
+    "picker": {
+      "label": "Voz",
+      "saved": "As minhas vozes",
+      "presets": "Vozes predefinidas",
+      "none": "Ainda não há vozes disponíveis."
+    },
+    "speak": {
+      "title": "Gerar fala",
+      "textLabel": "Texto a falar",
+      "placeholder": "Escreva o que a voz deve dizer.",
+      "counter": "{{used}} de {{max}} carateres",
+      "overLimit": "Isso é mais longo do que o seu plano permite num único pedido ({{max}} carateres).",
+      "languageLabel": "Idioma",
+      "exaggerationLabel": "Emoção",
+      "exaggerationHint": "Mais baixo é mais calmo, mais alto é mais expressivo.",
+      "generate": "Gerar fala",
+      "generating": "A gerar…",
+      "notAllowed": "O seu plano não inclui a geração de fala."
+    },
+    "designer": {
+      "title": "Descreva uma voz",
+      "descriptionLabel": "Descrição",
+      "placeholder": "Calorosa, grave, ligeiramente rouca, de meia-idade, calma",
+      "hint": "Descreva como a voz deve soar. O motor compreende melhor as descrições em inglês; as etiquetas abaixo acrescentam caraterísticas comuns.",
+      "languageLabel": "Idioma da pré-visualização",
+      "languageNote": "Uma voz criada é gerada num destes idiomas; depois de mantida, pode falar todos os idiomas da ferramenta de fala.",
+      "chipGroups": {
+        "gender": "Género",
+        "age": "Idade",
+        "accent": "Sotaque",
+        "tone": "Tom",
+        "pace": "Ritmo"
+      },
+      "chips": {
+        "female": "Feminina",
+        "male": "Masculina",
+        "neutral": "Andrógina",
+        "young": "Jovem adulta",
+        "middleAged": "De meia-idade",
+        "older": "Mais velha",
+        "american": "Americana",
+        "british": "Britânica",
+        "australian": "Australiana",
+        "irish": "Irlandesa",
+        "warm": "Calorosa",
+        "bright": "Brilhante",
+        "deep": "Grave",
+        "raspy": "Rouca",
+        "soft": "Suave",
+        "slow": "Lenta",
+        "measured": "Pausada",
+        "fast": "Rápida"
+      },
+      "preview": "Pré-visualizar",
+      "previewing": "A gerar uma pré-visualização…",
+      "previewsLeft": "Pré-visualizações restantes: {{left}} de {{max}}",
+      "previewsUsed": "Já usou as 3 pré-visualizações desta descrição. Mantenha a voz ou altere a descrição para pré-visualizar novamente.",
+      "previewLabel": "Pré-visualização da voz descrita",
+      "keepTitle": "Manter esta voz",
+      "nameLabel": "Nome da voz",
+      "keep": "Manter esta voz",
+      "keeping": "A guardar a voz…",
+      "kept": "Voz guardada. Está agora em As minhas vozes.",
+      "signInToKeep": "Inicie sessão para manter esta voz"
+    },
+    "changer": {
+      "modeLabel": "Como alterar",
+      "modes": {
+        "shift": "Alterar tom (instantâneo)",
+        "convert": "Converter para uma voz (IA)"
+      },
+      "shiftHint": "Altera o tom e o formante com o rubberband, de imediato. Conta como uma operação. O resultado não tem marca de água.",
+      "convertHint": "Faz a gravação soar como uma voz guardada ou predefinida. Conta como uma tarefa de IA. O resultado contém uma marca de água inaudível.",
+      "convertNotInPlan": "Converter para uma voz não faz parte do seu plano.",
+      "upgrade": "Ver planos",
+      "signInToConvert": "Inicie sessão para converter para uma voz",
+      "targetLabel": "Converter para",
+      "convert": "Converter",
+      "converting": "A converter…"
+    },
+    "shifter": {
+      "semitonesLabel": "Tom",
+      "semitonesValue": "{{value}} semitons",
+      "formantLabel": "Formante",
+      "formants": {
+        "preserved": "Manter o caráter da voz",
+        "shifted": "Alterar com o tom"
+      },
+      "presetsLabel": "Predefinições",
+      "presets": {
+        "deeper": "Mais grave",
+        "higher": "Mais agudo",
+        "child": "Infantil",
+        "elder": "Mais velho",
+        "telephone": "Telefone"
+      },
+      "shift": "Alterar voz",
+      "shifting": "A alterar…"
+    },
+    "result": {
+      "working": "A trabalhar nisso…",
+      "failed": "A tarefa de voz falhou. Não foi contabilizada.",
+      "downloadMp3": "Transferir MP3",
+      "downloadWav": "Transferir WAV",
+      "wavPreparing": "A preparar o WAV…",
+      "wavFailed": "Não foi possível criar o WAV neste navegador. Transfira o MP3.",
+      "wavNote": "O WAV é descodificado a partir do MP3 no seu navegador.",
+      "another": "Recomeçar"
+    },
+    "darkroom": {
+      "title": "Gerar locução",
+      "description": "Escreva um guião, escolha uma voz e um idioma. A locução é adicionada aos ficheiros multimédia deste projeto e colocada na posição do cursor de reprodução.",
+      "placeholder": "Escreva o guião da locução.",
+      "generate": "Gerar locução",
+      "presetsOnly": "Sem sessão iniciada, pode usar as vozes predefinidas. Inicie sessão para usar uma voz que tenha guardado.",
+      "added": "Locução adicionada na posição do cursor de reprodução",
+      "noAsset": "A locução foi gerada, mas não foi possível adicioná-la ao projeto. Tente novamente."
+    },
+    "errors": {
+      "sign_in_required": "Inicie sessão para guardar e usar as suas próprias vozes.",
+      "consent_required": "Assinale a caixa para confirmar que esta é a sua voz ou que tem a autorização explícita de quem fala.",
+      "reference_required": "Grave ou carregue primeiro 5 a 60 segundos de fala.",
+      "reference_too_short": "A gravação tem de ter, pelo menos, 5 segundos.",
+      "reference_too_long": "A gravação tem de ter 60 segundos ou menos.",
+      "reference_too_large": "O ficheiro da gravação é demasiado grande.",
+      "no_speech_detected": "Não conseguimos ouvir fala nessa gravação. Grave algumas frases numa sala silenciosa.",
+      "not_audio": "Esse ficheiro não é uma gravação que consigamos ler.",
+      "name_invalid": "Dê à voz um nome com 1 a 60 carateres.",
+      "language_not_supported": "Esse idioma não é suportado para esta voz.",
+      "voice_limit": "Atingiu o número de vozes guardadas do seu plano ({{limit}}). Elimine uma ou mude para um plano superior para guardar mais.",
+      "text_required": "Escreva algo para dizer.",
+      "text_too_long": "O seu plano permite até {{limit}} carateres por pedido.",
+      "exaggeration_invalid": "A emoção tem de estar entre 0,25 e 2.",
+      "voice_convert_not_in_plan": "Converter para uma voz não está incluído no seu plano.",
+      "voice_input_too_long": "O seu plano permite aqui gravações até {{limit}} segundos.",
+      "input_required": "Adicione a gravação que pretende alterar.",
+      "input_too_large": "A gravação é demasiado grande para o seu plano.",
+      "voice_required": "Escolha uma voz para a conversão.",
+      "voice_not_found": "Essa voz já não existe.",
+      "preset_not_found": "Essa voz predefinida não está disponível.",
+      "description_required": "Descreva a voz que pretende.",
+      "description_too_long": "Mantenha a descrição abaixo de 1000 carateres.",
+      "preview_limit": "Pré-visualizou esta descrição três vezes na última hora. Mantenha a voz ou altere a descrição.",
+      "session_required": "As pré-visualizações precisam de uma sessão do navegador. Recarregue a página e tente novamente.",
+      "semitones_invalid": "O tom tem de estar entre -12 e 12 semitons.",
+      "shift_invalid": "Essas definições de alteração não são válidas.",
+      "voices_unavailable": "O motor de voz não está disponível neste momento. Nada foi contabilizado; tente novamente dentro de instantes.",
+      "voices_storage_unavailable": "As vozes guardadas estão temporariamente indisponíveis. Nada foi contabilizado.",
+      "voices_timeout": "O motor de voz demorou demasiado. Nada foi contabilizado.",
+      "voice_request_refused": "O motor de voz recusou esse pedido.",
+      "upload_failed": "O carregamento falhou. Tente novamente.",
+      "job_failed": "Não foi possível iniciar a tarefa. Tente novamente.",
+      "invalid_body": "Algo no pedido não era válido. Recarregue a página e tente novamente.",
+      "rate_limited": "Demasiados pedidos de voz na última hora. Tente novamente mais tarde.",
+      "generic": "Algo correu mal. Tente novamente."
+    }
+  }
+}

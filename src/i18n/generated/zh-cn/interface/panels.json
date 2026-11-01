@@ -1,0 +1,1406 @@
+{
+  "transcribeResultView": {
+    "loading": "正在加载转录结果...",
+    "noResult": "此任务没有可用的转录结果。",
+    "complete": "转录完成",
+    "outputFormat": "输出格式：",
+    "language": "语言：{{language}}",
+    "duration": "时长：{{duration}}",
+    "noAudioStream": "没有音频流",
+    "noSpeech": "没有可识别的语音",
+    "nothingToTranscribe": "没有可转录的内容",
+    "noTranscriptGenerated": "无法为此文件生成转录文本。",
+    "transcriptHeader_other": "转录文本（{{count}}个片段）",
+    "aiSummaryTitle": "AI摘要与安全审阅",
+    "analysisRunning": "正在后台运行摘要和安全审阅...",
+    "analysisError": "分析错误：{{error}}",
+    "summary": "摘要",
+    "extendedSummary": "扩展摘要",
+    "safetyBadge": "安全性：{{rating}}",
+    "harmfulFlagged": "检测到潜在有害内容",
+    "harmfulNone": "未标记有害内容",
+    "sentimentBadge": "情感：{{label}}",
+    "notesLabel": "备注：{{notes}}",
+    "summaryPending": "分析任务完成后，摘要和安全审阅将显示在此处。",
+    "unknown": "未知"
+  },
+  "summarize": {
+    "loading": "正在检查摘要功能是否可用…",
+    "unavailable": "视频和音频摘要暂时不可用，请稍后再试；转录页面仍可正常使用。",
+    "notInPlan": "你的套餐不包含摘要功能。",
+    "signIn": {
+      "title": "登录后生成摘要",
+      "body": "摘要在我们自己的 GPU 服务器上运行，需要一个免费账号。请登录或创建账号，然后上传文件。",
+      "button": "登录",
+      "signup": "创建免费账号"
+    },
+    "uploadHintVideo": "视频或音频文件",
+    "uploadHintAudio": "音频文件",
+    "outputLanguage": "摘要语言",
+    "sameAsSpeech": "与语音语言相同",
+    "depth": {
+      "label": "深度",
+      "standard": "标准",
+      "deep": "深入",
+      "hint": "“深入”会使用更大的模型来撰写摘要，耗时更长。"
+    },
+    "note": "将消耗每日额度中的 1 次 AI 任务。失败的任务不计入。",
+    "noteFrames": "你的套餐最多读取视频的 {{frames}} 帧画面。将消耗每日额度中的 1 次 AI 任务；失败的任务不计入。",
+    "start": "生成摘要",
+    "stagesTitle": "进度",
+    "stages": {
+      "probe": "读取文件",
+      "audio": "转录语音",
+      "frames": "挑选画面帧",
+      "vision": "描述画面帧",
+      "synthesis": "撰写摘要",
+      "render": "整理结果格式"
+    },
+    "status": {
+      "pending": "等待中",
+      "processing": "进行中",
+      "completed": "已完成",
+      "skipped": "已跳过",
+      "failed": "失败"
+    },
+    "framesCount": "画面帧：{{count}}",
+    "errors": {
+      "signin_required": "请登录后再生成摘要。",
+      "summary_not_in_plan": "你的套餐不包含摘要功能。",
+      "summary_unavailable": "摘要功能暂时不可用，请稍后再试。",
+      "unreadable_media": "无法将此文件作为音频或视频读取。",
+      "no_audio_or_video": "此文件中没有可供摘要的音频或视频。",
+      "file_too_large": "此文件的大小或时长超出了你的套餐限制。",
+      "upload_not_found": "找不到已上传的文件，请重试。",
+      "quota_exceeded": "你今天的 AI 任务次数已用完。",
+      "invalid_request": "请求未被接受。请刷新页面后重试。",
+      "unknown": "无法开始生成摘要，请重试。"
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "将你的{{hint}}拖放到此处",
+    "selectHint": "或点击从电脑中选择。访客的文件保留24小时；注册免费账号后，你可以选择保留24小时至2年。",
+    "selectFile": "选择文件",
+    "removeFile": "移除文件",
+    "uploadingPercent": "上传中{{percent}}%",
+    "workingOnFile": "正在处理你的文件…",
+    "previewResult": "预览结果",
+    "downloadResult": "下载结果",
+    "jobFailed": "任务失败。请尝试其他文件或刷新页面。",
+    "resultPreview": "结果预览",
+    "toggleHint": "在原始输入和最终结果之间切换。",
+    "closePreview": "关闭预览",
+    "loadingPreview": "正在加载预览…",
+    "zipPreviewTitle": "ZIP下载无法预览",
+    "zipPreviewBody": "此结果已打包为ZIP压缩包。请下载并在本地解压以查看内容。"
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "嵌入式媒体转换器",
+    "tryItNow": "立即试用",
+    "recommendedOutput": "推荐输出：",
+    "outputFormat": "输出格式：",
+    "outputLocked": "此工具的输出已锁定：",
+    "expectedInput": "预期输入：",
+    "accepts": "接受：",
+    "dragDrop": "将{{kind}}文件拖放到此处",
+    "mediaKinds": {
+      "image": "图片",
+      "video": "视频",
+      "audio": "音频",
+      "pdf": "PDF"
+    },
+    "selectHint": "或点击从电脑中选择。访客的文件保留24小时；注册免费账号后，你可以选择保留24小时至2年。",
+    "selectFile": "选择文件",
+    "removeFile": "移除文件",
+    "uploadingPercent": "上传中{{percent}}%",
+    "workingOnFile": "正在处理你的文件…",
+    "downloadFilename": "下载{{filename}}",
+    "transcribeFailed": "转录失败。",
+    "conversionFailed": "转换失败。",
+    "tryAgainOrOpen": "重试或打开完整转换器。",
+    "needFullPrefix": "需要完整功能？",
+    "openFullConverter": "打开完整转换器",
+    "needFullSuffix": "——它包含转换历史、转录流程和AI工具。"
+  },
+  "extractAudio": {
+    "title": "提取音频",
+    "subtitle": "从视频文件中提取音轨，并保存为MP3、WAV、AAC、OGG或FLAC。",
+    "formatLabel": "输出音频格式",
+    "outputLocked": "此工具已锁定为{{format}}",
+    "expectedInput": "预期输入：{{format}}",
+    "submit": "提取音频",
+    "running": "提取中…",
+    "success": "音频已提取。使用下载按钮保存。",
+    "uploadHint": "视频文件",
+    "note": "提取的音轨保留源文件的完整时长和质量。没有音频的视频会返回明确的错误。",
+    "formats": {
+      "mp3": "MP3（体积小，随处可播放）",
+      "wav": "WAV（无损，体积大）",
+      "m4a": "M4A（AAC——质量好，体积小）",
+      "aac": "AAC（原始）",
+      "flac": "FLAC（无损）",
+      "ogg": "OGG（Vorbis）"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "视频文件",
+    "expectedInput": "预期输入：{{format}}",
+    "levelLabel": "压缩级别",
+    "levels": {
+      "smallest": "最小文件",
+      "balanced": "均衡（推荐）",
+      "high_quality": "高质量"
+    },
+    "levelHints": {
+      "smallest": "最大程度压缩，适合邮件和聊天。细节丰富的素材会有可见的质量损失。",
+      "balanced": "对大多数视频和社交媒体上传来说，是不错的大小与质量平衡。",
+      "high_quality": "保留最多细节。比源文件小，但幅度不大。"
+    },
+    "formatLabel": "输出格式",
+    "outputLocked": "此工具已锁定为{{format}}",
+    "resolutionLabel": "分辨率",
+    "resolutions": {
+      "keep": "保持原始",
+      "1080": "1080p（全高清）",
+      "720": "720p（高清）",
+      "480": "480p（标清）"
+    },
+    "codecLabel": "编解码器",
+    "codecs": {
+      "h264": "H.264（兼容性最好）",
+      "h265": "H.265 / HEVC（更小，适合现代设备）"
+    },
+    "stripAudio": "移除音轨以获得更小的文件",
+    "note": "我们会按所选级别重新编码视频。MP4输出使用H.264 + AAC并启用faststart，以便即时播放。",
+    "running": "压缩中…",
+    "submit": "压缩视频"
+  },
+  "videoTrimmer": {
+    "uploadHint": "视频文件",
+    "expectedInput": "预期输入：{{format}}",
+    "startLabel": "开始（秒）",
+    "endLabel": "结束（秒）",
+    "durationLabel": "片段长度：{{duration}}",
+    "invalidRange": "请将结束时间设置在开始时间之后。",
+    "pickRange": "可视化选择范围",
+    "formatLabel": "输出格式",
+    "outputLocked": "此工具已锁定为{{format}}",
+    "reencodeLabel": "重新编码以实现精确到帧的剪切",
+    "reencodeHint": "重新编码会精确在你设定的时间点剪切，但速度较慢，且文件大小可能略有变化。",
+    "note": "只要可能，我们会以快速的无损剪切保留原始质量（不重新编码）。",
+    "running": "裁剪中…",
+    "submit": "裁剪视频",
+    "submitCut": "剪切视频"
+  },
+  "videoTransform": {
+    "uploadHint": "视频文件",
+    "expectedInput": "预期输入：{{format}}",
+    "autoPlaceholder": "自动",
+    "widthLabel": "宽度（px）",
+    "heightLabel": "高度（px）",
+    "preserveAspect": "保持宽高比（适应边框）",
+    "resizeNote": "留空其中一项可按比例缩放另一项。每边最大4096 px。",
+    "rotationLabel": "旋转",
+    "rotations": {
+      "90": "顺时针90°",
+      "180": "180°（上下颠倒）",
+      "270": "逆时针90°"
+    },
+    "flipH": "水平翻转",
+    "flipV": "垂直翻转",
+    "rotateNote": "修正横向或上下颠倒的视频。90°和270°会交换宽度和高度。",
+    "cropX": "左侧偏移（X，px）",
+    "cropY": "顶部偏移（Y，px）",
+    "cropW": "裁剪宽度（px）",
+    "cropH": "裁剪高度（px）",
+    "cropNote": "输入要保留的矩形，以距左上角的像素为单位。宽度和高度为必填项。",
+    "formatLabel": "输出格式",
+    "outputLocked": "此工具已锁定为{{format}}",
+    "running": "处理中…",
+    "submit": {
+      "crop": "裁剪视频",
+      "resize": "调整视频尺寸",
+      "rotate": "旋转视频"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "提取视频（无音频）",
+    "subtitle": "从视频文件中去除音轨，只保留视频流。",
+    "uploadHint": "视频文件",
+    "formatLabel": "输出容器",
+    "formats": {
+      "mp4": "MP4（推荐）",
+      "webm": "WebM"
+    },
+    "note": "只要可能，视频流会以流复制方式处理——不损失质量。只有在目标容器需要时我们才会重新编码。",
+    "submit": "从视频中移除音频",
+    "running": "正在去除音频…",
+    "success": "视频流已提取。"
+  },
+  "extractFrames": {
+    "title": "提取帧",
+    "subtitle": "将视频中的单独帧保存为PNG、JPG或WebP图片。",
+    "uploadHint": "视频文件",
+    "modeLabel": "提取模式",
+    "modes": {
+      "every_n_seconds": "每N秒一帧",
+      "fps": "指定每秒帧数",
+      "timestamp": "指定时间点"
+    },
+    "secondsBetween": "帧间隔秒数",
+    "fpsLabel": "每秒帧数",
+    "timestampsLabel": "时间点（秒，用逗号分隔）",
+    "timestampsPlaceholder": "例如 1, 5.5, 12, 30",
+    "imageFormatLabel": "图片格式",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG（无损）",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "最大帧数",
+    "zipNote": "帧会打包为单个ZIP供下载。我们限制数量以保持任务快速且可预测；如果确实需要更多，请提高上限。",
+    "submit": "提取帧",
+    "running": "正在提取帧…",
+    "success": "帧已提取。请在下方下载ZIP。"
+  },
+  "captionTranslator": {
+    "title": "翻译字幕",
+    "subtitle": "上传VTT、SRT或TXT字幕文件，并将其翻译为另一种语言。",
+    "dropHere": "将你的.srt或.vtt文件拖放到此处",
+    "privacyNote": "访客的文件保留24小时；注册免费账号后，你可以选择保留24小时至2年。我们不会将你的字幕发送给第三方AI服务商。",
+    "selectCaptionFile": "选择字幕文件",
+    "removeFile": "移除文件",
+    "sourceLanguage": "源语言",
+    "targetLanguage": "目标语言",
+    "autoDetect": "自动检测（推荐）",
+    "outputFormat": "输出格式",
+    "sameAsInput": "与输入相同（{{format}}）",
+    "formats": {
+      "srt": "SRT（SubRip）",
+      "vtt": "VTT（WebVTT）"
+    },
+    "timingNote": "字幕条的时间和顺序会被完整保留——只翻译字幕文本。",
+    "translating": "翻译中…",
+    "translateCaptions": "翻译字幕",
+    "uploadingPercent": "上传中{{percent}}%",
+    "translatingWithModel": "正在使用本地AI模型翻译…",
+    "downloadTranslated": "下载翻译后的字幕",
+    "translationFailed": "翻译失败。请尝试更小的文件或其他目标语言。"
+  },
+  "stitchAudioToVideo": {
+    "title": "将音频合成到视频",
+    "subtitle": "为视频文件添加或替换音轨。",
+    "dropBaseVideo": "将你的基础视频拖放到此处",
+    "intro": "先选择视频——接下来你将添加音轨（配音、音乐、旁白）。",
+    "selectVideo": "选择视频",
+    "removeBaseVideo": "移除基础视频",
+    "audioTracks": "音轨",
+    "removeTrack": "移除音轨",
+    "volume": "音量",
+    "startOffset": "起始偏移（秒）",
+    "loopTrack": "循环此音轨以匹配视频长度",
+    "addAudioTrack": "添加音轨（{{count}}/{{max}}）",
+    "audioModeLabel": "音频模式",
+    "audioModes": {
+      "mix": "与现有音频混合",
+      "replace": "替换原始音频"
+    },
+    "outputLengthLabel": "输出长度",
+    "outputLength": {
+      "video": "裁剪至视频时长",
+      "longest": "匹配最长的输入"
+    },
+    "stitching": "正在合成音频 + 视频…",
+    "addAudioToVideo": "为视频添加音频",
+    "uploadingPercent": "上传中{{percent}}%",
+    "mixingOnServer": "正在服务器上混合…",
+    "downloadStitched": "下载合成后的视频",
+    "stitchFailed": "合成失败。请检查你的音频文件是否有效，然后重试。"
+  },
+  "aiVideoTools": {
+    "title": "AI视频工具",
+    "tooltipIntro": "AI视频工具目前包含<strong>AI帧插值</strong>，它会生成新的中间帧，使动作播放更流畅。",
+    "tooltipBestFor": "最适合将24/30fps素材提升到60fps，或将60fps提升到120fps。这项操作对GPU要求很高，目前始终输出MP4。",
+    "intro": "AI帧插值会创建中间帧，使动作更流畅。最适合24/30fps → 60fps或60fps → 120fps的片段。",
+    "gpuNote": "这项操作对GPU要求很高，目前输出MP4。对于较长或4K视频，请先使用较低的最大处理高度。这与基础的帧率转换不同——AI插值会合成新帧而不是复制帧，并且在v1中会绕过大多数其他视觉/时间类滤镜。",
+    "operationLabel": "操作",
+    "operations": {
+      "none_short": "无",
+      "frame_interpolation": "AI帧插值"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "目标帧率",
+      "modelLabel": "RIFE模型",
+      "models": {
+        "rife-v4.6": "RIFE v4.6——推荐",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3——兼容性"
+      },
+      "qualityLabel": "质量",
+      "qualityOptions": {
+        "low": "低——编码更快",
+        "medium": "中——均衡",
+        "high": "高——编码更慢"
+      },
+      "maxHeightLabel": "最大处理高度",
+      "preserveAudio": "保留源文件的音轨"
+    },
+    "notes": {
+      "mp4": "在v1中，输出始终为MP4（H.264 + AAC）。",
+      "trim": "在v1中，AI帧插值不支持裁剪——如有需要，请先单独裁剪片段。",
+      "artifacts": "快速运动、场景切换、头发、手、车轮和遮挡可能出现插值伪影。发布前请先预览。"
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "片段选择时间线",
+      "startHandle": "选择起点",
+      "endHandle": "选择终点",
+      "playSelection": "播放所选片段",
+      "pause": "暂停",
+      "start": "开始",
+      "end": "结束",
+      "startTime": "开始时间（m:ss.t）",
+      "endTime": "结束时间（m:ss.t）",
+      "nudgeBack": "后退0.1秒",
+      "nudgeForward": "前进0.1秒",
+      "selected": "已选择",
+      "frames": "帧",
+      "estimate": "约",
+      "fpsAssumption": "帧数估算假设为30fps——服务器会使用你视频的真实帧率",
+      "overRecommended": "超过{{seconds}}秒的选择也可以，但处理时间会迅速增加——较短的片段同样适合对比。",
+      "overFrameBudget": "按30fps计算，此选择可能超过{{maxFrames}}帧的上限。如果你视频的真实帧率高于约30fps，请缩短选择范围。"
+    },
+    "picker": {
+      "title": "修复模型",
+      "selectAll": "全选",
+      "selectNone": "无",
+      "frameGroup": "逐帧增强器——包含增强后的帧 + 视频",
+      "videoGroup": "视频修复模型——仅视频",
+      "unavailable": "此服务器上不可用",
+      "includeFrames": "包含增强后的帧（PNG）",
+      "includeFramesHint": "将逐帧模型生成的每一个增强帧添加到下载中，与视频并列。",
+      "includeFramesWarning": "帧可能让下载大小成倍增加——一个10秒的片段每个模型可能添加数百张大型PNG。",
+      "noneSelected": "请至少选择一个模型以继续。",
+      "runningTotal": "已选择{{count}}个模型 · 总处理时间估计{{estimate}}"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "快速GAN超分辨率——每次对比都应包含的快速基线。"
+      },
+      "swinir": {
+        "description": "基于Transformer的真实场景超分辨率——纹理表现强，比Real-ESRGAN慢。"
+      },
+      "hat": {
+        "description": "混合注意力超分辨率GAN——通常静帧最锐利，是A组中最慢的。"
+      },
+      "basicvsrpp": {
+        "description": "循环视频超分辨率——利用相邻帧实现时间一致性。"
+      },
+      "rvrt": {
+        "description": "循环视频修复Transformer——细节强，具备运动感知。"
+      },
+      "vrt": {
+        "description": "视频修复Transformer——在许多片段上质量最佳，但速度遥遥最慢。"
+      }
+    },
+    "panel": {
+      "loading": "正在检查服务器能力…",
+      "disabled": "AI视频修复在此服务器上暂时不可用。",
+      "notAVideo": "请选择一个视频文件。",
+      "tooLarge": "此视频超过了{{max}}的上传限制。",
+      "dropTitle": "将视频拖放到此处，或点击选择",
+      "dropHint": "你将选择一个短片段（最长15秒）进行修复——长视频也没问题。",
+      "fileLabel": "文件：",
+      "changeFile": "更换文件",
+      "preparingUpload": "正在准备上传…",
+      "uploading": "正在上传到安全存储… {{percent}}%",
+      "startingJob": "正在启动修复任务…",
+      "submit": "使用{{count}}个模型修复片段",
+      "modelFailedBadge": "失败——其他模型继续",
+      "genericFailure": "修复失败。请使用更短的片段重试。",
+      "startOver": "重新开始",
+      "completedTitle": "修复完成——你的对比包已就绪。",
+      "modelSucceeded": "成功",
+      "modelFailed": "失败（见包内的FAILED.txt）",
+      "download": "下载结果",
+      "downloadAgain": "再次下载",
+      "downloadSize": "包大小：{{size}}",
+      "downloadSizeHint": "此压缩包很大——下载前请确保至少有{{size}}的可用磁盘空间。",
+      "linkExpiresIn": "链接将在{{countdown}}后过期",
+      "linkExpired": "下载链接已过期——请重新运行修复",
+      "restoreAnother": "修复另一个片段"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "裁剪（可选）",
+      "useEntireImage": "使用整张图片",
+      "previewAlt": "已上传的图片",
+      "regionLabel": "裁剪区域——拖动以移动，使用方向键微调",
+      "dragHint": "在图片上拖动以聚焦某个区域，或保留整张图片",
+      "cropReadout": "裁剪：{{w}}×{{h}} px",
+      "fullReadout": "整张图片：{{w}}×{{h}} px",
+      "outputReadout": "预计输出{{w}}×{{h}} px，{{scale}}倍",
+      "overBudget": "该裁剪和放大倍数会超过输出大小限制。请选择2倍或更小的裁剪区域。"
+    },
+    "picker": {
+      "precleanToggle": "预清理（保真清理）",
+      "precleanToggleHint": "移除压缩伪影、噪点和运动模糊，不合成新细节——在增强之前运行。",
+      "precleanOrderNote": "无论选择顺序如何，清理始终按伪影移除 → 降噪 → 去模糊的顺序运行，每一步都基于上一步的结果。",
+      "precleanBaseHint": "清理后的图片会成为下方每个模型运行的基础。",
+      "fbcnnQf": "FBCNN质量因子",
+      "fbcnnQfAuto": "自动",
+      "fbcnnQfHint": "留空 = 自动；值越低表示假设压缩越严重",
+      "generalGroup": "修复与超分辨率模型",
+      "faceToggle": "人脸增强",
+      "faceToggleHint": "添加GFPGAN和/或CodeFormer来重建人脸。",
+      "previewFaces": "预览检测到的人脸",
+      "facesDetected": "检测到{{count}}张人脸。",
+      "fidelityLabel": "CodeFormer保真度（w）",
+      "fidelityHint": "值越低越美观，值越高越接近输入。默认0.70。",
+      "chainToggle": "链式处理：在每个放大结果上重新运行人脸模型",
+      "chainHint": "除了在源图片上运行外，还会为每个超分辨率模型的输出生成一个人脸增强版本。",
+      "generativeWarning": "人脸增强是生成式重建——增强后的人脸是为了清晰度和线索而合成的，不是用于身份识别的忠实还原。",
+      "noneSelected": "请至少选择一个模型以继续。",
+      "totalOutputs": "将生成{{count}}个输出。",
+      "overBudget": "该选择会生成超过{{max}}个输出的上限。请取消选择部分模型或关闭链式处理。",
+      "unavailable": "此服务器上不可用"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "盲JPEG/压缩伪影移除（1倍，非生成式）。"
+      },
+      "scunet": {
+        "description": "盲真实噪点降噪——PSNR变体，不产生虚构纹理（1倍）。"
+      },
+      "nafnet": {
+        "description": "运动去模糊（GoPro权重，1倍）。"
+      },
+      "realesrgan": {
+        "description": "快速GAN超分辨率——每次对比都应包含的快速基线。"
+      },
+      "swinir": {
+        "description": "基于Transformer的真实场景超分辨率——纹理表现强，比Real-ESRGAN慢。"
+      },
+      "hat": {
+        "description": "混合注意力超分辨率GAN——通常结果最锐利。"
+      },
+      "gfpgan": {
+        "description": "GFPGAN v1.4人脸修复——生成式重建。"
+      },
+      "codeformer": {
+        "description": "带保真度调节的CodeFormer人脸修复——生成式重建。"
+      }
+    },
+    "panel": {
+      "loading": "正在检查服务器能力…",
+      "disabled": "AI图片修复在此服务器上暂时不可用。",
+      "notAnImage": "请选择一个图片文件。",
+      "tooLarge": "此图片超过了{{max}}的上传限制。",
+      "dropTitle": "将图片拖放到此处，或点击选择",
+      "dropHint": "PNG、JPEG、WebP、TIFF或BMP。上传后你可以裁剪到某个区域。",
+      "fileLabel": "文件：",
+      "changeFile": "更换文件",
+      "scaleLabel": "输出倍数",
+      "scaleAuto": "自动",
+      "scaleHint": "自动会为小裁剪区域（高度≤540px）选择4倍，否则选择2倍。模型原生运行4倍；2倍使用Lanczos缩小。",
+      "preparingUpload": "准备中…",
+      "uploading": "上传中… {{percent}}%",
+      "startingJob": "正在启动修复任务…",
+      "submit": "使用{{count}}个模型修复",
+      "unitFailedBadge": "失败——其他模型继续",
+      "genericFailure": "修复失败。请使用更小的裁剪区域或更少的模型重试。",
+      "startOver": "重新开始",
+      "completedTitle": "修复完成——在下方对比你的结果。",
+      "download": "下载全部结果",
+      "downloadAgain": "再次下载",
+      "downloadSize": "包大小：{{size}}",
+      "restoreAnother": "修复另一张图片"
+    },
+    "results": {
+      "includedInDownload": "已包含在下载中",
+      "fidelityBadge": "非生成式清理",
+      "generativeBadge": "生成式——不可作为证据",
+      "originalCaption": "原始（已预处理）· {{w}}×{{h}}",
+      "failed": "此模型失败",
+      "compareOriginal": "原始"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "音频文件",
+    "previewTitle": "波形预览",
+    "sizeQualifiers": {
+      "small": "小",
+      "medium": "中",
+      "large": "大",
+      "xl": "特大"
+    },
+    "presets": {
+      "10x1": "10:1——宽波形（推荐）",
+      "8x1": "8:1——宽波形",
+      "6x1": "6:1——均衡宽波形",
+      "16x9": "16:9——标准视频/社交预览",
+      "1x1": "1:1——方形社交预览"
+    },
+    "sizeLabel": "{{width}}×{{height}}（{{qualifier}}）",
+    "modes": {
+      "point": {
+        "label": "点",
+        "description": "每个采样一个点——干净简约。"
+      },
+      "line": {
+        "label": "线",
+        "description": "每个采样一条竖线——更有存在感。"
+      },
+      "p2p": {
+        "label": "点对点",
+        "description": "每个采样一个点，并用线连接——流动感。"
+      },
+      "cline": {
+        "label": "居中线",
+        "description": "以轴线为中心的竖线——对称外观。"
+      }
+    },
+    "output": "输出",
+    "outputOptions": {
+      "video": "波形视频",
+      "image": "波形图片",
+      "both": "两者（ZIP）"
+    },
+    "bothNote": "两种输出会打包为单个.zip，你可以一键下载。",
+    "includeAudio": "在生成的波形视频中包含原始音频",
+    "includeAudioNote": "波形视频会与源音频同步播放——非常适合音频图、音乐预览和播客片段。关闭则生成无声波形。",
+    "videoFormat": "视频格式",
+    "videoFormats": {
+      "mp4": "MP4（推荐）",
+      "webm": "WebM"
+    },
+    "imageFormat": "图片格式",
+    "imageFormats": {
+      "png": "PNG（推荐）",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "宽高比与尺寸",
+    "useCustomSize": "使用自定义宽度/高度",
+    "widthPlaceholder": "宽度",
+    "heightPlaceholder": "高度",
+    "advancedSettings": "高级波形设置",
+    "renderMode": "渲染模式",
+    "renderModeNote": "渲染模式适用于波形视频。图片输出使用静帧渲染器，会忽略模式设置。",
+    "frameRate": "帧率",
+    "useFrameRate": "使用帧率",
+    "useSamples": "使用每列采样数（n）",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps（默认）",
+    "samplesPlaceholder": "例如 64",
+    "frameRateNote": "选择输出帧率<em>或</em>每列绘制的音频采样数。二者只能选一。",
+    "splitChannels": "分离立体声声道（分别绘制左右声道）",
+    "primaryColor": "主颜色",
+    "secondaryColor": "次颜色（分离模式）",
+    "scale": "刻度",
+    "scaleOptions": {
+      "lin": "lin——最直接/准确",
+      "log": "log——让安静部分更明显",
+      "sqrt": "sqrt——轻微提升安静部分",
+      "cbrt": "cbrt——更强地提升安静部分"
+    },
+    "draw": "绘制",
+    "drawOptions": {
+      "scale": "scale（默认）",
+      "full": "full"
+    },
+    "generating": "正在生成波形…",
+    "generate": "生成波形"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "正在加载AI文档扫描…",
+      "disabled": "文档扫描目前不可用。",
+      "notAnImage": "请添加图片文件（PNG、JPEG、WebP、TIFF、BMP或HEIC）。",
+      "tooLarge": "每张图片必须小于{{max}}。",
+      "tooManyPages": "最多可添加{{max}}页。",
+      "dropTitle": "添加扫描页面",
+      "dropHint": "印刷文档或手写笔记——拖放一张或多张图片，或点击选择。",
+      "uploading": "上传中… {{percent}}%",
+      "startingJob": "正在开始扫描…",
+      "preparingUpload": "准备中…",
+      "submit": "扫描{{count}}页",
+      "genericFailure": "扫描时出了点问题。请重试。",
+      "startOver": "重新开始",
+      "completedTitle": "你的文档已就绪。",
+      "viewResult": "查看结果",
+      "scanAnother": "扫描另一份"
+    },
+    "options": {
+      "contentMode": "内容类型",
+      "modeAuto": "自动（逐页检测）",
+      "modePrinted": "印刷文档",
+      "modeHandwriting": "手写",
+      "printedUnavailable": "此服务器上印刷体OCR不可用。",
+      "handwritingUnavailable": "手写转录目前离线。",
+      "outputs": "输出",
+      "pdfAlways": "可搜索的PDF（始终）",
+      "docx": "可编辑的Word（.docx）",
+      "unavailable": "不可用",
+      "language": "语言（印刷体OCR）",
+      "printedCleanup": "印刷页面清理",
+      "deskew": "纠偏",
+      "rotate": "自动旋转",
+      "clean": "清理（去除斑点）",
+      "structureEngine": "DOCX结构引擎",
+      "enginePaddle": "PaddleOCR-VL（首选）",
+      "engineDocling": "Docling（备用）",
+      "engineTrocr": "TrOCR（备用）",
+      "preclean": "读取前增强低分辨率扫描件",
+      "precleanHint": "放大模糊的手机笔记扫描件——有助于手写识别。手写/自动模式下默认开启。",
+      "handwritingTitle": "手写选项",
+      "verify": "使用AI校验",
+      "verifyHint": "第二遍只重新读取标记为不确定的词元；绝不会改动确定的文本或编造内容。",
+      "secondOpinion": "第二意见",
+      "secondOpinionHint": "由独立的识别器重新读取手写内容；分歧会被标记，绝不会被静默合并。",
+      "summary": "AI摘要（单独文件）",
+      "summaryHint": "可选。生成一个单独且明确标注的摘要——它绝不会替代逐字转录。"
+    },
+    "pageOrder": {
+      "title": "页面（{{count}}）",
+      "hint": "扫描前拖动页面以重新排序。",
+      "pageLabel": "第{{n}}页",
+      "remove": "移除页面",
+      "drag": "拖动以重新排序"
+    },
+    "viewer": {
+      "title": "你的扫描文档",
+      "description": "印刷页面带有忠实的可搜索文本层；手写页面是机器转录——请对照原件核对。",
+      "confidenceTitle": "手写转录——请对照原件核对",
+      "confidenceNote": "已转录{{pages}}页手写内容 · {{tokens}}个词元被标记为不确定（[illegible] / [?]）。",
+      "noPdf": "此任务未生成PDF。",
+      "downloadPdf": "下载PDF",
+      "downloadDocx": "下载Word（.docx）",
+      "downloadSummary": "下载AI摘要"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}}（测试版）",
+    "untitled": "未命名绘图",
+    "projectName": "项目名称",
+    "backHome": "返回Media Manipulator",
+    "invalidProject": "此项目链接无效。目前项目仅存储在此浏览器中。",
+    "newProject": "开始新绘图",
+    "undo": "撤销",
+    "redo": "重做",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "zoomFit": "适应屏幕",
+    "canvas": {
+      "label": "绘图画布"
+    },
+    "tools": {
+      "label": "工具",
+      "select": "选择",
+      "node": "编辑节点",
+      "rect": "矩形",
+      "ellipse": "椭圆",
+      "line": "直线",
+      "pen": "钢笔",
+      "text": "文本",
+      "hand": "平移",
+      "textPlaceholder": "输入文字，然后按Enter"
+    },
+    "import": {
+      "button": "导入",
+      "done_other": "已导入{{count}}个图层",
+      "tooLarge": "该文件大于4 MB。",
+      "warningsTitle_other": "导入时有{{count}}条提示",
+      "errors": {
+        "too_large": "该SVG大于4 MB。",
+        "not_svg": "该文件不是SVG图片。",
+        "malformed": "无法读取该SVG。它可能已损坏。",
+        "entities": "声明了XML实体的SVG无法导入。",
+        "too_complex": "该SVG的图层过多，无法编辑。",
+        "json": "该文件不是此版本可以打开的Motion文档。"
+      },
+      "warnings": {
+        "script_removed": "已移除脚本：",
+        "event_handler_removed": "已移除事件处理程序：",
+        "external_reference_removed": "已移除外部引用：",
+        "unsafe_content_removed": "已移除不安全内容：",
+        "unsupported_element": "原样保留（不可编辑）：",
+        "style_dropped": "不支持的样式：",
+        "invalid_value": "已忽略的值：",
+        "dangling_reference": "已丢弃缺失的引用："
+      }
+    },
+    "export": {
+      "svg": "导出SVG",
+      "open": "导出"
+    },
+    "draft": {
+      "title": "恢复未保存的更改？",
+      "description": "此绘图在此浏览器中保存了尚未导出的更改。",
+      "from": "{{name}}，{{time}}",
+      "layers_other": "{{count}}个图层",
+      "recover": "恢复",
+      "discard": "放弃"
+    },
+    "layers": {
+      "title": "图层",
+      "empty": "绘制一个形状或导入SVG以开始。",
+      "group": "编组",
+      "ungroup": "取消编组",
+      "delete": "删除",
+      "rename": "图层名称",
+      "lock": "锁定",
+      "unlock": "解锁",
+      "hide": "隐藏",
+      "show": "显示",
+      "expand": "展开组",
+      "collapse": "折叠组",
+      "raw": "原样保留",
+      "rawHint": "与导入时完全一致；不可编辑",
+      "masked": "带有蒙版",
+      "clipped": "带有剪切路径",
+      "maskDef": "蒙版{{id}}",
+      "clipDef": "剪切路径{{id}}"
+    },
+    "layerTypes": {
+      "group": "组",
+      "path": "路径",
+      "rect": "矩形",
+      "ellipse": "椭圆",
+      "line": "直线",
+      "polyline": "折线",
+      "polygon": "多边形",
+      "text": "文本",
+      "image": "图片",
+      "use": "实例",
+      "raw": "原样保留"
+    },
+    "inspector": {
+      "title": "检查器",
+      "canvas": "画布",
+      "background": "背景",
+      "emptyHint": "选择一个图层进行编辑。按住Shift点击可选择多个。",
+      "selection": "选区",
+      "layersSelected_other": "{{count}}个图层",
+      "transform": "变换",
+      "geometry": "几何",
+      "appearance": "外观",
+      "text": "文本",
+      "width": "宽度",
+      "height": "高度",
+      "scaleX": "X缩放",
+      "scaleY": "Y缩放",
+      "rotation": "旋转",
+      "skewX": "倾斜",
+      "anchorX": "锚点X",
+      "anchorY": "锚点Y",
+      "cornerRadius": "圆角半径",
+      "reference": "实例来源",
+      "pathHint": "使用编辑节点工具（A）移动锚点和控制柄。",
+      "rawHint": "SVG的这一部分使用了编辑器目前无法更改的功能。它会与导入时完全一致地保留，并原样导出。",
+      "markupSize": "标记",
+      "fill": "填充",
+      "stroke": "描边",
+      "strokeWidth": "描边宽度",
+      "opacity": "不透明度",
+      "none": "无",
+      "colorValue": "{{label}}的值",
+      "solid": "纯色",
+      "linear": "线性",
+      "radial": "径向",
+      "fontSize": "字号",
+      "fontFamily": "字体",
+      "fontWeight": "字重",
+      "letterSpacing": "字间距",
+      "textAnchor": "对齐",
+      "alignStart": "起点",
+      "alignMiddle": "居中",
+      "alignEnd": "终点",
+      "regular": "常规",
+      "bold": "粗体",
+      "maskSection": "蒙版与剪切",
+      "maskHint": "上层图层会成为下层图层的蒙版或剪切路径。",
+      "useAsMask": "用作蒙版",
+      "useAsClip": "用作剪切",
+      "releaseMask": "释放蒙版",
+      "releaseClip": "释放剪切路径",
+      "skewY": "Y倾斜"
+    },
+    "gradient": {
+      "stops": "渐变色标",
+      "stop": "色标{{index}}，位于{{offset}}%",
+      "stopColor": "色标颜色",
+      "removeStop": "移除色标",
+      "addStop": "添加色标",
+      "offset": "位置",
+      "angle": "角度",
+      "radius": "半径",
+      "centreX": "中心X",
+      "centreY": "中心Y"
+    },
+    "properties": {
+      "x": "位置X",
+      "y": "位置Y",
+      "scaleX": "X缩放",
+      "scaleY": "Y缩放",
+      "rotation": "旋转",
+      "skewX": "X倾斜",
+      "skewY": "Y倾斜",
+      "anchorX": "锚点X",
+      "anchorY": "锚点Y",
+      "opacity": "不透明度",
+      "fill": "填充",
+      "stroke": "描边",
+      "strokeWidth": "描边宽度",
+      "strokeDashoffset": "描边绘制（虚线偏移）",
+      "d": "形状（变形）",
+      "motionPath": "运动路径",
+      "stopColor": "渐变色标{{n}}的颜色",
+      "stopOffset": "渐变色标{{n}}的位置",
+      "blur": "模糊"
+    },
+    "timeline": {
+      "title": "时间线",
+      "play": "播放（空格）",
+      "pause": "暂停（空格）",
+      "toStart": "跳到开头（Home）",
+      "toEnd": "跳到结尾（End）",
+      "loop": "循环",
+      "autokey": "自动关键帧",
+      "autokeyHint": "开启后，在画布或检查器中更改任何属性都会在播放头处添加一个关键帧。",
+      "duration": "长度",
+      "playhead": "播放头",
+      "setIn": "在播放头处设置播放范围起点",
+      "setOut": "在播放头处设置播放范围终点",
+      "clearRange": "清除播放范围",
+      "inMarker": "播放范围起点",
+      "outMarker": "播放范围终点",
+      "addKeys": "在播放头处为所选图层添加关键帧",
+      "copyKeys": "复制关键帧",
+      "pasteKeys": "在播放头处粘贴关键帧",
+      "deleteKeys": "删除关键帧",
+      "zoomIn": "放大时间线",
+      "zoomOut": "缩小时间线",
+      "empty": "绘制或导入一个形状，然后在这里为它制作动画。",
+      "animate": "为{{property}}制作动画",
+      "stopAnimating": "停止{{property}}的动画",
+      "addKeyHere": "在播放头处添加{{property}}关键帧",
+      "removeKeyHere": "移除播放头处的{{property}}关键帧",
+      "key": "{{time}}处的{{property}}关键帧",
+      "layerKey": "{{time}}处的{{layer}}关键帧",
+      "maskContent": "蒙版：{{layer}}",
+      "clipContent": "剪切：{{layer}}"
+    },
+    "easing": {
+      "title": "缓动",
+      "presets": "缓动预设",
+      "linear": "线性",
+      "easeIn": "缓入",
+      "easeOut": "缓出",
+      "easeBoth": "缓入缓出",
+      "hold": "保持",
+      "custom": "曲线",
+      "curve": "缓动曲线",
+      "handle": "曲线控制柄{{name}}",
+      "mixed": "所选关键帧使用了不同的缓动。选择一种以应用到全部。",
+      "applies_other": "{{count}}个关键帧之后各段的缓动。"
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "随处可播放的动态GIF。256色，单一全局调色板。"
+        },
+        "png_sequence": {
+          "title": "PNG序列（.zip）",
+          "hint": "每一帧为带透明度的PNG，打包为zip，适用于视频编辑软件和游戏引擎。"
+        },
+        "mp4": {
+          "title": "MP4视频",
+          "hint": "H.264（或AV1）视频，在你的浏览器中编码。无音频。"
+        },
+        "webm": {
+          "title": "WebM视频",
+          "hint": "VP9（或AV1）视频，在你的浏览器中编码。无音频。"
+        }
+      },
+      "block": {
+        "locked": "你的套餐不包含此格式。",
+        "notOnAnyPlan": "目前任何套餐都不提供。",
+        "useChromium": "请使用Chrome或Edge导出视频",
+        "noCodec": "此浏览器无法编码这种视频格式。请尝试另一种视频格式，或使用Chrome或Edge。"
+      },
+      "size": "尺寸",
+      "sizeOption": "{{height}}p（{{width}} × {{height}}）",
+      "fps": "每秒帧数",
+      "from": "从（秒）",
+      "to": "到（秒）",
+      "gif": {
+        "loop": "循环",
+        "forever": "无限",
+        "plays_other": "播放{{count}}次",
+        "dither": "抖动（渐变更平滑，文件更大）",
+        "transparent": "透明背景"
+      },
+      "summary": "{{width}} × {{height}} px，{{frames}}帧，{{seconds}}秒，约{{size}}",
+      "flattenWhite": "画布是透明的；视频不支持透明度，因此帧会放在白色背景上。",
+      "clamped": {
+        "height": "你的套餐将尺寸限制为{{height}}p。",
+        "fps": "帧率限制为{{fps}} fps。",
+        "duration": "你的套餐将长度限制为{{seconds}}秒。"
+      },
+      "tooLarge": "此导出将超过2 GB。请降低尺寸、帧率或长度。",
+      "cancelCounts": "导出开始后取消仍会占用你每日额度中的一次导出。",
+      "preparing": "准备中…",
+      "progress": "正在渲染第{{done}}帧，共{{total}}帧",
+      "progressLabel": "导出进度",
+      "finalizing": "正在完成文件…",
+      "cancel": "取消",
+      "cancelled": "导出已取消。没有下载任何内容。",
+      "failed": {
+        "tooLarge": "文件超过了2 GB，导出已停止。请降低尺寸、帧率或长度。",
+        "codec": "此浏览器无法以此尺寸和帧率编码视频。请尝试更小的尺寸，或使用Chrome或Edge。",
+        "unsafe": "此绘图包含无法渲染为帧的外部内容。请移除后重试。",
+        "error": "导出在浏览器中失败。请重试，或尝试更小的尺寸。"
+      },
+      "capHeight": "你的套餐可导出最高{{max}}p的光栅文件。",
+      "capFps": "你的套餐可导出最高每秒{{max}}帧。"
+    },
+    "exportDialog": {
+      "title": "导出",
+      "description": "导出在你的浏览器中完成。动画导出计入你的每日额度；静态SVG始终免费。",
+      "formats": "导出格式",
+      "animated": "动画SVG",
+      "animatedHint": "一个带动画的SVG文件。尽可能使用纯CSS，否则使用小型内联脚本。",
+      "static": "静态SVG",
+      "staticHint": "播放头处的画面，不含动画。免费，不计入额度。",
+      "export": "导出",
+      "unsupported": "此动画使用了动画SVG暂时无法导出的效果。",
+      "doneStatic": "静态SVG已下载。",
+      "done_other": "已下载。今天还剩{{count}}次动画导出。",
+      "doneUnlimited": "已下载。",
+      "limit_other": "你今天的{{count}}次动画导出已用完。",
+      "locked": "你的套餐不包含此格式。",
+      "capDuration": "你的套餐可导出最长{{seconds}}秒的动画。请缩短动画或升级。",
+      "capOther": "此导出超出了你的套餐允许的范围。",
+      "unavailable": "导出目前不可用。未计入额度；请稍后重试。",
+      "upgrade": "查看套餐",
+      "runtimeCss": "纯CSS，无脚本。",
+      "runtimeAnimeBecause": "使用一个{{size}} KB的脚本（anime.js，MIT），原因：{{reasons}}。",
+      "runtimeAnimeChosen": "使用一个{{size}} KB的脚本（anime.js，MIT）。",
+      "scriptImgNote": "脚本在SVG被直接打开或内联到页面中时运行，在<img>标签内不会运行（只显示第一帧）。",
+      "forceAnime": "使用脚本运行时",
+      "reasons": {
+        "morph": "形状变形",
+        "stopOffset": "渐变色标位置",
+        "blur": "模糊（Safari）",
+        "motionRotate": "带旋转轨道的路径旋转"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "适用于LottieFiles、lottie-web，以及iOS、Android和Flutter的Lottie播放器。Lottie无法承载的功能会在下载后列出。"
+        },
+        "react_tsx": {
+          "title": "React组件（.tsx）",
+          "hint": "一个内联SVG的组件文件。只需要React，使用脚本运行时的情况下还需要anime.js包。"
+        },
+        "js": {
+          "title": "JavaScript模块（.js）",
+          "hint": "一个带有mount、play、pause和seek的纯ES模块。无框架。"
+        },
+        "ts": {
+          "title": "TypeScript模块（.ts）",
+          "hint": "带类型的JavaScript模块。"
+        },
+        "flutter": {
+          "title": "Flutter组件（.dart）",
+          "hint": "当动画只涉及移动、淡入淡出和变色时，为原生flutter_svg组件；否则为WebView播放器。"
+        }
+      },
+      "emitted": {
+        "css": "使用CSS制作动画，无脚本。",
+        "anime": "使用anime.js（MIT，作为依赖导入）制作动画。",
+        "animeBecause": "使用anime.js（MIT，作为依赖导入）制作动画，原因：{{reasons}}。"
+      },
+      "flutter": {
+        "native": "已生成原生组件（flutter_svg和一个AnimationController）：动画只使用了变换、不透明度和颜色。",
+        "webview": "已生成WebView播放器（webview_flutter），原因：{{reasons}}。WebView背景不透明，且比原生组件更重。"
+      },
+      "flutterReasons": {
+        "morph": "它对形状进行了变形",
+        "mask": "它为蒙版或剪切路径制作了动画",
+        "blur": "它为模糊制作了动画",
+        "motionPath": "它沿运动路径移动",
+        "drawOn": "它绘制描边",
+        "gradient": "它为渐变色标制作了动画",
+        "symbol": "它为符号内的图层制作了动画",
+        "raw": "它包含编辑器原样保留的SVG标记"
+      }
+    },
+    "gate": {
+      "locked": "你的套餐已锁定",
+      "requires": {
+        "free": "免费账号即包含。",
+        "premium": "Premium包含。",
+        "pro": "Pro包含。"
+      },
+      "cta": {
+        "signup": "免费登录",
+        "premium": "升级到Premium",
+        "pro": "升级到Pro"
+      }
+    },
+    "projects": {
+      "save": "保存",
+      "saveToAccount": "保存到账号",
+      "status": {
+        "local": "仅在此浏览器中",
+        "saved": "已保存",
+        "saving": "保存中…",
+        "retrying": "重试中…",
+        "offline": "离线，更改保留在此处",
+        "conflict": "已在别处更改",
+        "failed": "未保存"
+      },
+      "signIn": "登录",
+      "signInTitle": "登录以保存到你的账号",
+      "signInBody": "没有账号时，项目只保留在此浏览器中。登录（在新标签页中登录后再回来）即可将此项目保存到你的账号，或将其下载为以后可以再次打开的文件。",
+      "downloadJson": "下载.json",
+      "limit_other": "你的套餐可保存{{count}}个项目。请在账号中删除一个，或升级。",
+      "saveFailed": "此项目无法保存到你的账号。你的更改保留在此浏览器中。",
+      "open": {
+        "signin": "登录以打开此项目。账号项目仅对其所有者可见。",
+        "notFound": "此项目不存在，或属于其他账号。",
+        "failed": "无法加载此项目。请检查网络连接并重新加载页面。",
+        "unreadable": "此项目由较新版本保存，无法在此处打开。"
+      },
+      "conflict": {
+        "title": "此项目已在其他标签页或设备中更改。",
+        "reload": "重新加载对方版本",
+        "keep": "保留我的版本",
+        "reloadTitle": "替换你的版本？",
+        "reloadBody": "重新加载会打开在别处保存的副本，并放弃此标签页中的更改。如果想保留你的版本，请先下载。",
+        "downloadMine": "下载我的版本",
+        "reloadConfirm": "重新加载对方版本",
+        "reloadFailed": "无法加载已保存的副本。请重试。"
+      }
+    },
+    "animators": {
+      "title": "动画",
+      "selectOne": "选择一个图层为它制作动画。",
+      "drawOn": "描边绘制",
+      "drawOnHint": "从起点到终点绘制描边（描边虚线偏移）。",
+      "motionPath": "运动路径",
+      "motionPathHint": "让图层沿路径移动。选择一条路径或用钢笔绘制一条。",
+      "morph": "变形",
+      "morphHint": "将此路径变形为另一个形状。选择目标形状。",
+      "gradient": "渐变",
+      "gradientHint": "为此图层渐变的颜色制作动画（每个色标一条轨道）。",
+      "maskClip": "蒙版/剪切",
+      "maskClipHint": "用独立的轨道为图层的蒙版或剪切形状制作动画。",
+      "blur": "模糊",
+      "blurHint": "让图层随时间逐渐模糊。",
+      "blurAmount": "模糊量",
+      "pickGuide": "沿哪条路径移动？",
+      "pickTarget": "变形为哪个形状？",
+      "noShapes": "还没有其他形状。",
+      "drawWithPen": "用钢笔绘制一个新的",
+      "autoOrient": "随路径旋转",
+      "spanHint": "动画器从播放头运行到结尾。在时间线中调整它们的关键帧。",
+      "notApplied": "该动画器不适用于此图层。",
+      "morphFailed": "这两个形状无法变形。"
+    },
+    "lottie": {
+      "supportSummary": "Lottie无法承载的内容",
+      "document": "整个动画",
+      "warningsTitle_other": "有{{count}}项未能保留",
+      "unsupported": {
+        "maskAdvanced": "除简单白色或黑色形状以外的蒙版，以及嵌套图层上的蒙版",
+        "filter": "模糊和其他滤镜",
+        "text": "文本（需要字体轮廓；请先将文本转换为路径）",
+        "image": "未嵌入的图片，或位于组内的图片",
+        "useComplex": "带有自身尺寸或视图框的重用符号",
+        "raw": "编辑器原样保留的SVG标记",
+        "cssOnly": "混合模式、标记和其他仅CSS的样式",
+        "strokeGradientAnimation": "描边上的动画渐变",
+        "gradientShape": "重复、焦点或拉伸的渐变",
+        "paint": "既不是颜色也不是渐变的填充",
+        "skew": "同时在两个轴上倾斜",
+        "morph": "改变子路径数量的形状变形",
+        "playOnce": "播放一次（Lottie播放器默认循环）",
+        "expression": "表达式（使用关键帧的值）",
+        "effect": "模糊或投影等图层效果",
+        "textLayer": "文本图层（保留为空的命名组）",
+        "timeRemap": "时间重映射",
+        "threeD": "3D图层和3D旋转",
+        "blendMode": "正常以外的混合模式",
+        "matte": "轨道遮罩",
+        "maskMode": "相加和相减以外的蒙版",
+        "modifier": "中继器、圆角和其他形状修改器",
+        "imageExternal": "未嵌入文件的图片",
+        "spatialTangents": "曲线运动路径（图层沿直线移动）",
+        "layerTiming": "不透明度带动画的图层上的入点和出点",
+        "unknownLayer": "编辑器无法绘制的图层类型",
+        "unknownShape": "未知的形状项",
+        "autoOrient": "沿路径自动定向",
+        "skewAxis": "沿倾斜轴倾斜",
+        "polystar": "圆角或带动画的星形和多边形（绘制为普通轮廓）",
+        "trimComplex": "除描边绘制或擦除以外的修剪路径",
+        "gradientAnimation": "带动画的渐变位置和带动画的描边渐变",
+        "multipleStyles": "一个形状上的多个填充或描边（使用最近的一个）",
+        "styleOpacity": "渐变上带动画的填充或描边不透明度",
+        "morphCounts": "点数不同的形状关键帧（中间帧会有差异）"
+      },
+      "import": {
+        "warningsTitle_other": "有{{count}}项无法导入",
+        "warningsBody": "动画已准备好打开。Lottie文件中的以下部分不受支持，已被省略或简化：",
+        "open": "打开动画",
+        "unavailable": "此站点不提供Lottie导入。",
+        "refused": {
+          "limit": "你今天的导出和导入次数已用完。",
+          "locked": "你的套餐不包含Lottie导入。",
+          "cap": "此文件超出了你的套餐允许的大小。",
+          "unavailable": "导入目前不可用。未计入额度；请稍后重试。"
+        },
+        "errors": {
+          "too_large": "该文件大于4 MB。",
+          "not_json": "无法将该文件读取为JSON。",
+          "not_lottie": "该文件不是Lottie动画。",
+          "too_complex": "该动画的图层、关键帧或点过多。",
+          "invalid": "无法将该Lottie文件转换为动画。"
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "将图片、视频、音频或 PDF 文件拖放到此处",
+    "hint": "或点击从电脑中选择。文件仅用于读取元数据，分析后即删除；不会进行任何转换。",
+    "largeFile": "超过 {{size}} 的文件只在您要求时才检查，以免大视频被误上传。",
+    "failed": "无法检查该文件。可能是不支持的类型，或超出了您套餐的大小限制。"
+  },
+  "voiceTools": {
+    "loading": "正在加载声音工具…",
+    "unavailable": {
+      "title": "声音功能暂时不可用",
+      "body": "声音引擎已关闭或正在重启，因此此工具目前无法运行。本次未计入额度。请稍后再试。",
+      "shiftStillWorks": "下方的变调器不需要声音引擎，仍可使用。"
+    },
+    "warmingUp": "正在预热声音引擎，第一次请求最多可能需要 20 秒。",
+    "honesty": "使用已保存声音或预设声音生成的语音带有听不见的水印；用变调器处理的音频则没有。请只使用你自己的声音，或你已获得使用许可的声音。你录制或生成的任何内容都不会用于训练任何模型，声音引擎运行在我们自己的服务器上。",
+    "signIn": {
+      "title": "登录以保存声音",
+      "body": "已保存的声音需要有所有者和同意记录，因此克隆声音、保留设计的声音、转换为某个声音以及“我的声音”都需要账号。登录之前不会上传任何内容。",
+      "cta": "登录"
+    },
+    "recorder": {
+      "record": "录音",
+      "recording": "录音中",
+      "stop": "停止",
+      "cancel": "取消录音",
+      "level": "麦克风音量",
+      "or": "或",
+      "upload": "上传音频文件",
+      "remove": "移除",
+      "recorded": "你的录音，{{duration}}",
+      "uploaded": "{{name}}，{{duration}}",
+      "measuring": "正在读取文件时长…",
+      "unknownLength": "浏览器无法读取此文件的时长；服务器会进行检查。",
+      "tooShort": "录音时长为 {{seconds}} 秒。声音至少需要 5 秒的语音。",
+      "tooLong": "录音时长为 {{seconds}} 秒。请控制在 60 秒以内。",
+      "referenceHint": "在安静的房间里录制或上传 5 到 60 秒清晰的语音。朗读几句自然的话。",
+      "inputHint": "录制或上传你想要更改的语音。",
+      "micDenied": "麦克风权限已被阻止。请在浏览器地址栏中允许此网站使用麦克风，或改为上传文件。",
+      "micHostBlocked": "承载此工具的页面未允许使用麦克风。请改为上传文件。",
+      "micUnavailable": "此浏览器不支持录音。请改为上传音频文件。"
+    },
+    "consent": {
+      "label": "这是我自己的声音，或者我已获得声音所属者的明确许可。",
+      "note": "我们会将你确认的时间和此文本的版本（{{version}}）与该声音一并保存。请参阅服务条款第8.11节。"
+    },
+    "clone": {
+      "title": "通过录音创建声音",
+      "nameLabel": "声音名称",
+      "namePlaceholder": "我的声音",
+      "languageLabel": "录音语言",
+      "create": "创建声音",
+      "creating": "正在创建你的声音…",
+      "created": "声音已创建。可在“我的声音”中试听其预览。",
+      "signInToCreate": "登录以创建声音",
+      "limitReached": "你的套餐已保存 {{used}}/{{limit}} 个声音。请在账号的“声音”中删除一个，或升级以保存更多。",
+      "noSaving": "你的套餐无法保存声音。",
+      "usage": "已保存 {{used}}/{{limit}} 个声音",
+      "usageUnlimited": "已保存 {{used}} 个声音"
+    },
+    "myVoices": {
+      "title": "我的声音",
+      "empty": "还没有已保存的声音。",
+      "preview": "{{name}}的预览",
+      "use": "使用此声音",
+      "inUse": "已选择",
+      "manage": "在账号中管理你的声音",
+      "kinds": {
+        "cloned": "克隆",
+        "designed": "设计",
+        "preset": "预设"
+      }
+    },
+    "picker": {
+      "label": "声音",
+      "saved": "我的声音",
+      "presets": "预设声音",
+      "none": "目前没有可用的声音。"
+    },
+    "speak": {
+      "title": "生成语音",
+      "textLabel": "要朗读的文本",
+      "placeholder": "输入声音要说的内容。",
+      "counter": "{{used}}/{{max}} 个字符",
+      "overLimit": "超出了你的套餐单次请求允许的长度（{{max}} 个字符）。",
+      "languageLabel": "语言",
+      "exaggerationLabel": "情感",
+      "exaggerationHint": "数值越低越平静，越高越富有表现力。",
+      "generate": "生成语音",
+      "generating": "正在生成…",
+      "notAllowed": "你的套餐不包含语音生成。"
+    },
+    "designer": {
+      "title": "描述一个声音",
+      "descriptionLabel": "描述",
+      "placeholder": "温暖、低沉、略带沙哑、中年、平静",
+      "hint": "描述声音听起来应该是什么样。引擎对英文描述的理解最好；下方的标签可添加常见特征。",
+      "languageLabel": "预览语言",
+      "languageNote": "设计的声音会用其中一种语言创建；保留后，它可以说语音工具支持的所有语言。",
+      "chipGroups": {
+        "gender": "性别",
+        "age": "年龄",
+        "accent": "口音",
+        "tone": "音色",
+        "pace": "语速"
+      },
+      "chips": {
+        "female": "女声",
+        "male": "男声",
+        "neutral": "中性",
+        "young": "青年",
+        "middleAged": "中年",
+        "older": "年长",
+        "american": "美式",
+        "british": "英式",
+        "australian": "澳式",
+        "irish": "爱尔兰式",
+        "warm": "温暖",
+        "bright": "明亮",
+        "deep": "低沉",
+        "raspy": "沙哑",
+        "soft": "柔和",
+        "slow": "慢",
+        "measured": "沉稳",
+        "fast": "快"
+      },
+      "preview": "预览",
+      "previewing": "正在生成预览…",
+      "previewsLeft": "剩余预览：{{left}}/{{max}}",
+      "previewsUsed": "你已用完此描述的 3 次预览。请保留该声音，或修改描述后再次预览。",
+      "previewLabel": "所描述声音的预览",
+      "keepTitle": "保留此声音",
+      "nameLabel": "声音名称",
+      "keep": "保留此声音",
+      "keeping": "正在保存声音…",
+      "kept": "声音已保存。现在可在“我的声音”中找到。",
+      "signInToKeep": "登录以保留此声音"
+    },
+    "changer": {
+      "modeLabel": "更改方式",
+      "modes": {
+        "shift": "变调（即时）",
+        "convert": "转换为某个声音（AI）"
+      },
+      "shiftHint": "使用 rubberband 即时调整音高和共振峰。计为一次操作。结果不带水印。",
+      "convertHint": "让录音听起来像某个已保存或预设的声音。计为一次 AI 任务。结果带有听不见的水印。",
+      "convertNotInPlan": "转换为某个声音不包含在你的套餐中。",
+      "upgrade": "查看套餐",
+      "signInToConvert": "登录以转换为某个声音",
+      "targetLabel": "转换为",
+      "convert": "转换",
+      "converting": "正在转换…"
+    },
+    "shifter": {
+      "semitonesLabel": "音高",
+      "semitonesValue": "{{value}} 个半音",
+      "formantLabel": "共振峰",
+      "formants": {
+        "preserved": "保留声音的特色",
+        "shifted": "随音高一起变化"
+      },
+      "presetsLabel": "预设",
+      "presets": {
+        "deeper": "更低沉",
+        "higher": "更高",
+        "child": "童声",
+        "elder": "年长",
+        "telephone": "电话"
+      },
+      "shift": "变声",
+      "shifting": "正在变声…"
+    },
+    "result": {
+      "working": "处理中…",
+      "failed": "声音任务失败。未计入额度。",
+      "downloadMp3": "下载 MP3",
+      "downloadWav": "下载 WAV",
+      "wavPreparing": "正在准备 WAV…",
+      "wavFailed": "无法在此浏览器中生成 WAV。请改为下载 MP3。",
+      "wavNote": "WAV 是在你的浏览器中由 MP3 解码而来。",
+      "another": "重新开始"
+    },
+    "darkroom": {
+      "title": "生成配音",
+      "description": "输入脚本，选择声音和语言。配音会添加到此项目的媒体中，并放置在播放头处。",
+      "placeholder": "输入配音脚本。",
+      "generate": "生成配音",
+      "presetsOnly": "未登录时，你可以使用预设声音。登录后可使用你保存的声音。",
+      "added": "配音已添加到播放头处",
+      "noAsset": "配音已生成，但无法添加到项目中。请重试。"
+    },
+    "errors": {
+      "sign_in_required": "请登录以保存和使用你自己的声音。",
+      "consent_required": "请勾选复选框，确认这是你自己的声音，或你已获得说话者的明确许可。",
+      "reference_required": "请先录制或上传 5 到 60 秒的语音。",
+      "reference_too_short": "录音必须至少 5 秒。",
+      "reference_too_long": "录音必须在 60 秒以内。",
+      "reference_too_large": "录音文件过大。",
+      "no_speech_detected": "在该录音中没有听到语音。请在安静的房间里录几句话。",
+      "not_audio": "该文件不是我们能读取的录音。",
+      "name_invalid": "请为声音取一个 1 到 60 个字符的名称。",
+      "language_not_supported": "此声音不支持该语言。",
+      "voice_limit": "你已达到套餐允许保存的声音数量（{{limit}}）。请删除一个，或升级以保存更多。",
+      "text_required": "请输入要说的内容。",
+      "text_too_long": "你的套餐每次请求最多允许 {{limit}} 个字符。",
+      "exaggeration_invalid": "情感值必须介于 0.25 和 2 之间。",
+      "voice_convert_not_in_plan": "转换为某个声音不包含在你的套餐中。",
+      "voice_input_too_long": "你的套餐在此处允许的录音最长为 {{limit}} 秒。",
+      "input_required": "请添加你想要更改的录音。",
+      "input_too_large": "录音对你的套餐来说过大。",
+      "voice_required": "请选择一个要转换成的声音。",
+      "voice_not_found": "该声音已不存在。",
+      "preset_not_found": "该预设声音不可用。",
+      "description_required": "请描述你想要的声音。",
+      "description_too_long": "描述请控制在 1000 个字符以内。",
+      "preview_limit": "你在一小时内已对此描述预览了三次。请保留该声音，或修改描述。",
+      "session_required": "预览需要浏览器会话。请重新加载页面后再试。",
+      "semitones_invalid": "音高必须介于 -12 和 12 个半音之间。",
+      "shift_invalid": "这些变调设置无效。",
+      "voices_unavailable": "声音引擎目前不可用。未计入额度；请稍后再试。",
+      "voices_storage_unavailable": "已保存的声音暂时不可用。未计入额度。",
+      "voices_timeout": "声音引擎耗时过长。未计入额度。",
+      "voice_request_refused": "声音引擎拒绝了该请求。",
+      "upload_failed": "上传失败。请重试。",
+      "job_failed": "无法启动该任务。请重试。",
+      "invalid_body": "请求中的某些内容无效。请重新加载页面后再试。",
+      "rate_limited": "过去一小时内的声音请求过多。请稍后再试。",
+      "generic": "出了点问题。请重试。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Annuler",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "continue": "Continuer",
+    "done": "Terminé",
+    "loading": "Chargement",
+    "processing": "Traitement en cours",
+    "signOut": "Se déconnecter",
+    "back": "Retour"
+  },
+  "tabs": {
+    "tools": "Outils",
+    "history": "Historique",
+    "account": "Compte"
+  },
+  "placeholders": {
+    "toolsBody": "Les outils arrivent avec MA10.",
+    "historyBody": "Vos tâches apparaîtront ici.",
+    "accountBody": "Le compte arrive avec MA15.",
+    "signInBody": "La connexion arrive avec MA04",
+    "openShell": "Ouvrir l'application",
+    "errorBoundary": "Une erreur s'est produite. Redémarrez l'application."
+  },
+  "language": {
+    "title": "Langue",
+    "system": "Langue du système",
+    "rtlReloadTitle": "Redémarrer pour changer le sens d'affichage",
+    "rtlReloadBody": "L'application doit redémarrer pour afficher cette langue de droite à gauche.",
+    "rtlReloadBodyLtr": "L'application doit redémarrer pour afficher cette langue de gauche à droite.",
+    "rtlReloadConfirm": "Redémarrer maintenant"
+  }
+}

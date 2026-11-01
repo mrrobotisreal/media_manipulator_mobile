@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "Preview"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "About the output image format",
+    "dpiTooltip": "About render quality (DPI)",
+    "pagesTooltip": "About page selection",
+    "qualityTooltip": "About JPG quality"
+  },
+  "ad": {
+    "label": "Advertisement",
+    "close": "Close advertisement"
+  },
+  "modals": {
+    "close": "Close",
+    "previousStep": "Previous step",
+    "nextStep": "Next step"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "Top-left handle",
+    "topRightHandle": "Top-right handle",
+    "bottomLeftHandle": "Bottom-left handle",
+    "bottomRightHandle": "Bottom-right handle"
+  },
+  "mediaTrimModal": {
+    "scrubber": "Trim scrubber",
+    "playToggle": "Play / pause preview"
+  },
+  "overlays": {
+    "canvas": "Selection canvas",
+    "removeRegion": "Remove this region",
+    "previousPage": "Previous page",
+    "nextPage": "Next page"
+  },
+  "quotaMeter": {
+    "gauge": "{{used}} / {{limit}} daily operations used",
+    "gaugeUnlimited": "No daily operation limit",
+    "aiGauge": "{{label}} {{used}} / {{limit}} daily AI jobs used",
+    "openUpgrade": "See how to get a bigger daily allowance",
+    "openAccount": "Open your account"
+  },
+  "accountMenu": {
+    "open": "Account menu"
+  }
+}

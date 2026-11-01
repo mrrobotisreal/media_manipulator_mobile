@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Accueil de Media Manipulator",
+    "openMenu": "Ouvrir le menu",
+    "github": "Voir sur GitHub",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "Changer de thème",
+    "languageMenu": "Changer de langue",
+    "navIcon": "Icône de Media Manipulator",
+    "winappsLogo": "Logo WinApps",
+    "creatvLogo": "Logo CreaTV",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "Aller au contenu",
+  "footer": {
+    "homeLink": "Accueil de Media Manipulator",
+    "navIcon": "Icône de Media Manipulator"
+  },
+  "home": {
+    "popularTools": "Outils populaires",
+    "closePreview": "Fermer l'aperçu"
+  },
+  "notFound": {
+    "recoveryRoutes": "Itinéraires de secours"
+  },
+  "loading": {
+    "label": "Chargement"
+  },
+  "languageSelector": {
+    "trigger": "Changer de langue",
+    "icon": "Icône de traduction"
+  },
+  "common": {
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "loading": "Chargement",
+    "moreOptions": "Plus d'options"
+  },
+  "transcribeForm": {
+    "formatTooltip": "À propos du format de sortie de la transcription",
+    "languageTooltip": "À propos de l'indication de langue"
+  },
+  "audioForm": {
+    "aiTooltip": "À propos des outils audio IA"
+  },
+  "videoForm": {
+    "aiTooltip": "À propos des outils vidéo IA"
+  },
+  "imageForm": {
+    "aiTooltip": "À propos des outils image IA",
+    "selectiveFacesTooltip": "À propos du floutage sélectif des visages",
+    "removeObjectTooltip": "À propos de la suppression d'objets",
+    "metadataTooltip": "À propos du traitement des métadonnées",
+    "vectorizeThresholdTooltip": "À propos du seuil de vectorisation"
+  }
+}

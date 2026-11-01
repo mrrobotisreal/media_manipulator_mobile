@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "不明なエラーが発生しました。もう一度お試しください。",
+    "unexpected": "問題が発生しました。もう一度お試しください。",
+    "networkOffline": "オフラインのようです。接続を確認してからもう一度お試しください。",
+    "tryAgainLater": "しばらくしてからもう一度お試しください。",
+    "missingFile": "ファイルが選択されていません。",
+    "missingField": "この項目は必須です。"
+  },
+  "upload": {
+    "fileTooLarge": "ファイルが大きすぎます。",
+    "unsupportedFormat": "対応していないファイル形式です。",
+    "uploadFailed": "アップロードに失敗しました。もう一度お試しください。",
+    "missingFile": "まずファイルを選択してください。"
+  },
+  "conversion": {
+    "failed": "変換に失敗しました。",
+    "failedTryAgain": "変換に失敗しました。もう一度お試しください。",
+    "previewFailed": "変換後の画像プレビューを読み込めませんでした",
+    "downloadFailed": "ダウンロードに失敗しました。もう一度お試しください。"
+  },
+  "transcribe": {
+    "failed": "文字起こしに失敗しました。",
+    "failedTryAgain": "文字起こしに失敗しました。もう一度お試しください。"
+  },
+  "transcode": {
+    "failed": "トランスコードに失敗しました。",
+    "failedTryAgain": "トランスコードに失敗しました。もう一度お試しください。"
+  },
+  "validation": {
+    "required": "この項目は必須です。",
+    "invalidNumber": "有効な数値を入力してください。",
+    "outOfRange": "値は{{min}}から{{max}}の間で指定してください。",
+    "tooShort": "{{count}}文字以上で入力してください。",
+    "tooLong": "{{count}}文字以内で入力してください。",
+    "invalidEmail": "有効なメールアドレスを入力してください。",
+    "invalidUrl": "有効なURLを入力してください。"
+  },
+  "auth": {
+    "signInFailed": "サインインに失敗しました。もう一度お試しください。",
+    "signUpFailed": "アカウント登録に失敗しました。もう一度お試しください。",
+    "passwordTooShort": "パスワードは8文字以上にしてください。",
+    "passwordsDoNotMatch": "パスワードが一致しません。",
+    "invalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
+    "emailRequired": "メールアドレスは必須です。",
+    "passwordRequired": "パスワードは必須です。",
+    "tryAgain": "もう一度お試しください。",
+    "userNotFound": "このメールアドレスのアカウントは見つかりませんでした。",
+    "wrongPassword": "パスワードが正しくありません。",
+    "emailAlreadyInUse": "このメールアドレスのアカウントはすでに存在します。",
+    "weakPassword": "パスワードは6文字以上にしてください。",
+    "invalidEmail": "有効なメールアドレスを入力してください。",
+    "tooManyRequests": "試行回数が多すぎます。数分待ってからもう一度お試しください。",
+    "network": "ネットワークエラーです。接続を確認してもう一度お試しください。"
+  },
+  "ad": {
+    "loadFailed": "広告を読み込めませんでした。"
+  },
+  "forms": {
+    "fixErrors": "次のエラーを修正してください：",
+    "invalidValue": "無効な値です",
+    "fieldRequired": "この項目は必須です。",
+    "invalidNumber": "有効な数値を入力してください。",
+    "outOfRange": "値は{{min}}から{{max}}の間で指定してください。",
+    "faceDetectFailed": "顔検出に失敗しました。もう一度お試しください。",
+    "removeObjectFailed": "オブジェクトの除去に失敗しました。もう一度お試しください。",
+    "imageForm": {
+      "noFile": "まず画像を選択してください。",
+      "exifLoadFailed": "このファイルのEXIFメタデータを読み取れませんでした。"
+    },
+    "videoForm": {
+      "noFile": "まず動画を選択してください。"
+    },
+    "audioForm": {
+      "noFile": "まず音声ファイルを選択してください。"
+    },
+    "transcribe": {
+      "noFile": "まずメディアファイルを選択してください。",
+      "invalidLanguage": "有効なBCP-47言語コードを入力してください。"
+    },
+    "transcode": {
+      "probeFailed": "ソースファイルの解析に失敗しました。別のファイルをお試しください。"
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "字幕の翻訳に失敗しました。",
+      "missingFile": "まず字幕ファイルをアップロードしてください。"
+    },
+    "stitchAudioToVideo": {
+      "failed": "音声と動画の結合に失敗しました。",
+      "missingTracks": "音声トラックを1つ以上追加してください。"
+    },
+    "extract": {
+      "failed": "抽出に失敗しました。",
+      "noStreams": "このファイルに該当するストリームが見つかりません。"
+    }
+  },
+  "errorBoundary": {
+    "title": "問題が発生しました",
+    "body": "予期しないエラーでこのページが中断されました。ファイルは失われていません。もう一度お試しいただき、問題が続く場合はページを再読み込みしてください。",
+    "tryAgain": "再試行",
+    "goHome": "ホームページへ"
+  },
+  "toasts": {
+    "conversionStartFailed": "変換を開始できませんでした。",
+    "transcriptionStartFailed": "文字起こしを開始できませんでした。",
+    "transcodeStartFailed": "トランスコードを開始できませんでした。",
+    "videoAnalysisFailed": "動画を解析できませんでした。",
+    "translationStartFailed": "翻訳を開始できませんでした。",
+    "scanStartFailed": "スキャンを開始できませんでした。",
+    "jobStartFailed": "ジョブを開始できませんでした。",
+    "stitchStartFailed": "結合ジョブを開始できませんでした。",
+    "restorationStartFailed": "復元を開始できませんでした。",
+    "identificationFailed": "ファイルを識別できませんでした。",
+    "jobStatusCheckFailed": "ジョブの状態を確認できませんでした。",
+    "exportStartFailed": "エクスポートを開始できませんでした。",
+    "exportFailed": "エクスポートに失敗しました。",
+    "saveProjectFailed": "プロジェクトを保存できませんでした。",
+    "createProjectFailed": "プロジェクトを作成できませんでした。",
+    "uploadFailed": "アップロードに失敗しました。",
+    "audioProcessingFailed": "音声処理に失敗しました。",
+    "unexpectedFallback": "予期しないエラーが発生しました。",
+    "conversionFailedFallback": "変換処理中にエラーが発生しました。",
+    "unableToGetProgress": "変換の進行状況を取得できません。"
+  }
+}

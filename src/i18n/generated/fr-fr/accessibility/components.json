@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "Aperçu"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "À propos du format d'image de sortie",
+    "dpiTooltip": "À propos de la qualité de rendu (DPI)",
+    "pagesTooltip": "À propos de la sélection des pages",
+    "qualityTooltip": "À propos de la qualité JPG"
+  },
+  "ad": {
+    "label": "Publicité",
+    "close": "Fermer la publicité"
+  },
+  "modals": {
+    "close": "Fermer",
+    "previousStep": "Étape précédente",
+    "nextStep": "Étape suivante"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "Poignée supérieure gauche",
+    "topRightHandle": "Poignée supérieure droite",
+    "bottomLeftHandle": "Poignée inférieure gauche",
+    "bottomRightHandle": "Poignée inférieure droite"
+  },
+  "mediaTrimModal": {
+    "scrubber": "Curseur de découpe",
+    "playToggle": "Lire / mettre en pause l'aperçu"
+  },
+  "overlays": {
+    "canvas": "Zone de sélection",
+    "removeRegion": "Retirer cette zone",
+    "previousPage": "Page précédente",
+    "nextPage": "Page suivante"
+  },
+  "quotaMeter": {
+    "gauge": "{{used}} / {{limit}} opérations quotidiennes utilisées",
+    "gaugeUnlimited": "Aucune limite d'opérations quotidiennes",
+    "aiGauge": "{{label}} {{used}} / {{limit}} tâches IA quotidiennes utilisées",
+    "openUpgrade": "Découvrir comment obtenir un quota quotidien plus élevé",
+    "openAccount": "Ouvrir votre compte"
+  },
+  "accountMenu": {
+    "open": "Menu du compte"
+  }
+}

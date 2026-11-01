@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "close": "Close",
+    "continue": "Continue",
+    "done": "Done",
+    "loading": "Loading",
+    "processing": "Processing",
+    "signOut": "Sign out",
+    "back": "Back"
+  },
+  "tabs": {
+    "tools": "Tools",
+    "history": "History",
+    "account": "Account"
+  },
+  "placeholders": {
+    "toolsBody": "Tools arrive in MA10.",
+    "historyBody": "Your jobs will appear here.",
+    "accountBody": "Account arrives in MA15.",
+    "signInBody": "Sign-in arrives in MA04",
+    "openShell": "Open app shell",
+    "errorBoundary": "Something went wrong. Restart the app."
+  },
+  "language": {
+    "title": "Language",
+    "system": "System default",
+    "rtlReloadTitle": "Restart to switch layout direction",
+    "rtlReloadBody": "The app needs to restart to show this language right to left.",
+    "rtlReloadBodyLtr": "The app needs to restart to show this language left to right.",
+    "rtlReloadConfirm": "Restart now"
+  }
+}

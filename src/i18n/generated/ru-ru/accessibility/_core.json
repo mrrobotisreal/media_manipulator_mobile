@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Главная страница Media Manipulator",
+    "openMenu": "Открыть меню",
+    "github": "Посмотреть на GitHub",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "Переключить тему",
+    "languageMenu": "Изменить язык",
+    "navIcon": "Значок Media Manipulator",
+    "winappsLogo": "Логотип WinApps",
+    "creatvLogo": "Логотип CreaTV",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "Перейти к содержимому",
+  "footer": {
+    "homeLink": "Главная страница Media Manipulator",
+    "navIcon": "Значок Media Manipulator"
+  },
+  "home": {
+    "popularTools": "Популярные инструменты",
+    "closePreview": "Закрыть предпросмотр"
+  },
+  "notFound": {
+    "recoveryRoutes": "Пути восстановления"
+  },
+  "loading": {
+    "label": "Загрузка"
+  },
+  "languageSelector": {
+    "trigger": "Изменить язык",
+    "icon": "Значок перевода"
+  },
+  "common": {
+    "close": "Закрыть",
+    "open": "Открыть",
+    "loading": "Загрузка",
+    "moreOptions": "Дополнительные параметры"
+  },
+  "transcribeForm": {
+    "formatTooltip": "О формате выходного транскрипта",
+    "languageTooltip": "О подсказке языка"
+  },
+  "audioForm": {
+    "aiTooltip": "Об ИИ-инструментах для аудио"
+  },
+  "videoForm": {
+    "aiTooltip": "Об ИИ-инструментах для видео"
+  },
+  "imageForm": {
+    "aiTooltip": "Об ИИ-инструментах для изображений",
+    "selectiveFacesTooltip": "О выборочной приватности лиц",
+    "removeObjectTooltip": "Об удалении объектов",
+    "metadataTooltip": "Об обработке метаданных",
+    "vectorizeThresholdTooltip": "О пороге векторизации"
+  }
+}

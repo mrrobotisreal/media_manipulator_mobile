@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "Vorschau"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "Über das Ausgabebildformat",
+    "dpiTooltip": "Über die Renderqualität (DPI)",
+    "pagesTooltip": "Über die Seitenauswahl",
+    "qualityTooltip": "Über die JPG-Qualität"
+  },
+  "ad": {
+    "label": "Werbung",
+    "close": "Werbung schließen"
+  },
+  "modals": {
+    "close": "Schließen",
+    "previousStep": "Vorheriger Schritt",
+    "nextStep": "Nächster Schritt"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "Anfasser oben links",
+    "topRightHandle": "Anfasser oben rechts",
+    "bottomLeftHandle": "Anfasser unten links",
+    "bottomRightHandle": "Anfasser unten rechts"
+  },
+  "mediaTrimModal": {
+    "scrubber": "Trimm-Regler",
+    "playToggle": "Vorschau abspielen/pausieren"
+  },
+  "overlays": {
+    "canvas": "Auswahlbereich",
+    "removeRegion": "Diesen Bereich entfernen",
+    "previousPage": "Vorherige Seite",
+    "nextPage": "Nächste Seite"
+  },
+  "quotaMeter": {
+    "gauge": "{{used}} von {{limit}} täglichen Vorgängen genutzt",
+    "gaugeUnlimited": "Kein tägliches Vorgangslimit",
+    "aiGauge": "{{label}} {{used}} / {{limit}} tägliche KI-Aufträge genutzt",
+    "openUpgrade": "So erhalten Sie ein größeres Tageskontingent",
+    "openAccount": "Ihr Konto öffnen"
+  },
+  "accountMenu": {
+    "open": "Kontomenü"
+  }
+}

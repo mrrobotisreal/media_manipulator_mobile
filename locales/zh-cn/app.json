@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "确定",
+    "cancel": "取消",
+    "retry": "重试",
+    "close": "关闭",
+    "continue": "继续",
+    "done": "完成",
+    "loading": "加载中",
+    "processing": "处理中",
+    "signOut": "退出登录",
+    "back": "返回"
+  },
+  "tabs": {
+    "tools": "工具",
+    "history": "历史记录",
+    "account": "账户"
+  },
+  "placeholders": {
+    "toolsBody": "工具将在 MA10 中推出。",
+    "historyBody": "您的任务将显示在这里。",
+    "accountBody": "账户将在 MA15 中推出。",
+    "signInBody": "登录将在 MA04 中推出",
+    "openShell": "打开应用外壳",
+    "errorBoundary": "出了点问题。请重新启动应用。"
+  },
+  "language": {
+    "title": "语言",
+    "system": "系统默认",
+    "rtlReloadTitle": "重启以切换布局方向",
+    "rtlReloadBody": "应用需要重启才能以从右到左的方向显示此语言。",
+    "rtlReloadBodyLtr": "应用需要重启才能以从左到右的方向显示此语言。",
+    "rtlReloadConfirm": "立即重启"
+  }
+}

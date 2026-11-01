@@ -1,0 +1,57 @@
+{
+  "topNav": {
+    "homeLink": "Media Manipulator 首頁",
+    "openMenu": "開啟選單",
+    "github": "在 GitHub 上檢視",
+    "winapps": "WinApps",
+    "creatv": "CreaTV",
+    "toggleTheme": "切換主題",
+    "languageMenu": "變更語言",
+    "navIcon": "Media Manipulator 圖示",
+    "winappsLogo": "WinApps 標誌",
+    "creatvLogo": "CreaTV 標誌",
+    "githubLogo": "GitHub"
+  },
+  "skipToContent": "跳至主要內容",
+  "footer": {
+    "homeLink": "Media Manipulator 首頁",
+    "navIcon": "Media Manipulator 圖示"
+  },
+  "home": {
+    "popularTools": "熱門工具",
+    "closePreview": "關閉預覽"
+  },
+  "notFound": {
+    "recoveryRoutes": "可用的路徑"
+  },
+  "loading": {
+    "label": "載入中"
+  },
+  "languageSelector": {
+    "trigger": "變更語言",
+    "icon": "翻譯圖示"
+  },
+  "common": {
+    "close": "關閉",
+    "open": "開啟",
+    "loading": "載入中",
+    "moreOptions": "更多選項"
+  },
+  "transcribeForm": {
+    "formatTooltip": "關於逐字稿輸出格式",
+    "languageTooltip": "關於語言提示"
+  },
+  "audioForm": {
+    "aiTooltip": "關於 AI 音訊工具"
+  },
+  "videoForm": {
+    "aiTooltip": "關於 AI 影片工具"
+  },
+  "imageForm": {
+    "aiTooltip": "關於 AI 圖片工具",
+    "selectiveFacesTooltip": "關於選擇性臉部隱私",
+    "removeObjectTooltip": "關於物件移除",
+    "metadataTooltip": "關於中繼資料處理",
+    "vectorizeThresholdTooltip": "關於向量化閾值"
+  }
+}

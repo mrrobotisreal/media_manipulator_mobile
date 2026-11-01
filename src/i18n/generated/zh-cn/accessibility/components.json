@@ -1,0 +1,46 @@
+{
+  "filePreview": {
+    "previewAlt": "预览"
+  },
+  "pdfForm": {
+    "outputFormatTooltip": "关于输出图片格式",
+    "dpiTooltip": "关于渲染质量（DPI）",
+    "pagesTooltip": "关于页面选择",
+    "qualityTooltip": "关于JPG质量"
+  },
+  "ad": {
+    "label": "广告",
+    "close": "关闭广告"
+  },
+  "modals": {
+    "close": "关闭",
+    "previousStep": "上一步",
+    "nextStep": "下一步"
+  },
+  "imageCropModal": {
+    "topLeftHandle": "左上角控制点",
+    "topRightHandle": "右上角控制点",
+    "bottomLeftHandle": "左下角控制点",
+    "bottomRightHandle": "右下角控制点"
+  },
+  "mediaTrimModal": {
+    "scrubber": "裁剪拖动条",
+    "playToggle": "播放/暂停预览"
+  },
+  "overlays": {
+    "canvas": "选择画布",
+    "removeRegion": "移除此区域",
+    "previousPage": "上一页",
+    "nextPage": "下一页"
+  },
+  "quotaMeter": {
+    "gauge": "已使用{{used}}/{{limit}}次每日操作",
+    "gaugeUnlimited": "无每日操作次数限制",
+    "aiGauge": "{{label}} {{used}} / {{limit}}：已使用的每日AI任务",
+    "openUpgrade": "了解如何获得更高的每日额度",
+    "openAccount": "打开你的账号"
+  },
+  "accountMenu": {
+    "open": "账号菜单"
+  }
+}

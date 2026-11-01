@@ -1,0 +1,1406 @@
+{
+  "transcribeResultView": {
+    "loading": "전사 결과 불러오는 중...",
+    "noResult": "이 작업에는 전사 결과가 없습니다.",
+    "complete": "전사 완료",
+    "outputFormat": "출력 형식:",
+    "language": "언어: {{language}}",
+    "duration": "길이: {{duration}}",
+    "noAudioStream": "오디오 스트림 없음",
+    "noSpeech": "인식 가능한 음성 없음",
+    "nothingToTranscribe": "전사할 내용 없음",
+    "noTranscriptGenerated": "이 파일에서는 전사본을 생성할 수 없었습니다.",
+    "transcriptHeader_other": "전사본 (구간 {{count}}개)",
+    "aiSummaryTitle": "AI 요약 및 안전성 검토",
+    "analysisRunning": "백그라운드에서 요약과 안전성 검토를 실행하는 중...",
+    "analysisError": "분석 오류: {{error}}",
+    "summary": "요약",
+    "extendedSummary": "상세 요약",
+    "safetyBadge": "안전성: {{rating}}",
+    "harmfulFlagged": "유해할 수 있는 콘텐츠가 감지됨",
+    "harmfulNone": "유해 콘텐츠 없음",
+    "sentimentBadge": "감정: {{label}}",
+    "notesLabel": "참고: {{notes}}",
+    "summaryPending": "분석 작업이 끝나면 요약과 안전성 검토가 여기에 표시됩니다.",
+    "unknown": "알 수 없음"
+  },
+  "summarize": {
+    "loading": "요약 기능을 사용할 수 있는지 확인하는 중…",
+    "unavailable": "동영상 및 오디오 요약을 일시적으로 사용할 수 없어요. 나중에 다시 시도해 주세요. 전사 페이지는 계속 사용할 수 있어요.",
+    "notInPlan": "현재 요금제에는 요약이 포함되어 있지 않아요.",
+    "signIn": {
+      "title": "요약하려면 로그인하세요",
+      "body": "요약은 자체 GPU 서버에서 실행되며 무료 계정이 필요해요. 로그인하거나 계정을 만든 다음 파일을 업로드하세요.",
+      "button": "로그인",
+      "signup": "무료 계정 만들기"
+    },
+    "uploadHintVideo": "동영상 또는 오디오 파일",
+    "uploadHintAudio": "오디오 파일",
+    "outputLanguage": "요약 언어",
+    "sameAsSpeech": "음성과 같은 언어",
+    "depth": {
+      "label": "상세도",
+      "standard": "표준",
+      "deep": "심층",
+      "hint": "심층은 더 큰 모델로 요약을 작성해요. 시간이 더 걸려요."
+    },
+    "note": "하루 사용량에서 AI 작업 1건을 사용해요. 실패한 작업은 포함되지 않아요.",
+    "noteFrames": "현재 요금제는 동영상에서 최대 {{frames}}개의 프레임을 읽어요. 하루 사용량에서 AI 작업 1건을 사용하며, 실패한 작업은 포함되지 않아요.",
+    "start": "요약하기",
+    "stagesTitle": "진행 상황",
+    "stages": {
+      "probe": "파일 읽는 중",
+      "audio": "음성 전사 중",
+      "frames": "프레임 선택 중",
+      "vision": "프레임 분석 중",
+      "synthesis": "요약 작성 중",
+      "render": "결과 정리 중"
+    },
+    "status": {
+      "pending": "대기 중",
+      "processing": "진행 중",
+      "completed": "완료",
+      "skipped": "건너뜀",
+      "failed": "실패"
+    },
+    "framesCount": "프레임: {{count}}개",
+    "errors": {
+      "signin_required": "요약하려면 로그인하세요.",
+      "summary_not_in_plan": "현재 요금제에는 요약이 포함되어 있지 않아요.",
+      "summary_unavailable": "요약을 일시적으로 사용할 수 없어요. 나중에 다시 시도해 주세요.",
+      "unreadable_media": "이 파일을 오디오나 동영상으로 읽을 수 없어요.",
+      "no_audio_or_video": "이 파일에는 요약할 오디오나 동영상이 없어요.",
+      "file_too_large": "이 파일이 현재 요금제에서 허용하는 크기나 길이를 초과해요.",
+      "upload_not_found": "업로드한 파일을 찾을 수 없어요. 다시 시도해 주세요.",
+      "quota_exceeded": "오늘의 AI 작업을 모두 사용했어요.",
+      "invalid_request": "요청이 받아들여지지 않았어요. 페이지를 새로고침한 후 다시 시도해 주세요.",
+      "unknown": "요약을 시작할 수 없어요. 다시 시도해 주세요."
+    }
+  },
+  "specializedToolShell": {
+    "dropHere": "{{hint}}을(를) 여기에 놓으세요",
+    "selectHint": "또는 클릭해서 컴퓨터에서 선택하세요. 비회원의 파일은 24시간 보관되며, 무료 계정이 있으면 24시간부터 2년까지 직접 선택할 수 있어요.",
+    "selectFile": "파일 선택",
+    "removeFile": "파일 제거",
+    "uploadingPercent": "업로드 중 {{percent}}%",
+    "workingOnFile": "파일 처리 중…",
+    "previewResult": "결과 미리보기",
+    "downloadResult": "결과 다운로드",
+    "jobFailed": "작업에 실패했습니다. 다른 파일로 시도하거나 새로고침해 주세요.",
+    "resultPreview": "결과 미리보기",
+    "toggleHint": "원본 입력과 최종 결과를 전환하며 비교하세요.",
+    "closePreview": "미리보기 닫기",
+    "loadingPreview": "미리보기 불러오는 중…",
+    "zipPreviewTitle": "ZIP 다운로드는 미리보기를 지원하지 않습니다",
+    "zipPreviewBody": "이 결과는 ZIP 압축 파일로 제공됩니다. 다운로드한 뒤 로컬에서 압축을 풀어 내용을 확인하세요."
+  },
+  "embeddedToolPanel": {
+    "sectionAria": "내장 미디어 변환기",
+    "tryItNow": "지금 사용해 보기",
+    "recommendedOutput": "권장 출력:",
+    "outputFormat": "출력 형식:",
+    "outputLocked": "이 도구의 출력 고정:",
+    "expectedInput": "예상 입력:",
+    "accepts": "허용 형식:",
+    "dragDrop": "{{kind}} 파일을 여기로 끌어다 놓으세요",
+    "mediaKinds": {
+      "image": "이미지",
+      "video": "동영상",
+      "audio": "오디오",
+      "pdf": "PDF"
+    },
+    "selectHint": "또는 클릭해서 컴퓨터에서 선택하세요. 비회원의 파일은 24시간 보관되며, 무료 계정이 있으면 24시간부터 2년까지 직접 선택할 수 있어요.",
+    "selectFile": "파일 선택",
+    "removeFile": "파일 제거",
+    "uploadingPercent": "업로드 중 {{percent}}%",
+    "workingOnFile": "파일 처리 중…",
+    "downloadFilename": "{{filename}} 다운로드",
+    "transcribeFailed": "전사에 실패했습니다.",
+    "conversionFailed": "변환에 실패했습니다.",
+    "tryAgainOrOpen": "다시 시도하거나 전체 변환기를 여세요.",
+    "needFullPrefix": "모든 기능이 필요하신가요?",
+    "openFullConverter": "전체 변환기 열기",
+    "needFullSuffix": "— 변환 기록, 전사 흐름, AI 도구가 포함되어 있어요."
+  },
+  "extractAudio": {
+    "title": "오디오 추출",
+    "subtitle": "동영상 파일에서 오디오 트랙을 꺼내 MP3, WAV, AAC, OGG 또는 FLAC로 저장하세요.",
+    "formatLabel": "출력 오디오 형식",
+    "outputLocked": "이 도구에서는 {{format}}(으)로 고정됨",
+    "expectedInput": "예상 입력: {{format}}",
+    "submit": "오디오 추출",
+    "running": "추출 중…",
+    "success": "오디오가 추출되었습니다. 다운로드 버튼으로 저장하세요.",
+    "uploadHint": "동영상 파일",
+    "note": "추출된 트랙은 원본의 전체 길이와 품질을 유지합니다. 오디오가 없는 동영상은 명확한 오류를 반환합니다.",
+    "formats": {
+      "mp3": "MP3 (작고, 어디서나 재생)",
+      "wav": "WAV (무손실, 큼)",
+      "m4a": "M4A (AAC — 좋은 품질, 작음)",
+      "aac": "AAC (원시)",
+      "flac": "FLAC (무손실)",
+      "ogg": "OGG (Vorbis)"
+    }
+  },
+  "videoCompressor": {
+    "uploadHint": "동영상 파일",
+    "expectedInput": "예상 입력: {{format}}",
+    "levelLabel": "압축 수준",
+    "levels": {
+      "smallest": "가장 작은 파일",
+      "balanced": "균형 (권장)",
+      "high_quality": "고품질"
+    },
+    "levelHints": {
+      "smallest": "이메일과 채팅용으로 최대한 줄입니다. 디테일이 많은 영상에서는 눈에 띄는 화질 저하가 있을 수 있습니다.",
+      "balanced": "대부분의 동영상과 소셜 업로드에 적합한 크기와 품질의 균형입니다.",
+      "high_quality": "디테일을 최대한 유지합니다. 원본보다 작아지지만 그만큼 많이 줄지는 않습니다."
+    },
+    "formatLabel": "출력 형식",
+    "outputLocked": "이 도구에서는 {{format}}(으)로 고정됨",
+    "resolutionLabel": "해상도",
+    "resolutions": {
+      "keep": "원본 유지",
+      "1080": "1080p (Full HD)",
+      "720": "720p (HD)",
+      "480": "480p (SD)"
+    },
+    "codecLabel": "코덱",
+    "codecs": {
+      "h264": "H.264 (가장 호환성 높음)",
+      "h265": "H.265 / HEVC (더 작음, 최신 기기)"
+    },
+    "stripAudio": "오디오 트랙을 제거해 파일을 더 작게",
+    "note": "선택한 수준으로 동영상을 다시 인코딩합니다. MP4 출력은 즉시 재생을 위해 faststart가 적용된 H.264 + AAC를 사용합니다.",
+    "running": "압축 중…",
+    "submit": "동영상 압축"
+  },
+  "videoTrimmer": {
+    "uploadHint": "동영상 파일",
+    "expectedInput": "예상 입력: {{format}}",
+    "startLabel": "시작 (초)",
+    "endLabel": "끝 (초)",
+    "durationLabel": "클립 길이: {{duration}}",
+    "invalidRange": "종료 시간을 시작 시간보다 뒤로 설정하세요.",
+    "pickRange": "구간을 눈으로 보며 선택",
+    "formatLabel": "출력 형식",
+    "outputLocked": "이 도구에서는 {{format}}(으)로 고정됨",
+    "reencodeLabel": "프레임 단위로 정확하게 자르기 위해 다시 인코딩",
+    "reencodeHint": "다시 인코딩하면 지정한 시간에 정확히 잘리지만 더 느리고 파일 크기가 약간 달라질 수 있습니다.",
+    "note": "가능한 경우 항상 빠른 무손실 자르기(재인코딩 없음)로 원본 품질을 유지합니다.",
+    "running": "자르는 중…",
+    "submit": "동영상 자르기",
+    "submitCut": "동영상 잘라내기"
+  },
+  "videoTransform": {
+    "uploadHint": "동영상 파일",
+    "expectedInput": "예상 입력: {{format}}",
+    "autoPlaceholder": "자동",
+    "widthLabel": "너비 (px)",
+    "heightLabel": "높이 (px)",
+    "preserveAspect": "화면 비율 유지 (상자 안에 맞춤)",
+    "resizeNote": "한 필드를 비워 두면 다른 쪽이 비례해서 조정됩니다. 한 변당 최대 4096 px.",
+    "rotationLabel": "회전",
+    "rotations": {
+      "90": "시계 방향 90°",
+      "180": "180° (거꾸로)",
+      "270": "반시계 방향 90°"
+    },
+    "flipH": "좌우 뒤집기",
+    "flipV": "상하 뒤집기",
+    "rotateNote": "옆으로 누웠거나 거꾸로 된 동영상을 바로잡습니다. 90°와 270°는 너비와 높이가 서로 바뀝니다.",
+    "cropX": "왼쪽 오프셋 (X, px)",
+    "cropY": "위쪽 오프셋 (Y, px)",
+    "cropW": "자르기 너비 (px)",
+    "cropH": "자르기 높이 (px)",
+    "cropNote": "왼쪽 위 모서리를 기준으로 남길 사각형을 픽셀 단위로 입력하세요. 너비와 높이는 필수입니다.",
+    "formatLabel": "출력 형식",
+    "outputLocked": "이 도구에서는 {{format}}(으)로 고정됨",
+    "running": "처리 중…",
+    "submit": {
+      "crop": "동영상 자르기",
+      "resize": "동영상 크기 조정",
+      "rotate": "동영상 회전"
+    }
+  },
+  "extractVideoOnly": {
+    "title": "동영상만 추출 (오디오 없음)",
+    "subtitle": "동영상 파일에서 오디오 트랙을 제거하고 비디오 스트림만 남깁니다.",
+    "uploadHint": "동영상 파일",
+    "formatLabel": "출력 컨테이너",
+    "formats": {
+      "mp4": "MP4 (권장)",
+      "webm": "WebM"
+    },
+    "note": "가능한 경우 비디오 스트림을 그대로 복사하므로 화질 손실이 없습니다. 대상 컨테이너에 필요한 경우에만 다시 인코딩합니다.",
+    "submit": "동영상에서 오디오 제거",
+    "running": "오디오 제거 중…",
+    "success": "비디오 스트림이 추출되었습니다."
+  },
+  "extractFrames": {
+    "title": "프레임 추출",
+    "subtitle": "동영상의 개별 프레임을 PNG, JPG 또는 WebP 이미지로 저장하세요.",
+    "uploadHint": "동영상 파일",
+    "modeLabel": "추출 방식",
+    "modes": {
+      "every_n_seconds": "N초마다",
+      "fps": "초당 지정 프레임 수",
+      "timestamp": "지정한 시점"
+    },
+    "secondsBetween": "프레임 간격 (초)",
+    "fpsLabel": "초당 프레임 수",
+    "timestampsLabel": "시점 (초, 쉼표로 구분)",
+    "timestampsPlaceholder": "예: 1, 5.5, 12, 30",
+    "imageFormatLabel": "이미지 형식",
+    "formats": {
+      "jpg": "JPG",
+      "png": "PNG (무손실)",
+      "webp": "WebP"
+    },
+    "maxFramesLabel": "최대 프레임 수",
+    "zipNote": "프레임은 하나의 ZIP으로 묶여 다운로드됩니다. 작업을 빠르고 예측 가능하게 유지하기 위해 개수를 제한하며, 정말 더 필요하면 한도를 올리세요.",
+    "submit": "프레임 추출",
+    "running": "프레임 추출 중…",
+    "success": "프레임이 추출되었습니다. 아래에서 ZIP을 다운로드하세요."
+  },
+  "captionTranslator": {
+    "title": "자막 번역",
+    "subtitle": "VTT, SRT 또는 TXT 자막 파일을 업로드하고 다른 언어로 번역하세요.",
+    "dropHere": ".srt 또는 .vtt 파일을 여기에 놓으세요",
+    "privacyNote": "비회원의 파일은 24시간 보관되며, 무료 계정이 있으면 24시간부터 2년까지 직접 선택할 수 있어요. 자막은 제3자 AI 제공업체로 전송하지 않아요.",
+    "selectCaptionFile": "자막 파일 선택",
+    "removeFile": "파일 제거",
+    "sourceLanguage": "원본 언어",
+    "targetLanguage": "대상 언어",
+    "autoDetect": "자동 감지 (권장)",
+    "outputFormat": "출력 형식",
+    "sameAsInput": "입력과 동일 ({{format}})",
+    "formats": {
+      "srt": "SRT (SubRip)",
+      "vtt": "VTT (WebVTT)"
+    },
+    "timingNote": "자막 항목의 타이밍과 순서는 그대로 유지되고 텍스트만 번역됩니다.",
+    "translating": "번역 중…",
+    "translateCaptions": "자막 번역",
+    "uploadingPercent": "업로드 중 {{percent}}%",
+    "translatingWithModel": "로컬 AI 모델로 번역 중…",
+    "downloadTranslated": "번역된 자막 다운로드",
+    "translationFailed": "번역에 실패했습니다. 더 작은 파일이나 다른 대상 언어로 시도해 보세요."
+  },
+  "stitchAudioToVideo": {
+    "title": "동영상에 오디오 합치기",
+    "subtitle": "동영상 파일에 오디오 트랙을 추가하거나 교체하세요.",
+    "dropBaseVideo": "기본 동영상을 여기에 놓으세요",
+    "intro": "먼저 동영상을 고르세요. 다음 단계에서 오디오 트랙(보이스오버, 음악, 내레이션)을 추가해요.",
+    "selectVideo": "동영상 선택",
+    "removeBaseVideo": "기본 동영상 제거",
+    "audioTracks": "오디오 트랙",
+    "removeTrack": "트랙 제거",
+    "volume": "볼륨",
+    "startOffset": "시작 오프셋 (초)",
+    "loopTrack": "동영상 길이에 맞춰 이 트랙 반복",
+    "addAudioTrack": "오디오 트랙 추가 ({{count}}/{{max}})",
+    "audioModeLabel": "오디오 모드",
+    "audioModes": {
+      "mix": "기존 오디오와 믹스",
+      "replace": "원본 오디오 교체"
+    },
+    "outputLengthLabel": "출력 길이",
+    "outputLength": {
+      "video": "동영상 길이에 맞춰 자르기",
+      "longest": "가장 긴 입력에 맞추기"
+    },
+    "stitching": "오디오 + 동영상 합치는 중…",
+    "addAudioToVideo": "동영상에 오디오 추가",
+    "uploadingPercent": "업로드 중 {{percent}}%",
+    "mixingOnServer": "서버에서 믹싱 중…",
+    "downloadStitched": "합쳐진 동영상 다운로드",
+    "stitchFailed": "합치기에 실패했습니다. 오디오 파일이 올바른지 확인한 뒤 다시 시도해 주세요."
+  },
+  "aiVideoTools": {
+    "title": "AI 동영상 도구",
+    "tooltipIntro": "AI 동영상 도구에는 현재 <strong>AI 프레임 보간</strong>이 포함되어 있으며, 중간 프레임을 새로 생성해 움직임을 더 부드럽게 재생합니다.",
+    "tooltipBestFor": "24/30fps 영상을 60fps로, 또는 60fps를 120fps로 올리는 데 가장 적합합니다. GPU 부하가 크며 현재는 항상 MP4로 출력합니다.",
+    "intro": "AI 프레임 보간은 중간 프레임을 만들어 움직임을 더 부드럽게 해요. 24/30fps → 60fps 또는 60fps → 120fps 클립에 가장 잘 맞아요.",
+    "gpuNote": "GPU 부하가 크며 현재는 MP4로 출력해요. 길거나 4K인 동영상은 먼저 최대 처리 높이를 낮춰 보세요. 기본 FPS 변환과는 달라요. AI 보간은 프레임을 복제하는 대신 새로 합성하며, v1에서는 다른 시각/시간 필터 대부분을 건너뛰어요.",
+    "operationLabel": "작업",
+    "operations": {
+      "none_short": "없음",
+      "frame_interpolation": "AI 프레임 보간"
+    },
+    "frameInterpolation": {
+      "targetFpsLabel": "목표 프레임 레이트",
+      "modelLabel": "RIFE 모델",
+      "models": {
+        "rife-v4.6": "RIFE v4.6 — 권장",
+        "rife-v4": "RIFE v4",
+        "rife-v2.3": "RIFE v2.3 — 호환용"
+      },
+      "qualityLabel": "품질",
+      "qualityOptions": {
+        "low": "낮음 — 빠른 인코딩",
+        "medium": "중간 — 균형",
+        "high": "높음 — 느린 인코딩"
+      },
+      "maxHeightLabel": "최대 처리 높이",
+      "preserveAudio": "원본의 오디오 트랙 유지"
+    },
+    "notes": {
+      "mp4": "v1에서는 출력이 항상 MP4(H.264 + AAC)입니다.",
+      "trim": "v1에서는 AI 프레임 보간과 자르기를 함께 사용할 수 없습니다. 필요하면 먼저 클립을 따로 자르세요.",
+      "artifacts": "빠른 움직임, 장면 전환, 머리카락, 손, 바퀴, 가려진 부분에서는 보간 아티팩트가 나타날 수 있습니다. 게시하기 전에 미리 확인하세요."
+    }
+  },
+  "videoRestore": {
+    "selector": {
+      "timelineLabel": "구간 선택 타임라인",
+      "startHandle": "선택 시작",
+      "endHandle": "선택 끝",
+      "playSelection": "선택 구간 재생",
+      "pause": "일시정지",
+      "start": "시작",
+      "end": "끝",
+      "startTime": "시작 시간 (m:ss.t)",
+      "endTime": "종료 시간 (m:ss.t)",
+      "nudgeBack": "0.1초 뒤로",
+      "nudgeForward": "0.1초 앞으로",
+      "selected": "선택됨",
+      "frames": "프레임",
+      "estimate": "예상",
+      "fpsAssumption": "프레임 추정치는 30fps 기준이며, 서버는 동영상의 실제 프레임 레이트를 사용합니다",
+      "overRecommended": "{{seconds}}초보다 긴 선택도 가능하지만 처리 시간이 급격히 늘어납니다. 짧은 구간으로도 충분히 비교할 수 있습니다.",
+      "overFrameBudget": "이 선택은 30fps 기준 {{maxFrames}}프레임 한도를 넘을 가능성이 큽니다. 동영상의 실제 프레임 레이트가 약 30fps보다 높다면 선택 구간을 줄이세요."
+    },
+    "picker": {
+      "title": "복원 모델",
+      "selectAll": "모두 선택",
+      "selectNone": "없음",
+      "frameGroup": "프레임 단위 향상 모델 — 향상된 프레임 + 동영상 포함",
+      "videoGroup": "동영상 복원 모델 — 동영상만",
+      "unavailable": "이 서버에서는 사용할 수 없음",
+      "includeFrames": "향상된 프레임 포함 (PNG)",
+      "includeFramesHint": "프레임 단위 모델이 향상한 모든 프레임을 동영상과 함께 다운로드에 추가합니다.",
+      "includeFramesWarning": "프레임을 포함하면 다운로드 크기가 몇 배로 늘 수 있습니다. 10초 클립이면 모델당 수백 장의 큰 PNG가 추가될 수 있습니다.",
+      "noneSelected": "계속하려면 모델을 하나 이상 선택하세요.",
+      "runningTotal": "모델 {{count}}개 선택됨 · 총 예상 처리 시간 {{estimate}}"
+    },
+    "models": {
+      "realesrgan": {
+        "description": "빠른 GAN 업스케일러 — 모든 비교에 포함해야 할 기본 기준선."
+      },
+      "swinir": {
+        "description": "트랜스포머 기반 실사 SR — 질감이 강하고 Real-ESRGAN보다 느림."
+      },
+      "hat": {
+        "description": "하이브리드 어텐션 SR GAN — 정지 화면이 가장 선명한 경우가 많고, A 그룹에서 가장 느림."
+      },
+      "basicvsrpp": {
+        "description": "순환 동영상 SR — 인접 프레임을 활용해 시간적 일관성을 유지."
+      },
+      "rvrt": {
+        "description": "순환 동영상 복원 트랜스포머 — 움직임을 인식하는 강력한 디테일."
+      },
+      "vrt": {
+        "description": "동영상 복원 트랜스포머 — 많은 클립에서 최고 품질이지만 단연 가장 느림."
+      }
+    },
+    "panel": {
+      "loading": "서버 기능 확인 중…",
+      "disabled": "AI 동영상 복원은 이 서버에서 일시적으로 사용할 수 없습니다.",
+      "notAVideo": "동영상 파일을 선택해 주세요.",
+      "tooLarge": "이 동영상은 업로드 한도 {{max}}을(를) 초과합니다.",
+      "dropTitle": "동영상을 여기에 놓거나 클릭해서 선택하세요",
+      "dropHint": "복원할 짧은 구간(최대 15초)을 고르게 되므로 긴 동영상도 괜찮아요.",
+      "fileLabel": "파일:",
+      "changeFile": "파일 변경",
+      "preparingUpload": "업로드 준비 중…",
+      "uploading": "보안 스토리지에 업로드 중… {{percent}}%",
+      "startingJob": "복원 작업 시작 중…",
+      "submit": "모델 {{count}}개로 구간 복원",
+      "modelFailedBadge": "실패 — 다른 모델은 계속 진행",
+      "genericFailure": "복원에 실패했습니다. 더 짧은 구간으로 다시 시도해 주세요.",
+      "startOver": "처음부터 다시",
+      "completedTitle": "복원 완료 — 비교 패키지가 준비되었습니다.",
+      "modelSucceeded": "성공",
+      "modelFailed": "실패 (패키지의 FAILED.txt 참고)",
+      "download": "결과 다운로드",
+      "downloadAgain": "다시 다운로드",
+      "downloadSize": "패키지 크기: {{size}}",
+      "downloadSizeHint": "이 압축 파일은 큽니다. 다운로드하기 전에 최소 {{size}}의 여유 디스크 공간이 있는지 확인하세요.",
+      "linkExpiresIn": "링크 만료까지 {{countdown}}",
+      "linkExpired": "다운로드 링크가 만료되었습니다. 복원을 다시 실행하세요",
+      "restoreAnother": "다른 구간 복원"
+    }
+  },
+  "imageRestore": {
+    "selector": {
+      "title": "자르기 (선택 사항)",
+      "useEntireImage": "전체 이미지 사용",
+      "previewAlt": "업로드한 이미지",
+      "regionLabel": "자르기 영역 — 드래그해서 이동하고 화살표 키로 미세 조정",
+      "dragHint": "이미지 위를 드래그해 특정 영역에 집중하거나 전체 이미지를 그대로 사용하세요",
+      "cropReadout": "자르기: {{w}}×{{h}} px",
+      "fullReadout": "전체 이미지: {{w}}×{{h}} px",
+      "outputReadout": "{{scale}}배 기준 예상 출력 {{w}}×{{h}} px",
+      "overBudget": "이 자르기와 배율은 출력 크기 한도를 넘습니다. 2배를 선택하거나 더 작은 영역을 자르세요."
+    },
+    "picker": {
+      "precleanToggle": "사전 정리 (원본 충실도 유지 정리)",
+      "precleanToggleHint": "새로운 디테일을 합성하지 않고 압축 아티팩트, 노이즈, 모션 블러를 제거합니다. 향상 전에 실행됩니다.",
+      "precleanOrderNote": "정리는 선택 순서와 관계없이 항상 아티팩트 제거 → 노이즈 제거 → 블러 제거 순으로, 각각 이전 결과에 적용됩니다.",
+      "precleanBaseHint": "정리된 이미지가 아래 모든 모델이 실행되는 기준 이미지가 됩니다.",
+      "fbcnnQf": "FBCNN 품질 계수",
+      "fbcnnQfAuto": "자동",
+      "fbcnnQfHint": "비워 두면 자동이며, 값이 낮을수록 더 강한 압축을 가정합니다",
+      "generalGroup": "복원 및 업스케일 모델",
+      "faceToggle": "얼굴 향상",
+      "faceToggleHint": "얼굴을 재구성하기 위해 GFPGAN 및/또는 CodeFormer를 추가합니다.",
+      "previewFaces": "감지된 얼굴 미리보기",
+      "facesDetected": "얼굴 {{count}}개가 감지되었습니다.",
+      "fidelityLabel": "CodeFormer 충실도 (w)",
+      "fidelityHint": "낮을수록 더 보기 좋고, 높을수록 입력에 가깝습니다. 기본값 0.70.",
+      "chainToggle": "체인: 업스케일된 각 결과에 얼굴 모델 다시 실행",
+      "chainHint": "원본에 실행하는 것에 더해, 각 업스케일러 출력의 얼굴 향상 버전도 생성합니다.",
+      "generativeWarning": "얼굴 향상은 생성형 재구성입니다. 향상된 얼굴은 선명함과 단서를 위해 합성된 것이지, 신원 확인을 위한 충실한 복원이 아닙니다.",
+      "noneSelected": "계속하려면 모델을 하나 이상 선택하세요.",
+      "totalOutputs": "{{count}}개의 출력이 생성됩니다.",
+      "overBudget": "이 선택은 최대 출력 수 {{max}}개를 넘습니다. 일부 모델을 선택 해제하거나 체인을 끄세요.",
+      "unavailable": "이 서버에서는 사용할 수 없음"
+    },
+    "models": {
+      "fbcnn": {
+        "description": "블라인드 JPEG / 압축 아티팩트 제거 (1배, 비생성형)."
+      },
+      "scunet": {
+        "description": "블라인드 실제 노이즈 제거 — PSNR 변형, 질감을 지어내지 않음 (1배)."
+      },
+      "nafnet": {
+        "description": "모션 블러 제거 (GoPro 가중치, 1배)."
+      },
+      "realesrgan": {
+        "description": "빠른 GAN 업스케일러 — 모든 비교에 포함해야 할 기본 기준선."
+      },
+      "swinir": {
+        "description": "트랜스포머 기반 실사 SR — 질감이 강하고 Real-ESRGAN보다 느림."
+      },
+      "hat": {
+        "description": "하이브리드 어텐션 SR GAN — 가장 선명한 결과를 내는 경우가 많음."
+      },
+      "gfpgan": {
+        "description": "GFPGAN v1.4 얼굴 복원 — 생성형 재구성."
+      },
+      "codeformer": {
+        "description": "충실도 조절이 가능한 CodeFormer 얼굴 복원 — 생성형 재구성."
+      }
+    },
+    "panel": {
+      "loading": "서버 기능 확인 중…",
+      "disabled": "AI 이미지 복원은 이 서버에서 일시적으로 사용할 수 없습니다.",
+      "notAnImage": "이미지 파일을 선택해 주세요.",
+      "tooLarge": "이 이미지는 업로드 한도 {{max}}을(를) 초과합니다.",
+      "dropTitle": "이미지를 여기에 놓거나 클릭해서 선택하세요",
+      "dropHint": "PNG, JPEG, WebP, TIFF 또는 BMP. 업로드 후 특정 영역을 자를 수 있어요.",
+      "fileLabel": "파일:",
+      "changeFile": "파일 변경",
+      "scaleLabel": "출력 배율",
+      "scaleAuto": "자동",
+      "scaleHint": "자동은 작은 영역(높이 540px 이하)에 4배, 그 외에는 2배를 선택합니다. 모델은 기본 4배로 실행되고 2배는 Lanczos로 축소합니다.",
+      "preparingUpload": "준비 중…",
+      "uploading": "업로드 중… {{percent}}%",
+      "startingJob": "복원 작업 시작 중…",
+      "submit": "모델 {{count}}개로 복원",
+      "unitFailedBadge": "실패 — 다른 모델은 계속 진행",
+      "genericFailure": "복원에 실패했습니다. 더 작은 영역이나 더 적은 모델로 다시 시도해 주세요.",
+      "startOver": "처음부터 다시",
+      "completedTitle": "복원 완료 — 아래에서 결과를 비교하세요.",
+      "download": "모든 결과 다운로드",
+      "downloadAgain": "다시 다운로드",
+      "downloadSize": "패키지 크기: {{size}}",
+      "restoreAnother": "다른 이미지 복원"
+    },
+    "results": {
+      "includedInDownload": "다운로드에 포함됨",
+      "fidelityBadge": "비생성형 정리",
+      "generativeBadge": "생성형 — 증거 아님",
+      "originalCaption": "원본 (준비됨) · {{w}}×{{h}}",
+      "failed": "이 모델은 실패했습니다",
+      "compareOriginal": "원본"
+    }
+  },
+  "audioWaveformPanel": {
+    "uploadHint": "오디오 파일",
+    "previewTitle": "파형 미리보기",
+    "sizeQualifiers": {
+      "small": "소형",
+      "medium": "중형",
+      "large": "대형",
+      "xl": "특대형"
+    },
+    "presets": {
+      "10x1": "10:1 — 와이드 파형 (권장)",
+      "8x1": "8:1 — 와이드 파형",
+      "6x1": "6:1 — 균형 잡힌 와이드 파형",
+      "16x9": "16:9 — 표준 동영상 / 소셜 미리보기",
+      "1x1": "1:1 — 정사각형 소셜 미리보기"
+    },
+    "sizeLabel": "{{width}}×{{height}} ({{qualifier}})",
+    "modes": {
+      "point": {
+        "label": "점",
+        "description": "샘플당 점 하나 — 깔끔하고 미니멀."
+      },
+      "line": {
+        "label": "선",
+        "description": "샘플당 세로 막대 하나 — 더 굵은 존재감."
+      },
+      "p2p": {
+        "label": "점 연결",
+        "description": "샘플당 점 하나와 연결선 — 흐르는 느낌."
+      },
+      "cline": {
+        "label": "중앙 선",
+        "description": "축을 중심으로 한 세로 선 — 대칭적인 느낌."
+      }
+    },
+    "output": "출력",
+    "outputOptions": {
+      "video": "파형 동영상",
+      "image": "파형 이미지",
+      "both": "둘 다 (ZIP)"
+    },
+    "bothNote": "두 출력 모두 하나의 .zip으로 묶여 한 번의 클릭으로 다운로드할 수 있습니다.",
+    "includeAudio": "생성된 파형 동영상에 원본 오디오 포함",
+    "includeAudioNote": "파형 동영상이 원본 오디오와 동기화되어 재생됩니다. 오디오그램, 음악 미리보기, 팟캐스트 클립에 안성맞춤입니다. 소리 없는 파형을 원하면 끄세요.",
+    "videoFormat": "동영상 형식",
+    "videoFormats": {
+      "mp4": "MP4 (권장)",
+      "webm": "WebM"
+    },
+    "imageFormat": "이미지 형식",
+    "imageFormats": {
+      "png": "PNG (권장)",
+      "webp": "WebP"
+    },
+    "aspectRatioSize": "화면 비율 및 크기",
+    "useCustomSize": "사용자 지정 너비 / 높이 사용",
+    "widthPlaceholder": "너비",
+    "heightPlaceholder": "높이",
+    "advancedSettings": "고급 파형 설정",
+    "renderMode": "렌더링 모드",
+    "renderModeNote": "렌더링 모드는 파형 동영상에 적용됩니다. 이미지 출력은 모드 설정을 무시하는 정지 프레임 렌더러를 사용합니다.",
+    "frameRate": "프레임 레이트",
+    "useFrameRate": "프레임 레이트 사용",
+    "useSamples": "열당 샘플 수 사용 (n)",
+    "fpsOption": "{{fps}} fps",
+    "fpsDefaultOption": "{{fps}} fps (기본값)",
+    "samplesPlaceholder": "예: 64",
+    "frameRateNote": "출력 프레임 레이트 <em>또는</em> 열당 그릴 오디오 샘플 수 중 하나만 선택하세요. 둘 다는 안 됩니다.",
+    "splitChannels": "스테레오 채널 분리 (왼쪽과 오른쪽을 따로 그리기)",
+    "primaryColor": "기본 색상",
+    "secondaryColor": "보조 색상 (분리 모드)",
+    "scale": "스케일",
+    "scaleOptions": {
+      "lin": "lin — 가장 직접적/정확함",
+      "log": "log — 조용한 부분을 더 잘 보이게",
+      "sqrt": "sqrt — 조용한 부분을 살짝 강조",
+      "cbrt": "cbrt — 조용한 부분을 더 강하게 강조"
+    },
+    "draw": "그리기",
+    "drawOptions": {
+      "scale": "scale (기본값)",
+      "full": "full"
+    },
+    "generating": "파형 생성 중…",
+    "generate": "파형 생성"
+  },
+  "documentScan": {
+    "panel": {
+      "loading": "AI 문서 스캔 불러오는 중…",
+      "disabled": "문서 스캔은 현재 사용할 수 없습니다.",
+      "notAnImage": "이미지 파일(PNG, JPEG, WebP, TIFF, BMP 또는 HEIC)을 추가해 주세요.",
+      "tooLarge": "각 이미지는 {{max}} 미만이어야 합니다.",
+      "tooManyPages": "페이지는 최대 {{max}}장까지 추가할 수 있습니다.",
+      "dropTitle": "스캔한 페이지 추가",
+      "dropHint": "인쇄된 문서나 손으로 쓴 메모 — 이미지를 하나 이상 놓거나 클릭해서 선택하세요.",
+      "uploading": "업로드 중… {{percent}}%",
+      "startingJob": "스캔 시작 중…",
+      "preparingUpload": "준비 중…",
+      "submit": "{{count}}페이지 스캔",
+      "genericFailure": "스캔 중 문제가 발생했습니다. 다시 시도해 주세요.",
+      "startOver": "처음부터 다시",
+      "completedTitle": "문서가 준비되었습니다.",
+      "viewResult": "결과 보기",
+      "scanAnother": "다른 문서 스캔"
+    },
+    "options": {
+      "contentMode": "콘텐츠 유형",
+      "modeAuto": "자동 (페이지별 감지)",
+      "modePrinted": "인쇄 문서",
+      "modeHandwriting": "손글씨",
+      "printedUnavailable": "이 서버에서는 인쇄물 OCR을 사용할 수 없습니다.",
+      "handwritingUnavailable": "손글씨 전사는 현재 오프라인입니다.",
+      "outputs": "출력",
+      "pdfAlways": "검색 가능한 PDF (항상)",
+      "docx": "편집 가능한 Word (.docx)",
+      "unavailable": "사용 불가",
+      "language": "언어 (인쇄물 OCR)",
+      "printedCleanup": "인쇄 페이지 정리",
+      "deskew": "기울기 보정",
+      "rotate": "자동 회전",
+      "clean": "정리 (얼룩 제거)",
+      "structureEngine": "DOCX 구조 엔진",
+      "enginePaddle": "PaddleOCR-VL (우선)",
+      "engineDocling": "Docling (대체)",
+      "engineTrocr": "TrOCR (대체)",
+      "preclean": "읽기 전에 저해상도 스캔 향상",
+      "precleanHint": "흐릿한 휴대폰 메모 스캔을 업스케일해 손글씨 인식을 돕습니다. 손글씨/자동에서는 기본으로 켜집니다.",
+      "handwritingTitle": "손글씨 옵션",
+      "verify": "AI로 검증",
+      "verifyHint": "두 번째 패스에서 불확실하다고 표시된 토큰만 다시 읽습니다. 확실한 텍스트를 바꾸거나 내용을 지어내지 않습니다.",
+      "secondOpinion": "2차 의견",
+      "secondOpinionHint": "독립적인 인식기가 손글씨를 다시 읽습니다. 불일치는 표시되며 조용히 합쳐지지 않습니다.",
+      "summary": "AI 요약 (별도 파일)",
+      "summaryHint": "선택 사항. 명확히 표시된 별도의 요약을 작성하며, 원문 그대로의 전사본을 대체하지 않습니다."
+    },
+    "pageOrder": {
+      "title": "페이지 ({{count}})",
+      "hint": "스캔하기 전에 페이지를 드래그해서 순서를 바꾸세요.",
+      "pageLabel": "{{n}}페이지",
+      "remove": "페이지 제거",
+      "drag": "드래그해서 순서 변경"
+    },
+    "viewer": {
+      "title": "스캔된 문서",
+      "description": "인쇄 페이지에는 충실한 검색 가능 텍스트 레이어가 포함됩니다. 손글씨 페이지는 기계 전사이므로 원본과 대조해 확인하세요.",
+      "confidenceTitle": "손글씨 전사 — 원본과 대조해 확인하세요",
+      "confidenceNote": "손글씨 페이지 {{pages}}장 전사됨 · 불확실로 표시된 토큰 {{tokens}}개 ([illegible] / [?]).",
+      "noPdf": "이 작업에서는 PDF가 생성되지 않았습니다.",
+      "downloadPdf": "PDF 다운로드",
+      "downloadDocx": "Word (.docx) 다운로드",
+      "downloadSummary": "AI 요약 다운로드"
+    }
+  },
+  "vector": {
+    "beta": "{{brand}} (베타)",
+    "untitled": "제목 없는 드로잉",
+    "projectName": "프로젝트 이름",
+    "backHome": "Media Manipulator로 돌아가기",
+    "invalidProject": "이 프로젝트 링크는 유효하지 않습니다. 프로젝트는 현재 이 브라우저에만 저장됩니다.",
+    "newProject": "새 드로잉 시작",
+    "undo": "실행 취소",
+    "redo": "다시 실행",
+    "zoomIn": "확대",
+    "zoomOut": "축소",
+    "zoomFit": "화면에 맞춤",
+    "canvas": {
+      "label": "드로잉 캔버스"
+    },
+    "tools": {
+      "label": "도구",
+      "select": "선택",
+      "node": "노드 편집",
+      "rect": "사각형",
+      "ellipse": "타원",
+      "line": "선",
+      "pen": "펜",
+      "text": "텍스트",
+      "hand": "이동",
+      "textPlaceholder": "입력한 뒤 Enter를 누르세요"
+    },
+    "import": {
+      "button": "가져오기",
+      "done_other": "레이어 {{count}}개를 가져왔습니다",
+      "tooLarge": "이 파일은 4 MB보다 큽니다.",
+      "warningsTitle_other": "가져오기 참고 사항 {{count}}개",
+      "errors": {
+        "too_large": "이 SVG는 4 MB보다 큽니다.",
+        "not_svg": "이 파일은 SVG 이미지가 아닙니다.",
+        "malformed": "이 SVG를 읽을 수 없습니다. 손상되었을 수 있습니다.",
+        "entities": "XML 엔티티를 선언한 SVG는 가져올 수 없습니다.",
+        "too_complex": "이 SVG는 편집하기에 레이어가 너무 많습니다.",
+        "json": "이 파일은 이 버전에서 열 수 있는 Motion 문서가 아닙니다."
+      },
+      "warnings": {
+        "script_removed": "스크립트 제거됨:",
+        "event_handler_removed": "이벤트 핸들러 제거됨:",
+        "external_reference_removed": "외부 참조 제거됨:",
+        "unsafe_content_removed": "안전하지 않은 콘텐츠 제거됨:",
+        "unsupported_element": "그대로 유지됨 (편집 불가):",
+        "style_dropped": "지원되지 않는 스타일:",
+        "invalid_value": "무시된 값:",
+        "dangling_reference": "누락된 참조 제거됨:"
+      }
+    },
+    "export": {
+      "svg": "SVG 내보내기",
+      "open": "내보내기"
+    },
+    "draft": {
+      "title": "저장하지 않은 변경 사항을 복구할까요?",
+      "description": "이 드로잉에는 이 브라우저에 저장되었지만 내보내지 않은 변경 사항이 있습니다.",
+      "from": "{{name}}, {{time}}",
+      "layers_other": "레이어 {{count}}개",
+      "recover": "복구",
+      "discard": "버리기"
+    },
+    "layers": {
+      "title": "레이어",
+      "empty": "도형을 그리거나 SVG를 가져와 시작하세요.",
+      "group": "그룹",
+      "ungroup": "그룹 해제",
+      "delete": "삭제",
+      "rename": "레이어 이름",
+      "lock": "잠금",
+      "unlock": "잠금 해제",
+      "hide": "숨기기",
+      "show": "표시",
+      "expand": "그룹 펼치기",
+      "collapse": "그룹 접기",
+      "raw": "그대로 유지됨",
+      "rawHint": "가져온 그대로 유지되며 편집할 수 없습니다",
+      "masked": "마스크 있음",
+      "clipped": "클립 경로 있음",
+      "maskDef": "마스크 {{id}}",
+      "clipDef": "클립 경로 {{id}}"
+    },
+    "layerTypes": {
+      "group": "그룹",
+      "path": "경로",
+      "rect": "사각형",
+      "ellipse": "타원",
+      "line": "선",
+      "polyline": "폴리라인",
+      "polygon": "다각형",
+      "text": "텍스트",
+      "image": "이미지",
+      "use": "인스턴스",
+      "raw": "그대로 유지됨"
+    },
+    "inspector": {
+      "title": "인스펙터",
+      "canvas": "캔버스",
+      "background": "배경",
+      "emptyHint": "레이어를 선택해서 편집하세요. Shift를 누른 채 클릭하면 여러 개를 선택할 수 있습니다.",
+      "selection": "선택",
+      "layersSelected_other": "레이어 {{count}}개",
+      "transform": "변형",
+      "geometry": "지오메트리",
+      "appearance": "모양",
+      "text": "텍스트",
+      "width": "너비",
+      "height": "높이",
+      "scaleX": "X 배율",
+      "scaleY": "Y 배율",
+      "rotation": "회전",
+      "skewX": "기울이기",
+      "anchorX": "앵커 X",
+      "anchorY": "앵커 Y",
+      "cornerRadius": "모서리 반경",
+      "reference": "인스턴스 원본",
+      "pathHint": "노드 편집 도구(A)로 점과 핸들을 이동하세요.",
+      "rawHint": "SVG의 이 부분은 편집기가 아직 바꿀 수 없는 기능을 사용합니다. 가져온 그대로 유지되며 변경 없이 내보내집니다.",
+      "markupSize": "마크업",
+      "fill": "채우기",
+      "stroke": "선",
+      "strokeWidth": "선 두께",
+      "opacity": "불투명도",
+      "none": "없음",
+      "colorValue": "{{label}} 값",
+      "solid": "단색",
+      "linear": "선형",
+      "radial": "방사형",
+      "fontSize": "글꼴 크기",
+      "fontFamily": "글꼴",
+      "fontWeight": "굵기",
+      "letterSpacing": "자간",
+      "textAnchor": "정렬",
+      "alignStart": "시작",
+      "alignMiddle": "가운데",
+      "alignEnd": "끝",
+      "regular": "보통",
+      "bold": "굵게",
+      "maskSection": "마스크 및 클립",
+      "maskHint": "위쪽 레이어가 아래쪽 레이어의 마스크 또는 클립 경로가 됩니다.",
+      "useAsMask": "마스크로 사용",
+      "useAsClip": "클립으로 사용",
+      "releaseMask": "마스크 해제",
+      "releaseClip": "클립 경로 해제",
+      "skewY": "Y 기울이기"
+    },
+    "gradient": {
+      "stops": "그라데이션 색상 지점",
+      "stop": "지점 {{index}}, 위치 {{offset}}%",
+      "stopColor": "지점 색상",
+      "removeStop": "지점 제거",
+      "addStop": "지점 추가",
+      "offset": "위치",
+      "angle": "각도",
+      "radius": "반경",
+      "centreX": "중심 X",
+      "centreY": "중심 Y"
+    },
+    "properties": {
+      "x": "위치 X",
+      "y": "위치 Y",
+      "scaleX": "X 배율",
+      "scaleY": "Y 배율",
+      "rotation": "회전",
+      "skewX": "X 기울이기",
+      "skewY": "Y 기울이기",
+      "anchorX": "앵커 X",
+      "anchorY": "앵커 Y",
+      "opacity": "불투명도",
+      "fill": "채우기",
+      "stroke": "선",
+      "strokeWidth": "선 두께",
+      "strokeDashoffset": "선 그리기 (대시 오프셋)",
+      "d": "모양 (모프)",
+      "motionPath": "모션 경로",
+      "stopColor": "그라데이션 지점 {{n}} 색상",
+      "stopOffset": "그라데이션 지점 {{n}} 위치",
+      "blur": "흐림"
+    },
+    "timeline": {
+      "title": "타임라인",
+      "play": "재생 (Space)",
+      "pause": "일시정지 (Space)",
+      "toStart": "처음으로 (Home)",
+      "toEnd": "끝으로 (End)",
+      "loop": "반복",
+      "autokey": "자동 키",
+      "autokeyHint": "켜져 있으면 캔버스나 인스펙터에서 속성을 바꿀 때마다 재생 헤드 위치에 키프레임이 추가됩니다.",
+      "duration": "길이",
+      "playhead": "재생 헤드",
+      "setIn": "재생 헤드 위치를 재생 구간 시작으로 설정",
+      "setOut": "재생 헤드 위치를 재생 구간 끝으로 설정",
+      "clearRange": "재생 구간 지우기",
+      "inMarker": "재생 구간 시작",
+      "outMarker": "재생 구간 끝",
+      "addKeys": "선택한 레이어에 재생 헤드 위치로 키프레임 추가",
+      "copyKeys": "키프레임 복사",
+      "pasteKeys": "재생 헤드 위치에 키프레임 붙여넣기",
+      "deleteKeys": "키프레임 삭제",
+      "zoomIn": "타임라인 확대",
+      "zoomOut": "타임라인 축소",
+      "empty": "도형을 그리거나 가져온 뒤 여기서 애니메이션을 만드세요.",
+      "animate": "{{property}} 애니메이션",
+      "stopAnimating": "{{property}} 애니메이션 중지",
+      "addKeyHere": "재생 헤드 위치에 {{property}} 키프레임 추가",
+      "removeKeyHere": "재생 헤드 위치의 {{property}} 키프레임 제거",
+      "key": "{{time}}의 {{property}} 키프레임",
+      "layerKey": "{{time}}의 {{layer}} 키프레임",
+      "maskContent": "마스크: {{layer}}",
+      "clipContent": "클립: {{layer}}"
+    },
+    "easing": {
+      "title": "이징",
+      "presets": "이징 프리셋",
+      "linear": "선형",
+      "easeIn": "이즈 인",
+      "easeOut": "이즈 아웃",
+      "easeBoth": "이즈 인아웃",
+      "hold": "홀드",
+      "custom": "커브",
+      "curve": "이징 커브",
+      "handle": "커브 핸들 {{name}}",
+      "mixed": "선택한 키프레임들이 서로 다른 이징을 사용합니다. 하나를 고르면 모두에 적용됩니다.",
+      "applies_other": "키프레임 {{count}}개 뒤 구간의 이징."
+    },
+    "raster": {
+      "formats": {
+        "gif": {
+          "title": "GIF",
+          "hint": "어디서나 재생되는 애니메이션 GIF. 256색, 단일 전역 팔레트."
+        },
+        "png_sequence": {
+          "title": "PNG 시퀀스 (.zip)",
+          "hint": "모든 프레임을 투명도가 있는 PNG로 압축해 동영상 편집기와 게임 엔진에서 사용."
+        },
+        "mp4": {
+          "title": "MP4 동영상",
+          "hint": "브라우저에서 인코딩되는 H.264(또는 AV1) 동영상. 오디오 없음."
+        },
+        "webm": {
+          "title": "WebM 동영상",
+          "hint": "브라우저에서 인코딩되는 VP9(또는 AV1) 동영상. 오디오 없음."
+        }
+      },
+      "block": {
+        "locked": "현재 요금제에는 이 형식이 포함되어 있지 않습니다.",
+        "notOnAnyPlan": "아직 어떤 요금제에서도 사용할 수 없습니다.",
+        "useChromium": "동영상 내보내기는 Chrome 또는 Edge를 사용하세요",
+        "noCodec": "이 브라우저는 이 동영상 형식을 인코딩할 수 없습니다. 다른 동영상 형식을 쓰거나 Chrome 또는 Edge를 사용해 보세요."
+      },
+      "size": "크기",
+      "sizeOption": "{{height}}p ({{width}} × {{height}})",
+      "fps": "초당 프레임 수",
+      "from": "시작 (초)",
+      "to": "끝 (초)",
+      "gif": {
+        "loop": "반복",
+        "forever": "무한",
+        "plays_other": "{{count}}회 재생",
+        "dither": "디더링 (더 부드러운 그라데이션, 더 큰 파일)",
+        "transparent": "투명 배경"
+      },
+      "summary": "{{width}} × {{height}} px, {{frames}}프레임, {{seconds}}초, 약 {{size}}",
+      "flattenWhite": "캔버스가 투명합니다. 동영상에는 투명도가 없으므로 프레임을 흰색 위에 놓습니다.",
+      "clamped": {
+        "height": "요금제에 따라 크기가 {{height}}p로 제한됩니다.",
+        "fps": "프레임 레이트가 {{fps}} fps로 제한됩니다.",
+        "duration": "요금제에 따라 길이가 {{seconds}}초로 제한됩니다."
+      },
+      "tooLarge": "이 내보내기는 2 GB보다 커집니다. 크기, 프레임 레이트 또는 길이를 줄이세요.",
+      "cancelCounts": "내보내기가 시작된 뒤 취소해도 일일 사용량에서 내보내기 1회가 차감됩니다.",
+      "preparing": "준비 중…",
+      "progress": "프레임 렌더링 중 {{done}} / {{total}}",
+      "progressLabel": "내보내기 진행률",
+      "finalizing": "파일 마무리 중…",
+      "cancel": "취소",
+      "cancelled": "내보내기가 취소되었습니다. 아무것도 다운로드되지 않았습니다.",
+      "failed": {
+        "tooLarge": "파일이 2 GB보다 커져 내보내기가 중단되었습니다. 크기, 프레임 레이트 또는 길이를 줄이세요.",
+        "codec": "이 브라우저는 이 크기와 프레임 레이트로 동영상을 인코딩할 수 없습니다. 더 작은 크기를 쓰거나 Chrome 또는 Edge를 사용해 보세요.",
+        "unsafe": "이 드로잉에는 프레임으로 렌더링할 수 없는 외부 콘텐츠가 있습니다. 제거한 뒤 다시 시도하세요.",
+        "error": "브라우저에서 내보내기에 실패했습니다. 다시 시도하거나 더 작은 크기로 시도해 보세요."
+      },
+      "capHeight": "현재 요금제는 래스터 파일을 최대 {{max}}p까지 내보냅니다.",
+      "capFps": "현재 요금제는 초당 최대 {{max}}프레임까지 내보냅니다."
+    },
+    "exportDialog": {
+      "title": "내보내기",
+      "description": "내보내기는 브라우저에서 처리됩니다. 애니메이션 내보내기는 일일 사용량에 포함되고, 정적 SVG는 항상 무료입니다.",
+      "formats": "내보내기 형식",
+      "animated": "애니메이션 SVG",
+      "animatedHint": "애니메이션이 포함된 SVG 파일 하나. 가능하면 순수 CSS, 그렇지 않으면 작은 인라인 스크립트.",
+      "static": "정적 SVG",
+      "staticHint": "재생 헤드 위치의 프레임, 애니메이션 없음. 무료이며 사용량에 포함되지 않습니다.",
+      "export": "내보내기",
+      "unsupported": "이 애니메이션은 애니메이션 SVG로 아직 내보낼 수 없는 효과를 사용합니다.",
+      "doneStatic": "정적 SVG가 다운로드되었습니다.",
+      "done_other": "다운로드되었습니다. 오늘 남은 애니메이션 내보내기 {{count}}회.",
+      "doneUnlimited": "다운로드되었습니다.",
+      "limit_other": "오늘의 애니메이션 내보내기 {{count}}회를 모두 사용했습니다.",
+      "locked": "현재 요금제에는 이 형식이 포함되어 있지 않습니다.",
+      "capDuration": "현재 요금제는 최대 {{seconds}}초 길이의 애니메이션을 내보냅니다. 애니메이션을 줄이거나 업그레이드하세요.",
+      "capOther": "이 내보내기는 요금제에서 허용하는 크기를 넘습니다.",
+      "unavailable": "지금은 내보내기를 사용할 수 없습니다. 사용량은 차감되지 않았으니 잠시 후 다시 시도하세요.",
+      "upgrade": "요금제 보기",
+      "runtimeCss": "순수 CSS, 스크립트 없음.",
+      "runtimeAnimeBecause": "다음 이유로 {{size}} KB 스크립트(anime.js, MIT)를 사용합니다: {{reasons}}.",
+      "runtimeAnimeChosen": "{{size}} KB 스크립트(anime.js, MIT)를 사용합니다.",
+      "scriptImgNote": "스크립트는 SVG를 직접 열거나 페이지에 인라인으로 넣었을 때 실행되며, <img> 태그 안에서는 실행되지 않습니다(첫 프레임만 표시).",
+      "forceAnime": "스크립트 런타임 사용",
+      "reasons": {
+        "morph": "모양 모프",
+        "stopOffset": "그라데이션 지점 위치",
+        "blur": "흐림 (Safari)",
+        "motionRotate": "회전 트랙이 있는 경로 회전"
+      },
+      "code": {
+        "lottie": {
+          "title": "Lottie JSON",
+          "hint": "LottieFiles, lottie-web, iOS, Android, Flutter Lottie 플레이어용. Lottie가 담을 수 없는 기능은 다운로드 후 목록으로 표시됩니다."
+        },
+        "react_tsx": {
+          "title": "React 컴포넌트 (.tsx)",
+          "hint": "SVG가 인라인으로 포함된 컴포넌트 파일 하나. React만 필요하며, 스크립트 런타임을 사용할 때는 anime.js 패키지가 추가로 필요합니다."
+        },
+        "js": {
+          "title": "JavaScript 모듈 (.js)",
+          "hint": "mount, play, pause, seek가 포함된 순수 ES 모듈. 프레임워크 불필요."
+        },
+        "ts": {
+          "title": "TypeScript 모듈 (.ts)",
+          "hint": "타입이 포함된 JavaScript 모듈."
+        },
+        "flutter": {
+          "title": "Flutter 위젯 (.dart)",
+          "hint": "애니메이션이 이동, 페이드, 색 변경만 할 때는 네이티브 flutter_svg 위젯, 그 외에는 WebView 플레이어."
+        }
+      },
+      "emitted": {
+        "css": "CSS로 애니메이션 처리, 스크립트 없음.",
+        "anime": "anime.js(MIT, 의존성으로 가져옴)로 애니메이션 처리.",
+        "animeBecause": "다음 이유로 anime.js(MIT, 의존성으로 가져옴)로 애니메이션 처리: {{reasons}}."
+      },
+      "flutter": {
+        "native": "네이티브 위젯(flutter_svg와 AnimationController)을 생성했습니다. 애니메이션이 변형, 불투명도, 색상만 사용합니다.",
+        "webview": "{{reasons}} 때문에 WebView 플레이어(webview_flutter)를 생성했습니다. WebView는 배경이 불투명하고 네이티브 위젯보다 무겁습니다."
+      },
+      "flutterReasons": {
+        "morph": "모양을 모프하기",
+        "mask": "마스크 또는 클립 경로를 애니메이션하기",
+        "blur": "흐림을 애니메이션하기",
+        "motionPath": "모션 경로를 따라 이동하기",
+        "drawOn": "선 그리기를 사용하기",
+        "gradient": "그라데이션 지점을 애니메이션하기",
+        "symbol": "심볼 내부 레이어를 애니메이션하기",
+        "raw": "편집기가 그대로 유지하는 SVG 마크업이 포함되어 있기"
+      }
+    },
+    "gate": {
+      "locked": "현재 요금제에서는 잠김",
+      "requires": {
+        "free": "무료 계정에 포함.",
+        "premium": "Premium에 포함.",
+        "pro": "Pro에 포함."
+      },
+      "cta": {
+        "signup": "무료 로그인",
+        "premium": "Premium으로 업그레이드",
+        "pro": "Pro로 업그레이드"
+      }
+    },
+    "projects": {
+      "save": "저장",
+      "saveToAccount": "계정에 저장",
+      "status": {
+        "local": "이 브라우저에만 저장됨",
+        "saved": "저장됨",
+        "saving": "저장 중…",
+        "retrying": "재시도 중…",
+        "offline": "오프라인, 변경 사항은 여기에 보관됨",
+        "conflict": "다른 곳에서 변경됨",
+        "failed": "저장되지 않음"
+      },
+      "signIn": "로그인",
+      "signInTitle": "계정에 저장하려면 로그인하세요",
+      "signInBody": "계정이 없으면 프로젝트는 이 브라우저에만 남습니다. (새 탭에서) 로그인한 뒤 돌아와 이 프로젝트를 계정에 저장하거나, 나중에 다시 열 수 있는 파일로 다운로드하세요.",
+      "downloadJson": ".json 다운로드",
+      "limit_other": "현재 요금제는 프로젝트를 {{count}}개까지 저장합니다. 계정에서 하나를 삭제하거나 업그레이드하세요.",
+      "saveFailed": "이 프로젝트를 계정에 저장하지 못했습니다. 변경 사항은 이 브라우저에 보관됩니다.",
+      "open": {
+        "signin": "이 프로젝트를 열려면 로그인하세요. 계정 프로젝트는 소유자만 볼 수 있습니다.",
+        "notFound": "이 프로젝트는 존재하지 않거나 다른 계정의 것입니다.",
+        "failed": "이 프로젝트를 불러오지 못했습니다. 연결을 확인하고 페이지를 새로고침하세요.",
+        "unreadable": "이 프로젝트는 더 새로운 버전으로 저장되어 여기서 열 수 없습니다."
+      },
+      "conflict": {
+        "title": "이 프로젝트가 다른 탭이나 기기에서 변경되었습니다.",
+        "reload": "상대 버전 불러오기",
+        "keep": "내 버전 유지",
+        "reloadTitle": "내 버전을 교체할까요?",
+        "reloadBody": "다시 불러오면 다른 곳에 저장된 사본이 열리고 이 탭의 변경 사항은 버려집니다. 유지하고 싶다면 먼저 내 버전을 다운로드하세요.",
+        "downloadMine": "내 버전 다운로드",
+        "reloadConfirm": "상대 버전 불러오기",
+        "reloadFailed": "저장된 사본을 불러오지 못했습니다. 다시 시도하세요."
+      }
+    },
+    "animators": {
+      "title": "애니메이션",
+      "selectOne": "애니메이션을 만들 레이어를 하나 선택하세요.",
+      "drawOn": "선 그리기",
+      "drawOnHint": "처음부터 끝까지 선을 그려 나갑니다(선 대시 오프셋).",
+      "motionPath": "모션 경로",
+      "motionPathHint": "경로를 따라 레이어를 이동합니다. 경로를 고르거나 펜으로 그리세요.",
+      "morph": "모프",
+      "morphHint": "이 경로를 다른 모양으로 변형합니다. 대상 모양을 고르세요.",
+      "gradient": "그라데이션",
+      "gradientHint": "이 레이어 그라데이션의 색상을 애니메이션합니다(지점마다 트랙 하나).",
+      "maskClip": "마스크/클립",
+      "maskClipHint": "레이어의 마스크 또는 클립 모양을 별도 트랙으로 애니메이션합니다.",
+      "blur": "흐림",
+      "blurHint": "시간에 따라 레이어를 점점 흐리게 합니다.",
+      "blurAmount": "흐림 정도",
+      "pickGuide": "어느 경로를 따라 이동할까요?",
+      "pickTarget": "어느 모양으로 변형할까요?",
+      "noShapes": "아직 다른 모양이 없습니다.",
+      "drawWithPen": "펜으로 새로 그리기",
+      "autoOrient": "경로를 따라 회전",
+      "spanHint": "애니메이터는 재생 헤드부터 끝까지 실행됩니다. 타임라인에서 키프레임을 조정하세요.",
+      "notApplied": "이 애니메이터는 이 레이어에 적용되지 않습니다.",
+      "morphFailed": "이 두 모양은 모프할 수 없습니다."
+    },
+    "lottie": {
+      "supportSummary": "Lottie가 담을 수 없는 것",
+      "document": "전체 애니메이션",
+      "warningsTitle_other": "{{count}}개 항목이 옮겨지지 않았습니다",
+      "unsupported": {
+        "maskAdvanced": "단순한 흰색 또는 검은색 도형이 아닌 마스크와 중첩 레이어의 마스크",
+        "filter": "흐림 및 기타 필터",
+        "text": "텍스트 (글꼴 외곽선 필요; 먼저 텍스트를 경로로 변환하세요)",
+        "image": "포함되지 않은 이미지 또는 그룹 안의 이미지",
+        "useComplex": "자체 크기나 뷰 박스를 가진 재사용 심볼",
+        "raw": "편집기가 그대로 유지하는 SVG 마크업",
+        "cssOnly": "블렌드 모드, 마커 및 기타 CSS 전용 스타일",
+        "strokeGradientAnimation": "선에 적용된 애니메이션 그라데이션",
+        "gradientShape": "반복, 초점 또는 늘어난 그라데이션",
+        "paint": "색상이나 그라데이션이 아닌 페인트",
+        "skew": "두 축 동시 기울이기",
+        "morph": "서브패스 수가 바뀌는 모양 모프",
+        "playOnce": "한 번만 재생 (Lottie 플레이어는 기본적으로 반복)",
+        "expression": "표현식 (키프레임 값이 사용됨)",
+        "effect": "흐림이나 그림자 같은 레이어 효과",
+        "textLayer": "텍스트 레이어 (이름만 있는 빈 그룹으로 유지)",
+        "timeRemap": "시간 리매핑",
+        "threeD": "3D 레이어와 3D 회전",
+        "blendMode": "일반 이외의 블렌드 모드",
+        "matte": "트랙 매트",
+        "maskMode": "더하기와 빼기 이외의 마스크",
+        "modifier": "리피터, 둥근 모서리 및 기타 모양 수정자",
+        "imageExternal": "파일에 포함되지 않은 이미지",
+        "spatialTangents": "곡선 모션 경로 (레이어가 직선으로 이동)",
+        "layerTiming": "불투명도가 애니메이션되는 레이어의 인/아웃 포인트",
+        "unknownLayer": "편집기가 그리지 않는 레이어 유형",
+        "unknownShape": "알 수 없는 모양 항목",
+        "autoOrient": "경로를 따라 자동 회전",
+        "skewAxis": "기울어진 축을 따라 기울이기",
+        "polystar": "둥글거나 애니메이션되는 별과 다각형 (단순 외곽선으로 그림)",
+        "trimComplex": "선 그리기나 지우기 이상을 수행하는 트림 패스",
+        "gradientAnimation": "애니메이션되는 그라데이션 위치와 선 그라데이션",
+        "multipleStyles": "한 모양에 여러 채우기 또는 선 (가장 가까운 것 사용)",
+        "styleOpacity": "그라데이션의 애니메이션되는 채우기 또는 선 불투명도",
+        "morphCounts": "점 개수가 다른 모양 키 (중간 프레임이 달라짐)"
+      },
+      "import": {
+        "warningsTitle_other": "{{count}}개 항목을 가져올 수 없었습니다",
+        "warningsBody": "애니메이션을 열 준비가 되었습니다. Lottie 파일의 다음 부분은 지원되지 않아 제외되거나 단순화되었습니다:",
+        "open": "애니메이션 열기",
+        "unavailable": "이 사이트에서는 Lottie 가져오기를 사용할 수 없습니다.",
+        "refused": {
+          "limit": "오늘의 내보내기와 가져오기를 모두 사용했습니다.",
+          "locked": "현재 요금제에는 Lottie 가져오기가 포함되어 있지 않습니다.",
+          "cap": "이 파일은 요금제에서 허용하는 크기보다 큽니다.",
+          "unavailable": "지금은 가져오기를 사용할 수 없습니다. 사용량은 차감되지 않았으니 잠시 후 다시 시도하세요."
+        },
+        "errors": {
+          "too_large": "이 파일은 4 MB보다 큽니다.",
+          "not_json": "이 파일을 JSON으로 읽을 수 없습니다.",
+          "not_lottie": "이 파일은 Lottie 애니메이션이 아닙니다.",
+          "too_complex": "이 애니메이션은 레이어, 키프레임 또는 점이 너무 많습니다.",
+          "invalid": "이 Lottie 파일을 애니메이션으로 변환할 수 없습니다."
+        }
+      }
+    }
+  },
+  "metadataInspectPanel": {
+    "dragDrop": "이미지, 동영상, 오디오 또는 PDF 파일을 여기에 끌어다 놓으세요",
+    "hint": "또는 클릭해서 컴퓨터에서 선택하세요. 파일은 메타데이터를 읽기 위해서만 사용되며 분석 후 삭제됩니다. 변환은 하지 않습니다.",
+    "largeFile": "{{size}}를 넘는 파일은 큰 동영상이 실수로 업로드되지 않도록 요청하실 때만 검사합니다.",
+    "failed": "파일을 검사할 수 없습니다. 지원하지 않는 형식이거나 요금제의 크기 제한을 초과했을 수 있습니다."
+  },
+  "voiceTools": {
+    "loading": "음성 도구를 불러오는 중…",
+    "unavailable": {
+      "title": "음성 기능을 지금은 사용할 수 없어요",
+      "body": "음성 엔진이 꺼져 있거나 다시 시작하는 중이라 지금은 이 도구를 실행할 수 없어요. 사용량에는 집계되지 않았어요. 나중에 다시 시도해 주세요.",
+      "shiftStillWorks": "아래의 음높이 변경 도구는 음성 엔진이 필요 없어서 그대로 사용할 수 있어요."
+    },
+    "warmingUp": "음성 엔진을 준비하는 중이에요. 첫 요청은 최대 20초가 걸릴 수 있어요.",
+    "honesty": "저장한 음성이나 프리셋 음성으로 만든 말소리에는 들리지 않는 워터마크가 들어가요. 변경 도구로 바꾼 오디오에는 들어가지 않아요. 본인의 목소리나 사용 허락을 받은 목소리만 사용하세요. 녹음하거나 생성한 어떤 것도 모델 학습에 사용되지 않으며, 음성 엔진은 당사 자체 서버에서 실행돼요.",
+    "signIn": {
+      "title": "음성을 저장하려면 로그인하세요",
+      "body": "저장된 음성에는 소유자와 동의 기록이 필요해서, 음성 클론, 디자인한 음성 보관, 음성으로 변환, 내 음성을 사용하려면 계정이 필요해요. 로그인하기 전에는 아무것도 업로드되지 않아요.",
+      "cta": "로그인"
+    },
+    "recorder": {
+      "record": "녹음",
+      "recording": "녹음 중",
+      "stop": "중지",
+      "cancel": "녹음 취소",
+      "level": "마이크 수준",
+      "or": "또는",
+      "upload": "오디오 파일 업로드",
+      "remove": "제거",
+      "recorded": "내 녹음, {{duration}}",
+      "uploaded": "{{name}}, {{duration}}",
+      "measuring": "파일 길이를 확인하는 중…",
+      "unknownLength": "브라우저에서 이 파일의 길이를 읽을 수 없었어요. 서버가 확인할 거예요.",
+      "tooShort": "녹음이 {{seconds}}초예요. 음성을 만들려면 최소 5초의 말소리가 필요해요.",
+      "tooLong": "녹음이 {{seconds}}초예요. 60초 이하로 해 주세요.",
+      "referenceHint": "조용한 곳에서 또렷한 말소리를 5초에서 60초 동안 녹음하거나 업로드하세요. 자연스러운 문장 몇 개를 읽어 보세요.",
+      "inputHint": "바꾸고 싶은 말소리를 녹음하거나 업로드하세요.",
+      "micDenied": "마이크 접근이 차단되었어요. 브라우저 주소 표시줄에서 이 사이트의 마이크를 허용하거나, 대신 파일을 업로드하세요.",
+      "micHostBlocked": "이 도구가 들어 있는 페이지가 마이크 접근을 허용하지 않았어요. 대신 파일을 업로드하세요.",
+      "micUnavailable": "이 브라우저에서는 녹음할 수 없어요. 대신 오디오 파일을 업로드하세요."
+    },
+    "consent": {
+      "label": "이 목소리는 제 목소리이거나, 이 목소리의 주인으로부터 명시적인 허락을 받았습니다.",
+      "note": "이를 확인한 시각과 이 문구의 버전({{version}})을 음성과 함께 저장해요. 이용약관 8.11항을 참조하세요."
+    },
+    "clone": {
+      "title": "녹음으로 음성 만들기",
+      "nameLabel": "음성 이름",
+      "namePlaceholder": "내 음성",
+      "languageLabel": "녹음 언어",
+      "create": "음성 만들기",
+      "creating": "음성을 만드는 중…",
+      "created": "음성을 만들었어요. 미리 듣기는 내 음성에서 확인하세요.",
+      "signInToCreate": "로그인하고 음성 만들기",
+      "limitReached": "요금제에서 저장할 수 있는 음성 {{limit}}개 중 {{used}}개를 저장했어요. 계정의 음성에서 하나를 삭제하거나 업그레이드해서 더 저장하세요.",
+      "noSaving": "현재 요금제에서는 음성을 저장할 수 없어요.",
+      "usage": "음성 {{limit}}개 중 {{used}}개 저장됨",
+      "usageUnlimited": "음성 {{used}}개 저장됨"
+    },
+    "myVoices": {
+      "title": "내 음성",
+      "empty": "저장된 음성이 아직 없어요.",
+      "preview": "{{name}} 미리 듣기",
+      "use": "이 음성 사용",
+      "inUse": "선택됨",
+      "manage": "계정에서 내 음성 관리",
+      "kinds": {
+        "cloned": "클론",
+        "designed": "디자인",
+        "preset": "프리셋"
+      }
+    },
+    "picker": {
+      "label": "음성",
+      "saved": "내 음성",
+      "presets": "프리셋 음성",
+      "none": "사용할 수 있는 음성이 아직 없어요."
+    },
+    "speak": {
+      "title": "음성 생성",
+      "textLabel": "읽을 텍스트",
+      "placeholder": "음성이 말할 내용을 입력하세요.",
+      "counter": "{{max}}자 중 {{used}}자",
+      "overLimit": "요금제에서 한 번에 허용하는 길이({{max}}자)를 넘었어요.",
+      "languageLabel": "언어",
+      "exaggerationLabel": "감정",
+      "exaggerationHint": "낮을수록 차분하고, 높을수록 표현이 풍부해요.",
+      "generate": "음성 생성",
+      "generating": "생성 중…",
+      "notAllowed": "현재 요금제에는 음성 생성이 포함되어 있지 않아요."
+    },
+    "designer": {
+      "title": "음성 설명하기",
+      "descriptionLabel": "설명",
+      "placeholder": "따뜻하고, 낮고, 약간 쉰 듯한, 중년의, 차분한 목소리",
+      "hint": "음성이 어떻게 들리면 좋을지 설명하세요. 엔진은 영어 설명을 가장 잘 이해해요. 아래 칩으로 흔한 특징을 추가할 수 있어요.",
+      "languageLabel": "미리 듣기 언어",
+      "languageNote": "디자인한 음성은 이 언어 중 하나로 만들어져요. 보관하고 나면 음성 도구의 모든 언어로 말할 수 있어요.",
+      "chipGroups": {
+        "gender": "성별",
+        "age": "나이",
+        "accent": "억양",
+        "tone": "음색",
+        "pace": "속도"
+      },
+      "chips": {
+        "female": "여성",
+        "male": "남성",
+        "neutral": "중성적",
+        "young": "청년",
+        "middleAged": "중년",
+        "older": "노년",
+        "american": "미국식",
+        "british": "영국식",
+        "australian": "호주식",
+        "irish": "아일랜드식",
+        "warm": "따뜻한",
+        "bright": "밝은",
+        "deep": "깊은",
+        "raspy": "쉰 듯한",
+        "soft": "부드러운",
+        "slow": "느린",
+        "measured": "차분한",
+        "fast": "빠른"
+      },
+      "preview": "미리 듣기",
+      "previewing": "미리 듣기를 만드는 중…",
+      "previewsLeft": "남은 미리 듣기: {{max}}회 중 {{left}}회",
+      "previewsUsed": "이 설명으로 미리 듣기 3회를 모두 사용했어요. 음성을 보관하거나, 설명을 바꿔서 다시 미리 들어 보세요.",
+      "previewLabel": "설명한 음성 미리 듣기",
+      "keepTitle": "이 음성 보관",
+      "nameLabel": "음성 이름",
+      "keep": "이 음성 보관",
+      "keeping": "음성을 저장하는 중…",
+      "kept": "음성을 저장했어요. 이제 내 음성에 있어요.",
+      "signInToKeep": "로그인하고 이 음성 보관"
+    },
+    "changer": {
+      "modeLabel": "바꾸는 방법",
+      "modes": {
+        "shift": "음높이 변경(즉시)",
+        "convert": "음성으로 변환(AI)"
+      },
+      "shiftHint": "rubberband로 음높이와 포먼트를 즉시 바꿔요. 작업 1회로 집계돼요. 결과에는 워터마크가 들어가지 않아요.",
+      "convertHint": "녹음을 저장한 음성이나 프리셋 음성처럼 들리게 바꿔요. AI 작업 1회로 집계돼요. 결과에는 들리지 않는 워터마크가 들어가요.",
+      "convertNotInPlan": "음성으로 변환은 현재 요금제에 포함되어 있지 않아요.",
+      "upgrade": "요금제 보기",
+      "signInToConvert": "로그인하고 음성으로 변환",
+      "targetLabel": "변환할 음성",
+      "convert": "변환",
+      "converting": "변환 중…"
+    },
+    "shifter": {
+      "semitonesLabel": "음높이",
+      "semitonesValue": "{{value}} 반음",
+      "formantLabel": "포먼트",
+      "formants": {
+        "preserved": "목소리의 개성 유지",
+        "shifted": "음높이와 함께 변경"
+      },
+      "presetsLabel": "프리셋",
+      "presets": {
+        "deeper": "더 낮게",
+        "higher": "더 높게",
+        "child": "아이 같은",
+        "elder": "노년",
+        "telephone": "전화기"
+      },
+      "shift": "목소리 변경",
+      "shifting": "변경 중…"
+    },
+    "result": {
+      "working": "작업 중…",
+      "failed": "음성 작업이 실패했어요. 사용량에는 집계되지 않았어요.",
+      "downloadMp3": "MP3 다운로드",
+      "downloadWav": "WAV 다운로드",
+      "wavPreparing": "WAV를 준비하는 중…",
+      "wavFailed": "이 브라우저에서는 WAV를 만들 수 없었어요. 대신 MP3를 다운로드하세요.",
+      "wavNote": "WAV는 브라우저에서 MP3를 디코딩해 만들어요.",
+      "another": "처음부터 다시"
+    },
+    "darkroom": {
+      "title": "보이스오버 생성",
+      "description": "스크립트를 입력하고 음성과 언어를 선택하세요. 보이스오버가 이 프로젝트의 미디어에 추가되고 재생 헤드 위치에 배치돼요.",
+      "placeholder": "보이스오버 스크립트를 입력하세요.",
+      "generate": "보이스오버 생성",
+      "presetsOnly": "로그인하지 않아도 프리셋 음성을 사용할 수 있어요. 저장한 음성을 사용하려면 로그인하세요.",
+      "added": "재생 헤드 위치에 보이스오버가 추가되었습니다",
+      "noAsset": "보이스오버는 생성되었지만 프로젝트에 추가하지 못했어요. 다시 시도해 주세요."
+    },
+    "errors": {
+      "sign_in_required": "내 음성을 저장하고 사용하려면 로그인하세요.",
+      "consent_required": "이 목소리가 본인의 것이거나 화자의 명시적인 허락을 받았음을 확인하려면 체크박스를 선택하세요.",
+      "reference_required": "먼저 5초에서 60초 분량의 말소리를 녹음하거나 업로드하세요.",
+      "reference_too_short": "녹음은 최소 5초 이상이어야 해요.",
+      "reference_too_long": "녹음은 60초 이하여야 해요.",
+      "reference_too_large": "녹음 파일이 너무 커요.",
+      "no_speech_detected": "그 녹음에서 말소리를 찾지 못했어요. 조용한 곳에서 문장 몇 개를 녹음하세요.",
+      "not_audio": "그 파일은 읽을 수 있는 녹음이 아니에요.",
+      "name_invalid": "음성 이름은 1자에서 60자로 지어 주세요.",
+      "language_not_supported": "이 음성에서는 그 언어를 지원하지 않아요.",
+      "voice_limit": "요금제에서 저장할 수 있는 음성 수({{limit}}개)에 도달했어요. 하나를 삭제하거나 업그레이드해서 더 저장하세요.",
+      "text_required": "말할 내용을 입력하세요.",
+      "text_too_long": "요금제에서는 한 번에 최대 {{limit}}자까지 허용돼요.",
+      "exaggeration_invalid": "감정 값은 0.25에서 2 사이여야 해요.",
+      "voice_convert_not_in_plan": "음성으로 변환은 현재 요금제에 포함되어 있지 않아요.",
+      "voice_input_too_long": "요금제에서는 여기서 최대 {{limit}}초까지의 녹음을 사용할 수 있어요.",
+      "input_required": "바꾸고 싶은 녹음을 추가하세요.",
+      "input_too_large": "녹음이 요금제에서 허용하는 크기를 넘었어요.",
+      "voice_required": "변환할 음성을 하나 선택하세요.",
+      "voice_not_found": "그 음성은 더 이상 없어요.",
+      "preset_not_found": "그 프리셋 음성은 사용할 수 없어요.",
+      "description_required": "원하는 음성을 설명하세요.",
+      "description_too_long": "설명은 1000자 이내로 작성하세요.",
+      "preview_limit": "이 설명은 최근 1시간 동안 세 번 미리 들었어요. 음성을 보관하거나 설명을 바꾸세요.",
+      "session_required": "미리 듣기에는 브라우저 세션이 필요해요. 페이지를 새로고침하고 다시 시도하세요.",
+      "semitones_invalid": "음높이는 -12에서 12 반음 사이여야 해요.",
+      "shift_invalid": "그 변경 설정은 올바르지 않아요.",
+      "voices_unavailable": "음성 엔진을 지금은 사용할 수 없어요. 사용량에는 집계되지 않았어요. 잠시 후 다시 시도하세요.",
+      "voices_storage_unavailable": "저장된 음성을 일시적으로 사용할 수 없어요. 사용량에는 집계되지 않았어요.",
+      "voices_timeout": "음성 엔진이 너무 오래 걸렸어요. 사용량에는 집계되지 않았어요.",
+      "voice_request_refused": "음성 엔진이 그 요청을 거부했어요.",
+      "upload_failed": "업로드에 실패했어요. 다시 시도해 주세요.",
+      "job_failed": "작업을 시작할 수 없었어요. 다시 시도해 주세요.",
+      "invalid_body": "요청에 올바르지 않은 부분이 있었어요. 페이지를 새로고침하고 다시 시도하세요.",
+      "rate_limited": "최근 1시간 동안 음성 요청이 너무 많아요. 나중에 다시 시도해 주세요.",
+      "generic": "문제가 발생했어요. 다시 시도해 주세요."
+    }
+  }
+}

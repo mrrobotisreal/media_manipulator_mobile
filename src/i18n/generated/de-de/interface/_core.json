@@ -1,0 +1,251 @@
+{
+  "common": {
+    "brand": "Media Manipulator",
+    "brandTagline": "Bilder, Videos und Audiodateien mühelos konvertieren",
+    "loading": "Wird geladen…",
+    "loadingShort": "Lädt...",
+    "tryAgain": "Erneut versuchen",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "save": "Speichern",
+    "saving": "Wird gespeichert...",
+    "submit": "Absenden",
+    "submitting": "Wird gesendet...",
+    "download": "Herunterladen",
+    "preview": "Vorschau",
+    "remove": "Entfernen",
+    "clear": "Leeren",
+    "reset": "Zurücksetzen",
+    "apply": "Anwenden",
+    "enable": "Aktivieren",
+    "disable": "Deaktivieren",
+    "yes": "Ja",
+    "no": "Nein",
+    "more": "Mehr",
+    "less": "Weniger",
+    "and": "und",
+    "or": "oder",
+    "of": "von",
+    "to": "bis",
+    "from": "von",
+    "by": "von",
+    "in": "in",
+    "with": "mit",
+    "all": "Alle",
+    "none": "Keine",
+    "off": "Aus",
+    "on": "Ein",
+    "optional": "Optional",
+    "required": "Erforderlich",
+    "auto": "Automatisch",
+    "manual": "Manuell",
+    "default": "Standard",
+    "advanced": "Erweitert",
+    "basic": "Einfach",
+    "settings": "Einstellungen",
+    "options": "Optionen",
+    "search": "Suche",
+    "filter": "Filter",
+    "selected": "Ausgewählt",
+    "step": "Schritt",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "items": "Elemente",
+    "showAll": "Alle anzeigen",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
+    "retentionPromise": "Sie bestimmen, wie lange wir Ihre Dateien aufbewahren — standardmäßig 24 Stunden für Gäste, bis zu 2 Jahre mit einem kostenlosen Konto",
+    "retentionPromiseShort": "Dateien werden für Gäste 24 Stunden aufbewahrt; mit einem kostenlosen Konto wählen Sie 24 Stunden bis 2 Jahre"
+  },
+  "units": {
+    "bytes": "B",
+    "kilobytes": "KB",
+    "megabytes": "MB",
+    "gigabytes": "GB",
+    "terabytes": "TB",
+    "pixels": "px",
+    "percent": "%",
+    "kbps": "kbps",
+    "fps": "fps",
+    "hz": "Hz",
+    "khz": "kHz"
+  },
+  "duration": {
+    "zero": "0 Sek.",
+    "hours_one": "{{count}} Std.",
+    "hours_other": "{{count}} Std.",
+    "minutes_one": "{{count}} Min.",
+    "minutes_other": "{{count}} Min.",
+    "seconds_one": "{{count}} Sek.",
+    "seconds_other": "{{count}} Sek."
+  },
+  "topNav": {
+    "home": "Startseite",
+    "tools": "Tools",
+    "about": "Über uns",
+    "howItWorks": "So funktioniert's",
+    "tutorials": "Tutorials",
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsOfService": "Nutzungsbedingungen",
+    "blog": "Blog",
+    "links": {
+      "homeDescription": "Startseite, auf der Sie Ihre Dateien konvertieren können",
+      "toolsDescription": "Kostenlose Online-Tools zum Konvertieren, Komprimieren, Transkribieren und Bereinigen von Mediendateien",
+      "aboutDescription": "Über-uns-Seite mit weiteren Informationen zum Projekt und seinem Urheber",
+      "howItWorksDescription": "Seite „So funktioniert's“ mit weiteren Informationen zum Konvertierungsprozess",
+      "tutorialsDescription": "Schritt-für-Schritt-Anleitungen für die Audio-, Video- und Bildkonverter und ihre KI-Tools",
+      "privacyPolicyDescription": "Datenschutzseite mit weiteren Informationen zur Datenschutzerklärung des Projekts",
+      "termsOfServiceDescription": "Seite zu den Nutzungsbedingungen mit weiteren Informationen zu den Nutzungsbedingungen des Projekts",
+      "blogDescription": "Blogseite, auf der Sie die neuesten Nachrichten und Updates zum Projekt lesen können"
+    },
+    "navigationLabel": "Navigation",
+    "language": "Sprache",
+    "selectLanguage": "Sprache auswählen",
+    "voices": "Stimmen",
+    "contact": "Kontakt",
+    "pricing": "Preise"
+  },
+  "footer": {
+    "tagline": "Browserbasierte und serverunterstützte Tools zum Bearbeiten, Konvertieren, Komprimieren, Analysieren, Transkribieren, Zusammenfassen und sonstigen Verarbeiten von Bild-, Video- und Audiodateien.",
+    "contact": "Kontakt:",
+    "explore": "Entdecken",
+    "legal": "Rechtliches",
+    "doNotSell": "Meine persönlichen Daten nicht verkaufen oder weitergeben",
+    "cookieSettings": "Cookie-Einstellungen",
+    "copyright": "© {{year}} Media Manipulator, ein Produkt von CreaTV Ltd. Alle Rechte vorbehalten.",
+    "operatedBy": "Betrieben von CreaTV Ltd. · Colorado, USA",
+    "changelog": "Änderungsprotokoll",
+    "status": "Status",
+    "licenses": "Open-Source-Lizenzen"
+  },
+  "languageSelector": {
+    "label": "Sprache",
+    "current": "Aktuelle Sprache: {{language}}",
+    "select": "Sprache auswählen"
+  },
+  "home": {
+    "contentStudioCta": {
+      "title": "Darkroom",
+      "badge": "Neu",
+      "body": "Bearbeiten, layern und mischen Sie Video und Audio auf einer Multitrack-Zeitleiste und exportieren Sie als MP4 — ein Editor im Stil von Premiere Pro, direkt in Ihrem Browser.",
+      "cta": "Darkroom ausprobieren"
+    },
+    "hero": {
+      "title": "Kostenloser Online-Mediakonverter, -Editor, -Transkriptionsdienst und Metadaten-Tool",
+      "subtitle": "Konvertieren, komprimieren, bearbeiten, transkribieren, zusammenfassen, Metadaten prüfen und Bild-, Video- und Audiodateien direkt im Browser bereinigen.",
+      "popularLabel": "Beliebte Tools",
+      "allTools": "Alle Tools",
+      "removeExif": "EXIF entfernen",
+      "compressVideo": "Video komprimieren",
+      "transcribeVideo": "Video transkribieren",
+      "transcodeHls": "Transcodieren → HLS",
+      "transcodeDash": "Transcodieren → DASH",
+      "webpToJpg": "WebP → JPG",
+      "wavToMp3": "WAV → MP3",
+      "compressImage": "Bild komprimieren",
+      "resizeImage": "Bildgröße ändern",
+      "extractAudio": "Audio extrahieren"
+    },
+    "upload": {
+      "title": "Datei hochladen",
+      "dragDrop": "Ziehen Sie Ihre Datei hierher",
+      "orClickSelect": "oder klicken Sie, um sie von Ihrem Computer auszuwählen",
+      "chooseFile": "Datei auswählen",
+      "unsupportedFile": "Nicht unterstützter Dateityp. Bitte wählen Sie eine Bild-, Video- oder Audiodatei aus."
+    },
+    "options": {
+      "transcriptionOptions": "Transkriptionsoptionen",
+      "transcodeOptions": "Transcodierungsoptionen",
+      "conversionOptions": "Konvertierungsoptionen",
+      "documentScanOptions": "Dokumentenscan-Optionen",
+      "convert": "Konvertieren",
+      "transcribe": "Transkribieren",
+      "transcode": "Transcodieren",
+      "scanDocument": "Zu PDF / Word scannen (KI)"
+    },
+    "history": {
+      "title": "Konvertierungsverlauf",
+      "subtitle": "Öffnen oder laden Sie jedes Bild-, Video- oder Audioergebnis aus dieser Sitzung erneut herunter.",
+      "newConversion": "Neue Konvertierung",
+      "transcriptBadge": "Transkript",
+      "preview": "Vorschau",
+      "download": "Herunterladen",
+      "itemLabel": "#{{number}} {{filename}}",
+      "startedProcessing": "Gestartet um {{time}} und wird noch verarbeitet",
+      "completedAt": "Abgeschlossen um {{time}}",
+      "transcriptionFailed": "Transkription fehlgeschlagen",
+      "conversionFailed": "Konvertierung fehlgeschlagen"
+    },
+    "result": {
+      "transcriptResult": "Transkriptionsergebnis",
+      "convertedPreview": "Vorschau der konvertierten Datei",
+      "transcriptSubtitle": "Transkript und KI-Auswertung für {{filename}}.",
+      "convertedSubtitle": "Wechseln Sie zwischen der Original- und der fertig bearbeiteten Version von {{filename}}.",
+      "original": "Original",
+      "final": "Final"
+    },
+    "progress": {
+      "preparingUpload": "Sicherer Upload wird vorbereitet...",
+      "uploadingToS3": "Datei wird direkt zu S3 hochgeladen...",
+      "finalizing": "Hochgeladene Datei wird auf dem Server bereitgestellt...",
+      "startingTranscription": "Transkription wird gestartet...",
+      "startingConversion": "Konvertierung wird gestartet...",
+      "converting": "Wird konvertiert...",
+      "percentComplete": "{{percent}}% abgeschlossen",
+      "conversionFailed": "Konvertierung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    },
+    "download": {
+      "downloadAs": "{{filename}} herunterladen",
+      "fileWillBeDownloaded": "Die Datei wird heruntergeladen als: {{filename}}"
+    },
+    "fileLoadingConverter": "Konverter wird geladen…",
+    "gettingStarted": {
+      "title": "In 4 Schritten loslegen",
+      "step1": {
+        "title": "Datei hochladen",
+        "body": "Ziehen Sie ein beliebiges Bild, Video oder eine Audiodatei in den Upload-Bereich links, oder klicken Sie auf <em>Datei auswählen</em>. Dateien werden für Gäste 24 Stunden aufbewahrt; mit einem kostenlosen Konto wählen Sie 24 Stunden bis 2 Jahre."
+      },
+      "step2": {
+        "title": "Wählen Sie hier Ihre Einstellungen",
+        "body": "Sobald eine Datei ausgewählt ist, wechselt das rechte Panel zum passenden Konverter — Bild, Video oder Audio. Wählen Sie ein Format, passen Sie Filter an oder aktivieren Sie eine KI-Funktion."
+      },
+      "step3": {
+        "title": "Konvertieren",
+        "body": "Klicken Sie auf <em>Datei konvertieren</em>. Verfolgen Sie den Fortschrittsbalken — Aufträge laufen in Echtzeit auf unserem GPU-Server."
+      },
+      "step4": {
+        "title": "Vorschau und Download",
+        "body": "Das Ergebnis wird automatisch angezeigt, sobald es fertig ist. Wechseln Sie zwischen Original und Final und klicken Sie dann auf Herunterladen."
+      }
+    },
+    "localAi": {
+      "title": "Enthält lokale KI-Tools",
+      "body": "Gesichtsunschärfe, Hintergrundentfernung, KI-Hochskalierung, OCR-basierte Text-/PII-Schwärzung, Sprachbereinigung, Stimmisolierung und Karaoke-Gesangsentfernung laufen alle auf unserem eigenen GPU-Server. Keine KI-Anbieter von Drittanbietern sehen Ihre Dateien."
+    },
+    "notSure": {
+      "title": "Nicht sicher, wo Sie anfangen sollen?",
+      "body": "Unsere Schritt-für-Schritt-Anleitungen führen durch jede Einstellung in den Audio-, Video- und Bildkonvertern — einschließlich der KI-Tools.",
+      "cta": "Tutorials durchsuchen"
+    },
+    "howItWorks": {
+      "title": "So funktioniert's",
+      "body": "Media Manipulator nutzt FFmpeg und ImageMagick für Standardkonvertierungen sowie dedizierte KI-Modelle auf unserer lokalen GPU für die optionalen KI-Funktionen. Die gesamte Verarbeitung erfolgt auf Servern, die wir selbst kontrollieren — lesen Sie die vollständige Übersicht für Details.",
+      "cta": "So funktioniert's lesen"
+    }
+  },
+  "notFound": {
+    "preTitle": "Telemetrie verloren",
+    "title": "Dieser Bereich des Schiffs existiert nicht",
+    "body": "Die eingegebenen Koordinaten entsprechen nichts auf der Navigationskonsole. Versuchen Sie eine der folgenden Routen — oder kehren Sie zur Hauptbrücke zurück und wählen Sie ein Tool, das tatsächlich existiert.",
+    "links": {
+      "home": "Zurück zur Basis",
+      "tools": "Tool-Array",
+      "tutorials": "Tutorials"
+    }
+  },
+  "themeToggle": {
+    "toggle": "Design umschalten"
+  }
+}

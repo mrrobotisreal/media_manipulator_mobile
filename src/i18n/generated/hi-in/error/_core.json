@@ -1,0 +1,127 @@
+{
+  "generic": {
+    "unknown": "कोई अज्ञात त्रुटि हुई। कृपया फिर से कोशिश करें।",
+    "unexpected": "कुछ गड़बड़ हो गई। कृपया फिर से कोशिश करें।",
+    "networkOffline": "लगता है आप ऑफ़लाइन हैं। अपना कनेक्शन जाँचें और फिर से कोशिश करें।",
+    "tryAgainLater": "कृपया थोड़ी देर बाद फिर से कोशिश करें।",
+    "missingFile": "कोई फ़ाइल नहीं चुनी गई।",
+    "missingField": "यह फ़ील्ड ज़रूरी है।"
+  },
+  "upload": {
+    "fileTooLarge": "फ़ाइल बहुत बड़ी है।",
+    "unsupportedFormat": "असमर्थित फ़ाइल फ़ॉर्मैट।",
+    "uploadFailed": "अपलोड विफल रहा। कृपया फिर से कोशिश करें।",
+    "missingFile": "कृपया पहले कोई फ़ाइल चुनें।"
+  },
+  "conversion": {
+    "failed": "कन्वर्ज़न विफल रहा।",
+    "failedTryAgain": "कन्वर्ज़न विफल रहा। कृपया फिर से कोशिश करें।",
+    "previewFailed": "कन्वर्ट की गई इमेज का प्रीव्यू लोड नहीं हो सका",
+    "downloadFailed": "डाउनलोड विफल रहा। कृपया फिर से कोशिश करें।"
+  },
+  "transcribe": {
+    "failed": "ट्रांसक्रिप्शन विफल रहा।",
+    "failedTryAgain": "ट्रांसक्रिप्शन विफल रहा। कृपया फिर से कोशिश करें।"
+  },
+  "transcode": {
+    "failed": "ट्रांसकोड विफल रहा।",
+    "failedTryAgain": "ट्रांसकोड विफल रहा। कृपया फिर से कोशिश करें।"
+  },
+  "validation": {
+    "required": "यह फ़ील्ड ज़रूरी है।",
+    "invalidNumber": "एक मान्य संख्या डालें।",
+    "outOfRange": "मान {{min}} और {{max}} के बीच होना चाहिए।",
+    "tooShort": "कम से कम {{count}} अक्षर होने चाहिए।",
+    "tooLong": "अधिकतम {{count}} अक्षर हो सकते हैं।",
+    "invalidEmail": "एक मान्य ईमेल पता डालें।",
+    "invalidUrl": "एक मान्य URL डालें।"
+  },
+  "auth": {
+    "signInFailed": "साइन-इन विफल रहा। कृपया फिर से कोशिश करें।",
+    "signUpFailed": "साइन-अप विफल रहा। कृपया फिर से कोशिश करें।",
+    "passwordTooShort": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए।",
+    "passwordsDoNotMatch": "पासवर्ड मेल नहीं खाते।",
+    "invalidCredentials": "ईमेल या पासवर्ड गलत है।",
+    "emailRequired": "ईमेल ज़रूरी है।",
+    "passwordRequired": "पासवर्ड ज़रूरी है।",
+    "tryAgain": "कृपया फिर से कोशिश करें।",
+    "userNotFound": "इस ईमेल से कोई अकाउंट नहीं मिला।",
+    "wrongPassword": "गलत पासवर्ड।",
+    "emailAlreadyInUse": "इस ईमेल से पहले से एक अकाउंट मौजूद है।",
+    "weakPassword": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
+    "invalidEmail": "कृपया एक मान्य ईमेल पता डालें।",
+    "tooManyRequests": "बहुत ज़्यादा कोशिशें हो गईं। कुछ मिनट रुककर फिर से कोशिश करें।",
+    "network": "नेटवर्क त्रुटि। अपना कनेक्शन जाँचकर फिर से कोशिश करें।"
+  },
+  "ad": {
+    "loadFailed": "विज्ञापन लोड नहीं हो सका।"
+  },
+  "forms": {
+    "fixErrors": "कृपया ये त्रुटियाँ ठीक करें:",
+    "invalidValue": "अमान्य मान",
+    "fieldRequired": "यह फ़ील्ड ज़रूरी है।",
+    "invalidNumber": "एक मान्य संख्या डालें।",
+    "outOfRange": "मान {{min}} और {{max}} के बीच होना चाहिए।",
+    "faceDetectFailed": "चेहरे की पहचान विफल रही। कृपया फिर से कोशिश करें।",
+    "removeObjectFailed": "ऑब्जेक्ट हटाना विफल रहा। कृपया फिर से कोशिश करें।",
+    "imageForm": {
+      "noFile": "पहले कोई इमेज चुनें।",
+      "exifLoadFailed": "इस फ़ाइल का EXIF मेटाडेटा पढ़ा नहीं जा सका।"
+    },
+    "videoForm": {
+      "noFile": "पहले कोई वीडियो चुनें।"
+    },
+    "audioForm": {
+      "noFile": "पहले कोई ऑडियो फ़ाइल चुनें।"
+    },
+    "transcribe": {
+      "noFile": "पहले कोई मीडिया फ़ाइल चुनें।",
+      "invalidLanguage": "एक मान्य BCP-47 भाषा कोड डालें।"
+    },
+    "transcode": {
+      "probeFailed": "सोर्स फ़ाइल की जाँच नहीं हो सकी। कोई दूसरी फ़ाइल आज़माएँ।"
+    }
+  },
+  "panels": {
+    "captionTranslator": {
+      "failed": "कैप्शन अनुवाद विफल रहा।",
+      "missingFile": "पहले कोई कैप्शन फ़ाइल अपलोड करें।"
+    },
+    "stitchAudioToVideo": {
+      "failed": "ऑडियो/वीडियो जोड़ना विफल रहा।",
+      "missingTracks": "कम से कम एक ऑडियो ट्रैक जोड़ें।"
+    },
+    "extract": {
+      "failed": "एक्सट्रैक्शन विफल रहा।",
+      "noStreams": "इस फ़ाइल में कोई मेल खाती स्ट्रीम नहीं मिली।"
+    }
+  },
+  "errorBoundary": {
+    "title": "कुछ गड़बड़ हो गई",
+    "body": "एक अनपेक्षित त्रुटि ने इस पेज को बाधित कर दिया। आपकी फ़ाइलें खोई नहीं हैं — आप फिर से कोशिश कर सकते हैं, और अगर समस्या बनी रहे तो पेज रीलोड करें।",
+    "tryAgain": "फिर से कोशिश करें",
+    "goHome": "होमपेज पर जाएँ"
+  },
+  "toasts": {
+    "conversionStartFailed": "कन्वर्ज़न शुरू नहीं हो सका।",
+    "transcriptionStartFailed": "ट्रांसक्रिप्शन शुरू नहीं हो सका।",
+    "transcodeStartFailed": "ट्रांसकोड शुरू नहीं हो सका।",
+    "videoAnalysisFailed": "वीडियो का विश्लेषण नहीं हो सका।",
+    "translationStartFailed": "अनुवाद शुरू नहीं हो सका।",
+    "scanStartFailed": "स्कैन शुरू नहीं हो सका।",
+    "jobStartFailed": "जॉब शुरू नहीं हो सका।",
+    "stitchStartFailed": "स्टिच जॉब शुरू नहीं हो सका।",
+    "restorationStartFailed": "रिस्टोरेशन शुरू नहीं हो सका।",
+    "identificationFailed": "फ़ाइल की पहचान नहीं हो सकी।",
+    "jobStatusCheckFailed": "जॉब का स्टेटस जाँचा नहीं जा सका।",
+    "exportStartFailed": "एक्सपोर्ट शुरू नहीं हो सका।",
+    "exportFailed": "एक्सपोर्ट विफल रहा।",
+    "saveProjectFailed": "प्रोजेक्ट सेव नहीं हो सका।",
+    "createProjectFailed": "प्रोजेक्ट बनाया नहीं जा सका।",
+    "uploadFailed": "अपलोड विफल रहा।",
+    "audioProcessingFailed": "ऑडियो प्रोसेसिंग विफल रही।",
+    "unexpectedFallback": "एक अनपेक्षित त्रुटि हुई।",
+    "conversionFailedFallback": "कन्वर्ज़न प्रक्रिया में त्रुटि आई।",
+    "unableToGetProgress": "कन्वर्ज़न की प्रोग्रेस नहीं मिल सकी।"
+  }
+}

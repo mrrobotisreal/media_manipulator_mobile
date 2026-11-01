@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Annulla",
+    "retry": "Riprova",
+    "close": "Chiudi",
+    "continue": "Continua",
+    "done": "Fatto",
+    "loading": "Caricamento",
+    "processing": "Elaborazione",
+    "signOut": "Esci",
+    "back": "Indietro"
+  },
+  "tabs": {
+    "tools": "Strumenti",
+    "history": "Cronologia",
+    "account": "Account"
+  },
+  "placeholders": {
+    "toolsBody": "Gli strumenti arrivano con MA10.",
+    "historyBody": "I tuoi lavori appariranno qui.",
+    "accountBody": "L'account arriva con MA15.",
+    "signInBody": "L'accesso arriva con MA04",
+    "openShell": "Apri la shell dell'app",
+    "errorBoundary": "Qualcosa è andato storto. Riavvia l'app."
+  },
+  "language": {
+    "title": "Lingua",
+    "system": "Predefinita del sistema",
+    "rtlReloadTitle": "Riavvia per cambiare la direzione del layout",
+    "rtlReloadBody": "L'app deve riavviarsi per mostrare questa lingua da destra a sinistra.",
+    "rtlReloadBodyLtr": "L'app deve riavviarsi per mostrare questa lingua da sinistra a destra.",
+    "rtlReloadConfirm": "Riavvia ora"
+  }
+}

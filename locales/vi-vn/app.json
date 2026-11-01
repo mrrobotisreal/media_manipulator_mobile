@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Hủy",
+    "retry": "Thử lại",
+    "close": "Đóng",
+    "continue": "Tiếp tục",
+    "done": "Xong",
+    "loading": "Đang tải",
+    "processing": "Đang xử lý",
+    "signOut": "Đăng xuất",
+    "back": "Quay lại"
+  },
+  "tabs": {
+    "tools": "Công cụ",
+    "history": "Lịch sử",
+    "account": "Tài khoản"
+  },
+  "placeholders": {
+    "toolsBody": "Công cụ sẽ có trong MA10.",
+    "historyBody": "Các tác vụ của bạn sẽ hiển thị ở đây.",
+    "accountBody": "Tài khoản sẽ có trong MA15.",
+    "signInBody": "Đăng nhập sẽ có trong MA04",
+    "openShell": "Mở khung ứng dụng",
+    "errorBoundary": "Đã xảy ra lỗi. Hãy khởi động lại ứng dụng."
+  },
+  "language": {
+    "title": "Ngôn ngữ",
+    "system": "Mặc định của hệ thống",
+    "rtlReloadTitle": "Khởi động lại để đổi hướng bố cục",
+    "rtlReloadBody": "Ứng dụng cần khởi động lại để hiển thị ngôn ngữ này từ phải sang trái.",
+    "rtlReloadBodyLtr": "Ứng dụng cần khởi động lại để hiển thị ngôn ngữ này từ trái sang phải.",
+    "rtlReloadConfirm": "Khởi động lại ngay"
+  }
+}

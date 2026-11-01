@@ -1,0 +1,753 @@
+{
+  "transcribeForm": {
+    "outputFormatTitle": "Format de sortie de la transcription",
+    "intro": "Nous transcrivons la {{mediaKind}} sur notre propre serveur GPU avec whisper-ctranslate2. Un résumé et une analyse de sécurité s'exécutent automatiquement dès que la transcription est prête.",
+    "mediaKind": {
+      "video": "vidéo",
+      "audio": "piste audio"
+    },
+    "languageLabel": "Indication de langue (facultatif)",
+    "languagePlaceholder": "ex. fr, en, es (laissez vide pour la détection automatique)",
+    "languageHint": "Code court BCP-47. Laissez vide pour que whisper détecte automatiquement la langue parlée.",
+    "languageTooltip": "Code court BCP-47 (ex. fr, en, es, de, ja). Laissez vide pour que whisper détecte automatiquement la langue parlée. Une indication correcte peut améliorer la précision de la transcription sur les clips courts.",
+    "transcribing": "Transcription...",
+    "submit": "Transcrire le fichier",
+    "format": {
+      "vtt": {
+        "label": "Sous-titres (VTT)",
+        "description": "Sous-titres horodatés pour les lecteurs vidéo et les outils d'accessibilité."
+      },
+      "srt": {
+        "label": "Sous-titres (SRT)",
+        "description": "Sous-titres SubRip compatibles avec YouTube, Premiere, DaVinci Resolve et la plupart des logiciels de montage."
+      },
+      "txt": {
+        "label": "Texte brut",
+        "description": "Texte de transcription continu, adapté à la lecture ou à l'édition."
+      },
+      "json": {
+        "label": "JSON structuré",
+        "description": "Transcription segmentée avec les données de minutage, pour un traitement ultérieur."
+      }
+    },
+    "formatTooltip": {
+      "vtt": "<strong>VTT</strong> : sous-titres horodatés pour les lecteurs vidéo HTML5 et les outils d'accessibilité.",
+      "txt": "<strong>Texte brut</strong> : texte de transcription continu pour la lecture ou l'édition.",
+      "json": "<strong>JSON structuré</strong> : transcription segmentée avec données de minutage pour vos chaînes de traitement."
+    }
+  },
+  "audioForm": {
+    "converting": "Conversion...",
+    "submit": "Convertir le fichier",
+    "trimStatus": "Découpe : {{start}} - {{end}} ({{duration}})",
+    "ai": {
+      "title": "Outils audio IA",
+      "tooltipIntro": "Une seule opération IA s'exécute par tâche, sur notre serveur GPU local. La chaîne de traitement FFmpeg standard est ignorée pour cette tâche.",
+      "tooltipCleanVoice": "<strong>Nettoyer la voix</strong> : débruitage DeepFilterNet + chaîne de finition broadcast (passe-haut/passe-bas, loudness, limiteur).",
+      "tooltipRemoveNoise": "<strong>Supprimer le bruit de fond</strong> : débruitage DeepFilterNet sans la chaîne de finition.",
+      "tooltipIsolateVocals": "<strong>Isoler les voix</strong> : piste vocale Demucs htdemucs (par défaut, même format que votre fichier).",
+      "tooltipRemoveVocals": "<strong>Supprimer les voix / Karaoké</strong> : piste instrumentale Demucs.",
+      "intro": "Les outils audio IA s'exécutent comme des tâches GPU et peuvent prendre plus de temps qu'une conversion simple.",
+      "operationLabel": "Opération",
+      "operations": {
+        "none": "Aucune (conversion standard)",
+        "clean_voice": "Nettoyer la voix",
+        "remove_background_noise": "Supprimer le bruit de fond",
+        "isolate_vocals": "Isoler les voix",
+        "remove_vocals": "Supprimer les voix / Karaoké"
+      },
+      "aiActiveNote": "Le débit, l'égaliseur et les autres options audio standard sont ignorés lorsqu'une opération IA est sélectionnée.",
+      "presetLocked": "Préréglé pour cet outil"
+    },
+    "stemFormat": {
+      "label": "Format de sortie",
+      "options": {
+        "auto": "Identique à la source (recommandé)",
+        "autoWithFormat": "Identique à la source : {{format}} (recommandé)",
+        "mp3": "MP3 (320 kbps)",
+        "flac": "FLAC (sans perte)",
+        "wav": "WAV (sans perte, le plus volumineux)"
+      },
+      "withEstimate": "{{label}} · environ {{size}}",
+      "help": "Les tailles sont des estimations. Un MP3 reste un MP3 ; un fichier sans perte (WAV, FLAC, AIFF) revient en FLAC.",
+      "helpNoEstimate": "Un MP3 reste un MP3 ; un fichier sans perte (WAV, FLAC, AIFF) revient en FLAC. Choisissez FLAC ou WAV pour rester sans perte.",
+      "wavHint": "Le WAV pèsera environ {{size}}. C'est un très gros téléchargement ; le FLAC est sans perte et environ deux fois plus léger."
+    }
+  },
+  "videoForm": {
+    "converting": "Conversion...",
+    "submit": "Convertir le fichier",
+    "trimStatus": "Découpe : {{start}} - {{end}} ({{duration}})"
+  },
+  "imageForm": {
+    "converting": "Conversion...",
+    "submit": "Convertir le fichier",
+    "cropStatus": "Zone de recadrage : {{width}}×{{height}} pixels à ({{x}}, {{y}})",
+    "vectorize": {
+      "title": "Vectorisation (PNG → SVG)",
+      "note": "La vectorisation trace votre image en véritables tracés vectoriels. Elle convient surtout aux logos, icônes, signatures et dessins au trait en noir et blanc, pas aux photos.",
+      "thresholdLabel": "Seuil noir/blanc",
+      "thresholdTooltip": "Les pixels plus sombres que ce seuil sont tracés comme des formes pleines. Augmentez-le pour capturer plus de détails, baissez-le pour ne garder que les formes les plus marquées."
+    },
+    "ico": {
+      "note": "Un fichier .ico multi-tailles est généré avec des icônes de 16, 32, 48, 64, 128 et 256 px : idéal pour les favicons et les icônes d'applications Windows."
+    },
+    "ai": {
+      "title": "Outils image IA",
+      "tooltipIntro": "Une seule opération IA s'exécute par tâche, sur notre serveur GPU local. La chaîne ImageMagick standard est ignorée pour cette tâche.",
+      "tooltipFacePrivacy": "<strong>Confidentialité des visages</strong> : détecte et masque les visages (flou, pixellisation ou rectangle noir).",
+      "tooltipRemoveBackground": "<strong>Supprimer l'arrière-plan</strong> : produit un PNG transparent via rembg + BiRefNet/ISNet/U2Net.",
+      "tooltipAiUpscale": "<strong>Agrandissement IA</strong> : Real-ESRGAN ncnn Vulkan 2x ou 4x.",
+      "tooltipRedactText": "<strong>Caviarder le texte / les données personnelles</strong> : caviardage basé sur l'OCR.",
+      "tooltipRemoveObject": "<strong>Supprimer un objet</strong> : dessinez des rectangles sur les objets indésirables ; l'inpainting LaMa reconstruit la zone derrière eux.",
+      "intro": "Les outils IA exécutent une opération par conversion. Pour de meilleurs résultats, vérifiez l'aperçu avant de publier un média sensible.",
+      "operationLabel": "Opération",
+      "operations": {
+        "none": "Aucune (conversion standard)",
+        "face_privacy": "Flouter / pixelliser les visages",
+        "remove_background": "Supprimer l'arrière-plan",
+        "ai_upscale": "Agrandissement IA",
+        "redact_text": "Caviarder le texte / les données personnelles",
+        "remove_object": "Supprimer un objet (inpainting LaMa)"
+      },
+      "faceMode": {
+        "label": "Mode visage",
+        "blur": "Flou",
+        "pixelate": "Pixellisation",
+        "blackbox": "Rectangle noir"
+      },
+      "selectiveFaces": {
+        "title": "Visages sélectifs",
+        "tooltipDefault": "Par défaut, l'effet choisi s'applique à chaque visage détecté.",
+        "tooltipDetect": "Utilisez <strong>Détecter les visages</strong> pour prévisualiser les cadres et choisir quels visages masquer ou ignorer.",
+        "tooltipExpire": "Les cadres de visages sont stockés temporairement pour la sélection et expirent automatiquement.",
+        "selectionModeLabel": "Mode de sélection",
+        "selectionMode": {
+          "all": "Tous les visages détectés",
+          "only_selected": "Uniquement les visages sélectionnés",
+          "all_except_selected": "Tous sauf les visages sélectionnés"
+        },
+        "detecting": "Détection…",
+        "reDetect": "Détecter à nouveau",
+        "detect": "Détecter les visages",
+        "selectAll": "Tout sélectionner",
+        "clearSelection": "Effacer la sélection",
+        "chooseFile": "Choisissez d'abord une image pour détecter les visages.",
+        "noFaces": "Aucun visage détecté. Vous pouvez tout de même appliquer la confidentialité des visages par défaut à la conversion, ou essayer une autre image.",
+        "detected_one": "{{count}} visage détecté. Sélectionnés : {{selected}}.",
+        "detected_other": "{{count}} visages détectés. Sélectionnés : {{selected}}.",
+        "defaultNote": "Par défaut : s'applique à chaque visage détecté. Utilisez Détecter les visages pour en choisir certains."
+      },
+      "background": {
+        "modelLabel": "Modèle d'arrière-plan",
+        "models": {
+          "birefnet-general": "BiRefNet General (recommandé)",
+          "birefnet-general-lite": "BiRefNet General Lite",
+          "birefnet-portrait": "BiRefNet Portrait",
+          "isnet-general-use": "ISNet General Use",
+          "u2net": "U2Net",
+          "u2netp": "U2Net Lite",
+          "u2net_human_seg": "U2Net segmentation humaine"
+        },
+        "pngNote": "La sortie est toujours en PNG afin de préserver la transparence."
+      },
+      "upscale": {
+        "scaleLabel": "Facteur",
+        "scale4x": "4x",
+        "scale2x": "2x",
+        "modelLabel": "Modèle",
+        "models": {
+          "realesrgan-x4plus": "realesrgan-x4plus (photos)",
+          "realesrgan-x4plus-anime": "realesrgan-x4plus-anime",
+          "realesr-animevideov3": "realesr-animevideov3"
+        },
+        "experimentalNote": "Le 4x est la valeur par défaut et donne les résultats les plus constants. Le 2x exécute le même modèle à moitié échelle et peut paraître légèrement recadré sur certaines images.",
+        "pngNote": "La sortie est en PNG par défaut."
+      },
+      "removeObject": {
+        "title": "Marquer les objets à supprimer",
+        "tooltipDraw": "Cliquez et faites glisser sur l'image pour ajouter un rectangle sur chaque objet à effacer. Déplacez le rectangle en le faisant glisser, ou redimensionnez-le avec les poignées.",
+        "tooltipResult": "L'inpainting LaMa reconstruit la zone derrière chaque rectangle. Pour de meilleurs résultats, dessinez le cadre au plus près de l'objet : un grand rectangle oblige le modèle à inventer davantage d'arrière-plan.",
+        "tooltipTip": "Astuce : plusieurs petits rectangles donnent souvent un résultat plus propre qu'un seul très grand.",
+        "clearAll": "Tout effacer",
+        "chooseFile": "Choisissez d'abord une image pour commencer à marquer des objets.",
+        "atLeastOne": "Ajoutez au moins un rectangle couvrant l'objet à supprimer.",
+        "readyToInpaint_one": "{{count}} rectangle prêt pour l'inpainting.",
+        "readyToInpaint_other": "{{count}} rectangles prêts pour l'inpainting.",
+        "formatNote": "La sortie LaMa conserve le format choisi (JPG, PNG, WebP, GIF). Les filtres, le texte en surimpression et la teinte sont ignorés pour cette opération."
+      },
+      "redact": {
+        "detectLabel": "Détecter",
+        "detect": {
+          "pii": "Données personnelles uniquement",
+          "all-text": "Tout le texte"
+        },
+        "redactionLabel": "Style de caviardage",
+        "redaction": {
+          "blackbox": "Rectangle noir",
+          "blur": "Flou",
+          "pixelate": "Pixellisation"
+        },
+        "ocrNote": "Le caviardage par OCR est fait au mieux. Vérifiez le résultat avant de le partager."
+      },
+      "aiActiveNote": "Le format, les filtres et les autres options image standard sont ignorés lorsqu'une opération IA est sélectionnée.",
+      "operationLocked": "Préréglé pour cet outil"
+    },
+    "textOverlay": {
+      "title": "Texte en surimpression",
+      "tooltipAria": "À propos du texte en surimpression",
+      "tooltip": "Incruste un filigrane ou une légende sur l'image de sortie. Saisissez le texte, puis choisissez la taille (8 à 512 px), l'ancrage (coin, bord ou centre), les couleurs du texte et du contour, l'épaisseur du contour et les décalages en pixels par rapport à l'ancrage. Laissez le texte vide pour ne rien incruster.",
+      "overlayText": "Texte à incruster",
+      "overlayPlaceholder": "Texte facultatif à dessiner sur l'image",
+      "size": "Taille du texte",
+      "position": "Position",
+      "textColor": "Couleur du texte",
+      "strokeColor": "Couleur du contour",
+      "strokeWidth": "Épaisseur du contour",
+      "xOffset": "Décalage X",
+      "yOffset": "Décalage Y",
+      "gravity": {
+        "NorthWest": "En haut à gauche",
+        "North": "En haut",
+        "NorthEast": "En haut à droite",
+        "West": "À gauche",
+        "Center": "Centre",
+        "East": "À droite",
+        "SouthWest": "En bas à gauche",
+        "South": "En bas",
+        "SouthEast": "En bas à droite"
+      }
+    },
+    "metadata": {
+      "title": "Métadonnées",
+      "intro": "Choisissez de conserver, supprimer ou réécrire les métadonnées de l'image.",
+      "tooltipKeep": "<strong>Conserver toutes les métadonnées</strong> : préserve chaque champ EXIF/IPTC/XMP/GPS de l'original.",
+      "tooltipStrip": "<strong>Supprimer toutes les métadonnées</strong> : retire les champs appareil, GPS, logiciel et horodatage. Recommandé avant de partager des photos en ligne.",
+      "tooltipCustom": "<strong>Métadonnées personnalisées</strong> : supprime tout, puis réécrit uniquement les champs que vous fournissez (titre, auteur, copyright, mots-clés IPTC, champs GPS, etc.).",
+      "modeLabel": "Mode de métadonnées",
+      "modes": {
+        "keep": "Conserver toutes les métadonnées",
+        "strip": "Supprimer toutes les métadonnées",
+        "custom": "Métadonnées personnalisées"
+      },
+      "fields": {
+        "title": "Titre",
+        "author": "Artiste / Auteur",
+        "description": "Description",
+        "copyright": "Copyright",
+        "comment": "Commentaire utilisateur",
+        "keywords": "Mots-clés"
+      },
+      "exifFields": "Champs EXIF / TIFF",
+      "gpsFields": "Champs GPS / Localisation",
+      "showAdvanced": "Afficher les métadonnées avancées / de l'appareil",
+      "hideAdvanced": "Masquer les métadonnées avancées / de l'appareil",
+      "gps": {
+        "title": "Options GPS / Localisation",
+        "tooltipAria": "À propos des options GPS / localisation",
+        "tooltip": "Supprimez ou remplacez les métadonnées GPS enregistrées par votre appareil photo ou votre téléphone. Vous pouvez aussi ne retirer que la direction de prise de vue, l'horodatage GPS, l'altitude ou les champs de destination. Le mode Remplacer permet de définir d'autres latitude/longitude/altitude et, si vous le souhaitez, d'arrondir la précision pour protéger votre vie privée.",
+        "removeLocationData": "Supprimer les données de localisation",
+        "replaceLocationData": "Remplacer les données de localisation",
+        "roundPrecision": "Arrondir la précision de la localisation",
+        "removeCaptureDirection": "Supprimer la direction de prise de vue / le cap",
+        "removeTimestamp": "Supprimer l'horodatage GPS",
+        "removeAltitude": "Supprimer l'altitude",
+        "removeDestination": "Supprimer les champs de destination",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "altitude": "Altitude",
+        "precisionDecimals": "Décimales de précision"
+      }
+    },
+    "_obsoletePlaceholder": ""
+  },
+  "videoTranscodeForm": {
+    "premiumTooltip": "Créez un compte Premium pour débloquer l'accès complet au transcodage.",
+    "premiumBadge": "Premium",
+    "tooSmallBadge": "Trop petite",
+    "protocol": {
+      "title": "Protocole",
+      "tooltipAria": "À propos du protocole de transcodage",
+      "tooltipHls": "<strong>HLS</strong> : Apple HTTP Live Streaming. H.264/AAC, master.m3u8 + variantes par rendu + segments .ts. Lisible partout.",
+      "tooltipDash": "<strong>DASH</strong> : streaming adaptatif MPEG-DASH. AV1 (le plus compact, moderne) ou VP9 (compatibilité plus large) ; manifest.mpd + segments .m4s.",
+      "hlsSub": "H.264 / AAC · .m3u8 · partout",
+      "dashSub": "AV1 ou VP9 · .mpd · web moderne",
+      "av1Sub": "Recommandé · fichiers plus petits",
+      "vp9Sub": "Compatibilité de lecture plus large"
+    },
+    "analyze": {
+      "intro": "Nous allons envoyer votre vidéo et exécuter <code>ffprobe</code> pour détecter la résolution, le codec, l'audio et les niveaux de qualité que votre source permet.",
+      "uploadingPercent": "Envoi {{percent}} %",
+      "analyzingSource": "Analyse de la source...",
+      "preparingUpload": "Préparation de l'envoi...",
+      "analyzeVideo": "Analyser la vidéo"
+    },
+    "report": {
+      "title": "Rapport sur la vidéo source",
+      "resolution": "Résolution",
+      "maxQuality": "Qualité max.",
+      "fps": "FPS",
+      "duration": "Durée",
+      "audio": "Audio",
+      "videoCodec": "Codec vidéo",
+      "audioCodec": "Codec audio",
+      "container": "Conteneur",
+      "fileSize": "Taille du fichier",
+      "yes": "Oui",
+      "no": "Non"
+    },
+    "rungs": {
+      "title": "Niveaux de qualité",
+      "tooltipAria": "À propos des niveaux de qualité",
+      "tooltip": "Chaque niveau sélectionné devient un rendu dans le paquet HLS/DASH final. Les niveaux Premium (144p/240p/1080p/2160p) sont disponibles avec Premium.",
+      "defaultsNote": "Par défaut : 360p + 480p + 720p lorsque la vidéo source le permet."
+    },
+    "captions": {
+      "disabledTooltip": "Les sous-titres nécessitent une piste audio. Cette vidéo ne semble pas en avoir.",
+      "enabledTooltip": "Génère des sous-titres VTT à partir de la piste audio avec whisper-ctranslate2. Désactivé par défaut.",
+      "generateCaptions": "Générer les sous-titres",
+      "captionsSub": "Sous-titres VTT générés automatiquement à partir de la piste audio. Désactivé par défaut.",
+      "generateStoryboards": "Générer les storyboards",
+      "storyboardsSub": "Vignettes de navigation en planche-contact + index WebVTT. Désactivé par défaut."
+    },
+    "translations": {
+      "title": "Traductions de sous-titres supplémentaires",
+      "tooltipAria": "À propos des traductions de sous-titres supplémentaires",
+      "tooltip1": "La piste de sous-titres principale est la transcription de whisper dans la langue source détectée automatiquement. Ajoutez jusqu'à {{max}} langues supplémentaires et nous traduirons les segments via votre modèle de texte Ollama.",
+      "tooltip2": "Chaque traduction devient un VTT distinct, plus un rendu de sous-titres HLS (EXT-X-MEDIA) et un AdaptationSet texte DASH, pour que les lecteurs proposent un sélecteur de pistes.",
+      "primaryNote": "Piste principale : langue source détectée automatiquement. Ajoutez jusqu'à {{max}} pistes de traduction.",
+      "backendUnreachable": "Le service de traduction (Ollama) est injoignable. Les langues choisies seront ignorées au lancement de la tâche.",
+      "removeLanguage": "Retirer la langue",
+      "addLanguage": "+ Ajouter une langue de traduction ({{count}}/{{max}})"
+    },
+    "bundle": {
+      "title": "Format de téléchargement",
+      "tooltipAria": "À propos du format de téléchargement",
+      "tooltipTargz": "<strong>.tar.gz</strong> : plus compact pour les playlists riches en texte, universel sur macOS/Linux, et Windows 10+ le décompresse nativement avec la commande <code>tar</code> intégrée.",
+      "tooltipZip": "<strong>.zip</strong> : le choix sûr si vous êtes sur un Windows plus ancien ou si vous voulez simplement extraire en double-cliquant. Un peu plus volumineux ; le contenu est par ailleurs identique.",
+      "defaultBadge": "Par défaut",
+      "targzSub": "Plus compact · natif sur macOS/Linux/Win 10+",
+      "zipSub": "Plus pratique sur Windows · extraction en double-clic"
+    },
+    "start": {
+      "starting": "Lancement du transcodage...",
+      "startButton": "Lancer le transcodage {{protocol}} (sortie : {{format}})"
+    },
+    "tooSmall": "Cette vidéo est en dessous du minimum de 360p pour le transcodage gratuit. Chargez une vidéo en 360p ou plus.",
+    "progress": {
+      "title": "Progression du pipeline",
+      "failed": "Échec du transcodage."
+    },
+    "downloadPackage": "Télécharger {{filename}}"
+  },
+  "pdfForm": {
+    "outputFormat": {
+      "label": "Format d'image de sortie",
+      "tooltip": "Choisissez JPG pour des fichiers légers adaptés aux photos, ou PNG pour des pages nettes et sans perte (idéal pour le texte et le dessin au trait).",
+      "locked": "Verrouillé sur {{format}} pour cet outil"
+    },
+    "dpi": {
+      "label": "Qualité de rendu (DPI)",
+      "tooltip": "Un DPI plus élevé produit des images plus nettes et plus grandes. 150 DPI est une bonne valeur par défaut ; utilisez 300 pour une qualité d'impression."
+    },
+    "pages": {
+      "label": "Pages à convertir",
+      "tooltip": "Convertissez toutes les pages (téléchargées dans un ZIP d'images) ou seulement la première (téléchargée comme image unique).",
+      "all": "Toutes les pages (ZIP)",
+      "allHint": "Une image par page, regroupées dans un seul téléchargement .zip.",
+      "first": "Première page uniquement",
+      "firstHint": "Rend uniquement la page 1 en une seule image."
+    },
+    "quality": {
+      "label": "Qualité JPG (%)",
+      "tooltip": "Qualité de compression JPEG de 1 à 100. 90 est une valeur équilibrée ; des valeurs plus basses réduisent le fichier au détriment des détails."
+    },
+    "submit": "Convertir le PDF",
+    "converting": "Conversion…"
+  },
+  "conversionOptions": {
+    "image": {
+      "cropping": {
+        "title": "Recadrage de l'image",
+        "tooltipAria": "À propos du recadrage de l'image",
+        "tooltip": "Ouvre un sélecteur visuel pour ne garder qu'une partie de l'image. Le recadrage s'exécute avant le redimensionnement et les filtres : les dimensions définies ci-dessous s'appliquent donc à la zone recadrée. Passez cette étape si vous voulez l'image entière.",
+        "selectPortion": "Sélectionnez la partie de l'image à conserver",
+        "editCrop": "Modifier le recadrage",
+        "cropImage": "Recadrer l'image"
+      },
+      "format": {
+        "label": "Format",
+        "tooltipAria": "À propos du format d'image",
+        "tooltip": "Le type de fichier de sortie. JPG est idéal pour les photos, PNG conserve la transparence et convient aux graphiques, WebP est un format moderne plus compact, et GIF sert aux usages anciens ou animés.",
+        "locked": "Verrouillé sur {{format}} pour cet outil"
+      },
+      "resizeEmphasis": "Définissez la largeur et/ou la hauteur cible ci-dessous. Laissez l'une des deux vide pour redimensionner proportionnellement et conserver le rapport d'origine.",
+      "quality": {
+        "label": "Qualité (%)",
+        "tooltipAria": "À propos de la qualité d'image",
+        "tooltip": "Qualité de compression pour les sorties JPG et WebP (1 à 100). 85 est une valeur équilibrée. Des valeurs plus basses réduisent la taille du fichier au prix d'artefacts ; au-delà de 95, la différence est rarement visible. Ignoré pour PNG et GIF."
+      },
+      "width": {
+        "label": "Largeur (px)",
+        "tooltipAria": "À propos de la largeur de l'image",
+        "tooltip": "Largeur cible en pixels. Laissez vide pour conserver la largeur d'origine ou redimensionner proportionnellement à partir du champ Hauteur. L'image est orientée automatiquement d'après l'EXIF avant le redimensionnement, pour que les dimensions correspondent à l'aperçu.",
+        "placeholder": "Auto"
+      },
+      "height": {
+        "label": "Hauteur (px)",
+        "tooltipAria": "À propos de la hauteur de l'image",
+        "tooltip": "Hauteur cible en pixels. Laissez vide pour conserver la hauteur d'origine ou redimensionner proportionnellement à partir du champ Largeur. Définir à la fois la largeur et la hauteur impose une taille exacte et peut déformer l'image.",
+        "placeholder": "Auto"
+      },
+      "filter": {
+        "label": "Filtre",
+        "tooltipAria": "À propos des filtres d'image",
+        "tooltip": "Applique un seul effet ImageMagick à la sortie : niveaux de gris, sépia, flou/netteté, tourbillon, distorsion en barillet, peinture à l'huile, vintage, relief, fusain, croquis ou une rotation fixe. Choisissez Aucun pour ne pas appliquer de filtre.",
+        "options": {
+          "none": "Aucun",
+          "grayscale": "Niveaux de gris",
+          "sepia": "Sépia",
+          "blur": "Flou",
+          "sharpen": "Netteté",
+          "swirl": "Tourbillon",
+          "barrel-distortion": "Distorsion en barillet",
+          "oil-painting": "Peinture à l'huile",
+          "vintage": "Vintage",
+          "emboss": "Relief",
+          "charcoal": "Fusain",
+          "sketch": "Croquis",
+          "rotate-45º": "Rotation 45º",
+          "rotate-90º": "Rotation 90º",
+          "rotate-180º": "Rotation 180º",
+          "rotate-270º": "Rotation 270º"
+        }
+      },
+      "tint": {
+        "label": "Couleur de teinte",
+        "tooltipAria": "À propos de la couleur de teinte",
+        "tooltip": "Applique une teinte colorée à 30 % sur l'image. Utile pour des vignettes de marque ou des bichromies. Laissez le sélecteur sur noir (#000000) pour ne pas appliquer de teinte."
+      }
+    },
+    "audio": {
+      "trimming": {
+        "title": "Découpe audio",
+        "tooltipAria": "À propos de la découpe audio",
+        "tooltip": "Ouvre un lecteur avec forme d'onde pour choisir un début et une fin. Seul le segment sélectionné est encodé dans le fichier de sortie.",
+        "selectPortion": "Sélectionnez la partie de l'audio à conserver",
+        "editTrim": "Modifier la découpe",
+        "trimAudio": "Découper l'audio"
+      },
+      "format": {
+        "label": "Format",
+        "tooltipAria": "À propos du format audio",
+        "tooltip": "Le codec/conteneur de sortie. MP3 est pris en charge partout ; WAV/FLAC/ALAC sont sans perte ; AAC est efficace pour le streaming ; OGG, Opus, AC3 et DTS visent des usages spécifiques."
+      },
+      "bitrate": {
+        "label": "Débit (kbit/s)",
+        "tooltipAria": "À propos du débit audio",
+        "tooltip": "Règle le compromis qualité/taille pour les formats avec perte. 128 kbit/s suffit pour les podcasts, 192 à 256 kbit/s est un bon choix pour la musique, et 320 kbit/s est la qualité MP3 maximale. Ignoré pour WAV, FLAC et ALAC (sans perte)."
+      },
+      "speed": {
+        "label": "Multiplicateur de vitesse",
+        "tooltipAria": "À propos du multiplicateur de vitesse audio",
+        "tooltip": "Tempo de lecture de 0,25x (lent) à 4x (rapide). La hauteur est préservée grâce au filtre atempo de FFmpeg, chaîné automatiquement pour les valeurs extrêmes."
+      },
+      "volume": {
+        "label": "Multiplicateur de volume",
+        "tooltipAria": "À propos du multiplicateur de volume",
+        "tooltip": "Facteur de gain linéaire de 0,1x à 2x. 1,0 laisse le niveau inchangé. Pour un réglage plus fin en dB, utilisez le curseur Amplifier dans les Effets audio avancés."
+      }
+    },
+    "video": {
+      "trimming": {
+        "title": "Découpe vidéo",
+        "tooltipAria": "À propos de la découpe vidéo",
+        "tooltip": "Ouvre un lecteur pour parcourir la vidéo et choisir un début et une fin. Seul ce segment est encodé dans la sortie. La découpe fonctionne quel que soit le codec de sortie, GIF animé compris.",
+        "selectPortion": "Sélectionnez la partie de la vidéo à conserver",
+        "editTrim": "Modifier la découpe",
+        "trimVideo": "Découper la vidéo"
+      },
+      "format": {
+        "label": "Format",
+        "tooltipAria": "À propos du format vidéo",
+        "tooltip": "Le conteneur et le codec de sortie. MP4 (H.264+AAC) est le choix le plus sûr pour le web. WebM utilise VP9+Opus et convient aux intégrations web ouvertes. MOV/MKV/AVI/WMV/FLV visent des usages spécifiques ; ProRes/DNxHD sont des codecs de montage à haut débit. GIF (animé) réduit et palettise le clip via ffmpeg + gifsicle : parfait pour les boucles courtes et muettes.",
+        "locked": "Verrouillé sur {{format}} pour cet outil",
+        "options": {
+          "mp4": "MP4",
+          "webm": "WebM",
+          "avi": "AVI",
+          "mov": "MOV",
+          "mkv": "MKV",
+          "flv": "FLV",
+          "wmv": "WMV",
+          "prores": "ProRes (MOV)",
+          "dnxhd": "DNxHR (MOV)",
+          "gif": "GIF (animé)"
+        }
+      },
+      "quality": {
+        "label": "Qualité",
+        "tooltipAria": "À propos de la qualité vidéo",
+        "tooltip": "Sélectionne un préréglage CRF x264 en coulisses. Basse ≈ CRF 30 (petit fichier), Moyenne ≈ CRF 23 (équilibre par défaut), Haute ≈ CRF 18 (visuellement transparent sur la plupart des images). Ignoré pour la sortie GIF : utilisez le panneau GIF ci-dessous pour régler la palette et la fréquence d'images.",
+        "options": {
+          "low": "Basse",
+          "medium": "Moyenne",
+          "high": "Haute"
+        }
+      },
+      "width": {
+        "label": "Largeur (px)",
+        "tooltipAria": "À propos de la largeur vidéo",
+        "tooltip": "Largeur de sortie cible en pixels. Laissez vide pour conserver l'original ou redimensionner proportionnellement à partir de la hauteur. Combinez avec Conserver le rapport d'image pour éviter les déformations. Pour le format GIF, laisser ce champ vide utilise la largeur du panneau GIF animé ci-dessous.",
+        "placeholder": "Auto"
+      },
+      "height": {
+        "label": "Hauteur (px)",
+        "tooltipAria": "À propos de la hauteur vidéo",
+        "tooltip": "Hauteur de sortie cible en pixels. Laissez vide pour conserver l'original ou redimensionner proportionnellement à partir de la largeur. Ignoré pour la sortie GIF : la hauteur est calculée à partir de la largeur pour conserver le rapport d'image (et arrondie à un multiple de 4).",
+        "placeholder": "Auto",
+        "placeholderGif": "Auto (d'après la largeur)"
+      },
+      "speed": {
+        "label": "Multiplicateur de vitesse",
+        "tooltipAria": "À propos du multiplicateur de vitesse",
+        "tooltip": "Vitesse de lecture de 0,25x (ralenti) à 4x (accéléré). Les PTS vidéo et le tempo audio sont ajustés ensemble pour que le résultat reste synchronisé. Pour la sortie GIF, réglez le rendu avec les réglages Fréquence d'images et Délai entre images du panneau GIF animé."
+      },
+      "preserveAspectRatio": {
+        "label": "Conserver le rapport d'image",
+        "tooltipAria": "À propos de la conservation du rapport d'image",
+        "tooltip": "Lorsque la largeur et la hauteur sont toutes deux définies, applique une mise à l'échelle FFmpeg force_original_aspect_ratio=decrease pour que la vidéo tienne dans le cadre sans déformation. Désactivez-le pour imposer une taille exacte (potentiellement déformée). La sortie GIF conserve toujours le rapport d'image."
+      },
+      "gif": {
+        "title": "Paramètres du GIF animé",
+        "tooltipAria": "À propos des paramètres du GIF animé",
+        "tooltip": "La conversion en GIF se fait en deux étapes : ffmpeg réduit la vidéo et l'échantillonne à la fréquence d'images choisie, puis gifsicle quantifie la palette et optimise la sortie. Les réglages Qualité, Hauteur et Vitesse ci-dessus sont ignorés pour le GIF, car ce panneau prend le relais.",
+        "subtitle": "Réglez le pipeline ffmpeg → gifsicle. Les valeurs par défaut correspondent à un bon préréglage de capture d'écran (900 px de large, 12 fps, 128 couleurs).",
+        "width": {
+          "label": "Largeur (px)",
+          "tooltipAria": "À propos de la largeur du GIF",
+          "tooltip": "Largeur de sortie en pixels. La hauteur est calculée automatiquement pour conserver le rapport d'image (arrondie à un multiple de 4 pour satisfaire ffmpeg). 480 à 900 convient bien aux captures d'écran ; des valeurs plus petites réduisent vite le fichier."
+        },
+        "fps": {
+          "label": "Fréquence d'images (fps)",
+          "tooltipAria": "À propos de la fréquence d'images du GIF",
+          "tooltip": "Nombre d'images par seconde que ffmpeg échantillonne dans la vidéo source avant de la passer à gifsicle. 12 fps est fluide pour les enregistrements d'écran ; montez à 18-24 pour les clips avec beaucoup de mouvement, descendez à 8-10 pour réduire le fichier."
+        },
+        "colors": {
+          "label": "Couleurs",
+          "tooltipAria": "À propos des couleurs du GIF",
+          "tooltip": "Taille maximale de la palette quantifiée par gifsicle (2 à 256). 128 est un bon choix par défaut ; descendez à 64 pour réduire le fichier sur des interfaces à aplats, montez à 256 pour des clips photographiques avec des dégradés doux."
+        },
+        "delay": {
+          "label": "Délai entre images",
+          "tooltipAria": "À propos du délai entre images du GIF",
+          "tooltip": "Délai gifsicle entre les images, en centièmes de seconde. Plus bas = lecture plus rapide. 3 (= 30 ms) donne un rendu vif de capture d'écran ; 6 à 10 produit une boucle plus lente et posée. Indépendant de la fréquence d'échantillonnage ffmpeg ci-dessus."
+        },
+        "optimize": {
+          "label": "Niveau d'optimisation",
+          "tooltipAria": "À propos du niveau d'optimisation du GIF",
+          "tooltip": "Niveau gifsicle --optimize. 1 est le plus rapide avec la sortie la plus lourde, 3 le plus lent avec la sortie la plus légère. Restez sur 3, sauf si vous itérez sur un long clip et voulez un brouillon rapide.",
+          "options": {
+            "1": "1 : rapide, fichier plus lourd",
+            "2": "2 : équilibré",
+            "3": "3 : le plus léger, plus lent"
+          }
+        }
+      }
+    }
+  },
+  "advancedAudioEffects": {
+    "title": "Effets audio avancés",
+    "tooltipAria": "À propos des effets audio avancés",
+    "tooltipIntro": "Chaînes de traitement audio manuelles, regroupées en quatre sections dépliables :",
+    "tooltipBasic": "<strong>Traitement audio de base</strong> : normalisation, amplification, fondus d'entrée/sortie, préréglages d'égaliseur, largeur stéréo/panoramique/balance.",
+    "tooltipTime": "<strong>Effets temporels</strong> : réverbération, délai et modulation (chorus, flanger, trémolo, vibrato).",
+    "tooltipRestoration": "<strong>Restauration et nettoyage</strong> : réduction du bruit, suppression du ronflement, déclipping, suppression des silences.",
+    "tooltipAdvanced": "<strong>Audio avancé</strong> : transposition, étirement temporel, audio spatial.",
+    "sections": {
+      "basic": {
+        "title": "Traitement audio de base",
+        "description": "Volume, égaliseur, dynamique et traitement stéréo"
+      },
+      "time": {
+        "title": "Effets temporels",
+        "description": "Réverbération, délai, écho et effets de modulation"
+      },
+      "restoration": {
+        "title": "Restauration et nettoyage",
+        "description": "Réduction du bruit, suppression du ronflement, déclipping et détection des silences"
+      },
+      "advanced": {
+        "title": "Traitement avancé",
+        "description": "Transposition, étirement temporel, audio spatial et traitement spectral"
+      }
+    },
+    "volumeDynamics": {
+      "title": "Volume et dynamique",
+      "tooltip": "Amplifiez en décibels (-60 à +60), appliquez des durées de fondu d'entrée/sortie et activez la normalisation du volume. Utilisez Amplifier pour égaliser les niveaux et Normaliser pour obtenir un volume perçu constant."
+    },
+    "equalizer": {
+      "title": "Égaliseur",
+      "tooltip": "Choisissez un préréglage correspondant à une chaîne de filtres d'égalisation FFmpeg multibande : basses, aigus, voix, classique, rock ou jazz. Choisissez « aucun » pour laisser l'égaliseur inchangé.",
+      "enable": "Activer l'égaliseur",
+      "presetLabel": "Préréglage d'égaliseur",
+      "presets": {
+        "none": "Aucun",
+        "bass-boost": "Renfort des basses",
+        "treble-boost": "Renfort des aigus",
+        "vocal": "Mise en avant des voix",
+        "classical": "Classique",
+        "rock": "Rock",
+        "jazz": "Jazz"
+      }
+    },
+    "stereo": {
+      "title": "Traitement stéréo",
+      "tooltip": "Réglez le panoramique (-100 gauche à +100 droite), la largeur stéréo (0 = mono, 100 = original, jusqu'à 200 = plus large), activez la conversion mono et, si besoin, inversez les canaux gauche/droite.",
+      "pan": "Panoramique",
+      "leftRight": "Gauche ← → Droite",
+      "stereoWidth": "Largeur stéréo",
+      "widthRange": "0 % à 200 %"
+    },
+    "reverb": {
+      "title": "Réverbération",
+      "tooltip": "Donnez de l'espace au son. Choisissez pièce (petite), salle (grande), plaque (studio vintage) ou ressort (style ampli guitare). La taille de la pièce, l'amortissement et le mélange wet/dry affinent l'effet.",
+      "enable": "Activer la réverbération",
+      "typeLabel": "Type de réverbération",
+      "types": {
+        "none": "Aucune",
+        "room": "Pièce",
+        "hall": "Salle",
+        "plate": "Plaque",
+        "spring": "Ressort"
+      },
+      "roomSize": "Taille de la pièce",
+      "roomRange": "0 % à 100 %",
+      "wetDry": "Mélange wet/dry",
+      "dryWet": "Dry ← → Wet"
+    },
+    "delay": {
+      "title": "Délai et écho",
+      "tooltip": "Ajoute une copie retardée du signal. L'écho est une seule répétition ; le multi-tap ajoute plusieurs échos décalés ; le ping-pong alterne entre gauche et droite. Le temps (ms), le feedback en % et le niveau wet façonnent les répétitions.",
+      "enable": "Activer le délai",
+      "typeLabel": "Type de délai",
+      "types": {
+        "none": "Aucun",
+        "echo": "Écho simple",
+        "multi-tap": "Multi-tap",
+        "ping-pong": "Ping-pong"
+      },
+      "delayTime": "Temps de délai (ms)",
+      "feedback": "Feedback (%)",
+      "feedbackRange": "0 % à 95 %"
+    },
+    "restoration": {
+      "noiseReduction": "Réduction du bruit",
+      "deHum": "Suppression du ronflement (50/60 Hz)",
+      "declip": "Déclipping audio",
+      "silenceDetection": "Détection des silences"
+    },
+    "advanced": {
+      "pitchShift": "Transposition (demi-tons)",
+      "pitchValue": "{{value}} demi-tons",
+      "pitchRange": "-24 à +24 demi-tons",
+      "timeStretch": "Facteur d'étirement temporel",
+      "timeStretchValue": "Vitesse {{value}}x",
+      "timeStretchRange": "Vitesse de 0,25x à 4x",
+      "spatialAudio": "Audio spatial",
+      "spatial": {
+        "none": "Aucun",
+        "binaural": "Binaural",
+        "surround": "Surround",
+        "3d": "Audio 3D"
+      },
+      "spectral": "Traitement spectral",
+      "spectralOptions": {
+        "none": "Aucun",
+        "vocoder": "Vocodeur",
+        "formant": "Filtre de formants",
+        "convolution": "Convolution"
+      }
+    },
+    "labels": {
+      "amplify": "Amplifier (dB)",
+      "amplifyRange": "-60 dB à +60 dB",
+      "normalize": "Normaliser l'audio",
+      "fadeIn": "Fondu d'entrée (secondes)",
+      "fadeOut": "Fondu de sortie (secondes)"
+    }
+  },
+  "advancedVideoEffects": {
+    "title": "Effets vidéo avancés",
+    "tooltipAria": "À propos des effets vidéo avancés",
+    "tooltipIntro": "Chaînes de filtres vidéo manuelles, regroupées en quatre sections dépliables :",
+    "tooltipVisual": "<strong>Effets visuels</strong> : correction colorimétrique, flou/netteté, bruit et filtres artistiques.",
+    "tooltipTransform": "<strong>Transformation</strong> : rotation, retournement, recadrage personnalisé, marges/letterboxing.",
+    "tooltipTemporal": "<strong>Effets temporels</strong> : inversion, ping-pong, conversion de fréquence d'images, stabilisation.",
+    "tooltipAdvanced": "<strong>Traitement avancé</strong> : désentrelacement, tone mapping HDR, conversion d'espace colorimétrique.",
+    "sections": {
+      "visual": {
+        "title": "Effets visuels",
+        "description": "Correction colorimétrique, flou/netteté, effets artistiques et contrôle du bruit"
+      },
+      "transform": {
+        "title": "Transformation géométrique",
+        "description": "Rotation, retournement, recadrage et marges"
+      },
+      "temporal": {
+        "title": "Effets temporels",
+        "description": "Vitesse, inversion, fréquence d'images et stabilisation"
+      },
+      "advanced": {
+        "title": "Traitement avancé",
+        "description": "Désentrelacement, traitement HDR et conversion d'espace colorimétrique"
+      }
+    },
+    "colorExposure": {
+      "title": "Couleur et exposition",
+      "tooltip": "Réglez la luminosité, le contraste, la saturation, la teinte, le gamma, l'exposition et la récupération des ombres/hautes lumières. Ces réglages correspondent aux filtres eq et curves de FFmpeg et sont combinés en une seule passe de correction colorimétrique."
+    },
+    "blurSharpen": {
+      "title": "Flou et netteté",
+      "tooltip": "Ajoutez un flou gaussien (sigma de 0 à 50), un flou de mouvement avec angle et distance, ou une accentuation par masque flou avec rayon, intensité et seuil réglables."
+    },
+    "labels": {
+      "brightness": "Luminosité",
+      "contrast": "Contraste",
+      "saturation": "Saturation",
+      "hue": "Teinte",
+      "gaussianBlur": "Flou gaussien",
+      "artisticEffect": "Effet artistique",
+      "rotation": "Rotation (degrés)",
+      "flipHorizontal": "Retourner horizontalement",
+      "flipVertical": "Retourner verticalement",
+      "reverseVideo": "Inverser la vidéo",
+      "pingPong": "Boucle ping-pong",
+      "targetFrameRate": "Fréquence d'images cible",
+      "stabilization": "Stabilisation vidéo",
+      "deinterlace": "Désentrelacer la vidéo",
+      "outputColorSpace": "Espace colorimétrique de sortie"
+    },
+    "ranges": {
+      "hundred": "-100 à +100",
+      "hue": "-180° à +180°",
+      "blur": "0 à 50 px"
+    },
+    "artistic": {
+      "none": "Aucun",
+      "oil-painting": "Peinture à l'huile",
+      "watercolor": "Aquarelle",
+      "sketch": "Croquis",
+      "emboss": "Relief",
+      "edge-detection": "Détection des contours",
+      "posterize": "Postérisation"
+    },
+    "colorSpace": {
+      "rec709": "Rec.709 (standard)",
+      "rec2020": "Rec.2020 (HDR)",
+      "srgb": "sRGB",
+      "p3": "Display P3"
+    },
+    "autoPlaceholder": "Auto"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "אישור",
+    "cancel": "ביטול",
+    "retry": "נסה שוב",
+    "close": "סגירה",
+    "continue": "המשך",
+    "done": "סיום",
+    "loading": "טוען",
+    "processing": "מעבד",
+    "signOut": "התנתקות",
+    "back": "חזרה"
+  },
+  "tabs": {
+    "tools": "כלים",
+    "history": "היסטוריה",
+    "account": "חשבון"
+  },
+  "placeholders": {
+    "toolsBody": "הכלים יגיעו ב-MA10.",
+    "historyBody": "המשימות שלך יופיעו כאן.",
+    "accountBody": "החשבון יגיע ב-MA15.",
+    "signInBody": "ההתחברות תגיע ב-MA04",
+    "openShell": "פתיחת מעטפת האפליקציה",
+    "errorBoundary": "משהו השתבש. הפעל מחדש את האפליקציה."
+  },
+  "language": {
+    "title": "שפה",
+    "system": "ברירת המחדל של המערכת",
+    "rtlReloadTitle": "הפעל מחדש כדי להחליף את כיוון הפריסה",
+    "rtlReloadBody": "יש להפעיל מחדש את האפליקציה כדי להציג את השפה הזו מימין לשמאל.",
+    "rtlReloadBodyLtr": "יש להפעיל מחדש את האפליקציה כדי להציג את השפה הזו משמאל לימין.",
+    "rtlReloadConfirm": "הפעל מחדש עכשיו"
+  }
+}

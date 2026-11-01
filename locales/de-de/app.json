@@ -1,0 +1,35 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Abbrechen",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "continue": "Weiter",
+    "done": "Fertig",
+    "loading": "Wird geladen",
+    "processing": "Wird verarbeitet",
+    "signOut": "Abmelden",
+    "back": "Zurück"
+  },
+  "tabs": {
+    "tools": "Werkzeuge",
+    "history": "Verlauf",
+    "account": "Konto"
+  },
+  "placeholders": {
+    "toolsBody": "Werkzeuge kommen mit MA10.",
+    "historyBody": "Deine Aufträge erscheinen hier.",
+    "accountBody": "Das Konto kommt mit MA15.",
+    "signInBody": "Die Anmeldung kommt mit MA04",
+    "openShell": "App-Oberfläche öffnen",
+    "errorBoundary": "Etwas ist schiefgelaufen. Starte die App neu."
+  },
+  "language": {
+    "title": "Sprache",
+    "system": "Systemstandard",
+    "rtlReloadTitle": "Neustart zum Wechseln der Layoutrichtung",
+    "rtlReloadBody": "Die App muss neu gestartet werden, um diese Sprache von rechts nach links anzuzeigen.",
+    "rtlReloadBodyLtr": "Die App muss neu gestartet werden, um diese Sprache von links nach rechts anzuzeigen.",
+    "rtlReloadConfirm": "Jetzt neu starten"
+  }
+}
