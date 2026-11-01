@@ -12,6 +12,7 @@ import {
 import { registerStateGetter } from '@/api/stateRef';
 import { setupApiListeners } from '@/api/listeners';
 import { mmApi } from '@/api/mmApi';
+import { authListener } from '@/auth/gate';
 import { persistConfig } from './persist';
 import auth from './slices/auth';
 import jobs from './slices/jobs';
@@ -35,7 +36,7 @@ export function makeStore() {
     middleware: (getDefault) =>
       getDefault({
         serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER] },
-      }).concat(mmApi.middleware),
+      }).concat(mmApi.middleware, authListener.middleware),
   });
   registerStateGetter(() => store.getState());
   return { store, persistor: persistStore(store) };

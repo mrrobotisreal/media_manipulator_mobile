@@ -53,7 +53,15 @@ export function buildConfig(
       },
     ],
   ];
-  if (hasAndroidFirebase || hasIosFirebase) plugins.push('@react-native-firebase/app');
+  // Auth plugins live inside the same guard: without a Firebase config file the native modules are not linked.
+  // The google-signin plugin reads REVERSED_CLIENT_ID from the plist itself (no iosUrlScheme option needed).
+  if (hasAndroidFirebase || hasIosFirebase) {
+    plugins.push(
+      '@react-native-firebase/app',
+      '@react-native-firebase/auth',
+      '@react-native-google-signin/google-signin',
+    );
+  }
 
   const config: ExpoConfig = {
     name: v.name,
@@ -76,6 +84,7 @@ export function buildConfig(
     ios: {
       bundleIdentifier: `${IOS_BUNDLE_ID}${v.suffix}`,
       supportsTablet: false,
+      usesAppleSignIn: true,
       ...(hasIosFirebase ? { googleServicesFile: googleServiceInfoPlist } : {}),
     },
     experiments: { typedRoutes: true },

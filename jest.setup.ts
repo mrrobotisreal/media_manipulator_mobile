@@ -37,6 +37,7 @@ jest.mock('expo-splash-screen', () => ({
 
 let mockUuidCounter = 0;
 jest.mock('expo-crypto', () => ({
+  getRandomBytes: (n: number) => Uint8Array.from({ length: n }, (_, i) => i + 1),
   randomUUID: () => {
     mockUuidCounter += 1;
     const n = mockUuidCounter.toString(16).padStart(12, '0');

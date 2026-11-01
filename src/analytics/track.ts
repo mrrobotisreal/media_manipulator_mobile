@@ -2,7 +2,16 @@
  * Analytics stub (MA03). MA07 replaces the bodies; the signatures are the contract.
  * Nothing else in the app imports an analytics transport before MA07.
  */
-export type StubEventName = 'client_error';
+export type StubEventName =
+  | 'client_error'
+  // Auth (MA04). Names match the analytics catalog (media-manipulator-analytics/internal/catalog).
+  | 'auth_modal_opened'
+  | 'signup_started'
+  | 'signup_completed'
+  | 'signin_completed'
+  | 'auth_failed'
+  | 'password_reset_requested'
+  | 'signout';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 

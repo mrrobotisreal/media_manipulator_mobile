@@ -34,6 +34,10 @@ const jobsSlice = createSlice({
       state.byId[job.jobId] = job;
       enforceCap(state);
     },
+    /** Sign-out: drop every tracked job. */
+    jobsReset() {
+      return { byId: {}, order: [] } as JobsState;
+    },
     jobRemoved(state, action: PayloadAction<string>) {
       delete state.byId[action.payload];
       state.order = state.order.filter((id) => id !== action.payload);
@@ -41,5 +45,5 @@ const jobsSlice = createSlice({
   },
 });
 
-export const { jobUpserted, jobRemoved } = jobsSlice.actions;
+export const { jobUpserted, jobRemoved, jobsReset } = jobsSlice.actions;
 export default jobsSlice.reducer;

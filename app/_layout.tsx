@@ -10,6 +10,9 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Component, useEffect, type ReactNode } from 'react';
+import { startAuth } from '@/auth/gate';
+import { SyncLoading } from '@/auth/ui/SyncLoading';
+import { useAppSelector } from '@/state/hooks';
 import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -39,6 +42,14 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean
   }
 }
 
+/** Starts the Firebase auth listener / sync gate; holds a loading view while the state resolves. */
+function AuthGate({ children }: { children: ReactNode }) {
+  const status = useAppSelector((s) => s.auth.status);
+  useEffect(() => startAuth(store), []);
+  if (status === 'unknown' || status === 'syncing') return <SyncLoading />;
+  return children;
+}
+
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
@@ -61,12 +72,14 @@ export default function RootLayout() {
           <PersistGate loading={null} persistor={persistor}>
             <StatusBar style="light" />
             <ErrorBoundary>
-              <Stack
-                screenOptions={{
-                  headerShown: false,
-                  contentStyle: { backgroundColor: colors.surface0 },
-                }}
-              />
+              <AuthGate>
+                <Stack
+                  screenOptions={{
+                    headerShown: false,
+                    contentStyle: { backgroundColor: colors.surface0 },
+                  }}
+                />
+              </AuthGate>
             </ErrorBoundary>
           </PersistGate>
         </Provider>
