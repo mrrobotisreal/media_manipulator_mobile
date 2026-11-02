@@ -9,9 +9,7 @@
     "faceSelection": {
       "selectionMode": "all_except_selected",
       "sessionId": "fd_1",
-      "selectedFaceIds": [
-        "face_1"
-      ]
+      "selectedFaceIds": ["face_1"]
     }
   }
 }

@@ -30,7 +30,12 @@ export const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 /** The rectangle the image occupies inside `layout` under `contentFit="contain"`. */
 export function containRect(layout: Size, aspect: number): DisplayBox {
   if (layout.width <= 0 || layout.height <= 0 || !(aspect > 0)) {
-    return { left: 0, top: 0, width: Math.max(0, layout.width), height: Math.max(0, layout.height) };
+    return {
+      left: 0,
+      top: 0,
+      width: Math.max(0, layout.width),
+      height: Math.max(0, layout.height),
+    };
   }
   const layoutAspect = layout.width / layout.height;
   if (aspect > layoutAspect) {

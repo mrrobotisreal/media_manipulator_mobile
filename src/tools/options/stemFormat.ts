@@ -122,7 +122,11 @@ export function estimateStemBytes(
   format: StemFormat,
   durationSeconds: number | null | undefined,
 ): number | null {
-  if (typeof durationSeconds !== 'number' || !Number.isFinite(durationSeconds) || durationSeconds <= 0)
+  if (
+    typeof durationSeconds !== 'number' ||
+    !Number.isFinite(durationSeconds) ||
+    durationSeconds <= 0
+  )
     return null;
   if (format === 'wav') return Math.round(PCM_BYTES_PER_SECOND * durationSeconds);
   if (format === 'flac') return Math.round(PCM_BYTES_PER_SECOND * durationSeconds * FLAC_RATIO);

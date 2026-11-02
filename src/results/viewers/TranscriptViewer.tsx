@@ -36,7 +36,8 @@ export function TranscriptViewer({ descriptor, context }: ViewerProps) {
   }
   if (!q.data || !source) {
     const ext = descriptor.fileName.split('.').pop()?.toLowerCase();
-    if (ext === 'srt' || ext === 'vtt') return <CaptionsViewer descriptor={descriptor} context={context} />;
+    if (ext === 'srt' || ext === 'vtt')
+      return <CaptionsViewer descriptor={descriptor} context={context} />;
     return (
       <View className="items-start gap-3 py-4" testID="transcript-unavailable">
         <Text className="text-muted-fg">{t('result.transcript.unavailable')}</Text>

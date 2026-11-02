@@ -21,7 +21,9 @@ function golden(name: string, value: unknown) {
 
 const ctx = (name: string, mediaKind: MediaKind, extra: Partial<ToolContext['input']> = {}) => {
   const extension = name.split('.').pop()!;
-  return { input: { name, extension, mime: '', mediaKind, uri: `file:///${name}`, ...extra } } as ToolContext;
+  return {
+    input: { name, extension, mime: '', mediaKind, uri: `file:///${name}`, ...extra },
+  } as ToolContext;
 };
 
 const detection = (fileUri: string): b.FaceDetectionState => ({
@@ -38,7 +40,10 @@ const detection = (fileUri: string): b.FaceDetectionState => ({
 
 describe('AI option builders (golden)', () => {
   it('remove-background.default', () =>
-    golden('remove-background.default', b.buildRemoveBackgroundOptions(b.removeBackgroundDefaults)));
+    golden(
+      'remove-background.default',
+      b.buildRemoveBackgroundOptions(b.removeBackgroundDefaults),
+    ));
   it('upscale.2x-anime', () =>
     golden(
       'upscale.2x-anime',
@@ -164,7 +169,9 @@ describe('AI option builders (golden)', () => {
     expect(b.frameInterpolationBlockReason(f, ctx('a.mp4', 'video', { durationSec: 150 }))).toBe(
       'too_long',
     );
-    expect(b.frameInterpolationBlockReason(f, ctx('a.mp4', 'video', { durationSec: 120 }))).toBeNull();
+    expect(
+      b.frameInterpolationBlockReason(f, ctx('a.mp4', 'video', { durationSec: 120 })),
+    ).toBeNull();
     expect(b.frameInterpolationBlockReason(f, ctx('a.mp4', 'video'))).toBeNull();
   });
   it('transcribe.vtt-auto has no language key', () => {
@@ -213,7 +220,10 @@ describe('quota metric table (decision 4)', () => {
   it.each(AI_IDS)('%s: row metric and the built options agree', (id) => {
     const tool = TOOL_BY_ID.get(id)!;
     const kind = tool.accepts.kinds[0]!;
-    const options = tool.optionsBuilder(tool.defaults, ctx(`a.${kind === 'image' ? 'jpg' : kind === 'audio' ? 'mp3' : 'mp4'}`, kind));
+    const options = tool.optionsBuilder(
+      tool.defaults,
+      ctx(`a.${kind === 'image' ? 'jpg' : kind === 'audio' ? 'mp3' : 'mp4'}`, kind),
+    );
     const expected = OPS.includes(id) ? 'ops' : 'ai_ops';
     expect(tool.metric).toBe(expected);
     expect(quotaMetricForJob(options)).toBe(expected);
@@ -249,8 +259,8 @@ describe('endpoint per input table (decision 3)', () => {
       maxHeight: 720,
     });
     const t = TOOL_BY_ID.get('transcribe')!;
-    expect(t.analyticsSlugFor!({ ...b.transcribeDefaults, slugHint: 'generate-vtt-captions' })).toBe(
-      'generate-vtt-captions',
-    );
+    expect(
+      t.analyticsSlugFor!({ ...b.transcribeDefaults, slugHint: 'generate-vtt-captions' }),
+    ).toBe('generate-vtt-captions');
   });
 });

@@ -1,13 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import { ANALYSIS_POLL_MS, useGetAnalysisQuery } from '@/api/endpoints/transcript';
+import { ANALYSIS_MAX_MS, ANALYSIS_POLL_MS, useGetAnalysisQuery } from '@/api/endpoints/transcript';
 import type { AnalysisResult } from '@/api/schemas/transcript';
 import { Panel } from '@/ui/components/Panel';
 import { Text } from '@/ui/components/Text';
 import { analysisUiState } from '../analysisPolling';
 
-export function AiSummaryCard({ review }: { review: NonNullable<AnalysisResult['transcriptReview']> }) {
+export function AiSummaryCard({
+  review,
+}: {
+  review: NonNullable<AnalysisResult['transcriptReview']>;
+}) {
   const { t } = useTranslation();
   const safety = review.content_safety?.rating;
   return (
@@ -48,22 +52,27 @@ export function AiSummaryCard({ review }: { review: NonNullable<AnalysisResult['
  */
 export function AiSummary({ jobId }: { jobId: string }) {
   const { t } = useTranslation();
-  const startedAt = useRef(Date.now());
-  const [now, setNow] = useState(() => Date.now());
-  const [polling, setPolling] = useState(ANALYSIS_POLL_MS);
-  const q = useGetAnalysisQuery(jobId, { pollingInterval: polling });
+  const [startedAt] = useState(() => Date.now());
+  const [now, setNow] = useState(startedAt);
+  const [stop, setStop] = useState(false);
+  // Skip-token pattern is not needed: RTK Query polls only while `pollingInterval > 0`, and the first
+  // fetch happens on mount regardless. Poll until the summary exists or the 5 minute cap passes.
+  const [done, setDone] = useState(false);
+  const q = useGetAnalysisQuery(jobId, { pollingInterval: stop || done ? 0 : ANALYSIS_POLL_MS });
   const review = q.data?.transcriptReview;
-  const state = analysisUiState(Boolean(review), startedAt.current, now);
-
-  useEffect(() => {
-    setPolling(state === 'running' ? ANALYSIS_POLL_MS : 0);
-  }, [state]);
+  // Adjusting state while rendering is the sanctioned way to derive it from a query result.
+  if (review && !done) setDone(true);
+  const state = analysisUiState(Boolean(review), startedAt, now);
 
   useEffect(() => {
     if (state !== 'running') return;
-    const h = setInterval(() => setNow(Date.now()), 1000);
+    const h = setInterval(() => {
+      const n = Date.now();
+      setNow(n);
+      if (n - startedAt >= ANALYSIS_MAX_MS) setStop(true);
+    }, 1000);
     return () => clearInterval(h);
-  }, [state]);
+  }, [state, startedAt]);
 
   return (
     <Panel title={t('result.transcript.summaryTitle')}>

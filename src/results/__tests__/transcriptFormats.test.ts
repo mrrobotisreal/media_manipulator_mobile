@@ -14,7 +14,9 @@ const result = {
 
 describe('renderTranscript', () => {
   it('srt', () => {
-    expect(renderTranscript(result, 'srt').startsWith('1\n00:00:00,120 --> 00:00:02,400\nПривет, мир\n')).toBe(true);
+    expect(
+      renderTranscript(result, 'srt').startsWith('1\n00:00:00,120 --> 00:00:02,400\nПривет, мир\n'),
+    ).toBe(true);
   });
   it('vtt', () => {
     const out = renderTranscript(result, 'vtt');
@@ -22,12 +24,18 @@ describe('renderTranscript', () => {
     expect(out).toContain('01:02:05.500 --> 01:02:06.250');
   });
   it('txt is one segment per line, no timestamps', () => {
-    expect(renderTranscript(result, 'txt')).toBe('Привет, мир\nSecond line — “quoted” 日本語\nLate');
+    expect(renderTranscript(result, 'txt')).toBe(
+      'Привет, мир\nSecond line — “quoted” 日本語\nLate',
+    );
   });
   it('json is pretty-printed', () => {
     const out = renderTranscript(result, 'json');
     expect(out).toContain('\n  "language": "ru"');
-    expect(JSON.parse(out)).toEqual({ language: 'ru', durationSeconds: 9.5, segments: result.segments });
+    expect(JSON.parse(out)).toEqual({
+      language: 'ru',
+      durationSeconds: 9.5,
+      segments: result.segments,
+    });
   });
   it('falls back to transcriptText without segments', () => {
     const bare = { transcriptText: 'Just text', durationSeconds: 3 };

@@ -5,7 +5,6 @@ import { AudioViewer } from './AudioViewer';
 import { GifViewer } from './GifViewer';
 import { ImageViewer } from './ImageViewer';
 import { PdfViewer } from './PdfViewer';
-import { CaptionsViewer } from './CaptionsViewer';
 import { TranscriptViewer } from './TranscriptViewer';
 import { UnknownViewer } from './UnknownViewer';
 import { VideoViewer } from './VideoViewer';

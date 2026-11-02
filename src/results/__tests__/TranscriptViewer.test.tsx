@@ -36,7 +36,8 @@ const RESULT = transcribeResultSchema.parse({
   ],
 });
 
-const VTT = 'WEBVTT\n\n00:00:01.000 --> 00:00:02.000\nPrivet\n\n00:00:02.500 --> 00:00:04.000\nKak dela\n';
+const VTT =
+  'WEBVTT\n\n00:00:01.000 --> 00:00:02.000\nPrivet\n\n00:00:02.500 --> 00:00:04.000\nKak dela\n';
 
 function deps() {
   return { copy: jest.fn(async () => undefined), shareText: jest.fn(async () => undefined) };
@@ -110,7 +111,10 @@ describe('TranscriptPanel', () => {
   });
 
   it('shows the no-speech state instead of a list', async () => {
-    await mountPanel({ source: sourceFromTranscript({ ...RESULT, segments: undefined }), emptyReason: 'noSpeech' });
+    await mountPanel({
+      source: sourceFromTranscript({ ...RESULT, segments: undefined }),
+      emptyReason: 'noSpeech',
+    });
     expect(screen.getByTestId('no-speech')).toBeTruthy();
     expect(screen.queryByTestId('cue-row')).toBeNull();
   });
@@ -186,7 +190,9 @@ describe('analysis polling cap', () => {
 
 describe('Zod contract', () => {
   it('rejects a malformed transcript and analysis', () => {
-    expect(transcribeResultSchema.safeParse({ format: 'doc', hasAudio: 'yes' }).success).toBe(false);
+    expect(transcribeResultSchema.safeParse({ format: 'doc', hasAudio: 'yes' }).success).toBe(
+      false,
+    );
     expect(
       transcribeResultSchema.safeParse({ ...RESULT, segments: [{ start: 'x' }] }).success,
     ).toBe(false);

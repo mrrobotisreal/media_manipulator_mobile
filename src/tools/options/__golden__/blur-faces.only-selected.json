@@ -9,9 +9,7 @@
     "faceSelection": {
       "selectionMode": "only_selected",
       "sessionId": "fd_1",
-      "selectedFaceIds": [
-        "face_2"
-      ]
+      "selectedFaceIds": ["face_2"]
     }
   }
 }

@@ -4,8 +4,7 @@ import { contractMismatch, networkError, normaliseError, type MmError } from '..
 import { faceDetectionResponseSchema, type FaceDetectionResponse } from '../schemas/faces';
 
 export type DetectFacesResult =
-  | { ok: true; data: FaceDetectionResponse }
-  | { ok: false; error: MmError };
+  { ok: true; data: FaceDetectionResponse } | { ok: false; error: MmError };
 
 /** The slice of an expo-file-system UploadTask this call uses (jest injects a fake). */
 export interface DetectTask {

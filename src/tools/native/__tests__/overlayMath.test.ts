@@ -56,13 +56,20 @@ describe('norm <-> display with letterboxing in both orientations', () => {
     expect(b.y).toBeCloseTo(0.55, 6);
   });
   it('a face at the image origin sits inside the bar offset, not at the canvas origin', () => {
-    const d = normToDisplay({ x: 0, y: 0, width: 0.1, height: 0.1 }, { width: 300, height: 300 }, 2);
+    const d = normToDisplay(
+      { x: 0, y: 0, width: 0.1, height: 0.1 },
+      { width: 300, height: 300 },
+      2,
+    );
     expect(d.top).toBe(75);
     expect(d.left).toBe(0);
   });
   it('points in the bars clamp onto the image edge', () => {
     expect(displayToNorm({ x: -50, y: 0 }, { width: 300, height: 300 }, 2)).toEqual({ x: 0, y: 0 });
-    expect(displayToNorm({ x: 400, y: 400 }, { width: 300, height: 300 }, 2)).toEqual({ x: 1, y: 1 });
+    expect(displayToNorm({ x: 400, y: 400 }, { width: 300, height: 300 }, 2)).toEqual({
+      x: 1,
+      y: 1,
+    });
   });
 });
 

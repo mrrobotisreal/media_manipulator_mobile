@@ -32,12 +32,14 @@ import { faceCountBucket, toDetectionState } from './faceSession';
 /** Lazy: keeps lucide/gesture-handler out of the registry import graph (jest never loads the native runtime). */
 function FacePicker(props: FacePickerProps) {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const C = require('../../native/FacePicker').FacePicker as typeof import('../../native/FacePicker').FacePicker;
+  const C = require('../../native/FacePicker')
+    .FacePicker as typeof import('../../native/FacePicker').FacePicker;
   return <C {...props} />;
 }
 function RectDrawer(props: RectDrawerProps) {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const C = require('../../native/RectDrawer').RectDrawer as typeof import('../../native/RectDrawer').RectDrawer;
+  const C = require('../../native/RectDrawer')
+    .RectDrawer as typeof import('../../native/RectDrawer').RectDrawer;
   return <C {...props} />;
 }
 
@@ -57,7 +59,9 @@ export function RemoveBackgroundForm({ value, onChange }: ToolFormProps<RemoveBa
   const { t } = useTranslation();
   return (
     <View className="gap-3">
-      <Text className="text-sm text-muted-fg">{t('interface:imageForm.ai.background.pngNote')}</Text>
+      <Text className="text-sm text-muted-fg">
+        {t('interface:imageForm.ai.background.pngNote')}
+      </Text>
       <FieldLabel>{t('interface:imageForm.ai.background.modelLabel')}</FieldLabel>
       <Chips
         options={BACKGROUND_MODELS.map((m) => ({
@@ -243,7 +247,11 @@ export function RemoveObjectForm({ value, onChange, ctx }: ToolFormProps<RemoveO
   // expo-image reports the EXIF-oriented size, which is the image the server measures.
   const [loaded, setLoaded] = useState<{ width: number; height: number; uri: string } | null>(null);
   if (!uri) {
-    return <Text className="text-sm text-muted-fg">{t('interface:imageForm.ai.removeObject.chooseFile')}</Text>;
+    return (
+      <Text className="text-sm text-muted-fg">
+        {t('interface:imageForm.ai.removeObject.chooseFile')}
+      </Text>
+    );
   }
   const size = loaded && loaded.uri === uri ? loaded : null;
   return (

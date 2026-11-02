@@ -35,7 +35,9 @@ export function parseCaptions(text: string, hint?: CaptionFormat): ParsedCaption
   const cues: Cue[] = [];
   const src = (text ?? '').replace(/^﻿/, '').replace(/\r\n?/g, '\n');
   const isVtt = /^\s*WEBVTT/.test(src);
-  const format: CaptionFormat = isVtt ? 'vtt' : (hint ?? (/\d,\d{1,3}\s*-->/.test(src) ? 'srt' : /-->/.test(src) ? 'vtt' : 'srt'));
+  const format: CaptionFormat = isVtt
+    ? 'vtt'
+    : (hint ?? (/\d,\d{1,3}\s*-->/.test(src) ? 'srt' : /-->/.test(src) ? 'vtt' : 'srt'));
 
   const blocks: string[][] = [];
   let current: string[] = [];
@@ -66,7 +68,9 @@ export function parseCaptions(text: string, hint?: CaptionFormat): ParsedCaption
     }
     const match = TIMING.exec(lines[timingAt]!);
     if (!match) {
-      warnings.push(`Block ${blockNo + 1}: unreadable timing "${lines[timingAt]!.trim()}", skipped.`);
+      warnings.push(
+        `Block ${blockNo + 1}: unreadable timing "${lines[timingAt]!.trim()}", skipped.`,
+      );
       return;
     }
     const startMs = toMs(match[1], match[2]!, match[3]!, match[4]);
@@ -75,7 +79,12 @@ export function parseCaptions(text: string, hint?: CaptionFormat): ParsedCaption
       warnings.push(`Block ${blockNo + 1}: ends before it starts, skipped.`);
       return;
     }
-    const cue: Cue = { index: cues.length + 1, startMs, endMs, text: lines.slice(timingAt + 1).join('\n') };
+    const cue: Cue = {
+      index: cues.length + 1,
+      startMs,
+      endMs,
+      text: lines.slice(timingAt + 1).join('\n'),
+    };
     const settings = (match[9] ?? '').trim();
     if (settings && format === 'vtt') cue.settings = settings;
     cues.push(cue);

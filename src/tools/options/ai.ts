@@ -247,9 +247,7 @@ export function buildStemOptions(
 ): ToolOptions {
   const input = ctx?.input;
   const format =
-    input?.mediaKind === 'video'
-      ? effectiveStemFormat(f.output, input.name, input.mime)
-      : f.output;
+    input?.mediaKind === 'video' ? effectiveStemFormat(f.output, input.name, input.mime) : f.output;
   return { ...AI_AUDIO_BASE, format, ai: { enabled: true, operation } };
 }
 

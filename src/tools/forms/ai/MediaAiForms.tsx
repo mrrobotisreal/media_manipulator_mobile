@@ -106,13 +106,16 @@ export function FrameInterpolationForm({ value, onChange, ctx }: ToolFormProps<I
       <Segmented
         options={QUALITIES.map((q) => ({
           value: q,
-          label: t(`interface:aiVideoTools.frameInterpolation.qualityOptions.${q}`).split(' — ')[0] ?? q,
+          label:
+            t(`interface:aiVideoTools.frameInterpolation.qualityOptions.${q}`).split(' — ')[0] ?? q,
         }))}
         value={value.quality}
         onChange={(quality) => onChange({ ...value, quality })}
       />
       <View className="flex-row items-center justify-between gap-3">
-        <Text className="flex-1">{t('interface:aiVideoTools.frameInterpolation.preserveAudio')}</Text>
+        <Text className="flex-1">
+          {t('interface:aiVideoTools.frameInterpolation.preserveAudio')}
+        </Text>
         <Switch
           value={value.preserveAudio}
           onValueChange={(preserveAudio) => onChange({ ...value, preserveAudio })}
@@ -127,7 +130,11 @@ export function FrameInterpolationForm({ value, onChange, ctx }: ToolFormProps<I
       </Num>
       <Text className="text-sm text-subtle">{t('interface:aiVideoTools.notes.mp4')}</Text>
       {blocked && dur !== undefined ? (
-        <Text className="text-sm text-danger" accessibilityLiveRegion="polite" testID="interp-too-long">
+        <Text
+          className="text-sm text-danger"
+          accessibilityLiveRegion="polite"
+          testID="interp-too-long"
+        >
           {t('tools.ai.interp.tooLong', {
             duration: formatDuration(dur),
             seconds: INTERP_SERVER_LIMITS.maxSeconds,

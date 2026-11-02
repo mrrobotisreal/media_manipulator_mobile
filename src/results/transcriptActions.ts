@@ -43,7 +43,11 @@ export function realTranscriptDeps(): TranscriptActionDeps {
       const fs = require('expo-file-system') as typeof import('expo-file-system');
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       const Sharing = require('expo-sharing') as typeof import('expo-sharing');
-      const dir = new fs.Directory(fs.Paths.cache, 'exports', jobId.replace(/[^A-Za-z0-9_-]/g, '_'));
+      const dir = new fs.Directory(
+        fs.Paths.cache,
+        'exports',
+        jobId.replace(/[^A-Za-z0-9_-]/g, '_'),
+      );
       if (!dir.exists) dir.create({ intermediates: true, idempotent: true });
       const file = new fs.File(dir, fileName);
       if (file.exists) file.delete();

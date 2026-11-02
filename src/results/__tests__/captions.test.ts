@@ -1,15 +1,18 @@
 import { formatCaptions, formatTimestamp, parseCaptions } from '../captions';
 
 const FIXTURES = {
-  plainSrt: '1\n00:00:01,000 --> 00:00:03,500\nHello there\n\n2\n00:00:04,000 --> 00:00:06,000\nSecond cue\n',
+  plainSrt:
+    '1\n00:00:01,000 --> 00:00:03,500\nHello there\n\n2\n00:00:04,000 --> 00:00:06,000\nSecond cue\n',
   vttWithHeaderNoteStyle:
     'WEBVTT - title\n\nNOTE a comment\nover two lines\n\nSTYLE\n::cue { color: red }\n\n00:00:01.000 --> 00:00:02.000 align:start\n<v Alina>Privet</v>\n\n00:00:02.500 --> 00:00:04.000\nKak dela\n',
-  bomCrlf: '﻿1\r\n00:00:00,500 --> 00:00:01,250\r\nBom line\r\n\r\n2\r\n00:00:02,000 --> 00:00:03,000\r\nSecond\r\n',
+  bomCrlf:
+    '﻿1\r\n00:00:00,500 --> 00:00:01,250\r\nBom line\r\n\r\n2\r\n00:00:02,000 --> 00:00:03,000\r\nSecond\r\n',
   dotSeparatorInSrt: '1\n00:00:01.250 --> 00:00:02.500\nDots in srt\n',
   commaSeparatorInVtt: 'WEBVTT\n\n00:01,250 --> 00:02,500\nCommas in vtt\n',
   vttNoHours: 'WEBVTT\n\n01:02.003 --> 01:04.000\nShort form\n',
   multiLine: '1\n00:00:01,000 --> 00:00:02,000\nLine one\nLine two\n<i>Line three</i>\n',
-  cueIds: 'WEBVTT\n\nintro\n00:00:01.000 --> 00:00:02.000\nWith id\n\nouter-2\n00:00:03.000 --> 00:00:04.000\nAnother\n',
+  cueIds:
+    'WEBVTT\n\nintro\n00:00:01.000 --> 00:00:02.000\nWith id\n\nouter-2\n00:00:03.000 --> 00:00:04.000\nAnother\n',
   invalidBlocks:
     '1\n00:00:05,000 --> 00:00:01,000\nbackwards\n\n2\nnot a timing line\ntext\n\n3\n00:00:01,000 --> 00:00:03,000\nOverlap A\n\n4\n00:00:02,000 --> 00:00:04,000\nOverlap B\n',
 };
@@ -30,7 +33,13 @@ describe('parseCaptions fixtures', () => {
     expect(r.format).toBe('vtt');
     expect(r.warnings).toEqual([]);
     expect(r.cues).toHaveLength(2);
-    expect(r.cues[0]).toEqual({ index: 1, startMs: 1000, endMs: 2000, text: '<v Alina>Privet</v>', settings: 'align:start' });
+    expect(r.cues[0]).toEqual({
+      index: 1,
+      startMs: 1000,
+      endMs: 2000,
+      text: '<v Alina>Privet</v>',
+      settings: 'align:start',
+    });
   });
 
   it('BOM + CRLF', () => {
@@ -88,10 +97,11 @@ describe('formatting', () => {
 
   it.each(['srt', 'vtt'] as const)('parse -> format -> parse is the identity (%s)', (format) => {
     const sources = Object.entries(FIXTURES).filter(([name]) => name !== 'invalidBlocks');
-    for (const [name, text] of sources) {
+    for (const [, text] of sources) {
       const first = parseCaptions(text, format);
       const second = parseCaptions(formatCaptions(first.cues, format), format);
-      const strip = (cues: typeof first.cues) => cues.map((c) => (format === 'srt' ? { ...c, settings: undefined } : c));
+      const strip = (cues: typeof first.cues) =>
+        cues.map((c) => (format === 'srt' ? { ...c, settings: undefined } : c));
       expect(strip(second.cues)).toEqual(strip(first.cues));
     }
   });

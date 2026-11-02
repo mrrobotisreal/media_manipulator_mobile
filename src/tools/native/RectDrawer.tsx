@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs -- gesture callbacks run on touch events, never during render; they read the latest boxes and the active interaction through refs by design. */
 import { Image } from 'expo-image';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -48,5 +48,7 @@ export function CaptionsViewer({ descriptor, context }: ViewerProps) {
   }
   if (state.status !== 'ready') return <LoadState state={state} onRetry={reload} />;
   if (!source) return null;
-  return <TranscriptPanel source={source} fileName={descriptor.fileName} jobId={descriptor.jobId} />;
+  return (
+    <TranscriptPanel source={source} fileName={descriptor.fileName} jobId={descriptor.jobId} />
+  );
 }

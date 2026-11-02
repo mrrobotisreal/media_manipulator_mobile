@@ -13,14 +13,16 @@ let latest: ObjectRect[] = [];
 let n = 0;
 function Harness() {
   const [rects, setRects] = useState<ObjectRect[]>([]);
-  latest = rects;
   return (
     <I18nextProvider i18n={i18n}>
       <RectDrawer
         uri="file:///a.jpg"
         aspect={1}
         rects={rects}
-        onChange={setRects}
+        onChange={(next) => {
+          latest = next;
+          setRects(next);
+        }}
         newId={() => `t${(n += 1)}`}
       />
     </I18nextProvider>
@@ -29,6 +31,7 @@ function Harness() {
 
 async function mount() {
   n = 0;
+  latest = [];
   await render(<Harness />);
   await act(async () => {
     fireEvent(screen.getByTestId('rect-canvas'), 'layout', {

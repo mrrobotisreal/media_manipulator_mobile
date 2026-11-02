@@ -4,7 +4,10 @@ import { formatCaptions, type Cue } from './captions';
 
 export type TranscriptFormat = 'vtt' | 'srt' | 'txt' | 'json';
 
-type RenderableTranscript = Pick<TranscribeResult, 'language' | 'durationSeconds' | 'segments' | 'transcriptText'>;
+type RenderableTranscript = Pick<
+  TranscribeResult,
+  'language' | 'durationSeconds' | 'segments' | 'transcriptText'
+>;
 
 /** Segments (seconds) as cues (ms). Without segments the whole text is one cue. */
 export function transcriptCues(result: RenderableTranscript): Cue[] {
@@ -34,7 +37,11 @@ export function renderTranscript(result: RenderableTranscript, format: Transcrip
       return result.transcriptText ?? '';
     case 'json':
       return JSON.stringify(
-        { language: result.language, durationSeconds: result.durationSeconds, segments: result.segments ?? [] },
+        {
+          language: result.language,
+          durationSeconds: result.durationSeconds,
+          segments: result.segments ?? [],
+        },
         null,
         2,
       );

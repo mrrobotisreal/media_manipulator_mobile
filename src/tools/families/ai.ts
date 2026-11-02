@@ -208,7 +208,10 @@ function withForm(base: AnyToolDefinition, extra: Partial<AnyToolDefinition>): A
   return { ...base, ...extra };
 }
 
-const transcribePreset = (id: 'srt-generator' | 'generate-vtt-captions', format: o.TranscribeFormat) => ({
+const transcribePreset = (
+  id: 'srt-generator' | 'generate-vtt-captions',
+  format: o.TranscribeFormat,
+) => ({
   id,
   titleKey: `interface:transcribeForm.format.${format}.label`,
   analyticsSlug: id,
@@ -251,7 +254,11 @@ export const aiTools: AnyToolDefinition[] = [
     blockReason: o.removeObjectBlockReason,
     // Catalog: feature_used {feature:'remove_object', action:'rects', value: count} at Run.
     prepare: async (form: o.RemoveObjectForm) => {
-      track('feature_used', { feature: 'remove_object', action: 'rects', value: form.rects.length });
+      track('feature_used', {
+        feature: 'remove_object',
+        action: 'rects',
+        value: form.rects.length,
+      });
       return form;
     },
   }),
@@ -280,7 +287,10 @@ export const aiTools: AnyToolDefinition[] = [
     defaults: o.frameInterpolationDefaults,
     optionsBuilder: o.buildFrameInterpolationOptions,
     blockReason: o.frameInterpolationBlockReason,
-    serverLimits: { maxSeconds: o.INTERP_SERVER_LIMITS.maxSeconds, maxHeight: o.INTERP_SERVER_LIMITS.maxHeight },
+    serverLimits: {
+      maxSeconds: o.INTERP_SERVER_LIMITS.maxSeconds,
+      maxHeight: o.INTERP_SERVER_LIMITS.maxHeight,
+    },
   }),
   withForm(byId('transcribe'), {
     Form: TranscribeForm,

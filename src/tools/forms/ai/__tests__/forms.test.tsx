@@ -104,7 +104,13 @@ describe('face session expiry (mocked clock)', () => {
   it('re-detects when the detection belongs to another file', async () => {
     const detect = jest.fn(async () => ({
       ok: true as const,
-      data: { faceDetectionSessionId: 'fd_n', imageWidth: 1, imageHeight: 1, expiresAt: '2099-01-01T00:00:00Z', faces: [] },
+      data: {
+        faceDetectionSessionId: 'fd_n',
+        imageWidth: 1,
+        imageHeight: 1,
+        expiresAt: '2099-01-01T00:00:00Z',
+        faces: [],
+      },
     }));
     const other = { ...fresh(), detection: detection('file:///b.jpg', '2099-01-01T00:00:00Z') };
     await ensureFreshDetection(other, c, detect, NOW);
@@ -134,8 +140,12 @@ describe('face session expiry (mocked clock)', () => {
 describe('FrameInterpolationForm', () => {
   const tool = TOOL_BY_ID.get('frame-interpolation')!;
   it('blocks a 150 s clip with the plain copy and allows 120 s', async () => {
-    expect(tool.blockReason!(o.frameInterpolationDefaults, ctx('a.mp4', 'video', { durationSec: 150 }))).toBe('too_long');
-    expect(tool.blockReason!(o.frameInterpolationDefaults, ctx('a.mp4', 'video', { durationSec: 120 }))).toBeNull();
+    expect(
+      tool.blockReason!(o.frameInterpolationDefaults, ctx('a.mp4', 'video', { durationSec: 150 })),
+    ).toBe('too_long');
+    expect(
+      tool.blockReason!(o.frameInterpolationDefaults, ctx('a.mp4', 'video', { durationSec: 120 })),
+    ).toBeNull();
     await wrap(
       <FrameInterpolationForm
         value={o.frameInterpolationDefaults}
@@ -163,13 +173,17 @@ describe('StemForm and TranscribeForm', () => {
       fireEvent.press(screen.getByText('German'));
     });
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ language: 'de' }));
-    expect(TOOL_BY_ID.get('transcribe')!.blockReason!({ format: 'vtt', language: 'xx1' })).toBe('bad_language');
+    expect(TOOL_BY_ID.get('transcribe')!.blockReason!({ format: 'vtt', language: 'xx1' })).toBe(
+      'bad_language',
+    );
   });
 
   it('presets keep the web slugs', () => {
     const t = TOOL_BY_ID.get('transcribe')!;
     const srt = t.presets!.find((p) => p.id === 'srt-generator')!;
     expect(srt.defaults).toMatchObject({ format: 'srt' });
-    expect(t.analyticsSlugFor!({ ...o.transcribeDefaults, ...srt.defaults }, ctx('a.mp3', 'audio'))).toBe('srt-generator');
+    expect(
+      t.analyticsSlugFor!({ ...o.transcribeDefaults, ...srt.defaults }, ctx('a.mp3', 'audio')),
+    ).toBe('srt-generator');
   });
 });

@@ -8,7 +8,12 @@ import { Num, Text } from '@/ui/components/Text';
 import { TextField } from '@/ui/components/TextField';
 import { showNotice } from '@/ui/notice';
 import { formatTimestamp, type Cue } from '../captions';
-import { copyTranscript, exportTranscript, realTranscriptDeps, type TranscriptActionDeps } from '../transcriptActions';
+import {
+  copyTranscript,
+  exportTranscript,
+  realTranscriptDeps,
+  type TranscriptActionDeps,
+} from '../transcriptActions';
 import type { TranscriptFormat } from '../transcriptFormats';
 import { EXPORT_FORMATS, filterCues, type TranscriptSource } from '../transcriptModel';
 import { languageName } from '../../tools/forms/ai/languages';
