@@ -188,6 +188,121 @@
         "description": "שינוי הפרטים השמורים בתמונה."
       }
     },
+    "metadata": {
+      "title": "מטא-דאטה של הקובץ",
+      "summary": {
+        "tagCount_one": "{{count}} תגית ב-{{categories}} קטגוריות",
+        "tagCount_two": "{{count}} תגיות ב-{{categories}} קטגוריות",
+        "tagCount_other": "{{count}} תגיות ב-{{categories}} קטגוריות",
+        "dimensions": "מימדים",
+        "duration": "משך"
+      },
+      "privacy": {
+        "label": "מסנני פרטיות",
+        "location": "מיקום",
+        "identity": "זהות",
+        "device": "מספרים סידוריים של המכשיר",
+        "history": "היסטוריית עריכה",
+        "locationHint": "היכן הקובץ נוצר",
+        "identityHint": "שמות, תוכנה, חשבונות, מארחים וזמני צילום",
+        "deviceHint": "מספרים סידוריים ומזהים ייחודיים של המכשיר",
+        "historyHint": "עקבות עריכה, תמונות ממוזערות מוטמעות וטקסט חופשי"
+      },
+      "search": {
+        "placeholder": "חיפוש תגיות וערכים",
+        "noResults": "אין תגיות שמתאימות למסננים שלך.",
+        "clear": "נקה חיפוש"
+      },
+      "categories": {
+        "file": "קובץ",
+        "image": "תמונה",
+        "camera": "מצלמה וחשיפה",
+        "lens": "עדשה",
+        "gps": "מיקום (GPS)",
+        "datetime": "תאריכים ושעות",
+        "color": "צבע",
+        "thumbnail": "תמונות ממוזערות ותצוגות מקדימות",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "היסטוריית עריכה",
+        "video": "וידאו",
+        "audio": "אודיו",
+        "container": "מכל",
+        "apple": "Apple",
+        "png": "מקטעי פורמט",
+        "pdf": "PDF",
+        "c2pa": "אישורי תוכן",
+        "pano": "פנורמה ועומק",
+        "makernote": "הערות יצרן",
+        "composite": "ערכים מחושבים",
+        "other": "אחר"
+      },
+      "kind": {
+        "image": "תמונה",
+        "video": "וידאו",
+        "audio": "אודיו",
+        "document": "מסמך",
+        "unknown": "קובץ"
+      },
+      "binary": "בינארי · {{size}}",
+      "binaryNoSize": "בינארי",
+      "showMore": "הצג עוד",
+      "showLess": "הצג פחות",
+      "copied": "הועתק",
+      "copyAll": "העתק הכול כטקסט",
+      "empty": {
+        "title": "אין מטא-דאטה מעבר לפרטי הקובץ הבסיסיים",
+        "body": "בקובץ הזה אין תגיות EXIF, XMP או מכל מוטמעות."
+      },
+      "warnings": {
+        "title": "ייתכן שחלק מהמטא-דאטה חסר"
+      },
+      "gps": {
+        "title": "מיקום",
+        "privacy": "הקובץ הזה שומר היכן הוא נוצר. כל מי שתשתף איתו יוכל לקרוא את הקואורדינטות האלה.",
+        "openMaps": "פתח במפות",
+        "decimal": "עשרוני",
+        "dms": "מעלות, דקות, שניות",
+        "altitude": "גובה"
+      },
+      "inspecting": "קורא מטא-דאטה…",
+      "inspectFailed": "לא ניתן היה לקרוא את המטא-דאטה של הקובץ. נסה שוב.",
+      "formatNote": "הקובץ המנוקה נשמר בפורמט {{format}}.",
+      "strip": {
+        "intro": "כך נראה הקובץ כרגע. ״הסר הכול״ מסיר הכול ושומר על אותו פורמט.",
+        "stripEverything": "הסר הכול",
+        "stripping": "מסיר…",
+        "reencodeNote": "וידאו ואודיו מקודדים מחדש באיכות גבוהה כדי להסיר כל תגית."
+      },
+      "edit": {
+        "open": "ערוך מטא-דאטה",
+        "apply": "החל שינויים",
+        "fields": {
+          "title": "כותרת",
+          "author": "יוצר",
+          "description": "תיאור",
+          "copyright": "זכויות יוצרים",
+          "comment": "הערה",
+          "keywords": "מילות מפתח"
+        },
+        "location": "מיקום",
+        "keep": "השאר",
+        "remove": "הסר",
+        "replace": "החלף",
+        "round": "עגל",
+        "latitude": "קו רוחב",
+        "longitude": "קו אורך",
+        "altitude": "גובה (מ׳)",
+        "decimals": "ספרות אחרי הנקודה",
+        "removeDirection": "הסר כיוון צילום",
+        "removeTimestamp": "הסר חותמת זמן של GPS",
+        "removeAltitude": "הסר גובה",
+        "removeDestination": "הסר שדות יעד",
+        "invalidLocation": "הזן קו רוחב בין -90 ל-90 וקו אורך בין -180 ל-180.",
+        "customNote": "בשמירה כל המטא-דאטה מוסרת תחילה, ואז נכתבים רק השדות שמילאת.",
+        "imagesOnly": "עריכה זמינה לתמונות. עבור וידאו ואודיו, השתמש ב״הסר מטא-דאטה״."
+      }
+    },
     "image": {
       "format": "פורמט פלט",
       "sameAsOriginal": "זהה למקור ({{format}})",
@@ -305,6 +420,59 @@
         "hue": "גוון",
         "gamma": "גמא",
         "noChange": "שנה לפחות מחוון אחד"
+      }
+    },
+    "audio": {
+      "format": "פורמט פלט",
+      "sameAsOriginal": "כמו המקור ({{format}})",
+      "bitrate": "קצב סיביות",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "קצב דגימה",
+      "channels": "ערוצים",
+      "mono": "מונו",
+      "stereo": "סטריאו",
+      "more": "אפשרויות נוספות",
+      "trim": {
+        "fadeIn": "הדהיה פנימה",
+        "fadeOut": "הדהיה החוצה",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "בחר לפחות אפקט אחד",
+        "speed": "מהירות",
+        "volume": "עוצמת שמע",
+        "pitch": "גובה צליל",
+        "normalize": "נרמול עוצמת שמע",
+        "eq": "אקולייזר",
+        "reverb": "הדהוד",
+        "semitones_one": "חצי טון {{value}}",
+        "semitones_two": "{{value}} חצאי טון",
+        "semitones_other": "{{value}} חצאי טון",
+        "eqPreset": {
+          "bass-boost": "הגברת בס",
+          "treble-boost": "הגברת צלילים גבוהים",
+          "vocal": "שירה",
+          "classical": "קלאסי",
+          "rock": "רוק",
+          "jazz": "ג׳אז"
+        },
+        "reverbType": {
+          "room": "חדר",
+          "hall": "אולם",
+          "plate": "פלייט",
+          "spring": "קפיץ"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "וידאו",
+          "image": "תמונה",
+          "both": "שניהם (ZIP)"
+        },
+        "size": "גודל",
+        "planLimit": "עד {{limit}}p בתוכנית שלך.",
+        "colors": "צבעים",
+        "swatch": "צבע {{hex}}"
       }
     },
     "ai": {
@@ -542,6 +710,42 @@
       "stopped": "הפסקת לעקוב אחרי המשימה הזו. את התוצאה תמצא בהיסטוריה."
     },
     "entryFailed": "לא ניתן לפתוח את הקובץ הזה.",
+    "metadata": {
+      "resultLine": {
+        "summary": "מטא-דאטה: {{kept}} נשמרו · {{removed}} הוסרו",
+        "unchanged": "המטא-דאטה לא השתנתה",
+        "includingLocation": "כולל מיקום",
+        "compare": "השווה"
+      },
+      "diff": {
+        "title": "שינויים במטא-דאטה",
+        "counts": {
+          "removed": "{{count}} הוסרו",
+          "added": "{{count}} נוספו",
+          "changed": "{{count}} שונו",
+          "unchanged": "{{count}} ללא שינוי"
+        },
+        "kind": {
+          "removed": "הוסר",
+          "added": "נוסף",
+          "changed": "שונה",
+          "unchanged": "ללא שינוי"
+        },
+        "expected": "שינוי צפוי",
+        "loading": "טוען השוואה…",
+        "empty": "אין מה להציג עם המסננים האלה.",
+        "unavailable": "ההשוואה אינה זמינה: {{reason}}",
+        "reason": {
+          "jobNotCompleted": "המשימה טרם הסתיימה",
+          "resultMissing": "קובץ התוצאה אינו זמין עוד",
+          "notComparable": "לתוצאה הזו אין מטא-דאטה להשוואה",
+          "failed": "לא ניתן היה לטעון את ההשוואה"
+        }
+      },
+      "card": {
+        "title": "מטא-דאטה של הקובץ"
+      }
+    },
     "transcript": {
       "copyAll": "העתק הכול",
       "copied": "הועתק",
@@ -741,7 +945,8 @@
       "a11yStart": "ידית התחלה, {{time}}",
       "a11yEnd": "ידית סיום, {{time}}",
       "a11yPoint": "מיקום, {{time}}",
-      "loadingThumbs": "טוען תצוגה מקדימה…"
+      "loadingThumbs": "טוען תצוגה מקדימה…",
+      "loading": "טוען אודיו"
     }
   }
 }

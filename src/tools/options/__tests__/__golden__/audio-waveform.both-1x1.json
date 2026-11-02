@@ -1,0 +1,18 @@
+{
+  "mode": "audio_waveform",
+  "waveform": {
+    "outputSelection": "both",
+    "videoFormat": "webm",
+    "imageFormat": "png",
+    "width": 2160,
+    "height": 2160,
+    "mode": "cline",
+    "splitChannels": true,
+    "colorPrimary": "#22D3EE",
+    "colorSecondary": "#A855F7",
+    "scale": "lin",
+    "draw": "scale",
+    "includeAudio": true,
+    "rate": 30
+  }
+}

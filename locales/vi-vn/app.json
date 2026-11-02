@@ -188,6 +188,119 @@
         "description": "Thay đổi thông tin lưu trong ảnh."
       }
     },
+    "metadata": {
+      "title": "Siêu dữ liệu tệp",
+      "summary": {
+        "tagCount_other": "{{count}} thẻ trong {{categories}} danh mục",
+        "dimensions": "Kích thước",
+        "duration": "Thời lượng"
+      },
+      "privacy": {
+        "label": "Bộ lọc quyền riêng tư",
+        "location": "Vị trí",
+        "identity": "Danh tính",
+        "device": "Số sê-ri thiết bị",
+        "history": "Lịch sử chỉnh sửa",
+        "locationHint": "Nơi tệp được chụp hoặc tạo",
+        "identityHint": "Tên, phần mềm, tài khoản, máy chủ và thời gian chụp",
+        "deviceHint": "Số sê-ri và ID thiết bị duy nhất",
+        "historyHint": "Dấu vết chỉnh sửa, ảnh thu nhỏ nhúng sẵn và văn bản tự do"
+      },
+      "search": {
+        "placeholder": "Tìm thẻ và giá trị",
+        "noResults": "Không có thẻ nào khớp với bộ lọc.",
+        "clear": "Xóa tìm kiếm"
+      },
+      "categories": {
+        "file": "Tệp",
+        "image": "Ảnh",
+        "camera": "Máy ảnh và độ phơi sáng",
+        "lens": "Ống kính",
+        "gps": "Vị trí (GPS)",
+        "datetime": "Ngày và giờ",
+        "color": "Màu sắc",
+        "thumbnail": "Ảnh thu nhỏ và xem trước",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "Lịch sử chỉnh sửa",
+        "video": "Phim",
+        "audio": "Âm thanh",
+        "container": "Vùng chứa",
+        "apple": "Apple",
+        "png": "Phân đoạn định dạng",
+        "pdf": "PDF",
+        "c2pa": "Thông tin xác thực nội dung",
+        "pano": "Toàn cảnh và độ sâu",
+        "makernote": "Ghi chú nhà sản xuất",
+        "composite": "Giá trị tính toán",
+        "other": "Khác"
+      },
+      "kind": {
+        "image": "Ảnh",
+        "video": "Phim",
+        "audio": "Âm thanh",
+        "document": "Tài liệu",
+        "unknown": "Tệp"
+      },
+      "binary": "Nhị phân · {{size}}",
+      "binaryNoSize": "Nhị phân",
+      "showMore": "Xem thêm",
+      "showLess": "Thu gọn",
+      "copied": "Đã sao chép",
+      "copyAll": "Sao chép tất cả dưới dạng văn bản",
+      "empty": {
+        "title": "Không có siêu dữ liệu ngoài thông tin tệp cơ bản",
+        "body": "Tệp này không chứa thẻ EXIF, XMP hay thẻ vùng chứa nhúng sẵn."
+      },
+      "warnings": {
+        "title": "Một số siêu dữ liệu có thể bị thiếu"
+      },
+      "gps": {
+        "title": "Vị trí",
+        "privacy": "Tệp này ghi lại nơi nó được tạo. Bất kỳ ai bạn chia sẻ đều có thể đọc được các tọa độ này.",
+        "openMaps": "Mở trong bản đồ",
+        "decimal": "Thập phân",
+        "dms": "Độ, phút, giây",
+        "altitude": "Độ cao"
+      },
+      "inspecting": "Đang đọc siêu dữ liệu…",
+      "inspectFailed": "Không đọc được siêu dữ liệu của tệp này. Hãy thử lại.",
+      "formatNote": "Tệp đã làm sạch được lưu dưới dạng {{format}}.",
+      "strip": {
+        "intro": "Đây là những gì tệp đang chứa. Xóa tất cả sẽ gỡ bỏ mọi thứ và giữ nguyên định dạng.",
+        "stripEverything": "Xóa tất cả",
+        "stripping": "Đang xóa…",
+        "reencodeNote": "Phim và âm thanh được mã hóa lại ở chất lượng cao để gỡ bỏ mọi thẻ."
+      },
+      "edit": {
+        "open": "Sửa siêu dữ liệu",
+        "apply": "Áp dụng thay đổi",
+        "fields": {
+          "title": "Tiêu đề",
+          "author": "Tác giả",
+          "description": "Mô tả",
+          "copyright": "Bản quyền",
+          "comment": "Nhận xét",
+          "keywords": "Từ khóa"
+        },
+        "location": "Vị trí",
+        "keep": "Giữ lại",
+        "remove": "Xóa",
+        "replace": "Thay thế",
+        "round": "Làm tròn",
+        "latitude": "Vĩ độ",
+        "longitude": "Kinh độ",
+        "altitude": "Độ cao (m)",
+        "decimals": "Số chữ số thập phân",
+        "removeDirection": "Xóa hướng chụp",
+        "removeTimestamp": "Xóa dấu thời gian GPS",
+        "removeAltitude": "Xóa độ cao",
+        "removeDestination": "Xóa các trường điểm đến",
+        "invalidLocation": "Nhập vĩ độ từ -90 đến 90 và kinh độ từ -180 đến 180.",
+        "customNote": "Khi lưu, toàn bộ siêu dữ liệu được xóa trước, sau đó chỉ ghi các trường bạn điền.",
+        "imagesOnly": "Chỉnh sửa chỉ áp dụng cho ảnh. Với phim và âm thanh, hãy dùng Xóa siêu dữ liệu."
+      }
+    },
     "image": {
       "format": "Định dạng đầu ra",
       "sameAsOriginal": "Giống bản gốc ({{format}})",
@@ -303,6 +416,57 @@
         "hue": "Sắc độ",
         "gamma": "Gamma",
         "noChange": "Hãy thay đổi ít nhất một thanh trượt"
+      }
+    },
+    "audio": {
+      "format": "Định dạng đầu ra",
+      "sameAsOriginal": "Giống bản gốc ({{format}})",
+      "bitrate": "Bitrate",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Tần số lấy mẫu",
+      "channels": "Kênh",
+      "mono": "Mono",
+      "stereo": "Stereo",
+      "more": "Tùy chọn khác",
+      "trim": {
+        "fadeIn": "Mờ dần vào",
+        "fadeOut": "Mờ dần ra",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Chọn ít nhất một hiệu ứng",
+        "speed": "Tốc độ",
+        "volume": "Âm lượng",
+        "pitch": "Cao độ",
+        "normalize": "Chuẩn hóa độ lớn",
+        "eq": "Bộ cân bằng âm",
+        "reverb": "Vang",
+        "semitones_other": "{{value}} cung nửa",
+        "eqPreset": {
+          "bass-boost": "Tăng âm trầm",
+          "treble-boost": "Tăng âm cao",
+          "vocal": "Giọng hát",
+          "classical": "Cổ điển",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Phòng",
+          "hall": "Hội trường",
+          "plate": "Plate",
+          "spring": "Lò xo"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Video",
+          "image": "Hình ảnh",
+          "both": "Cả hai (ZIP)"
+        },
+        "size": "Kích thước",
+        "planLimit": "Tối đa {{limit}}p với gói của bạn.",
+        "colors": "Màu sắc",
+        "swatch": "Màu {{hex}}"
       }
     },
     "ai": {
@@ -536,6 +700,42 @@
       "stopped": "Bạn đã ngừng theo dõi tác vụ này. Kết quả sẽ có trong Lịch sử."
     },
     "entryFailed": "Không mở được tệp này.",
+    "metadata": {
+      "resultLine": {
+        "summary": "Siêu dữ liệu: giữ {{kept}} · xóa {{removed}}",
+        "unchanged": "Siêu dữ liệu không đổi",
+        "includingLocation": "bao gồm vị trí",
+        "compare": "So sánh"
+      },
+      "diff": {
+        "title": "Thay đổi siêu dữ liệu",
+        "counts": {
+          "removed": "Đã xóa {{count}}",
+          "added": "Đã thêm {{count}}",
+          "changed": "Đã đổi {{count}}",
+          "unchanged": "Không đổi {{count}}"
+        },
+        "kind": {
+          "removed": "đã xóa",
+          "added": "đã thêm",
+          "changed": "đã đổi",
+          "unchanged": "không đổi"
+        },
+        "expected": "thay đổi dự kiến",
+        "loading": "Đang tải bản so sánh…",
+        "empty": "Không có gì để hiển thị với các bộ lọc này.",
+        "unavailable": "Không có bản so sánh: {{reason}}",
+        "reason": {
+          "jobNotCompleted": "Tác vụ chưa hoàn tất",
+          "resultMissing": "Tệp kết quả không còn khả dụng",
+          "notComparable": "Kết quả này không có siêu dữ liệu để so sánh",
+          "failed": "Không tải được bản so sánh"
+        }
+      },
+      "card": {
+        "title": "Siêu dữ liệu tệp"
+      }
+    },
     "transcript": {
       "copyAll": "Sao chép tất cả",
       "copied": "Đã sao chép",
@@ -733,7 +933,8 @@
       "a11yStart": "Núm bắt đầu, {{time}}",
       "a11yEnd": "Núm kết thúc, {{time}}",
       "a11yPoint": "Vị trí, {{time}}",
-      "loadingThumbs": "Đang tải bản xem trước…"
+      "loadingThumbs": "Đang tải bản xem trước…",
+      "loading": "Đang tải âm thanh"
     }
   }
 }

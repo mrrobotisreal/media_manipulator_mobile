@@ -1,14 +1,18 @@
+import { EditMetadataForm } from '../forms/metadata/EditMetadataForm';
+import { InspectMetadataForm } from '../forms/metadata/InspectMetadataForm';
+import { StripMetadataForm } from '../forms/metadata/StripMetadataForm';
+import * as o from '../options/metadata';
+import type { AnyToolDefinition } from '../types';
 import {
   AUDIO_ACCEPTS,
   IMAGE_ACCEPTS,
   PDF_ACCEPTS,
   VIDEO_ACCEPTS,
-  imageBase,
   mergeAccepts,
   row,
 } from './shared';
 
-export const metadataTools = [
+const seeded = [
   row({
     id: 'inspect-metadata',
     family: 'metadata',
@@ -26,9 +30,9 @@ export const metadataTools = [
     id: 'strip-metadata',
     family: 'metadata',
     icon: 'ShieldOff',
-    accepts: IMAGE_ACCEPTS,
+    accepts: mergeAccepts(IMAGE_ACCEPTS, VIDEO_ACCEPTS, AUDIO_ACCEPTS),
     endpoint: 'upload',
-    defaults: imageBase({ metadataMode: 'strip' }),
+    defaults: o.STRIP_DEFAULTS,
     metric: 'ops',
     analyticsSlug: 'remove-exif-metadata',
     webTask: 'remove_metadata',
@@ -41,11 +45,40 @@ export const metadataTools = [
     icon: 'Pencil',
     accepts: IMAGE_ACCEPTS,
     endpoint: 'upload',
-    defaults: imageBase({ metadataMode: 'custom' }),
+    defaults: o.EDIT_DEFAULTS,
     metric: 'ops',
     analyticsSlug: 'edit-image-metadata',
     webTask: 'edit_image_metadata',
     resultHint: 'image',
     keywords: ['edit-image-metadata', 'exif', 'author', 'title', 'gps'],
+  }),
+];
+
+const byId = (id: string) => seeded.find((t) => t.id === id)!;
+const withForm = (
+  base: AnyToolDefinition,
+  extra: Partial<AnyToolDefinition>,
+): AnyToolDefinition => ({
+  ...base,
+  ...extra,
+});
+
+export const metadataTools: AnyToolDefinition[] = [
+  withForm(byId('inspect-metadata'), {
+    Form: InspectMetadataForm,
+    noRunButton: true,
+    optionsBuilder: () => ({}),
+  }),
+  withForm(byId('strip-metadata'), {
+    Form: StripMetadataForm,
+    startLabelKey: 'tools.metadata.strip.stripEverything',
+    optionsBuilder: o.buildStripOptions,
+  }),
+  withForm(byId('edit-metadata'), {
+    Form: EditMetadataForm,
+    startLabelKey: 'tools.metadata.edit.apply',
+    optionsBuilder: o.buildEditOptions,
+    blockReason: (form, ctx) =>
+      o.editFormValid(form as o.EditMetadataForm) ? null : 'invalidLocation',
   }),
 ];

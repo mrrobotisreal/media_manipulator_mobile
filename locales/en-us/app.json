@@ -188,6 +188,120 @@
         "description": "Change the details stored in a picture."
       }
     },
+    "metadata": {
+      "title": "File metadata",
+      "summary": {
+        "tagCount_one": "{{count}} tag in {{categories}} categories",
+        "tagCount_other": "{{count}} tags in {{categories}} categories",
+        "dimensions": "Dimensions",
+        "duration": "Duration"
+      },
+      "privacy": {
+        "label": "Privacy filters",
+        "location": "Location",
+        "identity": "Identity",
+        "device": "Device serials",
+        "history": "Edit history",
+        "locationHint": "Where the file was captured",
+        "identityHint": "Names, software, accounts, hosts and capture times",
+        "deviceHint": "Serial numbers and unique device ids",
+        "historyHint": "Edit trail, embedded thumbnails and free text"
+      },
+      "search": {
+        "placeholder": "Search tags and values",
+        "noResults": "No tags match your filters.",
+        "clear": "Clear search"
+      },
+      "categories": {
+        "file": "File",
+        "image": "Image",
+        "camera": "Camera and exposure",
+        "lens": "Lens",
+        "gps": "Location (GPS)",
+        "datetime": "Dates and times",
+        "color": "Color",
+        "thumbnail": "Thumbnails and previews",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "Edit history",
+        "video": "Video",
+        "audio": "Audio",
+        "container": "Container",
+        "apple": "Apple",
+        "png": "Format segments",
+        "pdf": "PDF",
+        "c2pa": "Content credentials",
+        "pano": "Panorama and depth",
+        "makernote": "Maker notes",
+        "composite": "Computed values",
+        "other": "Other"
+      },
+      "kind": {
+        "image": "Image",
+        "video": "Video",
+        "audio": "Audio",
+        "document": "Document",
+        "unknown": "File"
+      },
+      "binary": "Binary · {{size}}",
+      "binaryNoSize": "Binary",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "copied": "Copied",
+      "copyAll": "Copy all as text",
+      "empty": {
+        "title": "No metadata beyond basic file information",
+        "body": "This file does not carry embedded EXIF, XMP, or container tags."
+      },
+      "warnings": {
+        "title": "Some metadata may be missing"
+      },
+      "gps": {
+        "title": "Location",
+        "privacy": "This file records where it was made. Anyone you share it with can read these coordinates.",
+        "openMaps": "Open in maps",
+        "decimal": "Decimal",
+        "dms": "Degrees, minutes, seconds",
+        "altitude": "Altitude"
+      },
+      "inspecting": "Reading metadata…",
+      "inspectFailed": "Couldn't read this file's metadata. Try again.",
+      "formatNote": "The cleaned file is saved as {{format}}.",
+      "strip": {
+        "intro": "This is what the file carries today. Strip everything removes it all and keeps the same format.",
+        "stripEverything": "Strip everything",
+        "stripping": "Stripping…",
+        "reencodeNote": "Video and audio are re-encoded at high quality to remove every tag."
+      },
+      "edit": {
+        "open": "Edit metadata",
+        "apply": "Apply changes",
+        "fields": {
+          "title": "Title",
+          "author": "Author",
+          "description": "Description",
+          "copyright": "Copyright",
+          "comment": "Comment",
+          "keywords": "Keywords"
+        },
+        "location": "Location",
+        "keep": "Keep",
+        "remove": "Remove",
+        "replace": "Replace",
+        "round": "Round",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "altitude": "Altitude (m)",
+        "decimals": "Decimal places",
+        "removeDirection": "Remove capture direction",
+        "removeTimestamp": "Remove GPS timestamp",
+        "removeAltitude": "Remove altitude",
+        "removeDestination": "Remove destination fields",
+        "invalidLocation": "Enter a latitude from -90 to 90 and a longitude from -180 to 180.",
+        "customNote": "Saving strips all metadata first, then writes only the fields you fill in.",
+        "imagesOnly": "Editing works on images. For video and audio, use Strip metadata."
+      }
+    },
     "image": {
       "format": "Output format",
       "sameAsOriginal": "Same as original ({{format}})",
@@ -252,47 +366,6 @@
       "pagesAll": "All pages (ZIP)",
       "dpi": "Resolution ({{dpi}} DPI)"
     },
-    "ai": {
-      "faces": {
-        "find": "Find faces",
-        "finding": "Finding faces…",
-        "refind": "Find again",
-        "found_one": "{{count}} face found",
-        "found_other": "{{count}} faces found",
-        "none": "No faces found. Every face we detect while processing will still be covered.",
-        "tapHint": "Tap faces to choose them",
-        "selectAll": "Select all",
-        "clear": "Clear",
-        "a11yFace": "Face {{index}}, {{state}}",
-        "selected": "selected",
-        "notSelected": "not selected",
-        "expiredRedetect": "Faces expired; finding them again…",
-        "detectFailed": "We couldn't find faces just now. Try again, or use all faces.",
-        "needDetection": "Find faces first to choose which ones to cover.",
-        "pickSome": "Tap at least one face to cover."
-      },
-      "rects": {
-        "hint": "Drag over the object to remove. Add more boxes for more objects.",
-        "needOne": "Draw at least one box over the object",
-        "delete": "Delete box",
-        "clearAll": "Clear all",
-        "count_one": "{{count}} box",
-        "count_other": "{{count}} boxes"
-      },
-      "stem": {
-        "sameAs": "Same as the original ({{format}})"
-      },
-      "interp": {
-        "limits": "Clips up to {{seconds}} s; processed at up to {{height}}p.",
-        "tooLong": "This clip is {{duration}}. AI frame interpolation takes clips up to {{seconds}} s — trim it first."
-      }
-    },
-    "transcribe": {
-      "language": "Spoken language",
-      "auto": "Detect automatically",
-      "other": "Other language",
-      "otherHint": "Two- or three-letter code, e.g. \"pl\""
-    },
     "video": {
       "format": "Output format",
       "sameAsOriginal": "Same as original ({{format}})",
@@ -346,6 +419,99 @@
         "gamma": "Gamma",
         "noChange": "Change at least one slider"
       }
+    },
+    "audio": {
+      "format": "Output format",
+      "sameAsOriginal": "Same as original ({{format}})",
+      "bitrate": "Bitrate",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Sample rate",
+      "channels": "Channels",
+      "mono": "Mono",
+      "stereo": "Stereo",
+      "more": "More options",
+      "trim": {
+        "fadeIn": "Fade in",
+        "fadeOut": "Fade out",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Choose at least one effect",
+        "speed": "Speed",
+        "volume": "Volume",
+        "pitch": "Pitch",
+        "normalize": "Normalize loudness",
+        "eq": "Equalizer",
+        "reverb": "Reverb",
+        "semitones_one": "{{value}} semitone",
+        "semitones_other": "{{value}} semitones",
+        "eqPreset": {
+          "bass-boost": "Bass boost",
+          "treble-boost": "Treble boost",
+          "vocal": "Vocal",
+          "classical": "Classical",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Room",
+          "hall": "Hall",
+          "plate": "Plate",
+          "spring": "Spring"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Video",
+          "image": "Image",
+          "both": "Both (ZIP)"
+        },
+        "size": "Size",
+        "planLimit": "Up to {{limit}}p on your plan.",
+        "colors": "Colors",
+        "swatch": "Color {{hex}}"
+      }
+    },
+    "ai": {
+      "faces": {
+        "find": "Find faces",
+        "finding": "Finding faces…",
+        "refind": "Find again",
+        "found_one": "{{count}} face found",
+        "found_other": "{{count}} faces found",
+        "none": "No faces found. Every face we detect while processing will still be covered.",
+        "tapHint": "Tap faces to choose them",
+        "selectAll": "Select all",
+        "clear": "Clear",
+        "a11yFace": "Face {{index}}, {{state}}",
+        "selected": "selected",
+        "notSelected": "not selected",
+        "expiredRedetect": "Faces expired; finding them again…",
+        "detectFailed": "We couldn't find faces just now. Try again, or use all faces.",
+        "needDetection": "Find faces first to choose which ones to cover.",
+        "pickSome": "Tap at least one face to cover."
+      },
+      "rects": {
+        "hint": "Drag over the object to remove. Add more boxes for more objects.",
+        "needOne": "Draw at least one box over the object",
+        "delete": "Delete box",
+        "clearAll": "Clear all",
+        "count_one": "{{count}} box",
+        "count_other": "{{count}} boxes"
+      },
+      "stem": {
+        "sameAs": "Same as the original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clips up to {{seconds}} s; processed at up to {{height}}p.",
+        "tooLong": "This clip is {{duration}}. AI frame interpolation takes clips up to {{seconds}} s — trim it first."
+      }
+    },
+    "transcribe": {
+      "language": "Spoken language",
+      "auto": "Detect automatically",
+      "other": "Other language",
+      "otherHint": "Two- or three-letter code, e.g. \"pl\""
     }
   },
   "tool": {
@@ -539,6 +705,42 @@
       "stopped": "You stopped watching this job. Its result will be in History."
     },
     "entryFailed": "This file could not be opened.",
+    "metadata": {
+      "resultLine": {
+        "summary": "Metadata: {{kept}} kept · {{removed}} removed",
+        "unchanged": "Metadata unchanged",
+        "includingLocation": "including location",
+        "compare": "Compare"
+      },
+      "diff": {
+        "title": "Metadata changes",
+        "counts": {
+          "removed": "{{count}} removed",
+          "added": "{{count}} added",
+          "changed": "{{count}} changed",
+          "unchanged": "{{count}} unchanged"
+        },
+        "kind": {
+          "removed": "removed",
+          "added": "added",
+          "changed": "changed",
+          "unchanged": "unchanged"
+        },
+        "expected": "expected change",
+        "loading": "Loading comparison…",
+        "empty": "Nothing to show with these filters.",
+        "unavailable": "Comparison not available: {{reason}}",
+        "reason": {
+          "jobNotCompleted": "The job has not finished",
+          "resultMissing": "The result file is no longer available",
+          "notComparable": "This result has no comparable metadata",
+          "failed": "The comparison could not be loaded"
+        }
+      },
+      "card": {
+        "title": "File metadata"
+      }
+    },
     "transcript": {
       "copyAll": "Copy all",
       "copied": "Copied",
@@ -737,7 +939,8 @@
       "a11yStart": "Start handle, {{time}}",
       "a11yEnd": "End handle, {{time}}",
       "a11yPoint": "Position, {{time}}",
-      "loadingThumbs": "Loading preview…"
+      "loadingThumbs": "Loading preview…",
+      "loading": "Loading audio"
     }
   }
 }
