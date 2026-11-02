@@ -1,0 +1,17 @@
+{
+  "format": "gif",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "gif": {
+    "width": 480,
+    "fps": 12,
+    "colors": 128,
+    "delay": 3,
+    "optimize": 3
+  },
+  "trim": {
+    "startTime": 0,
+    "endTime": 5
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "temporal": {
+    "reverse": true
+  }
+}

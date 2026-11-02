@@ -251,6 +251,59 @@
       "pagesFirst": "僅第一頁",
       "pagesAll": "所有頁面（ZIP）",
       "dpi": "解析度（{{dpi}} DPI）"
+    },
+    "video": {
+      "format": "輸出格式",
+      "sameAsOriginal": "與原始檔相同({{format}})",
+      "codecAuto": "自動",
+      "qualityLabel": "品質",
+      "quality": {
+        "low": "檔案較小",
+        "medium": "均衡",
+        "high": "最佳品質"
+      },
+      "gif": {
+        "width": "寬度",
+        "fps": "每秒影格數",
+        "colors": "顏色數",
+        "rangeHint": "片段越短,GIF 越小"
+      },
+      "frames": {
+        "addMoment": "新增此時刻",
+        "moments_other": "{{count}} 個時刻",
+        "remove": "移除 {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "調整大小",
+          "rotate": "旋轉與翻轉",
+          "crop": "裁切"
+        },
+        "rotateNone": "不旋轉",
+        "sideRange": "請輸入 1 到 {{max}} 像素。",
+        "heightLimit": "您的方案最高支援 {{limit}}p。"
+      },
+      "speed": {
+        "label": "速度",
+        "reverse": "倒轉播放",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "防手震",
+          "frameRate": "影格率",
+          "color": "色彩"
+        },
+        "shakiness": "晃動程度",
+        "accuracy": "精確度",
+        "target": "目標影格率",
+        "brightness": "亮度",
+        "contrast": "對比度",
+        "saturation": "飽和度",
+        "hue": "色相",
+        "gamma": "Gamma",
+        "noChange": "請至少調整一個滑桿"
+      }
     }
   },
   "tool": {
@@ -609,6 +662,17 @@
     },
     "color": {
       "a11y": "顏色 {{hex}}"
+    },
+    "range": {
+      "start": "開始",
+      "end": "結束",
+      "length": "長度 {{duration}}",
+      "play": "播放所選範圍",
+      "pause": "暫停",
+      "a11yStart": "起點控點,{{time}}",
+      "a11yEnd": "終點控點,{{time}}",
+      "a11yPoint": "位置,{{time}}",
+      "loadingThumbs": "正在載入預覽…"
     }
   }
 }

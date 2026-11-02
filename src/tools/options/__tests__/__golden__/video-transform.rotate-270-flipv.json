@@ -1,0 +1,11 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "transform": {
+    "rotation": 270,
+    "flipHorizontal": false,
+    "flipVertical": true
+  }
+}
