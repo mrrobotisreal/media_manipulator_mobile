@@ -18,6 +18,8 @@ export type ToolOptions = Record<string, unknown>;
 /** What a form/builder may know about the file the job will run on, and the account's limits. */
 export interface ToolInputInfo {
   name: string;
+  /** Local file:// URI (crop editor preview). */
+  uri?: string;
   /** Lower-case, no dot. */
   extension: string;
   mime: string;

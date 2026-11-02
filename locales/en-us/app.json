@@ -187,6 +187,70 @@
         "title": "Edit metadata",
         "description": "Change the details stored in a picture."
       }
+    },
+    "image": {
+      "format": "Output format",
+      "sameAsOriginal": "Same as original ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Quality",
+      "qualityHint": "Lower quality makes a smaller file",
+      "icoSizes": "Icon sizes",
+      "vectorize": {
+        "speckle": "Ignore specks smaller than {{count}} px"
+      },
+      "resize": {
+        "width": "Width",
+        "height": "Height",
+        "keepAspect": "Keep aspect ratio",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "{{width}} px wide",
+        "heightLimit": "Up to {{limit}}p on your plan."
+      },
+      "compress": {
+        "pngToJpg": "JPG has no transparency; transparent areas become white."
+      },
+      "filters": {
+        "grayscale": "Grayscale",
+        "sepia": "Sepia",
+        "blur": "Blur",
+        "sharpen": "Sharpen",
+        "swirl": "Swirl",
+        "barrel-distortion": "Barrel distortion",
+        "oil-painting": "Oil painting",
+        "vintage": "Vintage",
+        "emboss": "Emboss",
+        "charcoal": "Charcoal",
+        "sketch": "Sketch"
+      },
+      "rotate": {
+        "cw90": "90° clockwise",
+        "r180": "180°",
+        "ccw90": "90° counter-clockwise"
+      },
+      "text": {
+        "required": "Enter the text to add",
+        "font": "Font",
+        "fontDefault": "Default"
+      },
+      "crop": {
+        "pick": "Choose a picture to set the crop area"
+      },
+      "toPdf": {
+        "note": "The picture becomes a single-page PDF."
+      }
+    },
+    "pdf": {
+      "pages": "Pages",
+      "pagesFirst": "First page only",
+      "pagesAll": "All pages (ZIP)",
+      "dpi": "Resolution ({{dpi}} DPI)"
     }
   },
   "tool": {
@@ -534,5 +598,17 @@
     },
     "ok": "OK",
     "seeAll": "See all limits"
+  },
+  "toolUi": {
+    "crop": {
+      "title": "Crop",
+      "aspectFree": "Free",
+      "reset": "Reset",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Crop corner {{corner}}"
+    },
+    "color": {
+      "a11y": "Colour {{hex}}"
+    }
   }
 }

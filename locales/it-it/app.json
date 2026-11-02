@@ -187,6 +187,70 @@
         "title": "Modifica metadati",
         "description": "Cambia i dettagli salvati in un'immagine."
       }
+    },
+    "image": {
+      "format": "Formato di output",
+      "sameAsOriginal": "Come l'originale ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Qualità",
+      "qualityHint": "Una qualità inferiore riduce le dimensioni del file",
+      "icoSizes": "Dimensioni icona",
+      "vectorize": {
+        "speckle": "Ignora macchie più piccole di {{count}} px"
+      },
+      "resize": {
+        "width": "Larghezza",
+        "height": "Altezza",
+        "keepAspect": "Mantieni proporzioni",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "Larghezza {{width}} px",
+        "heightLimit": "Fino a {{limit}}p con il tuo piano."
+      },
+      "compress": {
+        "pngToJpg": "JPG non supporta la trasparenza; le aree trasparenti diventano bianche."
+      },
+      "filters": {
+        "grayscale": "Scala di grigi",
+        "sepia": "Seppia",
+        "blur": "Sfocatura",
+        "sharpen": "Nitidezza",
+        "swirl": "Vortice",
+        "barrel-distortion": "Distorsione a barilotto",
+        "oil-painting": "Dipinto a olio",
+        "vintage": "Vintage",
+        "emboss": "Rilievo",
+        "charcoal": "Carboncino",
+        "sketch": "Schizzo"
+      },
+      "rotate": {
+        "cw90": "90° orario",
+        "r180": "180°",
+        "ccw90": "90° antiorario"
+      },
+      "text": {
+        "required": "Inserisci il testo da aggiungere",
+        "font": "Carattere",
+        "fontDefault": "Predefinito"
+      },
+      "crop": {
+        "pick": "Scegli un'immagine per impostare l'area di ritaglio"
+      },
+      "toPdf": {
+        "note": "L'immagine diventa un PDF di una sola pagina."
+      }
+    },
+    "pdf": {
+      "pages": "Pagine",
+      "pagesFirst": "Solo la prima pagina",
+      "pagesAll": "Tutte le pagine (ZIP)",
+      "dpi": "Risoluzione ({{dpi}} DPI)"
     }
   },
   "tool": {
@@ -534,5 +598,17 @@
     },
     "ok": "OK",
     "seeAll": "Vedi tutti i limiti"
+  },
+  "toolUi": {
+    "crop": {
+      "title": "Ritaglia",
+      "aspectFree": "Libero",
+      "reset": "Reimposta",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Angolo di ritaglio {{corner}}"
+    },
+    "color": {
+      "a11y": "Colore {{hex}}"
+    }
   }
 }

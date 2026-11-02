@@ -187,6 +187,70 @@
         "title": "Modifier les métadonnées",
         "description": "Changez les détails enregistrés dans une image."
       }
+    },
+    "image": {
+      "format": "Format de sortie",
+      "sameAsOriginal": "Identique à l'original ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Qualité",
+      "qualityHint": "Une qualité plus faible donne un fichier plus petit",
+      "icoSizes": "Tailles d'icône",
+      "vectorize": {
+        "speckle": "Ignorer les taches de moins de {{count}} px"
+      },
+      "resize": {
+        "width": "Largeur",
+        "height": "Hauteur",
+        "keepAspect": "Conserver les proportions",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "{{width}} px de large",
+        "heightLimit": "Jusqu'à {{limit}}p avec votre offre."
+      },
+      "compress": {
+        "pngToJpg": "Le JPG ne gère pas la transparence ; les zones transparentes deviennent blanches."
+      },
+      "filters": {
+        "grayscale": "Niveaux de gris",
+        "sepia": "Sépia",
+        "blur": "Flou",
+        "sharpen": "Netteté",
+        "swirl": "Tourbillon",
+        "barrel-distortion": "Distorsion en barillet",
+        "oil-painting": "Peinture à l'huile",
+        "vintage": "Vintage",
+        "emboss": "Relief",
+        "charcoal": "Fusain",
+        "sketch": "Croquis"
+      },
+      "rotate": {
+        "cw90": "90° sens horaire",
+        "r180": "180°",
+        "ccw90": "90° sens antihoraire"
+      },
+      "text": {
+        "required": "Saisissez le texte à ajouter",
+        "font": "Police",
+        "fontDefault": "Par défaut"
+      },
+      "crop": {
+        "pick": "Choisissez une image pour définir la zone de recadrage"
+      },
+      "toPdf": {
+        "note": "L'image devient un PDF d'une seule page."
+      }
+    },
+    "pdf": {
+      "pages": "Pages",
+      "pagesFirst": "Première page uniquement",
+      "pagesAll": "Toutes les pages (ZIP)",
+      "dpi": "Résolution ({{dpi}} DPI)"
     }
   },
   "tool": {
@@ -534,5 +598,17 @@
     },
     "ok": "OK",
     "seeAll": "Voir toutes les limites"
+  },
+  "toolUi": {
+    "crop": {
+      "title": "Recadrer",
+      "aspectFree": "Libre",
+      "reset": "Réinitialiser",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Coin de recadrage {{corner}}"
+    },
+    "color": {
+      "a11y": "Couleur {{hex}}"
+    }
   }
 }

@@ -257,8 +257,10 @@ export const textBlockReason = (form: TextForm): string | null =>
   form.text.trim().length === 0 ? 'text_required' : null;
 
 // --- image-to-pdf --------------------------------------------------------------------------------
-export type PdfForm = Record<string, never>;
-export const toPdfDefaults: PdfForm = {};
+export interface PdfForm {
+  format: 'pdf';
+}
+export const toPdfDefaults: PdfForm = { format: 'pdf' };
 export const buildImageToPdfOptions = (): ImageConversionOptions =>
   base('pdf') as ImageConversionOptions;
 
