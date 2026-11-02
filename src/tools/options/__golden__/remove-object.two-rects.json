@@ -1,0 +1,25 @@
+{
+  "format": "webp",
+  "quality": 85,
+  "filter": "none",
+  "ai": {
+    "enabled": true,
+    "operation": "remove_object",
+    "removeObjectMask": {
+      "rectangles": [
+        {
+          "x": 0.1235,
+          "y": 0.2,
+          "width": 0.3333,
+          "height": 0.1
+        },
+        {
+          "x": 0.5,
+          "y": 0.5,
+          "width": 0.25,
+          "height": 0.25
+        }
+      ]
+    }
+  }
+}

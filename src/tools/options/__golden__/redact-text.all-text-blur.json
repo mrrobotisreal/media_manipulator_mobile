@@ -1,0 +1,11 @@
+{
+  "format": "png",
+  "quality": 85,
+  "filter": "none",
+  "ai": {
+    "enabled": true,
+    "operation": "redact_text",
+    "textDetect": "all-text",
+    "textRedaction": "blur"
+  }
+}

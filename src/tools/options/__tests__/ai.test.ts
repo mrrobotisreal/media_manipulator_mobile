@@ -212,7 +212,7 @@ describe('quota metric table (decision 4)', () => {
   const OPS = ['remove-background', 'clean-voice', 'remove-noise'];
   it.each(AI_IDS)('%s: row metric and the built options agree', (id) => {
     const tool = TOOL_BY_ID.get(id)!;
-    const kind = tool.accepts.kinds[0];
+    const kind = tool.accepts.kinds[0]!;
     const options = tool.optionsBuilder(tool.defaults, ctx(`a.${kind === 'image' ? 'jpg' : kind === 'audio' ? 'mp3' : 'mp4'}`, kind));
     const expected = OPS.includes(id) ? 'ops' : 'ai_ops';
     expect(tool.metric).toBe(expected);

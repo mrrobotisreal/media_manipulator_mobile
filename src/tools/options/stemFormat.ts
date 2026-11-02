@@ -51,7 +51,7 @@ export function resolveStemFormat(
   mime?: string | null,
 ): StemFormat {
   const ext = extOf(fileName);
-  const type = (mime ?? '').toLowerCase().split(';')[0].trim();
+  const type = (mime ?? '').toLowerCase().split(';')[0]!.trim();
   if (type.startsWith('video/') || VIDEO_EXT.has(ext)) return 'mp3';
   switch (ext) {
     case 'mp3':

@@ -251,6 +251,47 @@
       "pagesFirst": "First page only",
       "pagesAll": "All pages (ZIP)",
       "dpi": "Resolution ({{dpi}} DPI)"
+    },
+    "ai": {
+      "faces": {
+        "find": "Find faces",
+        "finding": "Finding faces…",
+        "refind": "Find again",
+        "found_one": "{{count}} face found",
+        "found_other": "{{count}} faces found",
+        "none": "No faces found. Every face we detect while processing will still be covered.",
+        "tapHint": "Tap faces to choose them",
+        "selectAll": "Select all",
+        "clear": "Clear",
+        "a11yFace": "Face {{index}}, {{state}}",
+        "selected": "selected",
+        "notSelected": "not selected",
+        "expiredRedetect": "Faces expired; finding them again…",
+        "detectFailed": "We couldn't find faces just now. Try again, or use all faces.",
+        "needDetection": "Find faces first to choose which ones to cover.",
+        "pickSome": "Tap at least one face to cover."
+      },
+      "rects": {
+        "hint": "Drag over the object to remove. Add more boxes for more objects.",
+        "needOne": "Draw at least one box over the object",
+        "delete": "Delete box",
+        "clearAll": "Clear all",
+        "count_one": "{{count}} box",
+        "count_other": "{{count}} boxes"
+      },
+      "stem": {
+        "sameAs": "Same as the original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clips up to {{seconds}} s; processed at up to {{height}}p.",
+        "tooLong": "This clip is {{duration}}. AI frame interpolation takes clips up to {{seconds}} s — trim it first."
+      }
+    },
+    "transcribe": {
+      "language": "Spoken language",
+      "auto": "Detect automatically",
+      "other": "Other language",
+      "otherHint": "Two- or three-letter code, e.g. \"pl\""
     }
   },
   "tool": {
@@ -443,7 +484,30 @@
       "cancelled": "This upload was cancelled.",
       "stopped": "You stopped watching this job. Its result will be in History."
     },
-    "entryFailed": "This file could not be opened."
+    "entryFailed": "This file could not be opened.",
+    "transcript": {
+      "copyAll": "Copy all",
+      "copied": "Copied",
+      "export": "Export",
+      "exportAs": "Export as {{format}}",
+      "search": "Search the transcript",
+      "noMatches": "No matching lines",
+      "summaryTitle": "AI summary",
+      "summaryRunning": "Writing the summary…",
+      "summaryUnavailable": "Summary not available",
+      "topics": "Topics",
+      "keywords": "Keywords",
+      "unavailable": "The transcript is not available for this job.",
+      "empty": "No transcript text.",
+      "cues_one": "{{count}} line",
+      "cues_other": "{{count}} lines",
+      "language": "Language",
+      "duration": "Duration",
+      "exportFailed": "Couldn't export the transcript.",
+      "tooLarge": "This caption file is too large to show. Save it to open it elsewhere.",
+      "safety": "Safety",
+      "sentiment": "Sentiment"
+    }
   },
   "actions": {
     "save": "Save",

@@ -1,0 +1,11 @@
+{
+  "format": "png",
+  "quality": 85,
+  "filter": "none",
+  "ai": {
+    "enabled": true,
+    "operation": "ai_upscale",
+    "upscaleScale": 2,
+    "upscaleModel": "realesrgan-x4plus-anime"
+  }
+}

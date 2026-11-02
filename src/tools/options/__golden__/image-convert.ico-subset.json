@@ -3,6 +3,9 @@
   "quality": 85,
   "filter": "none",
   "ico": {
-    "sizes": [16, 32]
+    "sizes": [
+      16,
+      32
+    ]
   }
 }

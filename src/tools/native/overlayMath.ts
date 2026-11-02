@@ -133,8 +133,35 @@ export function hitArea(d: DisplayBox, min = MIN_HIT): DisplayBox {
 /** Index of the topmost rect containing a normalized point, or -1. */
 export function rectAt(rects: readonly Rect[], p: { x: number; y: number }): number {
   for (let i = rects.length - 1; i >= 0; i--) {
-    const r = rects[i];
+    const r = rects[i]!;
     if (p.x >= r.x && p.x <= r.x + r.width && p.y >= r.y && p.y <= r.y + r.height) return i;
   }
   return -1;
+}
+
+/** Which corner handle (if any) of `r` is within `hit` canvas pixels of `point` (canvas space). */
+export function cornerAt(
+  r: Rect,
+  point: { x: number; y: number },
+  layout: Size,
+  aspect: number,
+  hit = MIN_HIT / 2,
+): Corner | null {
+  const d = normToDisplay(r, layout, aspect);
+  const corners: [Corner, number, number][] = [
+    ['nw', d.left, d.top],
+    ['ne', d.left + d.width, d.top],
+    ['sw', d.left, d.top + d.height],
+    ['se', d.left + d.width, d.top + d.height],
+  ];
+  let best: Corner | null = null;
+  let bestDist = Infinity;
+  for (const [c, cx, cy] of corners) {
+    const dist = Math.hypot(point.x - cx, point.y - cy);
+    if (dist <= hit && dist < bestDist) {
+      best = c;
+      bestDist = dist;
+    }
+  }
+  return best;
 }

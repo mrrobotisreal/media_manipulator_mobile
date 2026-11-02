@@ -1,0 +1,12 @@
+{
+  "bitrate": "192",
+  "sampleRate": "44100",
+  "channels": "stereo",
+  "speed": 1,
+  "volume": 1,
+  "format": "aac",
+  "ai": {
+    "enabled": true,
+    "operation": "clean_voice"
+  }
+}

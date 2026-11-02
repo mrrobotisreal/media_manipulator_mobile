@@ -1,0 +1,12 @@
+{
+  "bitrate": "192",
+  "sampleRate": "44100",
+  "channels": "stereo",
+  "speed": 1,
+  "volume": 1,
+  "format": "auto",
+  "ai": {
+    "enabled": true,
+    "operation": "isolate_vocals"
+  }
+}

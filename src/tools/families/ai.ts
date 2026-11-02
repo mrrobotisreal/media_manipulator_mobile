@@ -1,4 +1,21 @@
 import {
+  BlurFacesForm,
+  RedactTextForm,
+  RemoveBackgroundForm,
+  RemoveObjectForm,
+  UpscaleForm,
+} from '../forms/ai/ImageAiForms';
+import {
+  FrameInterpolationForm,
+  StemForm,
+  TranscribeForm,
+  VoiceForm,
+} from '../forms/ai/MediaAiForms';
+import { ensureFreshDetection } from '../forms/ai/faceSession';
+import { detectFaces, realDetectDeps } from '@/api/endpoints/ai';
+import * as o from '../options/ai';
+import type { AnyToolDefinition } from '../types';
+import {
   AUDIO_ACCEPTS,
   IMAGE_ACCEPTS,
   VIDEO_ACCEPTS,
@@ -9,7 +26,7 @@ import {
   videoBase,
 } from './shared';
 
-export const aiTools = [
+const seeded = [
   row({
     id: 'remove-background',
     family: 'ai',
@@ -177,6 +194,97 @@ export const aiTools = [
       'speech-to-text',
       'srt',
       'vtt',
+    ],
+  }),
+];
+
+function byId(id: string): AnyToolDefinition {
+  return seeded.find((t) => t.id === id)!;
+}
+
+/** Replaces the MA10 identity builder / DefaultsForm of a seeded row with the real form + builder. */
+function withForm(base: AnyToolDefinition, extra: Partial<AnyToolDefinition>): AnyToolDefinition {
+  return { ...base, ...extra };
+}
+
+const transcribePreset = (id: 'srt-generator' | 'generate-vtt-captions', format: o.TranscribeFormat) => ({
+  id,
+  titleKey: `interface:transcribeForm.format.${format}.label`,
+  analyticsSlug: id,
+  defaults: { format, slugHint: id } as Partial<o.TranscribeForm>,
+});
+
+/**
+ * The eleven AI tools (MA20). All run on the GPU server; metric per `quota_metric.go`
+ * (remove-background, clean-voice, remove-noise spend `ops`; the rest `ai_ops`).
+ */
+export const aiTools: AnyToolDefinition[] = [
+  withForm(byId('remove-background'), {
+    Form: RemoveBackgroundForm,
+    defaults: o.removeBackgroundDefaults,
+    optionsBuilder: o.buildRemoveBackgroundOptions,
+  }),
+  withForm(byId('upscale'), {
+    Form: UpscaleForm,
+    defaults: o.upscaleDefaults,
+    optionsBuilder: o.buildUpscaleOptions,
+  }),
+  withForm(byId('blur-faces'), {
+    Form: BlurFacesForm,
+    defaults: o.blurFacesDefaults,
+    optionsBuilder: o.buildBlurFacesOptions,
+    blockReason: o.blurFacesBlockReason,
+    // Session expired (30 min) -> detect again from the same cached file before upload.
+    prepare: (form, ctx) =>
+      ensureFreshDetection(form, ctx, (f) => detectFaces(f, realDetectDeps())),
+  }),
+  withForm(byId('redact-text'), {
+    Form: RedactTextForm,
+    defaults: o.redactTextDefaults,
+    optionsBuilder: o.buildRedactTextOptions,
+  }),
+  withForm(byId('remove-object'), {
+    Form: RemoveObjectForm,
+    defaults: o.removeObjectDefaults,
+    optionsBuilder: o.buildRemoveObjectOptions,
+    blockReason: o.removeObjectBlockReason,
+  }),
+  withForm(byId('clean-voice'), {
+    Form: VoiceForm,
+    defaults: {},
+    optionsBuilder: (_f: unknown, ctx) => o.buildVoiceOptions('clean_voice', ctx),
+  }),
+  withForm(byId('remove-noise'), {
+    Form: VoiceForm,
+    defaults: {},
+    optionsBuilder: (_f: unknown, ctx) => o.buildVoiceOptions('remove_background_noise', ctx),
+  }),
+  withForm(byId('isolate-vocals'), {
+    Form: StemForm,
+    defaults: o.stemDefaults,
+    optionsBuilder: (f: o.StemForm, ctx) => o.buildStemOptions('isolate_vocals', f, ctx),
+  }),
+  withForm(byId('remove-vocals'), {
+    Form: StemForm,
+    defaults: o.stemDefaults,
+    optionsBuilder: (f: o.StemForm, ctx) => o.buildStemOptions('remove_vocals', f, ctx),
+  }),
+  withForm(byId('frame-interpolation'), {
+    Form: FrameInterpolationForm,
+    defaults: o.frameInterpolationDefaults,
+    optionsBuilder: o.buildFrameInterpolationOptions,
+    blockReason: o.frameInterpolationBlockReason,
+    serverLimits: { maxSeconds: o.INTERP_SERVER_LIMITS.maxSeconds, maxHeight: o.INTERP_SERVER_LIMITS.maxHeight },
+  }),
+  withForm(byId('transcribe'), {
+    Form: TranscribeForm,
+    defaults: o.transcribeDefaults,
+    optionsBuilder: o.buildTranscribeOptions,
+    blockReason: o.transcribeBlockReason,
+    analyticsSlugFor: o.transcribeSlug,
+    presets: [
+      transcribePreset('srt-generator', 'srt'),
+      transcribePreset('generate-vtt-captions', 'vtt'),
     ],
   }),
 ];

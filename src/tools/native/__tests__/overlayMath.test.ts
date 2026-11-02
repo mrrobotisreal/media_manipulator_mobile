@@ -79,12 +79,10 @@ describe('clamp, min size, move, resize', () => {
     expect(tiny.height).toBe(0.01);
   });
   it('rectFromPoints works in any drag direction', () => {
-    expect(rectFromPoints({ x: 0.6, y: 0.7 }, { x: 0.2, y: 0.1 })).toEqual({
-      x: 0.2,
-      y: 0.1,
-      width: 0.4,
-      height: expect.closeTo(0.6, 9),
-    });
+    const r = rectFromPoints({ x: 0.6, y: 0.7 }, { x: 0.2, y: 0.1 });
+    expect(r).toMatchObject({ x: 0.2, y: 0.1 });
+    expect(r.width).toBeCloseTo(0.4, 9);
+    expect(r.height).toBeCloseTo(0.6, 9);
   });
   it('move keeps the size and stops at the edges', () => {
     const r = moveRect({ x: 0.5, y: 0.5, width: 0.4, height: 0.4 }, 0.5, -1);
