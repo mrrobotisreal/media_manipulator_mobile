@@ -57,12 +57,16 @@ export function useResultActions(src: ActionSource) {
     busy.current = true;
     try {
       await fn();
+    } catch (e) {
+      // Never let an action fail silently (S25 run: Save did nothing on screen).
+      if (__DEV__) console.warn('[result action] failed', e instanceof Error ? e.message : e);
+      showNotice(t('save.failed'), 'error');
     } finally {
       busy.current = false;
       setProgress(null);
       setConverting(false);
     }
-  }, []);
+  }, [t]);
 
   const ensureFile = useCallback(async () => {
     setProgress(0);
