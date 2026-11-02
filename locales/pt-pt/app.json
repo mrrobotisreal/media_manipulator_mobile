@@ -188,6 +188,121 @@
         "description": "Altere os detalhes guardados numa imagem."
       }
     },
+    "metadata": {
+      "title": "Metadados do ficheiro",
+      "summary": {
+        "tagCount_one": "{{count}} tag em {{categories}} categorias",
+        "tagCount_many": "{{count}} de tags em {{categories}} categorias",
+        "tagCount_other": "{{count}} tags em {{categories}} categorias",
+        "dimensions": "Dimensões",
+        "duration": "Duração"
+      },
+      "privacy": {
+        "label": "Filtros de privacidade",
+        "location": "Localização",
+        "identity": "Identidade",
+        "device": "Números de série do dispositivo",
+        "history": "Histórico de edições",
+        "locationHint": "Onde o ficheiro foi capturado",
+        "identityHint": "Nomes, software, contas, hosts e horas de captura",
+        "deviceHint": "Números de série e IDs exclusivos do dispositivo",
+        "historyHint": "Histórico de edições, miniaturas incorporadas e texto livre"
+      },
+      "search": {
+        "placeholder": "Pesquisar tags e valores",
+        "noResults": "Nenhuma tag corresponde aos filtros.",
+        "clear": "Limpar pesquisa"
+      },
+      "categories": {
+        "file": "Ficheiro",
+        "image": "Imagem",
+        "camera": "Câmara e exposição",
+        "lens": "Objetiva",
+        "gps": "Localização (GPS)",
+        "datetime": "Datas e horas",
+        "color": "Cor",
+        "thumbnail": "Miniaturas e pré-visualizações",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "Histórico de edições",
+        "video": "Vídeo",
+        "audio": "Áudio",
+        "container": "Contentor",
+        "apple": "Apple",
+        "png": "Segmentos de formato",
+        "pdf": "PDF",
+        "c2pa": "Credenciais de conteúdo",
+        "pano": "Panorama e profundidade",
+        "makernote": "Notas do fabricante",
+        "composite": "Valores calculados",
+        "other": "Outros"
+      },
+      "kind": {
+        "image": "Imagem",
+        "video": "Vídeo",
+        "audio": "Áudio",
+        "document": "Documento",
+        "unknown": "Ficheiro"
+      },
+      "binary": "Binário · {{size}}",
+      "binaryNoSize": "Binário",
+      "showMore": "Mostrar mais",
+      "showLess": "Mostrar menos",
+      "copied": "Copiado",
+      "copyAll": "Copiar tudo como texto",
+      "empty": {
+        "title": "Nenhum metadado além das informações básicas do ficheiro",
+        "body": "Este ficheiro não contém tags EXIF, XMP ou de contentor incorporadas."
+      },
+      "warnings": {
+        "title": "Alguns metadados podem estar ausentes"
+      },
+      "gps": {
+        "title": "Localização",
+        "privacy": "Este ficheiro regista onde foi feito. Qualquer pessoa com quem o partilhe poderá ler estas coordenadas.",
+        "openMaps": "Abrir nos mapas",
+        "decimal": "Decimal",
+        "dms": "Graus, minutos, segundos",
+        "altitude": "Altitude"
+      },
+      "inspecting": "A ler metadados…",
+      "inspectFailed": "Não foi possível ler os metadados deste ficheiro. Tente novamente.",
+      "formatNote": "O ficheiro limpo é guardado como {{format}}.",
+      "strip": {
+        "intro": "Isto é o que o ficheiro contém atualmente. Remover tudo apaga tudo e mantém o mesmo formato.",
+        "stripEverything": "Remover tudo",
+        "stripping": "A remover…",
+        "reencodeNote": "O vídeo e o áudio são recodificados em alta qualidade para remover todas as tags."
+      },
+      "edit": {
+        "open": "Editar metadados",
+        "apply": "Aplicar alterações",
+        "fields": {
+          "title": "Título",
+          "author": "Autor",
+          "description": "Descrição",
+          "copyright": "Direitos de autor",
+          "comment": "Comentário",
+          "keywords": "Palavras-chave"
+        },
+        "location": "Localização",
+        "keep": "Manter",
+        "remove": "Remover",
+        "replace": "Substituir",
+        "round": "Arredondar",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "altitude": "Altitude (m)",
+        "decimals": "Casas decimais",
+        "removeDirection": "Remover direção da captura",
+        "removeTimestamp": "Remover data e hora do GPS",
+        "removeAltitude": "Remover altitude",
+        "removeDestination": "Remover campos de destino",
+        "invalidLocation": "Introduza uma latitude de -90 a 90 e uma longitude de -180 a 180.",
+        "customNote": "Ao guardar, todos os metadados são removidos primeiro e só são escritos os campos que preencher.",
+        "imagesOnly": "A edição funciona em imagens. Para vídeo e áudio, use Remover metadados."
+      }
+    },
     "image": {
       "format": "Formato de saída",
       "sameAsOriginal": "Igual ao original ({{format}})",
@@ -551,7 +666,43 @@
       "cancelled": "Este envio foi cancelado.",
       "stopped": "Deixou de acompanhar esta tarefa. O resultado estará em Histórico."
     },
-    "entryFailed": "Não foi possível abrir este ficheiro."
+    "entryFailed": "Não foi possível abrir este ficheiro.",
+    "metadata": {
+      "resultLine": {
+        "summary": "Metadados: {{kept}} mantidos · {{removed}} removidos",
+        "unchanged": "Metadados inalterados",
+        "includingLocation": "incluindo localização",
+        "compare": "Comparar"
+      },
+      "diff": {
+        "title": "Alterações nos metadados",
+        "counts": {
+          "removed": "{{count}} removidos",
+          "added": "{{count}} adicionados",
+          "changed": "{{count}} alterados",
+          "unchanged": "{{count}} inalterados"
+        },
+        "kind": {
+          "removed": "removido",
+          "added": "adicionado",
+          "changed": "alterado",
+          "unchanged": "inalterado"
+        },
+        "expected": "alteração esperada",
+        "loading": "A carregar comparação…",
+        "empty": "Nada para mostrar com estes filtros.",
+        "unavailable": "Comparação indisponível: {{reason}}",
+        "reason": {
+          "jobNotCompleted": "A tarefa ainda não foi concluída",
+          "resultMissing": "O ficheiro de resultado já não está disponível",
+          "notComparable": "Este resultado não tem metadados comparáveis",
+          "failed": "Não foi possível carregar a comparação"
+        }
+      },
+      "card": {
+        "title": "Metadados do ficheiro"
+      }
+    }
   },
   "actions": {
     "save": "Guardar",

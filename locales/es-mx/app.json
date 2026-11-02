@@ -188,6 +188,121 @@
         "description": "Cambia los datos guardados en una imagen."
       }
     },
+    "metadata": {
+      "title": "Metadatos del archivo",
+      "summary": {
+        "tagCount_one": "{{count}} etiqueta en {{categories}} categorías",
+        "tagCount_many": "{{count}} de etiquetas en {{categories}} categorías",
+        "tagCount_other": "{{count}} etiquetas en {{categories}} categorías",
+        "dimensions": "Dimensiones",
+        "duration": "Duración"
+      },
+      "privacy": {
+        "label": "Filtros de privacidad",
+        "location": "Ubicación",
+        "identity": "Identidad",
+        "device": "Números de serie del dispositivo",
+        "history": "Historial de ediciones",
+        "locationHint": "Dónde se hizo el archivo",
+        "identityHint": "Nombres, software, cuentas, hosts y fechas de captura",
+        "deviceHint": "Números de serie e ID únicos del dispositivo",
+        "historyHint": "Rastro de ediciones, miniaturas incrustadas y texto libre"
+      },
+      "search": {
+        "placeholder": "Buscar etiquetas y valores",
+        "noResults": "Ninguna etiqueta coincide con tus filtros.",
+        "clear": "Borrar búsqueda"
+      },
+      "categories": {
+        "file": "Archivo",
+        "image": "Imagen",
+        "camera": "Cámara y exposición",
+        "lens": "Lente",
+        "gps": "Ubicación (GPS)",
+        "datetime": "Fechas y horas",
+        "color": "Color",
+        "thumbnail": "Miniaturas y vistas previas",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "Historial de ediciones",
+        "video": "Video",
+        "audio": "Audio",
+        "container": "Contenedor",
+        "apple": "Apple",
+        "png": "Segmentos de formato",
+        "pdf": "PDF",
+        "c2pa": "Credenciales de contenido",
+        "pano": "Panorama y profundidad",
+        "makernote": "Notas del fabricante",
+        "composite": "Valores calculados",
+        "other": "Otros"
+      },
+      "kind": {
+        "image": "Imagen",
+        "video": "Video",
+        "audio": "Audio",
+        "document": "Documento",
+        "unknown": "Archivo"
+      },
+      "binary": "Binario · {{size}}",
+      "binaryNoSize": "Binario",
+      "showMore": "Mostrar más",
+      "showLess": "Mostrar menos",
+      "copied": "Copiado",
+      "copyAll": "Copiar todo como texto",
+      "empty": {
+        "title": "No hay metadatos aparte de la información básica del archivo",
+        "body": "Este archivo no contiene etiquetas EXIF, XMP ni de contenedor incrustadas."
+      },
+      "warnings": {
+        "title": "Es posible que falten algunos metadatos"
+      },
+      "gps": {
+        "title": "Ubicación",
+        "privacy": "Este archivo registra dónde se hizo. Cualquiera con quien lo compartas podrá leer estas coordenadas.",
+        "openMaps": "Abrir en Mapas",
+        "decimal": "Decimal",
+        "dms": "Grados, minutos, segundos",
+        "altitude": "Altitud"
+      },
+      "inspecting": "Leyendo metadatos…",
+      "inspectFailed": "No se pudieron leer los metadatos de este archivo. Inténtalo de nuevo.",
+      "formatNote": "El archivo limpio se guarda como {{format}}.",
+      "strip": {
+        "intro": "Esto es lo que contiene el archivo ahora. «Eliminar todo» lo quita todo y mantiene el mismo formato.",
+        "stripEverything": "Eliminar todo",
+        "stripping": "Eliminando…",
+        "reencodeNote": "El video y el audio se recodifican con alta calidad para eliminar todas las etiquetas."
+      },
+      "edit": {
+        "open": "Editar metadatos",
+        "apply": "Aplicar cambios",
+        "fields": {
+          "title": "Título",
+          "author": "Autor",
+          "description": "Descripción",
+          "copyright": "Derechos de autor",
+          "comment": "Comentario",
+          "keywords": "Palabras clave"
+        },
+        "location": "Ubicación",
+        "keep": "Conservar",
+        "remove": "Eliminar",
+        "replace": "Sustituir",
+        "round": "Redondear",
+        "latitude": "Latitud",
+        "longitude": "Longitud",
+        "altitude": "Altitud (m)",
+        "decimals": "Decimales",
+        "removeDirection": "Eliminar dirección de captura",
+        "removeTimestamp": "Eliminar marca de tiempo GPS",
+        "removeAltitude": "Eliminar altitud",
+        "removeDestination": "Eliminar campos de destino",
+        "invalidLocation": "Ingresa una latitud de -90 a 90 y una longitud de -180 a 180.",
+        "customNote": "Al guardar se eliminan primero todos los metadatos y luego se escriben solo los campos que rellenes.",
+        "imagesOnly": "La edición funciona con imágenes. Para video y audio, usa «Eliminar metadatos»."
+      }
+    },
     "image": {
       "format": "Formato de salida",
       "sameAsOriginal": "Igual que el original ({{format}})",
@@ -551,7 +666,43 @@
       "cancelled": "Se canceló esta subida.",
       "stopped": "Dejaste de seguir este trabajo. Su resultado estará en Historial."
     },
-    "entryFailed": "No se pudo abrir este archivo."
+    "entryFailed": "No se pudo abrir este archivo.",
+    "metadata": {
+      "resultLine": {
+        "summary": "Metadatos: {{kept}} conservados · {{removed}} eliminados",
+        "unchanged": "Metadatos sin cambios",
+        "includingLocation": "incluida la ubicación",
+        "compare": "Comparar"
+      },
+      "diff": {
+        "title": "Cambios en los metadatos",
+        "counts": {
+          "removed": "{{count}} eliminados",
+          "added": "{{count}} añadidos",
+          "changed": "{{count}} modificados",
+          "unchanged": "{{count}} sin cambios"
+        },
+        "kind": {
+          "removed": "eliminado",
+          "added": "añadido",
+          "changed": "modificado",
+          "unchanged": "sin cambios"
+        },
+        "expected": "cambio esperado",
+        "loading": "Cargando comparación…",
+        "empty": "No hay nada que mostrar con estos filtros.",
+        "unavailable": "Comparación no disponible: {{reason}}",
+        "reason": {
+          "jobNotCompleted": "El trabajo no ha terminado",
+          "resultMissing": "El archivo de resultado ya no está disponible",
+          "notComparable": "Este resultado no tiene metadatos comparables",
+          "failed": "No se pudo cargar la comparación"
+        }
+      },
+      "card": {
+        "title": "Metadatos del archivo"
+      }
+    }
   },
   "actions": {
     "save": "Guardar",

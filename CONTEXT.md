@@ -67,3 +67,7 @@ Android package and iOS bundle id are both `com.mediamanipulator.app`; the `deve
 
 - **Trim scrubber** (MA18): `src/tools/native/TrimRangeScrubber.tsx`, an expo-video preview plus a thumbnail strip and a **Range track**; used by video-trim and video-to-gif (`FramePicker` is the single-playhead variant).
 - **Range track** (MA18): `src/tools/native/RangeTrack.tsx`, two handles and a draggable window over a time axis; pure math in `rangeMath.ts`; always laid out left to right.
+- **Metadata inspector** (MA21): `src/metadata/ui/MetadataInspector.tsx`, the native categorized view of a `MetadataDocument` (summary, privacy chips, search, collapsible category sections, GPS card). Pure logic is ported from the web `lib/metadata/` into `src/metadata/` (no tag descriptions in v1). The GPS card makes no network call; "Open in maps" opens only on tap.
+- **Result line** (MA21): `MetadataResultLine`, "Metadata: N kept · M removed · Compare" under a strip/edit result; Compare opens `MetadataDiffSheet` (unified diff from `GET /api/job/:id/metadata/diff`).
+- **Custom metadata = strip then write** (MA21): `edit-metadata` sends `metadataMode: custom`; the API strips every tag first and writes only the fields given, so an empty form strips.
+

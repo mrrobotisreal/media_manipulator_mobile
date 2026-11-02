@@ -44,7 +44,13 @@ export type StubEventName =
   | 'history_item_reopened'
   // Quota (MA16).
   | 'quota_warning_shown'
-  | 'quota_exceeded_shown';
+  | 'quota_exceeded_shown'
+  // Metadata (MA21). Catalog: metadata_* in internal/catalog/catalog.go.
+  | 'metadata_inspected'
+  | 'metadata_section_toggled'
+  | 'metadata_search_used'
+  | 'metadata_privacy_filter_used'
+  | 'metadata_diff_opened';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 

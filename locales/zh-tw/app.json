@@ -188,6 +188,119 @@
         "description": "更改圖片中儲存的資訊。"
       }
     },
+    "metadata": {
+      "title": "檔案中繼資料",
+      "summary": {
+        "tagCount_other": "{{categories}} 個類別共 {{count}} 個標籤",
+        "dimensions": "尺寸",
+        "duration": "長度"
+      },
+      "privacy": {
+        "label": "隱私篩選器",
+        "location": "位置",
+        "identity": "身分資訊",
+        "device": "裝置序號",
+        "history": "編輯紀錄",
+        "locationHint": "檔案拍攝或建立的地點",
+        "identityHint": "姓名、軟體、帳號、主機和拍攝時間",
+        "deviceHint": "序號和唯一裝置 ID",
+        "historyHint": "編輯軌跡、內嵌縮圖和自由文字"
+      },
+      "search": {
+        "placeholder": "搜尋標籤和值",
+        "noResults": "沒有符合篩選條件的標籤。",
+        "clear": "清除搜尋"
+      },
+      "categories": {
+        "file": "檔案",
+        "image": "圖片",
+        "camera": "相機與曝光",
+        "lens": "鏡頭",
+        "gps": "位置（GPS）",
+        "datetime": "日期與時間",
+        "color": "色彩",
+        "thumbnail": "縮圖與預覽",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "編輯紀錄",
+        "video": "影片",
+        "audio": "音訊",
+        "container": "容器",
+        "apple": "Apple",
+        "png": "格式區段",
+        "pdf": "PDF",
+        "c2pa": "內容憑證",
+        "pano": "全景與景深",
+        "makernote": "製造商註記",
+        "composite": "運算值",
+        "other": "其他"
+      },
+      "kind": {
+        "image": "圖片",
+        "video": "影片",
+        "audio": "音訊",
+        "document": "文件",
+        "unknown": "檔案"
+      },
+      "binary": "二進位 · {{size}}",
+      "binaryNoSize": "二進位",
+      "showMore": "顯示更多",
+      "showLess": "顯示較少",
+      "copied": "已拷貝",
+      "copyAll": "全部拷貝為文字",
+      "empty": {
+        "title": "除了基本檔案資訊外沒有中繼資料",
+        "body": "此檔案未包含內嵌的 EXIF、XMP 或容器標籤。"
+      },
+      "warnings": {
+        "title": "部分中繼資料可能遺失"
+      },
+      "gps": {
+        "title": "位置",
+        "privacy": "此檔案記錄了建立地點。你分享給的任何人都可以讀取這些座標。",
+        "openMaps": "在地圖中開啟",
+        "decimal": "十進位",
+        "dms": "度分秒",
+        "altitude": "海拔"
+      },
+      "inspecting": "正在讀取中繼資料…",
+      "inspectFailed": "無法讀取此檔案的中繼資料，請再試一次。",
+      "formatNote": "清理後的檔案將儲存為 {{format}}。",
+      "strip": {
+        "intro": "這是檔案目前包含的資訊。「全部移除」會刪除所有內容，並維持相同格式。",
+        "stripEverything": "全部移除",
+        "stripping": "正在移除…",
+        "reencodeNote": "影片和音訊會以高品質重新編碼，以移除所有標籤。"
+      },
+      "edit": {
+        "open": "編輯中繼資料",
+        "apply": "套用變更",
+        "fields": {
+          "title": "標題",
+          "author": "作者",
+          "description": "說明",
+          "copyright": "版權",
+          "comment": "備註",
+          "keywords": "關鍵字"
+        },
+        "location": "位置",
+        "keep": "保留",
+        "remove": "移除",
+        "replace": "取代",
+        "round": "四捨五入",
+        "latitude": "緯度",
+        "longitude": "經度",
+        "altitude": "海拔（公尺）",
+        "decimals": "小數位數",
+        "removeDirection": "移除拍攝方向",
+        "removeTimestamp": "移除 GPS 時間戳記",
+        "removeAltitude": "移除海拔",
+        "removeDestination": "移除目的地欄位",
+        "invalidLocation": "請輸入 -90 到 90 之間的緯度，以及 -180 到 180 之間的經度。",
+        "customNote": "儲存時會先移除所有中繼資料，然後只寫入你填寫的欄位。",
+        "imagesOnly": "編輯僅適用於圖片。影片和音訊請使用「移除中繼資料」。"
+      }
+    },
     "image": {
       "format": "輸出格式",
       "sameAsOriginal": "與原圖相同（{{format}}）",
@@ -547,7 +660,43 @@
       "cancelled": "此上傳已取消。",
       "stopped": "你已停止關注此工作。其結果將顯示在歷史記錄中。"
     },
-    "entryFailed": "無法開啟此檔案。"
+    "entryFailed": "無法開啟此檔案。",
+    "metadata": {
+      "resultLine": {
+        "summary": "中繼資料：保留 {{kept}} 項 · 移除 {{removed}} 項",
+        "unchanged": "中繼資料未變更",
+        "includingLocation": "包含位置",
+        "compare": "比較"
+      },
+      "diff": {
+        "title": "中繼資料變更",
+        "counts": {
+          "removed": "已移除 {{count}} 項",
+          "added": "已新增 {{count}} 項",
+          "changed": "已變更 {{count}} 項",
+          "unchanged": "未變更 {{count}} 項"
+        },
+        "kind": {
+          "removed": "已移除",
+          "added": "已新增",
+          "changed": "已變更",
+          "unchanged": "未變更"
+        },
+        "expected": "預期的變更",
+        "loading": "正在載入比較…",
+        "empty": "沒有符合這些篩選條件的內容。",
+        "unavailable": "無法比較：{{reason}}",
+        "reason": {
+          "jobNotCompleted": "工作尚未完成",
+          "resultMissing": "結果檔案已無法使用",
+          "notComparable": "此結果沒有可比較的中繼資料",
+          "failed": "無法載入比較"
+        }
+      },
+      "card": {
+        "title": "檔案中繼資料"
+      }
+    }
   },
   "actions": {
     "save": "儲存",

@@ -188,6 +188,119 @@
         "description": "画像に保存されている情報を変更します。"
       }
     },
+    "metadata": {
+      "title": "ファイルのメタデータ",
+      "summary": {
+        "tagCount_other": "{{categories}}カテゴリに{{count}}個のタグ",
+        "dimensions": "サイズ",
+        "duration": "長さ"
+      },
+      "privacy": {
+        "label": "プライバシーフィルター",
+        "location": "位置情報",
+        "identity": "個人情報",
+        "device": "デバイスのシリアル番号",
+        "history": "編集履歴",
+        "locationHint": "ファイルが撮影・作成された場所",
+        "identityHint": "名前、ソフトウェア、アカウント、ホスト、撮影日時",
+        "deviceHint": "シリアル番号と固有のデバイスID",
+        "historyHint": "編集の履歴、埋め込みサムネイル、自由記述テキスト"
+      },
+      "search": {
+        "placeholder": "タグと値を検索",
+        "noResults": "条件に一致するタグはありません。",
+        "clear": "検索をクリア"
+      },
+      "categories": {
+        "file": "ファイル",
+        "image": "画像",
+        "camera": "カメラと露出",
+        "lens": "レンズ",
+        "gps": "位置情報（GPS）",
+        "datetime": "日付と時刻",
+        "color": "カラー",
+        "thumbnail": "サムネイルとプレビュー",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "編集履歴",
+        "video": "ビデオ",
+        "audio": "オーディオ",
+        "container": "コンテナ",
+        "apple": "Apple",
+        "png": "フォーマットセグメント",
+        "pdf": "PDF",
+        "c2pa": "コンテンツクレデンシャル",
+        "pano": "パノラマと深度",
+        "makernote": "メーカーノート",
+        "composite": "計算値",
+        "other": "その他"
+      },
+      "kind": {
+        "image": "画像",
+        "video": "ビデオ",
+        "audio": "オーディオ",
+        "document": "書類",
+        "unknown": "ファイル"
+      },
+      "binary": "バイナリ · {{size}}",
+      "binaryNoSize": "バイナリ",
+      "showMore": "もっと見る",
+      "showLess": "閉じる",
+      "copied": "コピーしました",
+      "copyAll": "すべてテキストとしてコピー",
+      "empty": {
+        "title": "基本的なファイル情報以外のメタデータはありません",
+        "body": "このファイルにはEXIF、XMP、またはコンテナタグが埋め込まれていません。"
+      },
+      "warnings": {
+        "title": "一部のメタデータが欠けている可能性があります"
+      },
+      "gps": {
+        "title": "位置情報",
+        "privacy": "このファイルには作成された場所が記録されています。共有した相手は、この座標を読み取ることができます。",
+        "openMaps": "マップで開く",
+        "decimal": "10進数",
+        "dms": "度分秒",
+        "altitude": "高度"
+      },
+      "inspecting": "メタデータを読み込み中…",
+      "inspectFailed": "このファイルのメタデータを読み取れませんでした。もう一度お試しください。",
+      "formatNote": "クリーンアップしたファイルは{{format}}で保存されます。",
+      "strip": {
+        "intro": "現在このファイルに含まれている情報です。「すべて削除」を使うと、同じ形式のままメタデータをすべて取り除きます。",
+        "stripEverything": "すべて削除",
+        "stripping": "削除中…",
+        "reencodeNote": "ビデオとオーディオは、すべてのタグを取り除くため高画質で再エンコードされます。"
+      },
+      "edit": {
+        "open": "メタデータを編集",
+        "apply": "変更を適用",
+        "fields": {
+          "title": "タイトル",
+          "author": "作成者",
+          "description": "説明",
+          "copyright": "著作権",
+          "comment": "コメント",
+          "keywords": "キーワード"
+        },
+        "location": "位置情報",
+        "keep": "保持",
+        "remove": "削除",
+        "replace": "置き換え",
+        "round": "丸める",
+        "latitude": "緯度",
+        "longitude": "経度",
+        "altitude": "高度（m）",
+        "decimals": "小数点以下の桁数",
+        "removeDirection": "撮影方向を削除",
+        "removeTimestamp": "GPSのタイムスタンプを削除",
+        "removeAltitude": "高度を削除",
+        "removeDestination": "目的地の項目を削除",
+        "invalidLocation": "緯度は-90〜90、経度は-180〜180の範囲で入力してください。",
+        "customNote": "保存すると、まずすべてのメタデータを削除し、入力した項目だけを書き込みます。",
+        "imagesOnly": "編集できるのは画像のみです。ビデオとオーディオには「メタデータを削除」を使ってください。"
+      }
+    },
     "image": {
       "format": "出力形式",
       "sameAsOriginal": "元と同じ ({{format}})",
@@ -547,7 +660,43 @@
       "cancelled": "このアップロードはキャンセルされました。",
       "stopped": "このジョブの監視を停止しました。結果は履歴で確認できます。"
     },
-    "entryFailed": "このファイルを開けませんでした。"
+    "entryFailed": "このファイルを開けませんでした。",
+    "metadata": {
+      "resultLine": {
+        "summary": "メタデータ：{{kept}}件保持 · {{removed}}件削除",
+        "unchanged": "メタデータは変更なし",
+        "includingLocation": "位置情報を含む",
+        "compare": "比較"
+      },
+      "diff": {
+        "title": "メタデータの変更",
+        "counts": {
+          "removed": "{{count}}件削除",
+          "added": "{{count}}件追加",
+          "changed": "{{count}}件変更",
+          "unchanged": "{{count}}件変更なし"
+        },
+        "kind": {
+          "removed": "削除",
+          "added": "追加",
+          "changed": "変更",
+          "unchanged": "変更なし"
+        },
+        "expected": "想定される変更",
+        "loading": "比較を読み込み中…",
+        "empty": "この条件で表示できる項目はありません。",
+        "unavailable": "比較を利用できません：{{reason}}",
+        "reason": {
+          "jobNotCompleted": "ジョブがまだ完了していません",
+          "resultMissing": "結果ファイルは利用できなくなりました",
+          "notComparable": "この結果には比較できるメタデータがありません",
+          "failed": "比較を読み込めませんでした"
+        }
+      },
+      "card": {
+        "title": "ファイルのメタデータ"
+      }
+    }
   },
   "actions": {
     "save": "保存",

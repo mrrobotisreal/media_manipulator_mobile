@@ -17,6 +17,7 @@ import { useResultActions } from './useResultActions';
 import { useAppSelector } from '@/state/hooks';
 import { describe, type ResultDescriptor, type ResultKind } from './describe';
 import { viewerFor } from './viewers';
+import { MetadataResultLine } from '@/metadata/ui/MetadataResultLine';
 
 export interface ResultSource {
   job: ConversionJob;
@@ -85,6 +86,12 @@ export function ResultBody({ source, surface }: { source: ResultSource; surface:
           </Num>
         ) : null}
       </View>
+      <MetadataResultLine
+        jobId={descriptor.jobId}
+        available={descriptor.metadataAvailable}
+        strippedCount={descriptor.strippedCount}
+        toolSlug={source.toolSlug}
+      />
       <ActionsBar
         actions={actions}
         haptics={haptics}
