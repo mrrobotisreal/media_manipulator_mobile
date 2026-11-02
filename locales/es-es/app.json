@@ -421,6 +421,59 @@
         "gamma": "Gamma",
         "noChange": "Cambia al menos un control deslizante"
       }
+    },
+    "audio": {
+      "format": "Formato de salida",
+      "sameAsOriginal": "Igual que el original ({{format}})",
+      "bitrate": "Tasa de bits",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Frecuencia de muestreo",
+      "channels": "Canales",
+      "mono": "Mono",
+      "stereo": "Estéreo",
+      "more": "Más opciones",
+      "trim": {
+        "fadeIn": "Fundido de entrada",
+        "fadeOut": "Fundido de salida",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Elige al menos un efecto",
+        "speed": "Velocidad",
+        "volume": "Volumen",
+        "pitch": "Tono",
+        "normalize": "Normalizar volumen",
+        "eq": "Ecualizador",
+        "reverb": "Reverberación",
+        "semitones_one": "{{value}} semitono",
+        "semitones_many": "{{value}} de semitonos",
+        "semitones_other": "{{value}} semitonos",
+        "eqPreset": {
+          "bass-boost": "Realce de graves",
+          "treble-boost": "Realce de agudos",
+          "vocal": "Voz",
+          "classical": "Clásica",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Habitación",
+          "hall": "Sala",
+          "plate": "Placa",
+          "spring": "Muelle"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Vídeo",
+          "image": "Imagen",
+          "both": "Ambos (ZIP)"
+        },
+        "size": "Tamaño",
+        "planLimit": "Hasta {{limit}}p con tu plan.",
+        "colors": "Colores",
+        "swatch": "Color {{hex}}"
+      }
     }
   },
   "tool": {
@@ -825,7 +878,8 @@
       "a11yStart": "Control de inicio, {{time}}",
       "a11yEnd": "Control de fin, {{time}}",
       "a11yPoint": "Posición, {{time}}",
-      "loadingThumbs": "Cargando vista previa…"
+      "loadingThumbs": "Cargando vista previa…",
+      "loading": "Cargando audio"
     }
   }
 }

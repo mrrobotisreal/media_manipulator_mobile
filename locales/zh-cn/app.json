@@ -417,6 +417,57 @@
         "gamma": "伽马",
         "noChange": "请至少调整一个滑块"
       }
+    },
+    "audio": {
+      "format": "输出格式",
+      "sameAsOriginal": "与原文件相同（{{format}}）",
+      "bitrate": "比特率",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "采样率",
+      "channels": "声道",
+      "mono": "单声道",
+      "stereo": "立体声",
+      "more": "更多选项",
+      "trim": {
+        "fadeIn": "淡入",
+        "fadeOut": "淡出",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "请至少选择一种效果",
+        "speed": "速度",
+        "volume": "音量",
+        "pitch": "音高",
+        "normalize": "响度标准化",
+        "eq": "均衡器",
+        "reverb": "混响",
+        "semitones_other": "{{value}} 个半音",
+        "eqPreset": {
+          "bass-boost": "低音增强",
+          "treble-boost": "高音增强",
+          "vocal": "人声",
+          "classical": "古典",
+          "rock": "摇滚",
+          "jazz": "爵士"
+        },
+        "reverbType": {
+          "room": "房间",
+          "hall": "大厅",
+          "plate": "板式",
+          "spring": "弹簧"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "视频",
+          "image": "图片",
+          "both": "两者（ZIP）"
+        },
+        "size": "尺寸",
+        "planLimit": "您的套餐最高支持 {{limit}}p。",
+        "colors": "颜色",
+        "swatch": "颜色 {{hex}}"
+      }
     }
   },
   "tool": {
@@ -821,7 +872,8 @@
       "a11yStart": "起点手柄,{{time}}",
       "a11yEnd": "终点手柄,{{time}}",
       "a11yPoint": "位置,{{time}}",
-      "loadingThumbs": "正在加载预览…"
+      "loadingThumbs": "正在加载预览…",
+      "loading": "正在加载音频"
     }
   }
 }

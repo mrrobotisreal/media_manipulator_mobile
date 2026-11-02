@@ -251,7 +251,7 @@ describe('describe: summary (MM75)', () => {
 
 /** A plausible output file for a registry row, from its default options. */
 function plausibleOutput(row: (typeof TOOLS)[number]): { fileName?: string; mode: ResultMode } {
-  const d = row.defaults as Record<string, unknown>;
+  const d = row.optionsBuilder(row.defaults) as Record<string, unknown>;
   if (row.webTask === 'extract_frames') return { fileName: 'frames.zip', mode: 'convert' };
   if (row.webTask === 'transcribe_video')
     return { fileName: `out.${d.format ?? 'srt'}`, mode: 'transcribe' };

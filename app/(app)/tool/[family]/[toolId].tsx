@@ -91,7 +91,7 @@ function ToolScreen({
   }, []);
 
   const blocked = tool.blockReason?.(form, ctx) ?? null;
-  const slug = tool.analyticsSlugFor ? tool.analyticsSlugFor(form) : tool.analyticsSlug;
+  const slug = tool.analyticsSlugFor ? tool.analyticsSlugFor(form, ctx) : tool.analyticsSlug;
   useEffect(() => {
     setContext({ tool_slug: slug });
   }, [slug]);

@@ -1,0 +1,16 @@
+{
+  "bitrate": "192",
+  "sampleRate": "44100",
+  "channels": "stereo",
+  "speed": 1,
+  "volume": 1,
+  "format": "mp3",
+  "trim": {
+    "startTime": 5,
+    "endTime": 65
+  },
+  "basicProcessing": {
+    "fadeIn": 2,
+    "fadeOut": 1.5
+  }
+}

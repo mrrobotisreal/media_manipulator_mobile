@@ -419,6 +419,58 @@
         "gamma": "Gamma",
         "noChange": "Change at least one slider"
       }
+    },
+    "audio": {
+      "format": "Output format",
+      "sameAsOriginal": "Same as original ({{format}})",
+      "bitrate": "Bitrate",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Sample rate",
+      "channels": "Channels",
+      "mono": "Mono",
+      "stereo": "Stereo",
+      "more": "More options",
+      "trim": {
+        "fadeIn": "Fade in",
+        "fadeOut": "Fade out",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Choose at least one effect",
+        "speed": "Speed",
+        "volume": "Volume",
+        "pitch": "Pitch",
+        "normalize": "Normalize loudness",
+        "eq": "Equalizer",
+        "reverb": "Reverb",
+        "semitones_one": "{{value}} semitone",
+        "semitones_other": "{{value}} semitones",
+        "eqPreset": {
+          "bass-boost": "Bass boost",
+          "treble-boost": "Treble boost",
+          "vocal": "Vocal",
+          "classical": "Classical",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Room",
+          "hall": "Hall",
+          "plate": "Plate",
+          "spring": "Spring"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Video",
+          "image": "Image",
+          "both": "Both (ZIP)"
+        },
+        "size": "Size",
+        "planLimit": "Up to {{limit}}p on your plan.",
+        "colors": "Colors",
+        "swatch": "Color {{hex}}"
+      }
     }
   },
   "tool": {
@@ -823,7 +875,8 @@
       "a11yStart": "Start handle, {{time}}",
       "a11yEnd": "End handle, {{time}}",
       "a11yPoint": "Position, {{time}}",
-      "loadingThumbs": "Loading preview…"
+      "loadingThumbs": "Loading preview…",
+      "loading": "Loading audio"
     }
   }
 }

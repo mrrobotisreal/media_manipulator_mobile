@@ -421,6 +421,59 @@
         "gamma": "Gama",
         "noChange": "Altere pelo menos um controlo de deslize"
       }
+    },
+    "audio": {
+      "format": "Formato de saída",
+      "sameAsOriginal": "Igual ao original ({{format}})",
+      "bitrate": "Taxa de bits",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Taxa de amostragem",
+      "channels": "Canais",
+      "mono": "Mono",
+      "stereo": "Estéreo",
+      "more": "Mais opções",
+      "trim": {
+        "fadeIn": "Fade in",
+        "fadeOut": "Fade out",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Escolha pelo menos um efeito",
+        "speed": "Velocidade",
+        "volume": "Volume",
+        "pitch": "Altura",
+        "normalize": "Normalizar volume",
+        "eq": "Equalizador",
+        "reverb": "Reverberação",
+        "semitones_one": "{{value}} semitom",
+        "semitones_many": "{{value}} de semitons",
+        "semitones_other": "{{value}} semitons",
+        "eqPreset": {
+          "bass-boost": "Reforço de graves",
+          "treble-boost": "Reforço de agudos",
+          "vocal": "Voz",
+          "classical": "Clássica",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Sala",
+          "hall": "Salão",
+          "plate": "Placa",
+          "spring": "Mola"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Vídeo",
+          "image": "Imagem",
+          "both": "Ambos (ZIP)"
+        },
+        "size": "Tamanho",
+        "planLimit": "Até {{limit}}p no seu plano.",
+        "colors": "Cores",
+        "swatch": "Cor {{hex}}"
+      }
     }
   },
   "tool": {
@@ -825,7 +878,8 @@
       "a11yStart": "Pega de início, {{time}}",
       "a11yEnd": "Pega de fim, {{time}}",
       "a11yPoint": "Posição, {{time}}",
-      "loadingThumbs": "Carregando prévia…"
+      "loadingThumbs": "Carregando prévia…",
+      "loading": "A carregar áudio"
     }
   }
 }

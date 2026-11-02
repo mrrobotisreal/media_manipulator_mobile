@@ -9,7 +9,9 @@ import {
   TRANSFORM_DEFAULTS,
   adjustValid,
   transformValid,
- TRIM_DEFAULTS, trimRangeValid } from '../../../options/video';
+  TRIM_DEFAULTS,
+  trimRangeValid,
+} from '../../../options/video';
 import { VideoAdjustForm } from '../AdjustForm';
 import { VideoTransformForm } from '../TransformForm';
 import { VideoTrimForm } from '../TrimForm';

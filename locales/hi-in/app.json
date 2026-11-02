@@ -419,6 +419,58 @@
         "gamma": "गामा",
         "noChange": "कम से कम एक स्लाइडर बदलें"
       }
+    },
+    "audio": {
+      "format": "आउटपुट फ़ॉर्मैट",
+      "sameAsOriginal": "मूल जैसा ({{format}})",
+      "bitrate": "बिटरेट",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "सैंपल रेट",
+      "channels": "चैनल",
+      "mono": "मोनो",
+      "stereo": "स्टीरियो",
+      "more": "और विकल्प",
+      "trim": {
+        "fadeIn": "फ़ेड इन",
+        "fadeOut": "फ़ेड आउट",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "कम से कम एक इफ़ेक्ट चुनें",
+        "speed": "गति",
+        "volume": "वॉल्यूम",
+        "pitch": "पिच",
+        "normalize": "लाउडनेस सामान्य करें",
+        "eq": "इक्वलाइज़र",
+        "reverb": "रीवर्ब",
+        "semitones_one": "{{value}} सेमीटोन",
+        "semitones_other": "{{value}} सेमीटोन",
+        "eqPreset": {
+          "bass-boost": "बास बूस्ट",
+          "treble-boost": "ट्रेबल बूस्ट",
+          "vocal": "वोकल",
+          "classical": "शास्त्रीय",
+          "rock": "रॉक",
+          "jazz": "जैज़"
+        },
+        "reverbType": {
+          "room": "रूम",
+          "hall": "हॉल",
+          "plate": "प्लेट",
+          "spring": "स्प्रिंग"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "वीडियो",
+          "image": "छवि",
+          "both": "दोनों (ZIP)"
+        },
+        "size": "आकार",
+        "planLimit": "आपके प्लान में {{limit}}p तक।",
+        "colors": "रंग",
+        "swatch": "रंग {{hex}}"
+      }
     }
   },
   "tool": {
@@ -823,7 +875,8 @@
       "a11yStart": "शुरुआती हैंडल, {{time}}",
       "a11yEnd": "अंतिम हैंडल, {{time}}",
       "a11yPoint": "स्थिति, {{time}}",
-      "loadingThumbs": "पूर्वावलोकन लोड हो रहा है…"
+      "loadingThumbs": "पूर्वावलोकन लोड हो रहा है…",
+      "loading": "ऑडियो लोड हो रहा है"
     }
   }
 }
