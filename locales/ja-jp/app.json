@@ -304,6 +304,57 @@
         "gamma": "ガンマ",
         "noChange": "スライダーを1つ以上変更してください"
       }
+    },
+    "audio": {
+      "format": "出力形式",
+      "sameAsOriginal": "元と同じ ({{format}})",
+      "bitrate": "ビットレート",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "サンプルレート",
+      "channels": "チャンネル",
+      "mono": "モノラル",
+      "stereo": "ステレオ",
+      "more": "その他のオプション",
+      "trim": {
+        "fadeIn": "フェードイン",
+        "fadeOut": "フェードアウト",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "エフェクトを1つ以上選択してください",
+        "speed": "速度",
+        "volume": "音量",
+        "pitch": "ピッチ",
+        "normalize": "ラウドネスを正規化",
+        "eq": "イコライザー",
+        "reverb": "リバーブ",
+        "semitones_other": "{{value}} 半音",
+        "eqPreset": {
+          "bass-boost": "低音ブースト",
+          "treble-boost": "高音ブースト",
+          "vocal": "ボーカル",
+          "classical": "クラシック",
+          "rock": "ロック",
+          "jazz": "ジャズ"
+        },
+        "reverbType": {
+          "room": "ルーム",
+          "hall": "ホール",
+          "plate": "プレート",
+          "spring": "スプリング"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "動画",
+          "image": "画像",
+          "both": "両方 (ZIP)"
+        },
+        "size": "サイズ",
+        "planLimit": "ご利用のプランでは最大{{limit}}pです。",
+        "colors": "カラー",
+        "swatch": "カラー {{hex}}"
+      }
     }
   },
   "tool": {
@@ -672,7 +723,8 @@
       "a11yStart": "開始ハンドル、{{time}}",
       "a11yEnd": "終了ハンドル、{{time}}",
       "a11yPoint": "位置、{{time}}",
-      "loadingThumbs": "プレビューを読み込み中…"
+      "loadingThumbs": "プレビューを読み込み中…",
+      "loading": "オーディオを読み込み中"
     }
   }
 }

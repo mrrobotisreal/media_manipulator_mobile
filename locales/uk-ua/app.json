@@ -307,6 +307,60 @@
         "gamma": "Гамма",
         "noChange": "Змініть принаймні один повзунок"
       }
+    },
+    "audio": {
+      "format": "Формат виводу",
+      "sameAsOriginal": "Як в оригіналі ({{format}})",
+      "bitrate": "Бітрейт",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Частота дискретизації",
+      "channels": "Канали",
+      "mono": "Моно",
+      "stereo": "Стерео",
+      "more": "Додатково",
+      "trim": {
+        "fadeIn": "Плавна поява",
+        "fadeOut": "Плавне згасання",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Виберіть принаймні один ефект",
+        "speed": "Швидкість",
+        "volume": "Гучність",
+        "pitch": "Висота тону",
+        "normalize": "Нормалізувати гучність",
+        "eq": "Еквалайзер",
+        "reverb": "Реверберація",
+        "semitones_one": "{{value}} півтон",
+        "semitones_few": "{{value}} півтони",
+        "semitones_many": "{{value}} півтонів",
+        "semitones_other": "{{value}} півтону",
+        "eqPreset": {
+          "bass-boost": "Підсилення басів",
+          "treble-boost": "Підсилення високих",
+          "vocal": "Вокал",
+          "classical": "Класика",
+          "rock": "Рок",
+          "jazz": "Джаз"
+        },
+        "reverbType": {
+          "room": "Кімната",
+          "hall": "Зал",
+          "plate": "Пластина",
+          "spring": "Пружина"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Відео",
+          "image": "Зображення",
+          "both": "Обидва (ZIP)"
+        },
+        "size": "Розмір",
+        "planLimit": "До {{limit}}p у вашому тарифі.",
+        "colors": "Кольори",
+        "swatch": "Колір {{hex}}"
+      }
     }
   },
   "tool": {
@@ -675,7 +729,8 @@
       "a11yStart": "Маркер початку, {{time}}",
       "a11yEnd": "Маркер кінця, {{time}}",
       "a11yPoint": "Позиція, {{time}}",
-      "loadingThumbs": "Завантаження попереднього перегляду…"
+      "loadingThumbs": "Завантаження попереднього перегляду…",
+      "loading": "Завантаження аудіо"
     }
   }
 }

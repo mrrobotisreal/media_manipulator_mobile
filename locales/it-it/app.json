@@ -306,6 +306,59 @@
         "gamma": "Gamma",
         "noChange": "Modifica almeno un cursore"
       }
+    },
+    "audio": {
+      "format": "Formato di output",
+      "sameAsOriginal": "Come l’originale ({{format}})",
+      "bitrate": "Bitrate",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Frequenza di campionamento",
+      "channels": "Canali",
+      "mono": "Mono",
+      "stereo": "Stereo",
+      "more": "Altre opzioni",
+      "trim": {
+        "fadeIn": "Dissolvenza in entrata",
+        "fadeOut": "Dissolvenza in uscita",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Scegli almeno un effetto",
+        "speed": "Velocità",
+        "volume": "Volume",
+        "pitch": "Intonazione",
+        "normalize": "Normalizza volume",
+        "eq": "Equalizzatore",
+        "reverb": "Riverbero",
+        "semitones_one": "{{value}} semitono",
+        "semitones_many": "{{value}} di semitoni",
+        "semitones_other": "{{value}} semitoni",
+        "eqPreset": {
+          "bass-boost": "Potenzia bassi",
+          "treble-boost": "Potenzia alti",
+          "vocal": "Voce",
+          "classical": "Classica",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Stanza",
+          "hall": "Sala",
+          "plate": "Piastra",
+          "spring": "Molla"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Video",
+          "image": "Immagine",
+          "both": "Entrambi (ZIP)"
+        },
+        "size": "Dimensione",
+        "planLimit": "Fino a {{limit}}p con il tuo piano.",
+        "colors": "Colori",
+        "swatch": "Colore {{hex}}"
+      }
     }
   },
   "tool": {
@@ -674,7 +727,8 @@
       "a11yStart": "Maniglia di inizio, {{time}}",
       "a11yEnd": "Maniglia di fine, {{time}}",
       "a11yPoint": "Posizione, {{time}}",
-      "loadingThumbs": "Caricamento anteprima…"
+      "loadingThumbs": "Caricamento anteprima…",
+      "loading": "Caricamento audio"
     }
   }
 }
