@@ -14,7 +14,7 @@ export default function AccountTab() {
   const dispatch = useAppDispatch();
   const [confirming, setConfirming] = useState(false);
   return (
-    <Screen>
+    <Screen edges="none">
       <EmptyState
         icon={CircleUser}
         title={t('tabs.account')}

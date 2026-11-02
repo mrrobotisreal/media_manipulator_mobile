@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 import { CircleUser, History, Wrench } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
+import { BrandBar } from '@/ui/components';
 import { colors, fonts } from '@/ui/tokens';
 
 export default function TabsLayout() {
@@ -8,7 +9,8 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        // Brand bar only (no title or actions); the tab screens pad neither edge (bar and tabs do).
+        header: () => <BrandBar />,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.mutedFg,
         tabBarStyle: { backgroundColor: colors.surface1, borderTopColor: colors.edge },

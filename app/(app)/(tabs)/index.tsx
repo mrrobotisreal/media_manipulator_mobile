@@ -137,7 +137,7 @@ export default function ToolsTab() {
   };
 
   return (
-    <Screen>
+    <Screen edges="none">
       <SectionList
         sections={sections}
         keyExtractor={(item) => item.tool.id}

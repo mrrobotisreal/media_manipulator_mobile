@@ -93,7 +93,7 @@ export default function HistoryTab() {
   if (!q.isLoading && !failed && sections.length === 0) {
     const hours = me.data?.limits.resultRetentionHours;
     return (
-      <Screen>
+      <Screen edges="none">
         <EmptyState
           icon={History}
           title={t('history.empty.title')}
@@ -110,7 +110,7 @@ export default function HistoryTab() {
   }
 
   return (
-    <Screen>
+    <Screen edges="none">
       <Text className="px-4 pb-2 pt-3 text-xl font-semibold">{t('history.title')}</Text>
       {failed ? (
         <View className="items-center gap-3 px-8 py-10" testID="history-error">
