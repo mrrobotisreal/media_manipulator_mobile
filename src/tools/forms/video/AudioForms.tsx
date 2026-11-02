@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import {
   AUDIO_EXTRACT_FORMATS,
   type ExtractAudioForm,
@@ -18,7 +18,7 @@ export function VideoExtractAudioForm({ value, onChange }: ToolFormProps<Extract
         label={t('interface:extractAudio.formatLabel')}
         hint={t(`interface:extractAudio.formats.${value.format}`)}
       >
-        <ChipRow
+        <Chips
           options={AUDIO_EXTRACT_FORMATS.map((f) => ({ value: f, label: f.toUpperCase() }))}
           value={value.format}
           onChange={(format) => onChange({ format })}
@@ -33,7 +33,7 @@ export function VideoRemoveAudioForm({ value, onChange }: ToolFormProps<RemoveAu
   return (
     <View className="gap-4" testID="video-remove-audio-form">
       <Field label={t('interface:extractVideoOnly.formatLabel')}>
-        <ChipRow
+        <Chips
           options={[
             { value: 'mp4', label: t('interface:extractVideoOnly.formats.mp4') },
             { value: 'webm', label: t('interface:extractVideoOnly.formats.webm') },

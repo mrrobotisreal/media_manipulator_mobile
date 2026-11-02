@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import type { Chip } from '@/ui/components/ChipRow';
+import type { ChipOption } from '@/ui/components/Chips';
 
 /**
  * Container chips for tools that offer "Same as original": the first chip keeps the input container
@@ -9,11 +9,14 @@ export function useFormatChips<T extends string>(
   allowed: readonly T[],
   extension: string | undefined,
   withSame: boolean,
-): Chip<T | 'same'>[] {
+): ChipOption<T | 'same'>[] {
   const { t } = useTranslation();
   const ext = extension?.toLowerCase();
   const resolved = (allowed as readonly string[]).includes(ext ?? '') ? ext! : 'mp4';
-  const chips: Chip<T | 'same'>[] = allowed.map((f) => ({ value: f, label: f.toUpperCase() }));
+  const chips: ChipOption<T | 'same'>[] = allowed.map((f) => ({
+    value: f,
+    label: f.toUpperCase(),
+  }));
   if (!withSame) return chips;
   return [
     { value: 'same', label: t('tools.video.sameAsOriginal', { format: resolved.toUpperCase() }) },

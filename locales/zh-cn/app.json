@@ -188,6 +188,70 @@
         "description": "更改图片中存储的信息。"
       }
     },
+    "image": {
+      "format": "输出格式",
+      "sameAsOriginal": "与原图相同（{{format}}）",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "质量",
+      "qualityHint": "质量越低，文件越小",
+      "icoSizes": "图标尺寸",
+      "vectorize": {
+        "speckle": "忽略小于 {{count}} px 的斑点"
+      },
+      "resize": {
+        "width": "宽度",
+        "height": "高度",
+        "keepAspect": "保持宽高比",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "宽 {{width}} px",
+        "heightLimit": "您的套餐最高支持 {{limit}}p。"
+      },
+      "compress": {
+        "pngToJpg": "JPG 不支持透明，透明区域将变为白色。"
+      },
+      "filters": {
+        "grayscale": "灰度",
+        "sepia": "复古棕",
+        "blur": "模糊",
+        "sharpen": "锐化",
+        "swirl": "漩涡",
+        "barrel-distortion": "桶形畸变",
+        "oil-painting": "油画",
+        "vintage": "怀旧",
+        "emboss": "浮雕",
+        "charcoal": "炭笔",
+        "sketch": "素描"
+      },
+      "rotate": {
+        "cw90": "顺时针 90°",
+        "r180": "180°",
+        "ccw90": "逆时针 90°"
+      },
+      "text": {
+        "required": "请输入要添加的文字",
+        "font": "字体",
+        "fontDefault": "默认"
+      },
+      "crop": {
+        "pick": "选择一张图片以设置裁剪区域"
+      },
+      "toPdf": {
+        "note": "图片将变为单页 PDF。"
+      }
+    },
+    "pdf": {
+      "pages": "页面",
+      "pagesFirst": "仅第一页",
+      "pagesAll": "所有页面（ZIP）",
+      "dpi": "分辨率（{{dpi}} DPI）"
+    },
     "video": {
       "format": "输出格式",
       "sameAsOriginal": "与原片相同({{format}})",
@@ -198,8 +262,6 @@
         "medium": "均衡",
         "high": "最佳质量"
       },
-      "stepperLess": "减小",
-      "stepperMore": "增大",
       "gif": {
         "width": "宽度",
         "fps": "每秒帧数",
@@ -591,6 +653,16 @@
     "seeAll": "查看所有限额"
   },
   "toolUi": {
+    "crop": {
+      "title": "裁剪",
+      "aspectFree": "自由",
+      "reset": "重置",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "裁剪角 {{corner}}"
+    },
+    "color": {
+      "a11y": "颜色 {{hex}}"
+    },
     "range": {
       "start": "开始",
       "end": "结束",

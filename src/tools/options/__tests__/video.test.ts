@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { ToolBuildContext, ToolOptions } from '../../types';
+import type { ToolContext, ToolOptions } from '../../types';
 import {
   ADJUST_DEFAULTS,
   COMPRESS_DEFAULTS,
@@ -37,9 +37,15 @@ import {
 } from '../videoSchema';
 
 const GOLDEN_DIR = join(__dirname, '__golden__');
-const mp4: ToolBuildContext = { file: { extension: 'mp4', durationSec: 60 } };
-const mkv: ToolBuildContext = { file: { extension: 'mkv', durationSec: 60 } };
-const flv: ToolBuildContext = { file: { extension: 'flv', durationSec: 60 } };
+const mp4: ToolContext = {
+  input: { name: 'a', extension: 'mp4', mime: 'video/mp4', mediaKind: 'video', durationSec: 60 },
+};
+const mkv: ToolContext = {
+  input: { name: 'a', extension: 'mkv', mime: 'video/mp4', mediaKind: 'video', durationSec: 60 },
+};
+const flv: ToolContext = {
+  input: { name: 'a', extension: 'flv', mime: 'video/mp4', mediaKind: 'video', durationSec: 60 },
+};
 
 interface Case {
   name: string;
@@ -260,7 +266,7 @@ describe('validators', () => {
   });
   it('transform resize gates only an explicit height over the cap', () => {
     const limits = { maxOutputHeight: 720 };
-    const ctx: ToolBuildContext = { ...mp4, limits };
+    const ctx: ToolContext = { ...mp4, limits };
     expect(heightOverLimit({ ...TRANSFORM_DEFAULTS, height: 2000 }, ctx)).toBe(true);
     expect(transformValid({ ...TRANSFORM_DEFAULTS, height: 2000 }, ctx)).toBe(false);
     expect(transformValid({ ...TRANSFORM_DEFAULTS, width: 3840 }, ctx)).toBe(true);

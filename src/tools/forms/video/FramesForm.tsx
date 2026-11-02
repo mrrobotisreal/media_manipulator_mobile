@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import { NumberField } from '@/ui/components/NumberField';
 import { Num, Text } from '@/ui/components/Text';
 import { formatTenths } from '../../native/RangeTrack';
@@ -9,14 +9,14 @@ import { FramePicker } from '../../native/TrimRangeScrubber';
 import { normalizeTimestamps, type FramesForm } from '../../options/video';
 import type { ToolFormProps } from '../../types';
 
-export function VideoExtractFramesForm({ value, onChange, file }: ToolFormProps<FramesForm>) {
+export function VideoExtractFramesForm({ value, onChange, ctx }: ToolFormProps<FramesForm>) {
   const { t } = useTranslation();
   const set = (patch: Partial<FramesForm>) => onChange({ ...value, ...patch });
   const moments = normalizeTimestamps(value.timestamps);
   return (
     <View className="gap-4" testID="video-extract-frames-form">
       <Field label={t('interface:extractFrames.modeLabel')}>
-        <ChipRow
+        <Chips
           options={[
             { value: 'every_n_seconds', label: t('interface:extractFrames.modes.every_n_seconds') },
             { value: 'fps', label: t('interface:extractFrames.modes.fps') },
@@ -42,10 +42,10 @@ export function VideoExtractFramesForm({ value, onChange, file }: ToolFormProps<
       ) : null}
       {value.frameMode === 'timestamp' ? (
         <View className="gap-3">
-          {file?.uri ? (
+          {ctx?.input?.uri ? (
             <FramePicker
-              uri={file.uri}
-              durationSec={file.durationSec}
+              uri={ctx.input.uri}
+              durationSec={ctx.input.durationSec}
               addLabel={t('tools.video.frames.addMoment')}
               onAdd={(time) =>
                 set({ timestamps: normalizeTimestamps([...value.timestamps, time]) })
@@ -73,7 +73,7 @@ export function VideoExtractFramesForm({ value, onChange, file }: ToolFormProps<
         </View>
       ) : null}
       <Field label={t('interface:extractFrames.imageFormatLabel')}>
-        <ChipRow
+        <Chips
           options={[
             { value: 'jpg', label: 'JPG' },
             { value: 'png', label: 'PNG' },

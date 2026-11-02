@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { useFactText } from '@/quota/useTierFacts';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import { NumberField } from '@/ui/components/NumberField';
 import { Segmented } from '@/ui/components/Segmented';
 import { ToggleRow } from '@/ui/components/ToggleRow';
@@ -49,24 +49,20 @@ function CropStage({
 }
 
 // i18n-keys: interface:videoTransform.rotations.90, interface:videoTransform.rotations.180, interface:videoTransform.rotations.270
-export function VideoTransformForm({
-  value,
-  onChange,
-  file,
-  limits,
-}: ToolFormProps<TransformForm>) {
-  const limitMax = limits?.maxOutputHeight;
+export function VideoTransformForm({ value, onChange, ctx }: ToolFormProps<TransformForm>) {
   const { t } = useTranslation();
   const set = (patch: Partial<TransformForm>) => onChange({ ...value, ...patch });
-  const chips = useFormatChips(TRANSFORM_FORMATS, file?.extension, true);
+  const chips = useFormatChips(TRANSFORM_FORMATS, ctx?.input?.extension, true);
   const fact = useFactText('maxOutputHeight');
-  const over = heightOverLimit(value, { limits: { maxOutputHeight: limitMax } });
+  const over = heightOverLimit(value, ctx);
   const sideError = (n: number | null) =>
     n !== null && (n < 1 || n > MAX_SIDE)
       ? t('tools.video.transform.sideRange', { max: MAX_SIDE })
       : null;
   const heightHint = over
-    ? [t('tools.video.transform.heightLimit', { limit: limitMax }), fact].filter(Boolean).join(' ')
+    ? [t('tools.video.transform.heightLimit', { limit: ctx?.limits?.maxOutputHeight }), fact]
+        .filter(Boolean)
+        .join(' ')
     : null;
 
   return (
@@ -115,7 +111,7 @@ export function VideoTransformForm({
       {value.op === 'rotate' ? (
         <View className="gap-4">
           <Field label={t('interface:videoTransform.rotationLabel')}>
-            <ChipRow
+            <Chips
               options={ROTATIONS.map((r) => ({
                 value: r,
                 label:
@@ -139,16 +135,16 @@ export function VideoTransformForm({
           />
         </View>
       ) : null}
-      {value.op === 'crop' && file?.uri ? (
+      {value.op === 'crop' && ctx?.input?.uri ? (
         <CropStage
-          uri={file.uri}
-          durationSec={file.durationSec}
+          uri={ctx.input.uri}
+          durationSec={ctx.input.durationSec}
           value={value}
           onChange={onChange}
         />
       ) : null}
       <Field label={t('tools.video.format')}>
-        <ChipRow options={chips} value={value.format} onChange={(format) => set({ format })} />
+        <Chips options={chips} value={value.format} onChange={(format) => set({ format })} />
       </Field>
     </View>
   );

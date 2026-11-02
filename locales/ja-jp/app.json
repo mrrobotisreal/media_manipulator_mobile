@@ -188,6 +188,70 @@
         "description": "画像に保存されている情報を変更します。"
       }
     },
+    "image": {
+      "format": "出力形式",
+      "sameAsOriginal": "元と同じ ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "画質",
+      "qualityHint": "画質を下げるとファイルが小さくなります",
+      "icoSizes": "アイコンサイズ",
+      "vectorize": {
+        "speckle": "{{count}} px より小さい点を無視"
+      },
+      "resize": {
+        "width": "幅",
+        "height": "高さ",
+        "keepAspect": "縦横比を維持",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "幅 {{width}} px",
+        "heightLimit": "ご利用のプランでは最大 {{limit}}p。"
+      },
+      "compress": {
+        "pngToJpg": "JPG は透明に対応していないため、透明部分は白になります。"
+      },
+      "filters": {
+        "grayscale": "グレースケール",
+        "sepia": "セピア",
+        "blur": "ぼかし",
+        "sharpen": "シャープ",
+        "swirl": "渦巻き",
+        "barrel-distortion": "樽型歪み",
+        "oil-painting": "油絵",
+        "vintage": "ヴィンテージ",
+        "emboss": "エンボス",
+        "charcoal": "木炭画",
+        "sketch": "スケッチ"
+      },
+      "rotate": {
+        "cw90": "時計回りに 90°",
+        "r180": "180°",
+        "ccw90": "反時計回りに 90°"
+      },
+      "text": {
+        "required": "追加するテキストを入力してください",
+        "font": "フォント",
+        "fontDefault": "デフォルト"
+      },
+      "crop": {
+        "pick": "画像を選んでトリミング範囲を設定"
+      },
+      "toPdf": {
+        "note": "画像は1ページの PDF になります。"
+      }
+    },
+    "pdf": {
+      "pages": "ページ",
+      "pagesFirst": "最初のページのみ",
+      "pagesAll": "すべてのページ (ZIP)",
+      "dpi": "解像度 ({{dpi}} DPI)"
+    },
     "video": {
       "format": "出力形式",
       "sameAsOriginal": "元と同じ({{format}})",
@@ -198,8 +262,6 @@
         "medium": "バランス",
         "high": "最高画質"
       },
-      "stepperLess": "減らす",
-      "stepperMore": "増やす",
       "gif": {
         "width": "幅",
         "fps": "フレームレート(fps)",
@@ -591,6 +653,16 @@
     "seeAll": "すべての上限を見る"
   },
   "toolUi": {
+    "crop": {
+      "title": "トリミング",
+      "aspectFree": "自由",
+      "reset": "リセット",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "トリミングの角 {{corner}}"
+    },
+    "color": {
+      "a11y": "色 {{hex}}"
+    },
     "range": {
       "start": "開始",
       "end": "終了",

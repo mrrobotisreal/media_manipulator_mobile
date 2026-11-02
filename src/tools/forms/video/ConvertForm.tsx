@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import { CODEC_FORMATS, type ConvertForm } from '../../options/video';
 import type { VideoContainer } from '../../options/videoSchema';
 import type { ToolFormProps } from '../../types';
@@ -14,7 +14,7 @@ export function VideoConvertForm({ value, onChange }: ToolFormProps<ConvertForm>
   return (
     <View className="gap-4" testID="video-convert-form">
       <Field label={t('tools.video.format')}>
-        <ChipRow
+        <Chips
           options={FORMATS.map((f) => ({ value: f, label: f.toUpperCase() }))}
           value={value.format}
           onChange={(format) => onChange({ ...value, format })}
@@ -22,7 +22,7 @@ export function VideoConvertForm({ value, onChange }: ToolFormProps<ConvertForm>
       </Field>
       {hasCodec ? (
         <Field label={t('interface:videoCompressor.codecLabel')}>
-          <ChipRow
+          <Chips
             options={[
               { value: 'auto', label: t('tools.video.codecAuto') },
               { value: 'h264', label: 'H.264' },
@@ -34,7 +34,7 @@ export function VideoConvertForm({ value, onChange }: ToolFormProps<ConvertForm>
         </Field>
       ) : null}
       <Field label={t('tools.video.qualityLabel')}>
-        <ChipRow
+        <Chips
           options={[
             { value: 'low', label: t('tools.video.quality.low') },
             { value: 'medium', label: t('tools.video.quality.medium') },

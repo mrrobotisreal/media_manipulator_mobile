@@ -188,6 +188,70 @@
         "description": "Altere os detalhes guardados numa imagem."
       }
     },
+    "image": {
+      "format": "Formato de saída",
+      "sameAsOriginal": "Igual ao original ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Qualidade",
+      "qualityHint": "Qualidade menor gera um ficheiro menor",
+      "icoSizes": "Tamanhos do ícone",
+      "vectorize": {
+        "speckle": "Ignorar manchas menores que {{count}} px"
+      },
+      "resize": {
+        "width": "Largura",
+        "height": "Altura",
+        "keepAspect": "Manter proporção",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "{{width}} px de largura",
+        "heightLimit": "Até {{limit}}p no seu plano."
+      },
+      "compress": {
+        "pngToJpg": "JPG não tem transparência; as áreas transparentes ficam brancas."
+      },
+      "filters": {
+        "grayscale": "Tons de cinza",
+        "sepia": "Sépia",
+        "blur": "Desfoque",
+        "sharpen": "Nitidez",
+        "swirl": "Redemoinho",
+        "barrel-distortion": "Distorção de barril",
+        "oil-painting": "Pintura a óleo",
+        "vintage": "Vintage",
+        "emboss": "Relevo",
+        "charcoal": "Carvão",
+        "sketch": "Esboço"
+      },
+      "rotate": {
+        "cw90": "90° no sentido horário",
+        "r180": "180°",
+        "ccw90": "90° no sentido anti-horário"
+      },
+      "text": {
+        "required": "Introduza o texto a adicionar",
+        "font": "Fonte",
+        "fontDefault": "Padrão"
+      },
+      "crop": {
+        "pick": "Escolha uma imagem para definir a área de corte"
+      },
+      "toPdf": {
+        "note": "A imagem passa a ser um PDF de uma página."
+      }
+    },
+    "pdf": {
+      "pages": "Páginas",
+      "pagesFirst": "Apenas a primeira página",
+      "pagesAll": "Todas as páginas (ZIP)",
+      "dpi": "Resolução ({{dpi}} DPI)"
+    },
     "video": {
       "format": "Formato de saída",
       "sameAsOriginal": "Igual ao original ({{format}})",
@@ -198,8 +262,6 @@
         "medium": "Equilibrado",
         "high": "Melhor qualidade"
       },
-      "stepperLess": "Diminuir",
-      "stepperMore": "Aumentar",
       "gif": {
         "width": "Largura",
         "fps": "Fotogramas por segundo",
@@ -593,6 +655,16 @@
     "seeAll": "Ver todos os limites"
   },
   "toolUi": {
+    "crop": {
+      "title": "Cortar",
+      "aspectFree": "Livre",
+      "reset": "Repor",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Canto de corte {{corner}}"
+    },
+    "color": {
+      "a11y": "Cor {{hex}}"
+    },
     "range": {
       "start": "Início",
       "end": "Fim",

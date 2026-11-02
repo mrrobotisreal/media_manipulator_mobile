@@ -151,9 +151,11 @@ export const videoTools: AnyToolDefinition[] = [
     {
       Form: VideoTrimForm,
       optionsBuilder: buildTrim,
-      isValid: (f, ctx) =>
+      blockReason: (f, ctx) =>
         trimRangeValid(f.start, f.end) &&
-        (!ctx?.file?.durationSec || f.end <= ctx.file.durationSec + 0.5),
+        (!ctx?.input?.durationSec || f.end <= ctx.input.durationSec + 0.5)
+          ? null
+          : 'range',
       presets: [
         preset('video-trim', 'video-trimmer'),
         preset('video-trim', 'mp4-trimmer'),
@@ -182,7 +184,7 @@ export const videoTools: AnyToolDefinition[] = [
     {
       Form: VideoToGifForm,
       optionsBuilder: buildGif,
-      isValid: (f) => f.end === 0 || f.end - f.start >= 0.1,
+      blockReason: (f) => (f.end === 0 || f.end - f.start >= 0.1 ? null : 'invalid'),
       presets: [
         preset('video-to-gif', 'convert-video-to-animated-gif'),
         preset('video-to-gif', 'video-to-gif'),
@@ -243,7 +245,7 @@ export const videoTools: AnyToolDefinition[] = [
     {
       Form: VideoExtractFramesForm,
       optionsBuilder: buildFrames,
-      isValid: framesValid,
+      blockReason: (f, ctx) => (framesValid(f) ? null : 'invalid'),
       presets: [preset('video-extract-frames', 'extract-frames-from-video')],
     },
   ),
@@ -260,7 +262,7 @@ export const videoTools: AnyToolDefinition[] = [
     {
       Form: VideoTransformForm,
       optionsBuilder: buildTransform,
-      isValid: transformValid,
+      blockReason: (f, ctx) => (transformValid(f, ctx) ? null : 'invalid'),
       analyticsSlugFor: slugForTransform,
       presets: [
         preset('video-transform', 'resize-video', { op: 'resize' }),
@@ -287,7 +289,7 @@ export const videoTools: AnyToolDefinition[] = [
     {
       Form: VideoSpeedForm,
       optionsBuilder: buildSpeed,
-      isValid: speedValid,
+      blockReason: (f, ctx) => (speedValid(f) ? null : 'invalid'),
       analyticsSlugFor: slugForSpeed,
       presets: [
         preset('video-speed', 'change-video-speed', { speed: 2 }),
@@ -315,7 +317,7 @@ export const videoTools: AnyToolDefinition[] = [
     {
       Form: VideoAdjustForm,
       optionsBuilder: buildAdjust,
-      isValid: adjustValid,
+      blockReason: (f, ctx) => (adjustValid(f) ? null : 'invalid'),
       analyticsSlugFor: slugForAdjust,
       presets: [
         preset('video-adjust', 'stabilize-video', { adjust: 'stabilize' }),

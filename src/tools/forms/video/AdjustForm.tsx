@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import { Segmented } from '@/ui/components/Segmented';
 import { Slider } from '@/ui/components/Slider';
 import { Stepper } from '@/ui/components/Stepper';
@@ -12,10 +12,10 @@ import { useFormatChips } from './shared';
 
 const FPS_CHIPS = [24, 25, 30, 50, 60];
 
-export function VideoAdjustForm({ value, onChange, file }: ToolFormProps<AdjustForm>) {
+export function VideoAdjustForm({ value, onChange, ctx }: ToolFormProps<AdjustForm>) {
   const { t } = useTranslation();
   const set = (patch: Partial<AdjustForm>) => onChange({ ...value, ...patch });
-  const chips = useFormatChips(SPEED_FORMATS, file?.extension, true);
+  const chips = useFormatChips(SPEED_FORMATS, ctx?.input?.extension, true);
   const slider = (
     key: 'brightness' | 'contrast' | 'saturation' | 'hue' | 'gamma' | 'shakiness' | 'accuracy',
     min: number,
@@ -51,19 +51,17 @@ export function VideoAdjustForm({ value, onChange, file }: ToolFormProps<AdjustF
         </View>
       ) : null}
       {value.adjust === 'frameRate' ? (
-        <Field label={t('tools.video.adjust.target')}>
-          <ChipRow
-            numeric
+        <Field>
+          <Chips
             options={FPS_CHIPS.map((f) => ({ value: f, label: String(f) }))}
             value={FPS_CHIPS.includes(value.target) ? value.target : null}
             onChange={(target) => set({ target })}
           />
           <Stepper
+            label={t('tools.video.adjust.target')}
             value={value.target}
             min={1}
             max={120}
-            decrementLabel={t('tools.video.stepperLess')}
-            incrementLabel={t('tools.video.stepperMore')}
             onChange={(target) => set({ target })}
           />
         </Field>
@@ -81,7 +79,7 @@ export function VideoAdjustForm({ value, onChange, file }: ToolFormProps<AdjustF
         </View>
       ) : null}
       <Field label={t('tools.video.format')}>
-        <ChipRow options={chips} value={value.format} onChange={(format) => set({ format })} />
+        <Chips options={chips} value={value.format} onChange={(format) => set({ format })} />
       </Field>
     </View>
   );

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import { ToggleRow } from '@/ui/components/ToggleRow';
 import type { CompressForm } from '../../options/video';
 import type { ToolFormProps } from '../../types';
@@ -16,7 +16,7 @@ export function VideoCompressForm({ value, onChange }: ToolFormProps<CompressFor
         label={t('interface:videoCompressor.levelLabel')}
         hint={t(`interface:videoCompressor.levelHints.${value.level}`)}
       >
-        <ChipRow
+        <Chips
           options={[
             { value: 'smallest', label: t('interface:videoCompressor.levels.smallest') },
             { value: 'balanced', label: t('interface:videoCompressor.levels.balanced') },
@@ -27,7 +27,7 @@ export function VideoCompressForm({ value, onChange }: ToolFormProps<CompressFor
         />
       </Field>
       <Field label={t('tools.video.format')}>
-        <ChipRow
+        <Chips
           options={[
             { value: 'mp4', label: 'MP4' },
             { value: 'webm', label: 'WebM' },
@@ -38,7 +38,7 @@ export function VideoCompressForm({ value, onChange }: ToolFormProps<CompressFor
       </Field>
       {value.format !== 'webm' ? (
         <Field label={t('interface:videoCompressor.codecLabel')}>
-          <ChipRow
+          <Chips
             options={[
               { value: 'h264', label: t('interface:videoCompressor.codecs.h264') },
               { value: 'h265', label: t('interface:videoCompressor.codecs.h265') },
@@ -49,7 +49,7 @@ export function VideoCompressForm({ value, onChange }: ToolFormProps<CompressFor
         </Field>
       ) : null}
       <Field label={t('interface:videoCompressor.resolutionLabel')}>
-        <ChipRow
+        <Chips
           options={[
             { value: 'keep', label: t('interface:videoCompressor.resolutions.keep') },
             { value: '1080', label: t('interface:videoCompressor.resolutions.1080') },

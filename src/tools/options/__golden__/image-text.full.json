@@ -1,0 +1,16 @@
+{
+  "format": "png",
+  "quality": 85,
+  "filter": "none",
+  "textOverlay": {
+    "text": "Hello",
+    "size": 96,
+    "color": "#FF6B4A",
+    "strokeColor": "#000000",
+    "strokeWidth": 4,
+    "gravity": "South",
+    "font": "DejaVu-Sans-Mono",
+    "x": 0,
+    "y": 12
+  }
+}

@@ -1,52 +1,55 @@
-import { View } from 'react-native';
-import { Button } from './Button';
-import { Num } from './Text';
+import { Pressable, View } from 'react-native';
+import { hitTarget } from '../tokens';
+import { Num, Text } from './Text';
 
-const round = (n: number, step: number) => {
-  const decimals = Math.max(0, Math.ceil(-Math.log10(step)) + 1);
-  return Number(n.toFixed(decimals));
-};
-
-/** - value + with min/max/step. The value is a mono readout; `format` customises it. */
+/** -/+ stepper with a numeric readout. Values are clamped to [min, max]. */
 export function Stepper({
+  label,
   value,
   min,
   max,
   step = 1,
   onChange,
   format,
-  decrementLabel,
-  incrementLabel,
 }: {
+  label: string;
   value: number;
   min: number;
   max: number;
   step?: number;
-  onChange: (v: number) => void;
-  format?: (v: number) => string;
-  decrementLabel: string;
-  incrementLabel: string;
+  onChange: (value: number) => void;
+  format?: (value: number) => string;
 }) {
-  const set = (n: number) => onChange(round(Math.min(max, Math.max(min, n)), step));
+  const set = (v: number) => onChange(Math.min(max, Math.max(min, v)));
+  const btn = 'items-center justify-center rounded-md border border-edge-control bg-surface-2';
   return (
-    <View className="flex-row items-center gap-3" testID="stepper">
-      <Button
-        variant="secondary"
-        label="−"
-        accessibilityLabel={decrementLabel}
-        disabled={value <= min}
-        onPress={() => set(value - step)}
-      />
-      <Num className="min-w-16 text-center text-lg" testID="stepper-value">
-        {format ? format(value) : String(value)}
-      </Num>
-      <Button
-        variant="secondary"
-        label="+"
-        accessibilityLabel={incrementLabel}
-        disabled={value >= max}
-        onPress={() => set(value + step)}
-      />
+    <View className="flex-row items-center justify-between gap-3">
+      <Text className="flex-1 text-sm text-muted-fg">{label}</Text>
+      <View className="flex-row items-center gap-2">
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${label} −`}
+          disabled={value <= min}
+          onPress={() => set(value - step)}
+          className={`${btn} ${value <= min ? 'opacity-40' : ''}`}
+          style={{ width: hitTarget, height: hitTarget }}
+        >
+          <Text>−</Text>
+        </Pressable>
+        <Num className="min-w-[56px] text-center" accessibilityLabel={label}>
+          {format ? format(value) : String(value)}
+        </Num>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${label} +`}
+          disabled={value >= max}
+          onPress={() => set(value + step)}
+          className={`${btn} ${value >= max ? 'opacity-40' : ''}`}
+          style={{ width: hitTarget, height: hitTarget }}
+        >
+          <Text>+</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }

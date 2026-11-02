@@ -4,11 +4,15 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { i18n } from '@/i18n';
 import { makeReadyStore } from '@/state/testing';
-import { ADJUST_DEFAULTS, TRANSFORM_DEFAULTS, adjustValid, transformValid } from '../../../options/video';
+import {
+  ADJUST_DEFAULTS,
+  TRANSFORM_DEFAULTS,
+  adjustValid,
+  transformValid,
+ TRIM_DEFAULTS, trimRangeValid } from '../../../options/video';
 import { VideoAdjustForm } from '../AdjustForm';
 import { VideoTransformForm } from '../TransformForm';
 import { VideoTrimForm } from '../TrimForm';
-import { TRIM_DEFAULTS, trimRangeValid } from '../../../options/video';
 
 jest.mock('lucide-react-native', () => new Proxy({}, { get: () => () => null }));
 jest.mock('@/analytics/track', () => ({ track: jest.fn(), setContext: jest.fn() }));
@@ -32,7 +36,7 @@ describe('VideoTransformForm resize gate', () => {
   const ctx = { limits: { maxOutputHeight: 720 } };
   function Host({ init }: { init: typeof TRANSFORM_DEFAULTS }) {
     const [v, setV] = useState(init);
-    return <VideoTransformForm value={v} onChange={setV} limits={ctx.limits} />;
+    return <VideoTransformForm value={v} onChange={setV} ctx={ctx} />;
   }
   it('flags height 2000 on the free cap and keeps width-only 3840 valid', async () => {
     expect(transformValid({ ...TRANSFORM_DEFAULTS, height: 2000 }, ctx)).toBe(false);
@@ -63,7 +67,16 @@ describe('VideoTrimForm', () => {
       <VideoTrimForm
         value={{ ...TRIM_DEFAULTS, start: 1, end: 1.05 }}
         onChange={() => undefined}
-        file={{ extension: 'mp4', uri: 'file:///a.mp4', durationSec: 10 }}
+        ctx={{
+          input: {
+            name: 'a.mp4',
+            extension: 'mp4',
+            mime: 'video/mp4',
+            mediaKind: 'video',
+            uri: 'file:///a.mp4',
+            durationSec: 10,
+          },
+        }}
       />,
     );
     expect(screen.getByText('Set an end time later than the start time.')).toBeTruthy();

@@ -15,31 +15,31 @@ export type ResultKind =
 
 export type ToolOptions = Record<string, unknown>;
 
-/** What a form or builder may know about the picked file (the intake copy). */
-export interface ToolFileInfo {
+/** What a form/builder may know about the file the job will run on, and the account's limits. */
+export interface ToolInputInfo {
+  name: string;
+  /** Local file:// URI (crop editor preview). */
+  uri?: string;
   /** Lower-case, no dot. */
   extension: string;
+  mime: string;
+  mediaKind: MediaKind;
+  /** Seconds (intake probe) for video/audio. */
   durationSec?: number;
   width?: number;
   height?: number;
-  /** file:// URI of the intake copy (previews and thumbnails only). */
-  uri?: string;
 }
 
-/** Context handed to builders and validators beyond the form value. */
-export interface ToolBuildContext {
-  file?: ToolFileInfo;
-  /** Cached tier limits; undefined while `/account/me` has not loaded (then nothing is gated). */
+export interface ToolContext {
+  input?: ToolInputInfo;
   limits?: { maxOutputHeight?: number };
 }
 
 export interface ToolFormProps<F = ToolOptions> {
   value: F;
   onChange: (next: F) => void;
-  /** The picked file, when one is attached (forms read duration / size / extension from it). */
-  file?: ToolFileInfo;
-  /** Cached tier limits (forms show gating hints from them). */
-  limits?: ToolBuildContext['limits'];
+  /** Additive (MA17): the first selected file and the cached account limits. */
+  ctx?: ToolContext;
 }
 
 export interface ToolPreset<F = ToolOptions> {
@@ -68,17 +68,17 @@ export interface ToolDefinition<F = ToolOptions> {
   batch?: boolean;
   endpoint: ToolEndpoint;
   defaults: F;
+  /** Per-mode web slug (MA18); falls back to `analyticsSlug` when absent. */
+  analyticsSlugFor?: (form: F) => string;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
-  optionsBuilder: (form: F, ctx?: ToolBuildContext) => ToolOptions;
-  /** Run is disabled while this returns false; forms render their own reason. Absent = always valid. */
-  isValid?: (form: F, ctx?: ToolBuildContext) => boolean;
+  optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
+  /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */
+  blockReason?: (form: F, ctx?: ToolContext) => string | null;
   Form: ComponentType<ToolFormProps<F>>;
   /** null only for inspect-metadata (free, synchronous). */
   metric: QuotaMetric | null;
   gpu: boolean;
   analyticsSlug: string;
-  /** Per-mode web slug (MA18 decision 9); falls back to `analyticsSlug` when absent. */
-  analyticsSlugFor?: (form: F) => string;
   /** The web `EmbeddedTask` (`embed.defaultTask`) of the row's slug; keys the result descriptor's `KIND_BY_TASK`. */
   webTask: string;
   keywords: string[];

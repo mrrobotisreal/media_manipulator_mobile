@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { Field } from '@/ui/components/Field';
-import { ChipRow } from '@/ui/components/ChipRow';
+import { Chips } from '@/ui/components/Chips';
 import { ToggleRow } from '@/ui/components/ToggleRow';
 import { Text } from '@/ui/components/Text';
 import { TrimRangeScrubber } from '../../native/TrimRangeScrubber';
@@ -9,16 +9,16 @@ import { TRIM_FORMATS, trimRangeValid, type TrimForm } from '../../options/video
 import type { ToolFormProps } from '../../types';
 import { useFormatChips } from './shared';
 
-export function VideoTrimForm({ value, onChange, file }: ToolFormProps<TrimForm>) {
+export function VideoTrimForm({ value, onChange, ctx }: ToolFormProps<TrimForm>) {
   const { t } = useTranslation();
-  const chips = useFormatChips(TRIM_FORMATS, file?.extension, true);
+  const chips = useFormatChips(TRIM_FORMATS, ctx?.input?.extension, true);
   const invalid = value.end > 0 && !trimRangeValid(value.start, value.end);
   return (
     <View className="gap-4" testID="video-trim-form">
-      {file?.uri ? (
+      {ctx?.input?.uri ? (
         <TrimRangeScrubber
-          uri={file.uri}
-          durationSec={file.durationSec}
+          uri={ctx.input.uri}
+          durationSec={ctx.input.durationSec}
           start={value.start}
           end={value.end}
           onChange={(start, end) => onChange({ ...value, start, end })}
@@ -33,7 +33,7 @@ export function VideoTrimForm({ value, onChange, file }: ToolFormProps<TrimForm>
         </Text>
       ) : null}
       <Field label={t('tools.video.format')}>
-        <ChipRow
+        <Chips
           options={chips}
           value={value.format}
           onChange={(format) => onChange({ ...value, format })}

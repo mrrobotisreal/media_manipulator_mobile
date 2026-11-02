@@ -188,6 +188,70 @@
         "description": "שינוי הפרטים השמורים בתמונה."
       }
     },
+    "image": {
+      "format": "פורמט פלט",
+      "sameAsOriginal": "זהה למקור ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "איכות",
+      "qualityHint": "איכות נמוכה יותר מקטינה את הקובץ",
+      "icoSizes": "גדלי סמל",
+      "vectorize": {
+        "speckle": "התעלם מכתמים קטנים מ-{{count}} px"
+      },
+      "resize": {
+        "width": "רוחב",
+        "height": "גובה",
+        "keepAspect": "שמור על יחס גובה-רוחב",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "רוחב {{width}} px",
+        "heightLimit": "עד {{limit}}p בתוכנית שלך."
+      },
+      "compress": {
+        "pngToJpg": "ל-JPG אין שקיפות; אזורים שקופים הופכים ללבנים."
+      },
+      "filters": {
+        "grayscale": "גווני אפור",
+        "sepia": "ספיה",
+        "blur": "טשטוש",
+        "sharpen": "חידוד",
+        "swirl": "מערבולת",
+        "barrel-distortion": "עיוות חבית",
+        "oil-painting": "ציור שמן",
+        "vintage": "וינטג'",
+        "emboss": "תבליט",
+        "charcoal": "פחם",
+        "sketch": "סקיצה"
+      },
+      "rotate": {
+        "cw90": "90° עם כיוון השעון",
+        "r180": "180°",
+        "ccw90": "90° נגד כיוון השעון"
+      },
+      "text": {
+        "required": "הזן את הטקסט להוספה",
+        "font": "גופן",
+        "fontDefault": "ברירת מחדל"
+      },
+      "crop": {
+        "pick": "בחר תמונה כדי להגדיר את אזור החיתוך"
+      },
+      "toPdf": {
+        "note": "התמונה הופכת ל-PDF בעמוד אחד."
+      }
+    },
+    "pdf": {
+      "pages": "עמודים",
+      "pagesFirst": "העמוד הראשון בלבד",
+      "pagesAll": "כל העמודים (ZIP)",
+      "dpi": "רזולוציה ({{dpi}} DPI)"
+    },
     "video": {
       "format": "פורמט פלט",
       "sameAsOriginal": "כמו המקור ({{format}})",
@@ -198,8 +262,6 @@
         "medium": "מאוזן",
         "high": "איכות הכי טובה"
       },
-      "stepperLess": "הקטנה",
-      "stepperMore": "הגדלה",
       "gif": {
         "width": "רוחב",
         "fps": "פריימים לשנייה",
@@ -593,6 +655,16 @@
     "seeAll": "הצגת כל המגבלות"
   },
   "toolUi": {
+    "crop": {
+      "title": "חיתוך",
+      "aspectFree": "חופשי",
+      "reset": "איפוס",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "פינת חיתוך {{corner}}"
+    },
+    "color": {
+      "a11y": "צבע {{hex}}"
+    },
     "range": {
       "start": "התחלה",
       "end": "סיום",

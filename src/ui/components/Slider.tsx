@@ -1,22 +1,16 @@
-/* eslint-disable react-hooks/refs -- gesture callbacks read refs and the player is mutated by design. */
-import { useRef, useState } from 'react';
-import { View } from 'react-native';
+import { useState } from 'react';
+import { I18nManager, View, type LayoutChangeEvent } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { colors } from '../tokens';
 import { Num, Text } from './Text';
 
-const THUMB = 24;
-
-export const sliderValueAt = (x: number, width: number, min: number, max: number, step: number) => {
-  if (!(width > 0)) return min;
-  const raw = min + (Math.min(width, Math.max(0, x)) / width) * (max - min);
-  const stepped = Math.round((raw - min) / step) * step + min;
-  return Math.min(max, Math.max(min, Number(stepped.toFixed(6))));
-};
+export function snapToStep(raw: number, min: number, max: number, step: number): number {
+  const snapped = Math.round((raw - min) / step) * step + min;
+  return Math.min(max, Math.max(min, snapped));
+}
 
 /**
- * Plain gesture slider (no native module). Always laid out left to right; the value is a mono readout.
- * Accessible through `increment` / `decrement` actions.
+ * Horizontal slider on gesture-handler (no native module). The track follows the layout direction:
+ * min sits at the start edge in LTR and RTL. Also an accessibility "adjustable" (increment/decrement).
  */
 export function Slider({
   label,
@@ -25,7 +19,6 @@ export function Slider({
   max,
   step = 1,
   onChange,
-  onChangeEnd,
   format,
 }: {
   label: string;
@@ -33,63 +26,59 @@ export function Slider({
   min: number;
   max: number;
   step?: number;
-  onChange: (v: number) => void;
-  onChangeEnd?: (v: number) => void;
-  format?: (v: number) => string;
+  onChange: (value: number) => void;
+  format?: (value: number) => string;
 }) {
   const [width, setWidth] = useState(0);
-  const last = useRef(value);
-  last.current = value;
-  const frac = max > min ? (value - min) / (max - min) : 0;
+  const rtl = I18nManager.isRTL;
+  const fraction = max === min ? 0 : (value - min) / (max - min);
+  const thumb = 24;
+
+  const setFromX = (x: number) => {
+    if (width <= 0) return;
+    const f = Math.min(1, Math.max(0, x / width));
+    const ratio = rtl ? 1 - f : f;
+    const next = snapToStep(min + ratio * (max - min), min, max, step);
+    if (next !== value) onChange(next);
+  };
+  // runOnJS(true): callbacks run on the JS thread, so no reanimated/worklets import is needed.
   const pan = Gesture.Pan()
     .runOnJS(true)
     .minDistance(0)
-    .onUpdate((e) => onChange(sliderValueAt(e.x, width, min, max, step)))
-    .onFinalize(() => onChangeEnd?.(last.current));
+    .onBegin((e) => setFromX(e.x))
+    .onUpdate((e) => setFromX(e.x));
+
   return (
-    <View className="gap-1" testID="slider">
-      <View className="flex-row justify-between">
+    <View className="gap-1">
+      <View className="flex-row items-center justify-between">
         <Text className="text-sm text-muted-fg">{label}</Text>
-        <Num className="text-sm" testID="slider-value">
-          {format ? format(value) : String(value)}
-        </Num>
+        <Num className="text-sm">{format ? format(value) : String(value)}</Num>
       </View>
       <GestureDetector gesture={pan}>
         <View
-          onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
           accessible
           accessibilityRole="adjustable"
           accessibilityLabel={label}
-          accessibilityValue={{ min, max, now: value }}
+          accessibilityValue={{ min, max, now: value, text: format ? format(value) : undefined }}
           accessibilityActions={[{ name: 'increment' }, { name: 'decrement' }]}
           onAccessibilityAction={(e) => {
-            const next = Math.min(
-              max,
-              Math.max(min, value + (e.nativeEvent.actionName === 'increment' ? step : -step)),
-            );
-            onChange(Number(next.toFixed(6)));
-            onChangeEnd?.(Number(next.toFixed(6)));
+            const dir = e.nativeEvent.actionName === 'increment' ? 1 : -1;
+            onChange(snapToStep(value + dir * step, min, max, step));
           }}
-          style={{ height: 44, justifyContent: 'center', direction: 'ltr' }}
+          onLayout={(e: LayoutChangeEvent) => setWidth(e.nativeEvent.layout.width)}
+          style={{ height: 44, justifyContent: 'center' }}
         >
-          <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface3 }} />
+          <View className="h-1 rounded-full bg-surface-3">
+            <View className="h-1 rounded-full bg-primary" style={{ width: `${fraction * 100}%` }} />
+          </View>
           <View
+            pointerEvents="none"
+            className="absolute rounded-full bg-primary"
             style={{
-              position: 'absolute',
-              height: 4,
-              borderRadius: 2,
-              backgroundColor: colors.data,
-              width: frac * width,
-            }}
-          />
-          <View
-            style={{
-              position: 'absolute',
-              start: Math.max(0, frac * width - THUMB / 2),
-              width: THUMB,
-              height: THUMB,
-              borderRadius: THUMB / 2,
-              backgroundColor: colors.foreground,
+              width: thumb,
+              height: thumb,
+              top: 10,
+              start: Math.max(0, fraction * (width - thumb)),
             }}
           />
         </View>

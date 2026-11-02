@@ -1,4 +1,4 @@
-import type { ToolBuildContext, ToolOptions } from '../types';
+import type { ToolContext, ToolOptions } from '../types';
 import type { VideoContainer } from './videoSchema';
 
 /**
@@ -20,11 +20,11 @@ const round2 = (n: number) => Math.round(n * 100) / 100;
 /** Decision 4: the input container when the API can write it, else MP4. */
 export function resolveContainer<T extends string>(
   choice: FormatChoice<T>,
-  ctx: ToolBuildContext | undefined,
+  ctx: ToolContext | undefined,
   allowed: readonly T[],
 ): T | 'mp4' {
   if (choice !== 'same') return choice;
-  const ext = ctx?.file?.extension?.toLowerCase();
+  const ext = ctx?.input?.extension?.toLowerCase();
   const hit = allowed.find((a) => a === ext);
   return hit ?? 'mp4';
 }
@@ -106,7 +106,7 @@ export function trimRangeValid(start: number, end: number): boolean {
   return Number.isFinite(len) && start >= 0 && len >= TRIM_MIN_GAP - 1e-9 && len <= TRIM_MAX_SEC;
 }
 
-export function buildTrim(f: TrimForm, ctx?: ToolBuildContext): ToolOptions {
+export function buildTrim(f: TrimForm, ctx?: ToolContext): ToolOptions {
   return {
     mode: 'trim_video',
     format: resolveContainer(f.format, ctx, TRIM_FORMATS),
@@ -131,11 +131,11 @@ export const GIF_FPS = [8, 12, 15, 24] as const;
 export const GIF_COLORS = [64, 128, 256] as const;
 export const GIF_DEFAULT_SECONDS = 5;
 
-export function buildGif(f: GifForm, ctx?: ToolBuildContext): ToolOptions {
+export function buildGif(f: GifForm, ctx?: ToolContext): ToolOptions {
   const o = base('gif', {
     gif: { width: f.width, fps: f.fps, colors: f.colors, delay: 3, optimize: 3 },
   });
-  const dur = ctx?.file?.durationSec;
+  const dur = ctx?.input?.durationSec;
   const hasRange = f.end > f.start;
   const whole = hasRange && f.start <= 0.005 && dur !== undefined && f.end >= dur - 0.05;
   if (hasRange && !whole) o.trim = { startTime: round2(f.start), endTime: round2(f.end) };
@@ -241,7 +241,7 @@ export const TRANSFORM_DEFAULTS: TransformForm = {
   crop: null,
 };
 
-export function buildTransform(f: TransformForm, ctx?: ToolBuildContext): ToolOptions {
+export function buildTransform(f: TransformForm, ctx?: ToolContext): ToolOptions {
   const format = resolveContainer(f.format, ctx, TRANSFORM_FORMATS);
   const o = base(format, { preserveAspectRatio: f.op === 'resize' ? f.keepAspect : true });
   if (f.op === 'resize') {
@@ -270,12 +270,12 @@ const validSide = (n: number | null) =>
   n === null || (Number.isFinite(n) && n >= 1 && n <= MAX_SIDE);
 
 /** True when the explicit `height` is over the cached tier cap (the only gated field, width is not). */
-export function heightOverLimit(f: TransformForm, ctx?: ToolBuildContext): boolean {
+export function heightOverLimit(f: TransformForm, ctx?: ToolContext): boolean {
   const cap = ctx?.limits?.maxOutputHeight;
   return f.op === 'resize' && !!f.height && cap !== undefined && cap > 0 && f.height > cap;
 }
 
-export function transformValid(f: TransformForm, ctx?: ToolBuildContext): boolean {
+export function transformValid(f: TransformForm, ctx?: ToolContext): boolean {
   if (f.op === 'resize') {
     if (!f.width && !f.height) return false;
     return validSide(f.width) && validSide(f.height) && !heightOverLimit(f, ctx);
@@ -296,7 +296,7 @@ export interface SpeedForm {
 }
 export const SPEED_DEFAULTS: SpeedForm = { format: 'same', speed: 2, reverse: false };
 
-export function buildSpeed(f: SpeedForm, ctx?: ToolBuildContext): ToolOptions {
+export function buildSpeed(f: SpeedForm, ctx?: ToolContext): ToolOptions {
   const o = base(resolveContainer(f.format, ctx, SPEED_FORMATS), { speed: f.speed });
   if (f.reverse) o.temporal = { reverse: true };
   return o;
@@ -340,7 +340,7 @@ export function colorEffects(f: AdjustForm): Record<string, number> {
   return out;
 }
 
-export function buildAdjust(f: AdjustForm, ctx?: ToolBuildContext): ToolOptions {
+export function buildAdjust(f: AdjustForm, ctx?: ToolContext): ToolOptions {
   const o = base(resolveContainer(f.format, ctx, SPEED_FORMATS));
   if (f.adjust === 'stabilize') {
     o.temporal = {

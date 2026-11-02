@@ -188,6 +188,70 @@
         "description": "Thay đổi thông tin lưu trong ảnh."
       }
     },
+    "image": {
+      "format": "Định dạng đầu ra",
+      "sameAsOriginal": "Giống bản gốc ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Chất lượng",
+      "qualityHint": "Chất lượng thấp hơn cho tệp nhỏ hơn",
+      "icoSizes": "Kích thước biểu tượng",
+      "vectorize": {
+        "speckle": "Bỏ qua đốm nhỏ hơn {{count}} px"
+      },
+      "resize": {
+        "width": "Chiều rộng",
+        "height": "Chiều cao",
+        "keepAspect": "Giữ tỷ lệ khung hình",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "Rộng {{width}} px",
+        "heightLimit": "Tối đa {{limit}}p với gói của bạn."
+      },
+      "compress": {
+        "pngToJpg": "JPG không hỗ trợ trong suốt; vùng trong suốt sẽ thành màu trắng."
+      },
+      "filters": {
+        "grayscale": "Thang xám",
+        "sepia": "Nâu đỏ",
+        "blur": "Làm mờ",
+        "sharpen": "Làm nét",
+        "swirl": "Xoáy",
+        "barrel-distortion": "Méo thùng",
+        "oil-painting": "Tranh sơn dầu",
+        "vintage": "Cổ điển",
+        "emboss": "Chạm nổi",
+        "charcoal": "Than chì",
+        "sketch": "Phác họa"
+      },
+      "rotate": {
+        "cw90": "90° theo chiều kim đồng hồ",
+        "r180": "180°",
+        "ccw90": "90° ngược chiều kim đồng hồ"
+      },
+      "text": {
+        "required": "Nhập văn bản cần thêm",
+        "font": "Phông chữ",
+        "fontDefault": "Mặc định"
+      },
+      "crop": {
+        "pick": "Chọn một ảnh để đặt vùng cắt"
+      },
+      "toPdf": {
+        "note": "Ảnh sẽ trở thành PDF một trang."
+      }
+    },
+    "pdf": {
+      "pages": "Trang",
+      "pagesFirst": "Chỉ trang đầu",
+      "pagesAll": "Tất cả trang (ZIP)",
+      "dpi": "Độ phân giải ({{dpi}} DPI)"
+    },
     "video": {
       "format": "Định dạng đầu ra",
       "sameAsOriginal": "Giống bản gốc ({{format}})",
@@ -198,8 +262,6 @@
         "medium": "Cân bằng",
         "high": "Chất lượng tốt nhất"
       },
-      "stepperLess": "Giảm",
-      "stepperMore": "Tăng",
       "gif": {
         "width": "Chiều rộng",
         "fps": "Số khung hình mỗi giây",
@@ -591,6 +653,16 @@
     "seeAll": "Xem tất cả giới hạn"
   },
   "toolUi": {
+    "crop": {
+      "title": "Cắt",
+      "aspectFree": "Tự do",
+      "reset": "Đặt lại",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Góc cắt {{corner}}"
+    },
+    "color": {
+      "a11y": "Màu {{hex}}"
+    },
     "range": {
       "start": "Bắt đầu",
       "end": "Kết thúc",

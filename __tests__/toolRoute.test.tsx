@@ -61,7 +61,7 @@ describe('tool route', () => {
     });
     expect(screen.getByText('Resize image')).toBeTruthy();
     expect(screen.getByText('Accepts: Images')).toBeTruthy();
-    expect(screen.getByText('Default settings')).toBeTruthy();
+    expect(screen.getByText('Keep aspect ratio')).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Start' })).toBeDisabled();
     expect(store.getState().settings.lastToolIds).toEqual(['image-resize']);
     expect(realTrack).toHaveBeenCalledTimes(1);
