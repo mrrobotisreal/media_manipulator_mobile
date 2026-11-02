@@ -39,6 +39,9 @@ function ToolScreen({
   const tool = getTool(toolId)!;
   const attached = useMemo(() => getIntakeFiles(intake ? intake.split(',') : []), [intake]);
   const [files, setFiles] = useState<IntakeFile[]>(attached);
+  // Start hands the cached copies to their jobs (the engine moves or deletes them when the job ends),
+  // so the screen lets go of them: Back then Start again must not upload a file that is gone.
+  const [consumed, setConsumed] = useState(0);
 
   const [form, setForm] = useState<ToolOptions>(() => ({
     ...tool.defaults,
@@ -113,6 +116,8 @@ function ToolScreen({
         files.map((file) => ({ tool: runTool, file, options: tool.optionsBuilder(ready, ctx) })),
       );
       const firstId = ids[0];
+      setFiles([]);
+      setConsumed((n) => n + 1);
       if (firstId) router.push(`/(app)/job/${firstId}`);
     } finally {
       setStarting(false);
@@ -138,7 +143,12 @@ function ToolScreen({
         <Text className="text-muted-fg">{t(tool.descriptionKey)}</Text>
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
         <QuotaChip metric={tool.metric} />
-        <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
+        <FileArea
+          key={consumed}
+          tool={tool}
+          initialFiles={consumed ? [] : attached}
+          onFilesChange={setFiles}
+        />
         <Form value={form} onChange={onFormChange} ctx={ctx} />
         {tool.noRunButton ? null : (
           <Button

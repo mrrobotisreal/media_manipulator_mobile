@@ -407,6 +407,16 @@ describe('upload queue', () => {
     expect(s.engine.retry(id)).toBe(false);
     expect(s.rec(id)).toMatchObject({ state: 'upload_failed', error: { code: 'file_gone' } });
   });
+
+  it('a missing cached copy fails as file_gone before any upload, not as a network error', async () => {
+    const s = setup();
+    await s.engine.start();
+    s.filesApi.exists.mockReturnValue(false);
+    const id = s.start();
+    await flush();
+    expect(s.uploads).toHaveLength(0);
+    expect(s.rec(id)).toMatchObject({ state: 'upload_failed', error: { code: 'file_gone' } });
+  });
 });
 
 describe('tracking', () => {
