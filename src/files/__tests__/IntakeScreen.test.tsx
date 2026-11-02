@@ -76,7 +76,10 @@ describe('toolsForKinds', () => {
   });
 
   it('is empty for mixed kinds no tool accepts together, and for no kinds', () => {
-    expect(toolsForKinds(['image', 'video'], []).map((t) => t.id)).toEqual(['inspect-metadata']);
+    expect(toolsForKinds(['image', 'video'], []).map((t) => t.id)).toEqual([
+      'inspect-metadata',
+      'strip-metadata',
+    ]);
     expect(toolsForKinds([], [])).toEqual([]);
   });
 
@@ -114,8 +117,10 @@ describe('IntakeScreen', () => {
     expect(
       screen.getByText('These files need different tools. Share them one kind at a time.'),
     ).toBeTruthy();
-    expect(screen.getAllByRole('button')).toHaveLength(1);
+    // Only the metadata tools take mixed kinds (strip accepts image, video and audio since MA21).
+    expect(screen.getAllByRole('button')).toHaveLength(2);
     expect(screen.getByText('Inspect metadata')).toBeTruthy();
+    expect(screen.getByText('Remove metadata')).toBeTruthy();
   });
 
   it('shows the unsupported state with a Back to Tools button', async () => {

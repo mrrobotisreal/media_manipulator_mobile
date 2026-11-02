@@ -50,6 +50,8 @@ function ToolScreen({
     () => ({
       input: first
         ? {
+            id: first.id,
+            sizeBytes: first.sizeBytes,
             name: first.name,
             uri: first.uri,
             extension: first.extension,
@@ -119,17 +121,19 @@ function ToolScreen({
         <QuotaChip metric={tool.metric} />
         <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
         <Form value={form} onChange={onFormChange} ctx={ctx} />
-        <Button
-          label={t('tool.start')}
-          disabled={files.length === 0 || tool.endpoint === 'metadataInspect' || blocked !== null}
-          onPress={start}
-        />
+        {tool.noRunButton ? null : (
+          <Button
+            label={t(tool.startLabelKey ?? 'tool.start')}
+            disabled={files.length === 0 || blocked !== null}
+            onPress={start}
+          />
+        )}
       </ScrollView>
     </Screen>
   );
 }
 
-// i18n-keys: tool.kinds.image, tool.kinds.video, tool.kinds.audio, tool.kinds.pdf
+// i18n-keys: tool.kinds.image, tool.kinds.video, tool.kinds.audio, tool.kinds.pdf, tools.metadata.strip.stripEverything, tools.metadata.edit.apply
 export default function ToolRoute() {
   const { family, toolId, from, intake, preset } = useLocalSearchParams<{
     family: string;

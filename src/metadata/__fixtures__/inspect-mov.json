@@ -6,10 +6,7 @@
     "mime": "",
     "kind": "video"
   },
-  "tools": [
-    "exiftool 12.76",
-    "ffprobe 7.1"
-  ],
+  "tools": ["exiftool 12.76", "ffprobe 7.1"],
   "entries": [
     {
       "id": "File:FileName",
@@ -347,7 +344,5 @@
       "category": "video"
     }
   ],
-  "warnings": [
-    "exiftool numeric pass failed: Error: no fixture exiftool.n.json"
-  ]
+  "warnings": ["exiftool numeric pass failed: Error: no fixture exiftool.n.json"]
 }

@@ -17,6 +17,9 @@ export type ToolOptions = Record<string, unknown>;
 
 /** What a form/builder may know about the file the job will run on, and the account's limits. */
 export interface ToolInputInfo {
+  /** Intake id and size (MA21): lets a form hand the same file to another tool. */
+  id?: string;
+  sizeBytes?: number;
   name: string;
   /** Local file:// URI (crop editor preview). */
   uri?: string;
@@ -71,6 +74,10 @@ export interface ToolDefinition<F = ToolOptions> {
   /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */
   blockReason?: (form: F, ctx?: ToolContext) => string | null;
   Form: ComponentType<ToolFormProps<F>>;
+  /** Additive (MA21): i18n key for the Run button when it is not the generic `tool.start`. */
+  startLabelKey?: string;
+  /** Additive (MA21): the tool runs from its Form (inspect-metadata); the screen shows no Run button. */
+  noRunButton?: boolean;
   /** null only for inspect-metadata (free, synchronous). */
   metric: QuotaMetric | null;
   gpu: boolean;

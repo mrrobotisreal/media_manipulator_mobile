@@ -6,9 +6,7 @@
     "mime": "",
     "kind": "image"
   },
-  "tools": [
-    "exiftool 12.76"
-  ],
+  "tools": ["exiftool 12.76"],
   "entries": [
     {
       "id": "File:FileName",
@@ -176,7 +174,7 @@
       "group": "GPS",
       "tag": "GPSLongitude",
       "value": "2 deg 17' 40.20\" E",
-      "rawValue": 2.294500,
+      "rawValue": 2.2945,
       "category": "gps",
       "privacy": "location"
     },
@@ -208,10 +206,7 @@
       "id": "XMP-dc:Subject",
       "group": "XMP-dc",
       "tag": "Subject",
-      "value": [
-        "paris",
-        "trip"
-      ],
+      "value": ["paris", "trip"],
       "category": "xmp",
       "privacy": "history"
     },

@@ -1,4 +1,4 @@
-import type { ToolOptions } from '../types';
+import type { ToolContext, ToolOptions } from '../types';
 import type { MetadataDocument } from '@/metadata/types';
 import { extractCoordinates } from '@/metadata/format';
 
@@ -13,14 +13,10 @@ import { extractCoordinates } from '@/metadata/format';
 export type MetadataMediaKind = 'image' | 'video' | 'audio';
 export type LocationMode = 'keep' | 'remove' | 'replace' | 'round';
 
-export interface StripMetadataForm {
-  /** Lower-case, no dot; set by the tool screen from the picked file. */
-  sourceExtension: string;
-  mediaKind: MetadataMediaKind;
-  [key: string]: unknown;
-}
+/** The strip form carries no user fields: the file comes from `ctx.input`. */
+export type StripMetadataForm = ToolOptions;
 
-export interface EditMetadataForm extends StripMetadataForm {
+export interface EditMetadataForm extends ToolOptions {
   title: string;
   author: string;
   description: string;
@@ -41,41 +37,45 @@ export interface EditMetadataForm extends StripMetadataForm {
 export const METADATA_FIELD_MAX = 1000;
 export const DEFAULT_PRECISION_DECIMALS = 3;
 
-const ext = (form: Pick<StripMetadataForm, 'sourceExtension'>) =>
-  (form.sourceExtension ?? '').trim().toLowerCase().replace(/^\./, '');
+const norm = (e: string | undefined) => (e ?? '').trim().toLowerCase().replace(/^\./, '');
+
+/** The picked file's kind for the builders; no file (registry identity checks) means image. */
+export function metadataKindOf(ctx?: ToolContext): MetadataMediaKind {
+  const k = ctx?.input?.mediaKind;
+  return k === 'video' || k === 'audio' ? k : 'image';
+}
 
 /** Image output format (strip and edit): the input format when the API can write it, else jpg. */
 export function imageStripFormat(sourceExtension: string): string {
-  const e = ext({ sourceExtension });
+  const e = norm(sourceExtension);
   if (e === 'jpeg') return 'jpg';
   return ['jpg', 'png', 'webp', 'gif', 'avif'].includes(e) ? e : 'jpg';
 }
 
 export function videoStripFormat(sourceExtension: string): string {
-  const e = ext({ sourceExtension });
+  const e = norm(sourceExtension);
   return ['mp4', 'mov', 'webm', 'mkv'].includes(e) ? e : 'mp4';
 }
 
 export function audioStripFormat(sourceExtension: string): string {
-  const e = ext({ sourceExtension });
+  const e = norm(sourceExtension);
   if (e === 'm4a' || e === 'aac') return 'aac';
   return ['mp3', 'wav', 'flac', 'ogg', 'opus'].includes(e) ? e : 'mp3';
 }
 
 export const STRIP_DEFAULTS: StripMetadataForm = {
-  sourceExtension: '',
-  mediaKind: 'image',
   format: 'jpg',
   quality: 85,
   filter: 'none',
   metadataMode: 'strip',
 };
 
-export function buildStripOptions(form: StripMetadataForm): ToolOptions {
-  switch (form.mediaKind) {
+export function buildStripOptions(_form: StripMetadataForm, ctx?: ToolContext): ToolOptions {
+  const sourceExtension = ctx?.input?.extension ?? '';
+  switch (metadataKindOf(ctx)) {
     case 'video':
       return {
-        format: videoStripFormat(form.sourceExtension),
+        format: videoStripFormat(sourceExtension),
         quality: 'high',
         speed: 1,
         preserveAspectRatio: true,
@@ -88,12 +88,12 @@ export function buildStripOptions(form: StripMetadataForm): ToolOptions {
         channels: 'stereo',
         speed: 1,
         volume: 1,
-        format: audioStripFormat(form.sourceExtension),
+        format: audioStripFormat(sourceExtension),
         metadataMode: 'strip',
       };
     default:
       return {
-        format: imageStripFormat(form.sourceExtension),
+        format: imageStripFormat(sourceExtension),
         quality: 85,
         filter: 'none',
         metadataMode: 'strip',
@@ -164,7 +164,7 @@ export function editFormValid(form: EditMetadataForm): boolean {
   return true;
 }
 
-export function buildEditOptions(form: EditMetadataForm): ToolOptions {
+export function buildEditOptions(form: EditMetadataForm, ctx?: ToolContext): ToolOptions {
   const text = (s: string) => (s ?? '').trim().slice(0, METADATA_FIELD_MAX);
   const metadata = pruneEmptyValues({
     title: text(form.title),
@@ -191,7 +191,7 @@ export function buildEditOptions(form: EditMetadataForm): ToolOptions {
     removeDestinationFields: form.removeDestination ? true : undefined,
   });
   const options: ToolOptions = {
-    format: imageStripFormat(form.sourceExtension),
+    format: imageStripFormat(ctx?.input?.extension ?? ''),
     quality: 85,
     filter: 'none',
     metadataMode: 'custom',

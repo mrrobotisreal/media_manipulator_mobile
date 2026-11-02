@@ -7,15 +7,18 @@ import {
   prefillFromDocument,
   pruneEmptyValues,
   type EditMetadataForm,
-  type StripMetadataForm,
 } from '../metadata';
 import { TOOL_BY_ID } from '../../registry';
+import type { ToolContext } from '../../types';
 import type { MetadataDocument } from '@/metadata/types';
 
-const strip = (sourceExtension: string, mediaKind: StripMetadataForm['mediaKind']) =>
-  buildStripOptions({ ...STRIP_DEFAULTS, sourceExtension, mediaKind });
-const edit = (over: Partial<EditMetadataForm>) =>
-  buildEditOptions({ ...EDIT_DEFAULTS, sourceExtension: 'jpg', ...over });
+const ctxFor = (extension: string, mediaKind: 'image' | 'video' | 'audio'): ToolContext => ({
+  input: { name: `f.${extension}`, extension, mime: '', mediaKind },
+});
+const strip = (extension: string, mediaKind: 'image' | 'video' | 'audio') =>
+  buildStripOptions(STRIP_DEFAULTS, ctxFor(extension, mediaKind));
+const edit = (over: Partial<EditMetadataForm>, ext = 'jpg') =>
+  buildEditOptions({ ...EDIT_DEFAULTS, ...over }, ctxFor(ext, 'image'));
 
 describe('strip-metadata goldens', () => {
   it('strip-metadata.jpeg-input', () => {
@@ -109,6 +112,10 @@ describe('edit-metadata goldens', () => {
       edit({ location: 'replace', latitude: '1', longitude: '-2', altitude: '35.5' }).gpsOptions,
     ).toEqual({ replaceLocationData: true, latitude: 1, longitude: -2, altitude: 35.5 });
   });
+  it('edit keeps png and falls back to jpg for heic', () => {
+    expect(edit({}, 'png').format).toBe('png');
+    expect(edit({}, 'heic').format).toBe('jpg');
+  });
   it('an empty form is custom with nothing to write', () => {
     expect(edit({})).toEqual({
       format: 'jpg',
@@ -134,18 +141,17 @@ describe('metadataMode rules', () => {
     for (const kind of ['video', 'audio'] as const) {
       for (const e of ['mp4', 'mp3', 'm4a', 'mov', 'wav']) {
         expect(strip(e, kind).metadataMode).toBe('strip');
-        expect(
-          buildEditOptions({ ...EDIT_DEFAULTS, sourceExtension: e, mediaKind: kind }).metadataMode,
-        ).toBe('custom');
       }
     }
-    // The edit tool only accepts images, so custom can never reach video/audio.
+    // Only the edit builder can emit custom, and the edit tool only accepts images, so custom can
+    // never reach video/audio.
+    expect(buildStripOptions(STRIP_DEFAULTS).metadataMode).toBe('strip');
     expect(TOOL_BY_ID.get('edit-metadata')!.accepts.kinds).toEqual(['image']);
     expect(TOOL_BY_ID.get('strip-metadata')!.accepts.kinds).toEqual(['image', 'video', 'audio']);
   });
   it('registry builders produce the same options', () => {
     const t = TOOL_BY_ID.get('strip-metadata')!;
-    expect(t.optionsBuilder({ ...t.defaults, sourceExtension: 'png' })).toMatchObject({
+    expect(t.optionsBuilder(t.defaults, ctxFor('png', 'image'))).toMatchObject({
       format: 'png',
       metadataMode: 'strip',
     });

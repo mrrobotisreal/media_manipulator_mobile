@@ -6,9 +6,7 @@
     "mime": "",
     "kind": "document"
   },
-  "tools": [
-    "exiftool 12.76"
-  ],
+  "tools": ["exiftool 12.76"],
   "entries": [
     {
       "id": "File:FileName",
@@ -123,7 +121,5 @@
       "privacy": "identity"
     }
   ],
-  "warnings": [
-    "exiftool numeric pass failed: Error: no fixture exiftool.n.json"
-  ]
+  "warnings": ["exiftool numeric pass failed: Error: no fixture exiftool.n.json"]
 }
