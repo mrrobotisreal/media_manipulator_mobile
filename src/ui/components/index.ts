@@ -19,3 +19,4 @@ export * from './Chips';
 export * from './Swatches';
 export * from './BrandMarks';
 export * from './KeyboardScroll';
+export * from './BrandBar';
