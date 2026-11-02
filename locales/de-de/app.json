@@ -187,6 +187,120 @@
         "title": "Metadaten bearbeiten",
         "description": "Im Bild gespeicherte Details ändern."
       }
+    },
+    "metadata": {
+      "title": "Dateimetadaten",
+      "summary": {
+        "tagCount_one": "{{count}} Tag in {{categories}} Kategorien",
+        "tagCount_other": "{{count}} Tags in {{categories}} Kategorien",
+        "dimensions": "Abmessungen",
+        "duration": "Dauer"
+      },
+      "privacy": {
+        "label": "Datenschutzfilter",
+        "location": "Standort",
+        "identity": "Identität",
+        "device": "Gerätenummern",
+        "history": "Bearbeitungsverlauf",
+        "locationHint": "Wo die Datei aufgenommen wurde",
+        "identityHint": "Namen, Software, Konten, Hosts und Aufnahmezeiten",
+        "deviceHint": "Seriennummern und eindeutige Geräte-IDs",
+        "historyHint": "Bearbeitungsspuren, eingebettete Miniaturen und Freitext"
+      },
+      "search": {
+        "placeholder": "Tags und Werte suchen",
+        "noResults": "Keine Tags entsprechen deinen Filtern.",
+        "clear": "Suche löschen"
+      },
+      "categories": {
+        "file": "Datei",
+        "image": "Bild",
+        "camera": "Kamera und Belichtung",
+        "lens": "Objektiv",
+        "gps": "Standort (GPS)",
+        "datetime": "Datum und Uhrzeit",
+        "color": "Farbe",
+        "thumbnail": "Miniaturen und Vorschauen",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "Bearbeitungsverlauf",
+        "video": "Video",
+        "audio": "Audio",
+        "container": "Container",
+        "apple": "Apple",
+        "png": "Formatsegmente",
+        "pdf": "PDF",
+        "c2pa": "Inhaltsnachweise",
+        "pano": "Panorama und Tiefe",
+        "makernote": "Herstellernotizen",
+        "composite": "Berechnete Werte",
+        "other": "Sonstiges"
+      },
+      "kind": {
+        "image": "Bild",
+        "video": "Video",
+        "audio": "Audio",
+        "document": "Dokument",
+        "unknown": "Datei"
+      },
+      "binary": "Binär · {{size}}",
+      "binaryNoSize": "Binär",
+      "showMore": "Mehr anzeigen",
+      "showLess": "Weniger anzeigen",
+      "copied": "Kopiert",
+      "copyAll": "Alles als Text kopieren",
+      "empty": {
+        "title": "Keine Metadaten über die Grunddaten hinaus",
+        "body": "Diese Datei enthält keine eingebetteten EXIF-, XMP- oder Container-Tags."
+      },
+      "warnings": {
+        "title": "Einige Metadaten fehlen möglicherweise"
+      },
+      "gps": {
+        "title": "Standort",
+        "privacy": "Diese Datei speichert, wo sie entstanden ist. Jeder, mit dem du sie teilst, kann diese Koordinaten lesen.",
+        "openMaps": "In Karten öffnen",
+        "decimal": "Dezimal",
+        "dms": "Grad, Minuten, Sekunden",
+        "altitude": "Höhe"
+      },
+      "inspecting": "Metadaten werden gelesen…",
+      "inspectFailed": "Die Metadaten dieser Datei konnten nicht gelesen werden. Versuche es erneut.",
+      "formatNote": "Die bereinigte Datei wird als {{format}} gespeichert.",
+      "strip": {
+        "intro": "Das trägt die Datei aktuell. „Alles entfernen“ löscht alles und behält das Format.",
+        "stripEverything": "Alles entfernen",
+        "stripping": "Wird entfernt…",
+        "reencodeNote": "Video und Audio werden in hoher Qualität neu kodiert, um jedes Tag zu entfernen."
+      },
+      "edit": {
+        "open": "Metadaten bearbeiten",
+        "apply": "Änderungen anwenden",
+        "fields": {
+          "title": "Titel",
+          "author": "Autor",
+          "description": "Beschreibung",
+          "copyright": "Copyright",
+          "comment": "Kommentar",
+          "keywords": "Stichwörter"
+        },
+        "location": "Standort",
+        "keep": "Behalten",
+        "remove": "Entfernen",
+        "replace": "Ersetzen",
+        "round": "Runden",
+        "latitude": "Breitengrad",
+        "longitude": "Längengrad",
+        "altitude": "Höhe (m)",
+        "decimals": "Nachkommastellen",
+        "removeDirection": "Aufnahmerichtung entfernen",
+        "removeTimestamp": "GPS-Zeitstempel entfernen",
+        "removeAltitude": "Höhe entfernen",
+        "removeDestination": "Zielfelder entfernen",
+        "invalidLocation": "Gib einen Breitengrad von -90 bis 90 und einen Längengrad von -180 bis 180 ein.",
+        "customNote": "Beim Speichern werden zuerst alle Metadaten entfernt, dann nur die ausgefüllten Felder geschrieben.",
+        "imagesOnly": "Bearbeiten funktioniert bei Bildern. Für Video und Audio nutze „Metadaten entfernen“."
+      }
     }
   },
   "tool": {
@@ -379,7 +493,43 @@
       "cancelled": "Dieser Upload wurde abgebrochen.",
       "stopped": "Du beobachtest diesen Auftrag nicht mehr. Das Ergebnis findest du im Verlauf."
     },
-    "entryFailed": "Diese Datei konnte nicht geöffnet werden."
+    "entryFailed": "Diese Datei konnte nicht geöffnet werden.",
+    "metadata": {
+      "resultLine": {
+        "summary": "Metadaten: {{kept}} behalten · {{removed}} entfernt",
+        "unchanged": "Metadaten unverändert",
+        "includingLocation": "inklusive Standort",
+        "compare": "Vergleichen"
+      },
+      "diff": {
+        "title": "Metadatenänderungen",
+        "counts": {
+          "removed": "{{count}} entfernt",
+          "added": "{{count}} hinzugefügt",
+          "changed": "{{count}} geändert",
+          "unchanged": "{{count}} unverändert"
+        },
+        "kind": {
+          "removed": "entfernt",
+          "added": "hinzugefügt",
+          "changed": "geändert",
+          "unchanged": "unverändert"
+        },
+        "expected": "erwartete Änderung",
+        "loading": "Vergleich wird geladen…",
+        "empty": "Mit diesen Filtern gibt es nichts anzuzeigen.",
+        "unavailable": "Vergleich nicht verfügbar: {{reason}}",
+        "reason": {
+          "jobNotCompleted": "Der Auftrag ist noch nicht abgeschlossen",
+          "resultMissing": "Die Ergebnisdatei ist nicht mehr verfügbar",
+          "notComparable": "Dieses Ergebnis enthält keine vergleichbaren Metadaten",
+          "failed": "Der Vergleich konnte nicht geladen werden"
+        }
+      },
+      "card": {
+        "title": "Dateimetadaten"
+      }
+    }
   },
   "actions": {
     "save": "Speichern",

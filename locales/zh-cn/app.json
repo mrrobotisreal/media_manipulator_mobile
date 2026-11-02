@@ -187,6 +187,119 @@
         "title": "编辑元数据",
         "description": "更改图片中存储的信息。"
       }
+    },
+    "metadata": {
+      "title": "文件元数据",
+      "summary": {
+        "tagCount_other": "{{categories}} 个类别中共 {{count}} 个标签",
+        "dimensions": "尺寸",
+        "duration": "时长"
+      },
+      "privacy": {
+        "label": "隐私过滤器",
+        "location": "位置",
+        "identity": "身份信息",
+        "device": "设备序列号",
+        "history": "编辑记录",
+        "locationHint": "文件的拍摄或创建地点",
+        "identityHint": "姓名、软件、账号、主机和拍摄时间",
+        "deviceHint": "序列号和唯一设备 ID",
+        "historyHint": "编辑痕迹、内嵌缩略图和自由文本"
+      },
+      "search": {
+        "placeholder": "搜索标签和值",
+        "noResults": "没有符合筛选条件的标签。",
+        "clear": "清除搜索"
+      },
+      "categories": {
+        "file": "文件",
+        "image": "图片",
+        "camera": "相机和曝光",
+        "lens": "镜头",
+        "gps": "位置（GPS）",
+        "datetime": "日期和时间",
+        "color": "颜色",
+        "thumbnail": "缩略图和预览",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "编辑记录",
+        "video": "视频",
+        "audio": "音频",
+        "container": "容器",
+        "apple": "Apple",
+        "png": "格式分段",
+        "pdf": "PDF",
+        "c2pa": "内容凭证",
+        "pano": "全景和景深",
+        "makernote": "制造商备注",
+        "composite": "计算值",
+        "other": "其他"
+      },
+      "kind": {
+        "image": "图片",
+        "video": "视频",
+        "audio": "音频",
+        "document": "文档",
+        "unknown": "文件"
+      },
+      "binary": "二进制 · {{size}}",
+      "binaryNoSize": "二进制",
+      "showMore": "显示更多",
+      "showLess": "收起",
+      "copied": "已复制",
+      "copyAll": "全部复制为文本",
+      "empty": {
+        "title": "除基本文件信息外没有元数据",
+        "body": "此文件未包含内嵌的 EXIF、XMP 或容器标签。"
+      },
+      "warnings": {
+        "title": "部分元数据可能缺失"
+      },
+      "gps": {
+        "title": "位置",
+        "privacy": "此文件记录了创建地点。你分享给的任何人都可以读取这些坐标。",
+        "openMaps": "在地图中打开",
+        "decimal": "十进制",
+        "dms": "度分秒",
+        "altitude": "海拔"
+      },
+      "inspecting": "正在读取元数据…",
+      "inspectFailed": "无法读取此文件的元数据，请重试。",
+      "formatNote": "清理后的文件将保存为 {{format}}。",
+      "strip": {
+        "intro": "这是文件目前包含的信息。“全部清除”会删除所有内容，并保持格式不变。",
+        "stripEverything": "全部清除",
+        "stripping": "正在清除…",
+        "reencodeNote": "视频和音频会以高质量重新编码，以移除所有标签。"
+      },
+      "edit": {
+        "open": "编辑元数据",
+        "apply": "应用更改",
+        "fields": {
+          "title": "标题",
+          "author": "作者",
+          "description": "描述",
+          "copyright": "版权",
+          "comment": "备注",
+          "keywords": "关键词"
+        },
+        "location": "位置",
+        "keep": "保留",
+        "remove": "移除",
+        "replace": "替换",
+        "round": "取整",
+        "latitude": "纬度",
+        "longitude": "经度",
+        "altitude": "海拔（米）",
+        "decimals": "小数位数",
+        "removeDirection": "移除拍摄方向",
+        "removeTimestamp": "移除 GPS 时间戳",
+        "removeAltitude": "移除海拔",
+        "removeDestination": "移除目的地字段",
+        "invalidLocation": "请输入 -90 到 90 之间的纬度和 -180 到 180 之间的经度。",
+        "customNote": "保存时会先清除所有元数据，然后只写入你填写的字段。",
+        "imagesOnly": "编辑仅适用于图片。视频和音频请使用“清除元数据”。"
+      }
     }
   },
   "tool": {
@@ -379,7 +492,43 @@
       "cancelled": "此上传已取消。",
       "stopped": "你已停止关注此任务。其结果将显示在历史记录中。"
     },
-    "entryFailed": "无法打开此文件。"
+    "entryFailed": "无法打开此文件。",
+    "metadata": {
+      "resultLine": {
+        "summary": "元数据：保留 {{kept}} 项 · 移除 {{removed}} 项",
+        "unchanged": "元数据未更改",
+        "includingLocation": "包括位置",
+        "compare": "对比"
+      },
+      "diff": {
+        "title": "元数据更改",
+        "counts": {
+          "removed": "已移除 {{count}} 项",
+          "added": "已添加 {{count}} 项",
+          "changed": "已更改 {{count}} 项",
+          "unchanged": "未更改 {{count}} 项"
+        },
+        "kind": {
+          "removed": "已移除",
+          "added": "已添加",
+          "changed": "已更改",
+          "unchanged": "未更改"
+        },
+        "expected": "预期更改",
+        "loading": "正在加载对比…",
+        "empty": "没有符合这些筛选条件的内容。",
+        "unavailable": "无法对比：{{reason}}",
+        "reason": {
+          "jobNotCompleted": "任务尚未完成",
+          "resultMissing": "结果文件已不可用",
+          "notComparable": "此结果没有可对比的元数据",
+          "failed": "无法加载对比"
+        }
+      },
+      "card": {
+        "title": "文件元数据"
+      }
+    }
   },
   "actions": {
     "save": "保存",

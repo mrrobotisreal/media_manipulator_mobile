@@ -187,6 +187,121 @@
         "title": "Modifier les métadonnées",
         "description": "Changez les détails enregistrés dans une image."
       }
+    },
+    "metadata": {
+      "title": "Métadonnées du fichier",
+      "summary": {
+        "tagCount_one": "{{count}} tag dans {{categories}} catégories",
+        "tagCount_many": "{{count}} de tags dans {{categories}} catégories",
+        "tagCount_other": "{{count}} tags dans {{categories}} catégories",
+        "dimensions": "Dimensions",
+        "duration": "Durée"
+      },
+      "privacy": {
+        "label": "Filtres de confidentialité",
+        "location": "Localisation",
+        "identity": "Identité",
+        "device": "Numéros de série de l’appareil",
+        "history": "Historique des modifications",
+        "locationHint": "Où le fichier a été créé",
+        "identityHint": "Noms, logiciels, comptes, hôtes et dates de prise de vue",
+        "deviceHint": "Numéros de série et identifiants uniques de l’appareil",
+        "historyHint": "Traces de modification, miniatures intégrées et texte libre"
+      },
+      "search": {
+        "placeholder": "Rechercher des tags et des valeurs",
+        "noResults": "Aucun tag ne correspond à vos filtres.",
+        "clear": "Effacer la recherche"
+      },
+      "categories": {
+        "file": "Fichier",
+        "image": "Image",
+        "camera": "Appareil photo et exposition",
+        "lens": "Objectif",
+        "gps": "Localisation (GPS)",
+        "datetime": "Dates et heures",
+        "color": "Couleur",
+        "thumbnail": "Miniatures et aperçus",
+        "iptc": "IPTC",
+        "xmp": "XMP",
+        "history": "Historique des modifications",
+        "video": "Vidéo",
+        "audio": "Audio",
+        "container": "Conteneur",
+        "apple": "Apple",
+        "png": "Segments de format",
+        "pdf": "PDF",
+        "c2pa": "Informations d’identification du contenu",
+        "pano": "Panorama et profondeur",
+        "makernote": "Notes du fabricant",
+        "composite": "Valeurs calculées",
+        "other": "Autre"
+      },
+      "kind": {
+        "image": "Image",
+        "video": "Vidéo",
+        "audio": "Audio",
+        "document": "Document",
+        "unknown": "Fichier"
+      },
+      "binary": "Binaire · {{size}}",
+      "binaryNoSize": "Binaire",
+      "showMore": "Afficher plus",
+      "showLess": "Afficher moins",
+      "copied": "Copié",
+      "copyAll": "Tout copier en texte",
+      "empty": {
+        "title": "Aucune métadonnée en dehors des informations de base du fichier",
+        "body": "Ce fichier ne contient aucun tag EXIF, XMP ou de conteneur intégré."
+      },
+      "warnings": {
+        "title": "Certaines métadonnées peuvent être manquantes"
+      },
+      "gps": {
+        "title": "Localisation",
+        "privacy": "Ce fichier enregistre l’endroit où il a été créé. Toute personne avec qui vous le partagez peut lire ces coordonnées.",
+        "openMaps": "Ouvrir dans Plans",
+        "decimal": "Décimal",
+        "dms": "Degrés, minutes, secondes",
+        "altitude": "Altitude"
+      },
+      "inspecting": "Lecture des métadonnées…",
+      "inspectFailed": "Impossible de lire les métadonnées de ce fichier. Réessayez.",
+      "formatNote": "Le fichier nettoyé est enregistré au format {{format}}.",
+      "strip": {
+        "intro": "Voici ce que contient le fichier actuellement. « Tout supprimer » retire tout et conserve le même format.",
+        "stripEverything": "Tout supprimer",
+        "stripping": "Suppression…",
+        "reencodeNote": "La vidéo et l’audio sont réencodés en haute qualité pour supprimer tous les tags."
+      },
+      "edit": {
+        "open": "Modifier les métadonnées",
+        "apply": "Appliquer les modifications",
+        "fields": {
+          "title": "Titre",
+          "author": "Auteur",
+          "description": "Description",
+          "copyright": "Copyright",
+          "comment": "Commentaire",
+          "keywords": "Mots-clés"
+        },
+        "location": "Localisation",
+        "keep": "Conserver",
+        "remove": "Supprimer",
+        "replace": "Remplacer",
+        "round": "Arrondir",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "altitude": "Altitude (m)",
+        "decimals": "Décimales",
+        "removeDirection": "Supprimer la direction de prise de vue",
+        "removeTimestamp": "Supprimer l’horodatage GPS",
+        "removeAltitude": "Supprimer l’altitude",
+        "removeDestination": "Supprimer les champs de destination",
+        "invalidLocation": "Saisissez une latitude de -90 à 90 et une longitude de -180 à 180.",
+        "customNote": "L’enregistrement supprime d’abord toutes les métadonnées, puis écrit uniquement les champs que vous remplissez.",
+        "imagesOnly": "La modification fonctionne pour les images. Pour la vidéo et l’audio, utilisez « Supprimer les métadonnées »."
+      }
     }
   },
   "tool": {
@@ -379,7 +494,43 @@
       "cancelled": "Cet envoi a été annulé.",
       "stopped": "Vous avez arrêté le suivi de cette tâche. Son résultat sera dans l’Historique."
     },
-    "entryFailed": "Ce fichier n’a pas pu être ouvert."
+    "entryFailed": "Ce fichier n’a pas pu être ouvert.",
+    "metadata": {
+      "resultLine": {
+        "summary": "Métadonnées : {{kept}} conservées · {{removed}} supprimées",
+        "unchanged": "Métadonnées inchangées",
+        "includingLocation": "dont la localisation",
+        "compare": "Comparer"
+      },
+      "diff": {
+        "title": "Modifications des métadonnées",
+        "counts": {
+          "removed": "{{count}} supprimé(s)",
+          "added": "{{count}} ajouté(s)",
+          "changed": "{{count}} modifié(s)",
+          "unchanged": "{{count}} inchangé(s)"
+        },
+        "kind": {
+          "removed": "supprimé",
+          "added": "ajouté",
+          "changed": "modifié",
+          "unchanged": "inchangé"
+        },
+        "expected": "modification attendue",
+        "loading": "Chargement de la comparaison…",
+        "empty": "Rien à afficher avec ces filtres.",
+        "unavailable": "Comparaison indisponible : {{reason}}",
+        "reason": {
+          "jobNotCompleted": "La tâche n’est pas terminée",
+          "resultMissing": "Le fichier résultat n’est plus disponible",
+          "notComparable": "Ce résultat n’a pas de métadonnées comparables",
+          "failed": "Impossible de charger la comparaison"
+        }
+      },
+      "card": {
+        "title": "Métadonnées du fichier"
+      }
+    }
   },
   "actions": {
     "save": "Enregistrer",
