@@ -1,0 +1,7 @@
+{
+  "mode": "trim_video",
+  "format": "mp4",
+  "startTime": 2,
+  "endTime": 8,
+  "copyMode": "reencode"
+}

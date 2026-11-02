@@ -24,10 +24,10 @@ export interface ToolInputInfo {
   extension: string;
   mime: string;
   mediaKind: MediaKind;
+  /** Seconds (intake probe) for video/audio. */
+  durationSec?: number;
   width?: number;
   height?: number;
-  /** Seconds, audio/video (MA20: frame-interpolation pre-flight). */
-  durationSec?: number;
 }
 
 export interface ToolContext {
@@ -68,12 +68,12 @@ export interface ToolDefinition<F = ToolOptions> {
   batch?: boolean;
   endpoint: ToolEndpoint;
   defaults: F;
+  /** Per-mode web slug (MA18); falls back to `analyticsSlug` when absent. `ctx` added by MA20 (transcribe: audio vs video). */
+  analyticsSlugFor?: (form: F, ctx?: ToolContext) => string;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
   optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
   /** Additive (MA20): async step run before the options are built (face re-detect after the session expired). */
   prepare?: (form: F, ctx?: ToolContext) => Promise<F>;
-  /** Additive (MA20): per-form web slug (transcribe: video vs audio, srt vs vtt); falls back to `analyticsSlug`. */
-  analyticsSlugFor?: (form: F, ctx?: ToolContext) => string;
   /** Additive (MA20): limits the server enforces for this tool, shown plainly on the form. */
   serverLimits?: { maxSeconds?: number; maxHeight?: number };
   /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */

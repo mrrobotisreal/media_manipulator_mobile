@@ -1,0 +1,7 @@
+{
+  "mode": "trim_video",
+  "format": "mp4",
+  "startTime": 1.23,
+  "endTime": 9.88,
+  "copyMode": "auto"
+}

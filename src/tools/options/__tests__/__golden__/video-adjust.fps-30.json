@@ -1,0 +1,12 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "temporal": {
+    "frameRate": {
+      "target": 30,
+      "interpolation": false
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
-import { track } from '@/analytics/track';
+import { setContext, track } from '@/analytics/track';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
 import { FileArea } from '@/files/components/FileArea';
 import { getIntakeFiles } from '@/files/session';
@@ -89,6 +89,10 @@ function ToolScreen({
   }, []);
 
   const blocked = tool.blockReason?.(form, ctx) ?? null;
+  const slug = tool.analyticsSlugFor ? tool.analyticsSlugFor(form, ctx) : tool.analyticsSlug;
+  useEffect(() => {
+    setContext({ tool_slug: slug });
+  }, [slug]);
 
   const [starting, setStarting] = useState(false);
   const start = useCallback(async () => {
@@ -97,13 +101,14 @@ function ToolScreen({
     try {
       // MA20: a tool may need an async step first (face re-detect when its session expired).
       const ready = tool.prepare ? await tool.prepare(form, ctx) : form;
-      const slug = tool.analyticsSlugFor?.(ready, ctx) ?? tool.analyticsSlug;
+      const runTool = {
+        ...tool,
+        analyticsSlug: tool.analyticsSlugFor
+          ? tool.analyticsSlugFor(ready, ctx)
+          : tool.analyticsSlug,
+      };
       const ids = getJobEngine().startJobs(
-        files.map((file) => ({
-          tool: { ...tool, analyticsSlug: slug },
-          file,
-          options: tool.optionsBuilder(ready, ctx),
-        })),
+        files.map((file) => ({ tool: runTool, file, options: tool.optionsBuilder(ready, ctx) })),
       );
       const firstId = ids[0];
       if (firstId) router.push(`/(app)/job/${firstId}`);

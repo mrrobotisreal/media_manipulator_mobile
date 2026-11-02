@@ -292,6 +292,60 @@
       "auto": "Detect automatically",
       "other": "Other language",
       "otherHint": "Two- or three-letter code, e.g. \"pl\""
+    },
+    "video": {
+      "format": "Output format",
+      "sameAsOriginal": "Same as original ({{format}})",
+      "codecAuto": "Automatic",
+      "qualityLabel": "Quality",
+      "quality": {
+        "low": "Smaller file",
+        "medium": "Balanced",
+        "high": "Best quality"
+      },
+      "gif": {
+        "width": "Width",
+        "fps": "Frames per second",
+        "colors": "Colours",
+        "rangeHint": "Shorter clips make smaller GIFs"
+      },
+      "frames": {
+        "addMoment": "Add this moment",
+        "moments_one": "{{count}} moment",
+        "moments_other": "{{count}} moments",
+        "remove": "Remove {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Resize",
+          "rotate": "Rotate & flip",
+          "crop": "Crop"
+        },
+        "rotateNone": "No rotation",
+        "sideRange": "Use 1 to {{max}} pixels.",
+        "heightLimit": "Up to {{limit}}p on your plan."
+      },
+      "speed": {
+        "label": "Speed",
+        "reverse": "Play backwards",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Stabilize",
+          "frameRate": "Frame rate",
+          "color": "Colour"
+        },
+        "shakiness": "Shakiness",
+        "accuracy": "Accuracy",
+        "target": "Target frame rate",
+        "brightness": "Brightness",
+        "contrast": "Contrast",
+        "saturation": "Saturation",
+        "hue": "Hue",
+        "gamma": "Gamma",
+        "noChange": "Change at least one slider"
+      }
     }
   },
   "tool": {
@@ -673,6 +727,17 @@
     },
     "color": {
       "a11y": "Colour {{hex}}"
+    },
+    "range": {
+      "start": "Start",
+      "end": "End",
+      "length": "Length {{duration}}",
+      "play": "Play selection",
+      "pause": "Pause",
+      "a11yStart": "Start handle, {{time}}",
+      "a11yEnd": "End handle, {{time}}",
+      "a11yPoint": "Position, {{time}}",
+      "loadingThumbs": "Loading preview…"
     }
   }
 }

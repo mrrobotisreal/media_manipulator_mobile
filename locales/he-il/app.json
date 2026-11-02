@@ -251,6 +251,61 @@
       "pagesFirst": "העמוד הראשון בלבד",
       "pagesAll": "כל העמודים (ZIP)",
       "dpi": "רזולוציה ({{dpi}} DPI)"
+    },
+    "video": {
+      "format": "פורמט פלט",
+      "sameAsOriginal": "כמו המקור ({{format}})",
+      "codecAuto": "אוטומטי",
+      "qualityLabel": "איכות",
+      "quality": {
+        "low": "קובץ קטן יותר",
+        "medium": "מאוזן",
+        "high": "איכות הכי טובה"
+      },
+      "gif": {
+        "width": "רוחב",
+        "fps": "פריימים לשנייה",
+        "colors": "צבעים",
+        "rangeHint": "קטעים קצרים יותר יוצרים GIF קטנים יותר"
+      },
+      "frames": {
+        "addMoment": "הוסף את הרגע הזה",
+        "moments_one": "{{count}} רגע",
+        "moments_two": "{{count}} רגעים",
+        "moments_other": "{{count}} רגעים",
+        "remove": "הסר את {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "שינוי גודל",
+          "rotate": "סיבוב והיפוך",
+          "crop": "חיתוך"
+        },
+        "rotateNone": "ללא סיבוב",
+        "sideRange": "השתמש ב-1 עד {{max}} פיקסלים.",
+        "heightLimit": "עד {{limit}}p במסלול שלך."
+      },
+      "speed": {
+        "label": "מהירות",
+        "reverse": "הפעל לאחור",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "ייצוב",
+          "frameRate": "קצב פריימים",
+          "color": "צבע"
+        },
+        "shakiness": "רעידות",
+        "accuracy": "דיוק",
+        "target": "קצב פריימים יעד",
+        "brightness": "בהירות",
+        "contrast": "ניגודיות",
+        "saturation": "רוויה",
+        "hue": "גוון",
+        "gamma": "גמא",
+        "noChange": "שנה לפחות מחוון אחד"
+      }
     }
   },
   "tool": {
@@ -609,6 +664,17 @@
     },
     "color": {
       "a11y": "צבע {{hex}}"
+    },
+    "range": {
+      "start": "התחלה",
+      "end": "סיום",
+      "length": "אורך {{duration}}",
+      "play": "הפעל את הבחירה",
+      "pause": "השהה",
+      "a11yStart": "ידית התחלה, {{time}}",
+      "a11yEnd": "ידית סיום, {{time}}",
+      "a11yPoint": "מיקום, {{time}}",
+      "loadingThumbs": "טוען תצוגה מקדימה…"
     }
   }
 }

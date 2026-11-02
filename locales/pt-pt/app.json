@@ -251,6 +251,61 @@
       "pagesFirst": "Apenas a primeira página",
       "pagesAll": "Todas as páginas (ZIP)",
       "dpi": "Resolução ({{dpi}} DPI)"
+    },
+    "video": {
+      "format": "Formato de saída",
+      "sameAsOriginal": "Igual ao original ({{format}})",
+      "codecAuto": "Automático",
+      "qualityLabel": "Qualidade",
+      "quality": {
+        "low": "Ficheiro mais pequeno",
+        "medium": "Equilibrado",
+        "high": "Melhor qualidade"
+      },
+      "gif": {
+        "width": "Largura",
+        "fps": "Fotogramas por segundo",
+        "colors": "Cores",
+        "rangeHint": "Clipes mais curtos geram GIFs mais pequenos"
+      },
+      "frames": {
+        "addMoment": "Adicionar este momento",
+        "moments_one": "{{count}} momento",
+        "moments_many": "{{count}} momentos",
+        "moments_other": "{{count}} momentos",
+        "remove": "Remover {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Redimensionar",
+          "rotate": "Rodar e inverter",
+          "crop": "Recortar"
+        },
+        "rotateNone": "Sem rotação",
+        "sideRange": "Use de 1 a {{max}} píxeis.",
+        "heightLimit": "Até {{limit}}p no seu plano."
+      },
+      "speed": {
+        "label": "Velocidade",
+        "reverse": "Reproduzir ao contrário",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Estabilizar",
+          "frameRate": "Taxa de fotogramas",
+          "color": "Cor"
+        },
+        "shakiness": "Tremor",
+        "accuracy": "Precisão",
+        "target": "Taxa de fotogramas pretendida",
+        "brightness": "Brilho",
+        "contrast": "Contraste",
+        "saturation": "Saturação",
+        "hue": "Tonalidade",
+        "gamma": "Gama",
+        "noChange": "Altere pelo menos um controlo de deslize"
+      }
     }
   },
   "tool": {
@@ -609,6 +664,17 @@
     },
     "color": {
       "a11y": "Cor {{hex}}"
+    },
+    "range": {
+      "start": "Início",
+      "end": "Fim",
+      "length": "Duração {{duration}}",
+      "play": "Reproduzir seleção",
+      "pause": "Pausar",
+      "a11yStart": "Pega de início, {{time}}",
+      "a11yEnd": "Pega de fim, {{time}}",
+      "a11yPoint": "Posição, {{time}}",
+      "loadingThumbs": "Carregando prévia…"
     }
   }
 }

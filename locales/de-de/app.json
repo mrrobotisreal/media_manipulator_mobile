@@ -251,6 +251,60 @@
       "pagesFirst": "Nur erste Seite",
       "pagesAll": "Alle Seiten (ZIP)",
       "dpi": "Auflösung ({{dpi}} DPI)"
+    },
+    "video": {
+      "format": "Ausgabeformat",
+      "sameAsOriginal": "Wie Original ({{format}})",
+      "codecAuto": "Automatisch",
+      "qualityLabel": "Qualität",
+      "quality": {
+        "low": "Kleinere Datei",
+        "medium": "Ausgewogen",
+        "high": "Beste Qualität"
+      },
+      "gif": {
+        "width": "Breite",
+        "fps": "Bilder pro Sekunde",
+        "colors": "Farben",
+        "rangeHint": "Kürzere Clips ergeben kleinere GIFs"
+      },
+      "frames": {
+        "addMoment": "Diesen Moment hinzufügen",
+        "moments_one": "{{count}} Moment",
+        "moments_other": "{{count}} Momente",
+        "remove": "{{time}} entfernen"
+      },
+      "transform": {
+        "op": {
+          "resize": "Größe ändern",
+          "rotate": "Drehen & spiegeln",
+          "crop": "Zuschneiden"
+        },
+        "rotateNone": "Keine Drehung",
+        "sideRange": "Verwende 1 bis {{max}} Pixel.",
+        "heightLimit": "Bis zu {{limit}}p in deinem Tarif."
+      },
+      "speed": {
+        "label": "Geschwindigkeit",
+        "reverse": "Rückwärts abspielen",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Stabilisieren",
+          "frameRate": "Bildrate",
+          "color": "Farbe"
+        },
+        "shakiness": "Verwacklung",
+        "accuracy": "Genauigkeit",
+        "target": "Ziel-Bildrate",
+        "brightness": "Helligkeit",
+        "contrast": "Kontrast",
+        "saturation": "Sättigung",
+        "hue": "Farbton",
+        "gamma": "Gamma",
+        "noChange": "Ändere mindestens einen Regler"
+      }
     }
   },
   "tool": {
@@ -609,6 +663,17 @@
     },
     "color": {
       "a11y": "Farbe {{hex}}"
+    },
+    "range": {
+      "start": "Start",
+      "end": "Ende",
+      "length": "Länge {{duration}}",
+      "play": "Auswahl abspielen",
+      "pause": "Pause",
+      "a11yStart": "Startgriff, {{time}}",
+      "a11yEnd": "Endgriff, {{time}}",
+      "a11yPoint": "Position, {{time}}",
+      "loadingThumbs": "Vorschau wird geladen…"
     }
   }
 }

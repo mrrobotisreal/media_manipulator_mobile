@@ -1,0 +1,7 @@
+{
+  "mode": "extract_frames",
+  "frameMode": "every_n_seconds",
+  "format": "jpg",
+  "maxFrames": 300,
+  "intervalSeconds": 5
+}

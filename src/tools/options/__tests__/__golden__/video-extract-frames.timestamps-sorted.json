@@ -1,0 +1,7 @@
+{
+  "mode": "extract_frames",
+  "frameMode": "timestamp",
+  "format": "jpg",
+  "maxFrames": 300,
+  "timestamps": [3, 7.5, 12.5]
+}

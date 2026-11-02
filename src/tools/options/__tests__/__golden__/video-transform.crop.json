@@ -1,0 +1,14 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "transform": {
+    "crop": {
+      "x": 10,
+      "y": 20,
+      "width": 601,
+      "height": 600
+    }
+  }
+}
