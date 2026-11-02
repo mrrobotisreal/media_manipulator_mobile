@@ -166,6 +166,7 @@ export function createJobTransport(deps: TransportDeps): JobTransport {
       }
     } catch (e) {
       if (opts.signal.aborted) return cancelledFailure();
+      if (__DEV__) console.warn('[upload] native task failed', e instanceof Error ? e.message : e);
       return fromError(networkError(e instanceof Error ? e.message : undefined));
     }
   }

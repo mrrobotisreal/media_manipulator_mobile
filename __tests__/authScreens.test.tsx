@@ -48,6 +48,22 @@ describe('sign-in screen', () => {
     expect(screen.getByText('Continue with Google')).toBeTruthy();
     expect(screen.getByText('Sign in with email')).toBeTruthy();
     expect(screen.getByText('Forgot password?')).toBeTruthy();
+    // Google's G is next to its label on every platform (hidden from a11y: the label says it).
+    expect(screen.getByTestId('google-g', { includeHiddenElements: true })).toBeTruthy();
+  });
+
+  it('shows the Apple logo on the Android Apple button (iOS uses the native AppleButton)', async () => {
+    mockConfigured.mockReturnValue(true);
+    process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID = 'web-id';
+    const { Platform } = jest.requireActual<typeof import('react-native')>('react-native');
+    const os = Platform.OS;
+    Object.defineProperty(Platform, 'OS', { value: 'android', configurable: true });
+    try {
+      await renderScreen(<SignIn />);
+      expect(screen.getByTestId('apple-logo', { includeHiddenElements: true })).toBeTruthy();
+    } finally {
+      Object.defineProperty(Platform, 'OS', { value: os, configurable: true });
+    }
   });
 
   it('hides Google when the web client id is missing', async () => {

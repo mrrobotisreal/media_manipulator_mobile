@@ -161,6 +161,15 @@ export function createJobEngine(deps: JobEngineDeps) {
     const guard = await deps.beforeUpload?.(rec);
     if (guard) return reject(localId, guard, elapsed());
     if (abort.signal.aborted) return;
+    // The cached copy can be gone (swept, or handed to an earlier job); say so instead of "no connection".
+    if (!deps.files.exists(rec.fileUri)) {
+      events.trackUploadFailed(rec, 'file_gone', elapsed());
+      apply(localId, {
+        type: 'upload_failed',
+        error: { status: 'FETCH_ERROR', code: 'file_gone', details: {} },
+      });
+      return;
+    }
 
     const outcome = await runUpload(transport, rec.transport, rec, {
       signal: abort.signal,

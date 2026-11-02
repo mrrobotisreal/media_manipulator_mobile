@@ -1,10 +1,13 @@
 import { appleAuth, AppleButton } from '@invertase/react-native-apple-authentication';
 import { useTranslation } from 'react-i18next';
 import { Platform, View } from 'react-native';
-import { Button } from '@/ui/components';
+import { AppleLogo, Button, GoogleG } from '@/ui/components';
 import { isGoogleAvailable } from '../google';
 
-/** Apple (HIG: black or white), then Google. Same 52px height; the email entry point is the caller's. */
+/**
+ * Apple (HIG: black or white), then Google, each with its mark (as on the web). Same 52px height;
+ * the email entry point is the caller's.
+ */
 export function ProviderButtons({
   onApple,
   onGoogle,
@@ -35,6 +38,7 @@ export function ProviderButtons({
           size="lg"
           disabled={disabled}
           onPress={onApple}
+          icon={<AppleLogo />}
           testID="apple-button"
         />
       )}
@@ -45,6 +49,7 @@ export function ProviderButtons({
           size="lg"
           disabled={disabled}
           onPress={onGoogle}
+          icon={<GoogleG />}
           testID="google-button"
         />
       ) : null}

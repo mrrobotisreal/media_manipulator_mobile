@@ -17,3 +17,4 @@ export * from './Slider';
 export * from './Stepper';
 export * from './Chips';
 export * from './Swatches';
+export * from './BrandMarks';

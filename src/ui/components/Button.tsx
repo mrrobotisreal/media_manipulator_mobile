@@ -1,5 +1,6 @@
 import * as Haptics from 'expo-haptics';
-import { ActivityIndicator, Pressable, type PressableProps } from 'react-native';
+import type { ReactNode } from 'react';
+import { ActivityIndicator, Pressable, View, type PressableProps } from 'react-native';
 import { colors, hitTarget } from '../tokens';
 import { Text } from './Text';
 
@@ -25,6 +26,8 @@ export interface ButtonProps extends Omit<PressableProps, 'children'> {
   loading?: boolean;
   /** Haptic tap; callers pass settings.haptics. */
   haptics?: boolean;
+  /** Decorative mark before the label (e.g. a provider logo), 8px gap. */
+  icon?: ReactNode;
 }
 
 export function Button({
@@ -33,6 +36,7 @@ export function Button({
   size = 'md',
   loading = false,
   haptics = false,
+  icon,
   disabled,
   onPress,
   ...rest
@@ -53,6 +57,11 @@ export function Button({
     >
       {loading ? (
         <ActivityIndicator color={colors.foreground} />
+      ) : icon ? (
+        <View className="flex-row items-center gap-2">
+          {icon}
+          <Text className={`font-semibold ${FG[variant]}`}>{label}</Text>
+        </View>
       ) : (
         <Text className={`font-semibold ${FG[variant]}`}>{label}</Text>
       )}
