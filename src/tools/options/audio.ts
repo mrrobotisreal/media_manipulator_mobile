@@ -35,12 +35,12 @@ const round2 = (n: number) => Math.round(n * 100) / 100;
 
 // ---------------------------------------------------------------- convert
 
-export interface AudioConvertForm {
+export type AudioConvertForm = {
   format: AudioFormat;
   bitrate: (typeof BITRATES)[number];
   sampleRate: (typeof SAMPLE_RATES)[number];
   channels: (typeof CHANNELS)[number];
-}
+};
 export const audioConvertDefaults: AudioConvertForm = {
   format: 'mp3',
   bitrate: '192',
@@ -80,13 +80,13 @@ export function audioConvertSlug(form: AudioConvertForm, extension?: string): st
 
 // ---------------------------------------------------------------- trim
 
-export interface AudioTrimForm {
+export type AudioTrimForm = {
   format: FormatChoice;
   startTime: number;
   endTime: number;
   fadeIn: number;
   fadeOut: number;
-}
+};
 export const audioTrimDefaults: AudioTrimForm = {
   format: 'same',
   startTime: 0,
@@ -126,7 +126,7 @@ export const EQ_PRESETS = [
 ] as const;
 export const REVERB_TYPES = ['room', 'hall', 'plate', 'spring'] as const;
 
-export interface AudioEffectsForm {
+export type AudioEffectsForm = {
   format: FormatChoice;
   effects: AudioEffect[];
   speed: number;
@@ -134,7 +134,7 @@ export interface AudioEffectsForm {
   pitch: number;
   eq: (typeof EQ_PRESETS)[number];
   reverb: (typeof REVERB_TYPES)[number];
-}
+};
 export const audioEffectsDefaults: AudioEffectsForm = {
   format: 'same',
   effects: ['speed'],
@@ -285,7 +285,7 @@ export const WAVEFORM_SWATCHES: readonly string[] = [
   '#EC4899',
 ];
 
-export interface AudioWaveformForm {
+export type AudioWaveformForm = {
   output: WaveformOutput;
   /** A `WAVEFORM_SIZES` id, or 'custom' (then customWidth/customHeight). */
   sizeId: string;
@@ -301,7 +301,7 @@ export interface AudioWaveformForm {
   rate: number;
   scale: WaveformScale;
   draw: WaveformDraw;
-}
+};
 export const audioWaveformDefaults: AudioWaveformForm = {
   output: 'video',
   sizeId: 'medium-10x1',

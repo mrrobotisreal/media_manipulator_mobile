@@ -25,15 +25,22 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
   const tool = getTool(toolId)!;
   const attached = useMemo(() => getIntakeFiles(intake ? intake.split(',') : []), [intake]);
   const [files, setFiles] = useState<IntakeFile[]>(attached);
+  const [form, setForm] = useState<unknown>(tool.defaults);
 
   const start = useCallback(() => {
     if (files.length === 0) return;
     const ids = getJobEngine().startJobs(
-      files.map((file) => ({ tool, file, options: tool.optionsBuilder(tool.defaults) })),
+      files.map((file) => ({
+        tool: tool.analyticsSlugFor
+          ? { ...tool, analyticsSlug: tool.analyticsSlugFor(form, file) }
+          : tool,
+        file,
+        options: tool.optionsBuilder(form, file),
+      })),
     );
     const first = ids[0];
     if (first) router.push(`/(app)/job/${first}`);
-  }, [files, tool]);
+  }, [files, form, tool]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));
@@ -55,10 +62,14 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
         <QuotaChip metric={tool.metric} />
         <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
-        <Form value={tool.defaults} onChange={() => undefined} />
+        <Form value={form} onChange={setForm} file={files[0]} />
         <Button
           label={t('tool.start')}
-          disabled={files.length === 0 || tool.endpoint === 'metadataInspect'}
+          disabled={
+            files.length === 0 ||
+            tool.endpoint === 'metadataInspect' ||
+            (tool.canRun ? !tool.canRun(form) : false)
+          }
           onPress={start}
         />
       </ScrollView>

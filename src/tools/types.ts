@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react';
+import type { IntakeFile } from '@/files/types';
 
 export type ToolFamily = 'image' | 'video' | 'audio' | 'ai' | 'metadata';
 export const TOOL_FAMILIES: readonly ToolFamily[] = ['image', 'video', 'audio', 'ai', 'metadata'];
@@ -18,6 +19,8 @@ export type ToolOptions = Record<string, unknown>;
 export interface ToolFormProps<F = ToolOptions> {
   value: F;
   onChange: (next: F) => void;
+  /** The first selected file (MA19): forms read its extension and duration. */
+  file?: IntakeFile;
 }
 
 export interface ToolPreset<F = ToolOptions> {
@@ -47,7 +50,11 @@ export interface ToolDefinition<F = ToolOptions> {
   endpoint: ToolEndpoint;
   defaults: F;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
-  optionsBuilder: (form: F) => ToolOptions;
+  optionsBuilder: (form: F, file?: IntakeFile) => ToolOptions;
+  /** Per-mode web slug (MA18 decision 9); falls back to the static `analyticsSlug`. */
+  analyticsSlugFor?: (form: F, file?: IntakeFile) => string;
+  /** False disables Start (e.g. no effect chosen). Absent = always runnable. */
+  canRun?: (form: F) => boolean;
   Form: ComponentType<ToolFormProps<F>>;
   /** null only for inspect-metadata (free, synchronous). */
   metric: QuotaMetric | null;
