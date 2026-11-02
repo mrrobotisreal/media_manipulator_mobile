@@ -43,21 +43,24 @@ export function useInspect(input: ToolInputInfo | undefined): InspectState & { r
   const [attempt, setAttempt] = useState(0);
   const key = input ? keyOf(input) : null;
   const inputRef = useRef(input);
-  inputRef.current = input;
+  useEffect(() => {
+    inputRef.current = input;
+  });
 
   useEffect(() => {
     const file = inputRef.current;
-    if (!key || !file?.uri) {
-      setState({ status: 'idle' });
-      return;
-    }
+    if (!key || !file?.uri) return;
+    const controller = new AbortController();
     const hit = cache.get(key);
     if (hit) {
-      setState({ status: 'ready', document: hit });
-      return;
+      queueMicrotask(
+        () => !controller.signal.aborted && setState({ status: 'ready', document: hit }),
+      );
+      return () => controller.abort();
     }
-    const controller = new AbortController();
-    setState({ status: 'loading', progress: 0 });
+    queueMicrotask(
+      () => !controller.signal.aborted && setState({ status: 'loading', progress: 0 }),
+    );
     void inspectFile(
       { fileUri: file.uri, mimeType: file.mime || 'application/octet-stream' },
       realDeps(),

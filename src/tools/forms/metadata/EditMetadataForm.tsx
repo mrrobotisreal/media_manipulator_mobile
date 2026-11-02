@@ -8,7 +8,7 @@ import {
   type LocationMode,
 } from '../../options/metadata';
 import { useInspect } from '@/metadata/useInspect';
-import { MultiChips } from '@/ui/components/Chips';
+import { ToggleRow } from '@/ui/components/ToggleRow';
 import { Segmented } from '@/ui/components/Segmented';
 import { Stepper } from '@/ui/components/Stepper';
 import { Text } from '@/ui/components/Text';
@@ -44,7 +44,6 @@ export function EditMetadataForm({ value, onChange, ctx }: ToolFormProps<Form>) 
     { value: 'replace', label: t('tools.metadata.edit.replace') },
     { value: 'round', label: t('tools.metadata.edit.round') },
   ];
-  const active = FLAGS.filter((f) => value[f]);
   return (
     <View className="gap-4" testID="edit-metadata-form">
       <Text className="text-sm text-muted-fg">{t('tools.metadata.edit.customNote')}</Text>
@@ -105,11 +104,14 @@ export function EditMetadataForm({ value, onChange, ctx }: ToolFormProps<Form>) 
             {t('tools.metadata.edit.invalidLocation')}
           </Text>
         ) : null}
-        <MultiChips<Flag>
-          options={FLAGS.map((f) => ({ value: f, label: t(`tools.metadata.edit.${f}`) }))}
-          value={active}
-          onToggle={(f) => set({ [f]: !value[f] })}
-        />
+        {FLAGS.map((f) => (
+          <ToggleRow
+            key={f}
+            label={t(`tools.metadata.edit.${f}`)}
+            value={Boolean(value[f])}
+            onChange={(v) => set({ [f]: v })}
+          />
+        ))}
       </View>
     </View>
   );

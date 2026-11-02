@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
-import { ProcessingIndicator } from '@/ui/components/ProcessingIndicator';
+import { ActivityIndicator, View } from 'react-native';
+import { colors } from '@/ui/tokens';
 import { Button } from '@/ui/components/Button';
 import { Text } from '@/ui/components/Text';
 import { MetadataInspector } from '@/metadata/ui/MetadataInspector';
@@ -22,7 +22,7 @@ export function InspectPanel({
   if (state.status === 'loading' || state.status === 'idle') {
     return (
       <View className="flex-row items-center gap-3" testID="inspect-loading">
-        <ProcessingIndicator />
+        <ActivityIndicator color={colors.data} />
         <Text className="text-muted-fg">{t('tools.metadata.inspecting')}</Text>
       </View>
     );

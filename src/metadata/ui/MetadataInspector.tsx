@@ -1,5 +1,3 @@
-import * as Clipboard from 'expo-clipboard';
-import { ChevronDown, ChevronUp, MapPin } from 'lucide-react-native';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Linking, Platform, Pressable, TextInput, View } from 'react-native';
@@ -61,7 +59,6 @@ function CoordinateCard({ document: doc }: { document: MetadataDocument }) {
       testID="metadata-gps-card"
     >
       <View className="flex-row items-center gap-2">
-        <MapPin size={18} color={colors.primary} />
         <Text className="font-semibold">{t('tools.metadata.gps.title')}</Text>
       </View>
       <View className="gap-1">
@@ -224,6 +221,9 @@ export function MetadataInspector({
   };
   const copy = async (text: string) => {
     try {
+      // Lazy: keeps the native module out of every test that only loads the registry.
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const Clipboard = require('expo-clipboard') as typeof import('expo-clipboard');
       await Clipboard.setStringAsync(text);
       showNotice(t('tools.metadata.copied'));
     } catch {
@@ -323,7 +323,6 @@ export function MetadataInspector({
 
       {sections.map((s) => {
         const open = isOpen(s.id);
-        const Chevron = open ? ChevronUp : ChevronDown;
         return (
           <View
             key={s.id}
@@ -348,7 +347,7 @@ export function MetadataInspector({
                   </Text>
                 ))}
               </View>
-              <Chevron size={18} color={colors.mutedFg} />
+              <Text className="text-muted-fg">{open ? '▴' : '▾'}</Text>
             </Pressable>
             {open ? (
               <View className="px-3 pb-1">
