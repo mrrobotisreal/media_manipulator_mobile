@@ -13,3 +13,7 @@ export * from './Text';
 export * from './Wordmark';
 export * from './TextField';
 export * from './NoticeHost';
+export * from './Slider';
+export * from './Stepper';
+export * from './Chips';
+export * from './Swatches';

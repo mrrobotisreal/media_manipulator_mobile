@@ -13,7 +13,21 @@
     "EXIF",
     "IPTC",
     "XMP",
-    "Apple"
+    "Apple",
+    "JPG",
+    "WebP",
+    "AVIF",
+    "ICO",
+    "SVG",
+    "DPI",
+    "1:1",
+    "4:3",
+    "3:4",
+    "16:9",
+    "9:16",
+    "{{percent}} %",
+    "180°",
+    "{{width}} × {{height}} px"
   ],
   "keys": [
     "it-IT:tabs.account",
@@ -106,6 +120,17 @@
     "pt-BR:tools.metadata.gps.altitude",
     "pt-BR:tools.metadata.edit.latitude",
     "pt-BR:tools.metadata.edit.longitude",
-    "pt-BR:tools.metadata.edit.altitude"
+    "pt-BR:tools.metadata.edit.altitude",
+    "de-DE:tools.image.filters.sepia",
+    "de-DE:tools.image.filters.vintage",
+    "es-ES:tools.image.filters.sepia",
+    "es-ES:tools.image.filters.vintage",
+    "es-MX:tools.image.filters.sepia",
+    "es-MX:tools.image.filters.vintage",
+    "fr-FR:tools.image.filters.vintage",
+    "fr-FR:tools.pdf.pages",
+    "it-IT:tools.image.filters.vintage",
+    "pt-PT:tools.image.filters.vintage",
+    "pt-BR:tools.image.filters.vintage"
   ]
 }

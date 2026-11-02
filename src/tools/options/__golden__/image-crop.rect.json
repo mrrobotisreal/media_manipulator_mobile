@@ -1,0 +1,11 @@
+{
+  "format": "jpg",
+  "quality": 85,
+  "filter": "none",
+  "crop": {
+    "x": 10,
+    "y": 20,
+    "width": 300,
+    "height": 201
+  }
+}

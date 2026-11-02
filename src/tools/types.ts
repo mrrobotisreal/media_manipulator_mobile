@@ -15,9 +15,29 @@ export type ResultKind =
 
 export type ToolOptions = Record<string, unknown>;
 
+/** What a form/builder may know about the file the job will run on, and the account's limits. */
+export interface ToolInputInfo {
+  name: string;
+  /** Local file:// URI (crop editor preview). */
+  uri?: string;
+  /** Lower-case, no dot. */
+  extension: string;
+  mime: string;
+  mediaKind: MediaKind;
+  width?: number;
+  height?: number;
+}
+
+export interface ToolContext {
+  input?: ToolInputInfo;
+  limits?: { maxOutputHeight?: number };
+}
+
 export interface ToolFormProps<F = ToolOptions> {
   value: F;
   onChange: (next: F) => void;
+  /** Additive (MA17): the first selected file and the cached account limits. */
+  ctx?: ToolContext;
 }
 
 export interface ToolPreset<F = ToolOptions> {
@@ -47,7 +67,9 @@ export interface ToolDefinition<F = ToolOptions> {
   endpoint: ToolEndpoint;
   defaults: F;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
-  optionsBuilder: (form: F) => ToolOptions;
+  optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
+  /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */
+  blockReason?: (form: F, ctx?: ToolContext) => string | null;
   Form: ComponentType<ToolFormProps<F>>;
   /** null only for inspect-metadata (free, synchronous). */
   metric: QuotaMetric | null;
