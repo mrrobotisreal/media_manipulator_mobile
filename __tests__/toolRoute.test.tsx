@@ -76,4 +76,18 @@ describe('tool route', () => {
     expect(realTrack).toHaveBeenCalledWith('tool_viewed', { entry_point: 'deep_link' });
     expect(getContext()).toMatchObject({ tool_slug: 'pdf-to-jpg', media_kind: 'document' });
   });
+
+  it('starts a fresh form when the route switches tools (S25: Extract audio inherited GIF options)', async () => {
+    const { rerender, store } = await renderRoute({ family: 'video', toolId: 'video-to-gif' });
+    mockParams = { family: 'video', toolId: 'video-extract-audio' };
+    await rerender(
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <ToolRoute />
+        </I18nextProvider>
+      </Provider>,
+    );
+    expect(screen.getByText('MP3 (compact, plays everywhere)')).toBeTruthy();
+    expect(realTrack).toHaveBeenCalledTimes(2);
+  });
 });
