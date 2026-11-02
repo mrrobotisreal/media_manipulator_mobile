@@ -38,6 +38,8 @@ export interface ToolFormProps<F = ToolOptions> {
   onChange: (next: F) => void;
   /** The picked file, when one is attached (forms read duration / size / extension from it). */
   file?: ToolFileInfo;
+  /** Cached tier limits (forms show gating hints from them). */
+  limits?: ToolBuildContext['limits'];
 }
 
 export interface ToolPreset<F = ToolOptions> {

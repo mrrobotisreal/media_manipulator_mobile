@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs -- gesture callbacks read refs and the player is mutated by design. */
 import { Image, type ImageSource } from 'expo-image';
 import { useRef, useState } from 'react';
 import { View, type LayoutChangeEvent } from 'react-native';

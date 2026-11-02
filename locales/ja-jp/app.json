@@ -187,6 +187,61 @@
         "title": "メタデータを編集",
         "description": "画像に保存されている情報を変更します。"
       }
+    },
+    "video": {
+      "format": "出力形式",
+      "sameAsOriginal": "元と同じ({{format}})",
+      "codecAuto": "自動",
+      "qualityLabel": "画質",
+      "quality": {
+        "low": "ファイルを小さく",
+        "medium": "バランス",
+        "high": "最高画質"
+      },
+      "stepperLess": "減らす",
+      "stepperMore": "増やす",
+      "gif": {
+        "width": "幅",
+        "fps": "フレームレート(fps)",
+        "colors": "色数",
+        "rangeHint": "短いクリップほどGIFが小さくなります"
+      },
+      "frames": {
+        "addMoment": "この瞬間を追加",
+        "moments_other": "{{count}}件の瞬間",
+        "remove": "{{time}}を削除"
+      },
+      "transform": {
+        "op": {
+          "resize": "リサイズ",
+          "rotate": "回転と反転",
+          "crop": "切り抜き"
+        },
+        "rotateNone": "回転なし",
+        "sideRange": "1〜{{max}}ピクセルで指定してください。",
+        "heightLimit": "ご利用のプランでは最大{{limit}}pです。"
+      },
+      "speed": {
+        "label": "速度",
+        "reverse": "逆再生",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "手ブレ補正",
+          "frameRate": "フレームレート",
+          "color": "色調"
+        },
+        "shakiness": "ブレの大きさ",
+        "accuracy": "精度",
+        "target": "目標フレームレート",
+        "brightness": "明るさ",
+        "contrast": "コントラスト",
+        "saturation": "彩度",
+        "hue": "色相",
+        "gamma": "ガンマ",
+        "noChange": "スライダーを1つ以上変更してください"
+      }
     }
   },
   "tool": {
@@ -534,5 +589,18 @@
     },
     "ok": "OK",
     "seeAll": "すべての上限を見る"
+  },
+  "toolUi": {
+    "range": {
+      "start": "開始",
+      "end": "終了",
+      "length": "長さ {{duration}}",
+      "play": "選択範囲を再生",
+      "pause": "一時停止",
+      "a11yStart": "開始ハンドル、{{time}}",
+      "a11yEnd": "終了ハンドル、{{time}}",
+      "a11yPoint": "位置、{{time}}",
+      "loadingThumbs": "プレビューを読み込み中…"
+    }
   }
 }

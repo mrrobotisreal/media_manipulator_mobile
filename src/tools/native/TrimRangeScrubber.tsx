@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs, react-hooks/immutability -- gesture callbacks read refs and the player is mutated by design. */
 import { VideoView } from 'expo-video';
 import { useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';

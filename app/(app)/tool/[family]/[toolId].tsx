@@ -3,15 +3,19 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
+import { setContext } from '@/analytics/track';
 import { FileArea } from '@/files/components/FileArea';
 import { getIntakeFiles } from '@/files/session';
 import type { IntakeFile } from '@/files/types';
 import { getJobEngine } from '@/jobs/runtime';
 import { QuotaChip } from '@/quota/QuotaChip';
+import { useAccountLimitsFull } from '@/quota/useAccountLimitsFull';
 import { useAppDispatch } from '@/state/hooks';
 import { toolOpened } from '@/state/slices/settings';
 import { ToolIcon } from '@/tools/icons';
+import { createOptionsChangedReporter } from '@/tools/optionsChanged';
 import { analyticsMediaKind, getTool } from '@/tools/registry';
+import type { ToolBuildContext, ToolFileInfo, ToolOptions } from '@/tools/types';
 import { Button } from '@/ui/components/Button';
 import { Screen } from '@/ui/components/Screen';
 import { Text } from '@/ui/components/Text';
@@ -26,14 +30,53 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
   const attached = useMemo(() => getIntakeFiles(intake ? intake.split(',') : []), [intake]);
   const [files, setFiles] = useState<IntakeFile[]>(attached);
 
+  const limits = useAccountLimitsFull();
+  const [form, setForm] = useState<ToolOptions>(tool.defaults);
+  const [reporter] = useState(() => createOptionsChangedReporter());
+  const first = files[0];
+  const fileInfo: ToolFileInfo | undefined = first
+    ? {
+        extension: first.extension,
+        durationSec: first.durationSec,
+        width: first.width,
+        height: first.height,
+        uri: first.uri,
+      }
+    : undefined;
+  const ctx: ToolBuildContext = useMemo(
+    () => ({ file: fileInfo, limits: { maxOutputHeight: limits?.maxOutputHeight } }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [first?.id, first?.durationSec, limits?.maxOutputHeight],
+  );
+  const valid = tool.isValid ? tool.isValid(form, ctx) : true;
+  const slug = tool.analyticsSlugFor ? tool.analyticsSlugFor(form) : tool.analyticsSlug;
+
+  // A different first file starts from the tool defaults (ranges and crops belong to one clip).
+  const firstId = first?.id;
+  const [formFor, setFormFor] = useState(firstId);
+  if (formFor !== firstId) {
+    setFormFor(firstId);
+    setForm(tool.defaults);
+  }
+
+  useEffect(() => {
+    setContext({ tool_slug: slug });
+  }, [slug]);
+  useEffect(() => () => reporter.flush(), [reporter]);
+
+  const onFormChange = (next: ToolOptions) => {
+    reporter.note(form, next);
+    setForm(next);
+  };
+
   const start = useCallback(() => {
-    if (files.length === 0) return;
-    const ids = getJobEngine().startJobs(
-      files.map((file) => ({ tool, file, options: tool.optionsBuilder(tool.defaults) })),
-    );
-    const first = ids[0];
-    if (first) router.push(`/(app)/job/${first}`);
-  }, [files, tool]);
+    if (files.length === 0 || !valid) return;
+    const runTool = { ...tool, analyticsSlug: slug };
+    const options = tool.optionsBuilder(form, ctx);
+    const ids = getJobEngine().startJobs(files.map((file) => ({ tool: runTool, file, options })));
+    const firstId = ids[0];
+    if (firstId) router.push(`/(app)/job/${firstId}`);
+  }, [files, tool, form, ctx, valid, slug]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));
@@ -55,10 +98,10 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
         <QuotaChip metric={tool.metric} />
         <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
-        <Form value={tool.defaults} onChange={() => undefined} />
+        <Form value={form} onChange={onFormChange} file={fileInfo} limits={ctx.limits} />
         <Button
           label={t('tool.start')}
-          disabled={files.length === 0 || tool.endpoint === 'metadataInspect'}
+          disabled={files.length === 0 || !valid || tool.endpoint === 'metadataInspect'}
           onPress={start}
         />
       </ScrollView>

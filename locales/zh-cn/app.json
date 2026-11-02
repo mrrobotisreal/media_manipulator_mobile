@@ -187,6 +187,61 @@
         "title": "编辑元数据",
         "description": "更改图片中存储的信息。"
       }
+    },
+    "video": {
+      "format": "输出格式",
+      "sameAsOriginal": "与原片相同({{format}})",
+      "codecAuto": "自动",
+      "qualityLabel": "质量",
+      "quality": {
+        "low": "文件更小",
+        "medium": "均衡",
+        "high": "最佳质量"
+      },
+      "stepperLess": "减小",
+      "stepperMore": "增大",
+      "gif": {
+        "width": "宽度",
+        "fps": "每秒帧数",
+        "colors": "颜色数",
+        "rangeHint": "片段越短,GIF 越小"
+      },
+      "frames": {
+        "addMoment": "添加此时刻",
+        "moments_other": "{{count}} 个时刻",
+        "remove": "移除 {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "调整大小",
+          "rotate": "旋转和翻转",
+          "crop": "裁剪"
+        },
+        "rotateNone": "不旋转",
+        "sideRange": "请输入 1 到 {{max}} 像素。",
+        "heightLimit": "您的套餐最高支持 {{limit}}p。"
+      },
+      "speed": {
+        "label": "速度",
+        "reverse": "倒放",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "防抖",
+          "frameRate": "帧率",
+          "color": "色彩"
+        },
+        "shakiness": "抖动程度",
+        "accuracy": "精度",
+        "target": "目标帧率",
+        "brightness": "亮度",
+        "contrast": "对比度",
+        "saturation": "饱和度",
+        "hue": "色相",
+        "gamma": "伽马",
+        "noChange": "请至少调整一个滑块"
+      }
     }
   },
   "tool": {
@@ -534,5 +589,18 @@
     },
     "ok": "OK",
     "seeAll": "查看所有限额"
+  },
+  "toolUi": {
+    "range": {
+      "start": "开始",
+      "end": "结束",
+      "length": "时长 {{duration}}",
+      "play": "播放所选范围",
+      "pause": "暂停",
+      "a11yStart": "起点手柄,{{time}}",
+      "a11yEnd": "终点手柄,{{time}}",
+      "a11yPoint": "位置,{{time}}",
+      "loadingThumbs": "正在加载预览…"
+    }
   }
 }

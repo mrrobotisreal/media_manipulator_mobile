@@ -33,24 +33,25 @@ export function useVideoThumbnails(
   duration: number | undefined,
   count: number,
 ): ThumbState {
-  const [state, setState] = useState<ThumbState>({ status: 'idle', thumbs: [] });
+  const [done, setDone] = useState<{ key: string; state: ThumbState } | null>(null);
+  const key = `${duration ?? 0}:${count}`;
   useEffect(() => {
     if (!player || !duration || duration <= 0) return;
     let cancelled = false;
-    setState({ status: 'loading', thumbs: [] });
     player
       .generateThumbnailsAsync(thumbTimes(duration, count), { maxWidth: THUMB_MAX_WIDTH })
       .then((thumbs) => {
-        if (!cancelled) setState({ status: 'ready', thumbs });
+        if (!cancelled) setDone({ key, state: { status: 'ready', thumbs } });
       })
       .catch(() => {
-        if (!cancelled) setState({ status: 'error', thumbs: [] });
+        if (!cancelled) setDone({ key, state: { status: 'error', thumbs: [] } });
       });
     return () => {
       cancelled = true;
     };
-  }, [player, duration, count]);
-  return state;
+  }, [player, duration, count, key]);
+  if (!player || !duration) return { status: 'idle', thumbs: [] };
+  return done?.key === key ? done.state : { status: 'loading', thumbs: [] };
 }
 
 /** One frame (crop editor background) at `time`; null until generated or on failure. */

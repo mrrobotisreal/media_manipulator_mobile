@@ -10,7 +10,9 @@
     "PNG",
     "GIF",
     "PDF",
-    "EXIF"
+    "EXIF",
+    "{{speed}}×",
+    "Gamma"
   ],
   "keys": [
     "it-IT:tabs.account",
@@ -58,6 +60,15 @@
     "it-IT:files.kinds.audio",
     "vi-VN:files.kinds.video",
     "de-DE:result.details",
-    "fr-FR:history.tool.convert"
+    "fr-FR:history.tool.convert",
+    "de-DE:toolUi.range.start",
+    "de-DE:toolUi.range.pause",
+    "de-DE:toolUi.range.a11yPoint",
+    "fr-FR:toolUi.range.a11yPoint",
+    "fr-FR:toolUi.range.pause",
+    "fr-FR:tools.video.adjust.saturation",
+    "fr-FR:tools.video.frames.moments_one",
+    "fr-FR:tools.video.frames.moments_many",
+    "fr-FR:tools.video.frames.moments_other"
   ]
 }

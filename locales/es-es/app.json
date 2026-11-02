@@ -187,6 +187,63 @@
         "title": "Editar metadatos",
         "description": "Cambia los datos guardados en una imagen."
       }
+    },
+    "video": {
+      "format": "Formato de salida",
+      "sameAsOriginal": "Igual que el original ({{format}})",
+      "codecAuto": "Automático",
+      "qualityLabel": "Calidad",
+      "quality": {
+        "low": "Archivo más pequeño",
+        "medium": "Equilibrado",
+        "high": "Mejor calidad"
+      },
+      "stepperLess": "Disminuir",
+      "stepperMore": "Aumentar",
+      "gif": {
+        "width": "Ancho",
+        "fps": "Fotogramas por segundo",
+        "colors": "Colores",
+        "rangeHint": "Los clips más cortos generan GIF más pequeños"
+      },
+      "frames": {
+        "addMoment": "Añadir este momento",
+        "moments_one": "{{count}} momento",
+        "moments_many": "{{count}} momentos",
+        "moments_other": "{{count}} momentos",
+        "remove": "Quitar {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Cambiar tamaño",
+          "rotate": "Girar y voltear",
+          "crop": "Recortar"
+        },
+        "rotateNone": "Sin rotación",
+        "sideRange": "Usa de 1 a {{max}} píxeles.",
+        "heightLimit": "Hasta {{limit}}p con tu plan."
+      },
+      "speed": {
+        "label": "Velocidad",
+        "reverse": "Reproducir al revés",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Estabilizar",
+          "frameRate": "Velocidad de fotogramas",
+          "color": "Color"
+        },
+        "shakiness": "Inestabilidad",
+        "accuracy": "Precisión",
+        "target": "Velocidad de fotogramas objetivo",
+        "brightness": "Brillo",
+        "contrast": "Contraste",
+        "saturation": "Saturación",
+        "hue": "Tono",
+        "gamma": "Gamma",
+        "noChange": "Cambia al menos un control deslizante"
+      }
     }
   },
   "tool": {
@@ -534,5 +591,18 @@
     },
     "ok": "OK",
     "seeAll": "Ver todos los límites"
+  },
+  "toolUi": {
+    "range": {
+      "start": "Inicio",
+      "end": "Fin",
+      "length": "Duración {{duration}}",
+      "play": "Reproducir selección",
+      "pause": "Pausa",
+      "a11yStart": "Control de inicio, {{time}}",
+      "a11yEnd": "Control de fin, {{time}}",
+      "a11yPoint": "Posición, {{time}}",
+      "loadingThumbs": "Cargando vista previa…"
+    }
   }
 }

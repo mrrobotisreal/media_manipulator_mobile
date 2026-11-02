@@ -187,6 +187,63 @@
         "title": "Modifier les métadonnées",
         "description": "Changez les détails enregistrés dans une image."
       }
+    },
+    "video": {
+      "format": "Format de sortie",
+      "sameAsOriginal": "Identique à l'original ({{format}})",
+      "codecAuto": "Automatique",
+      "qualityLabel": "Qualité",
+      "quality": {
+        "low": "Fichier plus léger",
+        "medium": "Équilibré",
+        "high": "Meilleure qualité"
+      },
+      "stepperLess": "Diminuer",
+      "stepperMore": "Augmenter",
+      "gif": {
+        "width": "Largeur",
+        "fps": "Images par seconde",
+        "colors": "Couleurs",
+        "rangeHint": "Un clip plus court donne un GIF plus léger"
+      },
+      "frames": {
+        "addMoment": "Ajouter ce moment",
+        "moments_one": "{{count}} moment",
+        "moments_many": "{{count}} moments",
+        "moments_other": "{{count}} moments",
+        "remove": "Supprimer {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Redimensionner",
+          "rotate": "Pivoter et retourner",
+          "crop": "Recadrer"
+        },
+        "rotateNone": "Aucune rotation",
+        "sideRange": "Utilisez de 1 à {{max}} pixels.",
+        "heightLimit": "Jusqu'à {{limit}}p avec votre forfait."
+      },
+      "speed": {
+        "label": "Vitesse",
+        "reverse": "Lire à l'envers",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Stabiliser",
+          "frameRate": "Fréquence d'images",
+          "color": "Couleur"
+        },
+        "shakiness": "Tremblement",
+        "accuracy": "Précision",
+        "target": "Fréquence d'images cible",
+        "brightness": "Luminosité",
+        "contrast": "Contraste",
+        "saturation": "Saturation",
+        "hue": "Teinte",
+        "gamma": "Gamma",
+        "noChange": "Modifiez au moins un curseur"
+      }
     }
   },
   "tool": {
@@ -534,5 +591,18 @@
     },
     "ok": "OK",
     "seeAll": "Voir toutes les limites"
+  },
+  "toolUi": {
+    "range": {
+      "start": "Début",
+      "end": "Fin",
+      "length": "Durée {{duration}}",
+      "play": "Lire la sélection",
+      "pause": "Pause",
+      "a11yStart": "Poignée de début, {{time}}",
+      "a11yEnd": "Poignée de fin, {{time}}",
+      "a11yPoint": "Position, {{time}}",
+      "loadingThumbs": "Chargement de l'aperçu…"
+    }
   }
 }
