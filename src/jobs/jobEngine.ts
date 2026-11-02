@@ -382,6 +382,8 @@ export function createJobEngine(deps: JobEngineDeps) {
       void activate(rec);
       if (rec.mediaKind === 'image') deps.files.keepOriginal(rec);
     } else {
+      // The server's error text can echo file names, so it never goes to analytics; dev logs only.
+      if (__DEV__) console.warn('[job] failed', job.id, job.currentStage ?? '', job.error ?? '');
       events.trackJobFailed(rec, job, duration);
       deps.files.release(rec.intakeFileId);
     }
