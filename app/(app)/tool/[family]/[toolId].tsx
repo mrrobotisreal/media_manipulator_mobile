@@ -176,6 +176,10 @@ export default function ToolRoute() {
   if (!tool || tool.family !== family) return <Redirect href={TOOLS_TAB} />;
   return (
     <ToolScreen
+      // One screen instance per tool (and preset): a deep link from one tool to another reuses this
+      // route, and without a key the previous tool's form state leaked in (S25: Extract audio opened
+      // with Video to GIF's options and no format selected).
+      key={`${tool.id}:${typeof preset === 'string' ? preset : ''}`}
       toolId={tool.id}
       from={typeof from === 'string' ? from : undefined}
       intake={typeof intake === 'string' ? intake : undefined}
