@@ -315,3 +315,33 @@ describe('describe() over the app registry', () => {
     for (const row of TOOLS) expect(row.webTask).toMatch(/^[a-z0-9_]+$/);
   });
 });
+
+// Found on the S25 (2026-11-02): a History re-open has no resultFileName and no registry task,
+// so a JPG result showed as an unknown "File". The sniffed resultMime is the last resort.
+describe('job opened by id (no file name, no task)', () => {
+  it.each([
+    ['image/jpeg', 'image'],
+    ['image/gif', 'gif'],
+    ['video/mp4', 'video'],
+    ['audio/mpeg', 'audio'],
+    ['application/pdf', 'pdf'],
+    ['application/zip', 'archive'],
+    ['application/octet-stream', 'unknown'],
+    [undefined, 'unknown'],
+  ] as const)('resultMime %s -> %s', (resultMime, kind) => {
+    expect(describeResult({ job: job(undefined, { resultMime }) }).kind).toBe(kind);
+  });
+
+  it('names the fallback file after the sniffed type (Android files extensionless saves outside Photos)', () => {
+    const d = describeResult({ job: job(undefined, { id: 'j1', resultMime: 'image/jpeg' }) });
+    expect(d.fileName).toBe('result-j1.jpg');
+    expect(
+      describeResult({ job: job(undefined, { id: 'j2', resultMime: 'video/mp4' }) }).fileName,
+    ).toBe('result-j2.mp4');
+    expect(describeResult({ job: job(undefined, { id: 'j3' }) }).fileName).toBe('result-j3');
+  });
+
+  it('never overrides the file name extension', () => {
+    expect(describeResult({ job: job('out.mp3', { resultMime: 'video/mp4' }) }).kind).toBe('audio');
+  });
+});

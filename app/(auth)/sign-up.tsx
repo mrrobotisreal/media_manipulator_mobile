@@ -2,13 +2,13 @@ import { Link, Redirect } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { authErrorI18nKey } from '@/auth/errors';
 import { useEffect, useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 import { trackAuthScreenShown } from '@/auth/analytics';
 import { isValidDisplayName, isValidEmail, isValidPassword } from '@/auth/email';
 import { signUpWithEmailFlow } from '@/auth/signIn';
 import { isFirebaseConfigured } from '@/lib/firebaseAvailable';
 import { useAppDispatch, useAppSelector } from '@/state/hooks';
-import { Button, Screen, Text, TextField } from '@/ui/components';
+import { Button, Screen, Text, TextField, KeyboardScroll } from '@/ui/components';
 
 export default function SignUp() {
   const { t } = useTranslation();
@@ -41,9 +41,8 @@ export default function SignUp() {
 
   return (
     <Screen>
-      <ScrollView
+      <KeyboardScroll
         contentContainerClassName="grow justify-center gap-4 px-6 py-8"
-        keyboardShouldPersistTaps="handled"
       >
         <Text className="text-xl font-semibold">{t('auth.signUp.title')}</Text>
         <TextField
@@ -83,7 +82,7 @@ export default function SignUp() {
             <Text className="text-primary">{t('auth.signUp.haveAccount')}</Text>
           </Link>
         </View>
-      </ScrollView>
+      </KeyboardScroll>
     </Screen>
   );
 }

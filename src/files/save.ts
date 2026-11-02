@@ -92,6 +92,7 @@ async function saveToPhotos(args: SaveArgs): Promise<SaveOutcome> {
     }
     await deps.addToPhotos(args.file.uri, deps.platform === 'android' ? PHOTOS_ALBUM : null);
   } catch (error) {
+    if (__DEV__) console.warn('[save] photos failed', error instanceof Error ? error.message : error);
     return { status: 'failed', error };
   }
   trackMediaSaved(args.context, 'photos', args.kind);

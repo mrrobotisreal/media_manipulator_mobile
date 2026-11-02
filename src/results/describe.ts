@@ -14,6 +14,8 @@
  *  - `task` is the registry row's `webTask` (the web EmbeddedTask for the row's slug).
  *  - The transcode probe (`probe`) and `sourceUrl` (public share page) fields are dropped: v1 has
  *    no HLS/DASH viewer and no public share route.
+ *  - After the hint, the server's sniffed `resultMime` decides the kind (a History re-open has no
+ *    file name and no task; found on the S25, 2026-11-02).
  */
 import { API_BASE_URL } from '@/api/config';
 
@@ -261,6 +263,11 @@ const KIND_BY_TASK: Record<string, ResultKind> = {
   voice_design: 'audio',
 };
 
+/** First extension per MIME (jpg over jpeg, mp4 over m4v). */
+const EXT_BY_MIME: Record<string, string> = Object.entries(MIME_BY_EXT).reduce<
+  Record<string, string>
+>((acc, [ext, mime]) => (acc[mime] ? acc : { ...acc, [mime]: ext }), {});
+
 const isUsableMime = (mime: string | undefined): mime is string =>
   !!mime && !/^application\/octet-stream/i.test(mime.trim());
 
@@ -314,6 +321,23 @@ export function kindOfFileName(fileName: string): ResultKind {
   return kindFromExtension(ext, {}) ?? (/\.(m3u8|mpd)$/i.test(fileName) ? 'metadata' : 'unknown');
 }
 
+/**
+ * Last resort (app deviation): a job opened by id (History re-open) has no `resultFileName` and no
+ * registry task, so the server's sniffed `resultMime` names the media family. Only the families a
+ * viewer exists for; anything else stays undecided.
+ */
+function kindFromServerMime(mime: string | undefined): ResultKind | null {
+  if (!isUsableMime(mime)) return null;
+  const type = mime.trim().toLowerCase();
+  if (type === 'image/gif') return 'gif';
+  if (type.startsWith('image/')) return 'image';
+  if (type.startsWith('video/')) return 'video';
+  if (type.startsWith('audio/')) return 'audio';
+  if (type === 'application/pdf') return 'pdf';
+  if (type === 'application/zip') return 'archive';
+  return null;
+}
+
 /** Kind of an uploaded original, for the compare modes. */
 export function kindOfOriginal(
   file: { name?: string; mime?: string } | null | undefined,
@@ -330,7 +354,13 @@ export function kindOfOriginal(
 
 export function describe(input: DescribeInput): ResultDescriptor {
   const { job, task, mode, kindHint, fallbackFileName } = input;
-  const fileName = job.resultFileName || fallbackFileName || `result-${job.id}`;
+  // A job opened by id has no file name; give the fallback the extension of the sniffed MIME so a saved
+  // copy is a real `.jpg`/`.mp4` (Android files an extensionless file outside Photos/Music).
+  const mimeExt = isUsableMime(job.resultMime)
+    ? EXT_BY_MIME[job.resultMime.trim().toLowerCase()]
+    : undefined;
+  const fileName =
+    job.resultFileName || fallbackFileName || `result-${job.id}${mimeExt ? `.${mimeExt}` : ''}`;
   const ext = extensionOf(job.resultFileName || fallbackFileName);
   const ctx = { task, mode };
 
@@ -342,6 +372,7 @@ export function describe(input: DescribeInput): ResultDescriptor {
     (mode === 'summarize' ? 'summary' : null) ??
     (mode === 'transcribe' ? 'transcript' : null) ??
     kindHint ??
+    kindFromServerMime(job.resultMime) ??
     'unknown';
 
   const { mime, fromServer } = mimeFor(job, ext);
