@@ -304,6 +304,45 @@
         "gamma": "ガンマ",
         "noChange": "スライダーを1つ以上変更してください"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "顔を検出",
+        "finding": "顔を検出中…",
+        "refind": "再検出",
+        "found_other": "{{count}}個の顔が見つかりました",
+        "none": "顔が見つかりませんでした。処理中に検出された顔はすべて隠されます。",
+        "tapHint": "顔をタップして選択",
+        "selectAll": "すべて選択",
+        "clear": "解除",
+        "a11yFace": "顔 {{index}}、{{state}}",
+        "selected": "選択中",
+        "notSelected": "未選択",
+        "expiredRedetect": "顔の情報が期限切れです。再検出しています…",
+        "detectFailed": "顔を検出できませんでした。もう一度試すか、すべての顔を対象にしてください。",
+        "needDetection": "先に顔を検出して、隠す顔を選んでください。",
+        "pickSome": "隠す顔を1つ以上タップしてください。"
+      },
+      "rects": {
+        "hint": "消したいオブジェクトをドラッグで囲みます。複数ある場合は枠を追加してください。",
+        "needOne": "オブジェクトを囲む枠を1つ以上描いてください",
+        "delete": "枠を削除",
+        "clearAll": "すべて削除",
+        "count_other": "{{count}}個の枠"
+      },
+      "stem": {
+        "sameAs": "元と同じ（{{format}}）"
+      },
+      "interp": {
+        "limits": "最長{{seconds}} 秒のクリップに対応。最大{{height}}pで処理されます。",
+        "tooLong": "このクリップは{{duration}}です。AIフレーム補間は最長{{seconds}} 秒のクリップに対応しています。先にトリミングしてください。"
+      }
+    },
+    "transcribe": {
+      "language": "話している言語",
+      "auto": "自動検出",
+      "other": "その他の言語",
+      "otherHint": "2〜3文字のコード（例：\"pl\"）"
     }
   },
   "tool": {
@@ -496,7 +535,29 @@
       "cancelled": "このアップロードはキャンセルされました。",
       "stopped": "このジョブの監視を停止しました。結果は履歴で確認できます。"
     },
-    "entryFailed": "このファイルを開けませんでした。"
+    "entryFailed": "このファイルを開けませんでした。",
+    "transcript": {
+      "copyAll": "すべてコピー",
+      "copied": "コピーしました",
+      "export": "書き出し",
+      "exportAs": "{{format}}で書き出し",
+      "search": "文字起こしを検索",
+      "noMatches": "一致する行がありません",
+      "summaryTitle": "AI要約",
+      "summaryRunning": "要約を作成中…",
+      "summaryUnavailable": "要約は利用できません",
+      "topics": "トピック",
+      "keywords": "キーワード",
+      "unavailable": "このジョブの文字起こしは利用できません。",
+      "empty": "文字起こしのテキストがありません。",
+      "cues_other": "{{count}}行",
+      "language": "言語",
+      "duration": "長さ",
+      "exportFailed": "文字起こしを書き出せませんでした。",
+      "tooLarge": "この字幕ファイルは大きすぎて表示できません。保存して別のアプリで開いてください。",
+      "safety": "安全性",
+      "sentiment": "感情"
+    }
   },
   "actions": {
     "save": "保存",

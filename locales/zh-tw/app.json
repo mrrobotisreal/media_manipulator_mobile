@@ -304,6 +304,45 @@
         "gamma": "Gamma",
         "noChange": "請至少調整一個滑桿"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "尋找人臉",
+        "finding": "正在尋找人臉…",
+        "refind": "重新尋找",
+        "found_other": "找到 {{count}} 張人臉",
+        "none": "找不到人臉。處理時偵測到的所有人臉仍會被遮蓋。",
+        "tapHint": "點選人臉來選取",
+        "selectAll": "全選",
+        "clear": "清除",
+        "a11yFace": "人臉 {{index}}，{{state}}",
+        "selected": "已選取",
+        "notSelected": "未選取",
+        "expiredRedetect": "人臉已過期，正在重新尋找…",
+        "detectFailed": "暫時無法尋找人臉。請再試一次，或使用所有人臉。",
+        "needDetection": "請先尋找人臉，再選擇要遮蓋的人臉。",
+        "pickSome": "請至少點選一張要遮蓋的人臉。"
+      },
+      "rects": {
+        "hint": "在要移除的物件上拖曳框選。有更多物件時可新增更多框。",
+        "needOne": "請在物件上至少畫一個框",
+        "delete": "刪除框",
+        "clearAll": "全部清除",
+        "count_other": "{{count}} 個框"
+      },
+      "stem": {
+        "sameAs": "與原始檔案相同（{{format}}）"
+      },
+      "interp": {
+        "limits": "片段最長 {{seconds}} 秒；最高以 {{height}}p 處理。",
+        "tooLong": "此片段長度為 {{duration}}。AI 補幀支援最長 {{seconds}} 秒的片段，請先裁剪。"
+      }
+    },
+    "transcribe": {
+      "language": "語音語言",
+      "auto": "自動偵測",
+      "other": "其他語言",
+      "otherHint": "兩位或三位字母代碼，例如「pl」"
     }
   },
   "tool": {
@@ -496,7 +535,29 @@
       "cancelled": "此上傳已取消。",
       "stopped": "你已停止關注此工作。其結果將顯示在歷史記錄中。"
     },
-    "entryFailed": "無法開啟此檔案。"
+    "entryFailed": "無法開啟此檔案。",
+    "transcript": {
+      "copyAll": "全部複製",
+      "copied": "已複製",
+      "export": "匯出",
+      "exportAs": "匯出為 {{format}}",
+      "search": "搜尋逐字稿",
+      "noMatches": "沒有符合的行",
+      "summaryTitle": "AI 摘要",
+      "summaryRunning": "正在產生摘要…",
+      "summaryUnavailable": "無法使用摘要",
+      "topics": "主題",
+      "keywords": "關鍵字",
+      "unavailable": "此工作的逐字稿無法使用。",
+      "empty": "沒有逐字稿文字。",
+      "cues_other": "{{count}} 行",
+      "language": "語言",
+      "duration": "長度",
+      "exportFailed": "無法匯出逐字稿。",
+      "tooLarge": "此字幕檔太大，無法顯示。請儲存後在其他應用程式中開啟。",
+      "safety": "安全性",
+      "sentiment": "情緒"
+    }
   },
   "actions": {
     "save": "儲存",

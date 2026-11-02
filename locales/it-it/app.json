@@ -306,6 +306,49 @@
         "gamma": "Gamma",
         "noChange": "Modifica almeno un cursore"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Trova volti",
+        "finding": "Ricerca dei volti…",
+        "refind": "Cerca di nuovo",
+        "found_one": "{{count}} volto trovato",
+        "found_many": "{{count}} volti trovati",
+        "found_other": "{{count}} volti trovati",
+        "none": "Nessun volto trovato. Quelli rilevati durante l'elaborazione verranno comunque coperti.",
+        "tapHint": "Tocca i volti per sceglierli",
+        "selectAll": "Seleziona tutto",
+        "clear": "Deseleziona",
+        "a11yFace": "Volto {{index}}, {{state}}",
+        "selected": "selezionato",
+        "notSelected": "non selezionato",
+        "expiredRedetect": "I volti sono scaduti; li cerco di nuovo…",
+        "detectFailed": "Non siamo riusciti a trovare i volti ora. Riprova o usa tutti i volti.",
+        "needDetection": "Prima trova i volti per scegliere quali coprire.",
+        "pickSome": "Tocca almeno un volto da coprire."
+      },
+      "rects": {
+        "hint": "Trascina sull'oggetto da rimuovere. Aggiungi altri riquadri per altri oggetti.",
+        "needOne": "Disegna almeno un riquadro sull'oggetto",
+        "delete": "Elimina riquadro",
+        "clearAll": "Cancella tutto",
+        "count_one": "{{count}} riquadro",
+        "count_many": "{{count}} riquadri",
+        "count_other": "{{count}} riquadri"
+      },
+      "stem": {
+        "sameAs": "Uguale all'originale ({{format}})"
+      },
+      "interp": {
+        "limits": "Clip fino a {{seconds}} s; elaborate fino a {{height}}p.",
+        "tooLong": "Questa clip dura {{duration}}. L'interpolazione dei fotogrammi con IA accetta clip fino a {{seconds}} s: tagliala prima."
+      }
+    },
+    "transcribe": {
+      "language": "Lingua parlata",
+      "auto": "Rileva automaticamente",
+      "other": "Altra lingua",
+      "otherHint": "Codice di due o tre lettere, es. \"pl\""
     }
   },
   "tool": {
@@ -498,7 +541,31 @@
       "cancelled": "Questo caricamento è stato annullato.",
       "stopped": "Hai smesso di seguire questo lavoro. Il risultato sarà in Cronologia."
     },
-    "entryFailed": "Impossibile aprire questo file."
+    "entryFailed": "Impossibile aprire questo file.",
+    "transcript": {
+      "copyAll": "Copia tutto",
+      "copied": "Copiato",
+      "export": "Esporta",
+      "exportAs": "Esporta come {{format}}",
+      "search": "Cerca nella trascrizione",
+      "noMatches": "Nessuna riga corrispondente",
+      "summaryTitle": "Riepilogo IA",
+      "summaryRunning": "Scrittura del riepilogo…",
+      "summaryUnavailable": "Riepilogo non disponibile",
+      "topics": "Argomenti",
+      "keywords": "Parole chiave",
+      "unavailable": "La trascrizione non è disponibile per questo lavoro.",
+      "empty": "Nessun testo di trascrizione.",
+      "cues_one": "{{count}} riga",
+      "cues_many": "{{count}} righe",
+      "cues_other": "{{count}} righe",
+      "language": "Lingua",
+      "duration": "Durata",
+      "exportFailed": "Impossibile esportare la trascrizione.",
+      "tooLarge": "Questo file di sottotitoli è troppo grande per essere mostrato. Salvalo per aprirlo altrove.",
+      "safety": "Sicurezza",
+      "sentiment": "Sentimento"
+    }
   },
   "actions": {
     "save": "Salva",

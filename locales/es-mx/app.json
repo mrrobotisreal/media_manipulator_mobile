@@ -306,6 +306,49 @@
         "gamma": "Gamma",
         "noChange": "Cambia al menos un control deslizante"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Buscar rostros",
+        "finding": "Buscando rostros…",
+        "refind": "Buscar de nuevo",
+        "found_one": "{{count}} rostro encontrado",
+        "found_many": "{{count}} rostros encontrados",
+        "found_other": "{{count}} rostros encontrados",
+        "none": "No se encontraron rostros. Los que detectemos al procesar igual se cubrirán.",
+        "tapHint": "Toca los rostros para elegirlos",
+        "selectAll": "Seleccionar todo",
+        "clear": "Borrar selección",
+        "a11yFace": "Rostro {{index}}, {{state}}",
+        "selected": "seleccionado",
+        "notSelected": "no seleccionado",
+        "expiredRedetect": "Los rostros caducaron; buscándolos de nuevo…",
+        "detectFailed": "No pudimos encontrar rostros ahora. Inténtalo de nuevo o usa todos los rostros.",
+        "needDetection": "Primero busca rostros para elegir cuáles cubrir.",
+        "pickSome": "Toca al menos un rostro para cubrirlo."
+      },
+      "rects": {
+        "hint": "Arrastra sobre el objeto que quieres quitar. Agrega más recuadros para más objetos.",
+        "needOne": "Dibuja al menos un recuadro sobre el objeto",
+        "delete": "Eliminar recuadro",
+        "clearAll": "Borrar todo",
+        "count_one": "{{count}} recuadro",
+        "count_many": "{{count}} recuadros",
+        "count_other": "{{count}} recuadros"
+      },
+      "stem": {
+        "sameAs": "Igual que el original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clips de hasta {{seconds}} s; se procesan hasta a {{height}}p.",
+        "tooLong": "Este clip dura {{duration}}. La interpolación de fotogramas con IA admite clips de hasta {{seconds}} s; recórtalo primero."
+      }
+    },
+    "transcribe": {
+      "language": "Idioma hablado",
+      "auto": "Detectar automáticamente",
+      "other": "Otro idioma",
+      "otherHint": "Código de dos o tres letras, p. ej. \"pl\""
     }
   },
   "tool": {
@@ -498,7 +541,31 @@
       "cancelled": "Se canceló esta subida.",
       "stopped": "Dejaste de seguir este trabajo. Su resultado estará en Historial."
     },
-    "entryFailed": "No se pudo abrir este archivo."
+    "entryFailed": "No se pudo abrir este archivo.",
+    "transcript": {
+      "copyAll": "Copiar todo",
+      "copied": "Copiado",
+      "export": "Exportar",
+      "exportAs": "Exportar como {{format}}",
+      "search": "Buscar en la transcripción",
+      "noMatches": "No hay líneas coincidentes",
+      "summaryTitle": "Resumen con IA",
+      "summaryRunning": "Escribiendo el resumen…",
+      "summaryUnavailable": "Resumen no disponible",
+      "topics": "Temas",
+      "keywords": "Palabras clave",
+      "unavailable": "La transcripción no está disponible para este trabajo.",
+      "empty": "No hay texto de transcripción.",
+      "cues_one": "{{count}} línea",
+      "cues_many": "{{count}} líneas",
+      "cues_other": "{{count}} líneas",
+      "language": "Idioma",
+      "duration": "Duración",
+      "exportFailed": "No se pudo exportar la transcripción.",
+      "tooLarge": "Este archivo de subtítulos es demasiado grande para mostrarlo. Guárdalo para abrirlo en otra app.",
+      "safety": "Seguridad",
+      "sentiment": "Sentimiento"
+    }
   },
   "actions": {
     "save": "Guardar",

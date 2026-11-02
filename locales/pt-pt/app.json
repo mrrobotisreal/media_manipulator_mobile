@@ -306,6 +306,49 @@
         "gamma": "Gama",
         "noChange": "Altere pelo menos um controlo de deslize"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Encontrar rostos",
+        "finding": "A procurar rostos…",
+        "refind": "Procurar novamente",
+        "found_one": "{{count}} rosto encontrado",
+        "found_many": "{{count}} rostos encontrados",
+        "found_other": "{{count}} rostos encontrados",
+        "none": "Nenhum rosto encontrado. Os que detetarmos durante o processamento serão na mesma cobertos.",
+        "tapHint": "Toque nos rostos para os escolher",
+        "selectAll": "Selecionar tudo",
+        "clear": "Limpar seleção",
+        "a11yFace": "Rosto {{index}}, {{state}}",
+        "selected": "selecionado",
+        "notSelected": "não selecionado",
+        "expiredRedetect": "Os rostos expiraram; a procurar novamente…",
+        "detectFailed": "Não conseguimos encontrar rostos agora. Tente novamente ou use todos os rostos.",
+        "needDetection": "Primeiro encontre os rostos para escolher quais cobrir.",
+        "pickSome": "Toque em pelo menos um rosto para cobrir."
+      },
+      "rects": {
+        "hint": "Arraste sobre o objeto a remover. Adicione mais caixas para mais objetos.",
+        "needOne": "Desenhe pelo menos uma caixa sobre o objeto",
+        "delete": "Eliminar caixa",
+        "clearAll": "Limpar tudo",
+        "count_one": "{{count}} caixa",
+        "count_many": "{{count}} caixas",
+        "count_other": "{{count}} caixas"
+      },
+      "stem": {
+        "sameAs": "Igual ao original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clipes até {{seconds}} s; processados até {{height}}p.",
+        "tooLong": "Este clipe tem {{duration}}. A interpolação de fotogramas com IA aceita clipes até {{seconds}} s — corte-o primeiro."
+      }
+    },
+    "transcribe": {
+      "language": "Idioma falado",
+      "auto": "Detetar automaticamente",
+      "other": "Outro idioma",
+      "otherHint": "Código de duas ou três letras, p. ex. \"pl\""
     }
   },
   "tool": {
@@ -498,7 +541,31 @@
       "cancelled": "Este envio foi cancelado.",
       "stopped": "Deixou de acompanhar esta tarefa. O resultado estará em Histórico."
     },
-    "entryFailed": "Não foi possível abrir este ficheiro."
+    "entryFailed": "Não foi possível abrir este ficheiro.",
+    "transcript": {
+      "copyAll": "Copiar tudo",
+      "copied": "Copiado",
+      "export": "Exportar",
+      "exportAs": "Exportar como {{format}}",
+      "search": "Pesquisar na transcrição",
+      "noMatches": "Nenhuma linha correspondente",
+      "summaryTitle": "Resumo com IA",
+      "summaryRunning": "A escrever o resumo…",
+      "summaryUnavailable": "Resumo indisponível",
+      "topics": "Tópicos",
+      "keywords": "Palavras-chave",
+      "unavailable": "A transcrição não está disponível para esta tarefa.",
+      "empty": "Sem texto de transcrição.",
+      "cues_one": "{{count}} linha",
+      "cues_many": "{{count}} linhas",
+      "cues_other": "{{count}} linhas",
+      "language": "Idioma",
+      "duration": "Duração",
+      "exportFailed": "Não foi possível exportar a transcrição.",
+      "tooLarge": "Este ficheiro de legendas é demasiado grande para ser mostrado. Guarde-o para o abrir noutro local.",
+      "safety": "Segurança",
+      "sentiment": "Sentimento"
+    }
   },
   "actions": {
     "save": "Guardar",

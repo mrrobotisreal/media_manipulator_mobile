@@ -13,6 +13,7 @@ import {
 } from '../forms/ai/MediaAiForms';
 import { ensureFreshDetection } from '../forms/ai/faceSession';
 import { detectFaces, realDetectDeps } from '@/api/endpoints/ai';
+import { track } from '@/analytics/track';
 import * as o from '../options/ai';
 import type { AnyToolDefinition } from '../types';
 import {
@@ -248,6 +249,11 @@ export const aiTools: AnyToolDefinition[] = [
     defaults: o.removeObjectDefaults,
     optionsBuilder: o.buildRemoveObjectOptions,
     blockReason: o.removeObjectBlockReason,
+    // Catalog: feature_used {feature:'remove_object', action:'rects', value: count} at Run.
+    prepare: async (form: o.RemoveObjectForm) => {
+      track('feature_used', { feature: 'remove_object', action: 'rects', value: form.rects.length });
+      return form;
+    },
   }),
   withForm(byId('clean-voice'), {
     Form: VoiceForm,
