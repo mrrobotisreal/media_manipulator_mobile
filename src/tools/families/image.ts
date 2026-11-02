@@ -1,6 +1,23 @@
+import { ImageCompressForm } from '../forms/image/ImageCompressForm';
+import { ImageConvertForm } from '../forms/image/ImageConvertForm';
+import { ImageCropForm } from '../forms/image/ImageCropForm';
+import { ImageFilterForm } from '../forms/image/ImageFilterForm';
+import { ImageResizeForm } from '../forms/image/ImageResizeForm';
+import { ImageRotateForm } from '../forms/image/ImageRotateForm';
+import { ImageTextForm } from '../forms/image/ImageTextForm';
+import { ImageToPdfForm } from '../forms/image/ImageToPdfForm';
+import { ImageToSvgForm } from '../forms/image/ImageToSvgForm';
+import { PdfToImageForm } from '../forms/image/PdfToImageForm';
+import * as o from '../options/image';
+import type { AnyToolDefinition } from '../types';
 import { IMAGE_ACCEPTS, PDF_ACCEPTS, imageBase, mergeAccepts, row } from './shared';
 
-export const imageTools = [
+/** Replaces the MA10 identity builder / DefaultsForm of a seeded row with the real form + builder. */
+function withForm(base: AnyToolDefinition, extra: Partial<AnyToolDefinition>): AnyToolDefinition {
+  return { ...base, ...extra };
+}
+
+const seeded = [
   row({
     id: 'image-convert',
     family: 'image',
@@ -150,5 +167,91 @@ export const imageTools = [
     webTask: 'pdf_to_jpg',
     resultHint: 'image',
     keywords: ['pdf-to-jpg', 'pdf-to-png', 'pdf-converter'],
+  }),
+];
+
+const byId = (id: string) => seeded.find((t) => t.id === id)!;
+
+const filterPreset = (slug: string, filter: o.FilterId) => ({
+  id: slug,
+  titleKey: `tools.image.filters.${filter}`,
+  analyticsSlug: slug,
+  defaults: { filter },
+});
+
+export const imageTools: AnyToolDefinition[] = [
+  withForm(byId('image-convert'), {
+    Form: ImageConvertForm,
+    defaults: o.convertDefaults,
+    optionsBuilder: o.buildImageConvertOptions,
+    presets: [
+      {
+        id: 'png-to-ico',
+        titleKey: 'tools.image.formats.ico',
+        analyticsSlug: 'png-to-ico',
+        defaults: { format: 'ico' },
+      },
+    ],
+  }),
+  withForm(byId('image-to-svg'), {
+    Form: ImageToSvgForm,
+    defaults: o.svgDefaults,
+    optionsBuilder: o.buildImageToSvgOptions,
+  }),
+  withForm(byId('image-resize'), {
+    Form: ImageResizeForm,
+    defaults: o.resizeDefaults,
+    optionsBuilder: o.buildImageResizeOptions,
+    blockReason: o.resizeBlockReason,
+  }),
+  withForm(byId('image-compress'), {
+    Form: ImageCompressForm,
+    defaults: o.compressDefaults,
+    optionsBuilder: o.buildImageCompressOptions,
+  }),
+  withForm(byId('image-crop'), {
+    Form: ImageCropForm,
+    defaults: o.cropDefaults,
+    optionsBuilder: o.buildImageCropOptions,
+    blockReason: o.cropBlockReason,
+  }),
+  withForm(byId('image-filter'), {
+    Form: ImageFilterForm,
+    defaults: o.filterDefaults,
+    optionsBuilder: o.buildImageFilterOptions,
+    presets: [
+      filterPreset('grayscale-image', 'grayscale'),
+      filterPreset('sharpen-image', 'sharpen'),
+      filterPreset('blur-image', 'blur'),
+    ],
+  }),
+  withForm(byId('image-rotate'), {
+    Form: ImageRotateForm,
+    defaults: o.rotateDefaults,
+    optionsBuilder: o.buildImageRotateOptions,
+  }),
+  withForm(byId('image-text'), {
+    Form: ImageTextForm,
+    defaults: o.textDefaults,
+    optionsBuilder: o.buildImageTextOptions,
+    blockReason: o.textBlockReason,
+  }),
+  withForm(byId('image-to-pdf'), {
+    Form: ImageToPdfForm,
+    defaults: o.toPdfDefaults,
+    optionsBuilder: o.buildImageToPdfOptions,
+  }),
+  withForm(byId('pdf-to-image'), {
+    Form: PdfToImageForm,
+    defaults: o.pdfToImageDefaults,
+    optionsBuilder: o.buildPdfToImageOptions,
+    presets: [
+      {
+        id: 'pdf-to-png',
+        titleKey: 'tools.image.formats.png',
+        analyticsSlug: 'pdf-to-png',
+        defaults: { format: 'png' },
+      },
+    ],
   }),
 ];

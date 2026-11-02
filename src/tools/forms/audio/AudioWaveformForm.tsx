@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 import { useAccountLimitsFull } from '@/quota/useAccountLimitsFull';
 import { useFactText } from '@/quota/useTierFacts';
 import { Text } from '@/ui/components/Text';
 import { TextField } from '@/ui/components/TextField';
-import { hitTarget } from '@/ui/tokens';
-import { ChipRow, Field, MoreSection, Stepper, SwitchRow } from '../../components/OptionControls';
+import { Field, MoreSection, SwitchRow } from '../../components/OptionControls';
+import { Chips } from '@/ui/components/Chips';
+import { Stepper } from '@/ui/components/Stepper';
+import { Swatches } from '@/ui/components/Swatches';
 import {
   WAVEFORM_DIM,
   WAVEFORM_DRAWS,
@@ -18,45 +20,14 @@ import {
   type AudioWaveformForm as Form,
 } from '../../options/audio';
 import type { ToolFormProps } from '../../types';
-import { useTrackOption } from '../../useTrackOption';
+import { useSetOption } from '../../useSetOption';
 
 const MEDIUM = WAVEFORM_SIZES.filter((s) => s.qualifier === 'medium');
-
-function Swatches({
-  value,
-  onChange,
-  testIDPrefix,
-}: {
-  value: string;
-  onChange: (hex: string) => void;
-  testIDPrefix: string;
-}) {
-  const { t } = useTranslation();
-  return (
-    <View className="flex-row flex-wrap gap-2">
-      {WAVEFORM_SWATCHES.map((hex) => {
-        const selected = hex.toLowerCase() === value.toLowerCase();
-        return (
-          <Pressable
-            key={hex}
-            testID={`${testIDPrefix}-${hex.slice(1)}`}
-            accessibilityRole="radio"
-            accessibilityLabel={t('tools.audio.waveform.swatch', { hex })}
-            accessibilityState={{ selected }}
-            onPress={() => onChange(hex)}
-            className={`rounded-full border-2 ${selected ? 'border-foreground' : 'border-edge'}`}
-            style={{ width: hitTarget, height: hitTarget, backgroundColor: hex }}
-          />
-        );
-      })}
-    </View>
-  );
-}
 
 // i18n-keys: interface:audioWaveformPanel.output, interface:audioWaveformPanel.renderMode, interface:audioWaveformPanel.primaryColor, interface:audioWaveformPanel.secondaryColor, interface:audioWaveformPanel.splitChannels, interface:audioWaveformPanel.includeAudio, interface:audioWaveformPanel.videoFormat, interface:audioWaveformPanel.imageFormat, interface:audioWaveformPanel.aspectRatioSize, interface:audioWaveformPanel.useCustomSize, interface:audioWaveformPanel.widthPlaceholder, interface:audioWaveformPanel.heightPlaceholder, interface:audioWaveformPanel.frameRate, interface:audioWaveformPanel.fpsOption, interface:audioWaveformPanel.scale, interface:audioWaveformPanel.draw, interface:audioWaveformPanel.presets.10x1, interface:audioWaveformPanel.presets.8x1, interface:audioWaveformPanel.presets.6x1, interface:audioWaveformPanel.presets.16x9, interface:audioWaveformPanel.presets.1x1, interface:audioWaveformPanel.modes.point.label, interface:audioWaveformPanel.modes.line.label, interface:audioWaveformPanel.modes.p2p.label, interface:audioWaveformPanel.modes.cline.label, tools.audio.more, tools.audio.waveform.output.video, tools.audio.waveform.output.image, tools.audio.waveform.output.both, tools.audio.waveform.size, tools.audio.waveform.planLimit, tools.audio.waveform.colors, tools.audio.waveform.swatch
 export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
   const { t } = useTranslation();
-  const set = useTrackOption(value, onChange);
+  const set = useSetOption(value, onChange);
   const limits = useAccountLimitsFull();
   const max = limits?.maxOutputHeight;
   const fact = useFactText('maxOutputHeight');
@@ -68,7 +39,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
   return (
     <View className="gap-5">
       <Field label={t(`${pw}.output`)}>
-        <ChipRow
+        <Chips
           testIDPrefix="output"
           value={value.output}
           onChange={(v) => set('output', v, 'waveform.output')}
@@ -79,7 +50,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
         />
       </Field>
       <Field label={t('tools.audio.waveform.size')}>
-        <ChipRow
+        <Chips
           testIDPrefix="size"
           value={value.sizeId}
           onChange={(v) => set('sizeId', v, 'waveform.size')}
@@ -99,7 +70,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
         ) : null}
       </Field>
       <Field label={t(`${pw}.renderMode`)}>
-        <ChipRow
+        <Chips
           testIDPrefix="mode"
           value={value.mode}
           onChange={(v) => set('mode', v, 'waveform.mode')}
@@ -108,14 +79,14 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
       </Field>
       <Field label={t(`${pw}.primaryColor`)}>
         <Swatches
-          testIDPrefix="primary"
+          colors={WAVEFORM_SWATCHES}
           value={value.colorPrimary}
           onChange={(v) => set('colorPrimary', v, 'waveform.colorPrimary')}
         />
       </Field>
       <Field label={t(`${pw}.secondaryColor`)}>
         <Swatches
-          testIDPrefix="secondary"
+          colors={WAVEFORM_SWATCHES}
           value={value.colorSecondary}
           onChange={(v) => set('colorSecondary', v, 'waveform.colorSecondary')}
         />
@@ -136,7 +107,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
       ) : null}
       {value.output !== 'image' ? (
         <Field label={t(`${pw}.videoFormat`)}>
-          <ChipRow
+          <Chips
             testIDPrefix="videoformat"
             value={value.videoFormat}
             onChange={(v) => set('videoFormat', v, 'waveform.videoFormat')}
@@ -149,7 +120,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
       ) : null}
       {value.output !== 'video' ? (
         <Field label={t(`${pw}.imageFormat`)}>
-          <ChipRow
+          <Chips
             testIDPrefix="imageformat"
             value={value.imageFormat}
             onChange={(v) => set('imageFormat', v, 'waveform.imageFormat')}
@@ -162,7 +133,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
       ) : null}
       <MoreSection label={t('tools.audio.more')}>
         <Field label={t(`${pw}.aspectRatioSize`)}>
-          <ChipRow
+          <Chips
             testIDPrefix="size-other"
             value={value.sizeId}
             onChange={(v) => set('sizeId', v, 'waveform.size')}
@@ -200,17 +171,16 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
           ) : null}
         </Field>
         <Stepper
-          testID="rate"
           label={t(`${pw}.frameRate`)}
           value={value.rate}
           min={WAVEFORM_RATE.min}
           max={WAVEFORM_RATE.max}
           step={1}
-          display={t(`${pw}.fpsOption`, { fps: value.rate })}
+          format={() => t(`${pw}.fpsOption`, { fps: value.rate })}
           onChange={(v) => set('rate', v, 'waveform.rate')}
         />
         <Field label={t(`${pw}.scale`)}>
-          <ChipRow
+          <Chips
             testIDPrefix="scale"
             value={value.scale}
             onChange={(v) => set('scale', v, 'waveform.scale')}
@@ -218,7 +188,7 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
           />
         </Field>
         <Field label={t(`${pw}.draw`)}>
-          <ChipRow
+          <Chips
             testIDPrefix="draw"
             value={value.draw}
             onChange={(v) => set('draw', v, 'waveform.draw')}

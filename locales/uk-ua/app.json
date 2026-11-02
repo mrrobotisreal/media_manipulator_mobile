@@ -188,6 +188,70 @@
         "description": "Змініть дані, збережені в зображенні."
       }
     },
+    "image": {
+      "format": "Формат виводу",
+      "sameAsOriginal": "Як в оригіналі ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Якість",
+      "qualityHint": "Нижча якість — менший файл",
+      "icoSizes": "Розміри значка",
+      "vectorize": {
+        "speckle": "Ігнорувати плями менші за {{count}} px"
+      },
+      "resize": {
+        "width": "Ширина",
+        "height": "Висота",
+        "keepAspect": "Зберігати пропорції",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "Ширина {{width}} px",
+        "heightLimit": "До {{limit}}p у вашому тарифі."
+      },
+      "compress": {
+        "pngToJpg": "JPG не підтримує прозорість; прозорі ділянки стануть білими."
+      },
+      "filters": {
+        "grayscale": "Відтінки сірого",
+        "sepia": "Сепія",
+        "blur": "Розмиття",
+        "sharpen": "Різкість",
+        "swirl": "Вихор",
+        "barrel-distortion": "Бочкоподібне спотворення",
+        "oil-painting": "Олійний живопис",
+        "vintage": "Вінтаж",
+        "emboss": "Тиснення",
+        "charcoal": "Вугілля",
+        "sketch": "Начерк"
+      },
+      "rotate": {
+        "cw90": "90° за годинниковою стрілкою",
+        "r180": "180°",
+        "ccw90": "90° проти годинникової стрілки"
+      },
+      "text": {
+        "required": "Введіть текст для додавання",
+        "font": "Шрифт",
+        "fontDefault": "Типовий"
+      },
+      "crop": {
+        "pick": "Виберіть зображення, щоб задати область обрізання"
+      },
+      "toPdf": {
+        "note": "Зображення стане односторінковим PDF."
+      }
+    },
+    "pdf": {
+      "pages": "Сторінки",
+      "pagesFirst": "Лише перша сторінка",
+      "pagesAll": "Усі сторінки (ZIP)",
+      "dpi": "Роздільність ({{dpi}} DPI)"
+    },
     "audio": {
       "format": "Формат виводу",
       "sameAsOriginal": "Як в оригіналі ({{format}})",
@@ -590,6 +654,16 @@
     "seeAll": "Усі ліміти"
   },
   "toolUi": {
+    "crop": {
+      "title": "Обрізання",
+      "aspectFree": "Вільно",
+      "reset": "Скинути",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Кут обрізання {{corner}}"
+    },
+    "color": {
+      "a11y": "Колір {{hex}}"
+    },
     "range": {
       "loading": "Завантаження аудіо",
       "start": "Початок",

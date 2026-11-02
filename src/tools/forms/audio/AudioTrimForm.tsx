@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { track } from '@/analytics/track';
 import { formatNumber } from '@/lib/format';
-import { ChipRow, Field, Stepper } from '../../components/OptionControls';
+import { Field } from '../../components/OptionControls';
+import { Chips } from '@/ui/components/Chips';
+import { Stepper } from '@/ui/components/Stepper';
 import { AudioRangeEditor } from '../../native/AudioRangeEditor';
 import {
   AUDIO_FORMATS,
@@ -13,13 +15,14 @@ import {
   type FormatChoice,
 } from '../../options/audio';
 import type { ToolFormProps } from '../../types';
-import { useTrackOption } from '../../useTrackOption';
+import { useSetOption } from '../../useSetOption';
 import { formatChoiceOptions } from './formatChoice';
 
 // i18n-keys: tools.audio.format, tools.audio.trim.fadeIn, tools.audio.trim.fadeOut, tools.audio.trim.seconds, tools.audio.sameAsOriginal
-export function AudioTrimForm({ value, onChange, file }: ToolFormProps<Form>) {
+export function AudioTrimForm({ value, onChange, ctx }: ToolFormProps<Form>) {
   const { t } = useTranslation();
-  const set = useTrackOption(value, onChange);
+  const set = useSetOption(value, onChange);
+  const file = ctx?.input;
   const ext = file?.extension;
   const onRange = useCallback(
     (startTime: number, endTime: number) => {
@@ -44,7 +47,7 @@ export function AudioTrimForm({ value, onChange, file }: ToolFormProps<Form>) {
   const sec = (n: number) => t('tools.audio.trim.seconds', { value: formatNumber(n) });
   return (
     <View className="gap-5">
-      {file ? (
+      {file?.uri ? (
         <AudioRangeEditor
           uri={file.uri}
           start={value.startTime}
@@ -55,27 +58,25 @@ export function AudioTrimForm({ value, onChange, file }: ToolFormProps<Form>) {
         />
       ) : null}
       <Stepper
-        testID="fade-in"
         label={t('tools.audio.trim.fadeIn')}
         value={value.fadeIn}
         min={0}
         max={MAX_FADE}
         step={0.5}
-        display={sec(value.fadeIn)}
+        format={() => sec(value.fadeIn)}
         onChange={(v) => set('fadeIn', v)}
       />
       <Stepper
-        testID="fade-out"
         label={t('tools.audio.trim.fadeOut')}
         value={value.fadeOut}
         min={0}
         max={MAX_FADE}
         step={0.5}
-        display={sec(value.fadeOut)}
+        format={() => sec(value.fadeOut)}
         onChange={(v) => set('fadeOut', v)}
       />
       <Field label={t('tools.audio.format')}>
-        <ChipRow
+        <Chips
           testIDPrefix="format"
           value={value.format}
           onChange={(v: FormatChoice) => set('format', v)}

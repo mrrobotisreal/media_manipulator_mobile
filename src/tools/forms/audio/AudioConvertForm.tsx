@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import { ChipRow, Field, MoreSection } from '../../components/OptionControls';
+import { Field, MoreSection } from '../../components/OptionControls';
+import { Chips } from '@/ui/components/Chips';
 import {
   AUDIO_FORMATS,
   BITRATES,
@@ -10,7 +11,7 @@ import {
   type AudioConvertForm as Form,
 } from '../../options/audio';
 import type { ToolFormProps } from '../../types';
-import { useTrackOption } from '../../useTrackOption';
+import { useSetOption } from '../../useSetOption';
 
 const FORMAT_LABEL: Record<string, string> = {
   mp3: 'MP3',
@@ -25,11 +26,11 @@ const FORMAT_LABEL: Record<string, string> = {
 // i18n-keys: tools.audio.format, tools.audio.bitrate, tools.audio.bitrateValue, tools.audio.sampleRate, tools.audio.channels, tools.audio.mono, tools.audio.stereo, tools.audio.more
 export function AudioConvertForm({ value, onChange }: ToolFormProps<Form>) {
   const { t } = useTranslation();
-  const set = useTrackOption(value, onChange);
+  const set = useSetOption(value, onChange);
   return (
     <View className="gap-5">
       <Field label={t('tools.audio.format')}>
-        <ChipRow
+        <Chips
           testIDPrefix="format"
           value={value.format}
           onChange={(v) => set('format', v)}
@@ -38,7 +39,7 @@ export function AudioConvertForm({ value, onChange }: ToolFormProps<Form>) {
       </Field>
       {hasBitrate(value.format) ? (
         <Field label={t('tools.audio.bitrate')}>
-          <ChipRow
+          <Chips
             testIDPrefix="bitrate"
             value={value.bitrate}
             onChange={(v) => set('bitrate', v)}
@@ -51,7 +52,7 @@ export function AudioConvertForm({ value, onChange }: ToolFormProps<Form>) {
       ) : null}
       <MoreSection label={t('tools.audio.more')}>
         <Field label={t('tools.audio.sampleRate')}>
-          <ChipRow
+          <Chips
             testIDPrefix="samplerate"
             value={value.sampleRate}
             onChange={(v) => set('sampleRate', v)}
@@ -62,7 +63,7 @@ export function AudioConvertForm({ value, onChange }: ToolFormProps<Form>) {
           />
         </Field>
         <Field label={t('tools.audio.channels')}>
-          <ChipRow
+          <Chips
             testIDPrefix="channels"
             value={value.channels}
             onChange={(v) => set('channels', v)}

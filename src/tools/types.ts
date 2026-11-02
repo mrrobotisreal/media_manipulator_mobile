@@ -1,5 +1,4 @@
 import type { ComponentType } from 'react';
-import type { IntakeFile } from '@/files/types';
 
 export type ToolFamily = 'image' | 'video' | 'audio' | 'ai' | 'metadata';
 export const TOOL_FAMILIES: readonly ToolFamily[] = ['image', 'video', 'audio', 'ai', 'metadata'];
@@ -16,11 +15,31 @@ export type ResultKind =
 
 export type ToolOptions = Record<string, unknown>;
 
+/** What a form/builder may know about the file the job will run on, and the account's limits. */
+export interface ToolInputInfo {
+  name: string;
+  /** Local file:// URI (crop editor preview). */
+  uri?: string;
+  /** Lower-case, no dot. */
+  extension: string;
+  mime: string;
+  mediaKind: MediaKind;
+  width?: number;
+  height?: number;
+  /** Seconds, audio/video (MA19). */
+  durationSec?: number;
+}
+
+export interface ToolContext {
+  input?: ToolInputInfo;
+  limits?: { maxOutputHeight?: number };
+}
+
 export interface ToolFormProps<F = ToolOptions> {
   value: F;
   onChange: (next: F) => void;
-  /** The first selected file (MA19): forms read its extension and duration. */
-  file?: IntakeFile;
+  /** Additive (MA17): the first selected file and the cached account limits. */
+  ctx?: ToolContext;
 }
 
 export interface ToolPreset<F = ToolOptions> {
@@ -50,11 +69,11 @@ export interface ToolDefinition<F = ToolOptions> {
   endpoint: ToolEndpoint;
   defaults: F;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
-  optionsBuilder: (form: F, file?: IntakeFile) => ToolOptions;
-  /** Per-mode web slug (MA18 decision 9); falls back to the static `analyticsSlug`. */
-  analyticsSlugFor?: (form: F, file?: IntakeFile) => string;
-  /** False disables Start (e.g. no effect chosen). Absent = always runnable. */
-  canRun?: (form: F) => boolean;
+  optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
+  /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */
+  blockReason?: (form: F, ctx?: ToolContext) => string | null;
+  /** Per-mode web slug (MA19/MA18); falls back to the static `analyticsSlug`. */
+  analyticsSlugFor?: (form: F, ctx?: ToolContext) => string;
   Form: ComponentType<ToolFormProps<F>>;
   /** null only for inspect-metadata (free, synchronous). */
   metric: QuotaMetric | null;

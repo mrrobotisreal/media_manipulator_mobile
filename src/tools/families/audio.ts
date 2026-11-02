@@ -153,7 +153,7 @@ const convert: AnyToolDefinition = {
   }),
   Form: ConvertFormView,
   optionsBuilder: (f: AudioConvertForm) => buildAudioConvert(f),
-  analyticsSlugFor: (f: AudioConvertForm, file) => audioConvertSlug(f, file?.extension),
+  analyticsSlugFor: (f: AudioConvertForm, ctx) => audioConvertSlug(f, ctx?.input?.extension),
   presets: convertPresets,
 };
 
@@ -168,7 +168,7 @@ const trim: AnyToolDefinition = {
     keywords: ['trim-audio', 'cut', 'clip'],
   }),
   Form: TrimFormView,
-  optionsBuilder: (f: AudioTrimForm, file) => buildAudioTrim(f, file?.extension),
+  optionsBuilder: (f: AudioTrimForm, ctx) => buildAudioTrim(f, ctx?.input?.extension),
 };
 
 const effects: AnyToolDefinition = {
@@ -192,9 +192,9 @@ const effects: AnyToolDefinition = {
     ],
   }),
   Form: EffectsFormView,
-  optionsBuilder: (f: AudioEffectsForm, file) => buildAudioEffects(f, file?.extension),
+  optionsBuilder: (f: AudioEffectsForm, ctx) => buildAudioEffects(f, ctx?.input?.extension),
   analyticsSlugFor: (f: AudioEffectsForm) => audioEffectsSlug(f),
-  canRun: (f: AudioEffectsForm) => f.effects.length > 0,
+  blockReason: (f: AudioEffectsForm) => (f.effects.length > 0 ? null : 'no_effect'),
   presets: effectsPresets,
 };
 

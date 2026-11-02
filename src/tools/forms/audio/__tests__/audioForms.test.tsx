@@ -64,23 +64,22 @@ describe('AudioConvertForm', () => {
     }
     await fireEvent.press(screen.getByTestId('format-opus'));
     expect(screen.getByTestId('bitrate-192')).toBeTruthy();
-    expect(track).toHaveBeenCalledWith('options_changed', { option: 'format', value: 'opus' });
   });
 });
 
 describe('AudioEffectsForm', () => {
   it('shows only the chosen effect controls and asks for a chip when none', async () => {
     await mount(<Harness Form={AudioEffectsForm} initial={audioEffectsDefaults} />);
-    expect(screen.getByTestId('speed-value')).toBeTruthy();
-    expect(screen.queryByTestId('pitch-value')).toBeNull();
+    expect(screen.getByLabelText('Speed')).toBeTruthy();
+    expect(screen.queryByLabelText('Pitch')).toBeNull();
     await fireEvent.press(screen.getByTestId('effect-pitch'));
-    expect(screen.getByTestId('pitch-value')).toBeTruthy();
+    expect(screen.getByLabelText('Pitch')).toBeTruthy();
     await fireEvent.press(screen.getByTestId('effect-speed'));
     await fireEvent.press(screen.getByTestId('effect-pitch'));
     expect(screen.getByTestId('effects-pick-hint')).toBeTruthy();
-    expect(TOOL_BY_ID.get('audio-effects')!.canRun!({ ...audioEffectsDefaults, effects: [] })).toBe(
-      false,
-    );
+    expect(
+      TOOL_BY_ID.get('audio-effects')!.blockReason!({ ...audioEffectsDefaults, effects: [] }),
+    ).not.toBeNull();
   });
 });
 

@@ -1,5 +1,5 @@
 import type { TFunction } from 'i18next';
-import type { ChipOption } from '../../components/OptionControls';
+import type { ChipOption } from '@/ui/components/Chips';
 import type { AudioFormat, FormatChoice } from '../../options/audio';
 
 export const FORMAT_LABEL: Record<AudioFormat, string> = {

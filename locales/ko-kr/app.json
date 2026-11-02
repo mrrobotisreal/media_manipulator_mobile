@@ -188,6 +188,70 @@
         "description": "이미지에 저장된 정보를 변경합니다."
       }
     },
+    "image": {
+      "format": "출력 형식",
+      "sameAsOriginal": "원본과 동일 ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "품질",
+      "qualityHint": "품질을 낮추면 파일이 작아집니다",
+      "icoSizes": "아이콘 크기",
+      "vectorize": {
+        "speckle": "{{count}} px보다 작은 잡티 무시"
+      },
+      "resize": {
+        "width": "너비",
+        "height": "높이",
+        "keepAspect": "가로세로 비율 유지",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "너비 {{width}} px",
+        "heightLimit": "현재 요금제에서는 최대 {{limit}}p입니다."
+      },
+      "compress": {
+        "pngToJpg": "JPG는 투명을 지원하지 않아 투명한 영역이 흰색이 됩니다."
+      },
+      "filters": {
+        "grayscale": "흑백",
+        "sepia": "세피아",
+        "blur": "흐림",
+        "sharpen": "선명하게",
+        "swirl": "소용돌이",
+        "barrel-distortion": "배럴 왜곡",
+        "oil-painting": "유화",
+        "vintage": "빈티지",
+        "emboss": "엠보스",
+        "charcoal": "목탄",
+        "sketch": "스케치"
+      },
+      "rotate": {
+        "cw90": "시계 방향 90°",
+        "r180": "180°",
+        "ccw90": "시계 반대 방향 90°"
+      },
+      "text": {
+        "required": "추가할 텍스트를 입력하세요",
+        "font": "글꼴",
+        "fontDefault": "기본"
+      },
+      "crop": {
+        "pick": "사진을 선택해 자르기 영역을 설정하세요"
+      },
+      "toPdf": {
+        "note": "사진이 한 페이지짜리 PDF로 변환됩니다."
+      }
+    },
+    "pdf": {
+      "pages": "페이지",
+      "pagesFirst": "첫 페이지만",
+      "pagesAll": "모든 페이지 (ZIP)",
+      "dpi": "해상도 ({{dpi}} DPI)"
+    },
     "audio": {
       "format": "출력 형식",
       "sameAsOriginal": "원본과 동일 ({{format}})",
@@ -587,6 +651,16 @@
     "seeAll": "모든 한도 보기"
   },
   "toolUi": {
+    "crop": {
+      "title": "자르기",
+      "aspectFree": "자유",
+      "reset": "초기화",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "자르기 모서리 {{corner}}"
+    },
+    "color": {
+      "a11y": "색상 {{hex}}"
+    },
     "range": {
       "loading": "오디오 불러오는 중",
       "start": "시작",

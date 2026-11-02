@@ -1,15 +1,16 @@
 import { TOOL_BY_ID } from '../registry';
 import { WEB_TOOL_SLUGS } from '../__fixtures__/webTools';
-import type { IntakeFile } from '@/files/types';
+import type { ToolContext } from '../types';
 
-const file = (extension: string): IntakeFile =>
-  ({
-    id: 'f',
-    uri: 'file:///x',
+const file = (extension: string): ToolContext => ({
+  input: {
     name: `x.${extension}`,
+    uri: 'file:///x',
     extension,
+    mime: 'audio/x',
     mediaKind: 'audio',
-  }) as IntakeFile;
+  },
+});
 
 describe('audio registry rows', () => {
   it('are multipart upload, ops, audio-only, non-gpu', () => {
@@ -80,8 +81,8 @@ describe('audio registry rows', () => {
 
   it('audio-effects cannot run with no chip', () => {
     const fx = TOOL_BY_ID.get('audio-effects')!;
-    expect(fx.canRun!({ ...fx.defaults, effects: [] })).toBe(false);
-    expect(fx.canRun!(fx.defaults)).toBe(true);
+    expect(fx.blockReason!({ ...fx.defaults, effects: [] })).not.toBeNull();
+    expect(fx.blockReason!(fx.defaults)).toBeNull();
   });
 
   it('presets land on the web catalog defaults', () => {

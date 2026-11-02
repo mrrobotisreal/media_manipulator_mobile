@@ -188,6 +188,70 @@
         "description": "غيّر التفاصيل المخزنة في الصورة."
       }
     },
+    "image": {
+      "format": "تنسيق الإخراج",
+      "sameAsOriginal": "مثل الأصلي ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "الجودة",
+      "qualityHint": "جودة أقل تعني ملفًا أصغر",
+      "icoSizes": "أحجام الأيقونة",
+      "vectorize": {
+        "speckle": "تجاهل البقع الأصغر من {{count}} px"
+      },
+      "resize": {
+        "width": "العرض",
+        "height": "الارتفاع",
+        "keepAspect": "الحفاظ على نسبة العرض إلى الارتفاع",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "عرض {{width}} px",
+        "heightLimit": "حتى {{limit}}p في خطتك."
+      },
+      "compress": {
+        "pngToJpg": "لا يدعم JPG الشفافية؛ تتحول المناطق الشفافة إلى اللون الأبيض."
+      },
+      "filters": {
+        "grayscale": "تدرج الرمادي",
+        "sepia": "بني قديم",
+        "blur": "ضبابية",
+        "sharpen": "زيادة الحدة",
+        "swirl": "دوامة",
+        "barrel-distortion": "تشويه برميلي",
+        "oil-painting": "لوحة زيتية",
+        "vintage": "قديم",
+        "emboss": "نقش بارز",
+        "charcoal": "فحم",
+        "sketch": "رسم تخطيطي"
+      },
+      "rotate": {
+        "cw90": "90° باتجاه عقارب الساعة",
+        "r180": "180°",
+        "ccw90": "90° عكس عقارب الساعة"
+      },
+      "text": {
+        "required": "أدخل النص المراد إضافته",
+        "font": "الخط",
+        "fontDefault": "الافتراضي"
+      },
+      "crop": {
+        "pick": "اختر صورة لتحديد منطقة الاقتصاص"
+      },
+      "toPdf": {
+        "note": "تتحول الصورة إلى ملف PDF من صفحة واحدة."
+      }
+    },
+    "pdf": {
+      "pages": "الصفحات",
+      "pagesFirst": "الصفحة الأولى فقط",
+      "pagesAll": "كل الصفحات (ZIP)",
+      "dpi": "الدقة ({{dpi}} DPI)"
+    },
     "audio": {
       "format": "صيغة الإخراج",
       "sameAsOriginal": "مثل الأصل ({{format}})",
@@ -592,6 +656,16 @@
     "seeAll": "عرض كل الحدود"
   },
   "toolUi": {
+    "crop": {
+      "title": "اقتصاص",
+      "aspectFree": "حر",
+      "reset": "إعادة تعيين",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "زاوية الاقتصاص {{corner}}"
+    },
+    "color": {
+      "a11y": "اللون {{hex}}"
+    },
     "range": {
       "loading": "جارٍ تحميل الصوت",
       "start": "البداية",

@@ -188,6 +188,70 @@
         "description": "Cambia los datos guardados en una imagen."
       }
     },
+    "image": {
+      "format": "Formato de salida",
+      "sameAsOriginal": "Igual que el original ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Calidad",
+      "qualityHint": "Menor calidad genera un archivo más pequeño",
+      "icoSizes": "Tamaños de icono",
+      "vectorize": {
+        "speckle": "Ignorar motas menores de {{count}} px"
+      },
+      "resize": {
+        "width": "Ancho",
+        "height": "Alto",
+        "keepAspect": "Mantener la proporción",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "{{width}} px de ancho",
+        "heightLimit": "Hasta {{limit}}p en tu plan."
+      },
+      "compress": {
+        "pngToJpg": "JPG no admite transparencia; las áreas transparentes se vuelven blancas."
+      },
+      "filters": {
+        "grayscale": "Escala de grises",
+        "sepia": "Sepia",
+        "blur": "Desenfoque",
+        "sharpen": "Enfoque",
+        "swirl": "Remolino",
+        "barrel-distortion": "Distorsión de barril",
+        "oil-painting": "Óleo",
+        "vintage": "Vintage",
+        "emboss": "Relieve",
+        "charcoal": "Carboncillo",
+        "sketch": "Boceto"
+      },
+      "rotate": {
+        "cw90": "90° en sentido horario",
+        "r180": "180°",
+        "ccw90": "90° en sentido antihorario"
+      },
+      "text": {
+        "required": "Escribe el texto que quieres añadir",
+        "font": "Fuente",
+        "fontDefault": "Predeterminada"
+      },
+      "crop": {
+        "pick": "Elige una imagen para definir el área de recorte"
+      },
+      "toPdf": {
+        "note": "La imagen se convierte en un PDF de una sola página."
+      }
+    },
+    "pdf": {
+      "pages": "Páginas",
+      "pagesFirst": "Solo la primera página",
+      "pagesAll": "Todas las páginas (ZIP)",
+      "dpi": "Resolución ({{dpi}} DPI)"
+    },
     "audio": {
       "format": "Formato de salida",
       "sameAsOriginal": "Igual que el original ({{format}})",
@@ -589,6 +653,16 @@
     "seeAll": "Ver todos los límites"
   },
   "toolUi": {
+    "crop": {
+      "title": "Recortar",
+      "aspectFree": "Libre",
+      "reset": "Restablecer",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Esquina de recorte {{corner}}"
+    },
+    "color": {
+      "a11y": "Color {{hex}}"
+    },
     "range": {
       "loading": "Cargando audio",
       "start": "Inicio",

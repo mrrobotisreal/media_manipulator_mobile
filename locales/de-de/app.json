@@ -188,6 +188,70 @@
         "description": "Im Bild gespeicherte Details ändern."
       }
     },
+    "image": {
+      "format": "Ausgabeformat",
+      "sameAsOriginal": "Wie Original ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "Qualität",
+      "qualityHint": "Geringere Qualität ergibt eine kleinere Datei",
+      "icoSizes": "Symbolgrößen",
+      "vectorize": {
+        "speckle": "Flecken kleiner als {{count}} px ignorieren"
+      },
+      "resize": {
+        "width": "Breite",
+        "height": "Höhe",
+        "keepAspect": "Seitenverhältnis beibehalten",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "{{width}} px breit",
+        "heightLimit": "Bis zu {{limit}}p in deinem Tarif."
+      },
+      "compress": {
+        "pngToJpg": "JPG unterstützt keine Transparenz; transparente Bereiche werden weiß."
+      },
+      "filters": {
+        "grayscale": "Graustufen",
+        "sepia": "Sepia",
+        "blur": "Weichzeichnen",
+        "sharpen": "Schärfen",
+        "swirl": "Strudel",
+        "barrel-distortion": "Tonnenverzerrung",
+        "oil-painting": "Ölgemälde",
+        "vintage": "Vintage",
+        "emboss": "Prägung",
+        "charcoal": "Kohle",
+        "sketch": "Skizze"
+      },
+      "rotate": {
+        "cw90": "90° im Uhrzeigersinn",
+        "r180": "180°",
+        "ccw90": "90° gegen den Uhrzeigersinn"
+      },
+      "text": {
+        "required": "Text zum Hinzufügen eingeben",
+        "font": "Schriftart",
+        "fontDefault": "Standard"
+      },
+      "crop": {
+        "pick": "Wähle ein Bild, um den Zuschnittbereich festzulegen"
+      },
+      "toPdf": {
+        "note": "Das Bild wird zu einem einseitigen PDF."
+      }
+    },
+    "pdf": {
+      "pages": "Seiten",
+      "pagesFirst": "Nur erste Seite",
+      "pagesAll": "Alle Seiten (ZIP)",
+      "dpi": "Auflösung ({{dpi}} DPI)"
+    },
     "audio": {
       "format": "Ausgabeformat",
       "sameAsOriginal": "Wie Original ({{format}})",
@@ -588,6 +652,16 @@
     "seeAll": "Alle Limits ansehen"
   },
   "toolUi": {
+    "crop": {
+      "title": "Zuschneiden",
+      "aspectFree": "Frei",
+      "reset": "Zurücksetzen",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "Zuschnittecke {{corner}}"
+    },
+    "color": {
+      "a11y": "Farbe {{hex}}"
+    },
     "range": {
       "loading": "Audio wird geladen",
       "start": "Start",

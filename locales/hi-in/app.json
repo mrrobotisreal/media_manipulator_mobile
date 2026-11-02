@@ -188,6 +188,70 @@
         "description": "इमेज में सहेजी जानकारी बदलें।"
       }
     },
+    "image": {
+      "format": "आउटपुट फ़ॉर्मेट",
+      "sameAsOriginal": "मूल जैसा ({{format}})",
+      "formats": {
+        "jpg": "JPG",
+        "png": "PNG",
+        "webp": "WebP",
+        "gif": "GIF",
+        "avif": "AVIF",
+        "ico": "ICO"
+      },
+      "quality": "गुणवत्ता",
+      "qualityHint": "कम गुणवत्ता से फ़ाइल छोटी होती है",
+      "icoSizes": "आइकन आकार",
+      "vectorize": {
+        "speckle": "{{count}} px से छोटे धब्बे अनदेखा करें"
+      },
+      "resize": {
+        "width": "चौड़ाई",
+        "height": "ऊँचाई",
+        "keepAspect": "आस्पेक्ट रेशियो बनाए रखें",
+        "presetPercent": "{{percent}} %",
+        "presetWide": "{{width}} px चौड़ा",
+        "heightLimit": "आपके प्लान में {{limit}}p तक।"
+      },
+      "compress": {
+        "pngToJpg": "JPG में पारदर्शिता नहीं होती; पारदर्शी हिस्से सफ़ेद हो जाते हैं।"
+      },
+      "filters": {
+        "grayscale": "ग्रेस्केल",
+        "sepia": "सेपिया",
+        "blur": "धुंधला",
+        "sharpen": "शार्प करें",
+        "swirl": "भँवर",
+        "barrel-distortion": "बैरल विकृति",
+        "oil-painting": "तैलचित्र",
+        "vintage": "विंटेज",
+        "emboss": "उभार",
+        "charcoal": "चारकोल",
+        "sketch": "स्केच"
+      },
+      "rotate": {
+        "cw90": "90° दक्षिणावर्त",
+        "r180": "180°",
+        "ccw90": "90° वामावर्त"
+      },
+      "text": {
+        "required": "जोड़ने के लिए टेक्स्ट दर्ज करें",
+        "font": "फ़ॉन्ट",
+        "fontDefault": "डिफ़ॉल्ट"
+      },
+      "crop": {
+        "pick": "क्रॉप क्षेत्र तय करने के लिए तस्वीर चुनें"
+      },
+      "toPdf": {
+        "note": "तस्वीर एक पन्ने वाली PDF बन जाती है।"
+      }
+    },
+    "pdf": {
+      "pages": "पन्ने",
+      "pagesFirst": "केवल पहला पन्ना",
+      "pagesAll": "सभी पन्ने (ZIP)",
+      "dpi": "रिज़ॉल्यूशन ({{dpi}} DPI)"
+    },
     "audio": {
       "format": "आउटपुट फ़ॉर्मैट",
       "sameAsOriginal": "मूल जैसा ({{format}})",
@@ -588,6 +652,16 @@
     "seeAll": "सभी सीमाएँ देखें"
   },
   "toolUi": {
+    "crop": {
+      "title": "क्रॉप करें",
+      "aspectFree": "फ़्री",
+      "reset": "रीसेट करें",
+      "size": "{{width}} × {{height}} px",
+      "a11yHandle": "क्रॉप कोना {{corner}}"
+    },
+    "color": {
+      "a11y": "रंग {{hex}}"
+    },
     "range": {
       "loading": "ऑडियो लोड हो रहा है",
       "start": "शुरू",

@@ -1,17 +1,19 @@
 import { Redirect, router, useLocalSearchParams } from 'expo-router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
+import { track } from '@/analytics/track';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
 import { FileArea } from '@/files/components/FileArea';
 import { getIntakeFiles } from '@/files/session';
 import type { IntakeFile } from '@/files/types';
 import { getJobEngine } from '@/jobs/runtime';
 import { QuotaChip } from '@/quota/QuotaChip';
+import { useAccountLimitsFull } from '@/quota/useAccountLimitsFull';
 import { useAppDispatch } from '@/state/hooks';
 import { toolOpened } from '@/state/slices/settings';
 import { ToolIcon } from '@/tools/icons';
-import { analyticsMediaKind, getTool } from '@/tools/registry';
+import { analyticsMediaKind, getTool, type ToolContext, type ToolOptions } from '@/tools/registry';
 import { Button } from '@/ui/components/Button';
 import { Screen } from '@/ui/components/Screen';
 import { Text } from '@/ui/components/Text';
@@ -19,28 +21,89 @@ import { colors } from '@/ui/tokens';
 
 const TOOLS_TAB = '/(app)/(tabs)';
 
-function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; intake?: string }) {
+const OPTIONS_DEBOUNCE_MS = 600;
+
+function ToolScreen({
+  toolId,
+  from,
+  intake,
+  preset,
+}: {
+  toolId: string;
+  from?: string;
+  intake?: string;
+  preset?: string;
+}) {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const tool = getTool(toolId)!;
   const attached = useMemo(() => getIntakeFiles(intake ? intake.split(',') : []), [intake]);
   const [files, setFiles] = useState<IntakeFile[]>(attached);
-  const [form, setForm] = useState<unknown>(tool.defaults);
+
+  const [form, setForm] = useState<ToolOptions>(() => ({
+    ...tool.defaults,
+    ...(tool.presets?.find((p) => p.id === preset)?.defaults ?? {}),
+  }));
+  const limits = useAccountLimitsFull();
+  const first = files[0];
+  const ctx = useMemo<ToolContext>(
+    () => ({
+      input: first
+        ? {
+            name: first.name,
+            uri: first.uri,
+            extension: first.extension,
+            mime: first.mimeType,
+            mediaKind: first.mediaKind,
+            width: first.width,
+            height: first.height,
+            durationSec: first.durationSec,
+          }
+        : undefined,
+      limits: limits ? { maxOutputHeight: limits.maxOutputHeight } : undefined,
+    }),
+    [first, limits],
+  );
+
+  // options_changed: keys only, debounced per option (web precedent: sliders are high volume).
+  const timers = useRef(new Map<string, ReturnType<typeof setTimeout>>());
+  useEffect(() => {
+    const pending = timers.current;
+    return () => pending.forEach((h) => clearTimeout(h));
+  }, []);
+  const onFormChange = useCallback((next: ToolOptions) => {
+    setForm((prev) => {
+      for (const key of Object.keys(next)) {
+        if (JSON.stringify(prev[key]) === JSON.stringify(next[key])) continue;
+        clearTimeout(timers.current.get(key));
+        timers.current.set(
+          key,
+          setTimeout(() => {
+            timers.current.delete(key);
+            track('options_changed', { option: key });
+          }, OPTIONS_DEBOUNCE_MS),
+        );
+      }
+      return next;
+    });
+  }, []);
+
+  const blocked = tool.blockReason?.(form, ctx) ?? null;
 
   const start = useCallback(() => {
-    if (files.length === 0) return;
+    if (files.length === 0 || blocked) return;
     const ids = getJobEngine().startJobs(
       files.map((file) => ({
         tool: tool.analyticsSlugFor
-          ? { ...tool, analyticsSlug: tool.analyticsSlugFor(form, file) }
+          ? { ...tool, analyticsSlug: tool.analyticsSlugFor(form, ctx) }
           : tool,
         file,
-        options: tool.optionsBuilder(form, file),
+        options: tool.optionsBuilder(form, ctx),
       })),
     );
-    const first = ids[0];
-    if (first) router.push(`/(app)/job/${first}`);
-  }, [files, form, tool]);
+    const firstId = ids[0];
+    if (firstId) router.push(`/(app)/job/${firstId}`);
+  }, [files, tool, form, ctx, blocked]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));
@@ -62,14 +125,10 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
         <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
         <QuotaChip metric={tool.metric} />
         <FileArea tool={tool} initialFiles={attached} onFilesChange={setFiles} />
-        <Form value={form} onChange={setForm} file={files[0]} />
+        <Form value={form} onChange={onFormChange} ctx={ctx} />
         <Button
           label={t('tool.start')}
-          disabled={
-            files.length === 0 ||
-            tool.endpoint === 'metadataInspect' ||
-            (tool.canRun ? !tool.canRun(form) : false)
-          }
+          disabled={files.length === 0 || tool.endpoint === 'metadataInspect' || blocked !== null}
           onPress={start}
         />
       </ScrollView>
@@ -79,11 +138,12 @@ function ToolScreen({ toolId, from, intake }: { toolId: string; from?: string; i
 
 // i18n-keys: tool.kinds.image, tool.kinds.video, tool.kinds.audio, tool.kinds.pdf
 export default function ToolRoute() {
-  const { family, toolId, from, intake } = useLocalSearchParams<{
+  const { family, toolId, from, intake, preset } = useLocalSearchParams<{
     family: string;
     toolId: string;
     from?: string;
     intake?: string;
+    preset?: string;
   }>();
   const tool = typeof toolId === 'string' ? getTool(toolId) : undefined;
   if (!tool || tool.family !== family) return <Redirect href={TOOLS_TAB} />;
@@ -92,6 +152,7 @@ export default function ToolRoute() {
       toolId={tool.id}
       from={typeof from === 'string' ? from : undefined}
       intake={typeof intake === 'string' ? intake : undefined}
+      preset={typeof preset === 'string' ? preset : undefined}
     />
   );
 }
