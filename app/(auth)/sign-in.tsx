@@ -1,7 +1,7 @@
 import { Link, Redirect } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
-import { Linking, ScrollView, View } from 'react-native';
+import { Linking, View } from 'react-native';
 import { trackAuthScreenShown } from '@/auth/analytics';
 import { authErrorI18nKey, errorEmail } from '@/auth/errors';
 import { isFirebaseConfigured } from '@/lib/firebaseAvailable';
@@ -16,7 +16,7 @@ import { ProviderButtons } from '@/auth/ui/ProviderButtons';
 import { PRIVACY_URL, TERMS_URL } from '@/lib/links';
 import { useAppDispatch, useAppSelector } from '@/state/hooks';
 import { noticeSet } from '@/state/slices/auth';
-import { Button, Screen, Text, TextField, Wordmark } from '@/ui/components';
+import { Button, Screen, Text, TextField, Wordmark, KeyboardScroll } from '@/ui/components';
 import { isValidEmail } from '@/auth/email';
 import type { AuthMethod } from '@/auth/methods';
 
@@ -64,9 +64,8 @@ export default function SignIn() {
 
   return (
     <Screen>
-      <ScrollView
+      <KeyboardScroll
         contentContainerClassName="grow justify-center gap-5 px-6 py-8"
-        keyboardShouldPersistTaps="handled"
       >
         <Wordmark />
         <View className="gap-1">
@@ -165,7 +164,7 @@ export default function SignIn() {
             {t('auth.signIn.unavailable')}
           </Text>
         )}
-      </ScrollView>
+      </KeyboardScroll>
       <LinkSheet email={linkEmail} onPick={pickLinkMethod} />
     </Screen>
   );
