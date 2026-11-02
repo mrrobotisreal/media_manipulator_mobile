@@ -27,6 +27,8 @@ export interface ToolInputInfo {
   extension: string;
   mime: string;
   mediaKind: MediaKind;
+  /** Seconds (intake probe) for video/audio. */
+  durationSec?: number;
   width?: number;
   height?: number;
 }
@@ -69,6 +71,8 @@ export interface ToolDefinition<F = ToolOptions> {
   batch?: boolean;
   endpoint: ToolEndpoint;
   defaults: F;
+  /** Per-mode web slug (MA18); falls back to `analyticsSlug` when absent. */
+  analyticsSlugFor?: (form: F) => string;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
   optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
   /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */

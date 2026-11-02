@@ -1,0 +1,9 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "crf": 26,
+  "stripAudio": false,
+  "videoCodec": "h264"
+}

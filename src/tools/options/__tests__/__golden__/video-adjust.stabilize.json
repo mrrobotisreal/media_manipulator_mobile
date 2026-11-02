@@ -1,0 +1,13 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "temporal": {
+    "stabilization": {
+      "enabled": true,
+      "shakiness": 5,
+      "accuracy": 9
+    }
+  }
+}

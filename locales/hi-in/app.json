@@ -365,6 +365,60 @@
       "pagesFirst": "केवल पहला पन्ना",
       "pagesAll": "सभी पन्ने (ZIP)",
       "dpi": "रिज़ॉल्यूशन ({{dpi}} DPI)"
+    },
+    "video": {
+      "format": "आउटपुट फ़ॉर्मैट",
+      "sameAsOriginal": "मूल जैसा ({{format}})",
+      "codecAuto": "स्वचालित",
+      "qualityLabel": "गुणवत्ता",
+      "quality": {
+        "low": "छोटी फ़ाइल",
+        "medium": "संतुलित",
+        "high": "सर्वोत्तम गुणवत्ता"
+      },
+      "gif": {
+        "width": "चौड़ाई",
+        "fps": "फ़्रेम प्रति सेकंड",
+        "colors": "रंग",
+        "rangeHint": "छोटी क्लिप से छोटे GIF बनते हैं"
+      },
+      "frames": {
+        "addMoment": "यह पल जोड़ें",
+        "moments_one": "{{count}} पल",
+        "moments_other": "{{count}} पल",
+        "remove": "{{time}} हटाएँ"
+      },
+      "transform": {
+        "op": {
+          "resize": "आकार बदलें",
+          "rotate": "घुमाएँ और पलटें",
+          "crop": "क्रॉप करें"
+        },
+        "rotateNone": "कोई घुमाव नहीं",
+        "sideRange": "1 से {{max}} पिक्सेल तक दर्ज करें।",
+        "heightLimit": "आपके प्लान में अधिकतम {{limit}}p।"
+      },
+      "speed": {
+        "label": "गति",
+        "reverse": "उलटा चलाएँ",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "स्थिर करें",
+          "frameRate": "फ़्रेम दर",
+          "color": "रंग"
+        },
+        "shakiness": "कंपन",
+        "accuracy": "सटीकता",
+        "target": "लक्षित फ़्रेम दर",
+        "brightness": "चमक",
+        "contrast": "कंट्रास्ट",
+        "saturation": "संतृप्ति",
+        "hue": "ह्यू",
+        "gamma": "गामा",
+        "noChange": "कम से कम एक स्लाइडर बदलें"
+      }
     }
   },
   "tool": {
@@ -759,6 +813,17 @@
     },
     "color": {
       "a11y": "रंग {{hex}}"
+    },
+    "range": {
+      "start": "शुरू",
+      "end": "अंत",
+      "length": "लंबाई {{duration}}",
+      "play": "चयन चलाएँ",
+      "pause": "रोकें",
+      "a11yStart": "शुरुआती हैंडल, {{time}}",
+      "a11yEnd": "अंतिम हैंडल, {{time}}",
+      "a11yPoint": "स्थिति, {{time}}",
+      "loadingThumbs": "पूर्वावलोकन लोड हो रहा है…"
     }
   }
 }

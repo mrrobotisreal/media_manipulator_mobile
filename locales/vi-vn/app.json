@@ -364,6 +364,59 @@
       "pagesFirst": "Chỉ trang đầu",
       "pagesAll": "Tất cả trang (ZIP)",
       "dpi": "Độ phân giải ({{dpi}} DPI)"
+    },
+    "video": {
+      "format": "Định dạng đầu ra",
+      "sameAsOriginal": "Giống bản gốc ({{format}})",
+      "codecAuto": "Tự động",
+      "qualityLabel": "Chất lượng",
+      "quality": {
+        "low": "Tệp nhỏ hơn",
+        "medium": "Cân bằng",
+        "high": "Chất lượng tốt nhất"
+      },
+      "gif": {
+        "width": "Chiều rộng",
+        "fps": "Số khung hình mỗi giây",
+        "colors": "Số màu",
+        "rangeHint": "Đoạn càng ngắn thì GIF càng nhỏ"
+      },
+      "frames": {
+        "addMoment": "Thêm khoảnh khắc này",
+        "moments_other": "{{count}} khoảnh khắc",
+        "remove": "Xóa {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Đổi kích thước",
+          "rotate": "Xoay và lật",
+          "crop": "Cắt"
+        },
+        "rotateNone": "Không xoay",
+        "sideRange": "Nhập từ 1 đến {{max}} pixel.",
+        "heightLimit": "Gói của bạn cho phép tối đa {{limit}}p."
+      },
+      "speed": {
+        "label": "Tốc độ",
+        "reverse": "Phát ngược",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Chống rung",
+          "frameRate": "Tốc độ khung hình",
+          "color": "Màu sắc"
+        },
+        "shakiness": "Độ rung",
+        "accuracy": "Độ chính xác",
+        "target": "Tốc độ khung hình đích",
+        "brightness": "Độ sáng",
+        "contrast": "Độ tương phản",
+        "saturation": "Độ bão hòa",
+        "hue": "Sắc độ",
+        "gamma": "Gamma",
+        "noChange": "Hãy thay đổi ít nhất một thanh trượt"
+      }
     }
   },
   "tool": {
@@ -758,6 +811,17 @@
     },
     "color": {
       "a11y": "Màu {{hex}}"
+    },
+    "range": {
+      "start": "Bắt đầu",
+      "end": "Kết thúc",
+      "length": "Độ dài {{duration}}",
+      "play": "Phát đoạn đã chọn",
+      "pause": "Tạm dừng",
+      "a11yStart": "Núm bắt đầu, {{time}}",
+      "a11yEnd": "Núm kết thúc, {{time}}",
+      "a11yPoint": "Vị trí, {{time}}",
+      "loadingThumbs": "Đang tải bản xem trước…"
     }
   }
 }
