@@ -264,7 +264,14 @@ function plausibleOutput(row: (typeof TOOLS)[number]): { fileName?: string; mode
   }
   if (row.webTask === 'inspect_metadata') return { fileName: undefined, mode: 'convert' };
   // AI rows that default to no format keep the input's family: images stay PNG, audio WAV.
-  const fallback = row.resultHint === 'audio' ? 'wav' : row.resultHint === 'video' ? 'mp4' : 'png';
+  const fallback =
+    row.resultHint === 'audio'
+      ? 'wav'
+      : row.resultHint === 'video'
+        ? 'mp4'
+        : row.resultHint === 'gif'
+          ? 'gif'
+          : 'png';
   const ext = typeof d.format === 'string' ? d.format : fallback;
   return {
     fileName: `out.${ext}`,

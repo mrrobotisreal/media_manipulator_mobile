@@ -252,6 +252,64 @@
       "pagesAll": "كل الصفحات (ZIP)",
       "dpi": "الدقة ({{dpi}} DPI)"
     },
+    "video": {
+      "format": "صيغة الإخراج",
+      "sameAsOriginal": "مثل الأصلي ({{format}})",
+      "codecAuto": "تلقائي",
+      "qualityLabel": "الجودة",
+      "quality": {
+        "low": "ملف أصغر",
+        "medium": "متوازن",
+        "high": "أفضل جودة"
+      },
+      "gif": {
+        "width": "العرض",
+        "fps": "إطارات في الثانية",
+        "colors": "الألوان",
+        "rangeHint": "المقاطع الأقصر تعطي ملفات GIF أصغر"
+      },
+      "frames": {
+        "addMoment": "أضف هذه اللحظة",
+        "moments_zero": "{{count}} لحظة",
+        "moments_one": "{{count}} لحظة",
+        "moments_two": "{{count}} لحظتان",
+        "moments_few": "{{count}} لحظات",
+        "moments_many": "{{count}} لحظة",
+        "moments_other": "{{count}} لحظة",
+        "remove": "إزالة {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "تغيير الحجم",
+          "rotate": "تدوير وقلب",
+          "crop": "اقتصاص"
+        },
+        "rotateNone": "بدون تدوير",
+        "sideRange": "استخدم من 1 إلى {{max}} بكسل.",
+        "heightLimit": "حتى {{limit}}p في خطتك."
+      },
+      "speed": {
+        "label": "السرعة",
+        "reverse": "تشغيل عكسي",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "تثبيت",
+          "frameRate": "معدل الإطارات",
+          "color": "اللون"
+        },
+        "shakiness": "الاهتزاز",
+        "accuracy": "الدقة",
+        "target": "معدل الإطارات المستهدف",
+        "brightness": "السطوع",
+        "contrast": "التباين",
+        "saturation": "التشبع",
+        "hue": "تدرج اللون",
+        "gamma": "غاما",
+        "noChange": "غيّر شريط تمرير واحدًا على الأقل"
+      }
+    },
     "audio": {
       "format": "صيغة الإخراج",
       "sameAsOriginal": "مثل الأصل ({{format}})",
@@ -667,18 +725,16 @@
       "a11y": "اللون {{hex}}"
     },
     "range": {
-      "loading": "جارٍ تحميل الصوت",
       "start": "البداية",
       "end": "النهاية",
-      "length": "تم تحديد {{length}}"
-    },
-    "audio": {
-      "playSelection": "تشغيل المقطع المحدد",
-      "pause": "إيقاف مؤقت"
-    },
-    "controls": {
-      "decrease": "تقليل",
-      "increase": "زيادة"
+      "length": "المدة {{duration}}",
+      "play": "تشغيل المحدد",
+      "pause": "إيقاف مؤقت",
+      "a11yStart": "مقبض البداية، {{time}}",
+      "a11yEnd": "مقبض النهاية، {{time}}",
+      "a11yPoint": "الموضع، {{time}}",
+      "loadingThumbs": "جارٍ تحميل المعاينة…",
+      "loading": "جارٍ تحميل الصوت"
     }
   }
 }

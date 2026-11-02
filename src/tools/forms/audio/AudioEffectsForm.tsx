@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { formatNumber } from '@/lib/format';
 import { Text } from '@/ui/components/Text';
-import { Field } from '../../components/OptionControls';
+import { Field } from '@/ui/components/Field';
 import { Chips, MultiChips } from '@/ui/components/Chips';
 import { Stepper } from '@/ui/components/Stepper';
 import {

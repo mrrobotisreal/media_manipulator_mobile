@@ -2,7 +2,7 @@ import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
-import { track } from '@/analytics/track';
+import { setContext, track } from '@/analytics/track';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
 import { FileArea } from '@/files/components/FileArea';
 import { getIntakeFiles } from '@/files/session';
@@ -89,21 +89,20 @@ function ToolScreen({
   }, []);
 
   const blocked = tool.blockReason?.(form, ctx) ?? null;
+  const slug = tool.analyticsSlugFor ? tool.analyticsSlugFor(form, ctx) : tool.analyticsSlug;
+  useEffect(() => {
+    setContext({ tool_slug: slug });
+  }, [slug]);
 
   const start = useCallback(() => {
     if (files.length === 0 || blocked) return;
+    const runTool = { ...tool, analyticsSlug: slug };
     const ids = getJobEngine().startJobs(
-      files.map((file) => ({
-        tool: tool.analyticsSlugFor
-          ? { ...tool, analyticsSlug: tool.analyticsSlugFor(form, ctx) }
-          : tool,
-        file,
-        options: tool.optionsBuilder(form, ctx),
-      })),
+      files.map((file) => ({ tool: runTool, file, options: tool.optionsBuilder(form, ctx) })),
     );
     const firstId = ids[0];
     if (firstId) router.push(`/(app)/job/${firstId}`);
-  }, [files, tool, form, ctx, blocked]);
+  }, [files, tool, form, ctx, blocked, slug]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));

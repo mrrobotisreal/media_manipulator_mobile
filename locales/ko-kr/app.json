@@ -252,6 +252,59 @@
       "pagesAll": "모든 페이지 (ZIP)",
       "dpi": "해상도 ({{dpi}} DPI)"
     },
+    "video": {
+      "format": "출력 형식",
+      "sameAsOriginal": "원본과 동일({{format}})",
+      "codecAuto": "자동",
+      "qualityLabel": "품질",
+      "quality": {
+        "low": "작은 파일",
+        "medium": "균형",
+        "high": "최고 품질"
+      },
+      "gif": {
+        "width": "너비",
+        "fps": "초당 프레임 수",
+        "colors": "색상 수",
+        "rangeHint": "클립이 짧을수록 GIF 용량이 작아집니다"
+      },
+      "frames": {
+        "addMoment": "이 장면 추가",
+        "moments_other": "장면 {{count}}개",
+        "remove": "{{time}} 삭제"
+      },
+      "transform": {
+        "op": {
+          "resize": "크기 조정",
+          "rotate": "회전 및 반전",
+          "crop": "자르기"
+        },
+        "rotateNone": "회전 없음",
+        "sideRange": "1~{{max}}픽셀을 입력하세요.",
+        "heightLimit": "현재 요금제에서는 최대 {{limit}}p까지 가능합니다."
+      },
+      "speed": {
+        "label": "속도",
+        "reverse": "거꾸로 재생",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "흔들림 보정",
+          "frameRate": "프레임 속도",
+          "color": "색상"
+        },
+        "shakiness": "흔들림 정도",
+        "accuracy": "정확도",
+        "target": "목표 프레임 속도",
+        "brightness": "밝기",
+        "contrast": "대비",
+        "saturation": "채도",
+        "hue": "색조",
+        "gamma": "감마",
+        "noChange": "슬라이더를 하나 이상 조정하세요"
+      }
+    },
     "audio": {
       "format": "출력 형식",
       "sameAsOriginal": "원본과 동일 ({{format}})",
@@ -662,18 +715,16 @@
       "a11y": "색상 {{hex}}"
     },
     "range": {
-      "loading": "오디오 불러오는 중",
       "start": "시작",
       "end": "종료",
-      "length": "{{length}} 선택됨"
-    },
-    "audio": {
-      "playSelection": "선택 구간 재생",
-      "pause": "일시정지"
-    },
-    "controls": {
-      "decrease": "줄이기",
-      "increase": "늘리기"
+      "length": "길이 {{duration}}",
+      "play": "선택 구간 재생",
+      "pause": "일시정지",
+      "a11yStart": "시작 핸들, {{time}}",
+      "a11yEnd": "종료 핸들, {{time}}",
+      "a11yPoint": "위치, {{time}}",
+      "loadingThumbs": "미리보기 불러오는 중…",
+      "loading": "오디오 불러오는 중"
     }
   }
 }

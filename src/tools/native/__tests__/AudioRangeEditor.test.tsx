@@ -1,6 +1,10 @@
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { I18nextProvider } from 'react-i18next';
+import { Provider } from 'react-redux';
 import { i18n } from '@/i18n';
+import { makeStore } from '@/state/store';
+
+const { store } = makeStore();
 import { AudioRangeEditor } from '../AudioRangeEditor';
 
 const mockPlayer = {
@@ -16,9 +20,11 @@ jest.mock('expo-audio', () => ({
 }));
 
 const ui = (props: Partial<React.ComponentProps<typeof AudioRangeEditor>> = {}) => (
-  <I18nextProvider i18n={i18n}>
-    <AudioRangeEditor uri="file:///a.mp3" start={10} end={20} onChange={jest.fn()} {...props} />
-  </I18nextProvider>
+  <Provider store={store}>
+    <I18nextProvider i18n={i18n}>
+      <AudioRangeEditor uri="file:///a.mp3" start={10} end={20} onChange={jest.fn()} {...props} />
+    </I18nextProvider>
+  </Provider>
 );
 
 beforeEach(() => {

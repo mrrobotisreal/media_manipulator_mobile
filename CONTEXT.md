@@ -65,3 +65,5 @@ Android package and iOS bundle id are both `com.mediamanipulator.app`; the `deve
 - **Audio range editor** (MA19): `src/tools/native/AudioRangeEditor.tsx`, an `expo-audio` player (100 ms status updates) under a shared `RangeTrack` (two handles + window, always left-to-right) over a placeholder bar strip; "Play selection" seeks to the start handle and pauses at the end handle. Pure math in `rangeMath.ts`.
 - **Effect chips** (MA19): the multi-select chips of `audio-effects` (speed, pitch, normalize, volume, equalizer, reverb). Only chosen effects reach the options JSON (unchosen speed/volume stay 1); no chip disables Start via the registry `canRun`.
 
+- **Trim scrubber** (MA18): `src/tools/native/TrimRangeScrubber.tsx`, an expo-video preview plus a thumbnail strip and a **Range track**; used by video-trim and video-to-gif (`FramePicker` is the single-playhead variant).
+- **Range track** (MA18): `src/tools/native/RangeTrack.tsx`, two handles and a draggable window over a time axis; pure math in `rangeMath.ts`; always laid out left to right.

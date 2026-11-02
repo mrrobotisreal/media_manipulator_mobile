@@ -252,6 +252,62 @@
       "pagesAll": "Усі сторінки (ZIP)",
       "dpi": "Роздільність ({{dpi}} DPI)"
     },
+    "video": {
+      "format": "Формат виводу",
+      "sameAsOriginal": "Як в оригіналі ({{format}})",
+      "codecAuto": "Автоматично",
+      "qualityLabel": "Якість",
+      "quality": {
+        "low": "Менший файл",
+        "medium": "Баланс",
+        "high": "Найкраща якість"
+      },
+      "gif": {
+        "width": "Ширина",
+        "fps": "Кадрів за секунду",
+        "colors": "Кольори",
+        "rangeHint": "Чим коротший кліп, тим менший GIF"
+      },
+      "frames": {
+        "addMoment": "Додати цей момент",
+        "moments_one": "{{count}} момент",
+        "moments_few": "{{count}} моменти",
+        "moments_many": "{{count}} моментів",
+        "moments_other": "{{count}} моменту",
+        "remove": "Видалити {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Змінити розмір",
+          "rotate": "Повернути й віддзеркалити",
+          "crop": "Обрізати"
+        },
+        "rotateNone": "Без повороту",
+        "sideRange": "Вкажіть від 1 до {{max}} пікселів.",
+        "heightLimit": "До {{limit}}p у вашому тарифі."
+      },
+      "speed": {
+        "label": "Швидкість",
+        "reverse": "Відтворити у зворотному порядку",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Стабілізація",
+          "frameRate": "Частота кадрів",
+          "color": "Колір"
+        },
+        "shakiness": "Тремтіння",
+        "accuracy": "Точність",
+        "target": "Цільова частота кадрів",
+        "brightness": "Яскравість",
+        "contrast": "Контраст",
+        "saturation": "Насиченість",
+        "hue": "Відтінок",
+        "gamma": "Гамма",
+        "noChange": "Змініть принаймні один повзунок"
+      }
+    },
     "audio": {
       "format": "Формат виводу",
       "sameAsOriginal": "Як в оригіналі ({{format}})",
@@ -665,18 +721,16 @@
       "a11y": "Колір {{hex}}"
     },
     "range": {
-      "loading": "Завантаження аудіо",
       "start": "Початок",
       "end": "Кінець",
-      "length": "Вибрано: {{length}}"
-    },
-    "audio": {
-      "playSelection": "Відтворити вибране",
-      "pause": "Пауза"
-    },
-    "controls": {
-      "decrease": "Зменшити",
-      "increase": "Збільшити"
+      "length": "Тривалість {{duration}}",
+      "play": "Відтворити вибране",
+      "pause": "Пауза",
+      "a11yStart": "Маркер початку, {{time}}",
+      "a11yEnd": "Маркер кінця, {{time}}",
+      "a11yPoint": "Позиція, {{time}}",
+      "loadingThumbs": "Завантаження попереднього перегляду…",
+      "loading": "Завантаження аудіо"
     }
   }
 }

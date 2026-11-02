@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { track } from '@/analytics/track';
 import { formatNumber } from '@/lib/format';
-import { Field } from '../../components/OptionControls';
+import { Field } from '@/ui/components/Field';
 import { Chips } from '@/ui/components/Chips';
 import { Stepper } from '@/ui/components/Stepper';
 import { AudioRangeEditor } from '../../native/AudioRangeEditor';

@@ -4,7 +4,9 @@ import { useAccountLimitsFull } from '@/quota/useAccountLimitsFull';
 import { useFactText } from '@/quota/useTierFacts';
 import { Text } from '@/ui/components/Text';
 import { TextField } from '@/ui/components/TextField';
-import { Field, MoreSection, SwitchRow } from '../../components/OptionControls';
+import { Field } from '@/ui/components/Field';
+import { MoreSection } from '../../components/OptionControls';
+import { ToggleRow } from '@/ui/components/ToggleRow';
 import { Chips } from '@/ui/components/Chips';
 import { Stepper } from '@/ui/components/Stepper';
 import { Swatches } from '@/ui/components/Swatches';
@@ -91,15 +93,13 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
           onChange={(v) => set('colorSecondary', v, 'waveform.colorSecondary')}
         />
       </Field>
-      <SwitchRow
-        testID="split-channels"
+      <ToggleRow
         label={t(`${pw}.splitChannels`)}
         value={value.splitChannels}
         onChange={(v) => set('splitChannels', v, 'waveform.splitChannels')}
       />
       {value.output !== 'image' ? (
-        <SwitchRow
-          testID="include-audio"
+        <ToggleRow
           label={t(`${pw}.includeAudio`)}
           value={value.includeAudio}
           onChange={(v) => set('includeAudio', v, 'waveform.includeAudio')}
@@ -150,7 +150,6 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
             <View className="flex-row gap-3">
               <View className="flex-1">
                 <TextField
-                  testID="custom-width"
                   label={t(`${pw}.widthPlaceholder`)}
                   keyboardType="number-pad"
                   value={value.customWidth}
@@ -159,7 +158,6 @@ export function AudioWaveformForm({ value, onChange }: ToolFormProps<Form>) {
               </View>
               <View className="flex-1">
                 <TextField
-                  testID="custom-height"
                   label={t(`${pw}.heightPlaceholder`)}
                   keyboardType="number-pad"
                   value={value.customHeight}

@@ -24,7 +24,9 @@
     "9:16",
     "{{percent}} %",
     "180°",
-    "{{width}} × {{height}} px"
+    "{{width}} × {{height}} px",
+    "{{speed}}×",
+    "Gamma"
   ],
   "keys": [
     "it-IT:tabs.account",
@@ -84,8 +86,16 @@
     "it-IT:tools.image.filters.vintage",
     "pt-PT:tools.image.filters.vintage",
     "pt-BR:tools.image.filters.vintage",
-    "de-DE:toolUi.audio.pause",
     "de-DE:toolUi.range.start",
+    "de-DE:toolUi.range.pause",
+    "de-DE:toolUi.range.a11yPoint",
+    "fr-FR:toolUi.range.a11yPoint",
+    "fr-FR:toolUi.range.pause",
+    "fr-FR:tools.video.adjust.saturation",
+    "fr-FR:tools.video.frames.moments_one",
+    "fr-FR:tools.video.frames.moments_many",
+    "fr-FR:tools.video.frames.moments_other",
+    "de-DE:toolUi.audio.pause",
     "de-DE:tools.audio.bitrate",
     "de-DE:tools.audio.effects.eq",
     "de-DE:tools.audio.effects.eqPreset.jazz",

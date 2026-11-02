@@ -2,9 +2,8 @@ import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import { formatDuration } from '@/lib/format';
 import { Button } from '@/ui/components/Button';
-import { Num, Text } from '@/ui/components/Text';
+import { Text } from '@/ui/components/Text';
 import { RangeTrack } from './RangeTrack';
 
 const BARS = 48;
@@ -106,20 +105,9 @@ export function AudioRangeEditor({
         onScrubStart={onScrubStart}
         background={<PlaceholderStrip />}
       />
-      <View className="flex-row items-center justify-between">
-        <Num className="text-sm" accessibilityLabel={t('toolUi.range.start')}>
-          {formatDuration(start)}
-        </Num>
-        <Num className="text-sm text-muted-fg">
-          {t('toolUi.range.length', { length: formatDuration(Math.max(0, end - start)) })}
-        </Num>
-        <Num className="text-sm" accessibilityLabel={t('toolUi.range.end')}>
-          {formatDuration(end)}
-        </Num>
-      </View>
       <Button
         variant="secondary"
-        label={playing ? t('toolUi.audio.pause') : t('toolUi.audio.playSelection')}
+        label={playing ? t('toolUi.range.pause') : t('toolUi.range.play')}
         onPress={() => void toggle()}
         disabled={!status.isLoaded}
       />

@@ -252,6 +252,62 @@
       "pagesAll": "Все страницы (ZIP)",
       "dpi": "Разрешение ({{dpi}} DPI)"
     },
+    "video": {
+      "format": "Формат вывода",
+      "sameAsOriginal": "Как в оригинале ({{format}})",
+      "codecAuto": "Автоматически",
+      "qualityLabel": "Качество",
+      "quality": {
+        "low": "Меньше размер",
+        "medium": "Баланс",
+        "high": "Лучшее качество"
+      },
+      "gif": {
+        "width": "Ширина",
+        "fps": "Кадров в секунду",
+        "colors": "Цвета",
+        "rangeHint": "Чем короче клип, тем меньше GIF"
+      },
+      "frames": {
+        "addMoment": "Добавить этот момент",
+        "moments_one": "{{count}} момент",
+        "moments_few": "{{count}} момента",
+        "moments_many": "{{count}} моментов",
+        "moments_other": "{{count}} момента",
+        "remove": "Удалить {{time}}"
+      },
+      "transform": {
+        "op": {
+          "resize": "Изменить размер",
+          "rotate": "Повернуть и отразить",
+          "crop": "Обрезать"
+        },
+        "rotateNone": "Без поворота",
+        "sideRange": "Укажите от 1 до {{max}} пикселей.",
+        "heightLimit": "До {{limit}}p на вашем тарифе."
+      },
+      "speed": {
+        "label": "Скорость",
+        "reverse": "Воспроизвести задом наперёд",
+        "value": "{{speed}}×"
+      },
+      "adjust": {
+        "op": {
+          "stabilize": "Стабилизация",
+          "frameRate": "Частота кадров",
+          "color": "Цвет"
+        },
+        "shakiness": "Тряска",
+        "accuracy": "Точность",
+        "target": "Целевая частота кадров",
+        "brightness": "Яркость",
+        "contrast": "Контраст",
+        "saturation": "Насыщенность",
+        "hue": "Оттенок",
+        "gamma": "Гамма",
+        "noChange": "Измените хотя бы один ползунок"
+      }
+    },
     "audio": {
       "format": "Формат вывода",
       "sameAsOriginal": "Как в оригинале ({{format}})",
@@ -665,18 +721,16 @@
       "a11y": "Цвет {{hex}}"
     },
     "range": {
-      "loading": "Загрузка аудио",
       "start": "Начало",
       "end": "Конец",
-      "length": "Выбрано: {{length}}"
-    },
-    "audio": {
-      "playSelection": "Воспроизвести выделенное",
-      "pause": "Пауза"
-    },
-    "controls": {
-      "decrease": "Уменьшить",
-      "increase": "Увеличить"
+      "length": "Длительность {{duration}}",
+      "play": "Воспроизвести выбранное",
+      "pause": "Пауза",
+      "a11yStart": "Маркер начала, {{time}}",
+      "a11yEnd": "Маркер конца, {{time}}",
+      "a11yPoint": "Позиция, {{time}}",
+      "loadingThumbs": "Загрузка превью…",
+      "loading": "Загрузка аудио"
     }
   }
 }

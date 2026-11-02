@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import { Field, MoreSection } from '../../components/OptionControls';
+import { Field } from '@/ui/components/Field';
+import { MoreSection } from '../../components/OptionControls';
 import { Chips } from '@/ui/components/Chips';
 import {
   AUDIO_FORMATS,

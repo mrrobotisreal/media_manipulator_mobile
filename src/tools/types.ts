@@ -24,10 +24,10 @@ export interface ToolInputInfo {
   extension: string;
   mime: string;
   mediaKind: MediaKind;
+  /** Seconds (intake probe) for video/audio. */
+  durationSec?: number;
   width?: number;
   height?: number;
-  /** Seconds, audio/video (MA19). */
-  durationSec?: number;
 }
 
 export interface ToolContext {
@@ -72,7 +72,7 @@ export interface ToolDefinition<F = ToolOptions> {
   optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
   /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */
   blockReason?: (form: F, ctx?: ToolContext) => string | null;
-  /** Per-mode web slug (MA19/MA18); falls back to the static `analyticsSlug`. */
+  /** Per-mode web slug (MA18/MA19); falls back to the static `analyticsSlug`. */
   analyticsSlugFor?: (form: F, ctx?: ToolContext) => string;
   Form: ComponentType<ToolFormProps<F>>;
   /** null only for inspect-metadata (free, synchronous). */
