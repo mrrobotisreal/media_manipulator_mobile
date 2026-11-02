@@ -187,6 +187,60 @@
         "title": "Правка метаданных",
         "description": "Измените данные, сохранённые в изображении."
       }
+    },
+    "audio": {
+      "format": "Формат вывода",
+      "sameAsOriginal": "Как в оригинале ({{format}})",
+      "bitrate": "Битрейт",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Частота дискретизации",
+      "channels": "Каналы",
+      "mono": "Моно",
+      "stereo": "Стерео",
+      "more": "Дополнительно",
+      "trim": {
+        "fadeIn": "Плавное появление",
+        "fadeOut": "Плавное затухание",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Выберите хотя бы один эффект",
+        "speed": "Скорость",
+        "volume": "Громкость",
+        "pitch": "Высота тона",
+        "normalize": "Нормализовать громкость",
+        "eq": "Эквалайзер",
+        "reverb": "Реверберация",
+        "semitones_one": "{{value}} полутон",
+        "semitones_few": "{{value}} полутона",
+        "semitones_many": "{{value}} полутонов",
+        "semitones_other": "{{value}} полутона",
+        "eqPreset": {
+          "bass-boost": "Усиление басов",
+          "treble-boost": "Усиление высоких",
+          "vocal": "Вокал",
+          "classical": "Классика",
+          "rock": "Рок",
+          "jazz": "Джаз"
+        },
+        "reverbType": {
+          "room": "Комната",
+          "hall": "Зал",
+          "plate": "Пластина",
+          "spring": "Пружина"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Видео",
+          "image": "Изображение",
+          "both": "Оба (ZIP)"
+        },
+        "size": "Размер",
+        "planLimit": "До {{limit}}p на вашем тарифе.",
+        "colors": "Цвета",
+        "swatch": "Цвет {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +588,21 @@
     },
     "ok": "OK",
     "seeAll": "Все лимиты"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "Загрузка аудио",
+      "start": "Начало",
+      "end": "Конец",
+      "length": "Выбрано: {{length}}"
+    },
+    "audio": {
+      "playSelection": "Воспроизвести выделенное",
+      "pause": "Пауза"
+    },
+    "controls": {
+      "decrease": "Уменьшить",
+      "increase": "Увеличить"
+    }
   }
 }

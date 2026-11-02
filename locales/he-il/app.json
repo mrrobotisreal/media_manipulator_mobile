@@ -187,6 +187,59 @@
         "title": "עריכת מטא־דאטה",
         "description": "שינוי הפרטים השמורים בתמונה."
       }
+    },
+    "audio": {
+      "format": "פורמט פלט",
+      "sameAsOriginal": "כמו המקור ({{format}})",
+      "bitrate": "קצב סיביות",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "קצב דגימה",
+      "channels": "ערוצים",
+      "mono": "מונו",
+      "stereo": "סטריאו",
+      "more": "אפשרויות נוספות",
+      "trim": {
+        "fadeIn": "הדהיה פנימה",
+        "fadeOut": "הדהיה החוצה",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "בחר לפחות אפקט אחד",
+        "speed": "מהירות",
+        "volume": "עוצמת שמע",
+        "pitch": "גובה צליל",
+        "normalize": "נרמול עוצמת שמע",
+        "eq": "אקולייזר",
+        "reverb": "הדהוד",
+        "semitones_one": "חצי טון {{value}}",
+        "semitones_two": "{{value}} חצאי טון",
+        "semitones_other": "{{value}} חצאי טון",
+        "eqPreset": {
+          "bass-boost": "הגברת בס",
+          "treble-boost": "הגברת צלילים גבוהים",
+          "vocal": "שירה",
+          "classical": "קלאסי",
+          "rock": "רוק",
+          "jazz": "ג׳אז"
+        },
+        "reverbType": {
+          "room": "חדר",
+          "hall": "אולם",
+          "plate": "פלייט",
+          "spring": "קפיץ"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "וידאו",
+          "image": "תמונה",
+          "both": "שניהם (ZIP)"
+        },
+        "size": "גודל",
+        "planLimit": "עד {{limit}}p בתוכנית שלך.",
+        "colors": "צבעים",
+        "swatch": "צבע {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +587,21 @@
     },
     "ok": "OK",
     "seeAll": "הצגת כל המגבלות"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "טוען אודיו",
+      "start": "התחלה",
+      "end": "סיום",
+      "length": "נבחרו {{length}}"
+    },
+    "audio": {
+      "playSelection": "נגן את הבחירה",
+      "pause": "השהה"
+    },
+    "controls": {
+      "decrease": "הקטן",
+      "increase": "הגדל"
+    }
   }
 }

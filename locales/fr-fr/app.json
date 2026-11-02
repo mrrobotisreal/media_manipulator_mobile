@@ -187,6 +187,59 @@
         "title": "Modifier les métadonnées",
         "description": "Changez les détails enregistrés dans une image."
       }
+    },
+    "audio": {
+      "format": "Format de sortie",
+      "sameAsOriginal": "Identique à l’original ({{format}})",
+      "bitrate": "Débit binaire",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Fréquence d’échantillonnage",
+      "channels": "Canaux",
+      "mono": "Mono",
+      "stereo": "Stéréo",
+      "more": "Plus d’options",
+      "trim": {
+        "fadeIn": "Fondu en entrée",
+        "fadeOut": "Fondu en sortie",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Choisissez au moins un effet",
+        "speed": "Vitesse",
+        "volume": "Volume",
+        "pitch": "Hauteur",
+        "normalize": "Normaliser le volume sonore",
+        "eq": "Égaliseur",
+        "reverb": "Réverbération",
+        "semitones_one": "{{value}} demi-ton",
+        "semitones_many": "{{value}} de demi-tons",
+        "semitones_other": "{{value}} demi-tons",
+        "eqPreset": {
+          "bass-boost": "Renforcement des basses",
+          "treble-boost": "Renforcement des aigus",
+          "vocal": "Voix",
+          "classical": "Classique",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Pièce",
+          "hall": "Salle",
+          "plate": "Plaque",
+          "spring": "Ressort"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Vidéo",
+          "image": "Image",
+          "both": "Les deux (ZIP)"
+        },
+        "size": "Taille",
+        "planLimit": "Jusqu’à {{limit}}p avec votre forfait.",
+        "colors": "Couleurs",
+        "swatch": "Couleur {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +587,21 @@
     },
     "ok": "OK",
     "seeAll": "Voir toutes les limites"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "Chargement de l’audio",
+      "start": "Début",
+      "end": "Fin",
+      "length": "{{length}} sélectionnées"
+    },
+    "audio": {
+      "playSelection": "Lire la sélection",
+      "pause": "Pause"
+    },
+    "controls": {
+      "decrease": "Diminuer",
+      "increase": "Augmenter"
+    }
   }
 }

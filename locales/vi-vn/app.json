@@ -187,6 +187,57 @@
         "title": "Sửa metadata",
         "description": "Thay đổi thông tin lưu trong ảnh."
       }
+    },
+    "audio": {
+      "format": "Định dạng đầu ra",
+      "sameAsOriginal": "Giống bản gốc ({{format}})",
+      "bitrate": "Bitrate",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Tần số lấy mẫu",
+      "channels": "Kênh",
+      "mono": "Mono",
+      "stereo": "Stereo",
+      "more": "Tùy chọn khác",
+      "trim": {
+        "fadeIn": "Mờ dần vào",
+        "fadeOut": "Mờ dần ra",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Chọn ít nhất một hiệu ứng",
+        "speed": "Tốc độ",
+        "volume": "Âm lượng",
+        "pitch": "Cao độ",
+        "normalize": "Chuẩn hóa độ lớn",
+        "eq": "Bộ cân bằng âm",
+        "reverb": "Vang",
+        "semitones_other": "{{value}} cung nửa",
+        "eqPreset": {
+          "bass-boost": "Tăng âm trầm",
+          "treble-boost": "Tăng âm cao",
+          "vocal": "Giọng hát",
+          "classical": "Cổ điển",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Phòng",
+          "hall": "Hội trường",
+          "plate": "Plate",
+          "spring": "Lò xo"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Video",
+          "image": "Hình ảnh",
+          "both": "Cả hai (ZIP)"
+        },
+        "size": "Kích thước",
+        "planLimit": "Tối đa {{limit}}p với gói của bạn.",
+        "colors": "Màu sắc",
+        "swatch": "Màu {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +585,21 @@
     },
     "ok": "OK",
     "seeAll": "Xem tất cả giới hạn"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "Đang tải âm thanh",
+      "start": "Bắt đầu",
+      "end": "Kết thúc",
+      "length": "Đã chọn {{length}}"
+    },
+    "audio": {
+      "playSelection": "Phát đoạn đã chọn",
+      "pause": "Tạm dừng"
+    },
+    "controls": {
+      "decrease": "Giảm",
+      "increase": "Tăng"
+    }
   }
 }

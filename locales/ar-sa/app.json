@@ -187,6 +187,62 @@
         "title": "تعديل البيانات الوصفية",
         "description": "غيّر التفاصيل المخزنة في الصورة."
       }
+    },
+    "audio": {
+      "format": "صيغة الإخراج",
+      "sameAsOriginal": "مثل الأصل ({{format}})",
+      "bitrate": "معدل البت",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "معدل العينة",
+      "channels": "القنوات",
+      "mono": "أحادي",
+      "stereo": "ستيريو",
+      "more": "مزيد من الخيارات",
+      "trim": {
+        "fadeIn": "تلاشي تدريجي للبداية",
+        "fadeOut": "تلاشي تدريجي للنهاية",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "اختر تأثيرًا واحدًا على الأقل",
+        "speed": "السرعة",
+        "volume": "مستوى الصوت",
+        "pitch": "طبقة الصوت",
+        "normalize": "تسوية مستوى الصوت",
+        "eq": "المعادل الصوتي",
+        "reverb": "صدى",
+        "semitones_zero": "{{value}} نصف نغمة",
+        "semitones_one": "{{value}} نصف نغمة",
+        "semitones_two": "{{value}} نصف نغمة",
+        "semitones_few": "{{value}} أنصاف نغمات",
+        "semitones_many": "{{value}} نصف نغمة",
+        "semitones_other": "{{value}} نصف نغمة",
+        "eqPreset": {
+          "bass-boost": "تعزيز الجهير",
+          "treble-boost": "تعزيز الحاد",
+          "vocal": "صوت بشري",
+          "classical": "كلاسيكي",
+          "rock": "روك",
+          "jazz": "جاز"
+        },
+        "reverbType": {
+          "room": "غرفة",
+          "hall": "قاعة",
+          "plate": "صفيحة",
+          "spring": "نابض"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "فيديو",
+          "image": "صورة",
+          "both": "كلاهما (ZIP)"
+        },
+        "size": "الحجم",
+        "planLimit": "حتى {{limit}}p في خطتك.",
+        "colors": "الألوان",
+        "swatch": "اللون {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +590,21 @@
     },
     "ok": "OK",
     "seeAll": "عرض كل الحدود"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "جارٍ تحميل الصوت",
+      "start": "البداية",
+      "end": "النهاية",
+      "length": "تم تحديد {{length}}"
+    },
+    "audio": {
+      "playSelection": "تشغيل المقطع المحدد",
+      "pause": "إيقاف مؤقت"
+    },
+    "controls": {
+      "decrease": "تقليل",
+      "increase": "زيادة"
+    }
   }
 }

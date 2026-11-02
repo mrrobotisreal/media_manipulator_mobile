@@ -187,6 +187,57 @@
         "title": "編輯中繼資料",
         "description": "更改圖片中儲存的資訊。"
       }
+    },
+    "audio": {
+      "format": "輸出格式",
+      "sameAsOriginal": "與原始檔案相同（{{format}}）",
+      "bitrate": "位元率",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "取樣率",
+      "channels": "聲道",
+      "mono": "單聲道",
+      "stereo": "立體聲",
+      "more": "更多選項",
+      "trim": {
+        "fadeIn": "淡入",
+        "fadeOut": "淡出",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "請至少選擇一種效果",
+        "speed": "速度",
+        "volume": "音量",
+        "pitch": "音高",
+        "normalize": "響度標準化",
+        "eq": "等化器",
+        "reverb": "殘響",
+        "semitones_other": "{{value}} 個半音",
+        "eqPreset": {
+          "bass-boost": "低音增強",
+          "treble-boost": "高音增強",
+          "vocal": "人聲",
+          "classical": "古典",
+          "rock": "搖滾",
+          "jazz": "爵士"
+        },
+        "reverbType": {
+          "room": "房間",
+          "hall": "大廳",
+          "plate": "板式",
+          "spring": "彈簧"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "影片",
+          "image": "圖片",
+          "both": "兩者（ZIP）"
+        },
+        "size": "尺寸",
+        "planLimit": "您的方案最高支援 {{limit}}p。",
+        "colors": "顏色",
+        "swatch": "顏色 {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +585,21 @@
     },
     "ok": "OK",
     "seeAll": "查看所有限額"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "正在載入音訊",
+      "start": "開始",
+      "end": "結束",
+      "length": "已選取 {{length}}"
+    },
+    "audio": {
+      "playSelection": "播放選取範圍",
+      "pause": "暫停"
+    },
+    "controls": {
+      "decrease": "減少",
+      "increase": "增加"
+    }
   }
 }

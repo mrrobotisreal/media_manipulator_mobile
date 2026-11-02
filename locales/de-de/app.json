@@ -187,6 +187,58 @@
         "title": "Metadaten bearbeiten",
         "description": "Im Bild gespeicherte Details ändern."
       }
+    },
+    "audio": {
+      "format": "Ausgabeformat",
+      "sameAsOriginal": "Wie Original ({{format}})",
+      "bitrate": "Bitrate",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "Abtastrate",
+      "channels": "Kanäle",
+      "mono": "Mono",
+      "stereo": "Stereo",
+      "more": "Weitere Optionen",
+      "trim": {
+        "fadeIn": "Einblenden",
+        "fadeOut": "Ausblenden",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "Wähle mindestens einen Effekt",
+        "speed": "Geschwindigkeit",
+        "volume": "Lautstärke",
+        "pitch": "Tonhöhe",
+        "normalize": "Lautheit normalisieren",
+        "eq": "Equalizer",
+        "reverb": "Hall",
+        "semitones_one": "{{value}} Halbton",
+        "semitones_other": "{{value}} Halbtöne",
+        "eqPreset": {
+          "bass-boost": "Bass verstärken",
+          "treble-boost": "Höhen verstärken",
+          "vocal": "Gesang",
+          "classical": "Klassik",
+          "rock": "Rock",
+          "jazz": "Jazz"
+        },
+        "reverbType": {
+          "room": "Raum",
+          "hall": "Halle",
+          "plate": "Platte",
+          "spring": "Feder"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "Video",
+          "image": "Bild",
+          "both": "Beides (ZIP)"
+        },
+        "size": "Größe",
+        "planLimit": "Bis zu {{limit}}p in deinem Tarif.",
+        "colors": "Farben",
+        "swatch": "Farbe {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +586,21 @@
     },
     "ok": "OK",
     "seeAll": "Alle Limits ansehen"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "Audio wird geladen",
+      "start": "Start",
+      "end": "Ende",
+      "length": "{{length}} ausgewählt"
+    },
+    "audio": {
+      "playSelection": "Auswahl abspielen",
+      "pause": "Pause"
+    },
+    "controls": {
+      "decrease": "Verringern",
+      "increase": "Erhöhen"
+    }
   }
 }

@@ -187,6 +187,57 @@
         "title": "메타데이터 편집",
         "description": "이미지에 저장된 정보를 변경합니다."
       }
+    },
+    "audio": {
+      "format": "출력 형식",
+      "sameAsOriginal": "원본과 동일 ({{format}})",
+      "bitrate": "비트레이트",
+      "bitrateValue": "{{kbps}} kbps",
+      "sampleRate": "샘플 레이트",
+      "channels": "채널",
+      "mono": "모노",
+      "stereo": "스테레오",
+      "more": "옵션 더 보기",
+      "trim": {
+        "fadeIn": "페이드 인",
+        "fadeOut": "페이드 아웃",
+        "seconds": "{{value}} s"
+      },
+      "effects": {
+        "pick": "효과를 하나 이상 선택하세요",
+        "speed": "속도",
+        "volume": "볼륨",
+        "pitch": "피치",
+        "normalize": "음량 평준화",
+        "eq": "이퀄라이저",
+        "reverb": "리버브",
+        "semitones_other": "{{value}}반음",
+        "eqPreset": {
+          "bass-boost": "베이스 부스트",
+          "treble-boost": "트레블 부스트",
+          "vocal": "보컬",
+          "classical": "클래식",
+          "rock": "록",
+          "jazz": "재즈"
+        },
+        "reverbType": {
+          "room": "룸",
+          "hall": "홀",
+          "plate": "플레이트",
+          "spring": "스프링"
+        }
+      },
+      "waveform": {
+        "output": {
+          "video": "동영상",
+          "image": "이미지",
+          "both": "둘 다 (ZIP)"
+        },
+        "size": "크기",
+        "planLimit": "현재 요금제에서 최대 {{limit}}p까지 가능합니다.",
+        "colors": "색상",
+        "swatch": "색상 {{hex}}"
+      }
     }
   },
   "tool": {
@@ -534,5 +585,21 @@
     },
     "ok": "OK",
     "seeAll": "모든 한도 보기"
+  },
+  "toolUi": {
+    "range": {
+      "loading": "오디오 불러오는 중",
+      "start": "시작",
+      "end": "종료",
+      "length": "{{length}} 선택됨"
+    },
+    "audio": {
+      "playSelection": "선택 구간 재생",
+      "pause": "일시정지"
+    },
+    "controls": {
+      "decrease": "줄이기",
+      "increase": "늘리기"
+    }
   }
 }
