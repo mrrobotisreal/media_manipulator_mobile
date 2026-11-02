@@ -21,7 +21,7 @@ export function useJob(id: string | undefined): JobRecord | undefined {
 export function useBatchPosition(record: JobRecord | undefined): { index: number; count: number } {
   // Select primitives (a fresh object per call re-renders on every store change), then pair them.
   const position = useAppSelector((s) => batchPosition(s.jobs.order, s.jobs.byLocalId, record));
-  const [index, count] = position.split('/').map(Number);
+  const [index = 1, count = 1] = position.split('/').map(Number);
   return useMemo(() => ({ index, count }), [index, count]);
 }
 
