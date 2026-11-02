@@ -73,6 +73,10 @@ export interface ToolDefinition<F = ToolOptions> {
   defaults: F;
   /** MA10 ships identity builders (operation-identifying keys on web defaults); MA17-MA21 replace them. */
   optionsBuilder: (form: F, ctx?: ToolContext) => ToolOptions;
+  /** Additive (MA20): async step run before the options are built (face re-detect after the session expired). */
+  prepare?: (form: F, ctx?: ToolContext) => Promise<F>;
+  /** Additive (MA20): limits the server enforces for this tool, shown plainly on the form. */
+  serverLimits?: { maxSeconds?: number; maxHeight?: number };
   /** Additive (MA17): a reason code when Run must stay disabled for this form state; null/absent = runnable. */
   blockReason?: (form: F, ctx?: ToolContext) => string | null;
   /** Per-mode web slug (MA18/MA19); falls back to the static `analyticsSlug`. */

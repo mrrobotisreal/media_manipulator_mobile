@@ -468,6 +468,45 @@
         "colors": "颜色",
         "swatch": "颜色 {{hex}}"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "查找人脸",
+        "finding": "正在查找人脸…",
+        "refind": "重新查找",
+        "found_other": "找到 {{count}} 张人脸",
+        "none": "未找到人脸。处理时检测到的所有人脸仍会被遮盖。",
+        "tapHint": "点按人脸进行选择",
+        "selectAll": "全选",
+        "clear": "清除",
+        "a11yFace": "人脸 {{index}}，{{state}}",
+        "selected": "已选择",
+        "notSelected": "未选择",
+        "expiredRedetect": "人脸已过期，正在重新查找…",
+        "detectFailed": "暂时无法查找人脸。请重试，或使用全部人脸。",
+        "needDetection": "请先查找人脸，再选择要遮盖的人脸。",
+        "pickSome": "请至少点按一张要遮盖的人脸。"
+      },
+      "rects": {
+        "hint": "在要移除的对象上拖动框选。对象较多时可添加更多框。",
+        "needOne": "请在对象上至少画一个框",
+        "delete": "删除框",
+        "clearAll": "全部清除",
+        "count_other": "{{count}} 个框"
+      },
+      "stem": {
+        "sameAs": "与原文件相同（{{format}}）"
+      },
+      "interp": {
+        "limits": "片段最长 {{seconds}} 秒；最高以 {{height}}p 处理。",
+        "tooLong": "此片段时长为 {{duration}}。AI 插帧支持最长 {{seconds}} 秒的片段，请先裁剪。"
+      }
+    },
+    "transcribe": {
+      "language": "语音语言",
+      "auto": "自动检测",
+      "other": "其他语言",
+      "otherHint": "两位或三位字母代码，例如“pl”"
     }
   },
   "tool": {
@@ -696,6 +735,28 @@
       "card": {
         "title": "文件元数据"
       }
+    },
+    "transcript": {
+      "copyAll": "全部复制",
+      "copied": "已复制",
+      "export": "导出",
+      "exportAs": "导出为 {{format}}",
+      "search": "搜索转录文本",
+      "noMatches": "没有匹配的行",
+      "summaryTitle": "AI 摘要",
+      "summaryRunning": "正在生成摘要…",
+      "summaryUnavailable": "摘要不可用",
+      "topics": "主题",
+      "keywords": "关键词",
+      "unavailable": "此任务的转录文本不可用。",
+      "empty": "没有转录文本。",
+      "cues_other": "{{count}} 行",
+      "language": "语言",
+      "duration": "时长",
+      "exportFailed": "无法导出转录文本。",
+      "tooLarge": "此字幕文件太大，无法显示。请保存后在其他应用中打开。",
+      "safety": "安全性",
+      "sentiment": "情感倾向"
     }
   },
   "actions": {

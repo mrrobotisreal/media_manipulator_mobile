@@ -468,6 +468,45 @@
         "colors": "Màu sắc",
         "swatch": "Màu {{hex}}"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Tìm khuôn mặt",
+        "finding": "Đang tìm khuôn mặt…",
+        "refind": "Tìm lại",
+        "found_other": "Tìm thấy {{count}} khuôn mặt",
+        "none": "Không tìm thấy khuôn mặt nào. Mọi khuôn mặt phát hiện được khi xử lý vẫn sẽ được che.",
+        "tapHint": "Chạm vào khuôn mặt để chọn",
+        "selectAll": "Chọn tất cả",
+        "clear": "Bỏ chọn",
+        "a11yFace": "Khuôn mặt {{index}}, {{state}}",
+        "selected": "đã chọn",
+        "notSelected": "chưa chọn",
+        "expiredRedetect": "Dữ liệu khuôn mặt đã hết hạn; đang tìm lại…",
+        "detectFailed": "Hiện chưa thể tìm khuôn mặt. Hãy thử lại hoặc dùng tất cả khuôn mặt.",
+        "needDetection": "Hãy tìm khuôn mặt trước để chọn khuôn mặt cần che.",
+        "pickSome": "Chạm vào ít nhất một khuôn mặt để che."
+      },
+      "rects": {
+        "hint": "Kéo qua đối tượng cần xóa. Thêm khung nếu có nhiều đối tượng.",
+        "needOne": "Vẽ ít nhất một khung quanh đối tượng",
+        "delete": "Xóa khung",
+        "clearAll": "Xóa tất cả",
+        "count_other": "{{count}} khung"
+      },
+      "stem": {
+        "sameAs": "Giống bản gốc ({{format}})"
+      },
+      "interp": {
+        "limits": "Clip dài tối đa {{seconds}} s; xử lý ở độ phân giải tối đa {{height}}p.",
+        "tooLong": "Clip này dài {{duration}}. Nội suy khung hình AI hỗ trợ clip dài tối đa {{seconds}} s — hãy cắt bớt trước."
+      }
+    },
+    "transcribe": {
+      "language": "Ngôn ngữ nói",
+      "auto": "Tự động nhận diện",
+      "other": "Ngôn ngữ khác",
+      "otherHint": "Mã hai hoặc ba chữ cái, ví dụ \"pl\""
     }
   },
   "tool": {
@@ -696,6 +735,28 @@
       "card": {
         "title": "Siêu dữ liệu tệp"
       }
+    },
+    "transcript": {
+      "copyAll": "Sao chép tất cả",
+      "copied": "Đã sao chép",
+      "export": "Xuất",
+      "exportAs": "Xuất dưới dạng {{format}}",
+      "search": "Tìm trong bản ghi",
+      "noMatches": "Không có dòng nào khớp",
+      "summaryTitle": "Tóm tắt AI",
+      "summaryRunning": "Đang viết bản tóm tắt…",
+      "summaryUnavailable": "Không có bản tóm tắt",
+      "topics": "Chủ đề",
+      "keywords": "Từ khóa",
+      "unavailable": "Không có bản ghi cho tác vụ này.",
+      "empty": "Không có nội dung bản ghi.",
+      "cues_other": "{{count}} dòng",
+      "language": "Ngôn ngữ",
+      "duration": "Thời lượng",
+      "exportFailed": "Không thể xuất bản ghi.",
+      "tooLarge": "Tệp phụ đề này quá lớn để hiển thị. Hãy lưu để mở ở nơi khác.",
+      "safety": "An toàn",
+      "sentiment": "Cảm xúc"
     }
   },
   "actions": {

@@ -471,6 +471,47 @@
         "colors": "Farben",
         "swatch": "Farbe {{hex}}"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Gesichter finden",
+        "finding": "Gesichter werden gesucht…",
+        "refind": "Erneut suchen",
+        "none": "Keine Gesichter gefunden. Alle Gesichter, die wir bei der Verarbeitung erkennen, werden trotzdem verdeckt.",
+        "tapHint": "Tippe auf Gesichter, um sie auszuwählen",
+        "selectAll": "Alle auswählen",
+        "clear": "Zurücksetzen",
+        "a11yFace": "Gesicht {{index}}, {{state}}",
+        "selected": "ausgewählt",
+        "notSelected": "nicht ausgewählt",
+        "expiredRedetect": "Gesichter abgelaufen; sie werden erneut gesucht…",
+        "detectFailed": "Gesichter konnten gerade nicht gefunden werden. Versuche es erneut oder nutze alle Gesichter.",
+        "needDetection": "Finde zuerst Gesichter, um auszuwählen, welche verdeckt werden.",
+        "pickSome": "Tippe auf mindestens ein Gesicht, das verdeckt werden soll.",
+        "found_one": "{{count}} Gesicht gefunden",
+        "found_other": "{{count}} Gesichter gefunden"
+      },
+      "rects": {
+        "hint": "Ziehe über das Objekt, das entfernt werden soll. Füge weitere Rahmen für weitere Objekte hinzu.",
+        "needOne": "Zeichne mindestens einen Rahmen um das Objekt",
+        "delete": "Rahmen löschen",
+        "clearAll": "Alle löschen",
+        "count_one": "{{count}} Rahmen",
+        "count_other": "{{count}} Rahmen"
+      },
+      "stem": {
+        "sameAs": "Wie das Original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clips bis {{seconds}} s; verarbeitet mit bis zu {{height}}p.",
+        "tooLong": "Dieser Clip ist {{duration}} lang. Die KI-Bildinterpolation akzeptiert Clips bis {{seconds}} s — kürze ihn zuerst."
+      }
+    },
+    "transcribe": {
+      "language": "Gesprochene Sprache",
+      "auto": "Automatisch erkennen",
+      "other": "Andere Sprache",
+      "otherHint": "Zwei- oder dreistelliger Code, z. B. \"pl\""
     }
   },
   "tool": {
@@ -699,6 +740,29 @@
       "card": {
         "title": "Dateimetadaten"
       }
+    },
+    "transcript": {
+      "copyAll": "Alles kopieren",
+      "copied": "Kopiert",
+      "export": "Exportieren",
+      "exportAs": "Als {{format}} exportieren",
+      "search": "Im Transkript suchen",
+      "noMatches": "Keine passenden Zeilen",
+      "summaryTitle": "KI-Zusammenfassung",
+      "summaryRunning": "Zusammenfassung wird geschrieben…",
+      "summaryUnavailable": "Zusammenfassung nicht verfügbar",
+      "topics": "Themen",
+      "keywords": "Schlüsselwörter",
+      "unavailable": "Das Transkript ist für diesen Auftrag nicht verfügbar.",
+      "empty": "Kein Transkripttext.",
+      "language": "Sprache",
+      "duration": "Dauer",
+      "exportFailed": "Das Transkript konnte nicht exportiert werden.",
+      "tooLarge": "Diese Untertiteldatei ist zu groß für die Anzeige. Speichere sie, um sie woanders zu öffnen.",
+      "safety": "Sicherheit",
+      "sentiment": "Stimmung",
+      "cues_one": "{{count}} Zeile",
+      "cues_other": "{{count}} Zeilen"
     }
   },
   "actions": {

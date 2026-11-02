@@ -96,15 +96,28 @@ function ToolScreen({
     setContext({ tool_slug: slug });
   }, [slug]);
 
-  const start = useCallback(() => {
+  const [starting, setStarting] = useState(false);
+  const start = useCallback(async () => {
     if (files.length === 0 || blocked) return;
-    const runTool = { ...tool, analyticsSlug: slug };
-    const ids = getJobEngine().startJobs(
-      files.map((file) => ({ tool: runTool, file, options: tool.optionsBuilder(form, ctx) })),
-    );
-    const firstId = ids[0];
-    if (firstId) router.push(`/(app)/job/${firstId}`);
-  }, [files, tool, form, ctx, blocked, slug]);
+    setStarting(true);
+    try {
+      // MA20: a tool may need an async step first (face re-detect when its session expired).
+      const ready = tool.prepare ? await tool.prepare(form, ctx) : form;
+      const runTool = {
+        ...tool,
+        analyticsSlug: tool.analyticsSlugFor
+          ? tool.analyticsSlugFor(ready, ctx)
+          : tool.analyticsSlug,
+      };
+      const ids = getJobEngine().startJobs(
+        files.map((file) => ({ tool: runTool, file, options: tool.optionsBuilder(ready, ctx) })),
+      );
+      const firstId = ids[0];
+      if (firstId) router.push(`/(app)/job/${firstId}`);
+    } finally {
+      setStarting(false);
+    }
+  }, [files, tool, form, ctx, blocked]);
 
   useEffect(() => {
     dispatch(toolOpened(tool.id));
@@ -131,7 +144,8 @@ function ToolScreen({
           <Button
             label={t(tool.startLabelKey ?? 'tool.start')}
             disabled={files.length === 0 || blocked !== null}
-            onPress={start}
+            loading={starting}
+            onPress={() => void start()}
           />
         )}
       </ScrollView>

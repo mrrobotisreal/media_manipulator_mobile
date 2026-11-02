@@ -474,6 +474,49 @@
         "colors": "Cores",
         "swatch": "Cor {{hex}}"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Encontrar rostos",
+        "finding": "Procurando rostos…",
+        "refind": "Procurar de novo",
+        "found_one": "{{count}} rosto encontrado",
+        "found_many": "{{count}} rostos encontrados",
+        "found_other": "{{count}} rostos encontrados",
+        "none": "Nenhum rosto encontrado. Os que detectarmos no processamento ainda serão cobertos.",
+        "tapHint": "Toque nos rostos para escolhê-los",
+        "selectAll": "Selecionar tudo",
+        "clear": "Limpar seleção",
+        "a11yFace": "Rosto {{index}}, {{state}}",
+        "selected": "selecionado",
+        "notSelected": "não selecionado",
+        "expiredRedetect": "Os rostos expiraram; procurando de novo…",
+        "detectFailed": "Não conseguimos encontrar rostos agora. Tente de novo ou use todos os rostos.",
+        "needDetection": "Primeiro encontre os rostos para escolher quais cobrir.",
+        "pickSome": "Toque em pelo menos um rosto para cobrir."
+      },
+      "rects": {
+        "hint": "Arraste sobre o objeto a remover. Adicione mais caixas para mais objetos.",
+        "needOne": "Desenhe pelo menos uma caixa sobre o objeto",
+        "delete": "Excluir caixa",
+        "clearAll": "Limpar tudo",
+        "count_one": "{{count}} caixa",
+        "count_many": "{{count}} caixas",
+        "count_other": "{{count}} caixas"
+      },
+      "stem": {
+        "sameAs": "Igual ao original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clipes de até {{seconds}} s; processados em até {{height}}p.",
+        "tooLong": "Este clipe tem {{duration}}. A interpolação de quadros com IA aceita clipes de até {{seconds}} s — corte-o primeiro."
+      }
+    },
+    "transcribe": {
+      "language": "Idioma falado",
+      "auto": "Detectar automaticamente",
+      "other": "Outro idioma",
+      "otherHint": "Código de duas ou três letras, ex.: \"pl\""
     }
   },
   "tool": {
@@ -702,6 +745,30 @@
       "card": {
         "title": "Metadados do arquivo"
       }
+    },
+    "transcript": {
+      "copyAll": "Copiar tudo",
+      "copied": "Copiado",
+      "export": "Exportar",
+      "exportAs": "Exportar como {{format}}",
+      "search": "Pesquisar na transcrição",
+      "noMatches": "Nenhuma linha correspondente",
+      "summaryTitle": "Resumo com IA",
+      "summaryRunning": "Escrevendo o resumo…",
+      "summaryUnavailable": "Resumo indisponível",
+      "topics": "Tópicos",
+      "keywords": "Palavras-chave",
+      "unavailable": "A transcrição não está disponível para este trabalho.",
+      "empty": "Sem texto de transcrição.",
+      "cues_one": "{{count}} linha",
+      "cues_many": "{{count}} linhas",
+      "cues_other": "{{count}} linhas",
+      "language": "Idioma",
+      "duration": "Duração",
+      "exportFailed": "Não foi possível exportar a transcrição.",
+      "tooLarge": "Este arquivo de legendas é grande demais para exibir. Salve-o para abrir em outro lugar.",
+      "safety": "Segurança",
+      "sentiment": "Sentimento"
     }
   },
   "actions": {

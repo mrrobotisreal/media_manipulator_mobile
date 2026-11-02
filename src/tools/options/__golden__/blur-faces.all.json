@@ -1,0 +1,13 @@
+{
+  "format": "jpg",
+  "quality": 85,
+  "filter": "none",
+  "ai": {
+    "enabled": true,
+    "operation": "face_privacy",
+    "faceMode": "blur",
+    "faceSelection": {
+      "selectionMode": "all"
+    }
+  }
+}

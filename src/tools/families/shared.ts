@@ -157,7 +157,7 @@ export function row(input: RowInput): AnyToolDefinition {
     keywords: [...new Set([...input.keywords.flatMap(kebabWords)])],
     optionsBuilder: (form: ToolOptions) => ({ ...form }),
     Form: DefaultsForm,
-    // gpu rule (proposed): AI-family rows that spend ai_ops.
-    gpu: input.family === 'ai' && input.metric === 'ai_ops',
+    // gpu rule (MA20 decision 1): every AI-family row runs on the GPU server.
+    gpu: input.family === 'ai',
   };
 }

@@ -468,6 +468,45 @@
         "colors": "색상",
         "swatch": "색상 {{hex}}"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "얼굴 찾기",
+        "finding": "얼굴을 찾는 중…",
+        "refind": "다시 찾기",
+        "found_other": "얼굴 {{count}}개 발견",
+        "none": "얼굴을 찾지 못했어요. 처리 중 감지되는 얼굴은 모두 가려져요.",
+        "tapHint": "얼굴을 탭해서 선택하세요",
+        "selectAll": "모두 선택",
+        "clear": "지우기",
+        "a11yFace": "얼굴 {{index}}, {{state}}",
+        "selected": "선택됨",
+        "notSelected": "선택 안 됨",
+        "expiredRedetect": "얼굴 정보가 만료되었어요. 다시 찾는 중…",
+        "detectFailed": "지금은 얼굴을 찾을 수 없어요. 다시 시도하거나 모든 얼굴을 사용하세요.",
+        "needDetection": "먼저 얼굴을 찾아서 가릴 얼굴을 선택하세요.",
+        "pickSome": "가릴 얼굴을 하나 이상 탭하세요."
+      },
+      "rects": {
+        "hint": "제거할 객체 위로 드래그하세요. 객체가 더 있으면 상자를 추가하세요.",
+        "needOne": "객체 위에 상자를 하나 이상 그리세요",
+        "delete": "상자 삭제",
+        "clearAll": "모두 지우기",
+        "count_other": "상자 {{count}}개"
+      },
+      "stem": {
+        "sameAs": "원본과 동일 ({{format}})"
+      },
+      "interp": {
+        "limits": "최대 {{seconds}} 초 클립, 최대 {{height}}p로 처리돼요.",
+        "tooLong": "이 클립은 {{duration}}이에요. AI 프레임 보간은 최대 {{seconds}} 초 클립만 지원해요. 먼저 잘라 주세요."
+      }
+    },
+    "transcribe": {
+      "language": "음성 언어",
+      "auto": "자동 감지",
+      "other": "다른 언어",
+      "otherHint": "두세 글자 코드 (예: \"pl\")"
     }
   },
   "tool": {
@@ -696,6 +735,28 @@
       "card": {
         "title": "파일 메타데이터"
       }
+    },
+    "transcript": {
+      "copyAll": "모두 복사",
+      "copied": "복사됨",
+      "export": "내보내기",
+      "exportAs": "{{format}}(으)로 내보내기",
+      "search": "스크립트 검색",
+      "noMatches": "일치하는 줄이 없어요",
+      "summaryTitle": "AI 요약",
+      "summaryRunning": "요약을 작성하는 중…",
+      "summaryUnavailable": "요약을 사용할 수 없어요",
+      "topics": "주제",
+      "keywords": "키워드",
+      "unavailable": "이 작업의 스크립트를 사용할 수 없어요.",
+      "empty": "스크립트 텍스트가 없어요.",
+      "cues_other": "{{count}}줄",
+      "language": "언어",
+      "duration": "길이",
+      "exportFailed": "스크립트를 내보내지 못했어요.",
+      "tooLarge": "이 자막 파일은 너무 커서 표시할 수 없어요. 저장해서 다른 곳에서 열어 보세요.",
+      "safety": "안전성",
+      "sentiment": "감정"
     }
   },
   "actions": {

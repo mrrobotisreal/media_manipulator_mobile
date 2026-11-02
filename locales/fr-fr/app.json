@@ -474,6 +474,49 @@
         "colors": "Couleurs",
         "swatch": "Couleur {{hex}}"
       }
+    },
+    "ai": {
+      "faces": {
+        "find": "Trouver les visages",
+        "finding": "Recherche des visages…",
+        "refind": "Chercher à nouveau",
+        "found_one": "{{count}} visage trouvé",
+        "found_many": "{{count}} visages trouvés",
+        "found_other": "{{count}} visages trouvés",
+        "none": "Aucun visage trouvé. Ceux que nous détectons pendant le traitement seront quand même masqués.",
+        "tapHint": "Touchez les visages pour les choisir",
+        "selectAll": "Tout sélectionner",
+        "clear": "Effacer",
+        "a11yFace": "Visage {{index}}, {{state}}",
+        "selected": "sélectionné",
+        "notSelected": "non sélectionné",
+        "expiredRedetect": "Les visages ont expiré ; nouvelle recherche…",
+        "detectFailed": "Impossible de trouver les visages pour l'instant. Réessayez ou utilisez tous les visages.",
+        "needDetection": "Cherchez d'abord les visages pour choisir lesquels masquer.",
+        "pickSome": "Touchez au moins un visage à masquer."
+      },
+      "rects": {
+        "hint": "Faites glisser sur l'objet à supprimer. Ajoutez d'autres cadres pour d'autres objets.",
+        "needOne": "Dessinez au moins un cadre sur l'objet",
+        "delete": "Supprimer le cadre",
+        "clearAll": "Tout effacer",
+        "count_one": "{{count}} cadre",
+        "count_many": "{{count}} cadres",
+        "count_other": "{{count}} cadres"
+      },
+      "stem": {
+        "sameAs": "Identique à l'original ({{format}})"
+      },
+      "interp": {
+        "limits": "Clips jusqu'à {{seconds}} s ; traitement jusqu'à {{height}}p.",
+        "tooLong": "Ce clip dure {{duration}}. L'interpolation d'images par IA accepte les clips jusqu'à {{seconds}} s : rognez-le d'abord."
+      }
+    },
+    "transcribe": {
+      "language": "Langue parlée",
+      "auto": "Détecter automatiquement",
+      "other": "Autre langue",
+      "otherHint": "Code de deux ou trois lettres, p. ex. \"pl\""
     }
   },
   "tool": {
@@ -702,6 +745,30 @@
       "card": {
         "title": "Métadonnées du fichier"
       }
+    },
+    "transcript": {
+      "copyAll": "Tout copier",
+      "copied": "Copié",
+      "export": "Exporter",
+      "exportAs": "Exporter en {{format}}",
+      "search": "Rechercher dans la transcription",
+      "noMatches": "Aucune ligne correspondante",
+      "summaryTitle": "Résumé par IA",
+      "summaryRunning": "Rédaction du résumé…",
+      "summaryUnavailable": "Résumé indisponible",
+      "topics": "Sujets",
+      "keywords": "Mots-clés",
+      "unavailable": "La transcription n'est pas disponible pour cette tâche.",
+      "empty": "Aucun texte de transcription.",
+      "cues_one": "{{count}} ligne",
+      "cues_many": "{{count}} lignes",
+      "cues_other": "{{count}} lignes",
+      "language": "Langue",
+      "duration": "Durée",
+      "exportFailed": "Impossible d'exporter la transcription.",
+      "tooLarge": "Ce fichier de sous-titres est trop volumineux pour être affiché. Enregistrez-le pour l'ouvrir ailleurs.",
+      "safety": "Sécurité",
+      "sentiment": "Tonalité"
     }
   },
   "actions": {

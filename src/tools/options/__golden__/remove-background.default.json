@@ -1,0 +1,10 @@
+{
+  "format": "png",
+  "quality": 85,
+  "filter": "none",
+  "ai": {
+    "enabled": true,
+    "operation": "remove_background",
+    "backgroundModel": "birefnet-general"
+  }
+}

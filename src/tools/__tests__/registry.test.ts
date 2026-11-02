@@ -122,8 +122,8 @@ describe('tool registry invariants', () => {
       );
   });
 
-  it('gpu is true exactly for AI-family rows that spend ai_ops', () => {
-    for (const t of TOOLS) expect(t.gpu).toBe(t.family === 'ai' && t.metric === 'ai_ops');
+  it('gpu is true exactly for AI-family rows (MA20 decision 1)', () => {
+    for (const t of TOOLS) expect(t.gpu).toBe(t.family === 'ai');
   });
 
   it('toolsAccepting(pdf) is pdf-to-image and inspect-metadata', () => {

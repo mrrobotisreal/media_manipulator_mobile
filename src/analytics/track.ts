@@ -45,6 +45,8 @@ export type StubEventName =
   // Quota (MA16).
   | 'quota_warning_shown'
   | 'quota_exceeded_shown'
+  // AI tools (MA20). Catalog: feature_used {feature, action, value}.
+  | 'feature_used'
   // Metadata (MA21). Catalog: metadata_* in internal/catalog/catalog.go.
   | 'metadata_inspected'
   | 'metadata_section_toggled'

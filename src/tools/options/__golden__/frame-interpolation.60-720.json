@@ -1,0 +1,17 @@
+{
+  "format": "mp4",
+  "quality": "medium",
+  "speed": 1,
+  "preserveAspectRatio": true,
+  "ai": {
+    "enabled": true,
+    "operation": "frame_interpolation",
+    "frameInterpolation": {
+      "targetFps": 60,
+      "model": "rife-v4.6",
+      "quality": "medium",
+      "maxHeight": 720,
+      "preserveAudio": true
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { AudioViewer } from './AudioViewer';
 import { GifViewer } from './GifViewer';
 import { ImageViewer } from './ImageViewer';
 import { PdfViewer } from './PdfViewer';
+import { TranscriptViewer } from './TranscriptViewer';
 import { UnknownViewer } from './UnknownViewer';
 import { VideoViewer } from './VideoViewer';
 import type { ViewerProps } from './types';
@@ -12,7 +13,7 @@ import type { ViewerProps } from './types';
 export type { ViewerProps } from './types';
 
 /**
- * Mirrors the web `RESULT_VIEWERS` keys. transcript/captions (MA20), metadata (MA21) and
+ * Mirrors the web `RESULT_VIEWERS` keys. metadata (MA21) and
  * summary/hls/dash (v1.1) are registered as neutral info cards until their viewers land.
  */
 export const RESULT_VIEWERS: Partial<Record<ResultKind, ComponentType<ViewerProps>>> = {
@@ -22,8 +23,9 @@ export const RESULT_VIEWERS: Partial<Record<ResultKind, ComponentType<ViewerProp
   audio: AudioViewer,
   pdf: PdfViewer,
   archive: ArchiveViewer,
-  transcript: UnknownViewer,
-  captions: UnknownViewer,
+  // MA20: a `transcribe` job (either kind) prefers the transcript JSON; a bare .srt/.vtt falls back to the file.
+  transcript: TranscriptViewer,
+  captions: TranscriptViewer,
   metadata: UnknownViewer,
   summary: UnknownViewer,
   hls: UnknownViewer,

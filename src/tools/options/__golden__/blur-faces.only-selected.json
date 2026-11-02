@@ -1,0 +1,15 @@
+{
+  "format": "jpg",
+  "quality": 85,
+  "filter": "none",
+  "ai": {
+    "enabled": true,
+    "operation": "face_privacy",
+    "faceMode": "pixelate",
+    "faceSelection": {
+      "selectionMode": "only_selected",
+      "sessionId": "fd_1",
+      "selectedFaceIds": ["face_2"]
+    }
+  }
+}
