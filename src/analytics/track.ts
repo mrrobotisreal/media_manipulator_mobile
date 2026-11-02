@@ -44,7 +44,9 @@ export type StubEventName =
   | 'history_item_reopened'
   // Quota (MA16).
   | 'quota_warning_shown'
-  | 'quota_exceeded_shown';
+  | 'quota_exceeded_shown'
+  // AI tools (MA20). Catalog: feature_used {feature, action, value}.
+  | 'feature_used';
 
 export type EventProps = Record<string, string | number | boolean | null | undefined>;
 
