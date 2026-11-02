@@ -60,7 +60,11 @@ export function buildConfig(
     [
       'expo-build-properties',
       {
-        android: { minSdkVersion: 26 },
+        // Kotlin 2.3.20: @react-native-firebase 27's firebase-auth 25 ships Kotlin 2.4 metadata, which
+        // a 2.3 compiler reads (one minor ahead) but RN 0.86's default 2.1 cannot. Not 2.4: Expo 57's
+        // pika compiler plugin is published up to 2.3.20. Pinned on the root classpath by
+        // plugins/withKotlinGradlePlugin.
+        android: { minSdkVersion: 26, kotlinVersion: '2.3.20' },
         // Static frameworks are react-native-firebase's iOS requirement.
         ios: { deploymentTarget: '16.4', useFrameworks: 'static' },
       },
@@ -76,6 +80,8 @@ export function buildConfig(
     // Registered BEFORE expo-media-library: Expo runs later plugins' manifest mods first, so this one sees
     // the plugin's output. Caps WRITE_EXTERNAL_STORAGE to API <= 28 and drops requestLegacyExternalStorage.
     './plugins/withWriteStorageMaxSdk28',
+    // Root Kotlin Gradle plugin follows android.kotlinVersion (see the plugin header).
+    './plugins/withKotlinGradlePlugin',
     // Save to Photos (MA14): add-only. No READ_MEDIA_* (granularPermissions: []), no media-location, and the
     // legacy storage permissions are blocked or capped to API <= 28 (ARCHITECTURE section 11).
     [
