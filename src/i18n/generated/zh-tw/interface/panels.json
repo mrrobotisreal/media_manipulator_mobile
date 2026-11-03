@@ -1449,7 +1449,8 @@
       "bigPhotoNote": "此照片以縮小尺寸預覽。匯出會使用完整解析度。",
       "exportSettingUp": "匯出功能正在設定中",
       "panelsTab": "面板",
-      "layersTab": "圖層"
+      "layersTab": "圖層",
+      "shortcuts": "鍵盤快速鍵"
     },
     "banner": {
       "local": "僅儲存在此瀏覽器中。登入後可在帳號中保留最多 {{count}} 個專案。",
@@ -1491,7 +1492,10 @@
       "geometry": "幾何",
       "masks": "遮色片",
       "heal": "修復",
-      "redEye": "紅眼"
+      "redEye": "紅眼",
+      "detail": "細節",
+      "presets": "預設集",
+      "history": "歷程記錄"
     },
     "slider": {
       "reset": "重設",
@@ -1703,7 +1707,8 @@
         "vignette": "暈影",
         "grain": "顆粒"
       },
-      "maskEdit": "編輯遮色片"
+      "maskEdit": "編輯遮色片",
+      "deleteGroup": "刪除群組 {{name}}"
     },
     "export": {
       "title": "匯出",
@@ -1726,7 +1731,9 @@
       "needFile": "此瀏覽器中沒有原始照片。請重新開啟後再匯出。",
       "queued": "排隊中…",
       "cancel": "關閉",
-      "anotherTime": "再次匯出"
+      "anotherTime": "再次匯出",
+      "estimateRange": "約 {{min}} 至 {{max}}",
+      "estimateNote": "這只是估算值。"
     },
     "openIn": "在 {{brand}} 中開啟",
     "geometry": {
@@ -1836,6 +1843,235 @@
       "hint": "點擊相片中的眼睛。系統會放置一個小圓形遮色片,並消除其中的紅色。",
       "radius": "半徑(長邊的百分比)",
       "clickEye": "點擊眼睛"
+    },
+    "detail": {
+      "judge": "以 100% 檢視",
+      "judgeHint": "在 100% 縮放下檢查銳利化與雜訊效果。",
+      "sharpen": {
+        "title": "銳利化",
+        "amount": "強度",
+        "radius": "半徑",
+        "threshold": "臨界值"
+      },
+      "noise": {
+        "title": "降噪",
+        "luminance": "明亮度",
+        "color": "色彩"
+      },
+      "blur": {
+        "title": "模糊",
+        "radius": "半徑"
+      },
+      "presence": {
+        "title": "質感",
+        "clarity": "清晰度",
+        "texture": "紋理",
+        "dehaze": "去朦朧"
+      },
+      "vignette": {
+        "title": "暈影",
+        "amount": "強度",
+        "midpoint": "中點",
+        "roundness": "圓度",
+        "feather": "羽化",
+        "highlights": "亮部"
+      },
+      "grain": {
+        "title": "顆粒",
+        "amount": "強度",
+        "size": "大小",
+        "roughness": "粗糙度"
+      }
+    },
+    "presets": {
+      "title": "風格",
+      "filter": "篩選風格",
+      "category": {
+        "all": "全部",
+        "color": "彩色",
+        "bw": "黑白",
+        "film": "底片",
+        "fix": "修正"
+      },
+      "appendNote": "風格會在你現有的編輯上疊加調整。復原即可移除。",
+      "groupName": "預設集：{{name}}",
+      "name": {
+        "color-pop-red": "色彩強調：紅色",
+        "color-pop-yellow": "色彩強調：黃色",
+        "color-pop-green": "色彩強調：綠色",
+        "color-pop-cyan": "色彩強調：青色",
+        "color-pop-blue": "色彩強調：藍色",
+        "color-pop-magenta": "色彩強調：洋紅色",
+        "bw-film": "黑白底片",
+        "bw-high-contrast": "高對比黑白",
+        "warm": "暖色",
+        "cool": "冷色",
+        "matte": "霧面",
+        "fade": "褪色",
+        "vivid": "鮮豔",
+        "punch": "強烈",
+        "cross-process": "交叉沖印",
+        "vintage": "復古",
+        "portrait-soften": "人像柔化",
+        "landscape": "風景",
+        "auto": "自動"
+      },
+      "mine": "我的預設集",
+      "import": "匯入預設集",
+      "export": "匯出預設集",
+      "browserNote": "已儲存在此瀏覽器中。",
+      "noneYet": "你還沒有儲存過預設集。",
+      "layerCount_other": "{{count}} 項調整",
+      "rename": "重新命名預設集",
+      "delete": "刪除預設集",
+      "saveCurrent": "將目前的編輯儲存為預設集",
+      "nameLabel": "預設集名稱",
+      "namePlaceholder": "預設集名稱",
+      "whichLayers": "要包含的調整",
+      "cancel": "取消",
+      "save": "儲存預設集",
+      "saveFailed": "無法將預設集儲存到此瀏覽器。",
+      "imported": "已匯入預設集。",
+      "importError": {
+        "json": "該檔案不是有效的 JSON。",
+        "format": "該檔案不是預設集匯出檔。",
+        "invalid": "該檔案包含無法使用的預設集。",
+        "empty": "該檔案中沒有預設集。"
+      }
+    },
+    "history": {
+      "title": "歷程記錄",
+      "clear": "清除歷程記錄",
+      "original": "原始",
+      "empty": "尚無編輯。",
+      "snapshots": "快照",
+      "snapshot": "快照",
+      "snapshotName": "快照名稱",
+      "snapshotDefault": "快照 {{n}}",
+      "snapshotSave": "儲存",
+      "snapshotDelete": "刪除快照",
+      "snapshotsEmpty": "快照可為某個版本加上書籤，方便你隨時回到該版本。",
+      "sessionNote": "快照僅在本次工作階段中保留。",
+      "labels": {
+        "addColourRange": "新增色彩範圍",
+        "addLocalAdjustment": "新增局部調整",
+        "addMask": "新增遮色片",
+        "autoCrop": "自動裁切",
+        "blackWhite": "黑白",
+        "blendMode": "混合模式",
+        "blur": "模糊",
+        "brush": "筆刷",
+        "channelMixer": "色版混合器",
+        "clarity": "清晰度",
+        "color": "色彩",
+        "colorBalance": "色彩平衡",
+        "colourTarget": "目標色彩",
+        "crop": "裁切",
+        "curves": "曲線",
+        "dehaze": "去朦朧",
+        "deleteLayer": "刪除圖層",
+        "duplicateLayer": "複製圖層",
+        "fill": "填色",
+        "flip": "翻轉",
+        "gamma": "伽瑪",
+        "grain": "顆粒",
+        "grayExcept": "僅保留一種顏色，其餘變灰",
+        "heal": "修復",
+        "invertMask": "反轉遮色片",
+        "layerOpacity": "圖層不透明度",
+        "levels": "色階",
+        "lut": "LUT",
+        "mask": "遮色片",
+        "maskFeather": "遮色片羽化",
+        "maskOpacity": "遮色片不透明度",
+        "noiseReduction": "降噪",
+        "perspective": "透視",
+        "photoFilter": "相片濾鏡",
+        "posterize": "色調分離",
+        "redEye": "紅眼",
+        "removeColourRange": "移除色彩範圍",
+        "removeLUT": "移除 LUT",
+        "removeMask": "移除遮色片",
+        "removeMaskComponent": "移除遮色片部分",
+        "renameLayer": "重新命名圖層",
+        "reorderLayers": "重新排列圖層",
+        "reset": "重設",
+        "resetColours": "重設色彩",
+        "resetCrop": "重設裁切",
+        "resetLevels": "重設色階",
+        "resetPerspective": "重設透視",
+        "restoreDraft": "還原草稿",
+        "rotate": "旋轉",
+        "selectSubject": "選取主體",
+        "shareMask": "分享遮色片",
+        "sharpen": "銳利化",
+        "splitToning": "分割色調",
+        "straighten": "拉直",
+        "texture": "紋理",
+        "threshold": "臨界值",
+        "toggleLayer": "顯示或隱藏圖層",
+        "vignette": "暈影",
+        "exposure": "曝光度",
+        "snapshot": "前往快照",
+        "deleteGroup": "刪除群組",
+        "openFile": "開啟相片",
+        "preset": "預設集：{{name}}",
+        "brushGesture": "筆刷設定",
+        "maskGesture": "遮色片設定",
+        "geometryGesture": "幾何設定",
+        "layerGesture": "圖層設定"
+      }
+    },
+    "shortcuts": {
+      "title": "鍵盤快速鍵",
+      "description": "隨時按 ? 即可開啟此清單。",
+      "group": {
+        "general": "一般",
+        "view": "檢視",
+        "tools": "工具",
+        "masks": "遮色片與筆刷"
+      },
+      "action": {
+        "undo": "復原",
+        "redo": "重做",
+        "save": "儲存",
+        "export": "匯出",
+        "shortcuts": "顯示快速鍵",
+        "before": "按住可檢視原圖",
+        "fit": "符合螢幕大小",
+        "actual": "縮放至 100%",
+        "zoomIn": "放大",
+        "zoomOut": "縮小",
+        "maskView": "循環切換遮色片檢視",
+        "brush": "筆刷",
+        "erase": "切換擦除",
+        "brushSmaller": "縮小筆刷",
+        "brushLarger": "放大筆刷",
+        "gradient": "漸層遮色片",
+        "radial": "放射狀遮色片",
+        "crop": "裁切",
+        "heal": "修復"
+      }
+    },
+    "batch": {
+      "title": "套用到更多相片",
+      "body": "將這些編輯套用到其他相片，並一起下載結果。",
+      "signIn": "登入後即可套用到更多相片。",
+      "limit_other": "你的方案一次最多可對 {{count}} 張相片套用編輯。",
+      "upTo_other": "最多選擇 {{count}} 張相片。",
+      "choose": "選擇相片",
+      "dropped_other": "由於方案上限，有 {{count}} 張相片未被包含。",
+      "status": {
+        "preparing": "準備中",
+        "rendering": "正在算繪 {{percent}}%",
+        "done": "完成",
+        "failed": "失敗"
+      },
+      "retry_other": "重試 {{count}} 張失敗的相片",
+      "zip_other": "將 {{count}} 張相片下載為 ZIP",
+      "zipping": "正在準備 ZIP…",
+      "zipFailed": "無法準備 ZIP，請再試一次。",
+      "zipMissing_other": "有 {{count}} 張相片無法加入 ZIP。"
     }
   }
 }

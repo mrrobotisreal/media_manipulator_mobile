@@ -1449,7 +1449,8 @@
       "bigPhotoNote": "Ảnh này đang được xem trước ở kích thước thu nhỏ. Khi xuất sẽ dùng độ phân giải đầy đủ.",
       "exportSettingUp": "Tính năng xuất đang được thiết lập",
       "panelsTab": "Bảng",
-      "layersTab": "Lớp"
+      "layersTab": "Lớp",
+      "shortcuts": "Phím tắt"
     },
     "banner": {
       "local": "Chỉ được lưu trong trình duyệt này. Đăng nhập để giữ tối đa {{count}} dự án trong tài khoản.",
@@ -1491,7 +1492,10 @@
       "geometry": "Hình học",
       "masks": "Mặt nạ",
       "heal": "Chữa lành",
-      "redEye": "Mắt đỏ"
+      "redEye": "Mắt đỏ",
+      "detail": "Chi tiết",
+      "presets": "Cài đặt sẵn",
+      "history": "Lịch sử"
     },
     "slider": {
       "reset": "Đặt lại",
@@ -1703,7 +1707,8 @@
         "vignette": "Tối góc",
         "grain": "Hạt nhiễu"
       },
-      "maskEdit": "Sửa mặt nạ"
+      "maskEdit": "Sửa mặt nạ",
+      "deleteGroup": "Xóa nhóm {{name}}"
     },
     "export": {
       "title": "Xuất",
@@ -1726,7 +1731,9 @@
       "needFile": "Ảnh gốc không còn trong trình duyệt này. Hãy mở lại ảnh để xuất.",
       "queued": "Đang chờ…",
       "cancel": "Đóng",
-      "anotherTime": "Xuất lại"
+      "anotherTime": "Xuất lại",
+      "estimateRange": "Khoảng {{min}} đến {{max}}",
+      "estimateNote": "Đây là ước tính."
     },
     "openIn": "Mở trong {{brand}}",
     "geometry": {
@@ -1836,6 +1843,235 @@
       "hint": "Nhấp vào một mắt trong ảnh. Một mặt nạ tròn nhỏ sẽ được đặt và màu đỏ bên trong sẽ được loại bỏ.",
       "radius": "Bán kính (% cạnh dài)",
       "clickEye": "Nhấp vào một mắt"
+    },
+    "detail": {
+      "judge": "Kiểm tra ở 100%",
+      "judgeHint": "Kiểm tra độ nét và nhiễu ở mức thu phóng 100%.",
+      "sharpen": {
+        "title": "Làm nét",
+        "amount": "Lượng",
+        "radius": "Bán kính",
+        "threshold": "Ngưỡng"
+      },
+      "noise": {
+        "title": "Giảm nhiễu",
+        "luminance": "Độ chói",
+        "color": "Màu"
+      },
+      "blur": {
+        "title": "Làm mờ",
+        "radius": "Bán kính"
+      },
+      "presence": {
+        "title": "Hiện diện",
+        "clarity": "Độ rõ nét",
+        "texture": "Kết cấu",
+        "dehaze": "Khử sương mù"
+      },
+      "vignette": {
+        "title": "Tối góc",
+        "amount": "Lượng",
+        "midpoint": "Điểm giữa",
+        "roundness": "Độ tròn",
+        "feather": "Độ mềm viền",
+        "highlights": "Vùng sáng"
+      },
+      "grain": {
+        "title": "Hạt nhiễu",
+        "amount": "Lượng",
+        "size": "Kích thước",
+        "roughness": "Độ thô"
+      }
+    },
+    "presets": {
+      "title": "Phong cách",
+      "filter": "Lọc phong cách",
+      "category": {
+        "all": "Tất cả",
+        "color": "Màu",
+        "bw": "Đen trắng",
+        "film": "Phim",
+        "fix": "Sửa lỗi"
+      },
+      "appendNote": "Phong cách sẽ thêm các chỉnh sửa của nó lên trên chỉnh sửa của bạn. Hoàn tác sẽ gỡ bỏ nó.",
+      "groupName": "Cài đặt sẵn: {{name}}",
+      "name": {
+        "color-pop-red": "Nổi bật màu: đỏ",
+        "color-pop-yellow": "Nổi bật màu: vàng",
+        "color-pop-green": "Nổi bật màu: lục",
+        "color-pop-cyan": "Nổi bật màu: lam lục",
+        "color-pop-blue": "Nổi bật màu: lam",
+        "color-pop-magenta": "Nổi bật màu: đỏ tía",
+        "bw-film": "Phim đen trắng",
+        "bw-high-contrast": "Đen trắng tương phản cao",
+        "warm": "Ấm",
+        "cool": "Lạnh",
+        "matte": "Mờ mịn",
+        "fade": "Phai màu",
+        "vivid": "Sống động",
+        "punch": "Nổi bật",
+        "cross-process": "Xử lý chéo",
+        "vintage": "Cổ điển",
+        "portrait-soften": "Làm mịn chân dung",
+        "landscape": "Phong cảnh",
+        "auto": "Tự động"
+      },
+      "mine": "Cài đặt sẵn của tôi",
+      "import": "Nhập cài đặt sẵn",
+      "export": "Xuất cài đặt sẵn",
+      "browserNote": "Đã lưu trong trình duyệt này.",
+      "noneYet": "Bạn chưa lưu cài đặt sẵn nào.",
+      "layerCount_other": "{{count}} chỉnh sửa",
+      "rename": "Đổi tên cài đặt sẵn",
+      "delete": "Xóa cài đặt sẵn",
+      "saveCurrent": "Lưu các chỉnh sửa hiện tại thành cài đặt sẵn",
+      "nameLabel": "Tên cài đặt sẵn",
+      "namePlaceholder": "Tên cài đặt sẵn",
+      "whichLayers": "Các chỉnh sửa cần đưa vào",
+      "cancel": "Hủy",
+      "save": "Lưu cài đặt sẵn",
+      "saveFailed": "Không thể lưu cài đặt sẵn trong trình duyệt này.",
+      "imported": "Đã nhập cài đặt sẵn.",
+      "importError": {
+        "json": "Tệp đó không phải là JSON hợp lệ.",
+        "format": "Tệp đó không phải là bản xuất cài đặt sẵn.",
+        "invalid": "Tệp đó có cài đặt sẵn không thể sử dụng.",
+        "empty": "Tệp đó không có cài đặt sẵn nào."
+      }
+    },
+    "history": {
+      "title": "Lịch sử",
+      "clear": "Xóa lịch sử",
+      "original": "Bản gốc",
+      "empty": "Chưa có chỉnh sửa nào.",
+      "snapshots": "Ảnh chụp nhanh",
+      "snapshot": "Ảnh chụp nhanh",
+      "snapshotName": "Tên ảnh chụp nhanh",
+      "snapshotDefault": "Ảnh chụp nhanh {{n}}",
+      "snapshotSave": "Lưu",
+      "snapshotDelete": "Xóa ảnh chụp nhanh",
+      "snapshotsEmpty": "Ảnh chụp nhanh đánh dấu một phiên bản để bạn quay lại.",
+      "sessionNote": "Ảnh chụp nhanh chỉ tồn tại trong phiên này.",
+      "labels": {
+        "addColourRange": "Thêm dải màu",
+        "addLocalAdjustment": "Thêm chỉnh sửa cục bộ",
+        "addMask": "Thêm mặt nạ",
+        "autoCrop": "Tự động cắt",
+        "blackWhite": "Đen trắng",
+        "blendMode": "Chế độ hòa trộn",
+        "blur": "Làm mờ",
+        "brush": "Cọ",
+        "channelMixer": "Trộn kênh màu",
+        "clarity": "Độ rõ nét",
+        "color": "Màu",
+        "colorBalance": "Cân bằng màu",
+        "colourTarget": "Màu mục tiêu",
+        "crop": "Cắt",
+        "curves": "Đường cong",
+        "dehaze": "Khử sương mù",
+        "deleteLayer": "Xóa lớp",
+        "duplicateLayer": "Nhân đôi lớp",
+        "fill": "Tô màu",
+        "flip": "Lật",
+        "gamma": "Gamma",
+        "grain": "Hạt nhiễu",
+        "grayExcept": "Xám tất cả trừ một màu",
+        "heal": "Chữa lành",
+        "invertMask": "Đảo ngược mặt nạ",
+        "layerOpacity": "Độ mờ đục của lớp",
+        "levels": "Mức",
+        "lut": "LUT",
+        "mask": "Mặt nạ",
+        "maskFeather": "Độ mềm viền mặt nạ",
+        "maskOpacity": "Độ mờ đục của mặt nạ",
+        "noiseReduction": "Giảm nhiễu",
+        "perspective": "Phối cảnh",
+        "photoFilter": "Bộ lọc ảnh",
+        "posterize": "Phân tách tông màu",
+        "redEye": "Mắt đỏ",
+        "removeColourRange": "Xóa dải màu",
+        "removeLUT": "Xóa LUT",
+        "removeMask": "Xóa mặt nạ",
+        "removeMaskComponent": "Xóa phần mặt nạ",
+        "renameLayer": "Đổi tên lớp",
+        "reorderLayers": "Sắp xếp lại lớp",
+        "reset": "Đặt lại",
+        "resetColours": "Đặt lại màu",
+        "resetCrop": "Đặt lại phần cắt",
+        "resetLevels": "Đặt lại mức",
+        "resetPerspective": "Đặt lại phối cảnh",
+        "restoreDraft": "Khôi phục bản nháp",
+        "rotate": "Xoay",
+        "selectSubject": "Chọn chủ thể",
+        "shareMask": "Chia sẻ mặt nạ",
+        "sharpen": "Làm nét",
+        "splitToning": "Chia tông màu",
+        "straighten": "Chỉnh thẳng",
+        "texture": "Kết cấu",
+        "threshold": "Ngưỡng",
+        "toggleLayer": "Hiện hoặc ẩn lớp",
+        "vignette": "Tối góc",
+        "exposure": "Phơi sáng",
+        "snapshot": "Đi tới ảnh chụp nhanh",
+        "deleteGroup": "Xóa nhóm",
+        "openFile": "Mở ảnh",
+        "preset": "Cài đặt sẵn: {{name}}",
+        "brushGesture": "Thiết lập cọ",
+        "maskGesture": "Thiết lập mặt nạ",
+        "geometryGesture": "Thiết lập hình học",
+        "layerGesture": "Thiết lập lớp"
+      }
+    },
+    "shortcuts": {
+      "title": "Phím tắt",
+      "description": "Nhấn ? để mở danh sách này bất cứ lúc nào.",
+      "group": {
+        "general": "Chung",
+        "view": "Xem",
+        "tools": "Công cụ",
+        "masks": "Mặt nạ và cọ"
+      },
+      "action": {
+        "undo": "Hoàn tác",
+        "redo": "Làm lại",
+        "save": "Lưu",
+        "export": "Xuất",
+        "shortcuts": "Hiện phím tắt",
+        "before": "Giữ để xem bản gốc",
+        "fit": "Vừa với màn hình",
+        "actual": "Thu phóng 100%",
+        "zoomIn": "Phóng to",
+        "zoomOut": "Thu nhỏ",
+        "maskView": "Chuyển đổi chế độ xem mặt nạ",
+        "brush": "Cọ",
+        "erase": "Bật/tắt xóa",
+        "brushSmaller": "Cọ nhỏ hơn",
+        "brushLarger": "Cọ lớn hơn",
+        "gradient": "Mặt nạ chuyển sắc",
+        "radial": "Mặt nạ tròn",
+        "crop": "Cắt",
+        "heal": "Chữa lành"
+      }
+    },
+    "batch": {
+      "title": "Áp dụng cho nhiều ảnh hơn",
+      "body": "Áp dụng các chỉnh sửa này cho ảnh khác và tải kết quả xuống cùng lúc.",
+      "signIn": "Đăng nhập để áp dụng cho nhiều ảnh hơn.",
+      "limit_other": "Gói của bạn áp dụng chỉnh sửa cho {{count}} ảnh mỗi lần.",
+      "upTo_other": "Chọn tối đa {{count}} ảnh.",
+      "choose": "Chọn ảnh",
+      "dropped_other": "{{count}} ảnh bị loại do giới hạn của gói.",
+      "status": {
+        "preparing": "Đang chuẩn bị",
+        "rendering": "Đang kết xuất {{percent}}%",
+        "done": "Xong",
+        "failed": "Thất bại"
+      },
+      "retry_other": "Thử lại {{count}} ảnh bị lỗi",
+      "zip_other": "Tải {{count}} ảnh xuống dạng ZIP",
+      "zipping": "Đang chuẩn bị ZIP…",
+      "zipFailed": "Không thể chuẩn bị ZIP. Vui lòng thử lại.",
+      "zipMissing_other": "Không thể thêm {{count}} ảnh vào ZIP."
     }
   }
 }

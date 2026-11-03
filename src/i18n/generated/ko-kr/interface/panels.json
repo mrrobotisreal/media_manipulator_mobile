@@ -1449,7 +1449,8 @@
       "bigPhotoNote": "이 사진은 축소된 크기로 미리 표시됩니다. 내보내기는 전체 해상도로 진행됩니다.",
       "exportSettingUp": "내보내기를 준비하고 있습니다",
       "panelsTab": "패널",
-      "layersTab": "레이어"
+      "layersTab": "레이어",
+      "shortcuts": "키보드 단축키"
     },
     "banner": {
       "local": "이 브라우저에만 저장되었습니다. 로그인하면 계정에 프로젝트를 최대 {{count}}개까지 보관할 수 있습니다.",
@@ -1491,7 +1492,10 @@
       "geometry": "기하학",
       "masks": "마스크",
       "heal": "복구",
-      "redEye": "적목 현상"
+      "redEye": "적목 현상",
+      "detail": "디테일",
+      "presets": "프리셋",
+      "history": "작업 내역"
     },
     "slider": {
       "reset": "재설정",
@@ -1703,7 +1707,8 @@
         "vignette": "비네팅",
         "grain": "그레인"
       },
-      "maskEdit": "마스크 편집"
+      "maskEdit": "마스크 편집",
+      "deleteGroup": "{{name}} 그룹 삭제"
     },
     "export": {
       "title": "내보내기",
@@ -1726,7 +1731,9 @@
       "needFile": "이 브라우저에서 원본 사진을 찾을 수 없습니다. 내보내려면 다시 여세요.",
       "queued": "대기 중…",
       "cancel": "닫기",
-      "anotherTime": "다시 내보내기"
+      "anotherTime": "다시 내보내기",
+      "estimateRange": "약 {{min}}~{{max}}",
+      "estimateNote": "예상치입니다."
     },
     "openIn": "{{brand}}에서 열기",
     "geometry": {
@@ -1836,6 +1843,235 @@
       "hint": "사진에서 눈을 클릭하세요. 작은 원형 마스크가 배치되고 그 안의 붉은색이 제거됩니다.",
       "radius": "반경(긴 변의 %)",
       "clickEye": "눈을 클릭하세요"
+    },
+    "detail": {
+      "judge": "100%로 확인",
+      "judgeHint": "선명도와 노이즈를 100% 확대 상태에서 확인합니다.",
+      "sharpen": {
+        "title": "선명하게",
+        "amount": "양",
+        "radius": "반경",
+        "threshold": "한계값"
+      },
+      "noise": {
+        "title": "노이즈 감소",
+        "luminance": "휘도",
+        "color": "색상"
+      },
+      "blur": {
+        "title": "흐림 효과",
+        "radius": "반경"
+      },
+      "presence": {
+        "title": "존재감",
+        "clarity": "명료도",
+        "texture": "텍스처",
+        "dehaze": "안개 제거"
+      },
+      "vignette": {
+        "title": "비네팅",
+        "amount": "양",
+        "midpoint": "중간점",
+        "roundness": "둥글기",
+        "feather": "페더",
+        "highlights": "하이라이트"
+      },
+      "grain": {
+        "title": "그레인",
+        "amount": "양",
+        "size": "크기",
+        "roughness": "거칠기"
+      }
+    },
+    "presets": {
+      "title": "룩",
+      "filter": "룩 필터링",
+      "category": {
+        "all": "전체",
+        "color": "색상",
+        "bw": "흑백",
+        "film": "필름",
+        "fix": "보정"
+      },
+      "appendNote": "룩은 현재 편집 위에 조정 내용을 추가합니다. 실행 취소하면 제거됩니다.",
+      "groupName": "프리셋: {{name}}",
+      "name": {
+        "color-pop-red": "컬러 팝: 빨강",
+        "color-pop-yellow": "컬러 팝: 노랑",
+        "color-pop-green": "컬러 팝: 초록",
+        "color-pop-cyan": "컬러 팝: 청록",
+        "color-pop-blue": "컬러 팝: 파랑",
+        "color-pop-magenta": "컬러 팝: 자홍",
+        "bw-film": "흑백 필름",
+        "bw-high-contrast": "고대비 흑백",
+        "warm": "따뜻한 톤",
+        "cool": "차가운 톤",
+        "matte": "매트",
+        "fade": "페이드",
+        "vivid": "비비드",
+        "punch": "펀치",
+        "cross-process": "크로스 프로세스",
+        "vintage": "빈티지",
+        "portrait-soften": "인물 부드럽게",
+        "landscape": "풍경",
+        "auto": "자동"
+      },
+      "mine": "내 프리셋",
+      "import": "프리셋 가져오기",
+      "export": "프리셋 내보내기",
+      "browserNote": "이 브라우저에 저장됩니다.",
+      "noneYet": "저장한 프리셋이 아직 없습니다.",
+      "layerCount_other": "조정 {{count}}개",
+      "rename": "프리셋 이름 바꾸기",
+      "delete": "프리셋 삭제",
+      "saveCurrent": "현재 편집 내용을 프리셋으로 저장",
+      "nameLabel": "프리셋 이름",
+      "namePlaceholder": "프리셋 이름",
+      "whichLayers": "포함할 조정",
+      "cancel": "취소",
+      "save": "프리셋 저장",
+      "saveFailed": "이 브라우저에 프리셋을 저장하지 못했습니다.",
+      "imported": "프리셋을 가져왔습니다.",
+      "importError": {
+        "json": "올바른 JSON 파일이 아닙니다.",
+        "format": "프리셋 내보내기 파일이 아닙니다.",
+        "invalid": "사용할 수 없는 프리셋이 포함된 파일입니다.",
+        "empty": "프리셋이 없는 파일입니다."
+      }
+    },
+    "history": {
+      "title": "작업 내역",
+      "clear": "작업 내역 지우기",
+      "original": "원본",
+      "empty": "아직 편집 내용이 없습니다.",
+      "snapshots": "스냅샷",
+      "snapshot": "스냅샷",
+      "snapshotName": "스냅샷 이름",
+      "snapshotDefault": "스냅샷 {{n}}",
+      "snapshotSave": "저장",
+      "snapshotDelete": "스냅샷 삭제",
+      "snapshotsEmpty": "스냅샷은 나중에 돌아갈 수 있는 버전을 북마크해 둡니다.",
+      "sessionNote": "스냅샷은 현재 세션 동안만 유지됩니다.",
+      "labels": {
+        "addColourRange": "색상 범위 추가",
+        "addLocalAdjustment": "부분 조정 추가",
+        "addMask": "마스크 추가",
+        "autoCrop": "자동 자르기",
+        "blackWhite": "흑백",
+        "blendMode": "혼합 모드",
+        "blur": "흐림 효과",
+        "brush": "브러시",
+        "channelMixer": "채널 혼합",
+        "clarity": "명료도",
+        "color": "색상",
+        "colorBalance": "색상 균형",
+        "colourTarget": "대상 색상",
+        "crop": "자르기",
+        "curves": "커브",
+        "dehaze": "안개 제거",
+        "deleteLayer": "레이어 삭제",
+        "duplicateLayer": "레이어 복제",
+        "fill": "채우기",
+        "flip": "뒤집기",
+        "gamma": "감마",
+        "grain": "그레인",
+        "grayExcept": "한 가지 색상만 남기고 회색으로",
+        "heal": "복구",
+        "invertMask": "마스크 반전",
+        "layerOpacity": "레이어 불투명도",
+        "levels": "레벨",
+        "lut": "LUT",
+        "mask": "마스크",
+        "maskFeather": "마스크 페더",
+        "maskOpacity": "마스크 불투명도",
+        "noiseReduction": "노이즈 감소",
+        "perspective": "원근",
+        "photoFilter": "포토 필터",
+        "posterize": "포스터라이즈",
+        "redEye": "적목 현상",
+        "removeColourRange": "색상 범위 제거",
+        "removeLUT": "LUT 제거",
+        "removeMask": "마스크 제거",
+        "removeMaskComponent": "마스크 일부 제거",
+        "renameLayer": "레이어 이름 바꾸기",
+        "reorderLayers": "레이어 순서 변경",
+        "reset": "초기화",
+        "resetColours": "색상 초기화",
+        "resetCrop": "자르기 초기화",
+        "resetLevels": "레벨 초기화",
+        "resetPerspective": "원근 초기화",
+        "restoreDraft": "임시 저장본 복원",
+        "rotate": "회전",
+        "selectSubject": "피사체 선택",
+        "shareMask": "마스크 공유",
+        "sharpen": "선명하게",
+        "splitToning": "스플릿 토닝",
+        "straighten": "수평 맞추기",
+        "texture": "텍스처",
+        "threshold": "한계값",
+        "toggleLayer": "레이어 표시/숨기기",
+        "vignette": "비네팅",
+        "exposure": "노출",
+        "snapshot": "스냅샷으로 이동",
+        "deleteGroup": "그룹 삭제",
+        "openFile": "사진 열기",
+        "preset": "프리셋: {{name}}",
+        "brushGesture": "브러시 설정",
+        "maskGesture": "마스크 설정",
+        "geometryGesture": "기하학 설정",
+        "layerGesture": "레이어 설정"
+      }
+    },
+    "shortcuts": {
+      "title": "키보드 단축키",
+      "description": "?를 누르면 언제든 이 목록을 열 수 있습니다.",
+      "group": {
+        "general": "일반",
+        "view": "보기",
+        "tools": "도구",
+        "masks": "마스크 및 브러시"
+      },
+      "action": {
+        "undo": "실행 취소",
+        "redo": "다시 실행",
+        "save": "저장",
+        "export": "내보내기",
+        "shortcuts": "단축키 보기",
+        "before": "누르고 있으면 원본 보기",
+        "fit": "화면에 맞추기",
+        "actual": "100%로 확대",
+        "zoomIn": "확대",
+        "zoomOut": "축소",
+        "maskView": "마스크 보기 전환",
+        "brush": "브러시",
+        "erase": "지우기 전환",
+        "brushSmaller": "브러시 작게",
+        "brushLarger": "브러시 크게",
+        "gradient": "그레이디언트 마스크",
+        "radial": "원형 마스크",
+        "crop": "자르기",
+        "heal": "복구"
+      }
+    },
+    "batch": {
+      "title": "다른 사진에도 적용",
+      "body": "이 편집 내용을 다른 사진에 적용하고 결과를 한 번에 다운로드하세요.",
+      "signIn": "다른 사진에 적용하려면 로그인하세요.",
+      "limit_other": "현재 요금제에서는 한 번에 사진 {{count}}장까지 편집을 적용할 수 있습니다.",
+      "upTo_other": "사진을 최대 {{count}}장까지 선택하세요.",
+      "choose": "사진 선택",
+      "dropped_other": "요금제 한도 때문에 사진 {{count}}장이 제외되었습니다.",
+      "status": {
+        "preparing": "준비 중",
+        "rendering": "렌더링 중 {{percent}}%",
+        "done": "완료",
+        "failed": "실패"
+      },
+      "retry_other": "실패한 사진 {{count}}장 다시 시도",
+      "zip_other": "사진 {{count}}장을 ZIP으로 다운로드",
+      "zipping": "ZIP 파일을 준비하는 중…",
+      "zipFailed": "ZIP 파일을 준비하지 못했습니다. 다시 시도해 주세요.",
+      "zipMissing_other": "사진 {{count}}장을 ZIP에 추가하지 못했습니다."
     }
   }
 }

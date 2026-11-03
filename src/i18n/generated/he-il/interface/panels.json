@@ -1474,7 +1474,8 @@
       "bigPhotoNote": "התמונה הזו מוצגת בגודל מוקטן. הייצוא נעשה ברזולוציה המלאה.",
       "exportSettingUp": "הייצוא בהכנה",
       "panelsTab": "חלוניות",
-      "layersTab": "שכבות"
+      "layersTab": "שכבות",
+      "shortcuts": "קיצורי מקלדת"
     },
     "banner": {
       "local": "נשמר בדפדפן הזה בלבד. התחברו כדי לשמור עד {{count}} פרויקטים בחשבון שלכם.",
@@ -1516,7 +1517,10 @@
       "geometry": "גיאומטריה",
       "masks": "מסכות",
       "heal": "תיקון",
-      "redEye": "עיניים אדומות"
+      "redEye": "עיניים אדומות",
+      "detail": "פרטים",
+      "presets": "הגדרות מוכנות",
+      "history": "היסטוריה"
     },
     "slider": {
       "reset": "איפוס",
@@ -1728,7 +1732,8 @@
         "vignette": "וינייטה",
         "grain": "גרעיניות"
       },
-      "maskEdit": "עריכת מסכה"
+      "maskEdit": "עריכת מסכה",
+      "deleteGroup": "מחיקת הקבוצה {{name}}"
     },
     "export": {
       "title": "ייצוא",
@@ -1751,7 +1756,9 @@
       "needFile": "התמונה המקורית אינה זמינה בדפדפן הזה. פתחו אותה שוב כדי לייצא.",
       "queued": "בתור…",
       "cancel": "סגירה",
-      "anotherTime": "ייצוא נוסף"
+      "anotherTime": "ייצוא נוסף",
+      "estimateRange": "כ-{{min}} עד {{max}}",
+      "estimateNote": "זוהי הערכה בלבד."
     },
     "openIn": "פתיחה ב-{{brand}}",
     "geometry": {
@@ -1861,6 +1868,249 @@
       "hint": "לחצו על עין בתמונה. תוצב מסכה עגולה קטנה והאדום בתוכה יוסר.",
       "radius": "רדיוס (% מהצלע הארוכה)",
       "clickEye": "לחצו על עין"
+    },
+    "detail": {
+      "judge": "בדיקה ב-100%",
+      "judgeHint": "בדקו חידוד ורעש בזום של 100%.",
+      "sharpen": {
+        "title": "חידוד",
+        "amount": "כמות",
+        "radius": "רדיוס",
+        "threshold": "סף"
+      },
+      "noise": {
+        "title": "הפחתת רעש",
+        "luminance": "בהירות",
+        "color": "צבע"
+      },
+      "blur": {
+        "title": "טשטוש",
+        "radius": "רדיוס"
+      },
+      "presence": {
+        "title": "נוכחות",
+        "clarity": "בהירות פרטים",
+        "texture": "מרקם",
+        "dehaze": "הסרת אובך"
+      },
+      "vignette": {
+        "title": "וינייטה",
+        "amount": "כמות",
+        "midpoint": "נקודת אמצע",
+        "roundness": "עגילות",
+        "feather": "ריכוך קצוות",
+        "highlights": "אזורים בהירים"
+      },
+      "grain": {
+        "title": "גרעיניות",
+        "amount": "כמות",
+        "size": "גודל",
+        "roughness": "חספוס"
+      }
+    },
+    "presets": {
+      "title": "סגנונות",
+      "filter": "סינון סגנונות",
+      "category": {
+        "all": "הכול",
+        "color": "צבע",
+        "bw": "שחור לבן",
+        "film": "פילם",
+        "fix": "תיקון"
+      },
+      "appendNote": "סגנון מוסיף את ההתאמות שלו מעל העריכות שלכם. ביטול מסיר אותו.",
+      "groupName": "הגדרה מוכנה: {{name}}",
+      "name": {
+        "color-pop-red": "הדגשת צבע: אדום",
+        "color-pop-yellow": "הדגשת צבע: צהוב",
+        "color-pop-green": "הדגשת צבע: ירוק",
+        "color-pop-cyan": "הדגשת צבע: תכלת",
+        "color-pop-blue": "הדגשת צבע: כחול",
+        "color-pop-magenta": "הדגשת צבע: מגנטה",
+        "bw-film": "פילם שחור לבן",
+        "bw-high-contrast": "שחור לבן בניגודיות גבוהה",
+        "warm": "חם",
+        "cool": "קר",
+        "matte": "מט",
+        "fade": "דהוי",
+        "vivid": "עז",
+        "punch": "עוצמתי",
+        "cross-process": "עיבוד צולב",
+        "vintage": "וינטג'",
+        "portrait-soften": "ריכוך פורטרט",
+        "landscape": "נוף",
+        "auto": "אוטומטי"
+      },
+      "mine": "ההגדרות המוכנות שלי",
+      "import": "ייבוא הגדרות מוכנות",
+      "export": "ייצוא הגדרות מוכנות",
+      "browserNote": "נשמר בדפדפן הזה.",
+      "noneYet": "עדיין לא שמרתם הגדרה מוכנה.",
+      "layerCount_one": "התאמה {{count}}",
+      "layerCount_two": "{{count}} התאמות",
+      "layerCount_other": "{{count}} התאמות",
+      "rename": "שינוי שם ההגדרה המוכנה",
+      "delete": "מחיקת ההגדרה המוכנה",
+      "saveCurrent": "שמירת העריכות הנוכחיות כהגדרה מוכנה",
+      "nameLabel": "שם ההגדרה המוכנה",
+      "namePlaceholder": "שם ההגדרה המוכנה",
+      "whichLayers": "התאמות לכלול",
+      "cancel": "ביטול",
+      "save": "שמירת ההגדרה המוכנה",
+      "saveFailed": "לא ניתן היה לשמור את ההגדרה המוכנה בדפדפן הזה.",
+      "imported": "ההגדרות המוכנות יובאו.",
+      "importError": {
+        "json": "הקובץ הזה אינו JSON תקין.",
+        "format": "הקובץ הזה אינו ייצוא של הגדרות מוכנות.",
+        "invalid": "בקובץ הזה יש הגדרות מוכנות שאי אפשר להשתמש בהן.",
+        "empty": "בקובץ הזה אין הגדרות מוכנות."
+      }
+    },
+    "history": {
+      "title": "היסטוריה",
+      "clear": "ניקוי ההיסטוריה",
+      "original": "מקור",
+      "empty": "אין עריכות עדיין.",
+      "snapshots": "תמונות מצב",
+      "snapshot": "תמונת מצב",
+      "snapshotName": "שם תמונת המצב",
+      "snapshotDefault": "תמונת מצב {{n}}",
+      "snapshotSave": "שמירה",
+      "snapshotDelete": "מחיקת תמונת מצב",
+      "snapshotsEmpty": "תמונת מצב היא סימנייה לגרסה שאפשר לחזור אליה.",
+      "sessionNote": "תמונות המצב נשמרות עד סוף הסשן.",
+      "labels": {
+        "addColourRange": "הוספת טווח צבעים",
+        "addLocalAdjustment": "הוספת התאמה מקומית",
+        "addMask": "הוספת מסכה",
+        "autoCrop": "חיתוך אוטומטי",
+        "blackWhite": "שחור לבן",
+        "blendMode": "מצב מיזוג",
+        "blur": "טשטוש",
+        "brush": "מברשת",
+        "channelMixer": "מערבב ערוצים",
+        "clarity": "בהירות פרטים",
+        "color": "צבע",
+        "colorBalance": "איזון צבעים",
+        "colourTarget": "צבע יעד",
+        "crop": "חיתוך",
+        "curves": "עקומות",
+        "dehaze": "הסרת אובך",
+        "deleteLayer": "מחיקת שכבה",
+        "duplicateLayer": "שכפול שכבה",
+        "fill": "מילוי",
+        "flip": "היפוך",
+        "gamma": "גמא",
+        "grain": "גרעיניות",
+        "grayExcept": "הכול באפור מלבד צבע אחד",
+        "heal": "תיקון",
+        "invertMask": "היפוך מסכה",
+        "layerOpacity": "אטימות שכבה",
+        "levels": "רמות",
+        "lut": "LUT",
+        "mask": "מסכה",
+        "maskFeather": "ריכוך קצוות המסכה",
+        "maskOpacity": "אטימות מסכה",
+        "noiseReduction": "הפחתת רעש",
+        "perspective": "פרספקטיבה",
+        "photoFilter": "מסנן צילום",
+        "posterize": "פוסטריזציה",
+        "redEye": "עיניים אדומות",
+        "removeColourRange": "הסרת טווח צבעים",
+        "removeLUT": "הסרת LUT",
+        "removeMask": "הסרת מסכה",
+        "removeMaskComponent": "הסרת חלק מהמסכה",
+        "renameLayer": "שינוי שם שכבה",
+        "reorderLayers": "סידור שכבות מחדש",
+        "reset": "איפוס",
+        "resetColours": "איפוס צבעים",
+        "resetCrop": "איפוס חיתוך",
+        "resetLevels": "איפוס רמות",
+        "resetPerspective": "איפוס פרספקטיבה",
+        "restoreDraft": "שחזור טיוטה",
+        "rotate": "סיבוב",
+        "selectSubject": "בחירת הנושא",
+        "shareMask": "שיתוף מסכה",
+        "sharpen": "חידוד",
+        "splitToning": "פיצול גוונים",
+        "straighten": "יישור",
+        "texture": "מרקם",
+        "threshold": "סף",
+        "toggleLayer": "הצגה או הסתרה של שכבה",
+        "vignette": "וינייטה",
+        "exposure": "חשיפה",
+        "snapshot": "מעבר לתמונת מצב",
+        "deleteGroup": "מחיקת קבוצה",
+        "openFile": "פתיחת תמונה",
+        "preset": "הגדרה מוכנה: {{name}}",
+        "brushGesture": "הגדרת מברשת",
+        "maskGesture": "הגדרת מסכה",
+        "geometryGesture": "הגדרת גיאומטריה",
+        "layerGesture": "הגדרת שכבה"
+      }
+    },
+    "shortcuts": {
+      "title": "קיצורי מקלדת",
+      "description": "לחצו על ? כדי לפתוח את הרשימה הזו בכל עת.",
+      "group": {
+        "general": "כללי",
+        "view": "תצוגה",
+        "tools": "כלים",
+        "masks": "מסכות ומברשת"
+      },
+      "action": {
+        "undo": "ביטול",
+        "redo": "ביצוע חוזר",
+        "save": "שמירה",
+        "export": "ייצוא",
+        "shortcuts": "הצגת קיצורים",
+        "before": "החזקה להצגת המקור",
+        "fit": "התאמה למסך",
+        "actual": "זום ל-100%",
+        "zoomIn": "הגדלה",
+        "zoomOut": "הקטנה",
+        "maskView": "מעבר בין תצוגות המסכה",
+        "brush": "מברשת",
+        "erase": "הפעלה או כיבוי של מחק",
+        "brushSmaller": "מברשת קטנה יותר",
+        "brushLarger": "מברשת גדולה יותר",
+        "gradient": "מסכת מעבר",
+        "radial": "מסכה רדיאלית",
+        "crop": "חיתוך",
+        "heal": "תיקון"
+      }
+    },
+    "batch": {
+      "title": "החלה על תמונות נוספות",
+      "body": "החילו את העריכות האלה על תמונות נוספות והורידו את התוצאות יחד.",
+      "signIn": "התחברו כדי להחיל על תמונות נוספות.",
+      "limit_one": "התוכנית שלכם מחילה עריכות על תמונה {{count}} בכל פעם.",
+      "limit_two": "התוכנית שלכם מחילה עריכות על {{count}} תמונות בכל פעם.",
+      "limit_other": "התוכנית שלכם מחילה עריכות על {{count}} תמונות בכל פעם.",
+      "upTo_one": "בחרו תמונה {{count}}.",
+      "upTo_two": "בחרו {{count}} תמונות.",
+      "upTo_other": "בחרו עד {{count}} תמונות.",
+      "choose": "בחירת תמונות",
+      "dropped_one": "תמונה {{count}} לא נכללה בגלל מגבלת התוכנית.",
+      "dropped_two": "{{count}} תמונות לא נכללו בגלל מגבלת התוכנית.",
+      "dropped_other": "{{count}} תמונות לא נכללו בגלל מגבלת התוכנית.",
+      "status": {
+        "preparing": "מכין",
+        "rendering": "מעבד {{percent}}%",
+        "done": "הושלם",
+        "failed": "נכשל"
+      },
+      "retry_one": "ניסיון חוזר עבור תמונה {{count}} שנכשלה",
+      "retry_two": "ניסיון חוזר עבור {{count}} תמונות שנכשלו",
+      "retry_other": "ניסיון חוזר עבור {{count}} תמונות שנכשלו",
+      "zip_one": "הורדת תמונה {{count}} כ-ZIP",
+      "zip_two": "הורדת {{count}} תמונות כ-ZIP",
+      "zip_other": "הורדת {{count}} תמונות כ-ZIP",
+      "zipping": "מכין את קובץ ה-ZIP…",
+      "zipFailed": "לא ניתן היה להכין את קובץ ה-ZIP. נסו שוב.",
+      "zipMissing_one": "לא ניתן היה להוסיף תמונה {{count}} ל-ZIP.",
+      "zipMissing_two": "לא ניתן היה להוסיף {{count}} תמונות ל-ZIP.",
+      "zipMissing_other": "לא ניתן היה להוסיף {{count}} תמונות ל-ZIP."
     }
   }
 }
