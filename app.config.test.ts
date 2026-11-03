@@ -1,5 +1,12 @@
+import fs from 'node:fs';
 import path from 'node:path';
-import { PUSH_CHANNEL_ID, ANDROID_PACKAGE, IOS_BUNDLE_ID, buildConfig } from './app.config';
+import {
+  APP_VERSION,
+  PUSH_CHANNEL_ID,
+  ANDROID_PACKAGE,
+  IOS_BUNDLE_ID,
+  buildConfig,
+} from './app.config';
 
 const none = () => false;
 const fixture = path.join(__dirname, '__fixtures__', 'firebase-android.fixture.json');
@@ -20,7 +27,11 @@ describe('app.config', () => {
     expect(c.ios?.bundleIdentifier).toBe(`${IOS_BUNDLE_ID}${suffix}`);
     expect(c.runtimeVersion).toEqual({ policy: 'fingerprint' });
     // EAS project linked (MA01): every variant shares the project, the update URL and the owner.
-    expect(c.updates).toEqual({ url: 'https://u.expo.dev/f8644b0d-44d2-4a4f-bec9-0b0cc4252f14' });
+    expect(c.updates).toEqual({
+      url: 'https://u.expo.dev/f8644b0d-44d2-4a4f-bec9-0b0cc4252f14',
+      checkAutomatically: 'ON_LOAD',
+      fallbackToCacheTimeout: 0,
+    });
     expect(c.extra).toEqual({ eas: { projectId: 'f8644b0d-44d2-4a4f-bec9-0b0cc4252f14' } });
     expect(c.owner).toBe('mwintrow');
   });
@@ -83,5 +94,62 @@ describe('app.config', () => {
       'expo-notifications',
       expect.objectContaining({ mode: 'production' }),
     ]);
+  });
+
+  it('app config uses the fingerprint runtime and the variant channel', () => {
+    const eas = JSON.parse(fs.readFileSync(path.join(__dirname, 'eas.json'), 'utf8')) as {
+      build: Record<
+        'development' | 'preview' | 'production',
+        { channel?: string; env?: { APP_VARIANT?: string } }
+      >;
+    };
+    for (const variant of ['development', 'preview', 'production'] as const) {
+      expect(buildConfig({ APP_VARIANT: variant }, none).runtimeVersion).toEqual({
+        policy: 'fingerprint',
+      });
+      expect(eas.build[variant]?.channel).toBe(variant);
+      expect(eas.build[variant]?.env?.APP_VARIANT).toBe(variant);
+    }
+  });
+
+  it('production profile is a store app-bundle with autoIncrement', () => {
+    const eas = JSON.parse(fs.readFileSync(path.join(__dirname, 'eas.json'), 'utf8')) as {
+      cli: { appVersionSource: string };
+      build: { production: Record<string, unknown>; preview: Record<string, unknown> };
+      submit: { production: { android: { track: string; releaseStatus: string } } };
+    };
+    expect(eas.cli.appVersionSource).toBe('remote');
+    expect(eas.build.production).toMatchObject({
+      distribution: 'store',
+      autoIncrement: true,
+      android: { buildType: 'app-bundle' },
+    });
+    // Preview APKs must upgrade in place; dev builds too.
+    expect(eas.build.preview.autoIncrement).toBe(true);
+    expect(eas.build.preview).toMatchObject({
+      distribution: 'internal',
+      android: { buildType: 'apk' },
+    });
+    expect(eas.submit.production.android).toEqual({ track: 'internal', releaseStatus: 'draft' });
+  });
+
+  it('android package ids per variant match MA-0002', () => {
+    expect(buildConfig({ APP_VARIANT: 'production' }, none).android?.package).toBe(
+      'com.mediamanipulator.app',
+    );
+    expect(buildConfig({ APP_VARIANT: 'preview' }, none).android?.package).toBe(
+      'com.mediamanipulator.app.preview',
+    );
+    expect(buildConfig({ APP_VARIANT: 'development' }, none).android?.package).toBe(
+      'com.mediamanipulator.app.dev',
+    );
+  });
+
+  it('version equals package.json (bump-version keeps them in step)', () => {
+    const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8')) as {
+      version: string;
+    };
+    expect(buildConfig({}, none).version).toBe(pkg.version);
+    expect(APP_VERSION).toBe(pkg.version);
   });
 });

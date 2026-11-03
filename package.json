@@ -16,6 +16,7 @@
     "test": "jest",
     "doctor": "expo-doctor",
     "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor && node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main",
+    "version:bump": "node scripts/bump-version.mjs",
     "i18n:sync": "node scripts/sync-web-i18n.mjs --ref main",
     "i18n:check": "node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main"
   },

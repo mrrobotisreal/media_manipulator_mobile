@@ -24,6 +24,8 @@ export const BLOCKED_ANDROID_PERMISSIONS = [
   'android.permission.RECORD_AUDIO',
 ];
 
+export const APP_VERSION = '1.0.0';
+
 const BACKGROUND = '#0A0B0D';
 
 /** Must equal `internal/push/fcm.go` `AndroidChannelID` and `src/push/channel.ts`. */
@@ -143,7 +145,9 @@ export function buildConfig(
     name: v.name,
     slug: 'media-manipulator',
     scheme: v.scheme,
-    version: '1.0.0',
+    // User-visible semver; keep equal to package.json (scripts/bump-version.mjs edits both). The Android versionCode / iOS
+    // buildNumber are remote-managed by EAS (eas.json appVersionSource: remote, autoIncrement).
+    version: APP_VERSION,
     orientation: 'portrait',
     userInterfaceStyle: 'dark',
     backgroundColor: BACKGROUND,
@@ -171,7 +175,12 @@ export function buildConfig(
   };
   if (EAS_OWNER) config.owner = EAS_OWNER;
   if (EAS_PROJECT_ID) {
-    config.updates = { url: `https://u.expo.dev/${EAS_PROJECT_ID}` };
+    // OTA (MA-0007): check on load, download in the background, apply on the next launch (never block the splash).
+    config.updates = {
+      url: `https://u.expo.dev/${EAS_PROJECT_ID}`,
+      checkAutomatically: 'ON_LOAD',
+      fallbackToCacheTimeout: 0,
+    };
     config.extra = { eas: { projectId: EAS_PROJECT_ID } };
   }
   return config;
