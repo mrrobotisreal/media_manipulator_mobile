@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { AppState } from 'react-native';
 import type { File } from 'expo-file-system';
 import { fetchResultFile, realFetchDeps, ResultGoneError } from './fetchResult';
 
@@ -8,7 +9,12 @@ export type ResultFileState =
   | { status: 'gone' }
   | { status: 'error' };
 
-/** Downloads (or reuses) the result file for a job while mounted; `reload` retries after an error. */
+/**
+ * Downloads (or reuses) the result file for a job while mounted; `reload` retries after an error.
+ * A download that fails while the app is in the background (Android aborts its sockets: "Software caused
+ * connection abort", seen on the S25 with a 30 MB upscale) is retried once the app is active again instead of
+ * leaving "Could not load the result" on screen.
+ */
 export function useResultFile(
   jobId: string | undefined,
   fileName: string,
@@ -45,10 +51,28 @@ export function useResultFile(
       .then((file) => live && setState({ status: 'ready', file }))
       .catch((e) => {
         if (!live) return;
+        if (
+          !(e instanceof ResultGoneError) &&
+          (failedInBackground || AppState.currentState !== 'active')
+        ) {
+          resumeOnActive = true;
+          return;
+        }
         setState(e instanceof ResultGoneError ? { status: 'gone' } : { status: 'error' });
       });
+    // Set when the app left the foreground during this download; a failure after that waits for `active`.
+    let failedInBackground = false;
+    let resumeOnActive = false;
+    const sub = AppState.addEventListener('change', (next) => {
+      if (next !== 'active') {
+        failedInBackground = true;
+        return;
+      }
+      if (resumeOnActive && live) setAttempt((n) => n + 1);
+    });
     return () => {
       live = false;
+      sub.remove();
       abort.abort();
     };
   }, [jobId, fileName, sizeBytes, enabled, attempt]);
