@@ -1,5 +1,5 @@
-/** Public web pages the app links out to (opened in the device browser). One place, no hard-coding elsewhere. */
-const SITE = 'https://www.media-manipulator.com';
+import { PRIVACY_PATH, TERMS_PATH, WEB_BASE_URL } from './webUrl';
 
-export const TERMS_URL = `${SITE}/terms-of-service`;
-export const PRIVACY_URL = `${SITE}/privacy-policy`;
+/** English-locale legal URLs for the pre-sign-in screens; the Account tab uses `webUrl()` with the active locale. */
+export const TERMS_URL = `${WEB_BASE_URL}${TERMS_PATH}`;
+export const PRIVACY_URL = `${WEB_BASE_URL}${PRIVACY_PATH}`;

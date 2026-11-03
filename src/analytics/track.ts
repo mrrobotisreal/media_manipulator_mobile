@@ -31,3 +31,13 @@ export function identify(uid: string, traits?: { tier?: string }): void {
 export function reset(): void {
   analytics.reset();
 }
+
+/** Account deletion / analytics erase (MA22): drops the outbox and stops flush timers; see client `discardQueued`. */
+export function discardQueuedEvents(): void {
+  analytics.discardQueued();
+}
+
+/** Best-effort send of what is queued (MA22 sends the one `data_deleted` account event before the wipe). */
+export function flushEvents(): Promise<void> {
+  return analytics.flush();
+}

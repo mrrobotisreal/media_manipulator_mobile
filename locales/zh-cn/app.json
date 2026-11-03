@@ -942,5 +942,154 @@
       "title": "共享使用情况分析",
       "helper": "帮助我们改进应用。绝不会发送文件名或文件内容。"
     }
+  },
+  "account": {
+    "title": "账户",
+    "sections": {
+      "plan": "套餐",
+      "usage": "用量",
+      "settings": "设置",
+      "privacy": "隐私与数据",
+      "security": "安全",
+      "legal": "法律信息",
+      "about": "关于"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · 你的套餐在网页端管理。",
+      "endsOn": "{{date}}结束",
+      "pastDue": "最近一次付款出现问题。",
+      "granted": "{{tier}} · 已授予",
+      "until": "截至 {{date}}",
+      "freeBody": "Premium 和 Pro 提供更高的每日限额。",
+      "operator": "运营者",
+      "loading": "正在加载套餐",
+      "loadFailed": "暂时无法获取你的套餐。"
+    },
+    "usage": {
+      "limits": "套餐限额",
+      "unavailable": "暂时无法获取用量。"
+    },
+    "retention": {
+      "title": "存储与保留",
+      "heading": "我们保留你文件的时长",
+      "body": "适用于你创建的所有内容。由你决定，与套餐无关：每个账户都可以在 24 小时到 2 年之间任意选择。",
+      "recommended": "推荐",
+      "presets": {
+        "h24": "24 小时",
+        "d7": "7 天",
+        "d30": "30 天",
+        "d90": "90 天",
+        "m6": "6 个月",
+        "y1": "1 年",
+        "y2": "2 年"
+      },
+      "custom": "自定义",
+      "customLabel": "自定义天数（1–730）",
+      "customApply": "应用",
+      "customInvalid": "请输入 1 到 730 之间的整数天数。",
+      "current": "当前为 {{window}}。",
+      "saved": "已保存。你的文件现在会保留 {{window}}。",
+      "saveFailed": "无法保存保留时长，已保持原样。",
+      "previewFailed": "无法检查此更改会删除哪些内容，因此未做任何更改。请重试。",
+      "confirmTitle": "立即删除已保存的项目？",
+      "confirmBody_other": "有 {{count}} 个已保存项目（{{size}}）早于新的保留时长，将立即删除。此操作无法撤销。",
+      "confirmCta": "缩短并删除",
+      "metadataTitle": "元数据报告",
+      "metadataToggle": "删除文件时一并删除其元数据报告",
+      "metadataHint": "关闭后，文件被删除后仍会保留其元数据报告。",
+      "visibilityTitle": "历史记录显示",
+      "visibilityLabel": "历史记录列表显示的内容",
+      "visibilityFull": "完整详情",
+      "visibilityNamesOnly": "仅名称",
+      "settingFailed": "无法保存该设置，已保持原样。",
+      "loadFailed": "暂时无法获取你的设置。"
+    },
+    "notifications": {
+      "title": "通知",
+      "emailTitle": "邮件",
+      "emailAiJob": "较长的 AI 任务完成时给我发邮件",
+      "emailExpiry": "已保存的文件到期前给我发邮件",
+      "emailAlways": "欢迎邮件、付款邮件和账户删除邮件始终会发送。",
+      "pushTitle": "推送",
+      "pushJobFinished": "较长的任务完成时推送通知",
+      "saveFailed": "无法保存该偏好设置，请重试。",
+      "loadFailed": "暂时无法获取你的通知设置。"
+    },
+    "privacy": {
+      "title": "隐私与数据",
+      "analyticsTitle": "分析",
+      "deleteAnalyticsTitle": "删除我的分析数据",
+      "deleteAnalyticsBody": "清除为你收集的使用分析数据。关闭分析不会删除过去的数据。",
+      "deleteAnalyticsCta": "删除我的分析数据",
+      "deleteAnalyticsDialogTitle": "删除你的分析数据？",
+      "deleteAnalyticsDialogBody": "这会清除为你的账户和此设备收集的使用分析数据。此操作无法撤销。",
+      "deleteAnalyticsDone": "你的分析数据已删除。",
+      "deleteAnalyticsFailed": "无法删除你的分析数据，请重试。",
+      "dataTitle": "你的数据",
+      "exportTitle": "导出我的数据",
+      "exportBody": "下载包含你的账户数据和文件的 zip 压缩包。",
+      "exportCta": "导出我的数据",
+      "exporting": "正在准备导出",
+      "exportFailed": "无法导出你的数据，请重试。",
+      "exportRateLimited": "每小时最多导出 3 次。请在 {{time}}后重试。",
+      "exportReady": "你的导出文件已准备好。",
+      "deleteFilesTitle": "删除我的所有文件",
+      "deleteFilesBody": "移除所有结果、上传内容和已保存的项目。你的账户和套餐不受影响。",
+      "deleteFilesCta": "删除我的所有文件",
+      "deleteFilesDialogTitle": "删除你的所有文件？",
+      "deleteFilesDialogBody": "所有结果、上传内容和已保存的项目都会从我们的服务器和此设备中移除。此操作无法撤销。",
+      "deleteFilesDone": "你的所有文件已删除。",
+      "deleteFilesPending": "已删除。少量文件将很快删除完毕。",
+      "deleteFilesFailed": "无法删除你的文件，请重试。",
+      "typedLabel": "输入 {{phrase}} 以确认",
+      "deleteAccountTitle": "删除我的账户",
+      "deleteAccountBody": "取消所有订阅，删除你的全部文件和设置，并移除你的登录信息。此操作无法撤销。"
+    },
+    "deleteAccount": {
+      "title": "删除账户",
+      "heading": "删除你的账户？",
+      "intro": "这将永久删除你的账户，且无法撤销。",
+      "consequences": {
+        "files": "你的文件和历史记录将被删除。",
+        "settings": "你的设置以及在网页端保存的项目（如语音和工程）将被删除。",
+        "subscription": "所有订阅将立即取消。",
+        "analytics": "你的分析数据将被清除。",
+        "signIn": "你的登录信息将被移除，并退出登录。"
+      },
+      "typedLabel": "输入 {{phrase}} 以确认",
+      "cta": "删除我的账户",
+      "reauthHint": "系统会先要求你确认登录。",
+      "working": "正在删除你的账户",
+      "incomplete": "删除未完成。请重试，将从中断的地方继续。",
+      "retry": "重试删除",
+      "failed": "无法删除你的账户，请重试。",
+      "doneTitle": "你的账户已删除。",
+      "doneBody": "你的文件、设置和登录信息已从此设备和我们的服务器中移除。",
+      "toSignIn": "前往登录",
+      "webLink": "改在网页端删除"
+    },
+    "security": {
+      "signOutEverywhere": "在所有设备上退出登录",
+      "signOutEverywhereBody": "在所有设备上退出登录。其他设备最多可能保持登录状态一小时。",
+      "signOutEverywhereTitle": "在所有设备上退出登录？",
+      "signOutEverywhereFailed": "无法在所有设备上退出登录，请重试。"
+    },
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    },
+    "about": {
+      "title": "关于",
+      "version": "版本",
+      "update": "更新",
+      "updateEmbedded": "内置",
+      "channel": "渠道",
+      "runtime": "运行时版本",
+      "api": "服务器",
+      "none": "无",
+      "copyDiagnostics": "复制诊断信息",
+      "copied": "诊断信息已复制。",
+      "contact": "联系支持"
+    }
   }
 }

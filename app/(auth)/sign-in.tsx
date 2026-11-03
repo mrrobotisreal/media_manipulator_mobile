@@ -64,9 +64,7 @@ export default function SignIn() {
 
   return (
     <Screen>
-      <KeyboardScroll
-        contentContainerClassName="grow justify-center gap-5 px-6 py-8"
-      >
+      <KeyboardScroll contentContainerClassName="grow justify-center gap-5 px-6 py-8">
         <Wordmark />
         <View className="gap-1">
           <Text className="text-xl font-semibold">{t('auth.signIn.title')}</Text>

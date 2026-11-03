@@ -948,5 +948,155 @@
       "title": "Share usage analytics",
       "helper": "Helps us improve the app. No file names or contents are ever sent."
     }
+  },
+  "account": {
+    "title": "Account",
+    "sections": {
+      "plan": "Plan",
+      "usage": "Usage",
+      "settings": "Settings",
+      "privacy": "Privacy & data",
+      "security": "Security",
+      "legal": "Legal",
+      "about": "About"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Your plan is managed on the web.",
+      "endsOn": "Ends on {{date}}",
+      "pastDue": "There is a problem with the latest payment.",
+      "granted": "{{tier}} · Granted",
+      "until": "Until {{date}}",
+      "freeBody": "Higher daily limits are available on Premium and Pro.",
+      "operator": "Operator",
+      "loading": "Loading your plan",
+      "loadFailed": "Your plan is unavailable right now."
+    },
+    "usage": {
+      "limits": "Plan limits",
+      "unavailable": "Usage is unavailable right now."
+    },
+    "retention": {
+      "title": "Storage & retention",
+      "heading": "How long we keep your files",
+      "body": "Applies to everything you create. Your choice, not your plan: every account can pick anything from 24 hours to 2 years.",
+      "recommended": "Recommended",
+      "presets": {
+        "h24": "24 hours",
+        "d7": "7 days",
+        "d30": "30 days",
+        "d90": "90 days",
+        "m6": "6 months",
+        "y1": "1 year",
+        "y2": "2 years"
+      },
+      "custom": "Custom",
+      "customLabel": "Custom window in days (1–730)",
+      "customApply": "Apply",
+      "customInvalid": "Enter a whole number of days from 1 to 730.",
+      "current": "Currently {{window}}.",
+      "saved": "Saved. Your files are now kept for {{window}}.",
+      "saveFailed": "Could not save your retention window. It was left as it was.",
+      "previewFailed": "Could not check what this change would delete, so nothing was changed. Try again.",
+      "confirmTitle": "Delete saved items now?",
+      "confirmBody_one": "{{count}} saved item ({{size}}) is older than the new window and will be deleted now. This cannot be undone.",
+      "confirmBody_other": "{{count}} saved items ({{size}}) are older than the new window and will be deleted now. This cannot be undone.",
+      "confirmCta": "Shorten and delete",
+      "metadataTitle": "Metadata reports",
+      "metadataToggle": "Delete metadata reports together with their files",
+      "metadataHint": "Turn this off to keep a file's metadata report after the file is gone.",
+      "visibilityTitle": "History visibility",
+      "visibilityLabel": "What your history list shows",
+      "visibilityFull": "Full details",
+      "visibilityNamesOnly": "Names only",
+      "settingFailed": "Could not save that setting. It was left as it was.",
+      "loadFailed": "Your settings are unavailable right now."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "emailTitle": "Email",
+      "emailAiJob": "Email me when a long AI job finishes",
+      "emailExpiry": "Email me before saved files expire",
+      "emailAlways": "Welcome, payment and account-deletion emails are always sent.",
+      "pushTitle": "Push",
+      "pushJobFinished": "Push notification when a long job finishes",
+      "saveFailed": "Could not save that preference. Try again.",
+      "loadFailed": "Your notification settings are unavailable right now."
+    },
+    "privacy": {
+      "title": "Privacy & data",
+      "analyticsTitle": "Analytics",
+      "deleteAnalyticsTitle": "Delete my analytics data",
+      "deleteAnalyticsBody": "Erases the usage analytics collected for you. Turning analytics off does not delete past data.",
+      "deleteAnalyticsCta": "Delete my analytics data",
+      "deleteAnalyticsDialogTitle": "Delete your analytics data?",
+      "deleteAnalyticsDialogBody": "This erases the usage analytics collected for your account and this device. It cannot be undone.",
+      "deleteAnalyticsDone": "Your analytics data was deleted.",
+      "deleteAnalyticsFailed": "Could not delete your analytics data. Try again.",
+      "dataTitle": "Your data",
+      "exportTitle": "Export my data",
+      "exportBody": "Download a zip with your account data and files.",
+      "exportCta": "Export my data",
+      "exporting": "Preparing your export",
+      "exportFailed": "Could not export your data. Try again.",
+      "exportRateLimited": "Exports are limited to 3 per hour. Try again in {{time}}.",
+      "exportReady": "Your export is ready.",
+      "deleteFilesTitle": "Delete all my files",
+      "deleteFilesBody": "Removes every result, upload and saved project. Your account and plan stay.",
+      "deleteFilesCta": "Delete all my files",
+      "deleteFilesDialogTitle": "Delete all your files?",
+      "deleteFilesDialogBody": "Every result, upload and saved project is removed from our servers and from this device. This cannot be undone.",
+      "deleteFilesDone": "All your files were deleted.",
+      "deleteFilesPending": "Deleted. A few files will finish deleting shortly.",
+      "deleteFilesFailed": "Could not delete your files. Try again.",
+      "typedLabel": "Type {{phrase}} to confirm",
+      "deleteAccountTitle": "Delete my account",
+      "deleteAccountBody": "Cancels any subscription, deletes all your files and settings, and removes your sign-in. This cannot be undone."
+    },
+    "deleteAccount": {
+      "title": "Delete account",
+      "heading": "Delete your account?",
+      "intro": "This permanently deletes your account. It cannot be undone.",
+      "consequences": {
+        "files": "Your files and history are deleted.",
+        "settings": "Your settings and saved items made on the web, such as voices and projects, are deleted.",
+        "subscription": "Any subscription is cancelled immediately.",
+        "analytics": "Your analytics data is erased.",
+        "signIn": "Your sign-in is removed and you are signed out."
+      },
+      "typedLabel": "Type {{phrase}} to confirm",
+      "cta": "Delete my account",
+      "reauthHint": "You will be asked to confirm your sign-in first.",
+      "working": "Deleting your account",
+      "incomplete": "Deletion did not finish. Try again — it continues where it stopped.",
+      "retry": "Retry deletion",
+      "failed": "Could not delete your account. Try again.",
+      "doneTitle": "Your account was deleted.",
+      "doneBody": "Your files, settings and sign-in were removed from this device and our servers.",
+      "toSignIn": "Go to sign in",
+      "webLink": "Delete on the web instead"
+    },
+    "security": {
+      "signOutEverywhere": "Sign out everywhere",
+      "signOutEverywhereBody": "Signs you out on every device. Other devices may stay signed in for up to an hour.",
+      "signOutEverywhereTitle": "Sign out everywhere?",
+      "signOutEverywhereFailed": "Could not sign you out everywhere. Try again."
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "about": {
+      "title": "About",
+      "version": "Version",
+      "update": "Update",
+      "updateEmbedded": "Embedded",
+      "channel": "Channel",
+      "runtime": "Runtime version",
+      "api": "Server",
+      "none": "None",
+      "copyDiagnostics": "Copy diagnostics",
+      "copied": "Diagnostics copied.",
+      "contact": "Contact support"
+    }
   }
 }

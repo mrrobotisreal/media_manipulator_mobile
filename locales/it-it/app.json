@@ -954,5 +954,156 @@
       "title": "Condividi le statistiche di utilizzo",
       "helper": "Ci aiuta a migliorare l’app. Nomi e contenuti dei file non vengono mai inviati."
     }
+  },
+  "account": {
+    "title": "Profilo",
+    "sections": {
+      "plan": "Piano",
+      "usage": "Utilizzo",
+      "settings": "Impostazioni",
+      "privacy": "Privacy e dati",
+      "security": "Sicurezza",
+      "legal": "Note legali",
+      "about": "Informazioni"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Il tuo piano si gestisce dal web.",
+      "endsOn": "Termina il {{date}}",
+      "pastDue": "C'è un problema con l'ultimo pagamento.",
+      "granted": "{{tier}} · Concesso",
+      "until": "Fino al {{date}}",
+      "freeBody": "Limiti giornalieri più alti sono disponibili con Premium e Pro.",
+      "operator": "Operatore",
+      "loading": "Caricamento del piano",
+      "loadFailed": "Il tuo piano non è disponibile al momento."
+    },
+    "usage": {
+      "limits": "Limiti del piano",
+      "unavailable": "L'utilizzo non è disponibile al momento."
+    },
+    "retention": {
+      "title": "Archiviazione e conservazione",
+      "heading": "Per quanto tempo conserviamo i tuoi file",
+      "body": "Vale per tutto ciò che crei. Decidi tu, non il piano: ogni account può scegliere da 24 ore a 2 anni.",
+      "recommended": "Consigliato",
+      "presets": {
+        "h24": "24 ore",
+        "d7": "7 giorni",
+        "d30": "30 giorni",
+        "d90": "90 giorni",
+        "m6": "6 mesi",
+        "y1": "1 anno",
+        "y2": "2 anni"
+      },
+      "custom": "Personalizzato",
+      "customLabel": "Periodo personalizzato in giorni (1–730)",
+      "customApply": "Applica",
+      "customInvalid": "Inserisci un numero intero di giorni da 1 a 730.",
+      "current": "Attualmente: {{window}}.",
+      "saved": "Salvato. I tuoi file ora vengono conservati per {{window}}.",
+      "saveFailed": "Impossibile salvare il periodo di conservazione. È rimasto invariato.",
+      "previewFailed": "Impossibile verificare cosa eliminerebbe questa modifica, quindi non è stato cambiato nulla. Riprova.",
+      "confirmTitle": "Eliminare ora gli elementi salvati?",
+      "confirmBody_one": "{{count}} elemento salvato ({{size}}) è più vecchio del nuovo periodo e verrà eliminato ora. Non si può annullare.",
+      "confirmBody_many": "{{count}} elementi salvati ({{size}}) sono più vecchi del nuovo periodo e verranno eliminati ora. Non si può annullare.",
+      "confirmBody_other": "{{count}} elementi salvati ({{size}}) sono più vecchi del nuovo periodo e verranno eliminati ora. Non si può annullare.",
+      "confirmCta": "Riduci ed elimina",
+      "metadataTitle": "Report dei metadati",
+      "metadataToggle": "Elimina i report dei metadati insieme ai loro file",
+      "metadataHint": "Disattiva per conservare il report dei metadati di un file anche dopo che il file è stato eliminato.",
+      "visibilityTitle": "Visibilità della cronologia",
+      "visibilityLabel": "Cosa mostra l'elenco della cronologia",
+      "visibilityFull": "Dettagli completi",
+      "visibilityNamesOnly": "Solo nomi",
+      "settingFailed": "Impossibile salvare questa impostazione. È rimasta invariata.",
+      "loadFailed": "Le tue impostazioni non sono disponibili al momento."
+    },
+    "notifications": {
+      "title": "Notifiche",
+      "emailTitle": "Posta elettronica",
+      "emailAiJob": "Inviami un'email quando finisce un'attività IA lunga",
+      "emailExpiry": "Inviami un'email prima che i file salvati scadano",
+      "emailAlways": "Le email di benvenuto, di pagamento e di eliminazione dell'account vengono sempre inviate.",
+      "pushTitle": "Notifiche push",
+      "pushJobFinished": "Notifica push quando finisce un'attività lunga",
+      "saveFailed": "Impossibile salvare questa preferenza. Riprova.",
+      "loadFailed": "Le impostazioni delle notifiche non sono disponibili al momento."
+    },
+    "privacy": {
+      "title": "Privacy e dati",
+      "analyticsTitle": "Analisi",
+      "deleteAnalyticsTitle": "Elimina i miei dati di analisi",
+      "deleteAnalyticsBody": "Cancella le statistiche di utilizzo raccolte su di te. Disattivare l'analisi non elimina i dati passati.",
+      "deleteAnalyticsCta": "Elimina i miei dati di analisi",
+      "deleteAnalyticsDialogTitle": "Eliminare i tuoi dati di analisi?",
+      "deleteAnalyticsDialogBody": "Cancella le statistiche di utilizzo raccolte per il tuo account e questo dispositivo. Non si può annullare.",
+      "deleteAnalyticsDone": "I tuoi dati di analisi sono stati eliminati.",
+      "deleteAnalyticsFailed": "Impossibile eliminare i tuoi dati di analisi. Riprova.",
+      "dataTitle": "I tuoi dati",
+      "exportTitle": "Esporta i miei dati",
+      "exportBody": "Scarica uno zip con i dati e i file del tuo account.",
+      "exportCta": "Esporta i miei dati",
+      "exporting": "Preparazione dell'esportazione",
+      "exportFailed": "Impossibile esportare i tuoi dati. Riprova.",
+      "exportRateLimited": "Le esportazioni sono limitate a 3 all'ora. Riprova tra {{time}}.",
+      "exportReady": "L'esportazione è pronta.",
+      "deleteFilesTitle": "Elimina tutti i miei file",
+      "deleteFilesBody": "Rimuove ogni risultato, caricamento e progetto salvato. Account e piano restano.",
+      "deleteFilesCta": "Elimina tutti i miei file",
+      "deleteFilesDialogTitle": "Eliminare tutti i tuoi file?",
+      "deleteFilesDialogBody": "Ogni risultato, caricamento e progetto salvato viene rimosso dai nostri server e da questo dispositivo. Non si può annullare.",
+      "deleteFilesDone": "Tutti i tuoi file sono stati eliminati.",
+      "deleteFilesPending": "Eliminato. Alcuni file finiranno di essere eliminati a breve.",
+      "deleteFilesFailed": "Impossibile eliminare i tuoi file. Riprova.",
+      "typedLabel": "Digita {{phrase}} per confermare",
+      "deleteAccountTitle": "Elimina il mio account",
+      "deleteAccountBody": "Annulla qualsiasi abbonamento, elimina tutti i tuoi file e le impostazioni e rimuove il tuo accesso. Non si può annullare."
+    },
+    "deleteAccount": {
+      "title": "Elimina account",
+      "heading": "Eliminare il tuo account?",
+      "intro": "Questo elimina definitivamente il tuo account. Non si può annullare.",
+      "consequences": {
+        "files": "I tuoi file e la cronologia vengono eliminati.",
+        "settings": "Le tue impostazioni e gli elementi salvati creati sul web, come voci e progetti, vengono eliminati.",
+        "subscription": "Qualsiasi abbonamento viene annullato subito.",
+        "analytics": "I tuoi dati di analisi vengono cancellati.",
+        "signIn": "Il tuo accesso viene rimosso e ti viene fatto uscire."
+      },
+      "typedLabel": "Digita {{phrase}} per confermare",
+      "cta": "Elimina il mio account",
+      "reauthHint": "Prima ti verrà chiesto di confermare l'accesso.",
+      "working": "Eliminazione del tuo account",
+      "incomplete": "L'eliminazione non è stata completata. Riprova: riparte da dove si era fermata.",
+      "retry": "Riprova l'eliminazione",
+      "failed": "Impossibile eliminare il tuo account. Riprova.",
+      "doneTitle": "Il tuo account è stato eliminato.",
+      "doneBody": "I tuoi file, le impostazioni e l'accesso sono stati rimossi da questo dispositivo e dai nostri server.",
+      "toSignIn": "Vai all'accesso",
+      "webLink": "Elimina invece dal web"
+    },
+    "security": {
+      "signOutEverywhere": "Esci ovunque",
+      "signOutEverywhereBody": "Ti disconnette su ogni dispositivo. Gli altri dispositivi possono restare connessi fino a un'ora.",
+      "signOutEverywhereTitle": "Uscire ovunque?",
+      "signOutEverywhereFailed": "Impossibile disconnetterti ovunque. Riprova."
+    },
+    "legal": {
+      "privacy": "Informativa sulla privacy",
+      "terms": "Termini di servizio"
+    },
+    "about": {
+      "title": "Informazioni",
+      "version": "Versione",
+      "update": "Aggiornamento",
+      "updateEmbedded": "Integrato",
+      "channel": "Canale",
+      "runtime": "Versione runtime",
+      "api": "Server API",
+      "none": "Nessuno",
+      "copyDiagnostics": "Copia diagnostica",
+      "copied": "Diagnostica copiata.",
+      "contact": "Contatta l'assistenza"
+    }
   }
 }

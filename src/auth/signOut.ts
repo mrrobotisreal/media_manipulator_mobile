@@ -23,10 +23,14 @@ const realDeps: SignOutDeps = { firebaseSignOut, googleSignOut };
 export async function performSignOut(
   dispatch: Dispatch<UnknownAction>,
   deps: SignOutDeps = realDeps,
+  opts: { silent?: boolean } = {},
 ): Promise<void> {
-  track(EVENTS.SIGNOUT);
-  setAuthEntrySource('signed_out');
-  resetAnalytics();
+  // `silent`: account deletion already reset analytics and must not queue another event (MA22).
+  if (!opts.silent) {
+    track(EVENTS.SIGNOUT);
+    setAuthEntrySource('signed_out');
+    resetAnalytics();
+  }
   try {
     await deps.firebaseSignOut();
   } finally {

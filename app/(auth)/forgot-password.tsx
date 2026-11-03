@@ -25,9 +25,7 @@ export default function ForgotPassword() {
 
   return (
     <Screen>
-      <KeyboardScroll
-        contentContainerClassName="grow justify-center gap-4 px-6 py-8"
-      >
+      <KeyboardScroll contentContainerClassName="grow justify-center gap-4 px-6 py-8">
         <Text className="text-xl font-semibold">{t('interface:authModal.reset.title')}</Text>
         {sent ? (
           <Text testID="reset-sent">{t('interface:authModal.reset.sent')}</Text>

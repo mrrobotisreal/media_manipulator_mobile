@@ -954,5 +954,156 @@
       "title": "Compartir analíticas de uso",
       "helper": "Nos ayuda a mejorar la app. Nunca se envían nombres ni contenidos de archivos."
     }
+  },
+  "account": {
+    "title": "Cuenta",
+    "sections": {
+      "plan": "Suscripción",
+      "usage": "Uso",
+      "settings": "Ajustes",
+      "privacy": "Privacidad y datos",
+      "security": "Seguridad",
+      "legal": "Información legal",
+      "about": "Acerca de"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Tu plan se gestiona en la web.",
+      "endsOn": "Termina el {{date}}",
+      "pastDue": "Hay un problema con el último pago.",
+      "granted": "{{tier}} · Concedido",
+      "until": "Hasta el {{date}}",
+      "freeBody": "Hay límites diarios más altos en Premium y Pro.",
+      "operator": "Operador",
+      "loading": "Cargando tu plan",
+      "loadFailed": "Tu plan no está disponible en este momento."
+    },
+    "usage": {
+      "limits": "Límites del plan",
+      "unavailable": "El uso no está disponible en este momento."
+    },
+    "retention": {
+      "title": "Almacenamiento y conservación",
+      "heading": "Cuánto tiempo conservamos tus archivos",
+      "body": "Se aplica a todo lo que creas. Es tu elección, no depende de tu plan: cualquier cuenta puede elegir entre 24 horas y 2 años.",
+      "recommended": "Recomendado",
+      "presets": {
+        "h24": "24 horas",
+        "d7": "7 días",
+        "d30": "30 días",
+        "d90": "90 días",
+        "m6": "6 meses",
+        "y1": "1 año",
+        "y2": "2 años"
+      },
+      "custom": "Personalizado",
+      "customLabel": "Periodo personalizado en días (1–730)",
+      "customApply": "Aplicar",
+      "customInvalid": "Introduce un número entero de días entre 1 y 730.",
+      "current": "Actualmente: {{window}}.",
+      "saved": "Guardado. Tus archivos se conservarán durante {{window}}.",
+      "saveFailed": "No se pudo guardar tu periodo de conservación. Se dejó como estaba.",
+      "previewFailed": "No se pudo comprobar qué eliminaría este cambio, así que no se modificó nada. Inténtalo de nuevo.",
+      "confirmTitle": "¿Eliminar ahora los elementos guardados?",
+      "confirmBody_one": "{{count}} elemento guardado ({{size}}) es más antiguo que el nuevo periodo y se eliminará ahora. Esta acción no se puede deshacer.",
+      "confirmBody_many": "{{count}} de elementos guardados ({{size}}) son más antiguos que el nuevo periodo y se eliminarán ahora. Esta acción no se puede deshacer.",
+      "confirmBody_other": "{{count}} elementos guardados ({{size}}) son más antiguos que el nuevo periodo y se eliminarán ahora. Esta acción no se puede deshacer.",
+      "confirmCta": "Acortar y eliminar",
+      "metadataTitle": "Informes de metadatos",
+      "metadataToggle": "Eliminar los informes de metadatos junto con sus archivos",
+      "metadataHint": "Desactívalo para conservar el informe de metadatos de un archivo cuando el archivo ya no exista.",
+      "visibilityTitle": "Visibilidad del historial",
+      "visibilityLabel": "Lo que muestra tu lista del historial",
+      "visibilityFull": "Todos los detalles",
+      "visibilityNamesOnly": "Solo nombres",
+      "settingFailed": "No se pudo guardar ese ajuste. Se dejó como estaba.",
+      "loadFailed": "Tus ajustes no están disponibles en este momento."
+    },
+    "notifications": {
+      "title": "Notificaciones",
+      "emailTitle": "Correo electrónico",
+      "emailAiJob": "Enviarme un correo cuando termine una tarea larga de IA",
+      "emailExpiry": "Enviarme un correo antes de que caduquen los archivos guardados",
+      "emailAlways": "Los correos de bienvenida, de pago y de eliminación de cuenta se envían siempre.",
+      "pushTitle": "Notificaciones push",
+      "pushJobFinished": "Notificación push cuando termine una tarea larga",
+      "saveFailed": "No se pudo guardar esa preferencia. Inténtalo de nuevo.",
+      "loadFailed": "Tus ajustes de notificaciones no están disponibles en este momento."
+    },
+    "privacy": {
+      "title": "Privacidad y datos",
+      "analyticsTitle": "Analíticas",
+      "deleteAnalyticsTitle": "Eliminar mis datos de analíticas",
+      "deleteAnalyticsBody": "Borra las analíticas de uso recopiladas sobre ti. Desactivar las analíticas no elimina los datos anteriores.",
+      "deleteAnalyticsCta": "Eliminar mis datos de analíticas",
+      "deleteAnalyticsDialogTitle": "¿Eliminar tus datos de analíticas?",
+      "deleteAnalyticsDialogBody": "Esto borra las analíticas de uso recopiladas de tu cuenta y de este dispositivo. No se puede deshacer.",
+      "deleteAnalyticsDone": "Se eliminaron tus datos de analíticas.",
+      "deleteAnalyticsFailed": "No se pudieron eliminar tus datos de analíticas. Inténtalo de nuevo.",
+      "dataTitle": "Tus datos",
+      "exportTitle": "Exportar mis datos",
+      "exportBody": "Descarga un zip con los datos y los archivos de tu cuenta.",
+      "exportCta": "Exportar mis datos",
+      "exporting": "Preparando tu exportación",
+      "exportFailed": "No se pudieron exportar tus datos. Inténtalo de nuevo.",
+      "exportRateLimited": "Las exportaciones están limitadas a 3 por hora. Inténtalo de nuevo en {{time}}.",
+      "exportReady": "Tu exportación está lista.",
+      "deleteFilesTitle": "Eliminar todos mis archivos",
+      "deleteFilesBody": "Elimina todos los resultados, subidas y proyectos guardados. Tu cuenta y tu plan se mantienen.",
+      "deleteFilesCta": "Eliminar todos mis archivos",
+      "deleteFilesDialogTitle": "¿Eliminar todos tus archivos?",
+      "deleteFilesDialogBody": "Todos los resultados, subidas y proyectos guardados se eliminan de nuestros servidores y de este dispositivo. No se puede deshacer.",
+      "deleteFilesDone": "Se eliminaron todos tus archivos.",
+      "deleteFilesPending": "Eliminado. Unos pocos archivos terminarán de eliminarse en breve.",
+      "deleteFilesFailed": "No se pudieron eliminar tus archivos. Inténtalo de nuevo.",
+      "typedLabel": "Escribe {{phrase}} para confirmar",
+      "deleteAccountTitle": "Eliminar mi cuenta",
+      "deleteAccountBody": "Cancela cualquier suscripción, elimina todos tus archivos y ajustes, y borra tu inicio de sesión. No se puede deshacer."
+    },
+    "deleteAccount": {
+      "title": "Eliminar cuenta",
+      "heading": "¿Eliminar tu cuenta?",
+      "intro": "Esto elimina tu cuenta de forma permanente. No se puede deshacer.",
+      "consequences": {
+        "files": "Se eliminan tus archivos y tu historial.",
+        "settings": "Se eliminan tus ajustes y los elementos guardados en la web, como voces y proyectos.",
+        "subscription": "Cualquier suscripción se cancela de inmediato.",
+        "analytics": "Se borran tus datos de analíticas.",
+        "signIn": "Se elimina tu inicio de sesión y se cierra tu sesión."
+      },
+      "typedLabel": "Escribe {{phrase}} para confirmar",
+      "cta": "Eliminar mi cuenta",
+      "reauthHint": "Primero se te pedirá que confirmes tu inicio de sesión.",
+      "working": "Eliminando tu cuenta",
+      "incomplete": "La eliminación no se completó. Inténtalo de nuevo: continuará donde se quedó.",
+      "retry": "Reintentar eliminación",
+      "failed": "No se pudo eliminar tu cuenta. Inténtalo de nuevo.",
+      "doneTitle": "Tu cuenta fue eliminada.",
+      "doneBody": "Tus archivos, ajustes e inicio de sesión se eliminaron de este dispositivo y de nuestros servidores.",
+      "toSignIn": "Ir a iniciar sesión",
+      "webLink": "Eliminar en la web"
+    },
+    "security": {
+      "signOutEverywhere": "Cerrar sesión en todas partes",
+      "signOutEverywhereBody": "Cierra tu sesión en todos los dispositivos. Otros dispositivos pueden seguir con la sesión iniciada hasta una hora.",
+      "signOutEverywhereTitle": "¿Cerrar sesión en todas partes?",
+      "signOutEverywhereFailed": "No se pudo cerrar tu sesión en todas partes. Inténtalo de nuevo."
+    },
+    "legal": {
+      "privacy": "Política de privacidad",
+      "terms": "Términos del servicio"
+    },
+    "about": {
+      "title": "Acerca de",
+      "version": "Versión",
+      "update": "Actualización",
+      "updateEmbedded": "Integrada",
+      "channel": "Canal",
+      "runtime": "Versión de runtime",
+      "api": "Servidor",
+      "none": "Ninguna",
+      "copyDiagnostics": "Copiar diagnóstico",
+      "copied": "Diagnóstico copiado.",
+      "contact": "Contactar con soporte"
+    }
   }
 }
