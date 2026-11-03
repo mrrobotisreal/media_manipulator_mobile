@@ -115,6 +115,8 @@ export function buildConfig(
     plugins.push(
       '@react-native-firebase/app',
       '@react-native-firebase/auth',
+      // Crash reporting (MA07, ADR MA-0004); runtime collection flag in src/analytics/crashlytics.ts.
+      '@react-native-firebase/crashlytics',
       '@react-native-google-signin/google-signin',
     );
   }
