@@ -10,7 +10,7 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 - **Job**: one server-side run of a Tool on an upload; has status, progress and a **Result** (downloadable output).
 - **Quota metric**: what the API meters, `ops` or `ai_ops`. **Tier**: the account plan reported in `X-MM-Tier`.
 - **Sync gate**: after Firebase sign-in the app calls `POST /api/account/sync`; `(app)` routes render only when `auth.status === 'ready'`.
-- **Visitor id**: per-install UUIDv4 (persisted). **Session id**: UUIDv4 created at cold start.
+- **Visitor id**: per-install UUIDv4 (persisted). **Session id**: UUIDv4 that rotates after 30 minutes without activity (background or idle); `ensureFreshSession()` in `src/analytics/session.ts` is the only rotation point, called on every `track`, every `buildHeaders()` and on foreground, so analytics `session_id` and `X-MM-Session-ID` are always the same value (MA07). Sign-out also rotates it.
 - The word "Darkroom" never appears in the app UI. `Darkroom Instrument` is only the name of the design-token system (`src/ui/tokens.ts`), ported from the web.
 - **MmError**: the one error shape from `src/api/errors.ts` (`{status, code, message?, details}`); every API failure is normalised to it. Screens switch on **error code** (`MmErrorCode`: client codes like `network`, `rate_limited`, `contract_mismatch`, the API's snake_case codes, or `api:<code>` for ones this build does not know), never on English text.
 - **Quota observation**: on every 2xx the baseQuery reads `X-MM-Tier` / `X-MM-Quota-*` and dispatches `quota/observed`; on other failures it invalidates the `Account` tag instead.
@@ -18,6 +18,12 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 
 - **Web shard**: a JSON file copied by `scripts/sync-web-i18n.mjs` from the web's `i18n/locales/<code>/` into `src/i18n/generated/`; namespaces `interface`, `error`, `accessibility`. Read-only here; translator-workbench edits arrive on the next sync.
 - **App shard**: `locales/<code>/app.json`, namespace `app` (default); app-only strings, keys grouped by screen, present in all 18 locales.
+- **Catalog mirror** (MA07): `src/analytics/events.ts` (`EVENTS`, `EVENT_PRIORITY`, `EventPropsMap`), the app's copy of the analytics service's `internal/catalog/catalog.go`, checked from that repo by `TestAppEventsParity`. Names only as `EVENTS.X` (lint rule + `events.test.ts`); a new name lands in the analytics catalog's `appRolloutBatches` and is deployed first.
+- **Outbox** (MA07): `src/analytics/outbox.ts`, the MMKV-persisted event queue on its own instance `mm-analytics` (1000 events / 1 MB, oldest dropped; events older than 7 days dropped at flush). Flushed p0 at once, p1 after 2 s, otherwise every 15 s or at 20 events, and on background / reconnect; one flush in flight.
+- **Screen pattern** (MA07): the `screen_viewed.screen` (and `context.pathname`) value: the Expo Router segments with `(group)` segments and `index` dropped and dynamic segments kept as `[param]` (`/tool/[family]/[toolId]`); the Tools tab is `/tools`. Never a concrete id.
+- **Mobile-dev key** (MA06/MA07): the `mmk_appdev_…` write key in the development and preview EAS environments (`EXPO_PUBLIC_ANALYTICS_WRITE_KEY`); the analytics service marks every event `is_self`, so test traffic shows in the admin events browser but never in aggregates. Production builds carry the `mmk_app_…` mobile key. An empty key disables analytics in that build.
+- **Opt-out** (MA07): `settings.analyticsOptOut`, the "Share usage analytics" toggle (Account tab until MA22's Privacy screen). On: no capture, the outbox is cleared, timers stop; off again: capture resumes with the same visitor id. Past data is deleted only by MA22's "Delete my analytics data".
+- **client_error** (MA07): one quality event per distinct error per session (max 10), from the root error boundary (`react`), the chained global JS handler (`window`), Hermes unhandled rejections (`promise`) and manual call sites (`contract_mismatch`, `no_absolute_url`). The message is scrubbed (query strings, tokens, emails, ids, digits) and cut to 200 chars; `stack_hash` is 16 hex of SHA-256 over message + first 5 frames. Stacks go to **Crashlytics** only (`src/analytics/crashlytics.ts`; collection off in development builds).
 - **Locale override**: `settings.locale` (null = follow the system); resolved by `resolveLocale` and applied by `setAppLocale`.
 - **RTL reload**: switching to or from he-IL / ar-SA flips layout direction, which needs a confirm sheet, `I18nManager.forceRTL` and `Updates.reloadAsync()`; same-direction switches are live.
 - **Sync gate** (MA04): `src/auth/syncGate.ts` follows Firebase auth state: `unknown -> signedOut | syncing -> ready | syncFailed`. Sync retries 1 s, 3 s, 9 s; a 401 fails immediately. `signupSource` is the method just used, else the first `providerData` entry (`methods.ts`).
@@ -49,11 +55,12 @@ Expo / React Native client (Android first, iOS later) for the Media Manipulator 
 
 ## Layout
 
-`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` stub `track`; `src/tools` registry, search, recents (MA10); `src/files` intake, pre-flight, share-into, FileArea (MA11); `src/jobs` upload transport, SSE parser, job engine, restore (MA12).
+`app/` Expo Router routes ((auth), (app)/(tabs)); `src/ui` tokens and base components; `src/state` Redux store, MMKV persistence, slices; `src/lib` ids, user agent, locale, Firebase availability; `src/api` baseQuery, errors, Zod schemas, `mmApi` endpoints; `src/analytics` catalog mirror, client, outbox, lifecycle, `client_error`, Crashlytics (MA07); `src/tools` registry, search, recents (MA10); `src/files` intake, pre-flight, share-into, FileArea (MA11); `src/jobs` upload transport, SSE parser, job engine, restore (MA12).
 
 ## Ids
 
 Android package and iOS bundle id are both `com.mediamanipulator.app`; the `development` and `preview` variants append `.dev` / `.preview` (`com.mediamanipulator.app.dev`, `com.mediamanipulator.app.preview`). Slug `media-manipulator`, scheme `mediamanipulator`. Both are single constants (`ANDROID_PACKAGE`, `IOS_BUNDLE_ID`) in `app.config.ts`.
+
 - **Save to Photos** (MA14): image/gif/video results go to the gallery via `expo-media-library` (add-only permission asked at the first save; Android album "Media Manipulator"). Denied: a sheet offers Open settings or Save to Files instead.
 - **Save to Files** (MA14): everything else. Android picks a Storage Access Framework folder once (`settings.lastSaveDirUri`) and writes into it; iOS opens the share sheet. Pure logic in `src/files/save.ts`, native bindings in `src/files/saveDeps.ts`.
 - **Share link** (MM32, MA14): "Copy share link" mints a public expiring `/r/<token>` URL (`POST /jobs/:id/share`, 5 live per job, revoke all with `DELETE`); only the URL is copied, never the file name. Distinct from the **share sheet** (shares the file itself).
@@ -74,4 +81,3 @@ Android package and iOS bundle id are both `com.mediamanipulator.app`; the `deve
 - **Metadata inspector** (MA21): `src/metadata/ui/MetadataInspector.tsx`, the native categorized view of a `MetadataDocument` (summary, privacy chips, search, collapsible category sections, GPS card). Pure logic is ported from the web `lib/metadata/` into `src/metadata/` (no tag descriptions in v1). The GPS card makes no network call; "Open in maps" opens only on tap.
 - **Result line** (MA21): `MetadataResultLine`, "Metadata: N kept · M removed · Compare" under a strip/edit result; Compare opens `MetadataDiffSheet` (unified diff from `GET /api/job/:id/metadata/diff`).
 - **Custom metadata = strip then write** (MA21): `edit-metadata` sends `metadataMode: custom`; the API strips every tag first and writes only the fields given, so an empty form strips.
-

@@ -948,5 +948,11 @@
       "loadingThumbs": "Chargement de l'aperçu…",
       "loading": "Chargement de l’audio"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "Partager les statistiques d’utilisation",
+      "helper": "Nous aide à améliorer l’application. Aucun nom ni contenu de fichier n’est jamais envoyé."
+    }
   }
 }

@@ -942,5 +942,11 @@
       "loadingThumbs": "Vorschau wird geladen…",
       "loading": "Audio wird geladen"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "Nutzungsanalysen teilen",
+      "helper": "Hilft uns, die App zu verbessern. Dateinamen oder Dateiinhalte werden nie gesendet."
+    }
   }
 }

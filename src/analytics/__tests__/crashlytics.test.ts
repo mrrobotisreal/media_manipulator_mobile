@@ -19,7 +19,6 @@ jest.mock('@react-native-firebase/crashlytics', () => mockFns);
 let mockConfigured = true;
 jest.mock('@/lib/firebaseAvailable', () => ({ isFirebaseConfigured: () => mockConfigured }));
 
-
 describe('crashlytics', () => {
   beforeEach(() => {
     resetCrashlyticsForTests();

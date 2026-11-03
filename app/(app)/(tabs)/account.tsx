@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { I18nManager, Pressable, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { performSignOut } from '@/auth/signOut';
-import { useAppDispatch } from '@/state/hooks';
+import { useAppDispatch, useAppSelector } from '@/state/hooks';
+import { analyticsOptOutSet } from '@/state/slices/settings';
 import { Button, EmptyState, Screen, Sheet, Text } from '@/ui/components';
+import { ToggleRow } from '@/ui/components/ToggleRow';
 import { colors } from '@/ui/tokens';
 
 export default function AccountTab() {
@@ -13,6 +15,7 @@ export default function AccountTab() {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [confirming, setConfirming] = useState(false);
+  const optedOut = useAppSelector((s) => s.settings.analyticsOptOut);
   return (
     <Screen edges="none">
       <EmptyState
@@ -34,6 +37,15 @@ export default function AccountTab() {
             <ChevronRight size={20} color={colors.mutedFg} />
           )}
         </Pressable>
+        {/* MA07: interim placement; MA22 moves it into Account -> Privacy. */}
+        <View className="rounded-lg border border-edge bg-surface-1 px-4 py-2">
+          <ToggleRow
+            label={t('analytics.optOut.title')}
+            hint={t('analytics.optOut.helper')}
+            value={!optedOut}
+            onChange={(share) => dispatch(analyticsOptOutSet(!share))}
+          />
+        </View>
         <Button
           label={t('common.signOut')}
           variant="secondary"
