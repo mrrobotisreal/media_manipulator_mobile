@@ -118,7 +118,8 @@
     "operatedBy": "Gestito da CreaTV Ltd. · Colorado, USA",
     "changelog": "Changelog",
     "status": "Stato",
-    "licenses": "Licenze open source"
+    "licenses": "Licenze open source",
+    "deleteAccount": "Elimina account"
   },
   "languageSelector": {
     "label": "Lingua",

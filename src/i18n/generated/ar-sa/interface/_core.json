@@ -130,7 +130,8 @@
     "operatedBy": "تديره شركة CreaTV Ltd. · كولورادو، الولايات المتحدة الأمريكية",
     "changelog": "سجل التغييرات",
     "status": "الحالة",
-    "licenses": "تراخيص المصادر المفتوحة"
+    "licenses": "تراخيص المصادر المفتوحة",
+    "deleteAccount": "حذف الحساب"
   },
   "languageSelector": {
     "label": "اللغة",

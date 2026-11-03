@@ -118,7 +118,8 @@
     "operatedBy": "संचालक: CreaTV Ltd. · कोलोराडो, अमेरिका",
     "changelog": "चेंजलॉग",
     "status": "स्टेटस",
-    "licenses": "ओपन-सोर्स लाइसेंस"
+    "licenses": "ओपन-सोर्स लाइसेंस",
+    "deleteAccount": "अकाउंट हटाएँ"
   },
   "languageSelector": {
     "label": "भाषा",

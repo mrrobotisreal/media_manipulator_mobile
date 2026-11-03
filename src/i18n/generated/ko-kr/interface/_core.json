@@ -115,7 +115,8 @@
     "operatedBy": "운영: CreaTV Ltd. · 미국 콜로라도",
     "changelog": "변경 내역",
     "status": "서비스 상태",
-    "licenses": "오픈소스 라이선스"
+    "licenses": "오픈소스 라이선스",
+    "deleteAccount": "계정 삭제"
   },
   "languageSelector": {
     "label": "언어",

@@ -23,8 +23,8 @@ export const PRIVACY_PATH = '/privacy-policy';
 export const TERMS_PATH = '/terms-of-service';
 
 /**
- * MA26 ships the public `/delete-account` page; until it is deployed the link is not rendered
- * (it would 404). MA26 flips this to true.
+ * MA26 shipped the public `/delete-account` page (web must be deployed before any build or OTA
+ * containing this flag). The link is rendered in About and Privacy.
  */
 export const DELETE_ACCOUNT_WEB_PATH = '/delete-account';
-export const DELETE_ACCOUNT_WEB_PATH_LIVE = false;
+export const DELETE_ACCOUNT_WEB_PATH_LIVE = true;

@@ -124,7 +124,8 @@
     "operatedBy": "Оператор: CreaTV Ltd. · Колорадо, США",
     "changelog": "Список змін",
     "status": "Стан",
-    "licenses": "Ліцензії відкритого коду"
+    "licenses": "Ліцензії відкритого коду",
+    "deleteAccount": "Видалити обліковий запис"
   },
   "languageSelector": {
     "label": "Мова",

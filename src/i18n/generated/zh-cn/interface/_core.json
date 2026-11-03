@@ -115,7 +115,8 @@
     "operatedBy": "由CreaTV Ltd.运营 · 美国科罗拉多州",
     "changelog": "更新日志",
     "status": "服务状态",
-    "licenses": "开源许可证"
+    "licenses": "开源许可证",
+    "deleteAccount": "删除账户"
   },
   "languageSelector": {
     "label": "语言",

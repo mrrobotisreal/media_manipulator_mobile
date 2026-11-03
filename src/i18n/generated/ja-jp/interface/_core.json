@@ -115,7 +115,8 @@
     "operatedBy": "運営：CreaTV Ltd. · 米国コロラド州",
     "changelog": "更新履歴",
     "status": "稼働状況",
-    "licenses": "オープンソースライセンス"
+    "licenses": "オープンソースライセンス",
+    "deleteAccount": "アカウントを削除"
   },
   "languageSelector": {
     "label": "言語",
