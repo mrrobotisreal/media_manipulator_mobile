@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import type { ConfigContext, ExpoConfig } from 'expo/config';
 
 // Set by Mitch in MA01 phase B (eas init).
-const EAS_PROJECT_ID = '';
-const EAS_OWNER: string | undefined = undefined;
+const EAS_PROJECT_ID = 'f8644b0d-44d2-4a4f-bec9-0b0cc4252f14';
+const EAS_OWNER: string | undefined = 'mwintrow';
 
 export type Variant = 'development' | 'preview' | 'production';
 
