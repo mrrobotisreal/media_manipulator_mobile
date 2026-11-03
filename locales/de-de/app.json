@@ -1098,5 +1098,22 @@
       "copied": "Diagnose kopiert.",
       "contact": "Support kontaktieren"
     }
+  },
+  "push": {
+    "channelName": "Auftragsupdates",
+    "prePrompt": {
+      "title": "Benachrichtigung erhalten, wenn lange Aufträge fertig sind?",
+      "body": "Wir senden dir eine einzelne Benachrichtigung, sobald dieser Auftrag fertig ist – du kannst die App also verlassen. Du kannst das unter {{path}} ausschalten.",
+      "accept": "Benachrichtigen",
+      "dismiss": "Jetzt nicht"
+    },
+    "settings": {
+      "denied": "Benachrichtigungen für Media Manipulator sind ausgeschaltet",
+      "openSettings": "Einstellungen öffnen"
+    },
+    "toast": {
+      "open": "Öffnen",
+      "fallback": "Dein Auftrag ist fertig"
+    }
   }
 }

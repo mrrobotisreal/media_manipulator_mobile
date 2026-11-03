@@ -1091,5 +1091,22 @@
       "copied": "診断情報をコピーしました。",
       "contact": "サポートに問い合わせる"
     }
+  },
+  "push": {
+    "channelName": "ジョブの更新",
+    "prePrompt": {
+      "title": "時間のかかる処理が完了したら通知しますか？",
+      "body": "この処理が完了したら通知を1回お送りしますので、アプリを閉じても大丈夫です。通知は{{path}}でオフにできます。",
+      "accept": "通知する",
+      "dismiss": "今はしない"
+    },
+    "settings": {
+      "denied": "Media Manipulatorの通知はオフになっています",
+      "openSettings": "設定を開く"
+    },
+    "toast": {
+      "open": "開く",
+      "fallback": "処理が完了しました"
+    }
   }
 }

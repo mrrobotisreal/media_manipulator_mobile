@@ -1105,5 +1105,22 @@
       "copied": "Diagnóstico copiado.",
       "contact": "Falar com o suporte"
     }
+  },
+  "push": {
+    "channelName": "Atualizações de tarefas",
+    "prePrompt": {
+      "title": "Quer ser avisado quando tarefas longas terminarem?",
+      "body": "Vamos enviar uma única notificação quando esta tarefa for concluída, para você poder sair do app. Você pode desativar isso em {{path}}.",
+      "accept": "Avisar",
+      "dismiss": "Agora não"
+    },
+    "settings": {
+      "denied": "As notificações estão desativadas para o Media Manipulator",
+      "openSettings": "Abrir ajustes"
+    },
+    "toast": {
+      "open": "Abrir",
+      "fallback": "Sua tarefa foi concluída"
+    }
   }
 }

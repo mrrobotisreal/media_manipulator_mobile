@@ -1091,5 +1091,22 @@
       "copied": "诊断信息已复制。",
       "contact": "联系支持"
     }
+  },
+  "push": {
+    "channelName": "任务更新",
+    "prePrompt": {
+      "title": "长时间任务完成时通知你？",
+      "body": "此任务完成后，我们会发送一条通知，你可以放心离开应用。你可以在{{path}}中关闭此功能。",
+      "accept": "通知我",
+      "dismiss": "暂不"
+    },
+    "settings": {
+      "denied": "Media Manipulator 的通知已关闭",
+      "openSettings": "打开设置"
+    },
+    "toast": {
+      "open": "打开",
+      "fallback": "你的任务已完成"
+    }
   }
 }

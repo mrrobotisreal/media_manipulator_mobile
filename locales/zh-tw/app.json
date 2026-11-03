@@ -1091,5 +1091,22 @@
       "copied": "診斷資訊已複製。",
       "contact": "聯絡支援"
     }
+  },
+  "push": {
+    "channelName": "工作更新",
+    "prePrompt": {
+      "title": "長時間工作完成時通知你？",
+      "body": "此工作完成後，我們會傳送一則通知，你可以放心離開 App。你可以在{{path}}中關閉此功能。",
+      "accept": "通知我",
+      "dismiss": "暫時不要"
+    },
+    "settings": {
+      "denied": "Media Manipulator 的通知已關閉",
+      "openSettings": "開啟設定"
+    },
+    "toast": {
+      "open": "開啟",
+      "fallback": "你的工作已完成"
+    }
   }
 }

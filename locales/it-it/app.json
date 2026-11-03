@@ -1105,5 +1105,22 @@
       "copied": "Diagnostica copiata.",
       "contact": "Contatta l'assistenza"
     }
+  },
+  "push": {
+    "channelName": "Aggiornamenti attività",
+    "prePrompt": {
+      "title": "Vuoi ricevere una notifica quando finiscono le attività lunghe?",
+      "body": "Ti invieremo una sola notifica quando questa attività sarà completata, così potrai uscire dall’app. Puoi disattivarla in {{path}}.",
+      "accept": "Avvisami",
+      "dismiss": "Non ora"
+    },
+    "settings": {
+      "denied": "Le notifiche sono disattivate per Media Manipulator",
+      "openSettings": "Apri impostazioni"
+    },
+    "toast": {
+      "open": "Apri",
+      "fallback": "La tua attività è terminata"
+    }
   }
 }
