@@ -1,0 +1,10 @@
+# The core path, in order. Pro TEST account only; leaves the account's History empty of its own items.
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- runFlow: sign-in-email.yaml
+- runFlow: convert-image.yaml
+- runFlow: save-result.yaml
+- runFlow: history.yaml
+- runFlow: sign-out.yaml

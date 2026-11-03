@@ -1,0 +1,28 @@
+# Needs a signed-in session and maestro/fixtures/sample.jpg on the device:
+#   adb push maestro/fixtures/sample.jpg /sdcard/Pictures/mm-maestro-sample.jpg
+# The picked image comes from the system Photo Picker (no app testIDs there): the flow taps the first grid item.
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- launchApp
+- tapOn:
+    id: tab-tools
+- tapOn:
+    id: tool-row-image-convert
+- tapOn:
+    id: pick-media
+- extendedWaitUntil:
+    visible: Photos
+    timeout: 10000
+    optional: true
+- tapOn:
+    point: 20%,30%
+- tapOn:
+    id: convert-format-png
+- tapOn:
+    id: tool-start
+- extendedWaitUntil:
+    visible:
+      id: result-body
+    timeout: 120000

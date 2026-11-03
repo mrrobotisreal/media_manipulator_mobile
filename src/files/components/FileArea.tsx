@@ -176,9 +176,15 @@ export function FileArea({
           <Text className="text-center text-muted-fg">{t('tool.fileArea')}</Text>
           <View className="flex-row flex-wrap justify-center gap-2">
             {hasMedia ? (
-              <Button label={t('files.pick.media')} onPress={pickMedia} disabled={busy} />
+              <Button
+                testID="pick-media"
+                label={t('files.pick.media')}
+                onPress={pickMedia}
+                disabled={busy}
+              />
             ) : null}
             <Button
+              testID="pick-files"
               label={t('files.pick.files')}
               variant={hasMedia ? 'secondary' : 'primary'}
               onPress={pickFiles}

@@ -85,6 +85,7 @@ export default function SignIn() {
             {emailOpen ? (
               <View className="gap-3">
                 <TextField
+                  testID="auth-email"
                   label={t('interface:authModal.fields.email')}
                   value={email}
                   onChangeText={setEmail}
@@ -94,6 +95,7 @@ export default function SignIn() {
                   textContentType="emailAddress"
                 />
                 <TextField
+                  testID="auth-password"
                   label={t('interface:authModal.fields.password')}
                   value={password}
                   onChangeText={setPassword}
@@ -102,6 +104,7 @@ export default function SignIn() {
                   textContentType="password"
                 />
                 <Button
+                  testID="auth-submit"
                   label={t('interface:accountMenu.signIn')}
                   size="lg"
                   loading={busy}
@@ -111,6 +114,7 @@ export default function SignIn() {
               </View>
             ) : (
               <Button
+                testID="auth-email-toggle"
                 label={t('auth.signIn.email')}
                 variant="ghost"
                 size="lg"

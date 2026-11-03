@@ -1,0 +1,4 @@
+# Maestro workspace config. Run from mobile-app/: maestro test -e MM_TEST_EMAIL=... -e MM_TEST_PASSWORD=... maestro/flows/smoke.yaml
+flows:
+  - flows/*.yaml
+# smoke.yaml composes the other flows; run the single files directly when debugging.

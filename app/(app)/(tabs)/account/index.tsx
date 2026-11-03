@@ -89,7 +89,11 @@ export default function AccountOverview() {
 
         <SectionLabel>{t('account.sections.security')}</SectionLabel>
         <View className="gap-2">
-          <NavRow label={t('common.signOut')} onPress={() => setSheet('signOut')} />
+          <NavRow
+            testID="account-sign-out"
+            label={t('common.signOut')}
+            onPress={() => setSheet('signOut')}
+          />
           <NavRow
             label={t('account.security.signOutEverywhere')}
             onPress={() => setSheet('everywhere')}
@@ -109,7 +113,11 @@ export default function AccountOverview() {
         </View>
 
         <SectionLabel>{t('account.sections.about')}</SectionLabel>
-        <NavRow label={t('account.about.title')} href="/(app)/(tabs)/account/about" />
+        <NavRow
+          testID="account-about"
+          label={t('account.about.title')}
+          href="/(app)/(tabs)/account/about"
+        />
       </ScrollView>
 
       <Sheet visible={sheet === 'signOut'} onClose={() => setSheet(null)}>
@@ -117,6 +125,7 @@ export default function AccountOverview() {
           <Text className="text-lg font-semibold">{t('auth.signOut.confirmTitle')}</Text>
           <Text className="text-muted-fg">{t('auth.signOut.confirmBody')}</Text>
           <Button
+            testID="sign-out-confirm"
             label={t('common.signOut')}
             variant="danger"
             onPress={() => {
