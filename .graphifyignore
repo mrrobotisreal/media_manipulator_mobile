@@ -26,3 +26,4 @@ maestro/out/
 # Tooling
 .claude/
 *.log
+maestro/fixtures/
