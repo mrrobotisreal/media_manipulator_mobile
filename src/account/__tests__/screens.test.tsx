@@ -90,7 +90,11 @@ describe('notifications screen', () => {
 describe('notifications screen: OS permission (MA24)', () => {
   const pushOn = { ...base, pushJobFinished: true };
   const setOs = (status: string) =>
-    (Notifications.getPermissionsAsync as jest.Mock).mockResolvedValue({ status });
+    // A refusal is `denied` that cannot ask again; a never-asked Android 13+ permission is `denied` + canAskAgain.
+    (Notifications.getPermissionsAsync as jest.Mock).mockResolvedValue({
+      status,
+      canAskAgain: status !== 'denied',
+    });
 
   it('notifications row disables the switch when OS permission is denied', async () => {
     setOs('denied');

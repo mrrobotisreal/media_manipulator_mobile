@@ -11,18 +11,30 @@ export interface PermissionDeps {
   request(): Promise<PermissionState>;
 }
 
-const fromStatus = (s: Notifications.PermissionStatus): PermissionState =>
-  s === Notifications.PermissionStatus.GRANTED
-    ? 'granted'
-    : s === Notifications.PermissionStatus.DENIED
-      ? 'denied'
-      : 'undetermined';
+/**
+ * Android 13+ reports a never-asked POST_NOTIFICATIONS as `denied` with `canAskAgain: true` (seen on the S25,
+ * 2026-11-03); only `denied` without `canAskAgain` is the user's "Don't allow". The former is undetermined:
+ * the pre-prompt may still ask.
+ */
+export const fromResponse = (r: {
+  status: Notifications.PermissionStatus;
+  canAskAgain?: boolean;
+}): PermissionState => {
+  if (r.status === Notifications.PermissionStatus.GRANTED) return 'granted';
+  if (r.status === Notifications.PermissionStatus.DENIED && r.canAskAgain === false)
+    return 'denied';
+  return 'undetermined';
+};
 
 const realDeps: PermissionDeps = {
   os: Platform.OS,
   version: Platform.Version,
-  getStatus: async () => fromStatus((await Notifications.getPermissionsAsync()).status),
-  request: async () => fromStatus((await Notifications.requestPermissionsAsync()).status),
+  getStatus: async () => fromResponse(await Notifications.getPermissionsAsync()),
+  // After the dialog a refusal is final for the auto-ask rule (30-day re-ask is promptFlow's), whatever canAskAgain says.
+  request: async () => {
+    const r = await Notifications.requestPermissionsAsync();
+    return r.status === Notifications.PermissionStatus.GRANTED ? 'granted' : 'denied';
+  },
 };
 
 /** Android below 13 (API 33) allows notifications by default: no runtime permission, no prompt. */
