@@ -3,6 +3,7 @@
 //   node scripts/gen-icons.mjs              write the PNGs into assets/
 //   node scripts/gen-icons.mjs --check      fail when a committed PNG differs from a fresh render (gate)
 //   --dir <path>                            assets directory to write to / check (default: ./assets; used by the test)
+import { Buffer } from 'node:buffer';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
