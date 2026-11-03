@@ -451,7 +451,8 @@
       "started": "Il download dell'MP3 è iniziato: controlla i download del browser.",
       "startedWithSize": "Il download dell'MP3 è iniziato ({{size}}): controlla i download del browser.",
       "failed": "Non è stato possibile preparare l'MP3. Riprova tra un attimo."
-    }
+    },
+    "openInPhoto": "Apri in {{brand}}"
   },
   "billing": {
     "intervalLabel": "Periodicità di fatturazione",

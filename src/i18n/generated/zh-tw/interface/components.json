@@ -448,7 +448,8 @@
       "started": "MP3 下載已開始，請查看瀏覽器的下載清單。",
       "startedWithSize": "MP3 下載已開始（{{size}}），請查看瀏覽器的下載清單。",
       "failed": "無法準備 MP3，請稍後再試。"
-    }
+    },
+    "openInPhoto": "在 {{brand}} 中開啟"
   },
   "billing": {
     "intervalLabel": "計費週期",

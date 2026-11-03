@@ -448,7 +448,8 @@
       "started": "MP3 다운로드가 시작되었습니다. 브라우저의 다운로드 목록을 확인하세요.",
       "startedWithSize": "MP3 다운로드가 시작되었습니다({{size}}). 브라우저의 다운로드 목록을 확인하세요.",
       "failed": "MP3를 준비하지 못했습니다. 잠시 후 다시 시도하세요."
-    }
+    },
+    "openInPhoto": "{{brand}}에서 열기"
   },
   "billing": {
     "intervalLabel": "결제 주기",

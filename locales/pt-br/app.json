@@ -954,5 +954,156 @@
       "title": "Compartilhar análises de uso",
       "helper": "Ajuda a melhorar o app. Nomes e conteúdos de arquivos nunca são enviados."
     }
+  },
+  "account": {
+    "title": "Conta",
+    "sections": {
+      "plan": "Plano",
+      "usage": "Uso",
+      "settings": "Configurações",
+      "privacy": "Privacidade e dados",
+      "security": "Segurança",
+      "legal": "Informações legais",
+      "about": "Sobre"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Seu plano é gerenciado na web.",
+      "endsOn": "Termina em {{date}}",
+      "pastDue": "Há um problema com o último pagamento.",
+      "granted": "{{tier}} · Concedido",
+      "until": "Até {{date}}",
+      "freeBody": "Limites diários maiores estão disponíveis no Premium e no Pro.",
+      "operator": "Operador",
+      "loading": "Carregando seu plano",
+      "loadFailed": "Seu plano não está disponível no momento."
+    },
+    "usage": {
+      "limits": "Limites do plano",
+      "unavailable": "O uso não está disponível no momento."
+    },
+    "retention": {
+      "title": "Armazenamento e retenção",
+      "heading": "Por quanto tempo mantemos seus arquivos",
+      "body": "Vale para tudo o que você cria. A escolha é sua, não depende do plano: qualquer conta pode escolher de 24 horas a 2 anos.",
+      "recommended": "Recomendado",
+      "presets": {
+        "h24": "24 horas",
+        "d7": "7 dias",
+        "d30": "30 dias",
+        "d90": "90 dias",
+        "m6": "6 meses",
+        "y1": "1 ano",
+        "y2": "2 anos"
+      },
+      "custom": "Personalizado",
+      "customLabel": "Período personalizado em dias (1–730)",
+      "customApply": "Aplicar",
+      "customInvalid": "Digite um número inteiro de dias, de 1 a 730.",
+      "current": "Atualmente: {{window}}.",
+      "saved": "Salvo. Seus arquivos agora são mantidos por {{window}}.",
+      "saveFailed": "Não foi possível salvar seu período de retenção. Ele foi mantido como estava.",
+      "previewFailed": "Não foi possível verificar o que esta alteração excluiria, então nada foi alterado. Tente novamente.",
+      "confirmTitle": "Excluir os itens salvos agora?",
+      "confirmBody_one": "{{count}} item salvo ({{size}}) é mais antigo que o novo período e será excluído agora. Esta ação não pode ser desfeita.",
+      "confirmBody_many": "{{count}} de itens salvos ({{size}}) são mais antigos que o novo período e serão excluídos agora. Esta ação não pode ser desfeita.",
+      "confirmBody_other": "{{count}} itens salvos ({{size}}) são mais antigos que o novo período e serão excluídos agora. Esta ação não pode ser desfeita.",
+      "confirmCta": "Reduzir e excluir",
+      "metadataTitle": "Relatórios de metadados",
+      "metadataToggle": "Excluir os relatórios de metadados junto com os arquivos",
+      "metadataHint": "Desative para manter o relatório de metadados de um arquivo depois que o arquivo for excluído.",
+      "visibilityTitle": "Visibilidade do histórico",
+      "visibilityLabel": "O que sua lista de histórico mostra",
+      "visibilityFull": "Todos os detalhes",
+      "visibilityNamesOnly": "Somente nomes",
+      "settingFailed": "Não foi possível salvar essa configuração. Ela foi mantida como estava.",
+      "loadFailed": "Suas configurações não estão disponíveis no momento."
+    },
+    "notifications": {
+      "title": "Notificações",
+      "emailTitle": "E-mail",
+      "emailAiJob": "Me enviar um e-mail quando uma tarefa longa de IA terminar",
+      "emailExpiry": "Me enviar um e-mail antes de os arquivos salvos expirarem",
+      "emailAlways": "Os e-mails de boas-vindas, de pagamento e de eliminação de conta são sempre enviados.",
+      "pushTitle": "Notificações push",
+      "pushJobFinished": "Notificação push quando uma tarefa longa terminar",
+      "saveFailed": "Não foi possível salvar essa preferência. Tente novamente.",
+      "loadFailed": "Suas configurações de notificações não estão disponíveis no momento."
+    },
+    "privacy": {
+      "title": "Privacidade e dados",
+      "analyticsTitle": "Análises",
+      "deleteAnalyticsTitle": "Excluir meus dados de análise",
+      "deleteAnalyticsBody": "Apaga as análises de uso coletadas sobre você. Desativar as análises não exclui os dados anteriores.",
+      "deleteAnalyticsCta": "Excluir meus dados de análise",
+      "deleteAnalyticsDialogTitle": "Excluir seus dados de análise?",
+      "deleteAnalyticsDialogBody": "Isso apaga as análises de uso coletadas da sua conta e deste dispositivo. Não pode ser desfeito.",
+      "deleteAnalyticsDone": "Seus dados de análise foram excluídos.",
+      "deleteAnalyticsFailed": "Não foi possível excluir seus dados de análise. Tente novamente.",
+      "dataTitle": "Seus dados",
+      "exportTitle": "Exportar os meus dados",
+      "exportBody": "Baixe um zip com os dados e os arquivos da sua conta.",
+      "exportCta": "Exportar os meus dados",
+      "exporting": "Preparando sua exportação",
+      "exportFailed": "Não foi possível exportar seus dados. Tente novamente.",
+      "exportRateLimited": "As exportações são limitadas a 3 por hora. Tente novamente em {{time}}.",
+      "exportReady": "Sua exportação está pronta.",
+      "deleteFilesTitle": "Excluir todos os meus arquivos",
+      "deleteFilesBody": "Remove todos os resultados, uploads e projetos salvos. Sua conta e seu plano permanecem.",
+      "deleteFilesCta": "Excluir todos os meus arquivos",
+      "deleteFilesDialogTitle": "Excluir todos os seus arquivos?",
+      "deleteFilesDialogBody": "Todos os resultados, uploads e projetos salvos são removidos dos nossos servidores e deste dispositivo. Não pode ser desfeito.",
+      "deleteFilesDone": "Todos os seus arquivos foram excluídos.",
+      "deleteFilesPending": "Excluído. Alguns arquivos terminarão de ser excluídos em breve.",
+      "deleteFilesFailed": "Não foi possível excluir seus arquivos. Tente novamente.",
+      "typedLabel": "Digite {{phrase}} para confirmar",
+      "deleteAccountTitle": "Excluir minha conta",
+      "deleteAccountBody": "Cancela qualquer assinatura, exclui todos os seus arquivos e configurações e remove seu login. Não pode ser desfeito."
+    },
+    "deleteAccount": {
+      "title": "Excluir conta",
+      "heading": "Excluir sua conta?",
+      "intro": "Isso exclui sua conta permanentemente. Não pode ser desfeito.",
+      "consequences": {
+        "files": "Seus arquivos e o histórico são excluídos.",
+        "settings": "Suas configurações e os itens salvos na web, como vozes e projetos, são excluídos.",
+        "subscription": "Qualquer assinatura é cancelada imediatamente.",
+        "analytics": "Seus dados de análise são apagados.",
+        "signIn": "Seu login é removido e você é desconectado."
+      },
+      "typedLabel": "Digite {{phrase}} para confirmar",
+      "cta": "Excluir minha conta",
+      "reauthHint": "Primeiro, será pedido que você confirme seu login.",
+      "working": "Excluindo sua conta",
+      "incomplete": "A exclusão não foi concluída. Tente novamente: ela continua de onde parou.",
+      "retry": "Tentar exclusão novamente",
+      "failed": "Não foi possível excluir sua conta. Tente novamente.",
+      "doneTitle": "Sua conta foi excluída.",
+      "doneBody": "Seus arquivos, configurações e login foram removidos deste dispositivo e dos nossos servidores.",
+      "toSignIn": "Ir para o login",
+      "webLink": "Excluir na web"
+    },
+    "security": {
+      "signOutEverywhere": "Sair em todos os lugares",
+      "signOutEverywhereBody": "Desconecta você em todos os dispositivos. Outros dispositivos podem continuar conectados por até uma hora.",
+      "signOutEverywhereTitle": "Sair em todos os lugares?",
+      "signOutEverywhereFailed": "Não foi possível desconectar você em todos os lugares. Tente novamente."
+    },
+    "legal": {
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Serviço"
+    },
+    "about": {
+      "title": "Sobre",
+      "version": "Versão",
+      "update": "Atualização",
+      "updateEmbedded": "Incorporada",
+      "channel": "Canal",
+      "runtime": "Versão de runtime",
+      "api": "Servidor",
+      "none": "Nenhuma",
+      "copyDiagnostics": "Copiar diagnóstico",
+      "copied": "Diagnóstico copiado.",
+      "contact": "Falar com o suporte"
+    }
   }
 }

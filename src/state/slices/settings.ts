@@ -16,16 +16,22 @@ export function pushRecentTool(list: string[], id: string): string[] {
   return [id, ...list.filter((x) => x !== id)].slice(0, MAX_RECENT_TOOLS);
 }
 
+export const initialSettingsState = (): SettingsState => ({
+  locale: null,
+  analyticsOptOut: false,
+  haptics: true,
+  lastToolIds: [],
+  lastSaveDirUri: null,
+});
+
 const settingsSlice = createSlice({
   name: 'settings',
-  initialState: {
-    locale: null,
-    analyticsOptOut: false,
-    haptics: true,
-    lastToolIds: [],
-    lastSaveDirUri: null,
-  } as SettingsState,
+  initialState: initialSettingsState,
   reducers: {
+    /** Account deletion (MA22): every setting back to its default. */
+    settingsReset() {
+      return initialSettingsState();
+    },
     hapticsSet(state, action: PayloadAction<boolean>) {
       state.haptics = action.payload;
     },
@@ -44,6 +50,6 @@ const settingsSlice = createSlice({
   },
 });
 
-export const { hapticsSet, analyticsOptOutSet, localeSet, saveDirSet, toolOpened } =
+export const { hapticsSet, analyticsOptOutSet, localeSet, saveDirSet, settingsReset, toolOpened } =
   settingsSlice.actions;
 export default settingsSlice.reducer;

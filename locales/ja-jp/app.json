@@ -942,5 +942,154 @@
       "title": "利用状況の分析データを共有",
       "helper": "アプリの改善に役立てます。ファイル名やファイルの内容が送信されることはありません。"
     }
+  },
+  "account": {
+    "title": "アカウント",
+    "sections": {
+      "plan": "プラン",
+      "usage": "利用状況",
+      "settings": "設定",
+      "privacy": "プライバシーとデータ",
+      "security": "セキュリティ",
+      "legal": "法的情報",
+      "about": "概要"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}}・プランはWebで管理されます。",
+      "endsOn": "{{date}}に終了",
+      "pastDue": "直近のお支払いに問題があります。",
+      "granted": "{{tier}}・付与済み",
+      "until": "{{date}}まで",
+      "freeBody": "PremiumとProでは、1日の上限が引き上げられます。",
+      "operator": "オペレーター",
+      "loading": "プランを読み込み中",
+      "loadFailed": "プランは現在利用できません。"
+    },
+    "usage": {
+      "limits": "プランの上限",
+      "unavailable": "利用状況は現在確認できません。"
+    },
+    "retention": {
+      "title": "ストレージと保存期間",
+      "heading": "ファイルの保存期間",
+      "body": "作成したすべてのものに適用されます。プランに関係なく、どのアカウントでも24時間から2年の範囲で自由に選べます。",
+      "recommended": "おすすめ",
+      "presets": {
+        "h24": "24時間",
+        "d7": "7日間",
+        "d30": "30日間",
+        "d90": "90日間",
+        "m6": "6か月",
+        "y1": "1年",
+        "y2": "2年"
+      },
+      "custom": "カスタム",
+      "customLabel": "カスタム期間(日数、1～730)",
+      "customApply": "適用",
+      "customInvalid": "1～730の整数で日数を入力してください。",
+      "current": "現在は{{window}}です。",
+      "saved": "保存しました。ファイルは{{window}}保存されます。",
+      "saveFailed": "保存期間を保存できませんでした。変更は反映されていません。",
+      "previewFailed": "この変更で削除される内容を確認できなかったため、何も変更していません。もう一度お試しください。",
+      "confirmTitle": "保存済みの項目を今すぐ削除しますか？",
+      "confirmBody_other": "新しい期間より古い保存済みの項目{{count}}件({{size}})を今すぐ削除します。この操作は元に戻せません。",
+      "confirmCta": "短縮して削除",
+      "metadataTitle": "メタデータレポート",
+      "metadataToggle": "メタデータレポートをファイルと一緒に削除する",
+      "metadataHint": "オフにすると、ファイルが削除されたあともそのメタデータレポートが残ります。",
+      "visibilityTitle": "履歴の表示",
+      "visibilityLabel": "履歴リストに表示する内容",
+      "visibilityFull": "すべての詳細",
+      "visibilityNamesOnly": "名前のみ",
+      "settingFailed": "その設定を保存できませんでした。変更は反映されていません。",
+      "loadFailed": "設定は現在利用できません。"
+    },
+    "notifications": {
+      "title": "通知",
+      "emailTitle": "メール",
+      "emailAiJob": "時間のかかるAI処理が完了したらメールで知らせる",
+      "emailExpiry": "保存済みファイルの期限が切れる前にメールで知らせる",
+      "emailAlways": "ようこそメール、お支払い関連のメール、アカウント削除のメールは常に送信されます。",
+      "pushTitle": "プッシュ通知",
+      "pushJobFinished": "時間のかかる処理が完了したらプッシュ通知で知らせる",
+      "saveFailed": "その設定を保存できませんでした。もう一度お試しください。",
+      "loadFailed": "通知設定は現在利用できません。"
+    },
+    "privacy": {
+      "title": "プライバシーとデータ",
+      "analyticsTitle": "分析",
+      "deleteAnalyticsTitle": "分析データを削除",
+      "deleteAnalyticsBody": "あなたについて収集された利用分析を消去します。分析をオフにしても、過去のデータは削除されません。",
+      "deleteAnalyticsCta": "分析データを削除",
+      "deleteAnalyticsDialogTitle": "分析データを削除しますか？",
+      "deleteAnalyticsDialogBody": "アカウントとこの端末について収集された利用分析を消去します。この操作は元に戻せません。",
+      "deleteAnalyticsDone": "分析データを削除しました。",
+      "deleteAnalyticsFailed": "分析データを削除できませんでした。もう一度お試しください。",
+      "dataTitle": "あなたのデータ",
+      "exportTitle": "データをエクスポート",
+      "exportBody": "アカウントデータとファイルを含むzipをダウンロードします。",
+      "exportCta": "データをエクスポート",
+      "exporting": "エクスポートを準備中",
+      "exportFailed": "データをエクスポートできませんでした。もう一度お試しください。",
+      "exportRateLimited": "エクスポートは1時間に3回までです。{{time}}後にもう一度お試しください。",
+      "exportReady": "エクスポートの準備ができました。",
+      "deleteFilesTitle": "すべてのファイルを削除",
+      "deleteFilesBody": "すべての結果、アップロード、保存済みプロジェクトを削除します。アカウントとプランはそのままです。",
+      "deleteFilesCta": "すべてのファイルを削除",
+      "deleteFilesDialogTitle": "すべてのファイルを削除しますか？",
+      "deleteFilesDialogBody": "すべての結果、アップロード、保存済みプロジェクトを、当社のサーバーとこの端末から削除します。この操作は元に戻せません。",
+      "deleteFilesDone": "すべてのファイルを削除しました。",
+      "deleteFilesPending": "削除しました。一部のファイルはまもなく削除が完了します。",
+      "deleteFilesFailed": "ファイルを削除できませんでした。もう一度お試しください。",
+      "typedLabel": "確認のため{{phrase}}と入力してください",
+      "deleteAccountTitle": "アカウントを削除",
+      "deleteAccountBody": "サブスクリプションを解約し、すべてのファイルと設定を削除して、ログイン情報を削除します。この操作は元に戻せません。"
+    },
+    "deleteAccount": {
+      "title": "アカウントを削除",
+      "heading": "アカウントを削除しますか？",
+      "intro": "アカウントを完全に削除します。この操作は元に戻せません。",
+      "consequences": {
+        "files": "ファイルと履歴が削除されます。",
+        "settings": "設定と、Webで作成した音声やプロジェクトなどの保存済み項目が削除されます。",
+        "subscription": "サブスクリプションはただちに解約されます。",
+        "analytics": "分析データが消去されます。",
+        "signIn": "ログイン情報が削除され、ログアウトされます。"
+      },
+      "typedLabel": "確認のため{{phrase}}と入力してください",
+      "cta": "アカウントを削除",
+      "reauthHint": "先にログインの確認を求められます。",
+      "working": "アカウントを削除中",
+      "incomplete": "削除が完了しませんでした。もう一度お試しください。中断したところから再開します。",
+      "retry": "削除を再試行",
+      "failed": "アカウントを削除できませんでした。もう一度お試しください。",
+      "doneTitle": "アカウントを削除しました。",
+      "doneBody": "ファイル、設定、ログイン情報をこの端末と当社のサーバーから削除しました。",
+      "toSignIn": "ログインへ移動",
+      "webLink": "代わりにWebで削除"
+    },
+    "security": {
+      "signOutEverywhere": "すべての端末でログアウト",
+      "signOutEverywhereBody": "すべての端末でログアウトします。ほかの端末では最大1時間ログインしたままになることがあります。",
+      "signOutEverywhereTitle": "すべての端末でログアウトしますか？",
+      "signOutEverywhereFailed": "すべての端末でログアウトできませんでした。もう一度お試しください。"
+    },
+    "legal": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約"
+    },
+    "about": {
+      "title": "概要",
+      "version": "バージョン",
+      "update": "アップデート",
+      "updateEmbedded": "内蔵",
+      "channel": "チャンネル",
+      "runtime": "ランタイムバージョン",
+      "api": "サーバー",
+      "none": "なし",
+      "copyDiagnostics": "診断情報をコピー",
+      "copied": "診断情報をコピーしました。",
+      "contact": "サポートに問い合わせる"
+    }
   }
 }

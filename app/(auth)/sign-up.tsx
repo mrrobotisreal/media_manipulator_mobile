@@ -41,9 +41,7 @@ export default function SignUp() {
 
   return (
     <Screen>
-      <KeyboardScroll
-        contentContainerClassName="grow justify-center gap-4 px-6 py-8"
-      >
+      <KeyboardScroll contentContainerClassName="grow justify-center gap-4 px-6 py-8">
         <Text className="text-xl font-semibold">{t('auth.signUp.title')}</Text>
         <TextField
           label={t('auth.signUp.name')}

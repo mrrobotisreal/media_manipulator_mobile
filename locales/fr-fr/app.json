@@ -954,5 +954,156 @@
       "title": "Partager les statistiques d’utilisation",
       "helper": "Nous aide à améliorer l’application. Aucun nom ni contenu de fichier n’est jamais envoyé."
     }
+  },
+  "account": {
+    "title": "Compte",
+    "sections": {
+      "plan": "Offre",
+      "usage": "Utilisation",
+      "settings": "Réglages",
+      "privacy": "Confidentialité et données",
+      "security": "Sécurité",
+      "legal": "Mentions légales",
+      "about": "À propos"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Votre offre est gérée sur le web.",
+      "endsOn": "Se termine le {{date}}",
+      "pastDue": "Un problème est survenu avec le dernier paiement.",
+      "granted": "{{tier}} · Accordée",
+      "until": "Jusqu'au {{date}}",
+      "freeBody": "Des limites quotidiennes plus élevées sont disponibles avec Premium et Pro.",
+      "operator": "Opérateur",
+      "loading": "Chargement de votre offre",
+      "loadFailed": "Votre offre est indisponible pour le moment."
+    },
+    "usage": {
+      "limits": "Limites de l'offre",
+      "unavailable": "L'utilisation est indisponible pour le moment."
+    },
+    "retention": {
+      "title": "Stockage et conservation",
+      "heading": "Durée de conservation de vos fichiers",
+      "body": "S'applique à tout ce que vous créez. C'est votre choix, pas celui de votre offre : chaque compte peut choisir de 24 heures à 2 ans.",
+      "recommended": "Recommandé",
+      "presets": {
+        "h24": "24 heures",
+        "d7": "7 jours",
+        "d30": "30 jours",
+        "d90": "90 jours",
+        "m6": "6 mois",
+        "y1": "1 an",
+        "y2": "2 ans"
+      },
+      "custom": "Personnalisé",
+      "customLabel": "Durée personnalisée en jours (1–730)",
+      "customApply": "Appliquer",
+      "customInvalid": "Saisissez un nombre entier de jours entre 1 et 730.",
+      "current": "Actuellement : {{window}}.",
+      "saved": "Enregistré. Vos fichiers sont désormais conservés {{window}}.",
+      "saveFailed": "Impossible d'enregistrer la durée de conservation. Elle est restée inchangée.",
+      "previewFailed": "Impossible de vérifier ce que ce changement supprimerait, donc rien n'a été modifié. Réessayez.",
+      "confirmTitle": "Supprimer maintenant les éléments enregistrés ?",
+      "confirmBody_one": "{{count}} élément enregistré ({{size}}) est plus ancien que la nouvelle durée et sera supprimé maintenant. Cette action est irréversible.",
+      "confirmBody_many": "{{count}} éléments enregistrés ({{size}}) sont plus anciens que la nouvelle durée et seront supprimés maintenant. Cette action est irréversible.",
+      "confirmBody_other": "{{count}} éléments enregistrés ({{size}}) sont plus anciens que la nouvelle durée et seront supprimés maintenant. Cette action est irréversible.",
+      "confirmCta": "Raccourcir et supprimer",
+      "metadataTitle": "Rapports de métadonnées",
+      "metadataToggle": "Supprimer les rapports de métadonnées avec leurs fichiers",
+      "metadataHint": "Désactivez cette option pour conserver le rapport de métadonnées d'un fichier après sa suppression.",
+      "visibilityTitle": "Visibilité de l'historique",
+      "visibilityLabel": "Ce qu'affiche votre liste d'historique",
+      "visibilityFull": "Tous les détails",
+      "visibilityNamesOnly": "Noms uniquement",
+      "settingFailed": "Impossible d'enregistrer ce réglage. Il est resté inchangé.",
+      "loadFailed": "Vos réglages sont indisponibles pour le moment."
+    },
+    "notifications": {
+      "title": "Alertes",
+      "emailTitle": "E-mail",
+      "emailAiJob": "M'envoyer un e-mail à la fin d'une longue tâche IA",
+      "emailExpiry": "M'envoyer un e-mail avant l'expiration des fichiers enregistrés",
+      "emailAlways": "Les e-mails de bienvenue, de paiement et de suppression de compte sont toujours envoyés.",
+      "pushTitle": "Notifications push",
+      "pushJobFinished": "Notification push à la fin d'une longue tâche",
+      "saveFailed": "Impossible d'enregistrer cette préférence. Réessayez.",
+      "loadFailed": "Vos réglages de notification sont indisponibles pour le moment."
+    },
+    "privacy": {
+      "title": "Confidentialité et données",
+      "analyticsTitle": "Statistiques d'utilisation",
+      "deleteAnalyticsTitle": "Supprimer mes données d'analyse",
+      "deleteAnalyticsBody": "Efface les statistiques d'utilisation collectées à votre sujet. Désactiver l'analyse ne supprime pas les données passées.",
+      "deleteAnalyticsCta": "Supprimer mes données d'analyse",
+      "deleteAnalyticsDialogTitle": "Supprimer vos données d'analyse ?",
+      "deleteAnalyticsDialogBody": "Cela efface les statistiques d'utilisation collectées pour votre compte et cet appareil. Cette action est irréversible.",
+      "deleteAnalyticsDone": "Vos données d'analyse ont été supprimées.",
+      "deleteAnalyticsFailed": "Impossible de supprimer vos données d'analyse. Réessayez.",
+      "dataTitle": "Vos données",
+      "exportTitle": "Exporter mes données",
+      "exportBody": "Téléchargez un zip contenant les données et fichiers de votre compte.",
+      "exportCta": "Exporter mes données",
+      "exporting": "Préparation de votre export",
+      "exportFailed": "Impossible d'exporter vos données. Réessayez.",
+      "exportRateLimited": "Les exports sont limités à 3 par heure. Réessayez dans {{time}}.",
+      "exportReady": "Votre export est prêt.",
+      "deleteFilesTitle": "Supprimer tous mes fichiers",
+      "deleteFilesBody": "Supprime chaque résultat, import et projet enregistré. Votre compte et votre offre sont conservés.",
+      "deleteFilesCta": "Supprimer tous mes fichiers",
+      "deleteFilesDialogTitle": "Supprimer tous vos fichiers ?",
+      "deleteFilesDialogBody": "Chaque résultat, import et projet enregistré est supprimé de nos serveurs et de cet appareil. Cette action est irréversible.",
+      "deleteFilesDone": "Tous vos fichiers ont été supprimés.",
+      "deleteFilesPending": "Supprimé. Quelques fichiers termineront d'être supprimés sous peu.",
+      "deleteFilesFailed": "Impossible de supprimer vos fichiers. Réessayez.",
+      "typedLabel": "Saisissez {{phrase}} pour confirmer",
+      "deleteAccountTitle": "Supprimer mon compte",
+      "deleteAccountBody": "Annule tout abonnement, supprime tous vos fichiers et réglages, et retire votre connexion. Cette action est irréversible."
+    },
+    "deleteAccount": {
+      "title": "Supprimer le compte",
+      "heading": "Supprimer votre compte ?",
+      "intro": "Cela supprime définitivement votre compte. Cette action est irréversible.",
+      "consequences": {
+        "files": "Vos fichiers et votre historique sont supprimés.",
+        "settings": "Vos réglages et éléments enregistrés créés sur le web, comme les voix et les projets, sont supprimés.",
+        "subscription": "Tout abonnement est annulé immédiatement.",
+        "analytics": "Vos données d'analyse sont effacées.",
+        "signIn": "Votre connexion est supprimée et vous êtes déconnecté(e)."
+      },
+      "typedLabel": "Saisissez {{phrase}} pour confirmer",
+      "cta": "Supprimer mon compte",
+      "reauthHint": "Il vous sera d'abord demandé de confirmer votre connexion.",
+      "working": "Suppression de votre compte",
+      "incomplete": "La suppression n'est pas terminée. Réessayez : elle reprend là où elle s'est arrêtée.",
+      "retry": "Relancer la suppression",
+      "failed": "Impossible de supprimer votre compte. Réessayez.",
+      "doneTitle": "Votre compte a été supprimé.",
+      "doneBody": "Vos fichiers, réglages et identifiants de connexion ont été supprimés de cet appareil et de nos serveurs.",
+      "toSignIn": "Aller à la connexion",
+      "webLink": "Supprimer sur le web à la place"
+    },
+    "security": {
+      "signOutEverywhere": "Se déconnecter partout",
+      "signOutEverywhereBody": "Vous déconnecte sur tous les appareils. Les autres appareils peuvent rester connectés jusqu'à une heure.",
+      "signOutEverywhereTitle": "Se déconnecter partout ?",
+      "signOutEverywhereFailed": "Impossible de vous déconnecter partout. Réessayez."
+    },
+    "legal": {
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation"
+    },
+    "about": {
+      "title": "À propos",
+      "version": "Numéro de version",
+      "update": "Mise à jour",
+      "updateEmbedded": "Intégrée",
+      "channel": "Canal",
+      "runtime": "Version du runtime",
+      "api": "Serveur",
+      "none": "Aucun",
+      "copyDiagnostics": "Copier le diagnostic",
+      "copied": "Diagnostic copié.",
+      "contact": "Contacter l'assistance"
+    }
   }
 }

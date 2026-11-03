@@ -1,8 +1,8 @@
-import { Check, ChevronLeft, ChevronRight } from 'lucide-react-native';
-import { useRouter } from 'expo-router';
+import { Check } from 'lucide-react-native';
 import { useCallback, useRef, useState } from 'react';
-import { I18nManager, Pressable, ScrollView, View } from 'react-native';
+import { Pressable, ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { ScreenHeader } from '@/account/ui';
 import { setAppLocale } from '@/i18n/setAppLocale';
 import { locales } from '@/i18n/locales';
 import { resolveLocale } from '@/i18n/resolveLocale';
@@ -41,7 +41,6 @@ function Row({
 
 export default function LanguageScreen() {
   const { t } = useTranslation();
-  const router = useRouter();
   const override = useAppSelector((s) => s.settings.locale);
   const [pendingRtl, setPendingRtl] = useState<boolean | null>(null);
   const resolver = useRef<((ok: boolean) => void) | null>(null);
@@ -71,22 +70,8 @@ export default function LanguageScreen() {
   };
 
   return (
-    <Screen>
-      <View className="flex-row items-center gap-2 px-2 py-2">
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={t('common.back')}
-          onPress={() => router.back()}
-          className="size-12 items-center justify-center"
-        >
-          {I18nManager.isRTL ? (
-            <ChevronRight size={24} color={colors.foreground} />
-          ) : (
-            <ChevronLeft size={24} color={colors.foreground} />
-          )}
-        </Pressable>
-        <Text className="text-lg font-semibold">{t('language.title')}</Text>
-      </View>
+    <Screen edges="none">
+      <ScreenHeader title={t('language.title')} />
       <ScrollView accessibilityRole="radiogroup">
         <Row
           title={t('language.system')}

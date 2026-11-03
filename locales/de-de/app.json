@@ -948,5 +948,155 @@
       "title": "Nutzungsanalysen teilen",
       "helper": "Hilft uns, die App zu verbessern. Dateinamen oder Dateiinhalte werden nie gesendet."
     }
+  },
+  "account": {
+    "title": "Konto",
+    "sections": {
+      "plan": "Tarif",
+      "usage": "Nutzung",
+      "settings": "Einstellungen",
+      "privacy": "Datenschutz & Daten",
+      "security": "Sicherheit",
+      "legal": "Rechtliches",
+      "about": "Info"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Dein Tarif wird im Web verwaltet.",
+      "endsOn": "Endet am {{date}}",
+      "pastDue": "Bei der letzten Zahlung ist ein Problem aufgetreten.",
+      "granted": "{{tier}} · Gewährt",
+      "until": "Bis {{date}}",
+      "freeBody": "Höhere Tageslimits gibt es mit Premium und Pro.",
+      "operator": "Betreiber",
+      "loading": "Dein Tarif wird geladen",
+      "loadFailed": "Dein Tarif ist gerade nicht verfügbar."
+    },
+    "usage": {
+      "limits": "Tariflimits",
+      "unavailable": "Die Nutzung ist gerade nicht verfügbar."
+    },
+    "retention": {
+      "title": "Speicher & Aufbewahrung",
+      "heading": "Wie lange wir deine Dateien aufbewahren",
+      "body": "Gilt für alles, was du erstellst. Deine Entscheidung, nicht deines Tarifs: Jedes Konto kann zwischen 24 Stunden und 2 Jahren wählen.",
+      "recommended": "Empfohlen",
+      "presets": {
+        "h24": "24 Stunden",
+        "d7": "7 Tage",
+        "d30": "30 Tage",
+        "d90": "90 Tage",
+        "m6": "6 Monate",
+        "y1": "1 Jahr",
+        "y2": "2 Jahre"
+      },
+      "custom": "Benutzerdefiniert",
+      "customLabel": "Eigener Zeitraum in Tagen (1–730)",
+      "customApply": "Anwenden",
+      "customInvalid": "Gib eine ganze Zahl von 1 bis 730 ein.",
+      "current": "Aktuell {{window}}.",
+      "saved": "Gespeichert. Deine Dateien werden jetzt {{window}} aufbewahrt.",
+      "saveFailed": "Dein Aufbewahrungszeitraum konnte nicht gespeichert werden. Er blieb unverändert.",
+      "previewFailed": "Es konnte nicht geprüft werden, was diese Änderung löschen würde, daher wurde nichts geändert. Versuche es erneut.",
+      "confirmTitle": "Gespeicherte Elemente jetzt löschen?",
+      "confirmBody_one": "{{count}} gespeichertes Element ({{size}}) ist älter als der neue Zeitraum und wird jetzt gelöscht. Das kann nicht rückgängig gemacht werden.",
+      "confirmBody_other": "{{count}} gespeicherte Elemente ({{size}}) sind älter als der neue Zeitraum und werden jetzt gelöscht. Das kann nicht rückgängig gemacht werden.",
+      "confirmCta": "Verkürzen und löschen",
+      "metadataTitle": "Metadatenberichte",
+      "metadataToggle": "Metadatenberichte zusammen mit ihren Dateien löschen",
+      "metadataHint": "Schalte dies aus, um den Metadatenbericht einer Datei zu behalten, nachdem die Datei gelöscht wurde.",
+      "visibilityTitle": "Sichtbarkeit des Verlaufs",
+      "visibilityLabel": "Was deine Verlaufsliste anzeigt",
+      "visibilityFull": "Alle Details",
+      "visibilityNamesOnly": "Nur Namen",
+      "settingFailed": "Diese Einstellung konnte nicht gespeichert werden. Sie blieb unverändert.",
+      "loadFailed": "Deine Einstellungen sind gerade nicht verfügbar."
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "emailTitle": "E-Mail",
+      "emailAiJob": "E-Mail senden, wenn ein langer KI-Auftrag fertig ist",
+      "emailExpiry": "E-Mail senden, bevor gespeicherte Dateien ablaufen",
+      "emailAlways": "Willkommens-, Zahlungs- und Kontolöschungs-E-Mails werden immer gesendet.",
+      "pushTitle": "Push-Mitteilungen",
+      "pushJobFinished": "Push-Benachrichtigung, wenn ein langer Auftrag fertig ist",
+      "saveFailed": "Diese Einstellung konnte nicht gespeichert werden. Versuche es erneut.",
+      "loadFailed": "Deine Benachrichtigungseinstellungen sind gerade nicht verfügbar."
+    },
+    "privacy": {
+      "title": "Datenschutz & Daten",
+      "analyticsTitle": "Analysedaten",
+      "deleteAnalyticsTitle": "Meine Analysedaten löschen",
+      "deleteAnalyticsBody": "Löscht die für dich erfassten Nutzungsanalysen. Das Ausschalten der Analyse löscht keine früheren Daten.",
+      "deleteAnalyticsCta": "Meine Analysedaten löschen",
+      "deleteAnalyticsDialogTitle": "Deine Analysedaten löschen?",
+      "deleteAnalyticsDialogBody": "Dadurch werden die für dein Konto und dieses Gerät erfassten Nutzungsanalysen gelöscht. Das kann nicht rückgängig gemacht werden.",
+      "deleteAnalyticsDone": "Deine Analysedaten wurden gelöscht.",
+      "deleteAnalyticsFailed": "Deine Analysedaten konnten nicht gelöscht werden. Versuche es erneut.",
+      "dataTitle": "Deine Daten",
+      "exportTitle": "Meine Daten exportieren",
+      "exportBody": "Lade eine ZIP-Datei mit deinen Kontodaten und Dateien herunter.",
+      "exportCta": "Meine Daten exportieren",
+      "exporting": "Dein Export wird vorbereitet",
+      "exportFailed": "Deine Daten konnten nicht exportiert werden. Versuche es erneut.",
+      "exportRateLimited": "Exporte sind auf 3 pro Stunde begrenzt. Versuche es in {{time}} erneut.",
+      "exportReady": "Dein Export ist bereit.",
+      "deleteFilesTitle": "Alle meine Dateien löschen",
+      "deleteFilesBody": "Entfernt alle Ergebnisse, Uploads und gespeicherten Projekte. Dein Konto und dein Tarif bleiben bestehen.",
+      "deleteFilesCta": "Alle meine Dateien löschen",
+      "deleteFilesDialogTitle": "Alle deine Dateien löschen?",
+      "deleteFilesDialogBody": "Alle Ergebnisse, Uploads und gespeicherten Projekte werden von unseren Servern und von diesem Gerät entfernt. Das kann nicht rückgängig gemacht werden.",
+      "deleteFilesDone": "Alle deine Dateien wurden gelöscht.",
+      "deleteFilesPending": "Gelöscht. Einige Dateien werden in Kürze fertig gelöscht.",
+      "deleteFilesFailed": "Deine Dateien konnten nicht gelöscht werden. Versuche es erneut.",
+      "typedLabel": "Gib zur Bestätigung {{phrase}} ein",
+      "deleteAccountTitle": "Mein Konto löschen",
+      "deleteAccountBody": "Kündigt alle Abos, löscht alle deine Dateien und Einstellungen und entfernt deine Anmeldung. Das kann nicht rückgängig gemacht werden."
+    },
+    "deleteAccount": {
+      "title": "Konto löschen",
+      "heading": "Dein Konto löschen?",
+      "intro": "Dadurch wird dein Konto dauerhaft gelöscht. Das kann nicht rückgängig gemacht werden.",
+      "consequences": {
+        "files": "Deine Dateien und dein Verlauf werden gelöscht.",
+        "settings": "Deine Einstellungen und im Web gespeicherte Elemente, etwa Stimmen und Projekte, werden gelöscht.",
+        "subscription": "Jedes Abo wird sofort gekündigt.",
+        "analytics": "Deine Analysedaten werden gelöscht.",
+        "signIn": "Deine Anmeldung wird entfernt und du wirst abgemeldet."
+      },
+      "typedLabel": "Gib zur Bestätigung {{phrase}} ein",
+      "cta": "Mein Konto löschen",
+      "reauthHint": "Du wirst zuerst gebeten, deine Anmeldung zu bestätigen.",
+      "working": "Dein Konto wird gelöscht",
+      "incomplete": "Das Löschen wurde nicht abgeschlossen. Versuche es erneut – es wird dort fortgesetzt, wo es aufgehört hat.",
+      "retry": "Löschen wiederholen",
+      "failed": "Dein Konto konnte nicht gelöscht werden. Versuche es erneut.",
+      "doneTitle": "Dein Konto wurde gelöscht.",
+      "doneBody": "Deine Dateien, Einstellungen und deine Anmeldung wurden von diesem Gerät und unseren Servern entfernt.",
+      "toSignIn": "Zur Anmeldung",
+      "webLink": "Stattdessen im Web löschen"
+    },
+    "security": {
+      "signOutEverywhere": "Überall abmelden",
+      "signOutEverywhereBody": "Meldet dich auf allen Geräten ab. Andere Geräte bleiben unter Umständen bis zu einer Stunde angemeldet.",
+      "signOutEverywhereTitle": "Überall abmelden?",
+      "signOutEverywhereFailed": "Du konntest nicht überall abgemeldet werden. Versuche es erneut."
+    },
+    "legal": {
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen"
+    },
+    "about": {
+      "title": "Info",
+      "version": "Versionsnummer",
+      "update": "Aktualisierung",
+      "updateEmbedded": "Eingebettet",
+      "channel": "Kanal",
+      "runtime": "Laufzeitversion",
+      "api": "Server (API)",
+      "none": "Keine",
+      "copyDiagnostics": "Diagnose kopieren",
+      "copied": "Diagnose kopiert.",
+      "contact": "Support kontaktieren"
+    }
   }
 }

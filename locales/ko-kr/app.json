@@ -942,5 +942,154 @@
       "title": "사용 분석 데이터 공유",
       "helper": "앱 개선에 도움이 됩니다. 파일 이름이나 내용은 절대 전송되지 않습니다."
     }
+  },
+  "account": {
+    "title": "계정",
+    "sections": {
+      "plan": "플랜",
+      "usage": "사용량",
+      "settings": "설정",
+      "privacy": "개인정보 및 데이터",
+      "security": "보안",
+      "legal": "법적 고지",
+      "about": "정보"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · 플랜은 웹에서 관리됩니다.",
+      "endsOn": "{{date}}에 종료",
+      "pastDue": "최근 결제에 문제가 있습니다.",
+      "granted": "{{tier}} · 부여됨",
+      "until": "{{date}}까지",
+      "freeBody": "Premium과 Pro에서는 더 높은 일일 한도를 사용할 수 있습니다.",
+      "operator": "운영자",
+      "loading": "플랜 정보를 불러오는 중",
+      "loadFailed": "지금은 플랜 정보를 사용할 수 없습니다."
+    },
+    "usage": {
+      "limits": "플랜 한도",
+      "unavailable": "지금은 사용량을 확인할 수 없습니다."
+    },
+    "retention": {
+      "title": "저장 및 보관",
+      "heading": "파일 보관 기간",
+      "body": "직접 만든 모든 항목에 적용됩니다. 플랜과 무관하게 직접 선택하며, 모든 계정에서 24시간부터 2년까지 고를 수 있어요.",
+      "recommended": "추천",
+      "presets": {
+        "h24": "24시간",
+        "d7": "7일",
+        "d30": "30일",
+        "d90": "90일",
+        "m6": "6개월",
+        "y1": "1년",
+        "y2": "2년"
+      },
+      "custom": "직접 설정",
+      "customLabel": "보관 기간(일, 1–730)",
+      "customApply": "적용",
+      "customInvalid": "1에서 730 사이의 정수를 입력하세요.",
+      "current": "현재 {{window}}입니다.",
+      "saved": "저장했어요. 이제 파일이 {{window}} 동안 보관됩니다.",
+      "saveFailed": "보관 기간을 저장하지 못했어요. 기존 설정이 유지됩니다.",
+      "previewFailed": "이 변경으로 삭제될 항목을 확인하지 못해 아무것도 변경하지 않았어요. 다시 시도하세요.",
+      "confirmTitle": "저장된 항목을 지금 삭제할까요?",
+      "confirmBody_other": "저장된 항목 {{count}}개({{size}})가 새 보관 기간보다 오래되어 지금 삭제됩니다. 되돌릴 수 없어요.",
+      "confirmCta": "단축하고 삭제",
+      "metadataTitle": "메타데이터 보고서",
+      "metadataToggle": "파일과 함께 메타데이터 보고서도 삭제",
+      "metadataHint": "끄면 파일이 삭제된 뒤에도 해당 파일의 메타데이터 보고서가 유지됩니다.",
+      "visibilityTitle": "기록 표시",
+      "visibilityLabel": "기록 목록에 표시할 내용",
+      "visibilityFull": "전체 정보",
+      "visibilityNamesOnly": "이름만",
+      "settingFailed": "설정을 저장하지 못했어요. 기존 설정이 유지됩니다.",
+      "loadFailed": "지금은 설정을 사용할 수 없습니다."
+    },
+    "notifications": {
+      "title": "알림",
+      "emailTitle": "이메일",
+      "emailAiJob": "오래 걸리는 AI 작업이 끝나면 이메일로 알림",
+      "emailExpiry": "저장된 파일이 만료되기 전에 이메일로 알림",
+      "emailAlways": "환영, 결제, 계정 삭제 관련 이메일은 항상 발송됩니다.",
+      "pushTitle": "푸시",
+      "pushJobFinished": "오래 걸리는 작업이 끝나면 푸시 알림",
+      "saveFailed": "환경설정을 저장하지 못했어요. 다시 시도하세요.",
+      "loadFailed": "지금은 알림 설정을 사용할 수 없습니다."
+    },
+    "privacy": {
+      "title": "개인정보 및 데이터",
+      "analyticsTitle": "분석",
+      "deleteAnalyticsTitle": "내 분석 데이터 삭제",
+      "deleteAnalyticsBody": "회원님에 대해 수집된 사용 분석을 삭제합니다. 분석을 꺼도 이전 데이터는 삭제되지 않습니다.",
+      "deleteAnalyticsCta": "내 분석 데이터 삭제",
+      "deleteAnalyticsDialogTitle": "분석 데이터를 삭제할까요?",
+      "deleteAnalyticsDialogBody": "계정과 이 기기에 대해 수집된 사용 분석이 삭제됩니다. 되돌릴 수 없어요.",
+      "deleteAnalyticsDone": "분석 데이터를 삭제했어요.",
+      "deleteAnalyticsFailed": "분석 데이터를 삭제하지 못했어요. 다시 시도하세요.",
+      "dataTitle": "내 데이터",
+      "exportTitle": "내 데이터 내보내기",
+      "exportBody": "계정 데이터와 파일이 담긴 zip을 다운로드하세요.",
+      "exportCta": "내 데이터 내보내기",
+      "exporting": "내보내기 준비 중",
+      "exportFailed": "데이터를 내보내지 못했어요. 다시 시도하세요.",
+      "exportRateLimited": "내보내기는 시간당 3회로 제한됩니다. {{time}} 후에 다시 시도하세요.",
+      "exportReady": "내보내기가 준비되었어요.",
+      "deleteFilesTitle": "내 파일 모두 삭제",
+      "deleteFilesBody": "모든 결과물, 업로드, 저장된 프로젝트를 삭제합니다. 계정과 플랜은 유지됩니다.",
+      "deleteFilesCta": "내 파일 모두 삭제",
+      "deleteFilesDialogTitle": "파일을 모두 삭제할까요?",
+      "deleteFilesDialogBody": "모든 결과물, 업로드, 저장된 프로젝트가 서버와 이 기기에서 삭제됩니다. 되돌릴 수 없어요.",
+      "deleteFilesDone": "파일을 모두 삭제했어요.",
+      "deleteFilesPending": "삭제했어요. 일부 파일은 곧 삭제가 완료됩니다.",
+      "deleteFilesFailed": "파일을 삭제하지 못했어요. 다시 시도하세요.",
+      "typedLabel": "확인하려면 {{phrase}}을(를) 입력하세요",
+      "deleteAccountTitle": "내 계정 삭제",
+      "deleteAccountBody": "구독을 해지하고, 모든 파일과 설정을 삭제하며, 로그인 정보를 제거합니다. 되돌릴 수 없어요."
+    },
+    "deleteAccount": {
+      "title": "계정 삭제",
+      "heading": "계정을 삭제할까요?",
+      "intro": "계정이 영구적으로 삭제됩니다. 되돌릴 수 없어요.",
+      "consequences": {
+        "files": "파일과 기록이 삭제됩니다.",
+        "settings": "웹에서 만든 설정과 저장 항목(음성, 프로젝트 등)이 삭제됩니다.",
+        "subscription": "모든 구독이 즉시 해지됩니다.",
+        "analytics": "분석 데이터가 삭제됩니다.",
+        "signIn": "로그인 정보가 제거되고 로그아웃됩니다."
+      },
+      "typedLabel": "확인하려면 {{phrase}}을(를) 입력하세요",
+      "cta": "내 계정 삭제",
+      "reauthHint": "먼저 로그인 확인을 요청합니다.",
+      "working": "계정을 삭제하는 중",
+      "incomplete": "삭제가 끝나지 않았어요. 다시 시도하세요. 중단된 지점부터 이어서 진행됩니다.",
+      "retry": "삭제 다시 시도",
+      "failed": "계정을 삭제하지 못했어요. 다시 시도하세요.",
+      "doneTitle": "계정을 삭제했어요.",
+      "doneBody": "파일, 설정, 로그인 정보가 이 기기와 서버에서 제거되었습니다.",
+      "toSignIn": "로그인으로 이동",
+      "webLink": "대신 웹에서 삭제"
+    },
+    "security": {
+      "signOutEverywhere": "모든 기기에서 로그아웃",
+      "signOutEverywhereBody": "모든 기기에서 로그아웃합니다. 다른 기기는 최대 1시간 동안 로그인 상태로 남아 있을 수 있어요.",
+      "signOutEverywhereTitle": "모든 기기에서 로그아웃할까요?",
+      "signOutEverywhereFailed": "모든 기기에서 로그아웃하지 못했어요. 다시 시도하세요."
+    },
+    "legal": {
+      "privacy": "개인정보 처리방침",
+      "terms": "이용약관"
+    },
+    "about": {
+      "title": "정보",
+      "version": "버전",
+      "update": "업데이트",
+      "updateEmbedded": "내장",
+      "channel": "채널",
+      "runtime": "런타임 버전",
+      "api": "서버",
+      "none": "없음",
+      "copyDiagnostics": "진단 정보 복사",
+      "copied": "진단 정보를 복사했어요.",
+      "contact": "고객 지원 문의"
+    }
   }
 }

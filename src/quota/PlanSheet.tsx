@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import { useGetTiersQuery } from '@/api/endpoints/tiers';
+import type { TiersResponse } from '@/api/schemas/tiers';
 import { formatTimeLeft } from '@/lib/format';
 import { Button } from '@/ui/components/Button';
 import { QuotaMeter } from '@/ui/components/QuotaMeter';
@@ -62,38 +63,7 @@ export function PlanSheet({ visible, onClose }: { visible: boolean; onClose: () 
         ) : null}
 
         {list ? (
-          <View className="rounded-lg border border-edge" testID="plan-table">
-            <View className="flex-row border-b border-edge px-3 py-2">
-              <View className="flex-[1.6]" />
-              {PLAN_COLUMNS.map((c) => (
-                <View
-                  key={c}
-                  className={`flex-1 items-end ${tier === c ? 'rounded-sm bg-surface-3' : ''}`}
-                  testID={tier === c ? 'plan-col-current' : `plan-col-${c}`}
-                  accessibilityState={{ selected: tier === c }}
-                >
-                  <Text className="text-xs font-semibold">{t(`quota.tiers.${c}`)}</Text>
-                </View>
-              ))}
-            </View>
-            {PLAN_ROWS.map((row) => (
-              <View key={row.key} className="flex-row items-center px-3 py-2">
-                <Text className="flex-[1.6] pe-2 text-xs text-muted-fg">
-                  {t(`quota.rows.${row.label}`)}
-                </Text>
-                {PLAN_COLUMNS.map((c) => {
-                  const v = list.find((x) => x.tier === c)?.limits[row.key];
-                  return (
-                    <View key={c} className="flex-1 items-end">
-                      <Num className="text-xs">
-                        {v === undefined ? '—' : formatLimitValue(row.key, v)}
-                      </Num>
-                    </View>
-                  );
-                })}
-              </View>
-            ))}
-          </View>
+          <PlanTable list={list} tier={tier} />
         ) : (
           <Text className="text-sm text-muted-fg">
             {tiers.isError ? t('quota.planSheet.loadFailed') : t('quota.planSheet.loading')}
@@ -116,5 +86,50 @@ function meter(
     <QuotaMeter metric={metric} used={a.used} limit={a.unlimited ? -1 : a.limit} />
   ) : (
     <QuotaMeter metric={metric} used={0} limit={0} pending={pending} />
+  );
+}
+
+/** The plain Free/Premium/Pro comparison (facts from `/api/tiers`; no prices, no buttons). Shared with the Account plan card. */
+export function PlanTable({
+  list,
+  tier,
+}: {
+  list: TiersResponse['tiers'];
+  tier: string | null;
+}) {
+  const { t } = useTranslation();
+  return (
+    <View className="rounded-lg border border-edge" testID="plan-table">
+      <View className="flex-row border-b border-edge px-3 py-2">
+        <View className="flex-[1.6]" />
+        {PLAN_COLUMNS.map((c) => (
+          <View
+            key={c}
+            className={`flex-1 items-end ${tier === c ? 'rounded-sm bg-surface-3' : ''}`}
+            testID={tier === c ? 'plan-col-current' : `plan-col-${c}`}
+            accessibilityState={{ selected: tier === c }}
+          >
+            <Text className="text-xs font-semibold">{t(`quota.tiers.${c}`)}</Text>
+          </View>
+        ))}
+      </View>
+      {PLAN_ROWS.map((row) => (
+        <View key={row.key} className="flex-row items-center px-3 py-2">
+          <Text className="flex-[1.6] pe-2 text-xs text-muted-fg">
+            {t(`quota.rows.${row.label}`)}
+          </Text>
+          {PLAN_COLUMNS.map((c) => {
+            const v = list.find((x) => x.tier === c)?.limits[row.key];
+            return (
+              <View key={c} className="flex-1 items-end">
+                <Num className="text-xs">
+                  {v === undefined ? '—' : formatLimitValue(row.key, v)}
+                </Num>
+              </View>
+            );
+          })}
+        </View>
+      ))}
+    </View>
   );
 }

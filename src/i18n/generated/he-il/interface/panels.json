@@ -1427,5 +1427,327 @@
       "rate_limited": "יותר מדי בקשות קול בשעה האחרונה. נסו שוב מאוחר יותר.",
       "generic": "משהו השתבש. נסו שוב."
     }
+  },
+  "photo": {
+    "beta": "בטא",
+    "untitled": "תמונה ללא שם",
+    "projectName": "שם הפרויקט",
+    "backHome": "חזרה אל {{brand}}",
+    "loading": "פותחים את התמונה שלכם…",
+    "invalidProject": "לא ניתן היה לפתוח את הפרויקט הזה.",
+    "open": {
+      "title": "פתיחת תמונה ב-{{brand}}",
+      "drop": "גררו תמונה לכאן, או בחרו תמונה מהמכשיר.",
+      "choose": "בחירת תמונה",
+      "hint": "העריכה מתבצעת בדפדפן שלכם. שום דבר לא מועלה עד ששומרים בחשבון או מייצאים.",
+      "continueLocal": "המשך עם התמונה שנשמרה בדפדפן הזה",
+      "recent": "הפרויקטים שלכם",
+      "signInFormat": "התחברו כדי לערוך את הפורמט הזה.",
+      "decodeFailed": "לא ניתן היה לפתוח את התמונה הזו.",
+      "fromFailed": "לא ניתן היה לטעון את התוצאה.",
+      "replace": {
+        "title": "להחליף את התמונה שנשמרה בדפדפן הזה?",
+        "body": "אורחים שומרים תמונה אחת בכל פעם. פתיחת התמונה הזו תחליף את התמונה השמורה ואת העריכות שלה.",
+        "confirm": "החלפה",
+        "cancel": "להשאיר את התמונה השמורה"
+      }
+    },
+    "bar": {
+      "undo": "ביטול",
+      "redo": "ביצוע מחדש",
+      "save": "שמירה",
+      "export": "ייצוא",
+      "openProject": "פתיחה",
+      "compare": "החזיקו לחוץ כדי לראות את המקור",
+      "fit": "התאמה",
+      "actualSize": "100%",
+      "split": "תצוגה מפוצלת",
+      "state": {
+        "saved": "נשמר",
+        "saving": "שומר…",
+        "unsaved": "שינויים שלא נשמרו",
+        "local": "נשמר בדפדפן הזה",
+        "error": "לא נשמר",
+        "uploading": "מעלה את התמונה…"
+      },
+      "reducedPreview": "תצוגה מקדימה מוקטנת",
+      "bigPhotoNote": "התמונה הזו מוצגת בגודל מוקטן. הייצוא נעשה ברזולוציה המלאה.",
+      "exportSettingUp": "הייצוא בהכנה",
+      "panelsTab": "חלוניות",
+      "layersTab": "שכבות"
+    },
+    "banner": {
+      "local": "נשמר בדפדפן הזה בלבד. התחברו כדי לשמור עד {{count}} פרויקטים בחשבון שלכם.",
+      "offerTitle": "לשמור את התמונה הזו בחשבון שלכם?",
+      "offerBody": "העלו את התמונה ואת העריכות שלכם כפרויקט כדי שתוכלו לפתוח אותו מכל מקום.",
+      "offerAccept": "שמירה בחשבון שלי",
+      "offerDismiss": "לא עכשיו",
+      "offerFull": "אין בחשבון שלכם מקומות פנויים לפרויקטים.",
+      "uploadFailed": "ההעלאה לא הושלמה. התמונה שלכם עדיין שמורה בדפדפן הזה."
+    },
+    "conflict": {
+      "title": "הפרויקט הזה השתנה במקום אחר",
+      "body": "גרסה חדשה יותר נשמרה מלשונית או ממכשיר אחר. בחרו איזו גרסה לשמור.",
+      "keepMine": "להשאיר את שלי",
+      "loadTheirs": "לטעון את האחרת"
+    },
+    "draft": {
+      "title": "לשחזר עריכות שלא נשמרו?",
+      "body": "נמצאו במכשיר הזה עריכות מ-{{when}}.",
+      "restore": "שחזור",
+      "discard": "מחיקה"
+    },
+    "histogram": {
+      "label": "היסטוגרמה"
+    },
+    "panels": {
+      "basic": "בסיסי",
+      "curves": "עקומות",
+      "levels": "רמות",
+      "hsl": "צבע (HSL)",
+      "colorBalance": "איזון צבעים",
+      "blackWhite": "שחור לבן",
+      "channelMixer": "מערבב ערוצים",
+      "photoFilter": "מסנן צילום",
+      "splitTone": "פיצול גוונים",
+      "lut": "LUT",
+      "effects": "אפקטים",
+      "layers": "שכבות"
+    },
+    "slider": {
+      "reset": "איפוס",
+      "value": "ערך"
+    },
+    "params": {
+      "exposure": {
+        "title": "חשיפה",
+        "ev": "חשיפה (EV)",
+        "offset": "היסט",
+        "gamma": "גמא"
+      },
+      "brightnessContrast": {
+        "title": "אור",
+        "brightness": "בהירות",
+        "contrast": "ניגודיות"
+      },
+      "tone": {
+        "title": "גוון טונלי",
+        "highlights": "אזורים בהירים",
+        "shadows": "צללים",
+        "whites": "לבנים",
+        "blacks": "שחורים"
+      },
+      "whiteBalance": {
+        "title": "איזון לבן",
+        "temperature": "טמפרטורה",
+        "tint": "גוון"
+      },
+      "vibranceSaturation": {
+        "title": "צבע",
+        "vibrance": "חיוניות",
+        "saturation": "רוויה"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "אדום",
+        "g": "ירוק",
+        "b": "כחול"
+      },
+      "reset": "איפוס העקומה",
+      "pick": "בחירת נקודה מהתמונה",
+      "graph": "גרף העקומה. גררו נקודות כדי לעצב את העקומה.",
+      "point": "נקודה {{index}}",
+      "removePoint": "הסרת נקודה"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "אדום",
+        "g": "ירוק",
+        "b": "כחול"
+      },
+      "inBlack": "שחור קלט",
+      "inWhite": "לבן קלט",
+      "gamma": "גוני ביניים",
+      "outBlack": "שחור פלט",
+      "outWhite": "לבן פלט",
+      "reset": "איפוס הרמות"
+    },
+    "hsl": {
+      "range": {
+        "reds": "אדומים",
+        "yellows": "צהובים",
+        "greens": "ירוקים",
+        "cyans": "ציאן",
+        "blues": "כחולים",
+        "magentas": "מג'נטה"
+      },
+      "master": "כל הצבעים",
+      "hue": "גוון",
+      "saturation": "רוויה",
+      "lightness": "בהירות",
+      "greyExcept": "אפור חוץ מזה",
+      "greyExceptNamed": "אפור חוץ מ{{name}}",
+      "custom": "טווח מותאם אישית {{index}}",
+      "pickRange": "בחירת צבע מהתמונה",
+      "width": "רוחב",
+      "feather": "ריכוך שוליים",
+      "removeRange": "הסרת הטווח",
+      "resetRanges": "איפוס הצבעים",
+      "selected": "טווח הצבעים שנבחר"
+    },
+    "colorBalance": {
+      "title": "איזון צבעים",
+      "shadows": "צללים",
+      "midtones": "גוני ביניים",
+      "highlights": "אזורים בהירים",
+      "r": "אדום",
+      "g": "ירוק",
+      "b": "כחול",
+      "preserveLuminosity": "שמירה על הבהירות"
+    },
+    "blackWhite": {
+      "title": "שחור לבן",
+      "reds": "אדומים",
+      "yellows": "צהובים",
+      "greens": "ירוקים",
+      "cyans": "ציאן",
+      "blues": "כחולים",
+      "magentas": "מג'נטה",
+      "tint": "גוון",
+      "tintHue": "גוון הצבע",
+      "tintSaturation": "עוצמת הגוון",
+      "apply": "הפיכה לשחור לבן"
+    },
+    "channelMixer": {
+      "title": "מערבב ערוצים",
+      "out": {
+        "r": "אדום בפלט",
+        "g": "ירוק בפלט",
+        "b": "כחול בפלט"
+      },
+      "r": "אדום",
+      "g": "ירוק",
+      "b": "כחול",
+      "constant": "קבוע",
+      "monochrome": "מונוכרום"
+    },
+    "photoFilter": {
+      "title": "מסנן צילום",
+      "color": "צבע",
+      "custom": "צבע מותאם אישית",
+      "density": "צפיפות",
+      "preserveLuminosity": "שמירה על הבהירות",
+      "warming": "חימום",
+      "cooling": "קירור",
+      "sepia": "ספיה",
+      "red": "אדום",
+      "green": "ירוק",
+      "blue": "כחול"
+    },
+    "splitTone": {
+      "title": "פיצול גוונים",
+      "shadows": "צללים",
+      "highlights": "אזורים בהירים",
+      "hue": "גוון",
+      "saturation": "רוויה",
+      "balance": "איזון"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "גררו לכאן קובץ .cube, או בחרו קובץ.",
+      "choose": "בחירת קובץ .cube",
+      "intensity": "עוצמה",
+      "clear": "הסרת LUT",
+      "invalid": "לא ניתן היה לקרוא את קובץ ה-.cube הזה (LUT תלת-ממדי עד גודל 65).",
+      "tooBig": "ה-LUT הזה גדול מ-1 MB.",
+      "loaded": "ה-LUT נטען"
+    },
+    "effects": {
+      "title": "אפקטים",
+      "invert": "היפוך",
+      "posterize": "פוסטריזציה",
+      "levels": "רמות",
+      "threshold": "סף",
+      "level": "רמה",
+      "gamma": "גמא",
+      "add": "הוספה",
+      "remove": "הסרה"
+    },
+    "layers": {
+      "title": "שכבות",
+      "empty": "עדיין אין התאמות. הזיזו מחוון כלשהו כדי להוסיף אחת.",
+      "enable": "הצגת השכבה",
+      "disable": "הסתרת השכבה",
+      "opacity": "אטימות",
+      "blend": "מיזוג",
+      "blendMode": {
+        "normal": "רגיל",
+        "luminosity": "בהירות",
+        "color": "צבע"
+      },
+      "duplicate": "שכפול",
+      "delete": "מחיקה",
+      "rename": "שינוי שם",
+      "moveUp": "הזזה למעלה",
+      "moveDown": "הזזה למטה",
+      "mask": "מסכות יגיעו בעדכון עתידי",
+      "selectLayer": "בחירת השכבה {{name}}",
+      "type": {
+        "exposure": "חשיפה",
+        "brightnessContrast": "בהירות / ניגודיות",
+        "tone": "גוון טונלי",
+        "levels": "רמות",
+        "curves": "עקומות",
+        "whiteBalance": "איזון לבן",
+        "vibranceSaturation": "חיוניות / רוויה",
+        "hsl": "צבע (HSL)",
+        "colorBalance": "איזון צבעים",
+        "blackWhite": "שחור לבן",
+        "channelMixer": "מערבב ערוצים",
+        "photoFilter": "מסנן צילום",
+        "splitTone": "פיצול גוונים",
+        "lut": "LUT",
+        "invert": "היפוך",
+        "posterize": "פוסטריזציה",
+        "threshold": "סף",
+        "gamma": "גמא",
+        "redEye": "עיניים אדומות",
+        "sharpen": "חידוד",
+        "blur": "טשטוש",
+        "noiseReduction": "הפחתת רעש",
+        "clarity": "בהירות פרטים",
+        "texture": "מרקם",
+        "dehaze": "הסרת אובך",
+        "vignette": "וינייטה",
+        "grain": "גרעיניות"
+      }
+    },
+    "export": {
+      "title": "ייצוא",
+      "description": "עיבוד התמונה ברזולוציה מלאה.",
+      "format": "פורמט",
+      "quality": "איכות",
+      "metadata": "מטא-נתונים",
+      "metadataKeep": "שמירה",
+      "metadataStrip": "הסרה",
+      "maxSize": "גודל מרבי",
+      "original": "מקור",
+      "mp": "{{mp}} MP",
+      "planLine": "ייצוא של עד {{mp}} MP בתוכנית שלכם",
+      "locked": "לא זמין בתוכנית שלכם",
+      "estimate": "כ-{{size}}",
+      "start": "ייצוא",
+      "working": "מעבד…",
+      "failed": "הייצוא לא הושלם. נסו שוב.",
+      "setup": "הייצוא בהכנה",
+      "needFile": "התמונה המקורית אינה זמינה בדפדפן הזה. פתחו אותה שוב כדי לייצא.",
+      "queued": "בתור…",
+      "cancel": "סגירה",
+      "anotherTime": "ייצוא נוסף"
+    },
+    "openIn": "פתיחה ב-{{brand}}"
   }
 }

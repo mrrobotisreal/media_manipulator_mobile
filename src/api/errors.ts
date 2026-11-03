@@ -193,6 +193,12 @@ export function normaliseError(status: number, body: unknown, headers?: HeaderBa
     return make('rate_limited', { retryAfterSeconds, scope: obj.scope });
   }
 
+  // 2b. DELETE /account answers 502 with the deletion report (no `error` field): keep it whole so the
+  // screen can offer Retry (the call is resumable; account_delete.go).
+  if (status === 502 && typeof obj.status === 'string' && Array.isArray(obj.steps)) {
+    return make('server_error', { report: obj, retryable: obj.retryable !== false });
+  }
+
   // 3. stable snake_case codes from the API (with the sign-in alias).
   if (errorField && SNAKE.test(errorField)) {
     const aliased = ALIASES[errorField] ?? errorField;

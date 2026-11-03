@@ -73,6 +73,8 @@ export function createAnalyticsClient(enabled: boolean) {
   let inFlight: Promise<void> | null = null;
   let again = false;
   let lastSession = '';
+  /** Bumped by `discardQueued`: a drain that started earlier stops before its next batch. */
+  let epoch = 0;
   const errors = createErrorGate();
 
   function capture(d: ClientDeps, p: Pending): void {
@@ -135,13 +137,15 @@ export function createAnalyticsClient(enabled: boolean) {
   }
 
   async function drain(d: ClientDeps): Promise<void> {
+    const startedAt = epoch;
     d.outbox.prune(d.now());
     // Most important first (stable within a priority).
     const queued = [...d.outbox.all()].sort((a, b) => a.priority - b.priority);
     for (const batch of splitBatches(queued)) {
       for (let attempt = 0; ; attempt++) {
-        if (d.optedOut()) return;
+        if (d.optedOut() || epoch !== startedAt) return;
         const outcome = await sendBatch(d.transport, batch);
+        if (epoch !== startedAt) return;
         if (outcome.kind !== 'retry') {
           d.outbox.remove(new Set(batch.map((e) => e.insert_id)));
           break;
@@ -220,6 +224,18 @@ export function createAnalyticsClient(enabled: boolean) {
       if (!deps || !optedOut) return;
       stopTimers(deps);
       buffer = [];
+      deps.outbox.clear();
+    },
+    /**
+     * Account deletion / analytics erase (MA22): the old person's queued events must never be sent.
+     * Stops both timers, empties the pre-bind buffer and the outbox, and makes a running drain stop
+     * before its next batch. Capture stays enabled (the new anonymous identity keeps tracking).
+     */
+    discardQueued(): void {
+      epoch += 1;
+      buffer = [];
+      if (!deps) return;
+      stopTimers(deps);
       deps.outbox.clear();
     },
     persistNow(): void {

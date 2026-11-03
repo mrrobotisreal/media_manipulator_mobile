@@ -390,21 +390,28 @@ export interface MetadataDiffOpenedProps {
   changed_bucket: string;
 }
 
+export type DataDeletedScope = 'item' | 'all' | 'account';
+/** What was deleted. `all_files` is the delete-all action; `account` the whole account. */
+export type DataDeletedKind = 'result' | 'project' | 'all_files' | 'account';
+
 export interface DataDeletedProps {
-  scope: string;
-  kind?: string;
+  scope: DataDeletedScope;
+  kind: DataDeletedKind;
 }
 
+/** Preset buckets for the account retention window; `custom` is any non-preset hour count. */
+export type RetentionSettingBucket = '24h' | '7d' | '30d' | '90d' | '6mo' | '1y' | '2y' | 'custom';
+
 export interface RetentionSettingChangedProps {
-  from_bucket?: string;
-  to_bucket?: string;
+  from_bucket: RetentionSettingBucket;
+  to_bucket: RetentionSettingBucket;
 }
 
 export type DataExportRequestedProps = Record<string, never>;
 
 export interface SubscriptionStatusViewedProps {
-  status?: string;
-  interval?: string;
+  status: string;
+  interval: string;
 }
 
 export interface EventPropsMap {

@@ -954,5 +954,156 @@
       "title": "Partilhar estatísticas de utilização",
       "helper": "Ajuda-nos a melhorar a app. Os nomes e conteúdos dos ficheiros nunca são enviados."
     }
+  },
+  "account": {
+    "title": "Conta",
+    "sections": {
+      "plan": "Plano",
+      "usage": "Utilização",
+      "settings": "Definições",
+      "privacy": "Privacidade e dados",
+      "security": "Segurança",
+      "legal": "Informações legais",
+      "about": "Acerca de"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · O seu plano é gerido na web.",
+      "endsOn": "Termina em {{date}}",
+      "pastDue": "Há um problema com o último pagamento.",
+      "granted": "{{tier}} · Concedido",
+      "until": "Até {{date}}",
+      "freeBody": "Estão disponíveis limites diários mais elevados nos planos Premium e Pro.",
+      "operator": "Operador",
+      "loading": "A carregar o seu plano",
+      "loadFailed": "O seu plano não está disponível neste momento."
+    },
+    "usage": {
+      "limits": "Limites do plano",
+      "unavailable": "A utilização não está disponível neste momento."
+    },
+    "retention": {
+      "title": "Armazenamento e retenção",
+      "heading": "Durante quanto tempo guardamos os seus ficheiros",
+      "body": "Aplica-se a tudo o que criar. A escolha é sua, não depende do plano: qualquer conta pode escolher entre 24 horas e 2 anos.",
+      "recommended": "Recomendado",
+      "presets": {
+        "h24": "24 horas",
+        "d7": "7 dias",
+        "d30": "30 dias",
+        "d90": "90 dias",
+        "m6": "6 meses",
+        "y1": "1 ano",
+        "y2": "2 anos"
+      },
+      "custom": "Personalizado",
+      "customLabel": "Período personalizado em dias (1–730)",
+      "customApply": "Aplicar",
+      "customInvalid": "Introduza um número inteiro de dias entre 1 e 730.",
+      "current": "Atualmente: {{window}}.",
+      "saved": "Guardado. Os seus ficheiros são agora mantidos durante {{window}}.",
+      "saveFailed": "Não foi possível guardar o seu período de retenção. Foi mantido como estava.",
+      "previewFailed": "Não foi possível verificar o que esta alteração eliminaria, por isso nada foi alterado. Tente novamente.",
+      "confirmTitle": "Eliminar agora os itens guardados?",
+      "confirmBody_one": "{{count}} item guardado ({{size}}) é mais antigo do que o novo período e será eliminado agora. Esta ação não pode ser anulada.",
+      "confirmBody_many": "{{count}} de itens guardados ({{size}}) são mais antigos do que o novo período e serão eliminados agora. Esta ação não pode ser anulada.",
+      "confirmBody_other": "{{count}} itens guardados ({{size}}) são mais antigos do que o novo período e serão eliminados agora. Esta ação não pode ser anulada.",
+      "confirmCta": "Reduzir e eliminar",
+      "metadataTitle": "Relatórios de metadados",
+      "metadataToggle": "Eliminar os relatórios de metadados juntamente com os ficheiros",
+      "metadataHint": "Desative para manter o relatório de metadados de um ficheiro depois de o ficheiro ser eliminado.",
+      "visibilityTitle": "Visibilidade do histórico",
+      "visibilityLabel": "O que a sua lista de histórico mostra",
+      "visibilityFull": "Todos os detalhes",
+      "visibilityNamesOnly": "Apenas nomes",
+      "settingFailed": "Não foi possível guardar essa definição. Foi mantida como estava.",
+      "loadFailed": "As suas definições não estão disponíveis neste momento."
+    },
+    "notifications": {
+      "title": "Notificações",
+      "emailTitle": "E-mail",
+      "emailAiJob": "Enviar-me um e-mail quando uma tarefa de IA longa terminar",
+      "emailExpiry": "Enviar-me um e-mail antes de os ficheiros guardados expirarem",
+      "emailAlways": "Os e-mails de boas-vindas, de pagamento e de eliminação de conta são sempre enviados.",
+      "pushTitle": "Notificações push",
+      "pushJobFinished": "Notificação push quando uma tarefa longa terminar",
+      "saveFailed": "Não foi possível guardar essa preferência. Tente novamente.",
+      "loadFailed": "As suas definições de notificações não estão disponíveis neste momento."
+    },
+    "privacy": {
+      "title": "Privacidade e dados",
+      "analyticsTitle": "Análises",
+      "deleteAnalyticsTitle": "Eliminar os meus dados de análise",
+      "deleteAnalyticsBody": "Apaga as análises de utilização recolhidas sobre si. Desativar as análises não elimina os dados anteriores.",
+      "deleteAnalyticsCta": "Eliminar os meus dados de análise",
+      "deleteAnalyticsDialogTitle": "Eliminar os seus dados de análise?",
+      "deleteAnalyticsDialogBody": "Isto apaga as análises de utilização recolhidas da sua conta e deste dispositivo. Não pode ser anulado.",
+      "deleteAnalyticsDone": "Os seus dados de análise foram eliminados.",
+      "deleteAnalyticsFailed": "Não foi possível eliminar os seus dados de análise. Tente novamente.",
+      "dataTitle": "Os seus dados",
+      "exportTitle": "Exportar os meus dados",
+      "exportBody": "Transfira um zip com os dados e os ficheiros da sua conta.",
+      "exportCta": "Exportar os meus dados",
+      "exporting": "A preparar a sua exportação",
+      "exportFailed": "Não foi possível exportar os seus dados. Tente novamente.",
+      "exportRateLimited": "As exportações estão limitadas a 3 por hora. Tente novamente dentro de {{time}}.",
+      "exportReady": "A sua exportação está pronta.",
+      "deleteFilesTitle": "Eliminar todos os meus ficheiros",
+      "deleteFilesBody": "Remove todos os resultados, carregamentos e projetos guardados. A sua conta e o seu plano mantêm-se.",
+      "deleteFilesCta": "Eliminar todos os meus ficheiros",
+      "deleteFilesDialogTitle": "Eliminar todos os seus ficheiros?",
+      "deleteFilesDialogBody": "Todos os resultados, carregamentos e projetos guardados são removidos dos nossos servidores e deste dispositivo. Não pode ser anulado.",
+      "deleteFilesDone": "Todos os seus ficheiros foram eliminados.",
+      "deleteFilesPending": "Eliminado. Alguns ficheiros terminarão de ser eliminados em breve.",
+      "deleteFilesFailed": "Não foi possível eliminar os seus ficheiros. Tente novamente.",
+      "typedLabel": "Escreva {{phrase}} para confirmar",
+      "deleteAccountTitle": "Eliminar a minha conta",
+      "deleteAccountBody": "Cancela qualquer subscrição, elimina todos os seus ficheiros e definições e remove o seu início de sessão. Não pode ser anulado."
+    },
+    "deleteAccount": {
+      "title": "Eliminar conta",
+      "heading": "Eliminar a sua conta?",
+      "intro": "Isto elimina a sua conta de forma permanente. Não pode ser anulado.",
+      "consequences": {
+        "files": "Os seus ficheiros e o histórico são eliminados.",
+        "settings": "As suas definições e os itens guardados na web, como vozes e projetos, são eliminados.",
+        "subscription": "Qualquer subscrição é cancelada de imediato.",
+        "analytics": "Os seus dados de análise são apagados.",
+        "signIn": "O seu início de sessão é removido e a sua sessão é terminada."
+      },
+      "typedLabel": "Escreva {{phrase}} para confirmar",
+      "cta": "Eliminar a minha conta",
+      "reauthHint": "Primeiro, ser-lhe-á pedido que confirme o seu início de sessão.",
+      "working": "A eliminar a sua conta",
+      "incomplete": "A eliminação não foi concluída. Tente novamente: continua onde parou.",
+      "retry": "Repetir eliminação",
+      "failed": "Não foi possível eliminar a sua conta. Tente novamente.",
+      "doneTitle": "A sua conta foi eliminada.",
+      "doneBody": "Os seus ficheiros, definições e início de sessão foram removidos deste dispositivo e dos nossos servidores.",
+      "toSignIn": "Ir para o início de sessão",
+      "webLink": "Eliminar na web"
+    },
+    "security": {
+      "signOutEverywhere": "Terminar sessão em todo o lado",
+      "signOutEverywhereBody": "Termina a sua sessão em todos os dispositivos. Os outros dispositivos podem manter a sessão iniciada até uma hora.",
+      "signOutEverywhereTitle": "Terminar sessão em todo o lado?",
+      "signOutEverywhereFailed": "Não foi possível terminar a sua sessão em todo o lado. Tente novamente."
+    },
+    "legal": {
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Serviço"
+    },
+    "about": {
+      "title": "Acerca de",
+      "version": "Versão",
+      "update": "Atualização",
+      "updateEmbedded": "Incorporada",
+      "channel": "Canal",
+      "runtime": "Versão de runtime",
+      "api": "Servidor",
+      "none": "Nenhuma",
+      "copyDiagnostics": "Copiar diagnóstico",
+      "copied": "Diagnóstico copiado.",
+      "contact": "Contactar o suporte"
+    }
   }
 }

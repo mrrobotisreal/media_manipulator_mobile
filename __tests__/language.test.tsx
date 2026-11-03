@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
-import LanguageScreen from '../app/(app)/language';
+import LanguageScreen from '../app/(app)/(tabs)/account/language';
 import { i18n } from '@/i18n';
 import { locales } from '@/i18n/locales';
 import { persistor, store } from '@/state/store';

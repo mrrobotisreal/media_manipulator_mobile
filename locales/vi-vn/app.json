@@ -942,5 +942,154 @@
       "title": "Chia sẻ dữ liệu phân tích sử dụng",
       "helper": "Giúp chúng tôi cải thiện ứng dụng. Tên và nội dung tệp không bao giờ được gửi đi."
     }
+  },
+  "account": {
+    "title": "Tài khoản",
+    "sections": {
+      "plan": "Gói",
+      "usage": "Mức sử dụng",
+      "settings": "Cài đặt",
+      "privacy": "Quyền riêng tư và dữ liệu",
+      "security": "Bảo mật",
+      "legal": "Pháp lý",
+      "about": "Giới thiệu"
+    },
+    "plan": {
+      "managedOnWeb": "{{tier}} · Gói của bạn được quản lý trên web.",
+      "endsOn": "Kết thúc vào {{date}}",
+      "pastDue": "Khoản thanh toán gần nhất gặp sự cố.",
+      "granted": "{{tier}} · Được cấp",
+      "until": "Đến {{date}}",
+      "freeBody": "Giới hạn hằng ngày cao hơn có sẵn ở gói Premium và Pro.",
+      "operator": "Quản trị viên",
+      "loading": "Đang tải gói của bạn",
+      "loadFailed": "Hiện không có thông tin gói của bạn."
+    },
+    "usage": {
+      "limits": "Giới hạn của gói",
+      "unavailable": "Hiện không có dữ liệu sử dụng."
+    },
+    "retention": {
+      "title": "Lưu trữ và thời gian lưu",
+      "heading": "Chúng tôi lưu tệp của bạn trong bao lâu",
+      "body": "Áp dụng cho mọi thứ bạn tạo. Do bạn chọn, không phụ thuộc gói: mọi tài khoản đều có thể chọn từ 24 giờ đến 2 năm.",
+      "recommended": "Đề xuất",
+      "presets": {
+        "h24": "24 giờ",
+        "d7": "7 ngày",
+        "d30": "30 ngày",
+        "d90": "90 ngày",
+        "m6": "6 tháng",
+        "y1": "1 năm",
+        "y2": "2 năm"
+      },
+      "custom": "Tùy chỉnh",
+      "customLabel": "Thời gian tùy chỉnh theo ngày (1–730)",
+      "customApply": "Áp dụng",
+      "customInvalid": "Nhập số ngày nguyên từ 1 đến 730.",
+      "current": "Hiện tại: {{window}}.",
+      "saved": "Đã lưu. Tệp của bạn giờ được giữ trong {{window}}.",
+      "saveFailed": "Không thể lưu thời gian lưu trữ. Giá trị cũ được giữ nguyên.",
+      "previewFailed": "Không thể kiểm tra thay đổi này sẽ xóa những gì nên chưa có gì bị thay đổi. Hãy thử lại.",
+      "confirmTitle": "Xóa ngay các mục đã lưu?",
+      "confirmBody_other": "{{count}} mục đã lưu ({{size}}) cũ hơn thời gian mới và sẽ bị xóa ngay. Không thể hoàn tác.",
+      "confirmCta": "Rút ngắn và xóa",
+      "metadataTitle": "Báo cáo siêu dữ liệu",
+      "metadataToggle": "Xóa báo cáo siêu dữ liệu cùng với tệp của chúng",
+      "metadataHint": "Tắt để giữ báo cáo siêu dữ liệu của tệp sau khi tệp đã bị xóa.",
+      "visibilityTitle": "Hiển thị lịch sử",
+      "visibilityLabel": "Danh sách lịch sử hiển thị gì",
+      "visibilityFull": "Đầy đủ chi tiết",
+      "visibilityNamesOnly": "Chỉ tên",
+      "settingFailed": "Không thể lưu cài đặt đó. Giá trị cũ được giữ nguyên.",
+      "loadFailed": "Hiện không có cài đặt của bạn."
+    },
+    "notifications": {
+      "title": "Thông báo",
+      "emailTitle": "Thư điện tử",
+      "emailAiJob": "Gửi email cho tôi khi tác vụ AI dài hoàn tất",
+      "emailExpiry": "Gửi email cho tôi trước khi tệp đã lưu hết hạn",
+      "emailAlways": "Email chào mừng, thanh toán và xóa tài khoản luôn được gửi.",
+      "pushTitle": "Thông báo đẩy",
+      "pushJobFinished": "Gửi thông báo đẩy khi tác vụ dài hoàn tất",
+      "saveFailed": "Không thể lưu tùy chọn đó. Hãy thử lại.",
+      "loadFailed": "Hiện không có cài đặt thông báo của bạn."
+    },
+    "privacy": {
+      "title": "Quyền riêng tư và dữ liệu",
+      "analyticsTitle": "Phân tích",
+      "deleteAnalyticsTitle": "Xóa dữ liệu phân tích của tôi",
+      "deleteAnalyticsBody": "Xóa số liệu sử dụng đã thu thập về bạn. Tắt phân tích không xóa dữ liệu trước đó.",
+      "deleteAnalyticsCta": "Xóa dữ liệu phân tích của tôi",
+      "deleteAnalyticsDialogTitle": "Xóa dữ liệu phân tích của bạn?",
+      "deleteAnalyticsDialogBody": "Thao tác này xóa số liệu sử dụng đã thu thập cho tài khoản và thiết bị này. Không thể hoàn tác.",
+      "deleteAnalyticsDone": "Dữ liệu phân tích của bạn đã được xóa.",
+      "deleteAnalyticsFailed": "Không thể xóa dữ liệu phân tích của bạn. Hãy thử lại.",
+      "dataTitle": "Dữ liệu của bạn",
+      "exportTitle": "Xuất dữ liệu của tôi",
+      "exportBody": "Tải xuống tệp zip chứa dữ liệu và tệp của tài khoản.",
+      "exportCta": "Xuất dữ liệu của tôi",
+      "exporting": "Đang chuẩn bị bản xuất của bạn",
+      "exportFailed": "Không thể xuất dữ liệu của bạn. Hãy thử lại.",
+      "exportRateLimited": "Chỉ được xuất tối đa 3 lần mỗi giờ. Hãy thử lại sau {{time}}.",
+      "exportReady": "Bản xuất của bạn đã sẵn sàng.",
+      "deleteFilesTitle": "Xóa tất cả tệp của tôi",
+      "deleteFilesBody": "Xóa mọi kết quả, tệp tải lên và dự án đã lưu. Tài khoản và gói của bạn vẫn giữ nguyên.",
+      "deleteFilesCta": "Xóa tất cả tệp của tôi",
+      "deleteFilesDialogTitle": "Xóa tất cả tệp của bạn?",
+      "deleteFilesDialogBody": "Mọi kết quả, tệp tải lên và dự án đã lưu sẽ bị xóa khỏi máy chủ của chúng tôi và thiết bị này. Không thể hoàn tác.",
+      "deleteFilesDone": "Tất cả tệp của bạn đã được xóa.",
+      "deleteFilesPending": "Đã xóa. Một vài tệp sẽ sớm được xóa xong.",
+      "deleteFilesFailed": "Không thể xóa tệp của bạn. Hãy thử lại.",
+      "typedLabel": "Nhập {{phrase}} để xác nhận",
+      "deleteAccountTitle": "Xóa tài khoản của tôi",
+      "deleteAccountBody": "Hủy mọi gói đăng ký, xóa tất cả tệp và cài đặt của bạn, đồng thời gỡ thông tin đăng nhập. Không thể hoàn tác."
+    },
+    "deleteAccount": {
+      "title": "Xóa tài khoản",
+      "heading": "Xóa tài khoản của bạn?",
+      "intro": "Thao tác này xóa vĩnh viễn tài khoản của bạn. Không thể hoàn tác.",
+      "consequences": {
+        "files": "Tệp và lịch sử của bạn bị xóa.",
+        "settings": "Cài đặt và các mục đã lưu tạo trên web, như giọng nói và dự án, bị xóa.",
+        "subscription": "Mọi gói đăng ký bị hủy ngay lập tức.",
+        "analytics": "Dữ liệu phân tích của bạn bị xóa.",
+        "signIn": "Thông tin đăng nhập của bạn bị gỡ và bạn sẽ được đăng xuất."
+      },
+      "typedLabel": "Nhập {{phrase}} để xác nhận",
+      "cta": "Xóa tài khoản của tôi",
+      "reauthHint": "Trước tiên, bạn sẽ được yêu cầu xác nhận đăng nhập.",
+      "working": "Đang xóa tài khoản của bạn",
+      "incomplete": "Việc xóa chưa hoàn tất. Hãy thử lại — thao tác sẽ tiếp tục từ chỗ đã dừng.",
+      "retry": "Thử xóa lại",
+      "failed": "Không thể xóa tài khoản của bạn. Hãy thử lại.",
+      "doneTitle": "Tài khoản của bạn đã được xóa.",
+      "doneBody": "Tệp, cài đặt và thông tin đăng nhập của bạn đã được gỡ khỏi thiết bị này và máy chủ của chúng tôi.",
+      "toSignIn": "Đến trang đăng nhập",
+      "webLink": "Xóa trên web thay thế"
+    },
+    "security": {
+      "signOutEverywhere": "Đăng xuất khỏi mọi nơi",
+      "signOutEverywhereBody": "Đăng xuất bạn trên mọi thiết bị. Các thiết bị khác có thể vẫn đăng nhập tối đa một giờ.",
+      "signOutEverywhereTitle": "Đăng xuất khỏi mọi nơi?",
+      "signOutEverywhereFailed": "Không thể đăng xuất bạn khỏi mọi nơi. Hãy thử lại."
+    },
+    "legal": {
+      "privacy": "Chính sách quyền riêng tư",
+      "terms": "Điều khoản"
+    },
+    "about": {
+      "title": "Giới thiệu",
+      "version": "Phiên bản",
+      "update": "Bản cập nhật",
+      "updateEmbedded": "Tích hợp sẵn",
+      "channel": "Kênh",
+      "runtime": "Phiên bản runtime",
+      "api": "Máy chủ",
+      "none": "Không có",
+      "copyDiagnostics": "Sao chép chẩn đoán",
+      "copied": "Đã sao chép chẩn đoán.",
+      "contact": "Liên hệ hỗ trợ"
+    }
   }
 }
