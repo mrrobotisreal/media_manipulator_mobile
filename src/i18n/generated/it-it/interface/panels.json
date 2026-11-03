@@ -1499,7 +1499,11 @@
       "splitTone": "Viraggio parziale",
       "lut": "LUT",
       "effects": "Effetti",
-      "layers": "Livelli"
+      "layers": "Livelli",
+      "geometry": "Geometria",
+      "masks": "Maschere",
+      "heal": "Ritocco",
+      "redEye": "Occhi rossi"
     },
     "slider": {
       "reset": "Reimposta",
@@ -1680,7 +1684,7 @@
       "rename": "Rinomina",
       "moveUp": "Sposta su",
       "moveDown": "Sposta giù",
-      "mask": "Le maschere arriveranno in un prossimo aggiornamento",
+      "mask": "Aggiungi una maschera",
       "selectLayer": "Seleziona il livello {{name}}",
       "type": {
         "exposure": "Esposizione",
@@ -1710,7 +1714,8 @@
         "dehaze": "Rimozione foschia",
         "vignette": "Vignettatura",
         "grain": "Grana"
-      }
+      },
+      "maskEdit": "Modifica maschera"
     },
     "export": {
       "title": "Esporta",
@@ -1735,6 +1740,114 @@
       "cancel": "Chiudi",
       "anotherTime": "Esporta di nuovo"
     },
-    "openIn": "Apri in {{brand}}"
+    "openIn": "Apri in {{brand}}",
+    "geometry": {
+      "crop": "Ritaglia",
+      "aspect": "Proporzioni",
+      "free": "Libero",
+      "original": "Originale",
+      "cropTool": "Ritaglia sulla tela",
+      "resetCrop": "Reimposta ritaglio",
+      "straighten": "Raddrizza",
+      "angle": "Angolo (gradi)",
+      "drawLine": "Traccia una linea",
+      "drawLineHint": "Traccia una linea lungo qualcosa che dovrebbe essere livellato o verticale; l'angolo viene impostato in automatico.",
+      "orientation": "Ruota e capovolgi",
+      "rotateLeft": "Ruota di 90 gradi a sinistra",
+      "rotateRight": "Ruota di 90 gradi a destra",
+      "rotate180": "Ruota di 180 gradi",
+      "flipH": "Capovolgi orizzontalmente",
+      "flipV": "Capovolgi verticalmente",
+      "perspective": "Prospettiva",
+      "perspectiveTool": "Trascina gli angoli",
+      "resetPerspective": "Reimposta prospettiva",
+      "autoCrop": "Ritaglio automatico al rettangolo più grande",
+      "fill": "Riempi gli angoli vuoti",
+      "fillTransparent": "Trasparente",
+      "fillEdge": "Estendi il bordo",
+      "fillColor": "Colore"
+    },
+    "masks": {
+      "title": "Maschera",
+      "add": "Aggiungi un componente di maschera",
+      "empty": "Questa maschera è vuota. Aggiungi un componente per limitare dove si applica la regolazione.",
+      "selectLayer": "Seleziona un livello di regolazione per assegnargli una maschera.",
+      "layer": "Livello",
+      "kind": {
+        "gradient": "Gradiente lineare",
+        "radial": "Radiale",
+        "brush": "Pennello",
+        "luminosity": "Intervallo di luminosità",
+        "colorRange": "Intervallo di colore",
+        "subject": "Seleziona soggetto"
+      },
+      "mode": "Come si combina questo componente",
+      "mode_add": "Aggiungi",
+      "mode_subtract": "Sottrai",
+      "mode_intersect": "Interseca",
+      "removeComponent": "Rimuovi questo componente",
+      "draw": "Disegna sulla foto",
+      "feather": "Sfumatura",
+      "rotate": "Rotazione",
+      "maskFeather": "Sfumatura della maschera",
+      "maskOpacity": "Intensità della maschera",
+      "invert": "Inverti",
+      "share": "Condividi questa maschera",
+      "remove": "Rimuovi maschera",
+      "view": "Vista maschera",
+      "view_off": "Disattivata",
+      "view_overlay": "Sovrapposizione",
+      "view_alpha": "Solo maschera",
+      "localTitle": "Regolazione locale",
+      "localType": "Regolazione",
+      "localBasic": "Esposizione, tono e saturazione",
+      "addLocal": "Aggiungi regolazione locale",
+      "localHint": "Crea la regolazione con una maschera vuota e apre il pennello. Il combo condivide una maschera tra i suoi tre livelli.",
+      "luminosity": {
+        "lo": "Da luminosità",
+        "hi": "A luminosità"
+      },
+      "colorRange": {
+        "pick": "Scegli un colore",
+        "shiftHint": "Maiusc + clic aggiunge un altro colore (fino a 8).",
+        "targets": "Colori selezionati",
+        "removeTarget": "Rimuovi questo colore",
+        "fuzziness": "Tolleranza"
+      },
+      "subject": {
+        "working": "Ricerca del soggetto. Potrebbe richiedere qualche secondo.",
+        "failed": "Impossibile selezionare il soggetto. Riprova.",
+        "invertBackground": "Sfondo invece"
+      },
+      "brush": {
+        "title": "Pennello",
+        "paint": "Disegna",
+        "erase": "Cancella",
+        "size": "Dimensione",
+        "hardness": "Durezza",
+        "flow": "Flusso",
+        "keys": "B pennello, E cancella, [ e ] dimensione, M vista maschera.",
+        "warn": "Le maschere a pennello di questa foto stanno diventando grandi. Semplificane o rimuovine alcune presto.",
+        "full": "Non c'è più spazio per altre pennellate in questo progetto."
+      }
+    },
+    "heal": {
+      "title": "Ritocco",
+      "hint": "Passa il pennello su macchie o imperfezioni, poi premi Ritocca. Il ritocco viene eseguito sulla nostra GPU e può richiedere un minuto.",
+      "brush": "Pennello per macchie",
+      "press": "Ritocca",
+      "clear": "Cancella macchie",
+      "strokes": "Macchie segnate: {{count}}",
+      "done": "Ritocchi applicati: {{count}}",
+      "running": "Ritocco in corso...",
+      "failed": "Il ritocco non è stato completato. Non è stato modificato nulla.",
+      "unavailable": "Il ritocco non è disponibile al momento."
+    },
+    "redEye": {
+      "title": "Occhi rossi",
+      "hint": "Fai clic su un occhio nella foto. Viene posizionata una piccola maschera circolare e il rosso al suo interno viene rimosso.",
+      "radius": "Raggio (% del lato lungo)",
+      "clickEye": "Fai clic su un occhio"
+    }
   }
 }

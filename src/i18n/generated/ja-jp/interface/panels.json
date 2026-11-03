@@ -1487,7 +1487,11 @@
       "splitTone": "スプリットトーン",
       "lut": "LUT",
       "effects": "エフェクト",
-      "layers": "レイヤー"
+      "layers": "レイヤー",
+      "geometry": "ジオメトリ",
+      "masks": "マスク",
+      "heal": "修復",
+      "redEye": "赤目"
     },
     "slider": {
       "reset": "リセット",
@@ -1668,7 +1672,7 @@
       "rename": "名前を変更",
       "moveUp": "上へ移動",
       "moveDown": "下へ移動",
-      "mask": "マスクは今後のアップデートで追加されます",
+      "mask": "マスクを追加",
       "selectLayer": "レイヤー「{{name}}」を選択",
       "type": {
         "exposure": "露光量",
@@ -1698,7 +1702,8 @@
         "dehaze": "かすみの除去",
         "vignette": "周辺光量補正",
         "grain": "粒子"
-      }
+      },
+      "maskEdit": "マスクを編集"
     },
     "export": {
       "title": "エクスポート",
@@ -1723,6 +1728,114 @@
       "cancel": "閉じる",
       "anotherTime": "もう一度エクスポート"
     },
-    "openIn": "{{brand}}で開く"
+    "openIn": "{{brand}}で開く",
+    "geometry": {
+      "crop": "切り抜き",
+      "aspect": "縦横比",
+      "free": "フリー",
+      "original": "元の比率",
+      "cropTool": "キャンバス上で切り抜き",
+      "resetCrop": "切り抜きをリセット",
+      "straighten": "角度補正",
+      "angle": "角度(度)",
+      "drawLine": "線を引く",
+      "drawLineHint": "水平または垂直にしたい対象に沿って線を引くと、角度が自動で設定されます。",
+      "orientation": "回転と反転",
+      "rotateLeft": "左へ90度回転",
+      "rotateRight": "右へ90度回転",
+      "rotate180": "180度回転",
+      "flipH": "左右反転",
+      "flipV": "上下反転",
+      "perspective": "遠近感",
+      "perspectiveTool": "角をドラッグ",
+      "resetPerspective": "遠近感をリセット",
+      "autoCrop": "最大の長方形に自動で切り抜き",
+      "fill": "空白の角を塗りつぶし",
+      "fillTransparent": "透明",
+      "fillEdge": "端を引き伸ばす",
+      "fillColor": "カラー"
+    },
+    "masks": {
+      "title": "マスク",
+      "add": "マスクの要素を追加",
+      "empty": "このマスクは空です。要素を追加して、調整の適用範囲を限定します。",
+      "selectLayer": "マスクを付ける調整レイヤーを選択してください。",
+      "layer": "レイヤー",
+      "kind": {
+        "gradient": "線形グラデーション",
+        "radial": "円形グラデーション",
+        "brush": "ブラシ",
+        "luminosity": "輝度範囲",
+        "colorRange": "色域指定",
+        "subject": "被写体を選択"
+      },
+      "mode": "この要素の合成方法",
+      "mode_add": "追加",
+      "mode_subtract": "減算",
+      "mode_intersect": "交差",
+      "removeComponent": "この要素を削除",
+      "draw": "写真上に描画",
+      "feather": "ぼかし",
+      "rotate": "回転",
+      "maskFeather": "マスクのぼかし",
+      "maskOpacity": "マスクの強さ",
+      "invert": "反転",
+      "share": "このマスクを共有",
+      "remove": "マスクを削除",
+      "view": "マスク表示",
+      "view_off": "オフ",
+      "view_overlay": "オーバーレイ",
+      "view_alpha": "マスクのみ",
+      "localTitle": "部分補正",
+      "localType": "補正",
+      "localBasic": "露光量、トーン、彩度",
+      "addLocal": "部分補正を追加",
+      "localHint": "空のマスクで補正を作成し、ブラシを開きます。コンボでは3つのレイヤーが1つのマスクを共有します。",
+      "luminosity": {
+        "lo": "明るさ(下限)",
+        "hi": "明るさ(上限)"
+      },
+      "colorRange": {
+        "pick": "色を選択",
+        "shiftHint": "Shiftキーを押しながらクリックで色を追加(最大8色)。",
+        "targets": "選択した色",
+        "removeTarget": "この色を削除",
+        "fuzziness": "許容量"
+      },
+      "subject": {
+        "working": "被写体を検出中です。数秒かかることがあります。",
+        "failed": "被写体を選択できませんでした。もう一度お試しください。",
+        "invertBackground": "背景を選択"
+      },
+      "brush": {
+        "title": "ブラシ",
+        "paint": "描画",
+        "erase": "消去",
+        "size": "サイズ",
+        "hardness": "硬さ",
+        "flow": "流量",
+        "keys": "B ブラシ、E 消去、[ と ] サイズ、M マスク表示。",
+        "warn": "この写真のブラシマスクが大きくなっています。まもなく簡略化または削除してください。",
+        "full": "このプロジェクトにはこれ以上ブラシストロークを追加できません。"
+      }
+    },
+    "heal": {
+      "title": "修復",
+      "hint": "傷や汚れの上をなぞって「修復」を押してください。修復はGPUで処理され、1分ほどかかることがあります。",
+      "brush": "スポットブラシ",
+      "press": "修復",
+      "clear": "スポットをクリア",
+      "strokes": "マークしたスポット:{{count}}",
+      "done": "適用した修復:{{count}}",
+      "running": "修復中...",
+      "failed": "修復が完了しませんでした。変更は加えられていません。",
+      "unavailable": "現在、修復は利用できません。"
+    },
+    "redEye": {
+      "title": "赤目",
+      "hint": "写真内の目をクリックしてください。小さな円形マスクが配置され、その内側の赤みが除去されます。",
+      "radius": "半径(長辺の%)",
+      "clickEye": "目をクリック"
+    }
   }
 }

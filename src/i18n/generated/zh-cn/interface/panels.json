@@ -1487,7 +1487,11 @@
       "splitTone": "分离色调",
       "lut": "LUT",
       "effects": "效果",
-      "layers": "图层"
+      "layers": "图层",
+      "geometry": "几何",
+      "masks": "蒙版",
+      "heal": "修复",
+      "redEye": "红眼"
     },
     "slider": {
       "reset": "重置",
@@ -1668,7 +1672,7 @@
       "rename": "重命名",
       "moveUp": "上移",
       "moveDown": "下移",
-      "mask": "蒙版功能将在后续更新中推出",
+      "mask": "添加蒙版",
       "selectLayer": "选择图层 {{name}}",
       "type": {
         "exposure": "曝光度",
@@ -1698,7 +1702,8 @@
         "dehaze": "去朦胧",
         "vignette": "晕影",
         "grain": "颗粒"
-      }
+      },
+      "maskEdit": "编辑蒙版"
     },
     "export": {
       "title": "导出",
@@ -1723,6 +1728,114 @@
       "cancel": "关闭",
       "anotherTime": "再次导出"
     },
-    "openIn": "在{{brand}}中打开"
+    "openIn": "在{{brand}}中打开",
+    "geometry": {
+      "crop": "裁剪",
+      "aspect": "宽高比",
+      "free": "自由",
+      "original": "原始",
+      "cropTool": "在画布上裁剪",
+      "resetCrop": "重置裁剪",
+      "straighten": "拉直",
+      "angle": "角度(度)",
+      "drawLine": "画线",
+      "drawLineHint": "沿着应保持水平或垂直的物体画一条线,角度会自动设置。",
+      "orientation": "旋转和翻转",
+      "rotateLeft": "向左旋转 90 度",
+      "rotateRight": "向右旋转 90 度",
+      "rotate180": "旋转 180 度",
+      "flipH": "水平翻转",
+      "flipV": "垂直翻转",
+      "perspective": "透视",
+      "perspectiveTool": "拖动角点",
+      "resetPerspective": "重置透视",
+      "autoCrop": "自动裁剪为最大矩形",
+      "fill": "填充空白角落",
+      "fillTransparent": "透明",
+      "fillEdge": "拉伸边缘",
+      "fillColor": "颜色"
+    },
+    "masks": {
+      "title": "蒙版",
+      "add": "添加蒙版组件",
+      "empty": "此蒙版为空。添加组件以限定调整的应用范围。",
+      "selectLayer": "选择一个调整图层以为其添加蒙版。",
+      "layer": "图层",
+      "kind": {
+        "gradient": "线性渐变",
+        "radial": "径向",
+        "brush": "画笔",
+        "luminosity": "明亮度范围",
+        "colorRange": "颜色范围",
+        "subject": "选择主体"
+      },
+      "mode": "此组件的组合方式",
+      "mode_add": "添加",
+      "mode_subtract": "减去",
+      "mode_intersect": "相交",
+      "removeComponent": "移除此组件",
+      "draw": "在照片上绘制",
+      "feather": "羽化",
+      "rotate": "旋转",
+      "maskFeather": "蒙版羽化",
+      "maskOpacity": "蒙版强度",
+      "invert": "反相",
+      "share": "共享此蒙版",
+      "remove": "移除蒙版",
+      "view": "蒙版视图",
+      "view_off": "关闭",
+      "view_overlay": "叠加",
+      "view_alpha": "仅蒙版",
+      "localTitle": "局部调整",
+      "localType": "调整",
+      "localBasic": "曝光、色调和饱和度",
+      "addLocal": "添加局部调整",
+      "localHint": "创建带空蒙版的调整并打开画笔。组合调整的三个图层共用一个蒙版。",
+      "luminosity": {
+        "lo": "起始亮度",
+        "hi": "结束亮度"
+      },
+      "colorRange": {
+        "pick": "拾取颜色",
+        "shiftHint": "按住 Shift 点击可添加其他颜色(最多 8 种)。",
+        "targets": "已选颜色",
+        "removeTarget": "移除此颜色",
+        "fuzziness": "颜色容差"
+      },
+      "subject": {
+        "working": "正在识别主体,可能需要几秒钟。",
+        "failed": "无法选择主体,请重试。",
+        "invertBackground": "改为选择背景"
+      },
+      "brush": {
+        "title": "画笔",
+        "paint": "绘制",
+        "erase": "擦除",
+        "size": "大小",
+        "hardness": "硬度",
+        "flow": "流量",
+        "keys": "B 画笔,E 擦除,[ 和 ] 大小,M 蒙版视图。",
+        "warn": "这张照片的画笔蒙版越来越大,请尽快简化或移除一部分。",
+        "full": "此项目已没有空间容纳更多画笔笔触。"
+      }
+    },
+    "heal": {
+      "title": "修复",
+      "hint": "涂抹斑点或瑕疵,然后点按“修复”。修复在我们的 GPU 上运行,可能需要一分钟。",
+      "brush": "污点画笔",
+      "press": "修复",
+      "clear": "清除斑点",
+      "strokes": "已标记斑点:{{count}}",
+      "done": "已应用修复:{{count}}",
+      "running": "正在修复...",
+      "failed": "修复未完成,未做任何更改。",
+      "unavailable": "修复功能目前不可用。"
+    },
+    "redEye": {
+      "title": "红眼",
+      "hint": "点击照片中的眼睛。系统会放置一个小圆形蒙版,并消除其中的红色。",
+      "radius": "半径(长边的百分比)",
+      "clickEye": "点击眼睛"
+    }
   }
 }

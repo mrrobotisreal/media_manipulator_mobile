@@ -1499,7 +1499,11 @@
       "splitTone": "Divisão de tons",
       "lut": "LUT",
       "effects": "Efeitos",
-      "layers": "Camadas"
+      "layers": "Camadas",
+      "geometry": "Geometria",
+      "masks": "Máscaras",
+      "heal": "Retocar",
+      "redEye": "Olhos vermelhos"
     },
     "slider": {
       "reset": "Redefinir",
@@ -1680,7 +1684,7 @@
       "rename": "Renomear",
       "moveUp": "Mover para cima",
       "moveDown": "Mover para baixo",
-      "mask": "As máscaras chegam em uma atualização futura",
+      "mask": "Adicionar uma máscara",
       "selectLayer": "Selecionar camada {{name}}",
       "type": {
         "exposure": "Exposição",
@@ -1710,7 +1714,8 @@
         "dehaze": "Remoção de névoa",
         "vignette": "Vinheta",
         "grain": "Granulação"
-      }
+      },
+      "maskEdit": "Editar máscara"
     },
     "export": {
       "title": "Exportar",
@@ -1735,6 +1740,114 @@
       "cancel": "Fechar",
       "anotherTime": "Exportar de novo"
     },
-    "openIn": "Abrir no {{brand}}"
+    "openIn": "Abrir no {{brand}}",
+    "geometry": {
+      "crop": "Cortar",
+      "aspect": "Proporção",
+      "free": "Livre",
+      "original": "Original",
+      "cropTool": "Cortar na tela",
+      "resetCrop": "Redefinir corte",
+      "straighten": "Endireitar",
+      "angle": "Ângulo (graus)",
+      "drawLine": "Desenhar uma linha",
+      "drawLineHint": "Desenhe uma linha ao longo de algo que deve ficar nivelado ou na vertical; o ângulo é definido automaticamente.",
+      "orientation": "Girar e espelhar",
+      "rotateLeft": "Girar 90 graus para a esquerda",
+      "rotateRight": "Girar 90 graus para a direita",
+      "rotate180": "Girar 180 graus",
+      "flipH": "Espelhar horizontalmente",
+      "flipV": "Espelhar verticalmente",
+      "perspective": "Perspectiva",
+      "perspectiveTool": "Arraste os cantos",
+      "resetPerspective": "Redefinir perspectiva",
+      "autoCrop": "Corte automático no maior retângulo",
+      "fill": "Preencher cantos vazios",
+      "fillTransparent": "Transparente",
+      "fillEdge": "Esticar a borda",
+      "fillColor": "Cor"
+    },
+    "masks": {
+      "title": "Máscara",
+      "add": "Adicionar um componente de máscara",
+      "empty": "Esta máscara está vazia. Adicione um componente para limitar onde o ajuste é aplicado.",
+      "selectLayer": "Selecione uma camada de ajuste para dar a ela uma máscara.",
+      "layer": "Camada",
+      "kind": {
+        "gradient": "Gradiente linear",
+        "radial": "Radial",
+        "brush": "Pincel",
+        "luminosity": "Faixa de luminosidade",
+        "colorRange": "Faixa de cores",
+        "subject": "Selecionar assunto"
+      },
+      "mode": "Como este componente se combina",
+      "mode_add": "Adicionar",
+      "mode_subtract": "Subtrair",
+      "mode_intersect": "Interseção",
+      "removeComponent": "Remover este componente",
+      "draw": "Desenhar na foto",
+      "feather": "Suavização",
+      "rotate": "Rotação",
+      "maskFeather": "Suavização da máscara",
+      "maskOpacity": "Intensidade da máscara",
+      "invert": "Inverter",
+      "share": "Compartilhar esta máscara",
+      "remove": "Remover máscara",
+      "view": "Visualização da máscara",
+      "view_off": "Desligada",
+      "view_overlay": "Sobreposição",
+      "view_alpha": "Somente máscara",
+      "localTitle": "Ajuste local",
+      "localType": "Ajuste",
+      "localBasic": "Exposição, tom e saturação",
+      "addLocal": "Adicionar ajuste local",
+      "localHint": "Cria o ajuste com uma máscara vazia e abre o pincel. O combo compartilha uma máscara entre suas três camadas.",
+      "luminosity": {
+        "lo": "Do brilho",
+        "hi": "Até o brilho"
+      },
+      "colorRange": {
+        "pick": "Escolher uma cor",
+        "shiftHint": "Shift + clique adiciona outra cor (até 8).",
+        "targets": "Cores selecionadas",
+        "removeTarget": "Remover esta cor",
+        "fuzziness": "Tolerância"
+      },
+      "subject": {
+        "working": "Procurando o assunto. Isso pode levar alguns segundos.",
+        "failed": "Não foi possível selecionar o assunto. Tente novamente.",
+        "invertBackground": "Fundo em vez disso"
+      },
+      "brush": {
+        "title": "Pincel",
+        "paint": "Pintar",
+        "erase": "Apagar",
+        "size": "Tamanho",
+        "hardness": "Dureza",
+        "flow": "Fluxo",
+        "keys": "B pincel, E apagar, [ e ] tamanho, M visualização da máscara.",
+        "warn": "As máscaras de pincel desta foto estão ficando grandes. Simplifique ou remova algumas em breve.",
+        "full": "Não há mais espaço para pinceladas neste projeto."
+      }
+    },
+    "heal": {
+      "title": "Retocar",
+      "hint": "Pinte sobre manchas ou imperfeições e toque em Retocar. O retoque roda na nossa GPU e pode levar um minuto.",
+      "brush": "Pincel de manchas",
+      "press": "Retocar",
+      "clear": "Limpar manchas",
+      "strokes": "Manchas marcadas: {{count}}",
+      "done": "Retoques aplicados: {{count}}",
+      "running": "Retocando...",
+      "failed": "O retoque não foi concluído. Nada foi alterado.",
+      "unavailable": "O retoque não está disponível no momento."
+    },
+    "redEye": {
+      "title": "Olhos vermelhos",
+      "hint": "Clique em um olho na foto. Uma pequena máscara circular é colocada e o vermelho dentro dela é removido.",
+      "radius": "Raio (% do lado maior)",
+      "clickEye": "Clique em um olho"
+    }
   }
 }
