@@ -1402,5 +1402,327 @@
       "rate_limited": "直近1時間のボイスのリクエストが多すぎます。しばらくしてからもう一度お試しください。",
       "generic": "問題が発生しました。もう一度お試しください。"
     }
+  },
+  "photo": {
+    "beta": "ベータ",
+    "untitled": "無題の写真",
+    "projectName": "プロジェクト名",
+    "backHome": "{{brand}}に戻る",
+    "loading": "写真を開いています…",
+    "invalidProject": "このプロジェクトを開けませんでした。",
+    "open": {
+      "title": "{{brand}}で写真を開く",
+      "drop": "ここに写真をドロップするか、デバイスから選択してください。",
+      "choose": "写真を選択",
+      "hint": "編集はブラウザー内で行われます。アカウントに保存またはエクスポートするまで、何もアップロードされません。",
+      "continueLocal": "このブラウザーに保存された写真を続ける",
+      "recent": "あなたのプロジェクト",
+      "signInFormat": "この形式を編集するにはサインインしてください。",
+      "decodeFailed": "この写真を開けませんでした。",
+      "fromFailed": "結果を読み込めませんでした。",
+      "replace": {
+        "title": "このブラウザーに保存された写真を置き換えますか？",
+        "body": "ゲストは一度に1枚の写真しか保持できません。この写真を開くと、保存済みの写真とその編集内容が置き換えられます。",
+        "confirm": "置き換える",
+        "cancel": "保存済みの写真を残す"
+      }
+    },
+    "bar": {
+      "undo": "元に戻す",
+      "redo": "やり直す",
+      "save": "保存",
+      "export": "エクスポート",
+      "openProject": "開く",
+      "compare": "長押しでオリジナルを表示",
+      "fit": "全体表示",
+      "actualSize": "100%",
+      "split": "分割表示",
+      "state": {
+        "saved": "保存済み",
+        "saving": "保存中…",
+        "unsaved": "未保存の変更",
+        "local": "このブラウザーに保存済み",
+        "error": "未保存",
+        "uploading": "写真をアップロード中…"
+      },
+      "reducedPreview": "縮小プレビュー",
+      "bigPhotoNote": "この写真は縮小サイズでプレビューされています。エクスポートでは元の解像度が使われます。",
+      "exportSettingUp": "エクスポートを準備中です",
+      "panelsTab": "パネル",
+      "layersTab": "レイヤー"
+    },
+    "banner": {
+      "local": "このブラウザーにのみ保存されています。サインインすると、アカウントに最大{{count}}件のプロジェクトを保持できます。",
+      "offerTitle": "この写真をアカウントに保存しますか？",
+      "offerBody": "写真と編集内容をプロジェクトとしてアップロードすると、どこからでも開けます。",
+      "offerAccept": "アカウントに保存",
+      "offerDismiss": "今はしない",
+      "offerFull": "アカウントのプロジェクトの空き枠がありません。",
+      "uploadFailed": "アップロードが完了しませんでした。写真はこのブラウザーに保存されたままです。"
+    },
+    "conflict": {
+      "title": "このプロジェクトは別の場所で変更されました",
+      "body": "別のタブまたはデバイスから新しいバージョンが保存されました。どちらを残すか選択してください。",
+      "keepMine": "自分のものを残す",
+      "loadTheirs": "相手のものを読み込む"
+    },
+    "draft": {
+      "title": "未保存の編集を復元しますか？",
+      "body": "このデバイスで{{when}}の編集が見つかりました。",
+      "restore": "復元",
+      "discard": "破棄"
+    },
+    "histogram": {
+      "label": "ヒストグラム"
+    },
+    "panels": {
+      "basic": "基本補正",
+      "curves": "トーンカーブ",
+      "levels": "レベル補正",
+      "hsl": "カラー（HSL）",
+      "colorBalance": "カラーバランス",
+      "blackWhite": "白黒",
+      "channelMixer": "チャンネルミキサー",
+      "photoFilter": "写真フィルター",
+      "splitTone": "スプリットトーン",
+      "lut": "LUT",
+      "effects": "エフェクト",
+      "layers": "レイヤー"
+    },
+    "slider": {
+      "reset": "リセット",
+      "value": "値"
+    },
+    "params": {
+      "exposure": {
+        "title": "露光量",
+        "ev": "露光量（EV）",
+        "offset": "オフセット",
+        "gamma": "ガンマ"
+      },
+      "brightnessContrast": {
+        "title": "ライト",
+        "brightness": "明るさ",
+        "contrast": "コントラスト"
+      },
+      "tone": {
+        "title": "階調",
+        "highlights": "ハイライト",
+        "shadows": "シャドウ",
+        "whites": "白レベル",
+        "blacks": "黒レベル"
+      },
+      "whiteBalance": {
+        "title": "ホワイトバランス",
+        "temperature": "色温度",
+        "tint": "色かぶり補正"
+      },
+      "vibranceSaturation": {
+        "title": "カラー",
+        "vibrance": "自然な彩度",
+        "saturation": "彩度"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "赤",
+        "g": "緑",
+        "b": "青"
+      },
+      "reset": "カーブをリセット",
+      "pick": "写真からポイントを選択",
+      "graph": "カーブのグラフ。ポイントをドラッグしてカーブを調整します。",
+      "point": "ポイント{{index}}",
+      "removePoint": "ポイントを削除"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "赤",
+        "g": "緑",
+        "b": "青"
+      },
+      "inBlack": "入力のシャドウ",
+      "inWhite": "入力のハイライト",
+      "gamma": "中間調",
+      "outBlack": "出力のシャドウ",
+      "outWhite": "出力のハイライト",
+      "reset": "レベル補正をリセット"
+    },
+    "hsl": {
+      "range": {
+        "reds": "レッド",
+        "yellows": "イエロー",
+        "greens": "グリーン",
+        "cyans": "シアン",
+        "blues": "ブルー",
+        "magentas": "マゼンタ"
+      },
+      "master": "すべての色",
+      "hue": "色相",
+      "saturation": "彩度",
+      "lightness": "明度",
+      "greyExcept": "これ以外をグレーに",
+      "greyExceptNamed": "{{name}}以外をグレーに",
+      "custom": "カスタム範囲{{index}}",
+      "pickRange": "写真から色を選択",
+      "width": "幅",
+      "feather": "ぼかし",
+      "removeRange": "範囲を削除",
+      "resetRanges": "色をリセット",
+      "selected": "選択した色の範囲"
+    },
+    "colorBalance": {
+      "title": "カラーバランス",
+      "shadows": "シャドウ",
+      "midtones": "中間調",
+      "highlights": "ハイライト",
+      "r": "赤",
+      "g": "緑",
+      "b": "青",
+      "preserveLuminosity": "輝度を保持"
+    },
+    "blackWhite": {
+      "title": "白黒",
+      "reds": "レッド",
+      "yellows": "イエロー",
+      "greens": "グリーン",
+      "cyans": "シアン",
+      "blues": "ブルー",
+      "magentas": "マゼンタ",
+      "tint": "色合い",
+      "tintHue": "色合いの色相",
+      "tintSaturation": "色合いの強さ",
+      "apply": "白黒にする"
+    },
+    "channelMixer": {
+      "title": "チャンネルミキサー",
+      "out": {
+        "r": "出力の赤",
+        "g": "出力の緑",
+        "b": "出力の青"
+      },
+      "r": "赤",
+      "g": "緑",
+      "b": "青",
+      "constant": "定数",
+      "monochrome": "モノクロ"
+    },
+    "photoFilter": {
+      "title": "写真フィルター",
+      "color": "カラー",
+      "custom": "カスタムカラー",
+      "density": "濃度",
+      "preserveLuminosity": "輝度を保持",
+      "warming": "暖色",
+      "cooling": "寒色",
+      "sepia": "セピア",
+      "red": "赤",
+      "green": "緑",
+      "blue": "青"
+    },
+    "splitTone": {
+      "title": "スプリットトーン",
+      "shadows": "シャドウ",
+      "highlights": "ハイライト",
+      "hue": "色相",
+      "saturation": "彩度",
+      "balance": "バランス"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "ここに.cubeファイルをドロップするか、選択してください。",
+      "choose": ".cubeファイルを選択",
+      "intensity": "強度",
+      "clear": "LUTを削除",
+      "invalid": "この.cubeファイルを読み取れませんでした（サイズ65までの3D LUT）。",
+      "tooBig": "このLUTは1 MBを超えています。",
+      "loaded": "LUTを読み込みました"
+    },
+    "effects": {
+      "title": "エフェクト",
+      "invert": "階調の反転",
+      "posterize": "ポスタリゼーション",
+      "levels": "レベル補正",
+      "threshold": "2階調化",
+      "level": "レベル",
+      "gamma": "ガンマ",
+      "add": "追加",
+      "remove": "削除"
+    },
+    "layers": {
+      "title": "レイヤー",
+      "empty": "調整はまだありません。いずれかのスライダーを動かすと追加されます。",
+      "enable": "レイヤーを表示",
+      "disable": "レイヤーを非表示",
+      "opacity": "不透明度",
+      "blend": "描画モード",
+      "blendMode": {
+        "normal": "通常",
+        "luminosity": "輝度",
+        "color": "カラー"
+      },
+      "duplicate": "複製",
+      "delete": "削除",
+      "rename": "名前を変更",
+      "moveUp": "上へ移動",
+      "moveDown": "下へ移動",
+      "mask": "マスクは今後のアップデートで追加されます",
+      "selectLayer": "レイヤー「{{name}}」を選択",
+      "type": {
+        "exposure": "露光量",
+        "brightnessContrast": "明るさ・コントラスト",
+        "tone": "階調",
+        "levels": "レベル補正",
+        "curves": "トーンカーブ",
+        "whiteBalance": "ホワイトバランス",
+        "vibranceSaturation": "自然な彩度・彩度",
+        "hsl": "カラー（HSL）",
+        "colorBalance": "カラーバランス",
+        "blackWhite": "白黒",
+        "channelMixer": "チャンネルミキサー",
+        "photoFilter": "写真フィルター",
+        "splitTone": "スプリットトーン",
+        "lut": "LUT",
+        "invert": "階調の反転",
+        "posterize": "ポスタリゼーション",
+        "threshold": "2階調化",
+        "gamma": "ガンマ",
+        "redEye": "赤目",
+        "sharpen": "シャープ",
+        "blur": "ぼかし",
+        "noiseReduction": "ノイズ軽減",
+        "clarity": "明瞭度",
+        "texture": "テクスチャ",
+        "dehaze": "かすみの除去",
+        "vignette": "周辺光量補正",
+        "grain": "粒子"
+      }
+    },
+    "export": {
+      "title": "エクスポート",
+      "description": "写真を元の解像度で書き出します。",
+      "format": "形式",
+      "quality": "画質",
+      "metadata": "メタデータ",
+      "metadataKeep": "保持",
+      "metadataStrip": "削除",
+      "maxSize": "最大サイズ",
+      "original": "オリジナル",
+      "mp": "{{mp}} MP",
+      "planLine": "ご利用のプランでは最大{{mp}} MPまでエクスポートできます",
+      "locked": "ご利用のプランでは利用できません",
+      "estimate": "約{{size}}",
+      "start": "エクスポート",
+      "working": "書き出し中…",
+      "failed": "エクスポートが完了しませんでした。もう一度お試しください。",
+      "setup": "エクスポートを準備中です",
+      "needFile": "元の写真はこのブラウザーでは利用できません。エクスポートするには、もう一度開いてください。",
+      "queued": "待機中…",
+      "cancel": "閉じる",
+      "anotherTime": "もう一度エクスポート"
+    },
+    "openIn": "{{brand}}で開く"
   }
 }

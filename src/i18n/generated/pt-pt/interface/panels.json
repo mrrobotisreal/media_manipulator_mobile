@@ -1414,5 +1414,327 @@
       "rate_limited": "Demasiados pedidos de voz na última hora. Tente novamente mais tarde.",
       "generic": "Algo correu mal. Tente novamente."
     }
+  },
+  "photo": {
+    "beta": "Beta",
+    "untitled": "Fotografia sem título",
+    "projectName": "Nome do projeto",
+    "backHome": "Voltar para {{brand}}",
+    "loading": "A abrir a sua fotografia…",
+    "invalidProject": "Não foi possível abrir este projeto.",
+    "open": {
+      "title": "Abrir uma fotografia no {{brand}}",
+      "drop": "Largue uma fotografia aqui ou escolha uma no seu dispositivo.",
+      "choose": "Escolher uma fotografia",
+      "hint": "As edições são feitas no seu navegador. Nada é carregado até guardar na sua conta ou exportar.",
+      "continueLocal": "Continuar a fotografia guardada neste navegador",
+      "recent": "Seus projetos",
+      "signInFormat": "Inicie sessão para editar este formato.",
+      "decodeFailed": "Não foi possível abrir esta fotografia.",
+      "fromFailed": "Não foi possível carregar o resultado.",
+      "replace": {
+        "title": "Substituir a fotografia guardada neste navegador?",
+        "body": "Os convidados mantêm uma fotografia de cada vez. Abrir esta substitui a fotografia guardada e as respetivas edições.",
+        "confirm": "Substituir",
+        "cancel": "Manter a fotografia guardada"
+      }
+    },
+    "bar": {
+      "undo": "Desfazer",
+      "redo": "Refazer",
+      "save": "Guardar",
+      "export": "Exportar",
+      "openProject": "Abrir",
+      "compare": "Mantenha premido para ver o original",
+      "fit": "Ajustar",
+      "actualSize": "100%",
+      "split": "Vista dividida",
+      "state": {
+        "saved": "Guardado",
+        "saving": "A guardar…",
+        "unsaved": "Alterações não guardadas",
+        "local": "Guardado neste navegador",
+        "error": "Não guardado",
+        "uploading": "A carregar a fotografia…"
+      },
+      "reducedPreview": "Pré-visualização reduzida",
+      "bigPhotoNote": "Esta fotografia é pré-visualizada em tamanho reduzido. As exportações usam a resolução total.",
+      "exportSettingUp": "A exportação está a ser preparada",
+      "panelsTab": "Painéis",
+      "layersTab": "Camadas"
+    },
+    "banner": {
+      "local": "Guardado apenas neste navegador. Inicie sessão para manter até {{count}} projetos na sua conta.",
+      "offerTitle": "Manter esta fotografia na sua conta?",
+      "offerBody": "Carregue a fotografia e as suas edições como um projeto para o abrir em qualquer lado.",
+      "offerAccept": "Manter na minha conta",
+      "offerDismiss": "Agora não",
+      "offerFull": "A sua conta não tem vagas gratuitas para projetos.",
+      "uploadFailed": "O carregamento não foi concluído. A sua fotografia continua guardada neste navegador."
+    },
+    "conflict": {
+      "title": "Este projeto foi alterado noutro local",
+      "body": "Foi guardada uma versão mais recente noutro separador ou dispositivo. Escolha qual manter.",
+      "keepMine": "Manter a minha",
+      "loadTheirs": "Carregar a outra"
+    },
+    "draft": {
+      "title": "Restaurar edições não guardadas?",
+      "body": "Foram encontradas neste dispositivo edições de {{when}}.",
+      "restore": "Restaurar",
+      "discard": "Descartar"
+    },
+    "histogram": {
+      "label": "Histograma"
+    },
+    "panels": {
+      "basic": "Básico",
+      "curves": "Curvas",
+      "levels": "Níveis",
+      "hsl": "Cor (HSL)",
+      "colorBalance": "Equilíbrio de cores",
+      "blackWhite": "Preto e branco",
+      "channelMixer": "Mixagem de canais",
+      "photoFilter": "Filtro de foto",
+      "splitTone": "Divisão de tons",
+      "lut": "LUT",
+      "effects": "Efeitos",
+      "layers": "Camadas"
+    },
+    "slider": {
+      "reset": "Redefinir",
+      "value": "Valor"
+    },
+    "params": {
+      "exposure": {
+        "title": "Exposição",
+        "ev": "Exposição (EV)",
+        "offset": "Deslocamento",
+        "gamma": "Gama"
+      },
+      "brightnessContrast": {
+        "title": "Luz",
+        "brightness": "Brilho",
+        "contrast": "Contraste"
+      },
+      "tone": {
+        "title": "Tom",
+        "highlights": "Realces",
+        "shadows": "Sombras",
+        "whites": "Brancos",
+        "blacks": "Pretos"
+      },
+      "whiteBalance": {
+        "title": "Equilíbrio de brancos",
+        "temperature": "Temperatura",
+        "tint": "Tonalidade"
+      },
+      "vibranceSaturation": {
+        "title": "Cor",
+        "vibrance": "Vibração",
+        "saturation": "Saturação"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "Vermelho",
+        "g": "Verde",
+        "b": "Azul"
+      },
+      "reset": "Redefinir curva",
+      "pick": "Escolher um ponto da fotografia",
+      "graph": "Gráfico da curva. Arraste os pontos para modelar a curva.",
+      "point": "Ponto {{index}}",
+      "removePoint": "Remover ponto"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "Vermelho",
+        "g": "Verde",
+        "b": "Azul"
+      },
+      "inBlack": "Preto de entrada",
+      "inWhite": "Branco de entrada",
+      "gamma": "Meios-tons",
+      "outBlack": "Preto de saída",
+      "outWhite": "Branco de saída",
+      "reset": "Redefinir níveis"
+    },
+    "hsl": {
+      "range": {
+        "reds": "Vermelhos",
+        "yellows": "Amarelos",
+        "greens": "Verdes",
+        "cyans": "Ciano",
+        "blues": "Azuis",
+        "magentas": "Magentas"
+      },
+      "master": "Todas as cores",
+      "hue": "Tonalidade",
+      "saturation": "Saturação",
+      "lightness": "Luminosidade",
+      "greyExcept": "Cinzento, exceto esta",
+      "greyExceptNamed": "Cinzento, exceto {{name}}",
+      "custom": "Gama personalizada {{index}}",
+      "pickRange": "Escolher uma cor da fotografia",
+      "width": "Largura",
+      "feather": "Suavização",
+      "removeRange": "Remover gama",
+      "resetRanges": "Redefinir cores",
+      "selected": "Gama de cores selecionada"
+    },
+    "colorBalance": {
+      "title": "Equilíbrio de cores",
+      "shadows": "Sombras",
+      "midtones": "Meios-tons",
+      "highlights": "Realces",
+      "r": "Vermelho",
+      "g": "Verde",
+      "b": "Azul",
+      "preserveLuminosity": "Preservar luminosidade"
+    },
+    "blackWhite": {
+      "title": "Preto e branco",
+      "reds": "Vermelhos",
+      "yellows": "Amarelos",
+      "greens": "Verdes",
+      "cyans": "Ciano",
+      "blues": "Azuis",
+      "magentas": "Magentas",
+      "tint": "Colorização",
+      "tintHue": "Tonalidade da coloração",
+      "tintSaturation": "Intensidade da coloração",
+      "apply": "Converter para preto e branco"
+    },
+    "channelMixer": {
+      "title": "Mixagem de canais",
+      "out": {
+        "r": "Vermelho de saída",
+        "g": "Verde de saída",
+        "b": "Azul de saída"
+      },
+      "r": "Vermelho",
+      "g": "Verde",
+      "b": "Azul",
+      "constant": "Constante",
+      "monochrome": "Monocromático"
+    },
+    "photoFilter": {
+      "title": "Filtro de foto",
+      "color": "Cor",
+      "custom": "Cor personalizada",
+      "density": "Densidade",
+      "preserveLuminosity": "Preservar luminosidade",
+      "warming": "Aquecimento",
+      "cooling": "Resfriamento",
+      "sepia": "Sépia",
+      "red": "Vermelho",
+      "green": "Verde",
+      "blue": "Azul"
+    },
+    "splitTone": {
+      "title": "Divisão de tons",
+      "shadows": "Sombras",
+      "highlights": "Realces",
+      "hue": "Tonalidade",
+      "saturation": "Saturação",
+      "balance": "Equilíbrio"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "Largue aqui um ficheiro .cube ou escolha um.",
+      "choose": "Escolher um ficheiro .cube",
+      "intensity": "Intensidade",
+      "clear": "Remover LUT",
+      "invalid": "Não foi possível ler este ficheiro .cube (LUT 3D até ao tamanho 65).",
+      "tooBig": "Esta LUT tem mais de 1 MB.",
+      "loaded": "LUT carregada"
+    },
+    "effects": {
+      "title": "Efeitos",
+      "invert": "Inverter",
+      "posterize": "Posterizar",
+      "levels": "Níveis",
+      "threshold": "Limiar",
+      "level": "Nível",
+      "gamma": "Gama",
+      "add": "Adicionar",
+      "remove": "Remover"
+    },
+    "layers": {
+      "title": "Camadas",
+      "empty": "Ainda sem ajustes. Mova qualquer controlo de deslize para adicionar um.",
+      "enable": "Mostrar camada",
+      "disable": "Ocultar camada",
+      "opacity": "Opacidade",
+      "blend": "Mistura",
+      "blendMode": {
+        "normal": "Normal",
+        "luminosity": "Luminosidade",
+        "color": "Cor"
+      },
+      "duplicate": "Duplicar",
+      "delete": "Eliminar",
+      "rename": "Renomear",
+      "moveUp": "Mover para cima",
+      "moveDown": "Mover para baixo",
+      "mask": "As máscaras chegam numa atualização futura",
+      "selectLayer": "Selecionar camada {{name}}",
+      "type": {
+        "exposure": "Exposição",
+        "brightnessContrast": "Brilho / contraste",
+        "tone": "Tom",
+        "levels": "Níveis",
+        "curves": "Curvas",
+        "whiteBalance": "Equilíbrio de brancos",
+        "vibranceSaturation": "Vibração / saturação",
+        "hsl": "Cor (HSL)",
+        "colorBalance": "Equilíbrio de cores",
+        "blackWhite": "Preto e branco",
+        "channelMixer": "Mixagem de canais",
+        "photoFilter": "Filtro de foto",
+        "splitTone": "Divisão de tons",
+        "lut": "LUT",
+        "invert": "Inverter",
+        "posterize": "Posterizar",
+        "threshold": "Limiar",
+        "gamma": "Gama",
+        "redEye": "Olhos vermelhos",
+        "sharpen": "Nitidez",
+        "blur": "Desfocagem",
+        "noiseReduction": "Redução de ruído",
+        "clarity": "Clareza",
+        "texture": "Textura",
+        "dehaze": "Remoção de neblina",
+        "vignette": "Vinheta",
+        "grain": "Grão"
+      }
+    },
+    "export": {
+      "title": "Exportar",
+      "description": "Gera a fotografia na resolução total.",
+      "format": "Formato",
+      "quality": "Qualidade",
+      "metadata": "Metadados",
+      "metadataKeep": "Manter",
+      "metadataStrip": "Remover",
+      "maxSize": "Tamanho máximo",
+      "original": "Original",
+      "mp": "{{mp}} MP",
+      "planLine": "Exporta até {{mp}} MP no seu plano",
+      "locked": "Não disponível no seu plano",
+      "estimate": "Cerca de {{size}}",
+      "start": "Exportar",
+      "working": "A processar…",
+      "failed": "A exportação não foi concluída. Tente novamente.",
+      "setup": "A exportação está a ser preparada",
+      "needFile": "A fotografia original não está disponível neste navegador. Abra-a novamente para exportar.",
+      "queued": "Em fila…",
+      "cancel": "Fechar",
+      "anotherTime": "Exportar novamente"
+    },
+    "openIn": "Abrir no {{brand}}"
   }
 }

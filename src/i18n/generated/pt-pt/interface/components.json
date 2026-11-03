@@ -451,7 +451,8 @@
       "started": "A sua transferência do MP3 começou — consulte as transferências do navegador.",
       "startedWithSize": "A sua transferência do MP3 começou ({{size}}) — consulte as transferências do navegador.",
       "failed": "Não foi possível preparar o MP3. Tente novamente daqui a pouco."
-    }
+    },
+    "openInPhoto": "Abrir no {{brand}}"
   },
   "billing": {
     "intervalLabel": "Periodicidade de faturação",

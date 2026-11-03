@@ -1414,5 +1414,327 @@
       "rate_limited": "Zu viele Stimmanfragen in der letzten Stunde. Bitte versuchen Sie es später erneut.",
       "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
     }
+  },
+  "photo": {
+    "beta": "Beta",
+    "untitled": "Unbenanntes Foto",
+    "projectName": "Projektname",
+    "backHome": "Zurück zu {{brand}}",
+    "loading": "Foto wird geöffnet…",
+    "invalidProject": "Dieses Projekt konnte nicht geöffnet werden.",
+    "open": {
+      "title": "Foto in {{brand}} öffnen",
+      "drop": "Ziehen Sie ein Foto hierher oder wählen Sie eines von Ihrem Gerät aus.",
+      "choose": "Foto auswählen",
+      "hint": "Die Bearbeitung erfolgt in Ihrem Browser. Es wird nichts hochgeladen, bis Sie in Ihrem Konto speichern oder exportieren.",
+      "continueLocal": "In diesem Browser gespeichertes Foto weiterbearbeiten",
+      "recent": "Ihre Projekte",
+      "signInFormat": "Melden Sie sich an, um dieses Format zu bearbeiten.",
+      "decodeFailed": "Dieses Foto konnte nicht geöffnet werden.",
+      "fromFailed": "Das Ergebnis konnte nicht geladen werden.",
+      "replace": {
+        "title": "In diesem Browser gespeichertes Foto ersetzen?",
+        "body": "Gäste können jeweils ein Foto behalten. Wenn Sie dieses öffnen, werden das gespeicherte Foto und seine Bearbeitungen ersetzt.",
+        "confirm": "Ersetzen",
+        "cancel": "Gespeichertes Foto behalten"
+      }
+    },
+    "bar": {
+      "undo": "Rückgängig",
+      "redo": "Wiederholen",
+      "save": "Speichern",
+      "export": "Exportieren",
+      "openProject": "Öffnen",
+      "compare": "Gedrückt halten für das Original",
+      "fit": "Anpassen",
+      "actualSize": "100 %",
+      "split": "Geteilte Ansicht",
+      "state": {
+        "saved": "Gespeichert",
+        "saving": "Wird gespeichert…",
+        "unsaved": "Nicht gespeicherte Änderungen",
+        "local": "In diesem Browser gespeichert",
+        "error": "Nicht gespeichert",
+        "uploading": "Foto wird hochgeladen…"
+      },
+      "reducedPreview": "Verkleinerte Vorschau",
+      "bigPhotoNote": "Dieses Foto wird in verkleinerter Größe angezeigt. Exporte verwenden die volle Auflösung.",
+      "exportSettingUp": "Export wird eingerichtet",
+      "panelsTab": "Bedienfelder",
+      "layersTab": "Ebenen"
+    },
+    "banner": {
+      "local": "Nur in diesem Browser gespeichert. Melden Sie sich an, um bis zu {{count}} Projekte in Ihrem Konto zu behalten.",
+      "offerTitle": "Dieses Foto in Ihrem Konto behalten?",
+      "offerBody": "Laden Sie das Foto und Ihre Bearbeitungen als Projekt hoch, um es überall öffnen zu können.",
+      "offerAccept": "In meinem Konto behalten",
+      "offerDismiss": "Jetzt nicht",
+      "offerFull": "In Ihrem Konto sind keine freien Projektplätze mehr verfügbar.",
+      "uploadFailed": "Der Upload wurde nicht abgeschlossen. Ihr Foto ist weiterhin in diesem Browser gespeichert."
+    },
+    "conflict": {
+      "title": "Dieses Projekt wurde anderswo geändert",
+      "body": "Von einem anderen Tab oder Gerät wurde eine neuere Version gespeichert. Wählen Sie, welche Version Sie behalten möchten.",
+      "keepMine": "Meine behalten",
+      "loadTheirs": "Andere laden"
+    },
+    "draft": {
+      "title": "Nicht gespeicherte Änderungen wiederherstellen?",
+      "body": "Auf diesem Gerät wurden Änderungen von {{when}} gefunden.",
+      "restore": "Wiederherstellen",
+      "discard": "Verwerfen"
+    },
+    "histogram": {
+      "label": "Histogramm"
+    },
+    "panels": {
+      "basic": "Grundeinstellungen",
+      "curves": "Gradationskurven",
+      "levels": "Tonwertkorrektur",
+      "hsl": "Farbe (HSL)",
+      "colorBalance": "Farbbalance",
+      "blackWhite": "Schwarzweiß",
+      "channelMixer": "Kanalmixer",
+      "photoFilter": "Fotofilter",
+      "splitTone": "Teiltonung",
+      "lut": "LUT",
+      "effects": "Effekte",
+      "layers": "Ebenen"
+    },
+    "slider": {
+      "reset": "Zurücksetzen",
+      "value": "Wert"
+    },
+    "params": {
+      "exposure": {
+        "title": "Belichtung",
+        "ev": "Belichtung (EV)",
+        "offset": "Versatz",
+        "gamma": "Gamma"
+      },
+      "brightnessContrast": {
+        "title": "Licht",
+        "brightness": "Helligkeit",
+        "contrast": "Kontrast"
+      },
+      "tone": {
+        "title": "Tonwerte",
+        "highlights": "Lichter",
+        "shadows": "Tiefen",
+        "whites": "Weiß",
+        "blacks": "Schwarz"
+      },
+      "whiteBalance": {
+        "title": "Weißabgleich",
+        "temperature": "Temperatur",
+        "tint": "Farbton"
+      },
+      "vibranceSaturation": {
+        "title": "Farbe",
+        "vibrance": "Dynamik",
+        "saturation": "Sättigung"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "Rot",
+        "g": "Grün",
+        "b": "Blau"
+      },
+      "reset": "Kurve zurücksetzen",
+      "pick": "Punkt aus dem Foto wählen",
+      "graph": "Kurvendiagramm. Ziehen Sie Punkte, um die Kurve zu formen.",
+      "point": "Punkt {{index}}",
+      "removePoint": "Punkt entfernen"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "Rot",
+        "g": "Grün",
+        "b": "Blau"
+      },
+      "inBlack": "Eingabe Schwarz",
+      "inWhite": "Eingabe Weiß",
+      "gamma": "Mitteltöne",
+      "outBlack": "Ausgabe Schwarz",
+      "outWhite": "Ausgabe Weiß",
+      "reset": "Tonwerte zurücksetzen"
+    },
+    "hsl": {
+      "range": {
+        "reds": "Rottöne",
+        "yellows": "Gelbtöne",
+        "greens": "Grüntöne",
+        "cyans": "Cyantöne",
+        "blues": "Blautöne",
+        "magentas": "Magentatöne"
+      },
+      "master": "Alle Farben",
+      "hue": "Farbton",
+      "saturation": "Sättigung",
+      "lightness": "Helligkeit",
+      "greyExcept": "Grau außer diesem",
+      "greyExceptNamed": "Grau außer {{name}}",
+      "custom": "Eigener Bereich {{index}}",
+      "pickRange": "Farbe aus dem Foto wählen",
+      "width": "Breite",
+      "feather": "Weiche Kante",
+      "removeRange": "Bereich entfernen",
+      "resetRanges": "Farben zurücksetzen",
+      "selected": "Ausgewählter Farbbereich"
+    },
+    "colorBalance": {
+      "title": "Farbbalance",
+      "shadows": "Tiefen",
+      "midtones": "Mitteltöne",
+      "highlights": "Lichter",
+      "r": "Rot",
+      "g": "Grün",
+      "b": "Blau",
+      "preserveLuminosity": "Luminanz erhalten"
+    },
+    "blackWhite": {
+      "title": "Schwarzweiß",
+      "reds": "Rottöne",
+      "yellows": "Gelbtöne",
+      "greens": "Grüntöne",
+      "cyans": "Cyantöne",
+      "blues": "Blautöne",
+      "magentas": "Magentatöne",
+      "tint": "Tonung",
+      "tintHue": "Farbton der Tonung",
+      "tintSaturation": "Stärke der Tonung",
+      "apply": "In Schwarzweiß umwandeln"
+    },
+    "channelMixer": {
+      "title": "Kanalmixer",
+      "out": {
+        "r": "Ausgabe Rot",
+        "g": "Ausgabe Grün",
+        "b": "Ausgabe Blau"
+      },
+      "r": "Rot",
+      "g": "Grün",
+      "b": "Blau",
+      "constant": "Konstante",
+      "monochrome": "Monochrom"
+    },
+    "photoFilter": {
+      "title": "Fotofilter",
+      "color": "Farbe",
+      "custom": "Eigene Farbe",
+      "density": "Dichte",
+      "preserveLuminosity": "Luminanz erhalten",
+      "warming": "Wärmefilter",
+      "cooling": "Kühlfilter",
+      "sepia": "Sepia",
+      "red": "Rot",
+      "green": "Grün",
+      "blue": "Blau"
+    },
+    "splitTone": {
+      "title": "Teiltonung",
+      "shadows": "Tiefen",
+      "highlights": "Lichter",
+      "hue": "Farbton",
+      "saturation": "Sättigung",
+      "balance": "Balance"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "Ziehen Sie eine .cube-Datei hierher oder wählen Sie eine aus.",
+      "choose": ".cube-Datei auswählen",
+      "intensity": "Intensität",
+      "clear": "LUT entfernen",
+      "invalid": "Diese .cube-Datei konnte nicht gelesen werden (3D-LUTs bis Größe 65).",
+      "tooBig": "Diese LUT ist größer als 1 MB.",
+      "loaded": "LUT geladen"
+    },
+    "effects": {
+      "title": "Effekte",
+      "invert": "Umkehren",
+      "posterize": "Tonwerttrennung",
+      "levels": "Tonwerte",
+      "threshold": "Schwellenwert",
+      "level": "Stufe",
+      "gamma": "Gamma",
+      "add": "Hinzufügen",
+      "remove": "Entfernen"
+    },
+    "layers": {
+      "title": "Ebenen",
+      "empty": "Noch keine Anpassungen. Bewegen Sie einen beliebigen Regler, um eine hinzuzufügen.",
+      "enable": "Ebene einblenden",
+      "disable": "Ebene ausblenden",
+      "opacity": "Deckkraft",
+      "blend": "Füllmethode",
+      "blendMode": {
+        "normal": "Normal",
+        "luminosity": "Luminanz",
+        "color": "Farbe"
+      },
+      "duplicate": "Duplizieren",
+      "delete": "Löschen",
+      "rename": "Umbenennen",
+      "moveUp": "Nach oben",
+      "moveDown": "Nach unten",
+      "mask": "Masken folgen in einem späteren Update",
+      "selectLayer": "Ebene {{name}} auswählen",
+      "type": {
+        "exposure": "Belichtung",
+        "brightnessContrast": "Helligkeit / Kontrast",
+        "tone": "Tonwerte",
+        "levels": "Tonwertkorrektur",
+        "curves": "Gradationskurven",
+        "whiteBalance": "Weißabgleich",
+        "vibranceSaturation": "Dynamik / Sättigung",
+        "hsl": "Farbe (HSL)",
+        "colorBalance": "Farbbalance",
+        "blackWhite": "Schwarzweiß",
+        "channelMixer": "Kanalmixer",
+        "photoFilter": "Fotofilter",
+        "splitTone": "Teiltonung",
+        "lut": "LUT",
+        "invert": "Umkehren",
+        "posterize": "Tonwerttrennung",
+        "threshold": "Schwellenwert",
+        "gamma": "Gamma",
+        "redEye": "Rote Augen",
+        "sharpen": "Schärfen",
+        "blur": "Weichzeichnen",
+        "noiseReduction": "Rauschreduzierung",
+        "clarity": "Klarheit",
+        "texture": "Struktur",
+        "dehaze": "Dunst entfernen",
+        "vignette": "Vignette",
+        "grain": "Körnung"
+      }
+    },
+    "export": {
+      "title": "Exportieren",
+      "description": "Das Foto in voller Auflösung rendern.",
+      "format": "Format",
+      "quality": "Qualität",
+      "metadata": "Metadaten",
+      "metadataKeep": "Behalten",
+      "metadataStrip": "Entfernen",
+      "maxSize": "Maximale Größe",
+      "original": "Original",
+      "mp": "{{mp}} MP",
+      "planLine": "Exporte bis {{mp}} MP in Ihrem Tarif",
+      "locked": "In Ihrem Tarif nicht verfügbar",
+      "estimate": "Etwa {{size}}",
+      "start": "Exportieren",
+      "working": "Wird gerendert…",
+      "failed": "Der Export wurde nicht abgeschlossen. Bitte versuchen Sie es erneut.",
+      "setup": "Export wird eingerichtet",
+      "needFile": "Das Originalfoto ist in diesem Browser nicht verfügbar. Öffnen Sie es erneut, um zu exportieren.",
+      "queued": "In der Warteschlange…",
+      "cancel": "Schließen",
+      "anotherTime": "Erneut exportieren"
+    },
+    "openIn": "In {{brand}} öffnen"
   }
 }

@@ -451,7 +451,8 @@
       "started": "Your MP3 download has started — check your browser's downloads.",
       "startedWithSize": "Your MP3 download has started ({{size}}) — check your browser's downloads.",
       "failed": "The MP3 could not be prepared. Try again in a moment."
-    }
+    },
+    "openInPhoto": "Open in {{brand}}"
   },
   "billing": {
     "intervalLabel": "Billing interval",

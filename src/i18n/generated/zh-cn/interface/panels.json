@@ -1402,5 +1402,327 @@
       "rate_limited": "过去一小时内的声音请求过多。请稍后再试。",
       "generic": "出了点问题。请重试。"
     }
+  },
+  "photo": {
+    "beta": "测试版",
+    "untitled": "未命名照片",
+    "projectName": "项目名称",
+    "backHome": "返回{{brand}}",
+    "loading": "正在打开照片…",
+    "invalidProject": "无法打开此项目。",
+    "open": {
+      "title": "在{{brand}}中打开照片",
+      "drop": "将照片拖放到此处，或从设备中选择。",
+      "choose": "选择照片",
+      "hint": "编辑在浏览器中进行。在你保存到账户或导出之前，不会上传任何内容。",
+      "continueLocal": "继续编辑保存在此浏览器中的照片",
+      "recent": "你的项目",
+      "signInFormat": "登录后才能编辑此格式。",
+      "decodeFailed": "无法打开此照片。",
+      "fromFailed": "无法加载结果。",
+      "replace": {
+        "title": "替换保存在此浏览器中的照片？",
+        "body": "访客一次只能保留一张照片。打开这张会替换已保存的照片及其编辑内容。",
+        "confirm": "替换",
+        "cancel": "保留已保存的照片"
+      }
+    },
+    "bar": {
+      "undo": "撤销",
+      "redo": "重做",
+      "save": "保存",
+      "export": "导出",
+      "openProject": "打开",
+      "compare": "按住查看原图",
+      "fit": "适应",
+      "actualSize": "100%",
+      "split": "分屏对比",
+      "state": {
+        "saved": "已保存",
+        "saving": "正在保存…",
+        "unsaved": "有未保存的更改",
+        "local": "已保存在此浏览器中",
+        "error": "未保存",
+        "uploading": "正在上传照片…"
+      },
+      "reducedPreview": "缩小预览",
+      "bigPhotoNote": "此照片以缩小尺寸预览。导出将使用完整分辨率。",
+      "exportSettingUp": "导出功能正在设置中",
+      "panelsTab": "面板",
+      "layersTab": "图层"
+    },
+    "banner": {
+      "local": "仅保存在此浏览器中。登录后可在账户中保留最多 {{count}} 个项目。",
+      "offerTitle": "将此照片保留在账户中？",
+      "offerBody": "将照片和你的编辑内容作为项目上传，随时随地都能打开。",
+      "offerAccept": "保留在我的账户",
+      "offerDismiss": "以后再说",
+      "offerFull": "你的账户已没有可用的项目名额。",
+      "uploadFailed": "上传未完成。你的照片仍保存在此浏览器中。"
+    },
+    "conflict": {
+      "title": "此项目已在别处发生更改",
+      "body": "另一个标签页或设备保存了较新的版本。请选择要保留哪一个。",
+      "keepMine": "保留我的",
+      "loadTheirs": "载入对方的"
+    },
+    "draft": {
+      "title": "恢复未保存的编辑？",
+      "body": "在此设备上发现了 {{when}} 的编辑内容。",
+      "restore": "恢复",
+      "discard": "放弃"
+    },
+    "histogram": {
+      "label": "直方图"
+    },
+    "panels": {
+      "basic": "基本",
+      "curves": "曲线",
+      "levels": "色阶",
+      "hsl": "颜色（HSL）",
+      "colorBalance": "色彩平衡",
+      "blackWhite": "黑白",
+      "channelMixer": "通道混合器",
+      "photoFilter": "照片滤镜",
+      "splitTone": "分离色调",
+      "lut": "LUT",
+      "effects": "效果",
+      "layers": "图层"
+    },
+    "slider": {
+      "reset": "重置",
+      "value": "数值"
+    },
+    "params": {
+      "exposure": {
+        "title": "曝光度",
+        "ev": "曝光度（EV）",
+        "offset": "偏移",
+        "gamma": "灰度系数"
+      },
+      "brightnessContrast": {
+        "title": "光线",
+        "brightness": "亮度",
+        "contrast": "对比度"
+      },
+      "tone": {
+        "title": "影调",
+        "highlights": "高光",
+        "shadows": "阴影",
+        "whites": "白色色阶",
+        "blacks": "黑色色阶"
+      },
+      "whiteBalance": {
+        "title": "白平衡",
+        "temperature": "色温",
+        "tint": "色调"
+      },
+      "vibranceSaturation": {
+        "title": "颜色",
+        "vibrance": "自然饱和度",
+        "saturation": "饱和度"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "红",
+        "g": "绿",
+        "b": "蓝"
+      },
+      "reset": "重置曲线",
+      "pick": "从照片中取点",
+      "graph": "曲线图。拖动控制点来调整曲线形状。",
+      "point": "点 {{index}}",
+      "removePoint": "删除点"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "红",
+        "g": "绿",
+        "b": "蓝"
+      },
+      "inBlack": "输入黑场",
+      "inWhite": "输入白场",
+      "gamma": "中间调",
+      "outBlack": "输出黑场",
+      "outWhite": "输出白场",
+      "reset": "重置色阶"
+    },
+    "hsl": {
+      "range": {
+        "reds": "红色",
+        "yellows": "黄色",
+        "greens": "绿色",
+        "cyans": "青色",
+        "blues": "蓝色",
+        "magentas": "洋红"
+      },
+      "master": "所有颜色",
+      "hue": "色相",
+      "saturation": "饱和度",
+      "lightness": "明度",
+      "greyExcept": "除此之外变灰",
+      "greyExceptNamed": "除{{name}}外变灰",
+      "custom": "自定义范围 {{index}}",
+      "pickRange": "从照片中取色",
+      "width": "宽度",
+      "feather": "羽化",
+      "removeRange": "删除范围",
+      "resetRanges": "重置颜色",
+      "selected": "所选颜色范围"
+    },
+    "colorBalance": {
+      "title": "色彩平衡",
+      "shadows": "阴影",
+      "midtones": "中间调",
+      "highlights": "高光",
+      "r": "红",
+      "g": "绿",
+      "b": "蓝",
+      "preserveLuminosity": "保持明度"
+    },
+    "blackWhite": {
+      "title": "黑白",
+      "reds": "红色",
+      "yellows": "黄色",
+      "greens": "绿色",
+      "cyans": "青色",
+      "blues": "蓝色",
+      "magentas": "洋红",
+      "tint": "色调",
+      "tintHue": "着色色相",
+      "tintSaturation": "着色强度",
+      "apply": "转为黑白"
+    },
+    "channelMixer": {
+      "title": "通道混合器",
+      "out": {
+        "r": "输出红色",
+        "g": "输出绿色",
+        "b": "输出蓝色"
+      },
+      "r": "红",
+      "g": "绿",
+      "b": "蓝",
+      "constant": "常数",
+      "monochrome": "单色"
+    },
+    "photoFilter": {
+      "title": "照片滤镜",
+      "color": "颜色",
+      "custom": "自定义颜色",
+      "density": "浓度",
+      "preserveLuminosity": "保持明度",
+      "warming": "加温",
+      "cooling": "冷却",
+      "sepia": "棕褐色",
+      "red": "红",
+      "green": "绿",
+      "blue": "蓝"
+    },
+    "splitTone": {
+      "title": "分离色调",
+      "shadows": "阴影",
+      "highlights": "高光",
+      "hue": "色相",
+      "saturation": "饱和度",
+      "balance": "平衡"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "将 .cube 文件拖放到此处，或选择一个。",
+      "choose": "选择 .cube 文件",
+      "intensity": "强度",
+      "clear": "移除 LUT",
+      "invalid": "无法读取此 .cube 文件（支持最大尺寸为 65 的 3D LUT）。",
+      "tooBig": "此 LUT 大于 1 MB。",
+      "loaded": "LUT 已加载"
+    },
+    "effects": {
+      "title": "效果",
+      "invert": "反相",
+      "posterize": "色调分离",
+      "levels": "色阶",
+      "threshold": "阈值",
+      "level": "级别",
+      "gamma": "灰度系数",
+      "add": "添加",
+      "remove": "移除"
+    },
+    "layers": {
+      "title": "图层",
+      "empty": "还没有调整。拖动任意滑块即可添加。",
+      "enable": "显示图层",
+      "disable": "隐藏图层",
+      "opacity": "不透明度",
+      "blend": "混合",
+      "blendMode": {
+        "normal": "正常",
+        "luminosity": "明度",
+        "color": "颜色"
+      },
+      "duplicate": "复制",
+      "delete": "删除",
+      "rename": "重命名",
+      "moveUp": "上移",
+      "moveDown": "下移",
+      "mask": "蒙版功能将在后续更新中推出",
+      "selectLayer": "选择图层 {{name}}",
+      "type": {
+        "exposure": "曝光度",
+        "brightnessContrast": "亮度/对比度",
+        "tone": "影调",
+        "levels": "色阶",
+        "curves": "曲线",
+        "whiteBalance": "白平衡",
+        "vibranceSaturation": "自然饱和度/饱和度",
+        "hsl": "颜色（HSL）",
+        "colorBalance": "色彩平衡",
+        "blackWhite": "黑白",
+        "channelMixer": "通道混合器",
+        "photoFilter": "照片滤镜",
+        "splitTone": "分离色调",
+        "lut": "LUT",
+        "invert": "反相",
+        "posterize": "色调分离",
+        "threshold": "阈值",
+        "gamma": "灰度系数",
+        "redEye": "红眼",
+        "sharpen": "锐化",
+        "blur": "模糊",
+        "noiseReduction": "降噪",
+        "clarity": "清晰度",
+        "texture": "纹理",
+        "dehaze": "去朦胧",
+        "vignette": "晕影",
+        "grain": "颗粒"
+      }
+    },
+    "export": {
+      "title": "导出",
+      "description": "以完整分辨率渲染照片。",
+      "format": "格式",
+      "quality": "质量",
+      "metadata": "元数据",
+      "metadataKeep": "保留",
+      "metadataStrip": "移除",
+      "maxSize": "最大尺寸",
+      "original": "原始",
+      "mp": "{{mp}} MP",
+      "planLine": "你的套餐最高可导出 {{mp}} MP",
+      "locked": "你的套餐不支持",
+      "estimate": "约 {{size}}",
+      "start": "导出",
+      "working": "正在渲染…",
+      "failed": "导出未完成，请重试。",
+      "setup": "导出功能正在设置中",
+      "needFile": "此浏览器中没有原始照片。请重新打开后再导出。",
+      "queued": "排队中…",
+      "cancel": "关闭",
+      "anotherTime": "再次导出"
+    },
+    "openIn": "在{{brand}}中打开"
   }
 }

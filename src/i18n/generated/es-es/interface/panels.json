@@ -1414,5 +1414,327 @@
       "rate_limited": "Demasiadas solicitudes de voz en la última hora. Inténtalo de nuevo más tarde.",
       "generic": "Algo ha salido mal. Inténtalo de nuevo."
     }
+  },
+  "photo": {
+    "beta": "Beta",
+    "untitled": "Foto sin título",
+    "projectName": "Nombre del proyecto",
+    "backHome": "Volver a {{brand}}",
+    "loading": "Abriendo tu foto…",
+    "invalidProject": "No se pudo abrir este proyecto.",
+    "open": {
+      "title": "Abrir una foto en {{brand}}",
+      "drop": "Suelta una foto aquí o elige una de tu dispositivo.",
+      "choose": "Elegir una foto",
+      "hint": "Las ediciones se hacen en tu navegador. No se sube nada hasta que guardes en tu cuenta o exportes.",
+      "continueLocal": "Continuar con la foto guardada en este navegador",
+      "recent": "Tus proyectos",
+      "signInFormat": "Inicia sesión para editar este formato.",
+      "decodeFailed": "No se pudo abrir esta foto.",
+      "fromFailed": "No se pudo cargar el resultado.",
+      "replace": {
+        "title": "¿Reemplazar la foto guardada en este navegador?",
+        "body": "Los invitados conservan una sola foto a la vez. Al abrir esta, se reemplazan la foto guardada y sus ediciones.",
+        "confirm": "Reemplazar",
+        "cancel": "Conservar la foto guardada"
+      }
+    },
+    "bar": {
+      "undo": "Deshacer",
+      "redo": "Rehacer",
+      "save": "Guardar",
+      "export": "Exportar",
+      "openProject": "Abrir",
+      "compare": "Mantén pulsado para ver el original",
+      "fit": "Ajustar",
+      "actualSize": "100 %",
+      "split": "Vista dividida",
+      "state": {
+        "saved": "Guardado",
+        "saving": "Guardando…",
+        "unsaved": "Cambios sin guardar",
+        "local": "Guardado en este navegador",
+        "error": "No guardado",
+        "uploading": "Subiendo la foto…"
+      },
+      "reducedPreview": "Vista previa reducida",
+      "bigPhotoNote": "Esta foto se muestra en tamaño reducido. Las exportaciones usan la resolución completa.",
+      "exportSettingUp": "Se está preparando la exportación",
+      "panelsTab": "Paneles",
+      "layersTab": "Capas"
+    },
+    "banner": {
+      "local": "Guardado solo en este navegador. Inicia sesión para conservar hasta {{count}} proyectos en tu cuenta.",
+      "offerTitle": "¿Conservar esta foto en tu cuenta?",
+      "offerBody": "Sube la foto y tus ediciones como un proyecto para abrirlo desde cualquier lugar.",
+      "offerAccept": "Conservar en mi cuenta",
+      "offerDismiss": "Ahora no",
+      "offerFull": "Tu cuenta no tiene espacios libres para proyectos.",
+      "uploadFailed": "La subida no se completó. Tu foto sigue guardada en este navegador."
+    },
+    "conflict": {
+      "title": "Este proyecto ha cambiado en otro lugar",
+      "body": "Se guardó una versión más reciente desde otra pestaña u otro dispositivo. Elige cuál conservar.",
+      "keepMine": "Conservar la mía",
+      "loadTheirs": "Cargar la otra"
+    },
+    "draft": {
+      "title": "¿Recuperar las ediciones sin guardar?",
+      "body": "Se encontraron en este dispositivo ediciones de {{when}}.",
+      "restore": "Recuperar",
+      "discard": "Descartar"
+    },
+    "histogram": {
+      "label": "Histograma"
+    },
+    "panels": {
+      "basic": "Básico",
+      "curves": "Curvas",
+      "levels": "Niveles",
+      "hsl": "Color (HSL)",
+      "colorBalance": "Equilibrio de color",
+      "blackWhite": "Blanco y negro",
+      "channelMixer": "Mezclador de canales",
+      "photoFilter": "Filtro fotográfico",
+      "splitTone": "Tonos divididos",
+      "lut": "LUT",
+      "effects": "Efectos",
+      "layers": "Capas"
+    },
+    "slider": {
+      "reset": "Restablecer",
+      "value": "Valor"
+    },
+    "params": {
+      "exposure": {
+        "title": "Exposición",
+        "ev": "Exposición (EV)",
+        "offset": "Compensación",
+        "gamma": "Gamma"
+      },
+      "brightnessContrast": {
+        "title": "Luz",
+        "brightness": "Brillo",
+        "contrast": "Contraste"
+      },
+      "tone": {
+        "title": "Tono",
+        "highlights": "Luces altas",
+        "shadows": "Sombras",
+        "whites": "Blancos",
+        "blacks": "Negros"
+      },
+      "whiteBalance": {
+        "title": "Balance de blancos",
+        "temperature": "Temperatura",
+        "tint": "Matiz"
+      },
+      "vibranceSaturation": {
+        "title": "Color",
+        "vibrance": "Intensidad",
+        "saturation": "Saturación"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "Rojo",
+        "g": "Verde",
+        "b": "Azul"
+      },
+      "reset": "Restablecer curva",
+      "pick": "Elegir un punto de la foto",
+      "graph": "Gráfico de la curva. Arrastra los puntos para darle forma.",
+      "point": "Punto {{index}}",
+      "removePoint": "Quitar punto"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "Rojo",
+        "g": "Verde",
+        "b": "Azul"
+      },
+      "inBlack": "Negro de entrada",
+      "inWhite": "Blanco de entrada",
+      "gamma": "Tonos medios",
+      "outBlack": "Negro de salida",
+      "outWhite": "Blanco de salida",
+      "reset": "Restablecer niveles"
+    },
+    "hsl": {
+      "range": {
+        "reds": "Rojos",
+        "yellows": "Amarillos",
+        "greens": "Verdes",
+        "cyans": "Cianes",
+        "blues": "Azules",
+        "magentas": "Magentas"
+      },
+      "master": "Todos los colores",
+      "hue": "Matiz",
+      "saturation": "Saturación",
+      "lightness": "Luminosidad",
+      "greyExcept": "Gris excepto este",
+      "greyExceptNamed": "Gris excepto {{name}}",
+      "custom": "Rango personalizado {{index}}",
+      "pickRange": "Elegir un color de la foto",
+      "width": "Anchura",
+      "feather": "Desvanecimiento",
+      "removeRange": "Quitar rango",
+      "resetRanges": "Restablecer colores",
+      "selected": "Rango de color seleccionado"
+    },
+    "colorBalance": {
+      "title": "Equilibrio de color",
+      "shadows": "Sombras",
+      "midtones": "Tonos medios",
+      "highlights": "Luces altas",
+      "r": "Rojo",
+      "g": "Verde",
+      "b": "Azul",
+      "preserveLuminosity": "Mantener luminosidad"
+    },
+    "blackWhite": {
+      "title": "Blanco y negro",
+      "reds": "Rojos",
+      "yellows": "Amarillos",
+      "greens": "Verdes",
+      "cyans": "Cianes",
+      "blues": "Azules",
+      "magentas": "Magentas",
+      "tint": "Virado",
+      "tintHue": "Matiz del virado",
+      "tintSaturation": "Intensidad del virado",
+      "apply": "Pasar a blanco y negro"
+    },
+    "channelMixer": {
+      "title": "Mezclador de canales",
+      "out": {
+        "r": "Rojo de salida",
+        "g": "Verde de salida",
+        "b": "Azul de salida"
+      },
+      "r": "Rojo",
+      "g": "Verde",
+      "b": "Azul",
+      "constant": "Constante",
+      "monochrome": "Monocromo"
+    },
+    "photoFilter": {
+      "title": "Filtro fotográfico",
+      "color": "Color",
+      "custom": "Color personalizado",
+      "density": "Densidad",
+      "preserveLuminosity": "Mantener luminosidad",
+      "warming": "Cálido",
+      "cooling": "Frío",
+      "sepia": "Sepia",
+      "red": "Rojo",
+      "green": "Verde",
+      "blue": "Azul"
+    },
+    "splitTone": {
+      "title": "Tonos divididos",
+      "shadows": "Sombras",
+      "highlights": "Luces altas",
+      "hue": "Matiz",
+      "saturation": "Saturación",
+      "balance": "Equilibrio"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "Suelta aquí un archivo .cube o elige uno.",
+      "choose": "Elegir un archivo .cube",
+      "intensity": "Intensidad",
+      "clear": "Quitar LUT",
+      "invalid": "No se pudo leer este archivo .cube (LUT 3D de hasta tamaño 65).",
+      "tooBig": "Esta LUT supera 1 MB.",
+      "loaded": "LUT cargada"
+    },
+    "effects": {
+      "title": "Efectos",
+      "invert": "Invertir",
+      "posterize": "Posterizar",
+      "levels": "Niveles",
+      "threshold": "Umbral",
+      "level": "Nivel",
+      "gamma": "Gamma",
+      "add": "Añadir",
+      "remove": "Quitar"
+    },
+    "layers": {
+      "title": "Capas",
+      "empty": "Aún no hay ajustes. Mueve cualquier control deslizante para añadir uno.",
+      "enable": "Mostrar capa",
+      "disable": "Ocultar capa",
+      "opacity": "Opacidad",
+      "blend": "Fusión",
+      "blendMode": {
+        "normal": "Normal",
+        "luminosity": "Luminosidad",
+        "color": "Color"
+      },
+      "duplicate": "Duplicar",
+      "delete": "Eliminar",
+      "rename": "Renombrar",
+      "moveUp": "Subir",
+      "moveDown": "Bajar",
+      "mask": "Las máscaras llegarán en una próxima actualización",
+      "selectLayer": "Seleccionar la capa {{name}}",
+      "type": {
+        "exposure": "Exposición",
+        "brightnessContrast": "Brillo / contraste",
+        "tone": "Tono",
+        "levels": "Niveles",
+        "curves": "Curvas",
+        "whiteBalance": "Balance de blancos",
+        "vibranceSaturation": "Intensidad / saturación",
+        "hsl": "Color (HSL)",
+        "colorBalance": "Equilibrio de color",
+        "blackWhite": "Blanco y negro",
+        "channelMixer": "Mezclador de canales",
+        "photoFilter": "Filtro fotográfico",
+        "splitTone": "Tonos divididos",
+        "lut": "LUT",
+        "invert": "Invertir",
+        "posterize": "Posterizar",
+        "threshold": "Umbral",
+        "gamma": "Gamma",
+        "redEye": "Ojos rojos",
+        "sharpen": "Enfocar",
+        "blur": "Desenfocar",
+        "noiseReduction": "Reducción de ruido",
+        "clarity": "Claridad",
+        "texture": "Textura",
+        "dehaze": "Quitar neblina",
+        "vignette": "Viñeteado",
+        "grain": "Grano"
+      }
+    },
+    "export": {
+      "title": "Exportar",
+      "description": "Renderiza la foto a resolución completa.",
+      "format": "Formato",
+      "quality": "Calidad",
+      "metadata": "Metadatos",
+      "metadataKeep": "Conservar",
+      "metadataStrip": "Quitar",
+      "maxSize": "Tamaño máximo",
+      "original": "Original",
+      "mp": "{{mp}} MP",
+      "planLine": "Exporta hasta {{mp}} MP con tu plan",
+      "locked": "No disponible en tu plan",
+      "estimate": "Unos {{size}}",
+      "start": "Exportar",
+      "working": "Renderizando…",
+      "failed": "La exportación no se completó. Inténtalo de nuevo.",
+      "setup": "Se está preparando la exportación",
+      "needFile": "La foto original no está disponible en este navegador. Ábrela de nuevo para exportar.",
+      "queued": "En cola…",
+      "cancel": "Cerrar",
+      "anotherTime": "Exportar de nuevo"
+    },
+    "openIn": "Abrir en {{brand}}"
   }
 }

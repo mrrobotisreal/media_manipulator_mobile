@@ -1402,5 +1402,327 @@
       "rate_limited": "過去一小時內的語音請求過多。請稍後再試。",
       "generic": "發生錯誤。請再試一次。"
     }
+  },
+  "photo": {
+    "beta": "測試版",
+    "untitled": "未命名照片",
+    "projectName": "專案名稱",
+    "backHome": "返回 {{brand}}",
+    "loading": "正在開啟照片…",
+    "invalidProject": "無法開啟此專案。",
+    "open": {
+      "title": "在 {{brand}} 中開啟照片",
+      "drop": "將照片拖放到此處，或從裝置中選擇。",
+      "choose": "選擇照片",
+      "hint": "編輯在瀏覽器中進行。在你儲存到帳號或匯出之前，不會上傳任何內容。",
+      "continueLocal": "繼續編輯儲存在此瀏覽器中的照片",
+      "recent": "你的專案",
+      "signInFormat": "登入後才能編輯此格式。",
+      "decodeFailed": "無法開啟此照片。",
+      "fromFailed": "無法載入結果。",
+      "replace": {
+        "title": "取代儲存在此瀏覽器中的照片？",
+        "body": "訪客一次只能保留一張照片。開啟這張會取代已儲存的照片及其編輯內容。",
+        "confirm": "取代",
+        "cancel": "保留已儲存的照片"
+      }
+    },
+    "bar": {
+      "undo": "復原",
+      "redo": "重做",
+      "save": "儲存",
+      "export": "匯出",
+      "openProject": "開啟",
+      "compare": "按住以檢視原圖",
+      "fit": "符合",
+      "actualSize": "100%",
+      "split": "分割檢視",
+      "state": {
+        "saved": "已儲存",
+        "saving": "正在儲存…",
+        "unsaved": "有未儲存的變更",
+        "local": "已儲存在此瀏覽器中",
+        "error": "未儲存",
+        "uploading": "正在上傳照片…"
+      },
+      "reducedPreview": "縮小預覽",
+      "bigPhotoNote": "此照片以縮小尺寸預覽。匯出會使用完整解析度。",
+      "exportSettingUp": "匯出功能正在設定中",
+      "panelsTab": "面板",
+      "layersTab": "圖層"
+    },
+    "banner": {
+      "local": "僅儲存在此瀏覽器中。登入後可在帳號中保留最多 {{count}} 個專案。",
+      "offerTitle": "將此照片保留在帳號中？",
+      "offerBody": "將照片和你的編輯內容作為專案上傳，隨時隨地都能開啟。",
+      "offerAccept": "保留在我的帳號",
+      "offerDismiss": "稍後再說",
+      "offerFull": "你的帳號已沒有可用的專案名額。",
+      "uploadFailed": "上傳未完成。你的照片仍儲存在此瀏覽器中。"
+    },
+    "conflict": {
+      "title": "此專案已在別處變更",
+      "body": "另一個分頁或裝置儲存了較新的版本。請選擇要保留哪一個。",
+      "keepMine": "保留我的",
+      "loadTheirs": "載入對方的"
+    },
+    "draft": {
+      "title": "復原未儲存的編輯？",
+      "body": "在此裝置上找到 {{when}} 的編輯內容。",
+      "restore": "復原",
+      "discard": "捨棄"
+    },
+    "histogram": {
+      "label": "直方圖"
+    },
+    "panels": {
+      "basic": "基本",
+      "curves": "曲線",
+      "levels": "色階",
+      "hsl": "色彩（HSL）",
+      "colorBalance": "色彩平衡",
+      "blackWhite": "黑白",
+      "channelMixer": "色版混合器",
+      "photoFilter": "相片濾鏡",
+      "splitTone": "分割色調",
+      "lut": "LUT",
+      "effects": "效果",
+      "layers": "圖層"
+    },
+    "slider": {
+      "reset": "重設",
+      "value": "數值"
+    },
+    "params": {
+      "exposure": {
+        "title": "曝光度",
+        "ev": "曝光度（EV）",
+        "offset": "偏移",
+        "gamma": "伽瑪"
+      },
+      "brightnessContrast": {
+        "title": "光線",
+        "brightness": "亮度",
+        "contrast": "對比"
+      },
+      "tone": {
+        "title": "影調",
+        "highlights": "亮部",
+        "shadows": "陰影",
+        "whites": "白色",
+        "blacks": "黑色"
+      },
+      "whiteBalance": {
+        "title": "白平衡",
+        "temperature": "色溫",
+        "tint": "色調"
+      },
+      "vibranceSaturation": {
+        "title": "色彩",
+        "vibrance": "自然飽和度",
+        "saturation": "飽和度"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "紅",
+        "g": "綠",
+        "b": "藍"
+      },
+      "reset": "重設曲線",
+      "pick": "從照片中取點",
+      "graph": "曲線圖。拖曳控制點來調整曲線形狀。",
+      "point": "點 {{index}}",
+      "removePoint": "移除點"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "紅",
+        "g": "綠",
+        "b": "藍"
+      },
+      "inBlack": "輸入黑色",
+      "inWhite": "輸入白色",
+      "gamma": "中間調",
+      "outBlack": "輸出黑色",
+      "outWhite": "輸出白色",
+      "reset": "重設色階"
+    },
+    "hsl": {
+      "range": {
+        "reds": "紅色",
+        "yellows": "黃色",
+        "greens": "綠色",
+        "cyans": "青色",
+        "blues": "藍色",
+        "magentas": "洋紅"
+      },
+      "master": "所有色彩",
+      "hue": "色相",
+      "saturation": "飽和度",
+      "lightness": "明度",
+      "greyExcept": "除此之外變灰",
+      "greyExceptNamed": "除 {{name}} 外變灰",
+      "custom": "自訂範圍 {{index}}",
+      "pickRange": "從照片中取色",
+      "width": "寬度",
+      "feather": "羽化",
+      "removeRange": "移除範圍",
+      "resetRanges": "重設色彩",
+      "selected": "所選色彩範圍"
+    },
+    "colorBalance": {
+      "title": "色彩平衡",
+      "shadows": "陰影",
+      "midtones": "中間調",
+      "highlights": "亮部",
+      "r": "紅",
+      "g": "綠",
+      "b": "藍",
+      "preserveLuminosity": "保留明度"
+    },
+    "blackWhite": {
+      "title": "黑白",
+      "reds": "紅色",
+      "yellows": "黃色",
+      "greens": "綠色",
+      "cyans": "青色",
+      "blues": "藍色",
+      "magentas": "洋紅",
+      "tint": "色調",
+      "tintHue": "著色色相",
+      "tintSaturation": "著色強度",
+      "apply": "轉為黑白"
+    },
+    "channelMixer": {
+      "title": "色版混合器",
+      "out": {
+        "r": "輸出紅色",
+        "g": "輸出綠色",
+        "b": "輸出藍色"
+      },
+      "r": "紅",
+      "g": "綠",
+      "b": "藍",
+      "constant": "常數",
+      "monochrome": "單色"
+    },
+    "photoFilter": {
+      "title": "相片濾鏡",
+      "color": "色彩",
+      "custom": "自訂色彩",
+      "density": "濃度",
+      "preserveLuminosity": "保留明度",
+      "warming": "加溫",
+      "cooling": "冷卻",
+      "sepia": "深褐色",
+      "red": "紅",
+      "green": "綠",
+      "blue": "藍"
+    },
+    "splitTone": {
+      "title": "分割色調",
+      "shadows": "陰影",
+      "highlights": "亮部",
+      "hue": "色相",
+      "saturation": "飽和度",
+      "balance": "平衡"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "將 .cube 檔案拖放到此處，或選擇一個。",
+      "choose": "選擇 .cube 檔案",
+      "intensity": "強度",
+      "clear": "移除 LUT",
+      "invalid": "無法讀取此 .cube 檔案（支援最大尺寸為 65 的 3D LUT）。",
+      "tooBig": "此 LUT 超過 1 MB。",
+      "loaded": "LUT 已載入"
+    },
+    "effects": {
+      "title": "效果",
+      "invert": "反轉",
+      "posterize": "色調分離",
+      "levels": "色階",
+      "threshold": "臨界值",
+      "level": "級別",
+      "gamma": "伽瑪",
+      "add": "新增",
+      "remove": "移除"
+    },
+    "layers": {
+      "title": "圖層",
+      "empty": "尚無調整。拖曳任一滑桿即可新增。",
+      "enable": "顯示圖層",
+      "disable": "隱藏圖層",
+      "opacity": "不透明度",
+      "blend": "混合",
+      "blendMode": {
+        "normal": "正常",
+        "luminosity": "明度",
+        "color": "色彩"
+      },
+      "duplicate": "複製",
+      "delete": "刪除",
+      "rename": "重新命名",
+      "moveUp": "上移",
+      "moveDown": "下移",
+      "mask": "遮罩功能將在後續更新中推出",
+      "selectLayer": "選取圖層 {{name}}",
+      "type": {
+        "exposure": "曝光度",
+        "brightnessContrast": "亮度/對比",
+        "tone": "影調",
+        "levels": "色階",
+        "curves": "曲線",
+        "whiteBalance": "白平衡",
+        "vibranceSaturation": "自然飽和度/飽和度",
+        "hsl": "色彩（HSL）",
+        "colorBalance": "色彩平衡",
+        "blackWhite": "黑白",
+        "channelMixer": "色版混合器",
+        "photoFilter": "相片濾鏡",
+        "splitTone": "分割色調",
+        "lut": "LUT",
+        "invert": "反轉",
+        "posterize": "色調分離",
+        "threshold": "臨界值",
+        "gamma": "伽瑪",
+        "redEye": "紅眼",
+        "sharpen": "銳利化",
+        "blur": "模糊",
+        "noiseReduction": "降噪",
+        "clarity": "清晰度",
+        "texture": "紋理",
+        "dehaze": "去朦朧",
+        "vignette": "暈影",
+        "grain": "顆粒"
+      }
+    },
+    "export": {
+      "title": "匯出",
+      "description": "以完整解析度算繪照片。",
+      "format": "格式",
+      "quality": "品質",
+      "metadata": "中繼資料",
+      "metadataKeep": "保留",
+      "metadataStrip": "移除",
+      "maxSize": "最大尺寸",
+      "original": "原始",
+      "mp": "{{mp}} MP",
+      "planLine": "你的方案最高可匯出 {{mp}} MP",
+      "locked": "你的方案不支援",
+      "estimate": "約 {{size}}",
+      "start": "匯出",
+      "working": "正在算繪…",
+      "failed": "匯出未完成，請再試一次。",
+      "setup": "匯出功能正在設定中",
+      "needFile": "此瀏覽器中沒有原始照片。請重新開啟後再匯出。",
+      "queued": "排隊中…",
+      "cancel": "關閉",
+      "anotherTime": "再次匯出"
+    },
+    "openIn": "在 {{brand}} 中開啟"
   }
 }

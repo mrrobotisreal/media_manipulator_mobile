@@ -448,7 +448,8 @@
       "started": "Đã bắt đầu tải xuống MP3 — hãy xem mục tải xuống của trình duyệt.",
       "startedWithSize": "Đã bắt đầu tải xuống MP3 ({{size}}) — hãy xem mục tải xuống của trình duyệt.",
       "failed": "Không thể chuẩn bị tệp MP3. Hãy thử lại sau giây lát."
-    }
+    },
+    "openInPhoto": "Mở trong {{brand}}"
   },
   "billing": {
     "intervalLabel": "Chu kỳ thanh toán",

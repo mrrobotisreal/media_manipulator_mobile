@@ -1414,5 +1414,327 @@
       "rate_limited": "Too many voice requests in the last hour. Please try again later.",
       "generic": "Something went wrong. Please try again."
     }
+  },
+  "photo": {
+    "beta": "Beta",
+    "untitled": "Untitled photo",
+    "projectName": "Project name",
+    "backHome": "Back to {{brand}}",
+    "loading": "Opening your photo…",
+    "invalidProject": "This project could not be opened.",
+    "open": {
+      "title": "Open a photo in {{brand}}",
+      "drop": "Drop a photo here, or choose one from your device.",
+      "choose": "Choose a photo",
+      "hint": "Edits happen in your browser. Nothing is uploaded until you save to your account or export.",
+      "continueLocal": "Continue the photo saved in this browser",
+      "recent": "Your projects",
+      "signInFormat": "Sign in to edit this format.",
+      "decodeFailed": "This photo could not be opened.",
+      "fromFailed": "The result could not be loaded.",
+      "replace": {
+        "title": "Replace the photo saved in this browser?",
+        "body": "Guests keep one photo at a time. Opening this one replaces the saved photo and its edits.",
+        "confirm": "Replace",
+        "cancel": "Keep the saved photo"
+      }
+    },
+    "bar": {
+      "undo": "Undo",
+      "redo": "Redo",
+      "save": "Save",
+      "export": "Export",
+      "openProject": "Open",
+      "compare": "Hold to see the original",
+      "fit": "Fit",
+      "actualSize": "100%",
+      "split": "Split view",
+      "state": {
+        "saved": "Saved",
+        "saving": "Saving…",
+        "unsaved": "Unsaved changes",
+        "local": "Saved in this browser",
+        "error": "Not saved",
+        "uploading": "Uploading the photo…"
+      },
+      "reducedPreview": "Reduced preview",
+      "bigPhotoNote": "This photo is previewed at reduced size. Exports use the full resolution.",
+      "exportSettingUp": "Export is being set up",
+      "panelsTab": "Panels",
+      "layersTab": "Layers"
+    },
+    "banner": {
+      "local": "Saved in this browser only. Sign in to keep up to {{count}} projects on your account.",
+      "offerTitle": "Keep this photo on your account?",
+      "offerBody": "Upload the photo and your edits as a project so you can open it anywhere.",
+      "offerAccept": "Keep on my account",
+      "offerDismiss": "Not now",
+      "offerFull": "Your account has no free project slots.",
+      "uploadFailed": "The upload did not finish. Your photo is still saved in this browser."
+    },
+    "conflict": {
+      "title": "This project changed somewhere else",
+      "body": "A newer version was saved from another tab or device. Choose which one to keep.",
+      "keepMine": "Keep mine",
+      "loadTheirs": "Load theirs"
+    },
+    "draft": {
+      "title": "Restore unsaved edits?",
+      "body": "Edits from {{when}} were found on this device.",
+      "restore": "Restore",
+      "discard": "Discard"
+    },
+    "histogram": {
+      "label": "Histogram"
+    },
+    "panels": {
+      "basic": "Basic",
+      "curves": "Curves",
+      "levels": "Levels",
+      "hsl": "Color (HSL)",
+      "colorBalance": "Color balance",
+      "blackWhite": "Black & white",
+      "channelMixer": "Channel mixer",
+      "photoFilter": "Photo filter",
+      "splitTone": "Split toning",
+      "lut": "LUT",
+      "effects": "Effects",
+      "layers": "Layers"
+    },
+    "slider": {
+      "reset": "Reset",
+      "value": "Value"
+    },
+    "params": {
+      "exposure": {
+        "title": "Exposure",
+        "ev": "Exposure (EV)",
+        "offset": "Offset",
+        "gamma": "Gamma"
+      },
+      "brightnessContrast": {
+        "title": "Light",
+        "brightness": "Brightness",
+        "contrast": "Contrast"
+      },
+      "tone": {
+        "title": "Tone",
+        "highlights": "Highlights",
+        "shadows": "Shadows",
+        "whites": "Whites",
+        "blacks": "Blacks"
+      },
+      "whiteBalance": {
+        "title": "White balance",
+        "temperature": "Temperature",
+        "tint": "Tint"
+      },
+      "vibranceSaturation": {
+        "title": "Color",
+        "vibrance": "Vibrance",
+        "saturation": "Saturation"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "Red",
+        "g": "Green",
+        "b": "Blue"
+      },
+      "reset": "Reset curve",
+      "pick": "Pick a point from the photo",
+      "graph": "Curve graph. Drag points to shape the curve.",
+      "point": "Point {{index}}",
+      "removePoint": "Remove point"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "Red",
+        "g": "Green",
+        "b": "Blue"
+      },
+      "inBlack": "Input black",
+      "inWhite": "Input white",
+      "gamma": "Midtones",
+      "outBlack": "Output black",
+      "outWhite": "Output white",
+      "reset": "Reset levels"
+    },
+    "hsl": {
+      "range": {
+        "reds": "Reds",
+        "yellows": "Yellows",
+        "greens": "Greens",
+        "cyans": "Cyans",
+        "blues": "Blues",
+        "magentas": "Magentas"
+      },
+      "master": "All colors",
+      "hue": "Hue",
+      "saturation": "Saturation",
+      "lightness": "Lightness",
+      "greyExcept": "Gray except this",
+      "greyExceptNamed": "Gray except {{name}}",
+      "custom": "Custom range {{index}}",
+      "pickRange": "Pick a color from the photo",
+      "width": "Width",
+      "feather": "Feather",
+      "removeRange": "Remove range",
+      "resetRanges": "Reset colors",
+      "selected": "Selected color range"
+    },
+    "colorBalance": {
+      "title": "Color balance",
+      "shadows": "Shadows",
+      "midtones": "Midtones",
+      "highlights": "Highlights",
+      "r": "Red",
+      "g": "Green",
+      "b": "Blue",
+      "preserveLuminosity": "Preserve luminosity"
+    },
+    "blackWhite": {
+      "title": "Black & white",
+      "reds": "Reds",
+      "yellows": "Yellows",
+      "greens": "Greens",
+      "cyans": "Cyans",
+      "blues": "Blues",
+      "magentas": "Magentas",
+      "tint": "Tint",
+      "tintHue": "Tint hue",
+      "tintSaturation": "Tint strength",
+      "apply": "Make black & white"
+    },
+    "channelMixer": {
+      "title": "Channel mixer",
+      "out": {
+        "r": "Output red",
+        "g": "Output green",
+        "b": "Output blue"
+      },
+      "r": "Red",
+      "g": "Green",
+      "b": "Blue",
+      "constant": "Constant",
+      "monochrome": "Monochrome"
+    },
+    "photoFilter": {
+      "title": "Photo filter",
+      "color": "Color",
+      "custom": "Custom color",
+      "density": "Density",
+      "preserveLuminosity": "Preserve luminosity",
+      "warming": "Warming",
+      "cooling": "Cooling",
+      "sepia": "Sepia",
+      "red": "Red",
+      "green": "Green",
+      "blue": "Blue"
+    },
+    "splitTone": {
+      "title": "Split toning",
+      "shadows": "Shadows",
+      "highlights": "Highlights",
+      "hue": "Hue",
+      "saturation": "Saturation",
+      "balance": "Balance"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "Drop a .cube file here, or choose one.",
+      "choose": "Choose a .cube file",
+      "intensity": "Intensity",
+      "clear": "Remove LUT",
+      "invalid": "This .cube file could not be read (3D LUTs up to size 65).",
+      "tooBig": "This LUT is larger than 1 MB.",
+      "loaded": "LUT loaded"
+    },
+    "effects": {
+      "title": "Effects",
+      "invert": "Invert",
+      "posterize": "Posterize",
+      "levels": "Levels",
+      "threshold": "Threshold",
+      "level": "Level",
+      "gamma": "Gamma",
+      "add": "Add",
+      "remove": "Remove"
+    },
+    "layers": {
+      "title": "Layers",
+      "empty": "No adjustments yet. Move any slider to add one.",
+      "enable": "Show layer",
+      "disable": "Hide layer",
+      "opacity": "Opacity",
+      "blend": "Blend",
+      "blendMode": {
+        "normal": "Normal",
+        "luminosity": "Luminosity",
+        "color": "Color"
+      },
+      "duplicate": "Duplicate",
+      "delete": "Delete",
+      "rename": "Rename",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "mask": "Masks arrive in a later update",
+      "selectLayer": "Select layer {{name}}",
+      "type": {
+        "exposure": "Exposure",
+        "brightnessContrast": "Brightness / contrast",
+        "tone": "Tone",
+        "levels": "Levels",
+        "curves": "Curves",
+        "whiteBalance": "White balance",
+        "vibranceSaturation": "Vibrance / saturation",
+        "hsl": "Color (HSL)",
+        "colorBalance": "Color balance",
+        "blackWhite": "Black & white",
+        "channelMixer": "Channel mixer",
+        "photoFilter": "Photo filter",
+        "splitTone": "Split toning",
+        "lut": "LUT",
+        "invert": "Invert",
+        "posterize": "Posterize",
+        "threshold": "Threshold",
+        "gamma": "Gamma",
+        "redEye": "Red eye",
+        "sharpen": "Sharpen",
+        "blur": "Blur",
+        "noiseReduction": "Noise reduction",
+        "clarity": "Clarity",
+        "texture": "Texture",
+        "dehaze": "Dehaze",
+        "vignette": "Vignette",
+        "grain": "Grain"
+      }
+    },
+    "export": {
+      "title": "Export",
+      "description": "Render the photo at full resolution.",
+      "format": "Format",
+      "quality": "Quality",
+      "metadata": "Metadata",
+      "metadataKeep": "Keep",
+      "metadataStrip": "Strip",
+      "maxSize": "Max size",
+      "original": "Original",
+      "mp": "{{mp}} MP",
+      "planLine": "Exports up to {{mp}} MP on your plan",
+      "locked": "Not available on your plan",
+      "estimate": "About {{size}}",
+      "start": "Export",
+      "working": "Rendering…",
+      "failed": "The export did not finish. Please try again.",
+      "setup": "Export is being set up",
+      "needFile": "The original photo is not available in this browser. Open it again to export.",
+      "queued": "Queued…",
+      "cancel": "Close",
+      "anotherTime": "Export again"
+    },
+    "openIn": "Open in {{brand}}"
   }
 }

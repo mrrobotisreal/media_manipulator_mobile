@@ -451,7 +451,8 @@
       "started": "Tu descarga del MP3 ha comenzado: revisa las descargas de tu navegador.",
       "startedWithSize": "Tu descarga del MP3 ha comenzado ({{size}}): revisa las descargas de tu navegador.",
       "failed": "No se pudo preparar el MP3. Inténtalo de nuevo en un momento."
-    }
+    },
+    "openInPhoto": "Abrir en {{brand}}"
   },
   "billing": {
     "intervalLabel": "Periodo de facturación",

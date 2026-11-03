@@ -1402,5 +1402,327 @@
       "rate_limited": "Có quá nhiều yêu cầu giọng nói trong giờ qua. Vui lòng thử lại sau.",
       "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
     }
+  },
+  "photo": {
+    "beta": "Beta",
+    "untitled": "Ảnh chưa đặt tên",
+    "projectName": "Tên dự án",
+    "backHome": "Quay lại {{brand}}",
+    "loading": "Đang mở ảnh của bạn…",
+    "invalidProject": "Không thể mở dự án này.",
+    "open": {
+      "title": "Mở ảnh trong {{brand}}",
+      "drop": "Thả ảnh vào đây hoặc chọn từ thiết bị của bạn.",
+      "choose": "Chọn ảnh",
+      "hint": "Việc chỉnh sửa diễn ra ngay trong trình duyệt. Không có gì được tải lên cho đến khi bạn lưu vào tài khoản hoặc xuất ảnh.",
+      "continueLocal": "Tiếp tục với ảnh đã lưu trong trình duyệt này",
+      "recent": "Dự án của bạn",
+      "signInFormat": "Đăng nhập để chỉnh sửa định dạng này.",
+      "decodeFailed": "Không thể mở ảnh này.",
+      "fromFailed": "Không thể tải kết quả.",
+      "replace": {
+        "title": "Thay ảnh đã lưu trong trình duyệt này?",
+        "body": "Khách chỉ giữ được một ảnh mỗi lần. Mở ảnh này sẽ thay thế ảnh đã lưu và các chỉnh sửa của nó.",
+        "confirm": "Thay thế",
+        "cancel": "Giữ ảnh đã lưu"
+      }
+    },
+    "bar": {
+      "undo": "Hoàn tác",
+      "redo": "Làm lại",
+      "save": "Lưu",
+      "export": "Xuất",
+      "openProject": "Mở",
+      "compare": "Nhấn giữ để xem ảnh gốc",
+      "fit": "Vừa khung",
+      "actualSize": "100%",
+      "split": "Chế độ chia đôi",
+      "state": {
+        "saved": "Đã lưu",
+        "saving": "Đang lưu…",
+        "unsaved": "Có thay đổi chưa lưu",
+        "local": "Đã lưu trong trình duyệt này",
+        "error": "Chưa lưu",
+        "uploading": "Đang tải ảnh lên…"
+      },
+      "reducedPreview": "Bản xem trước thu nhỏ",
+      "bigPhotoNote": "Ảnh này đang được xem trước ở kích thước thu nhỏ. Khi xuất sẽ dùng độ phân giải đầy đủ.",
+      "exportSettingUp": "Tính năng xuất đang được thiết lập",
+      "panelsTab": "Bảng",
+      "layersTab": "Lớp"
+    },
+    "banner": {
+      "local": "Chỉ được lưu trong trình duyệt này. Đăng nhập để giữ tối đa {{count}} dự án trong tài khoản.",
+      "offerTitle": "Giữ ảnh này trong tài khoản?",
+      "offerBody": "Tải ảnh và các chỉnh sửa lên dưới dạng dự án để bạn mở ở bất cứ đâu.",
+      "offerAccept": "Giữ trong tài khoản",
+      "offerDismiss": "Để sau",
+      "offerFull": "Tài khoản của bạn đã hết chỗ trống cho dự án.",
+      "uploadFailed": "Quá trình tải lên chưa hoàn tất. Ảnh của bạn vẫn được lưu trong trình duyệt này."
+    },
+    "conflict": {
+      "title": "Dự án này đã được thay đổi ở nơi khác",
+      "body": "Một phiên bản mới hơn đã được lưu từ tab hoặc thiết bị khác. Hãy chọn phiên bản cần giữ.",
+      "keepMine": "Giữ bản của tôi",
+      "loadTheirs": "Tải bản kia"
+    },
+    "draft": {
+      "title": "Khôi phục các chỉnh sửa chưa lưu?",
+      "body": "Đã tìm thấy các chỉnh sửa từ {{when}} trên thiết bị này.",
+      "restore": "Khôi phục",
+      "discard": "Bỏ"
+    },
+    "histogram": {
+      "label": "Biểu đồ histogram"
+    },
+    "panels": {
+      "basic": "Cơ bản",
+      "curves": "Đường cong",
+      "levels": "Mức",
+      "hsl": "Màu (HSL)",
+      "colorBalance": "Cân bằng màu",
+      "blackWhite": "Đen trắng",
+      "channelMixer": "Trộn kênh màu",
+      "photoFilter": "Bộ lọc ảnh",
+      "splitTone": "Chia tông màu",
+      "lut": "LUT",
+      "effects": "Hiệu ứng",
+      "layers": "Lớp"
+    },
+    "slider": {
+      "reset": "Đặt lại",
+      "value": "Giá trị"
+    },
+    "params": {
+      "exposure": {
+        "title": "Phơi sáng",
+        "ev": "Phơi sáng (EV)",
+        "offset": "Độ lệch",
+        "gamma": "Gamma"
+      },
+      "brightnessContrast": {
+        "title": "Ánh sáng",
+        "brightness": "Độ sáng",
+        "contrast": "Độ tương phản"
+      },
+      "tone": {
+        "title": "Tông",
+        "highlights": "Vùng sáng",
+        "shadows": "Vùng tối",
+        "whites": "Điểm trắng",
+        "blacks": "Điểm đen"
+      },
+      "whiteBalance": {
+        "title": "Cân bằng trắng",
+        "temperature": "Nhiệt độ màu",
+        "tint": "Sắc thái"
+      },
+      "vibranceSaturation": {
+        "title": "Màu sắc",
+        "vibrance": "Độ rực rỡ",
+        "saturation": "Độ bão hòa"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "Đỏ",
+        "g": "Xanh lá",
+        "b": "Xanh dương"
+      },
+      "reset": "Đặt lại đường cong",
+      "pick": "Chọn một điểm trên ảnh",
+      "graph": "Biểu đồ đường cong. Kéo các điểm để chỉnh đường cong.",
+      "point": "Điểm {{index}}",
+      "removePoint": "Xóa điểm"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "Đỏ",
+        "g": "Xanh lá",
+        "b": "Xanh dương"
+      },
+      "inBlack": "Đen đầu vào",
+      "inWhite": "Trắng đầu vào",
+      "gamma": "Tông trung bình",
+      "outBlack": "Đen đầu ra",
+      "outWhite": "Trắng đầu ra",
+      "reset": "Đặt lại mức"
+    },
+    "hsl": {
+      "range": {
+        "reds": "Đỏ",
+        "yellows": "Vàng",
+        "greens": "Xanh lá",
+        "cyans": "Xanh lơ",
+        "blues": "Xanh dương",
+        "magentas": "Tím đỏ"
+      },
+      "master": "Tất cả màu",
+      "hue": "Sắc độ",
+      "saturation": "Độ bão hòa",
+      "lightness": "Độ sáng",
+      "greyExcept": "Xám trừ màu này",
+      "greyExceptNamed": "Xám trừ {{name}}",
+      "custom": "Dải tùy chỉnh {{index}}",
+      "pickRange": "Chọn một màu từ ảnh",
+      "width": "Độ rộng",
+      "feather": "Làm mờ viền",
+      "removeRange": "Xóa dải màu",
+      "resetRanges": "Đặt lại màu",
+      "selected": "Dải màu đã chọn"
+    },
+    "colorBalance": {
+      "title": "Cân bằng màu",
+      "shadows": "Vùng tối",
+      "midtones": "Tông trung bình",
+      "highlights": "Vùng sáng",
+      "r": "Đỏ",
+      "g": "Xanh lá",
+      "b": "Xanh dương",
+      "preserveLuminosity": "Giữ nguyên độ chói"
+    },
+    "blackWhite": {
+      "title": "Đen trắng",
+      "reds": "Đỏ",
+      "yellows": "Vàng",
+      "greens": "Xanh lá",
+      "cyans": "Xanh lơ",
+      "blues": "Xanh dương",
+      "magentas": "Tím đỏ",
+      "tint": "Phủ sắc",
+      "tintHue": "Sắc độ phủ",
+      "tintSaturation": "Cường độ phủ",
+      "apply": "Chuyển sang đen trắng"
+    },
+    "channelMixer": {
+      "title": "Trộn kênh màu",
+      "out": {
+        "r": "Đỏ đầu ra",
+        "g": "Xanh lá đầu ra",
+        "b": "Xanh dương đầu ra"
+      },
+      "r": "Đỏ",
+      "g": "Xanh lá",
+      "b": "Xanh dương",
+      "constant": "Hằng số",
+      "monochrome": "Đơn sắc"
+    },
+    "photoFilter": {
+      "title": "Bộ lọc ảnh",
+      "color": "Màu",
+      "custom": "Màu tùy chỉnh",
+      "density": "Mật độ",
+      "preserveLuminosity": "Giữ nguyên độ chói",
+      "warming": "Ấm",
+      "cooling": "Lạnh",
+      "sepia": "Nâu đỏ (sepia)",
+      "red": "Đỏ",
+      "green": "Xanh lá",
+      "blue": "Xanh dương"
+    },
+    "splitTone": {
+      "title": "Chia tông màu",
+      "shadows": "Vùng tối",
+      "highlights": "Vùng sáng",
+      "hue": "Sắc độ",
+      "saturation": "Độ bão hòa",
+      "balance": "Cân bằng"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "Thả tệp .cube vào đây hoặc chọn một tệp.",
+      "choose": "Chọn tệp .cube",
+      "intensity": "Cường độ",
+      "clear": "Gỡ LUT",
+      "invalid": "Không đọc được tệp .cube này (LUT 3D kích thước tối đa 65).",
+      "tooBig": "LUT này lớn hơn 1 MB.",
+      "loaded": "Đã tải LUT"
+    },
+    "effects": {
+      "title": "Hiệu ứng",
+      "invert": "Đảo ngược",
+      "posterize": "Phân tách tông màu",
+      "levels": "Mức",
+      "threshold": "Ngưỡng",
+      "level": "Mức",
+      "gamma": "Gamma",
+      "add": "Thêm",
+      "remove": "Xóa"
+    },
+    "layers": {
+      "title": "Lớp",
+      "empty": "Chưa có chỉnh sửa nào. Kéo bất kỳ thanh trượt nào để thêm.",
+      "enable": "Hiện lớp",
+      "disable": "Ẩn lớp",
+      "opacity": "Độ mờ đục",
+      "blend": "Hòa trộn",
+      "blendMode": {
+        "normal": "Bình thường",
+        "luminosity": "Độ chói",
+        "color": "Màu"
+      },
+      "duplicate": "Nhân đôi",
+      "delete": "Xóa",
+      "rename": "Đổi tên",
+      "moveUp": "Di chuyển lên",
+      "moveDown": "Di chuyển xuống",
+      "mask": "Mặt nạ sẽ có trong một bản cập nhật sau",
+      "selectLayer": "Chọn lớp {{name}}",
+      "type": {
+        "exposure": "Phơi sáng",
+        "brightnessContrast": "Độ sáng / tương phản",
+        "tone": "Tông",
+        "levels": "Mức",
+        "curves": "Đường cong",
+        "whiteBalance": "Cân bằng trắng",
+        "vibranceSaturation": "Độ rực rỡ / bão hòa",
+        "hsl": "Màu (HSL)",
+        "colorBalance": "Cân bằng màu",
+        "blackWhite": "Đen trắng",
+        "channelMixer": "Trộn kênh màu",
+        "photoFilter": "Bộ lọc ảnh",
+        "splitTone": "Chia tông màu",
+        "lut": "LUT",
+        "invert": "Đảo ngược",
+        "posterize": "Phân tách tông màu",
+        "threshold": "Ngưỡng",
+        "gamma": "Gamma",
+        "redEye": "Mắt đỏ",
+        "sharpen": "Làm nét",
+        "blur": "Làm mờ",
+        "noiseReduction": "Giảm nhiễu",
+        "clarity": "Độ rõ nét",
+        "texture": "Kết cấu",
+        "dehaze": "Khử sương mù",
+        "vignette": "Tối góc",
+        "grain": "Hạt nhiễu"
+      }
+    },
+    "export": {
+      "title": "Xuất",
+      "description": "Kết xuất ảnh ở độ phân giải đầy đủ.",
+      "format": "Định dạng",
+      "quality": "Chất lượng",
+      "metadata": "Siêu dữ liệu",
+      "metadataKeep": "Giữ lại",
+      "metadataStrip": "Xóa bỏ",
+      "maxSize": "Kích thước tối đa",
+      "original": "Bản gốc",
+      "mp": "{{mp}} MP",
+      "planLine": "Xuất tối đa {{mp}} MP với gói của bạn",
+      "locked": "Không có sẵn trong gói của bạn",
+      "estimate": "Khoảng {{size}}",
+      "start": "Xuất",
+      "working": "Đang kết xuất…",
+      "failed": "Quá trình xuất chưa hoàn tất. Vui lòng thử lại.",
+      "setup": "Tính năng xuất đang được thiết lập",
+      "needFile": "Ảnh gốc không còn trong trình duyệt này. Hãy mở lại ảnh để xuất.",
+      "queued": "Đang chờ…",
+      "cancel": "Đóng",
+      "anotherTime": "Xuất lại"
+    },
+    "openIn": "Mở trong {{brand}}"
   }
 }

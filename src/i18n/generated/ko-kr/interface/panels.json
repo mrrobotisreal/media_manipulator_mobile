@@ -1402,5 +1402,327 @@
       "rate_limited": "최근 1시간 동안 음성 요청이 너무 많아요. 나중에 다시 시도해 주세요.",
       "generic": "문제가 발생했어요. 다시 시도해 주세요."
     }
+  },
+  "photo": {
+    "beta": "베타",
+    "untitled": "제목 없는 사진",
+    "projectName": "프로젝트 이름",
+    "backHome": "{{brand}}(으)로 돌아가기",
+    "loading": "사진을 여는 중…",
+    "invalidProject": "이 프로젝트를 열 수 없습니다.",
+    "open": {
+      "title": "{{brand}}에서 사진 열기",
+      "drop": "여기에 사진을 끌어다 놓거나 기기에서 선택하세요.",
+      "choose": "사진 선택",
+      "hint": "편집은 브라우저에서 이루어집니다. 계정에 저장하거나 내보내기 전에는 아무것도 업로드되지 않습니다.",
+      "continueLocal": "이 브라우저에 저장된 사진 이어서 편집",
+      "recent": "내 프로젝트",
+      "signInFormat": "이 형식을 편집하려면 로그인하세요.",
+      "decodeFailed": "이 사진을 열 수 없습니다.",
+      "fromFailed": "결과를 불러올 수 없습니다.",
+      "replace": {
+        "title": "이 브라우저에 저장된 사진을 바꿀까요?",
+        "body": "게스트는 한 번에 사진 한 장만 보관할 수 있습니다. 이 사진을 열면 저장된 사진과 편집 내용이 대체됩니다.",
+        "confirm": "바꾸기",
+        "cancel": "저장된 사진 유지"
+      }
+    },
+    "bar": {
+      "undo": "실행 취소",
+      "redo": "다시 실행",
+      "save": "저장",
+      "export": "내보내기",
+      "openProject": "열기",
+      "compare": "길게 눌러 원본 보기",
+      "fit": "화면에 맞춤",
+      "actualSize": "100%",
+      "split": "분할 보기",
+      "state": {
+        "saved": "저장됨",
+        "saving": "저장 중…",
+        "unsaved": "저장하지 않은 변경 사항",
+        "local": "이 브라우저에 저장됨",
+        "error": "저장되지 않음",
+        "uploading": "사진 업로드 중…"
+      },
+      "reducedPreview": "축소 미리보기",
+      "bigPhotoNote": "이 사진은 축소된 크기로 미리 표시됩니다. 내보내기는 전체 해상도로 진행됩니다.",
+      "exportSettingUp": "내보내기를 준비하고 있습니다",
+      "panelsTab": "패널",
+      "layersTab": "레이어"
+    },
+    "banner": {
+      "local": "이 브라우저에만 저장되었습니다. 로그인하면 계정에 프로젝트를 최대 {{count}}개까지 보관할 수 있습니다.",
+      "offerTitle": "이 사진을 계정에 보관할까요?",
+      "offerBody": "사진과 편집 내용을 프로젝트로 업로드하면 어디서든 열 수 있습니다.",
+      "offerAccept": "내 계정에 보관",
+      "offerDismiss": "나중에",
+      "offerFull": "계정에 남은 무료 프로젝트 공간이 없습니다.",
+      "uploadFailed": "업로드가 완료되지 않았습니다. 사진은 이 브라우저에 그대로 저장되어 있습니다."
+    },
+    "conflict": {
+      "title": "다른 곳에서 이 프로젝트가 변경되었습니다",
+      "body": "다른 탭이나 기기에서 더 최신 버전이 저장되었습니다. 유지할 버전을 선택하세요.",
+      "keepMine": "내 버전 유지",
+      "loadTheirs": "상대 버전 불러오기"
+    },
+    "draft": {
+      "title": "저장하지 않은 편집 내용을 복원할까요?",
+      "body": "이 기기에서 {{when}}의 편집 내용이 발견되었습니다.",
+      "restore": "복원",
+      "discard": "버리기"
+    },
+    "histogram": {
+      "label": "히스토그램"
+    },
+    "panels": {
+      "basic": "기본",
+      "curves": "커브",
+      "levels": "레벨",
+      "hsl": "색상(HSL)",
+      "colorBalance": "색상 균형",
+      "blackWhite": "흑백",
+      "channelMixer": "채널 혼합",
+      "photoFilter": "포토 필터",
+      "splitTone": "스플릿 토닝",
+      "lut": "LUT",
+      "effects": "효과",
+      "layers": "레이어"
+    },
+    "slider": {
+      "reset": "재설정",
+      "value": "값"
+    },
+    "params": {
+      "exposure": {
+        "title": "노출",
+        "ev": "노출(EV)",
+        "offset": "오프셋",
+        "gamma": "감마"
+      },
+      "brightnessContrast": {
+        "title": "빛",
+        "brightness": "밝기",
+        "contrast": "대비"
+      },
+      "tone": {
+        "title": "톤",
+        "highlights": "밝은 영역",
+        "shadows": "그림자",
+        "whites": "흰색 계열",
+        "blacks": "검정 계열"
+      },
+      "whiteBalance": {
+        "title": "화이트 밸런스",
+        "temperature": "색온도",
+        "tint": "색조"
+      },
+      "vibranceSaturation": {
+        "title": "색상",
+        "vibrance": "활기",
+        "saturation": "채도"
+      }
+    },
+    "curves": {
+      "channel": {
+        "master": "RGB",
+        "r": "빨강",
+        "g": "초록",
+        "b": "파랑"
+      },
+      "reset": "커브 재설정",
+      "pick": "사진에서 점 선택",
+      "graph": "커브 그래프. 점을 드래그하여 커브를 조정하세요.",
+      "point": "점 {{index}}",
+      "removePoint": "점 제거"
+    },
+    "levels": {
+      "channel": {
+        "master": "RGB",
+        "r": "빨강",
+        "g": "초록",
+        "b": "파랑"
+      },
+      "inBlack": "입력 검정",
+      "inWhite": "입력 흰색",
+      "gamma": "중간 톤",
+      "outBlack": "출력 검정",
+      "outWhite": "출력 흰색",
+      "reset": "레벨 재설정"
+    },
+    "hsl": {
+      "range": {
+        "reds": "빨강",
+        "yellows": "노랑",
+        "greens": "초록",
+        "cyans": "청록",
+        "blues": "파랑",
+        "magentas": "자홍"
+      },
+      "master": "모든 색상",
+      "hue": "색조",
+      "saturation": "채도",
+      "lightness": "명도",
+      "greyExcept": "이 색 제외 회색",
+      "greyExceptNamed": "{{name}} 제외 회색",
+      "custom": "사용자 지정 범위 {{index}}",
+      "pickRange": "사진에서 색상 선택",
+      "width": "폭",
+      "feather": "페더",
+      "removeRange": "범위 제거",
+      "resetRanges": "색상 재설정",
+      "selected": "선택한 색상 범위"
+    },
+    "colorBalance": {
+      "title": "색상 균형",
+      "shadows": "그림자",
+      "midtones": "중간 톤",
+      "highlights": "밝은 영역",
+      "r": "빨강",
+      "g": "초록",
+      "b": "파랑",
+      "preserveLuminosity": "광도 유지"
+    },
+    "blackWhite": {
+      "title": "흑백",
+      "reds": "빨강",
+      "yellows": "노랑",
+      "greens": "초록",
+      "cyans": "청록",
+      "blues": "파랑",
+      "magentas": "자홍",
+      "tint": "색조 입히기",
+      "tintHue": "틴트 색조",
+      "tintSaturation": "틴트 강도",
+      "apply": "흑백으로 만들기"
+    },
+    "channelMixer": {
+      "title": "채널 혼합",
+      "out": {
+        "r": "출력 빨강",
+        "g": "출력 초록",
+        "b": "출력 파랑"
+      },
+      "r": "빨강",
+      "g": "초록",
+      "b": "파랑",
+      "constant": "상수",
+      "monochrome": "단색"
+    },
+    "photoFilter": {
+      "title": "포토 필터",
+      "color": "색상",
+      "custom": "사용자 지정 색상",
+      "density": "농도",
+      "preserveLuminosity": "광도 유지",
+      "warming": "따뜻하게",
+      "cooling": "차갑게",
+      "sepia": "세피아",
+      "red": "빨강",
+      "green": "초록",
+      "blue": "파랑"
+    },
+    "splitTone": {
+      "title": "스플릿 토닝",
+      "shadows": "그림자",
+      "highlights": "밝은 영역",
+      "hue": "색조",
+      "saturation": "채도",
+      "balance": "균형"
+    },
+    "lut": {
+      "title": "LUT",
+      "drop": "여기에 .cube 파일을 끌어다 놓거나 선택하세요.",
+      "choose": ".cube 파일 선택",
+      "intensity": "강도",
+      "clear": "LUT 제거",
+      "invalid": "이 .cube 파일을 읽을 수 없습니다(크기 65까지의 3D LUT만 지원).",
+      "tooBig": "이 LUT는 1 MB보다 큽니다.",
+      "loaded": "LUT 불러옴"
+    },
+    "effects": {
+      "title": "효과",
+      "invert": "반전",
+      "posterize": "포스터라이즈",
+      "levels": "레벨",
+      "threshold": "한계값",
+      "level": "수준",
+      "gamma": "감마",
+      "add": "추가",
+      "remove": "제거"
+    },
+    "layers": {
+      "title": "레이어",
+      "empty": "아직 조정 내용이 없습니다. 슬라이더를 움직이면 추가됩니다.",
+      "enable": "레이어 표시",
+      "disable": "레이어 숨기기",
+      "opacity": "불투명도",
+      "blend": "혼합",
+      "blendMode": {
+        "normal": "표준",
+        "luminosity": "광도",
+        "color": "색상"
+      },
+      "duplicate": "복제",
+      "delete": "삭제",
+      "rename": "이름 바꾸기",
+      "moveUp": "위로 이동",
+      "moveDown": "아래로 이동",
+      "mask": "마스크는 이후 업데이트에서 제공됩니다",
+      "selectLayer": "{{name}} 레이어 선택",
+      "type": {
+        "exposure": "노출",
+        "brightnessContrast": "밝기/대비",
+        "tone": "톤",
+        "levels": "레벨",
+        "curves": "커브",
+        "whiteBalance": "화이트 밸런스",
+        "vibranceSaturation": "활기/채도",
+        "hsl": "색상(HSL)",
+        "colorBalance": "색상 균형",
+        "blackWhite": "흑백",
+        "channelMixer": "채널 혼합",
+        "photoFilter": "포토 필터",
+        "splitTone": "스플릿 토닝",
+        "lut": "LUT",
+        "invert": "반전",
+        "posterize": "포스터라이즈",
+        "threshold": "한계값",
+        "gamma": "감마",
+        "redEye": "적목 현상",
+        "sharpen": "선명하게",
+        "blur": "흐림 효과",
+        "noiseReduction": "노이즈 감소",
+        "clarity": "명료도",
+        "texture": "텍스처",
+        "dehaze": "안개 제거",
+        "vignette": "비네팅",
+        "grain": "그레인"
+      }
+    },
+    "export": {
+      "title": "내보내기",
+      "description": "사진을 전체 해상도로 렌더링합니다.",
+      "format": "형식",
+      "quality": "품질",
+      "metadata": "메타데이터",
+      "metadataKeep": "유지",
+      "metadataStrip": "제거",
+      "maxSize": "최대 크기",
+      "original": "원본",
+      "mp": "{{mp}} MP",
+      "planLine": "현재 요금제에서 최대 {{mp}} MP까지 내보낼 수 있습니다",
+      "locked": "현재 요금제에서는 사용할 수 없습니다",
+      "estimate": "약 {{size}}",
+      "start": "내보내기",
+      "working": "렌더링 중…",
+      "failed": "내보내기가 완료되지 않았습니다. 다시 시도해 주세요.",
+      "setup": "내보내기를 준비하고 있습니다",
+      "needFile": "이 브라우저에서 원본 사진을 찾을 수 없습니다. 내보내려면 다시 여세요.",
+      "queued": "대기 중…",
+      "cancel": "닫기",
+      "anotherTime": "다시 내보내기"
+    },
+    "openIn": "{{brand}}에서 열기"
   }
 }

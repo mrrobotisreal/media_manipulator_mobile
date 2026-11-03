@@ -448,7 +448,8 @@
       "started": "MP3下载已开始，请查看浏览器的下载列表。",
       "startedWithSize": "MP3下载已开始（{{size}}），请查看浏览器的下载列表。",
       "failed": "无法准备MP3，请稍后再试。"
-    }
+    },
+    "openInPhoto": "在{{brand}}中打开"
   },
   "billing": {
     "intervalLabel": "计费周期",
