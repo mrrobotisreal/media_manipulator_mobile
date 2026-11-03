@@ -1,4 +1,5 @@
 import type { ResultKind } from '@/results/describe';
+import { EVENTS } from './events';
 import { track, type EventProps } from './track';
 
 /** Catalog vocabulary (analytics `internal/catalog/catalog.go`, MA13 results batch). */
@@ -74,7 +75,11 @@ export function trackResultViewed(
 ): void {
   if (viewed.has(c.jobId)) return;
   viewed.add(c.jobId);
-  track('result_viewed', { job_id: c.jobId, kind, surface, has_original: hasOriginal }, ctx(c));
+  track(
+    EVENTS.RESULT_VIEWED,
+    { job_id: c.jobId, kind, surface, has_original: hasOriginal },
+    ctx(c),
+  );
 }
 
 /** When a viewer actually rendered bytes (image decoded, video ready, audio loaded, archive listed). */
@@ -82,7 +87,7 @@ export function trackResultPreviewed(c: ResultContext, kind: ResultKind): void {
   const previewKind = previewKindOf(kind);
   if (!previewKind || previewed.has(c.jobId)) return;
   previewed.add(c.jobId);
-  track('result_previewed', { job_id: c.jobId, preview_kind: previewKind }, ctx(c));
+  track(EVENTS.RESULT_PREVIEWED, { job_id: c.jobId, preview_kind: previewKind }, ctx(c));
 }
 
 export function trackResultCompare(
@@ -93,12 +98,12 @@ export function trackResultCompare(
   const key = `${c.jobId}:${mode}`;
   if (compared.has(key)) return;
   compared.add(key);
-  track('result_compare_used', { job_id: c.jobId, kind, mode }, ctx(c));
+  track(EVENTS.RESULT_COMPARE_USED, { job_id: c.jobId, kind, mode }, ctx(c));
 }
 
 export function trackResultArchiveEntry(c: ResultContext, entryKind: ResultKind): void {
   track(
-    'result_archive_entry_opened',
+    EVENTS.RESULT_ARCHIVE_ENTRY_OPENED,
     { job_id: c.jobId, entry_kind: entryKindOf(entryKind) },
     ctx(c),
   );

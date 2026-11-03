@@ -3,6 +3,7 @@ import { VideoView } from 'expo-video';
 import { useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import { Button } from '@/ui/components/Button';
 import { PointTrack, RangeTrack } from './RangeTrack';
@@ -88,7 +89,7 @@ export function TrimRangeScrubber(props: TrimRangeScrubberProps) {
         onScrub={(time) => {
           player.currentTime = time;
         }}
-        onScrubEnd={() => track('options_changed', { option: 'trim' })}
+        onScrubEnd={() => track(EVENTS.OPTIONS_CHANGED, { option: 'trim' })}
         onChange={(s, e) => onChange(s, e, duration)}
         background={<ThumbStrip state={thumbs} />}
       />

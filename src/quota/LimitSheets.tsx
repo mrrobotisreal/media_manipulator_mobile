@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
 import type { MmError } from '@/api/errors';
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import { formatNumber, formatTimeLeft } from '@/lib/format';
 import { Button } from '@/ui/components/Button';
@@ -65,7 +66,7 @@ export function LimitSheet({ visible, error, onClose, toolSlug, footerExtra }: L
     if (fired.current || !variant) return;
     fired.current = true;
     const props = exceededProps(variant, limitForEvent, toolSlug);
-    if (props) track('quota_exceeded_shown', props);
+    if (props) track(EVENTS.QUOTA_EXCEEDED_SHOWN, props);
   });
 
   if (!variant) return null;

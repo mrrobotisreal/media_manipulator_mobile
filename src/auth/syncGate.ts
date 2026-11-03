@@ -3,6 +3,7 @@
  * `POST /account/sync` before any tool is usable. States: unknown -> signedOut | syncing -> ready | syncFailed.
  */
 import type { Dispatch, UnknownAction } from '@reduxjs/toolkit';
+import { EVENTS } from '@/analytics/events';
 import { identify, track } from '@/analytics/track';
 import { isMmError } from '@/api/errors';
 import type { SyncRequest, UsageResponse } from '@/api/schemas/account';
@@ -77,7 +78,7 @@ export function createSyncGate(deps: SyncGateDeps): SyncGate {
         const unauthorized = isMmError(error) && error.status === 401;
         const delay = delays[attempt];
         if (unauthorized || delay === undefined) {
-          track('auth_failed', {
+          track(EVENTS.AUTH_FAILED, {
             stage: 'sync',
             reason: isMmError(error) ? error.code : authErrorCode(error),
           });

@@ -1,5 +1,6 @@
 import type { ConversionJob } from '@/api/schemas/job';
 import { catalogKind } from './fileEvents';
+import { EVENTS } from './events';
 import { track, type EventProps } from './track';
 import type { JobRecord } from '@/jobs/types';
 
@@ -13,12 +14,12 @@ function ctx(r: JobRecord, withJobId = true): EventProps {
 }
 
 export function trackUploadStarted(r: JobRecord): void {
-  track('upload_started', { size_bytes: r.sizeBytes, transport: r.transport }, ctx(r, false));
+  track(EVENTS.UPLOAD_STARTED, { size_bytes: r.sizeBytes, transport: r.transport }, ctx(r, false));
 }
 
 export function trackUploadCompleted(r: JobRecord, durationMs: number): void {
   track(
-    'upload_completed',
+    EVENTS.UPLOAD_COMPLETED,
     { size_bytes: r.sizeBytes, duration_ms: durationMs, transport: r.transport },
     ctx(r, false),
   );
@@ -32,7 +33,7 @@ export function trackUploadFailed(
   status?: number,
 ): void {
   track(
-    'upload_failed',
+    EVENTS.UPLOAD_FAILED,
     {
       reason,
       status,
@@ -47,7 +48,7 @@ export function trackUploadFailed(
 export function trackJobStarted(r: JobRecord): void {
   const target = r.options.format;
   track(
-    'job_started',
+    EVENTS.JOB_STARTED,
     {
       job_id: r.jobId,
       options_hash: r.optionsHash,
@@ -65,7 +66,7 @@ const extOf = (name?: string) => {
 
 export function trackJobCompleted(r: JobRecord, job: ConversionJob, durationMs: number): void {
   track(
-    'job_completed',
+    EVENTS.JOB_COMPLETED,
     {
       job_id: r.jobId,
       duration_ms: durationMs,
@@ -83,7 +84,7 @@ export function trackJobCompleted(r: JobRecord, job: ConversionJob, durationMs: 
  */
 export function trackJobFailed(r: JobRecord, job: ConversionJob, durationMs: number): void {
   track(
-    'job_failed',
+    EVENTS.JOB_FAILED,
     {
       job_id: r.jobId,
       duration_ms: durationMs,
@@ -106,7 +107,7 @@ export function hoursSinceSignupBucket(ms: number): HoursSinceSignupBucket {
 
 export function trackActivation(r: JobRecord, signupAtMs: number | null, now: number): void {
   track(
-    'activation_first_job_completed',
+    EVENTS.ACTIVATION_FIRST_JOB_COMPLETED,
     {
       tool_slug: r.analyticsSlug,
       media_kind: catalogKind(r.mediaKind),

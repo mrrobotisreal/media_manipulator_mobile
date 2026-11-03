@@ -1,4 +1,5 @@
 import type { Dispatch, UnknownAction } from '@reduxjs/toolkit';
+import { EVENTS } from '@/analytics/events';
 import { reset as resetAnalytics, track } from '@/analytics/track';
 import { mmApi } from '@/api/mmApi';
 import { jobsReset } from '@/state/slices/jobs';
@@ -23,7 +24,7 @@ export async function performSignOut(
   dispatch: Dispatch<UnknownAction>,
   deps: SignOutDeps = realDeps,
 ): Promise<void> {
-  track('signout');
+  track(EVENTS.SIGNOUT);
   setAuthEntrySource('signed_out');
   resetAnalytics();
   try {

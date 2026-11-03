@@ -1,3 +1,4 @@
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import type { MetadataDocument, PrivacyClass } from './types';
 
@@ -34,7 +35,7 @@ export function trackMetadataInspected(doc: MetadataDocument, surface: MetadataS
   }
   if (seen.has(surface)) return;
   seen.add(surface);
-  track('metadata_inspected', {
+  track(EVENTS.METADATA_INSPECTED, {
     surface,
     kind: metadataKindOf(doc),
     tag_bucket: metadataTagBucket(doc.entries.length),
@@ -44,19 +45,19 @@ export function trackMetadataInspected(doc: MetadataDocument, surface: MetadataS
 }
 
 export const trackSectionToggled = (category: string, open: boolean): void =>
-  track('metadata_section_toggled', { category, open });
+  track(EVENTS.METADATA_SECTION_TOGGLED, { category, open });
 
 /** The catalog event carries no query text and no counts. */
-export const trackSearchUsed = (): void => track('metadata_search_used', {});
+export const trackSearchUsed = (): void => track(EVENTS.METADATA_SEARCH_USED, {});
 
 export const trackPrivacyFilter = (flag: PrivacyClass): void =>
-  track('metadata_privacy_filter_used', { flag });
+  track(EVENTS.METADATA_PRIVACY_FILTER_USED, { flag });
 
 export function trackDiffOpened(
   tool: string,
   counts: { removed: number; added: number; changed: number },
 ): void {
-  track('metadata_diff_opened', {
+  track(EVENTS.METADATA_DIFF_OPENED, {
     tool,
     removed_bucket: metadataTagBucket(counts.removed),
     added_bucket: metadataTagBucket(counts.added),

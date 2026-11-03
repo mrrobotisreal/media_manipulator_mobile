@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { detectFaces, realDetectDeps } from '@/api/endpoints/ai';
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import { Button } from '@/ui/components/Button';
 import { Chips } from '@/ui/components/Chips';
@@ -121,11 +122,11 @@ export function BlurFacesForm({ value, onChange, ctx }: ToolFormProps<BlurFacesS
     setBusy(false);
     if (!res.ok) {
       setFailed(true);
-      track('feature_used', { feature: 'face_detect', action: 'failed' });
+      track(EVENTS.FEATURE_USED, { feature: 'face_detect', action: 'failed' });
       return;
     }
     const next = toDetectionState(res.data, uri);
-    track('feature_used', {
+    track(EVENTS.FEATURE_USED, {
       feature: 'face_detect',
       action: 'detected',
       value: faceCountBucket(next.faces.length),

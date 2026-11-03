@@ -1,0 +1,347 @@
+{
+  "activation_first_job_completed": {
+    "priority": 0,
+    "props": [
+      "tool_slug",
+      "media_kind",
+      "hours_since_signup",
+      "guest"
+    ]
+  },
+  "app_backgrounded": {
+    "priority": 3,
+    "props": [
+      "foreground_ms_bucket"
+    ]
+  },
+  "app_opened": {
+    "priority": 1,
+    "props": [
+      "start",
+      "ota_update_id"
+    ]
+  },
+  "auth_failed": {
+    "priority": 1,
+    "props": [
+      "method",
+      "stage",
+      "reason"
+    ]
+  },
+  "auth_modal_opened": {
+    "priority": 2,
+    "props": [
+      "source",
+      "mode"
+    ]
+  },
+  "client_error": {
+    "priority": 1,
+    "props": [
+      "message",
+      "stack_hash",
+      "source",
+      "stage",
+      "error_type"
+    ]
+  },
+  "data_deleted": {
+    "priority": 1,
+    "props": [
+      "scope",
+      "kind"
+    ]
+  },
+  "data_export_requested": {
+    "priority": 2,
+    "props": null
+  },
+  "download_completed": {
+    "priority": 0,
+    "props": [
+      "job_id",
+      "output_format",
+      "size_bytes",
+      "duration_ms"
+    ]
+  },
+  "download_failed": {
+    "priority": 0,
+    "props": [
+      "job_id",
+      "reason",
+      "status"
+    ]
+  },
+  "download_started": {
+    "priority": 0,
+    "props": [
+      "job_id",
+      "output_format",
+      "size_bytes"
+    ]
+  },
+  "feature_used": {
+    "priority": 2,
+    "props": [
+      "feature",
+      "action",
+      "value"
+    ]
+  },
+  "file_rejected": {
+    "priority": 1,
+    "props": [
+      "reason",
+      "file_extension",
+      "size_bytes",
+      "limit_bytes"
+    ]
+  },
+  "file_selected": {
+    "priority": 1,
+    "props": [
+      "file_extension",
+      "size_bytes",
+      "file_size_mb",
+      "media_kind",
+      "source"
+    ]
+  },
+  "history_item_reopened": {
+    "priority": 2,
+    "props": [
+      "kind",
+      "age_bucket",
+      "source"
+    ]
+  },
+  "job_completed": {
+    "priority": 0,
+    "props": [
+      "job_id",
+      "duration_ms",
+      "output_bytes",
+      "output_format",
+      "queue_wait_ms"
+    ]
+  },
+  "job_failed": {
+    "priority": 0,
+    "props": [
+      "job_id",
+      "duration_ms",
+      "reason",
+      "stage"
+    ]
+  },
+  "job_started": {
+    "priority": 0,
+    "props": [
+      "job_id",
+      "options_hash",
+      "target_format",
+      "source_format"
+    ]
+  },
+  "media_saved": {
+    "priority": 2,
+    "props": [
+      "destination",
+      "media_kind"
+    ]
+  },
+  "metadata_diff_opened": {
+    "priority": 2,
+    "props": [
+      "tool",
+      "removed_bucket",
+      "added_bucket",
+      "changed_bucket"
+    ]
+  },
+  "metadata_inspected": {
+    "priority": 2,
+    "props": [
+      "surface",
+      "kind",
+      "tag_bucket",
+      "has_gps",
+      "has_c2pa"
+    ]
+  },
+  "metadata_privacy_filter_used": {
+    "priority": 3,
+    "props": [
+      "flag"
+    ]
+  },
+  "metadata_search_used": {
+    "priority": 3,
+    "props": []
+  },
+  "metadata_section_toggled": {
+    "priority": 3,
+    "props": [
+      "category",
+      "open"
+    ]
+  },
+  "options_changed": {
+    "priority": 3,
+    "props": [
+      "option",
+      "value"
+    ]
+  },
+  "password_reset_requested": {
+    "priority": 2,
+    "props": [
+      "surface"
+    ]
+  },
+  "quota_exceeded_shown": {
+    "priority": 0,
+    "props": [
+      "limit",
+      "scope",
+      "tool_slug"
+    ]
+  },
+  "quota_warning_shown": {
+    "priority": 1,
+    "props": [
+      "limit",
+      "remaining",
+      "scope"
+    ]
+  },
+  "result_archive_entry_opened": {
+    "priority": 2,
+    "props": [
+      "job_id",
+      "entry_kind"
+    ]
+  },
+  "result_compare_used": {
+    "priority": 2,
+    "props": [
+      "job_id",
+      "kind",
+      "mode"
+    ]
+  },
+  "result_download_clicked": {
+    "priority": 1,
+    "props": [
+      "job_id",
+      "kind",
+      "surface",
+      "viewed_first"
+    ]
+  },
+  "result_previewed": {
+    "priority": 2,
+    "props": [
+      "job_id",
+      "preview_kind"
+    ]
+  },
+  "result_viewed": {
+    "priority": 2,
+    "props": [
+      "job_id",
+      "kind",
+      "surface",
+      "has_original"
+    ]
+  },
+  "retention_setting_changed": {
+    "priority": 1,
+    "props": [
+      "from_bucket",
+      "to_bucket"
+    ]
+  },
+  "screen_viewed": {
+    "priority": 2,
+    "props": [
+      "screen"
+    ]
+  },
+  "share_intent_received": {
+    "priority": 1,
+    "props": [
+      "media_kind",
+      "count"
+    ]
+  },
+  "share_link_copied": {
+    "priority": 2,
+    "props": [
+      "job_kind",
+      "source"
+    ]
+  },
+  "signin_completed": {
+    "priority": 1,
+    "props": [
+      "method"
+    ]
+  },
+  "signout": {
+    "priority": 2,
+    "props": null
+  },
+  "signup_completed": {
+    "priority": 0,
+    "props": [
+      "method"
+    ]
+  },
+  "signup_started": {
+    "priority": 1,
+    "props": [
+      "method"
+    ]
+  },
+  "subscription_status_viewed": {
+    "priority": 0,
+    "props": [
+      "status",
+      "interval"
+    ]
+  },
+  "tool_viewed": {
+    "priority": 1,
+    "props": [
+      "entry_point"
+    ]
+  },
+  "upload_completed": {
+    "priority": 1,
+    "props": [
+      "size_bytes",
+      "duration_ms",
+      "transport"
+    ]
+  },
+  "upload_failed": {
+    "priority": 0,
+    "props": [
+      "reason",
+      "status",
+      "size_bytes",
+      "duration_ms",
+      "transport"
+    ]
+  },
+  "upload_started": {
+    "priority": 1,
+    "props": [
+      "size_bytes",
+      "transport"
+    ]
+  }
+}

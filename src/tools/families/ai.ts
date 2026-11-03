@@ -13,6 +13,7 @@ import {
 } from '../forms/ai/MediaAiForms';
 import { ensureFreshDetection } from '../forms/ai/faceSession';
 import { detectFaces, realDetectDeps } from '@/api/endpoints/ai';
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import * as o from '../options/ai';
 import type { AnyToolDefinition } from '../types';
@@ -254,7 +255,7 @@ export const aiTools: AnyToolDefinition[] = [
     blockReason: o.removeObjectBlockReason,
     // Catalog: feature_used {feature:'remove_object', action:'rects', value: count} at Run.
     prepare: async (form: o.RemoveObjectForm) => {
-      track('feature_used', {
+      track(EVENTS.FEATURE_USED, {
         feature: 'remove_object',
         action: 'rects',
         value: form.rects.length,
