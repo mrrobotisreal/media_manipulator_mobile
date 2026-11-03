@@ -114,11 +114,12 @@ export function buildConfig(
     // Push (MA24, decision 3): expo-notifications only creates the Android channel and asks the OS
     // permission (src/push); RN Firebase messaging owns the FCM token and message events. Unconditional:
     // it adds no Firebase dependency, and sets the iOS aps-environment entitlement + remote-notification
-    // background mode (APNs key: MA35). `defaultChannel` is the channel MA23 targets on every message.
+    // background mode (APNs key: MA35). The FCM default channel (`job_updates`, the one MA23 targets) is set
+    // once, in firebase.json `messaging_android_notification_channel_id`: setting `defaultChannel` here too
+    // makes the Android manifest merge fail (both libraries declare the same meta-data).
     [
       'expo-notifications',
       {
-        defaultChannel: PUSH_CHANNEL_ID,
         mode: variant === 'production' ? 'production' : 'development',
         enableBackgroundRemoteNotifications: true,
       },

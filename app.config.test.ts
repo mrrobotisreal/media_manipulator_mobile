@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { ANDROID_PACKAGE, IOS_BUNDLE_ID, buildConfig } from './app.config';
+import { PUSH_CHANNEL_ID, ANDROID_PACKAGE, IOS_BUNDLE_ID, buildConfig } from './app.config';
 
 const none = () => false;
 const fixture = path.join(__dirname, '__fixtures__', 'firebase-android.fixture.json');
@@ -73,7 +73,11 @@ describe('app.config', () => {
     expect(c.android?.blockedPermissions).not.toContain('android.permission.POST_NOTIFICATIONS');
     const n = (c.plugins ?? []).find((p) => Array.isArray(p) && p[0] === 'expo-notifications') as
       [string, Record<string, unknown>] | undefined;
-    expect(n?.[1].defaultChannel).toBe('job_updates');
+    // One declaration of the FCM default channel: firebase.json (RNFB), never expo-notifications' defaultChannel,
+    // or the manifest merge fails on duplicate meta-data.
+    expect(n?.[1].defaultChannel).toBeUndefined();
+    const fb = require('./firebase.json') as { 'react-native': Record<string, unknown> };
+    expect(fb['react-native'].messaging_android_notification_channel_id).toBe(PUSH_CHANNEL_ID);
     expect(n?.[1].enableBackgroundRemoteNotifications).toBe(true);
     expect(buildConfig({ APP_VARIANT: 'production' }, none).plugins).toContainEqual([
       'expo-notifications',
