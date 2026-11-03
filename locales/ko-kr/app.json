@@ -1091,5 +1091,22 @@
       "copied": "진단 정보를 복사했어요.",
       "contact": "고객 지원 문의"
     }
+  },
+  "push": {
+    "channelName": "작업 업데이트",
+    "prePrompt": {
+      "title": "긴 작업이 끝나면 알려 드릴까요?",
+      "body": "이 작업이 끝나면 알림을 한 번 보내 드려요. 앱을 나가도 괜찮아요. {{path}}에서 끌 수 있어요.",
+      "accept": "알림 받기",
+      "dismiss": "나중에"
+    },
+    "settings": {
+      "denied": "Media Manipulator의 알림이 꺼져 있어요",
+      "openSettings": "설정 열기"
+    },
+    "toast": {
+      "open": "열기",
+      "fallback": "작업이 완료되었어요"
+    }
   }
 }

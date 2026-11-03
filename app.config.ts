@@ -26,6 +26,9 @@ export const BLOCKED_ANDROID_PERMISSIONS = [
 
 const BACKGROUND = '#0A0B0D';
 
+/** Must equal `internal/push/fcm.go` `AndroidChannelID` and `src/push/channel.ts`. */
+export const PUSH_CHANNEL_ID = 'job_updates';
+
 const VARIANTS: Record<Variant, { name: string; scheme: string; suffix: string }> = {
   production: { name: 'MediaManip', scheme: 'mediamanipulator', suffix: '' },
   preview: { name: 'MediaManip Preview', scheme: 'mediamanipulator-preview', suffix: '.preview' },
@@ -108,6 +111,18 @@ export function buildConfig(
         androidMultiIntentFilters: ['image/*', 'video/*', '*/*'],
       },
     ],
+    // Push (MA24, decision 3): expo-notifications only creates the Android channel and asks the OS
+    // permission (src/push); RN Firebase messaging owns the FCM token and message events. Unconditional:
+    // it adds no Firebase dependency, and sets the iOS aps-environment entitlement + remote-notification
+    // background mode (APNs key: MA35). `defaultChannel` is the channel MA23 targets on every message.
+    [
+      'expo-notifications',
+      {
+        defaultChannel: PUSH_CHANNEL_ID,
+        mode: variant === 'production' ? 'production' : 'development',
+        enableBackgroundRemoteNotifications: true,
+      },
+    ],
   ];
   // Auth plugins live inside the same guard: without a Firebase config file the native modules are not linked.
   // The google-signin plugin reads REVERSED_CLIENT_ID from the plist itself (no iosUrlScheme option needed).
@@ -117,6 +132,8 @@ export function buildConfig(
       '@react-native-firebase/auth',
       // Crash reporting (MA07, ADR MA-0004); runtime collection flag in src/analytics/crashlytics.ts.
       '@react-native-firebase/crashlytics',
+      // Push (MA24): FCM token + message events. Linked only with a Firebase config, like auth.
+      '@react-native-firebase/messaging',
       '@react-native-google-signin/google-signin',
     );
   }
@@ -133,6 +150,8 @@ export function buildConfig(
     runtimeVersion: { policy: 'fingerprint' },
     android: {
       blockedPermissions: BLOCKED_ANDROID_PERMISSIONS,
+      // Android 13+ runtime notification permission (MA24; expo-notifications' manifest adds it too).
+      permissions: ['android.permission.POST_NOTIFICATIONS'],
       package: `${ANDROID_PACKAGE}${v.suffix}`,
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',

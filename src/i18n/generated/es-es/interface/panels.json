@@ -1499,7 +1499,11 @@
       "splitTone": "Tonos divididos",
       "lut": "LUT",
       "effects": "Efectos",
-      "layers": "Capas"
+      "layers": "Capas",
+      "geometry": "Geometría",
+      "masks": "Máscaras",
+      "heal": "Reparar",
+      "redEye": "Ojos rojos"
     },
     "slider": {
       "reset": "Restablecer",
@@ -1680,7 +1684,7 @@
       "rename": "Renombrar",
       "moveUp": "Subir",
       "moveDown": "Bajar",
-      "mask": "Las máscaras llegarán en una próxima actualización",
+      "mask": "Añadir una máscara",
       "selectLayer": "Seleccionar la capa {{name}}",
       "type": {
         "exposure": "Exposición",
@@ -1710,7 +1714,8 @@
         "dehaze": "Quitar neblina",
         "vignette": "Viñeteado",
         "grain": "Grano"
-      }
+      },
+      "maskEdit": "Editar máscara"
     },
     "export": {
       "title": "Exportar",
@@ -1735,6 +1740,114 @@
       "cancel": "Cerrar",
       "anotherTime": "Exportar de nuevo"
     },
-    "openIn": "Abrir en {{brand}}"
+    "openIn": "Abrir en {{brand}}",
+    "geometry": {
+      "crop": "Recortar",
+      "aspect": "Relación de aspecto",
+      "free": "Libre",
+      "original": "Original",
+      "cropTool": "Recortar en el lienzo",
+      "resetCrop": "Restablecer recorte",
+      "straighten": "Enderezar",
+      "angle": "Ángulo (grados)",
+      "drawLine": "Dibujar una línea",
+      "drawLineHint": "Dibuja una línea sobre algo que deba quedar nivelado o vertical; el ángulo se ajusta solo.",
+      "orientation": "Girar y voltear",
+      "rotateLeft": "Girar 90 grados a la izquierda",
+      "rotateRight": "Girar 90 grados a la derecha",
+      "rotate180": "Girar 180 grados",
+      "flipH": "Voltear horizontalmente",
+      "flipV": "Voltear verticalmente",
+      "perspective": "Perspectiva",
+      "perspectiveTool": "Arrastra las esquinas",
+      "resetPerspective": "Restablecer perspectiva",
+      "autoCrop": "Recorte automático al mayor rectángulo",
+      "fill": "Rellenar esquinas vacías",
+      "fillTransparent": "Transparente",
+      "fillEdge": "Estirar el borde",
+      "fillColor": "Color"
+    },
+    "masks": {
+      "title": "Máscara",
+      "add": "Añadir un componente de máscara",
+      "empty": "Esta máscara está vacía. Añade un componente para limitar dónde se aplica el ajuste.",
+      "selectLayer": "Selecciona una capa de ajuste para asignarle una máscara.",
+      "layer": "Capa",
+      "kind": {
+        "gradient": "Degradado lineal",
+        "radial": "Radial",
+        "brush": "Pincel",
+        "luminosity": "Rango de luminosidad",
+        "colorRange": "Rango de color",
+        "subject": "Seleccionar sujeto"
+      },
+      "mode": "Cómo se combina este componente",
+      "mode_add": "Añadir",
+      "mode_subtract": "Restar",
+      "mode_intersect": "Intersecar",
+      "removeComponent": "Quitar este componente",
+      "draw": "Dibujar sobre la foto",
+      "feather": "Desenfoque de bordes",
+      "rotate": "Rotación",
+      "maskFeather": "Desenfoque de bordes de la máscara",
+      "maskOpacity": "Intensidad de la máscara",
+      "invert": "Invertir",
+      "share": "Compartir esta máscara",
+      "remove": "Quitar máscara",
+      "view": "Vista de máscara",
+      "view_off": "Desactivada",
+      "view_overlay": "Superposición",
+      "view_alpha": "Solo máscara",
+      "localTitle": "Ajuste local",
+      "localType": "Ajuste",
+      "localBasic": "Exposición, tono y saturación",
+      "addLocal": "Añadir ajuste local",
+      "localHint": "Crea el ajuste con una máscara vacía y abre el pincel. El combo comparte una máscara entre sus tres capas.",
+      "luminosity": {
+        "lo": "Desde el brillo",
+        "hi": "Hasta el brillo"
+      },
+      "colorRange": {
+        "pick": "Elegir un color",
+        "shiftHint": "Mayús + clic añade otro color (hasta 8).",
+        "targets": "Colores seleccionados",
+        "removeTarget": "Quitar este color",
+        "fuzziness": "Tolerancia"
+      },
+      "subject": {
+        "working": "Buscando el sujeto. Puede tardar unos segundos.",
+        "failed": "No se pudo seleccionar el sujeto. Inténtalo de nuevo.",
+        "invertBackground": "Fondo en su lugar"
+      },
+      "brush": {
+        "title": "Pincel",
+        "paint": "Pintar",
+        "erase": "Borrar",
+        "size": "Tamaño",
+        "hardness": "Dureza",
+        "flow": "Flujo",
+        "keys": "B pincel, E borrar, [ y ] tamaño, M vista de máscara.",
+        "warn": "Las máscaras de pincel de esta foto son cada vez más grandes. Simplifica o quita algunas pronto.",
+        "full": "No queda espacio para más trazos de pincel en este proyecto."
+      }
+    },
+    "heal": {
+      "title": "Reparar",
+      "hint": "Pinta sobre las manchas o imperfecciones y pulsa Reparar. La reparación se ejecuta en nuestra GPU y puede tardar un minuto.",
+      "brush": "Pincel corrector",
+      "press": "Reparar",
+      "clear": "Borrar manchas",
+      "strokes": "Manchas marcadas: {{count}}",
+      "done": "Reparaciones aplicadas: {{count}}",
+      "running": "Reparando...",
+      "failed": "La reparación no terminó. No se cambió nada.",
+      "unavailable": "La reparación no está disponible en este momento."
+    },
+    "redEye": {
+      "title": "Ojos rojos",
+      "hint": "Haz clic en un ojo de la foto. Se coloca una pequeña máscara circular y se elimina el rojo dentro de ella.",
+      "radius": "Radio (% del lado largo)",
+      "clickEye": "Haz clic en un ojo"
+    }
   }
 }

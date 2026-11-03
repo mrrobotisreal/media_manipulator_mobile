@@ -201,6 +201,27 @@
       "surface"
     ]
   },
+  "push_opened": {
+    "priority": 1,
+    "props": [
+      "tool",
+      "status",
+      "app_state"
+    ]
+  },
+  "push_permission_prompted": {
+    "priority": 2,
+    "props": [
+      "surface"
+    ]
+  },
+  "push_permission_result": {
+    "priority": 1,
+    "props": [
+      "granted",
+      "surface"
+    ]
+  },
   "quota_exceeded_shown": {
     "priority": 0,
     "props": [

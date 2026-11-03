@@ -1487,7 +1487,11 @@
       "splitTone": "Chia tông màu",
       "lut": "LUT",
       "effects": "Hiệu ứng",
-      "layers": "Lớp"
+      "layers": "Lớp",
+      "geometry": "Hình học",
+      "masks": "Mặt nạ",
+      "heal": "Chữa lành",
+      "redEye": "Mắt đỏ"
     },
     "slider": {
       "reset": "Đặt lại",
@@ -1668,7 +1672,7 @@
       "rename": "Đổi tên",
       "moveUp": "Di chuyển lên",
       "moveDown": "Di chuyển xuống",
-      "mask": "Mặt nạ sẽ có trong một bản cập nhật sau",
+      "mask": "Thêm mặt nạ",
       "selectLayer": "Chọn lớp {{name}}",
       "type": {
         "exposure": "Phơi sáng",
@@ -1698,7 +1702,8 @@
         "dehaze": "Khử sương mù",
         "vignette": "Tối góc",
         "grain": "Hạt nhiễu"
-      }
+      },
+      "maskEdit": "Sửa mặt nạ"
     },
     "export": {
       "title": "Xuất",
@@ -1723,6 +1728,114 @@
       "cancel": "Đóng",
       "anotherTime": "Xuất lại"
     },
-    "openIn": "Mở trong {{brand}}"
+    "openIn": "Mở trong {{brand}}",
+    "geometry": {
+      "crop": "Cắt",
+      "aspect": "Tỷ lệ khung hình",
+      "free": "Tự do",
+      "original": "Gốc",
+      "cropTool": "Cắt trên canvas",
+      "resetCrop": "Đặt lại vùng cắt",
+      "straighten": "Làm thẳng",
+      "angle": "Góc (độ)",
+      "drawLine": "Vẽ một đường",
+      "drawLineHint": "Vẽ một đường dọc theo thứ cần nằm ngang hoặc thẳng đứng; góc sẽ được đặt tự động.",
+      "orientation": "Xoay và lật",
+      "rotateLeft": "Xoay trái 90 độ",
+      "rotateRight": "Xoay phải 90 độ",
+      "rotate180": "Xoay 180 độ",
+      "flipH": "Lật ngang",
+      "flipV": "Lật dọc",
+      "perspective": "Phối cảnh",
+      "perspectiveTool": "Kéo các góc",
+      "resetPerspective": "Đặt lại phối cảnh",
+      "autoCrop": "Tự động cắt theo hình chữ nhật lớn nhất",
+      "fill": "Lấp đầy các góc trống",
+      "fillTransparent": "Trong suốt",
+      "fillEdge": "Kéo giãn cạnh",
+      "fillColor": "Màu"
+    },
+    "masks": {
+      "title": "Mặt nạ",
+      "add": "Thêm thành phần mặt nạ",
+      "empty": "Mặt nạ này đang trống. Hãy thêm một thành phần để giới hạn vùng áp dụng chỉnh sửa.",
+      "selectLayer": "Chọn một lớp chỉnh sửa để thêm mặt nạ cho lớp đó.",
+      "layer": "Lớp",
+      "kind": {
+        "gradient": "Dải chuyển sắc tuyến tính",
+        "radial": "Xuyên tâm",
+        "brush": "Cọ",
+        "luminosity": "Dải độ sáng",
+        "colorRange": "Dải màu",
+        "subject": "Chọn chủ thể"
+      },
+      "mode": "Cách thành phần này kết hợp",
+      "mode_add": "Thêm",
+      "mode_subtract": "Trừ",
+      "mode_intersect": "Giao",
+      "removeComponent": "Xóa thành phần này",
+      "draw": "Vẽ trên ảnh",
+      "feather": "Làm mờ viền",
+      "rotate": "Xoay",
+      "maskFeather": "Làm mờ viền mặt nạ",
+      "maskOpacity": "Cường độ mặt nạ",
+      "invert": "Đảo ngược",
+      "share": "Chia sẻ mặt nạ này",
+      "remove": "Xóa mặt nạ",
+      "view": "Chế độ xem mặt nạ",
+      "view_off": "Tắt",
+      "view_overlay": "Lớp phủ",
+      "view_alpha": "Chỉ mặt nạ",
+      "localTitle": "Chỉnh sửa cục bộ",
+      "localType": "Chỉnh sửa",
+      "localBasic": "Phơi sáng, tông màu và độ bão hòa",
+      "addLocal": "Thêm chỉnh sửa cục bộ",
+      "localHint": "Tạo chỉnh sửa với mặt nạ trống và mở cọ. Bộ kết hợp dùng chung một mặt nạ cho cả ba lớp.",
+      "luminosity": {
+        "lo": "Từ độ sáng",
+        "hi": "Đến độ sáng"
+      },
+      "colorRange": {
+        "pick": "Chọn một màu",
+        "shiftHint": "Shift+nhấp để thêm màu khác (tối đa 8).",
+        "targets": "Các màu đã chọn",
+        "removeTarget": "Xóa màu này",
+        "fuzziness": "Độ nhòe"
+      },
+      "subject": {
+        "working": "Đang tìm chủ thể. Việc này có thể mất vài giây.",
+        "failed": "Không thể chọn chủ thể. Hãy thử lại.",
+        "invertBackground": "Chọn nền thay thế"
+      },
+      "brush": {
+        "title": "Cọ",
+        "paint": "Vẽ",
+        "erase": "Xóa",
+        "size": "Kích thước",
+        "hardness": "Độ cứng",
+        "flow": "Lưu lượng",
+        "keys": "B cọ, E xóa, [ và ] kích thước, M chế độ xem mặt nạ.",
+        "warn": "Mặt nạ cọ của ảnh này đang lớn dần. Hãy sớm đơn giản hóa hoặc xóa bớt.",
+        "full": "Dự án này không còn chỗ cho thêm nét cọ."
+      }
+    },
+    "heal": {
+      "title": "Chữa lành",
+      "hint": "Tô lên các đốm hoặc khuyết điểm, rồi nhấn Chữa lành. Quá trình chạy trên GPU của chúng tôi và có thể mất một phút.",
+      "brush": "Cọ đốm",
+      "press": "Chữa lành",
+      "clear": "Xóa các đốm",
+      "strokes": "Số đốm đã đánh dấu: {{count}}",
+      "done": "Số lần chữa lành đã áp dụng: {{count}}",
+      "running": "Đang chữa lành...",
+      "failed": "Chữa lành chưa hoàn tất. Không có gì bị thay đổi.",
+      "unavailable": "Hiện chưa thể chữa lành."
+    },
+    "redEye": {
+      "title": "Mắt đỏ",
+      "hint": "Nhấp vào một mắt trong ảnh. Một mặt nạ tròn nhỏ sẽ được đặt và màu đỏ bên trong sẽ được loại bỏ.",
+      "radius": "Bán kính (% cạnh dài)",
+      "clickEye": "Nhấp vào một mắt"
+    }
   }
 }

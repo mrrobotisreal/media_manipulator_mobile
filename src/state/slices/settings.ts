@@ -7,6 +7,8 @@ export interface SettingsState {
   lastToolIds: string[];
   /** Android Save to Files: the SAF folder the user picked last (MA14); reused until a write fails. */
   lastSaveDirUri: string | null;
+  /** MA24: when the user said "Not now" to (or the OS denied) the push pre-prompt; no auto-ask for 30 days. */
+  pushPrePromptDismissedAt: number | null;
 }
 
 export const MAX_RECENT_TOOLS = 6;
@@ -22,6 +24,7 @@ export const initialSettingsState = (): SettingsState => ({
   haptics: true,
   lastToolIds: [],
   lastSaveDirUri: null,
+  pushPrePromptDismissedAt: null,
 });
 
 const settingsSlice = createSlice({
@@ -44,12 +47,22 @@ const settingsSlice = createSlice({
     saveDirSet(state, action: PayloadAction<string | null>) {
       state.lastSaveDirUri = action.payload;
     },
+    pushPrePromptDismissed(state, action: PayloadAction<number>) {
+      state.pushPrePromptDismissedAt = action.payload;
+    },
     localeSet(state, action: PayloadAction<string | null>) {
       state.locale = action.payload;
     },
   },
 });
 
-export const { hapticsSet, analyticsOptOutSet, localeSet, saveDirSet, settingsReset, toolOpened } =
-  settingsSlice.actions;
+export const {
+  hapticsSet,
+  analyticsOptOutSet,
+  localeSet,
+  pushPrePromptDismissed,
+  saveDirSet,
+  settingsReset,
+  toolOpened,
+} = settingsSlice.actions;
 export default settingsSlice.reducer;

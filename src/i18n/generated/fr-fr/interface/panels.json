@@ -1499,7 +1499,11 @@
       "splitTone": "Virage partiel",
       "lut": "LUT",
       "effects": "Effets",
-      "layers": "Calques"
+      "layers": "Calques",
+      "geometry": "Géométrie",
+      "masks": "Masques",
+      "heal": "Correction",
+      "redEye": "Yeux rouges"
     },
     "slider": {
       "reset": "Réinitialiser",
@@ -1680,7 +1684,7 @@
       "rename": "Renommer",
       "moveUp": "Monter",
       "moveDown": "Descendre",
-      "mask": "Les masques arriveront dans une prochaine mise à jour",
+      "mask": "Ajouter un masque",
       "selectLayer": "Sélectionner le calque {{name}}",
       "type": {
         "exposure": "Exposition",
@@ -1710,7 +1714,8 @@
         "dehaze": "Correction du voile",
         "vignette": "Vignettage",
         "grain": "Grain"
-      }
+      },
+      "maskEdit": "Modifier le masque"
     },
     "export": {
       "title": "Exporter",
@@ -1735,6 +1740,114 @@
       "cancel": "Fermer",
       "anotherTime": "Exporter à nouveau"
     },
-    "openIn": "Ouvrir dans {{brand}}"
+    "openIn": "Ouvrir dans {{brand}}",
+    "geometry": {
+      "crop": "Recadrer",
+      "aspect": "Rapport d'aspect",
+      "free": "Libre",
+      "original": "Original",
+      "cropTool": "Recadrer sur le canevas",
+      "resetCrop": "Réinitialiser le recadrage",
+      "straighten": "Redresser",
+      "angle": "Angle (degrés)",
+      "drawLine": "Tracer une ligne",
+      "drawLineHint": "Tracez une ligne le long d'un élément qui doit être horizontal ou vertical ; l'angle est réglé automatiquement.",
+      "orientation": "Pivoter et retourner",
+      "rotateLeft": "Pivoter de 90 degrés vers la gauche",
+      "rotateRight": "Pivoter de 90 degrés vers la droite",
+      "rotate180": "Pivoter de 180 degrés",
+      "flipH": "Retourner horizontalement",
+      "flipV": "Retourner verticalement",
+      "perspective": "Perspective",
+      "perspectiveTool": "Faites glisser les coins",
+      "resetPerspective": "Réinitialiser la perspective",
+      "autoCrop": "Recadrage auto sur le plus grand rectangle",
+      "fill": "Remplir les coins vides",
+      "fillTransparent": "Transparent",
+      "fillEdge": "Étirer le bord",
+      "fillColor": "Couleur"
+    },
+    "masks": {
+      "title": "Masque",
+      "add": "Ajouter un composant de masque",
+      "empty": "Ce masque est vide. Ajoutez un composant pour limiter la zone d'application du réglage.",
+      "selectLayer": "Sélectionnez un calque de réglage pour lui appliquer un masque.",
+      "layer": "Calque",
+      "kind": {
+        "gradient": "Dégradé linéaire",
+        "radial": "Radial",
+        "brush": "Pinceau",
+        "luminosity": "Plage de luminosité",
+        "colorRange": "Plage de couleurs",
+        "subject": "Sélectionner le sujet"
+      },
+      "mode": "Mode de combinaison de ce composant",
+      "mode_add": "Ajouter",
+      "mode_subtract": "Soustraire",
+      "mode_intersect": "Intersection",
+      "removeComponent": "Supprimer ce composant",
+      "draw": "Dessiner sur la photo",
+      "feather": "Contour progressif",
+      "rotate": "Rotation",
+      "maskFeather": "Contour progressif du masque",
+      "maskOpacity": "Intensité du masque",
+      "invert": "Inverser",
+      "share": "Partager ce masque",
+      "remove": "Supprimer le masque",
+      "view": "Affichage du masque",
+      "view_off": "Désactivé",
+      "view_overlay": "Incrustation",
+      "view_alpha": "Masque seul",
+      "localTitle": "Réglage local",
+      "localType": "Réglage",
+      "localBasic": "Exposition, tons et saturation",
+      "addLocal": "Ajouter un réglage local",
+      "localHint": "Crée le réglage avec un masque vide et ouvre le pinceau. Le combo partage un même masque entre ses trois calques.",
+      "luminosity": {
+        "lo": "De la luminosité",
+        "hi": "À la luminosité"
+      },
+      "colorRange": {
+        "pick": "Choisir une couleur",
+        "shiftHint": "Maj + clic ajoute une autre couleur (jusqu'à 8).",
+        "targets": "Couleurs sélectionnées",
+        "removeTarget": "Supprimer cette couleur",
+        "fuzziness": "Tolérance"
+      },
+      "subject": {
+        "working": "Recherche du sujet. Cela peut prendre quelques secondes.",
+        "failed": "Impossible de sélectionner le sujet. Réessayez.",
+        "invertBackground": "Arrière-plan à la place"
+      },
+      "brush": {
+        "title": "Pinceau",
+        "paint": "Peindre",
+        "erase": "Effacer",
+        "size": "Taille",
+        "hardness": "Dureté",
+        "flow": "Flux",
+        "keys": "B pinceau, E gomme, [ et ] taille, M affichage du masque.",
+        "warn": "Les masques au pinceau de cette photo deviennent volumineux. Simplifiez-en ou supprimez-en bientôt.",
+        "full": "Plus de place pour d'autres coups de pinceau dans ce projet."
+      }
+    },
+    "heal": {
+      "title": "Correction",
+      "hint": "Peignez sur les taches ou imperfections, puis appuyez sur Corriger. La correction s'exécute sur notre GPU et peut prendre une minute.",
+      "brush": "Pinceau de correction",
+      "press": "Corriger",
+      "clear": "Effacer les taches",
+      "strokes": "Taches marquées : {{count}}",
+      "done": "Corrections appliquées : {{count}}",
+      "running": "Correction en cours...",
+      "failed": "La correction ne s'est pas terminée. Rien n'a été modifié.",
+      "unavailable": "La correction n'est pas disponible pour le moment."
+    },
+    "redEye": {
+      "title": "Yeux rouges",
+      "hint": "Cliquez sur un œil dans la photo. Un petit masque circulaire est placé et le rouge est supprimé à l'intérieur.",
+      "radius": "Rayon (% du grand côté)",
+      "clickEye": "Cliquer sur un œil"
+    }
   }
 }

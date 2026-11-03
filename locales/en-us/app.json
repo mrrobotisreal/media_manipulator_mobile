@@ -1098,5 +1098,22 @@
       "copied": "Diagnostics copied.",
       "contact": "Contact support"
     }
+  },
+  "push": {
+    "channelName": "Job updates",
+    "prePrompt": {
+      "title": "Get notified when long jobs finish?",
+      "body": "We'll send one notification when this job is done, so you can leave the app. You can turn this off in {{path}}.",
+      "accept": "Notify me",
+      "dismiss": "Not now"
+    },
+    "settings": {
+      "denied": "Notifications are off for Media Manipulator",
+      "openSettings": "Open settings"
+    },
+    "toast": {
+      "open": "Open",
+      "fallback": "Your job has finished"
+    }
   }
 }

@@ -34,6 +34,7 @@ describe('app.config', () => {
     expect(c.plugins).not.toContain('@react-native-firebase/app');
     expect(c.plugins).not.toContain('@react-native-firebase/auth');
     expect(c.plugins).not.toContain('@react-native-firebase/crashlytics');
+    expect(c.plugins).not.toContain('@react-native-firebase/messaging');
     expect(c.plugins).not.toContain('@react-native-google-signin/google-signin');
     expect(c.android?.googleServicesFile).toBeUndefined();
     expect(console.warn).toHaveBeenCalledTimes(1);
@@ -44,6 +45,7 @@ describe('app.config', () => {
     expect(c.plugins).toContain('@react-native-firebase/app');
     expect(c.plugins).toContain('@react-native-firebase/auth');
     expect(c.plugins).toContain('@react-native-firebase/crashlytics');
+    expect(c.plugins).toContain('@react-native-firebase/messaging');
     expect(c.plugins).toContain('@react-native-google-signin/google-signin');
     expect(c.ios?.usesAppleSignIn).toBe(true);
     expect(c.android?.googleServicesFile).toBe(fixture);
@@ -63,5 +65,19 @@ describe('app.config', () => {
         'android.permission.READ_EXTERNAL_STORAGE',
       ]),
     );
+  });
+
+  it('declares push: POST_NOTIFICATIONS and the job_updates default channel (MA24)', () => {
+    const c = buildConfig({}, none);
+    expect(c.android?.permissions).toContain('android.permission.POST_NOTIFICATIONS');
+    expect(c.android?.blockedPermissions).not.toContain('android.permission.POST_NOTIFICATIONS');
+    const n = (c.plugins ?? []).find((p) => Array.isArray(p) && p[0] === 'expo-notifications') as
+      [string, Record<string, unknown>] | undefined;
+    expect(n?.[1].defaultChannel).toBe('job_updates');
+    expect(n?.[1].enableBackgroundRemoteNotifications).toBe(true);
+    expect(buildConfig({ APP_VARIANT: 'production' }, none).plugins).toContainEqual([
+      'expo-notifications',
+      expect.objectContaining({ mode: 'production' }),
+    ]);
   });
 });

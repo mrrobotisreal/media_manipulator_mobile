@@ -86,6 +86,11 @@ export const EVENTS = {
   RETENTION_SETTING_CHANGED: 'retention_setting_changed',
   DATA_EXPORT_REQUESTED: 'data_export_requested',
   SUBSCRIPTION_STATUS_VIEWED: 'subscription_status_viewed',
+
+  // --- Push (catalog batch "MA24 push", MA24) ---------------------------------
+  PUSH_PERMISSION_PROMPTED: 'push_permission_prompted',
+  PUSH_PERMISSION_RESULT: 'push_permission_result',
+  PUSH_OPENED: 'push_opened',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -145,6 +150,10 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   retention_setting_changed: PRIORITY_HIGH,
   data_export_requested: PRIORITY_NORMAL,
   subscription_status_viewed: PRIORITY_CRITICAL,
+
+  push_permission_prompted: PRIORITY_NORMAL,
+  push_permission_result: PRIORITY_HIGH,
+  push_opened: PRIORITY_HIGH,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -414,6 +423,21 @@ export interface SubscriptionStatusViewedProps {
   interval: string;
 }
 
+export interface PushPermissionPromptedProps {
+  surface: 'long_job' | 'settings';
+}
+
+export interface PushPermissionResultProps {
+  granted: boolean;
+  surface: 'long_job' | 'settings';
+}
+
+export interface PushOpenedProps {
+  tool: string;
+  status: 'completed' | 'failed';
+  app_state: 'background' | 'quit' | 'foreground';
+}
+
 export interface EventPropsMap {
   screen_viewed: ScreenViewedProps;
   app_opened: AppOpenedProps;
@@ -468,6 +492,10 @@ export interface EventPropsMap {
   retention_setting_changed: RetentionSettingChangedProps;
   data_export_requested: DataExportRequestedProps;
   subscription_status_viewed: SubscriptionStatusViewedProps;
+
+  push_permission_prompted: PushPermissionPromptedProps;
+  push_permission_result: PushPermissionResultProps;
+  push_opened: PushOpenedProps;
 }
 
 /**

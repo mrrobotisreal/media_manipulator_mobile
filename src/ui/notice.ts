@@ -5,6 +5,8 @@ export interface Notice {
   id: number;
   text: string;
   tone: 'info' | 'error';
+  /** Optional trailing button (MA24's push toast "Open"). Pressing it also dismisses the notice. */
+  action?: { label: string; onPress: () => void };
 }
 
 export const NOTICE_MS = 4000;
@@ -16,10 +18,14 @@ const listeners = new Set<() => void>();
 
 const emit = () => listeners.forEach((l) => l());
 
-export function showNotice(text: string, tone: Notice['tone'] = 'info'): void {
+export function showNotice(
+  text: string,
+  tone: Notice['tone'] = 'info',
+  action?: Notice['action'],
+): void {
   if (timer) clearTimeout(timer);
   seq += 1;
-  current = { id: seq, text, tone };
+  current = { id: seq, text, tone, action };
   emit();
   timer = setTimeout(dismissNotice, NOTICE_MS);
   (timer as { unref?: () => void }).unref?.();

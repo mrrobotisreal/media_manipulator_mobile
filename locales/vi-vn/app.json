@@ -1091,5 +1091,22 @@
       "copied": "Đã sao chép chẩn đoán.",
       "contact": "Liên hệ hỗ trợ"
     }
+  },
+  "push": {
+    "channelName": "Cập nhật tác vụ",
+    "prePrompt": {
+      "title": "Nhận thông báo khi các tác vụ dài hoàn tất?",
+      "body": "Chúng tôi sẽ gửi một thông báo khi tác vụ này xong, nên bạn có thể thoát khỏi ứng dụng. Bạn có thể tắt tính năng này trong {{path}}.",
+      "accept": "Thông báo cho tôi",
+      "dismiss": "Để sau"
+    },
+    "settings": {
+      "denied": "Thông báo của Media Manipulator đang tắt",
+      "openSettings": "Mở cài đặt"
+    },
+    "toast": {
+      "open": "Mở",
+      "fallback": "Tác vụ của bạn đã hoàn tất"
+    }
   }
 }

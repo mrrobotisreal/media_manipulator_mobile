@@ -46,4 +46,39 @@ describe('signOut', () => {
     ).rejects.toThrow();
     expect(store.getState().quota.tier).toBeNull();
   });
+
+  it('sign-out deletes the server token before Firebase sign-out and never blocks', async () => {
+    calls.length = 0;
+    const { store } = await makeReadyStore();
+    await performSignOut(store.dispatch, {
+      releasePush: async (_d, o) => void calls.push(`push:${o.server}`),
+      firebaseSignOut: async () => void calls.push('firebase'),
+      googleSignOut: async () => void calls.push('google'),
+    });
+    expect(calls).toEqual(['track:signout', 'analytics.reset', 'push:true', 'firebase', 'google']);
+
+    calls.length = 0;
+    await performSignOut(store.dispatch, {
+      releasePush: async () => {
+        throw new Error('offline');
+      },
+      firebaseSignOut: async () => void calls.push('firebase'),
+      googleSignOut: async () => void calls.push('google'),
+    });
+    expect(calls).toContain('firebase');
+  });
+
+  it('a silent sign-out (account deletion) and an expired session skip the server DELETE', async () => {
+    const { store } = await makeReadyStore();
+    const release = jest.fn(async () => undefined);
+    const d = {
+      releasePush: release,
+      firebaseSignOut: async () => {},
+      googleSignOut: async () => {},
+    };
+    await performSignOut(store.dispatch, d, { silent: true });
+    expect(release).not.toHaveBeenCalled();
+    await performSignOut(store.dispatch, d, { pushServer: false });
+    expect(release).toHaveBeenCalledWith(expect.anything(), { server: false });
+  });
 });

@@ -1499,7 +1499,11 @@
       "splitTone": "Split toning",
       "lut": "LUT",
       "effects": "Effects",
-      "layers": "Layers"
+      "layers": "Layers",
+      "geometry": "Geometry",
+      "masks": "Masks",
+      "heal": "Heal",
+      "redEye": "Red-eye"
     },
     "slider": {
       "reset": "Reset",
@@ -1680,7 +1684,7 @@
       "rename": "Rename",
       "moveUp": "Move up",
       "moveDown": "Move down",
-      "mask": "Masks arrive in a later update",
+      "mask": "Add a mask",
       "selectLayer": "Select layer {{name}}",
       "type": {
         "exposure": "Exposure",
@@ -1701,7 +1705,7 @@
         "posterize": "Posterize",
         "threshold": "Threshold",
         "gamma": "Gamma",
-        "redEye": "Red eye",
+        "redEye": "Red-eye",
         "sharpen": "Sharpen",
         "blur": "Blur",
         "noiseReduction": "Noise reduction",
@@ -1710,7 +1714,8 @@
         "dehaze": "Dehaze",
         "vignette": "Vignette",
         "grain": "Grain"
-      }
+      },
+      "maskEdit": "Edit mask"
     },
     "export": {
       "title": "Export",
@@ -1735,6 +1740,114 @@
       "cancel": "Close",
       "anotherTime": "Export again"
     },
-    "openIn": "Open in {{brand}}"
+    "openIn": "Open in {{brand}}",
+    "geometry": {
+      "crop": "Crop",
+      "aspect": "Aspect ratio",
+      "free": "Free",
+      "original": "Original",
+      "cropTool": "Crop on canvas",
+      "resetCrop": "Reset crop",
+      "straighten": "Straighten",
+      "angle": "Angle (degrees)",
+      "drawLine": "Draw a line",
+      "drawLineHint": "Draw a line along something that should be level or upright; the angle is set for you.",
+      "orientation": "Rotate and flip",
+      "rotateLeft": "Rotate 90 degrees left",
+      "rotateRight": "Rotate 90 degrees right",
+      "rotate180": "Rotate 180 degrees",
+      "flipH": "Flip horizontal",
+      "flipV": "Flip vertical",
+      "perspective": "Perspective",
+      "perspectiveTool": "Drag the corners",
+      "resetPerspective": "Reset perspective",
+      "autoCrop": "Auto-crop to the largest rectangle",
+      "fill": "Fill empty corners",
+      "fillTransparent": "Transparent",
+      "fillEdge": "Stretch the edge",
+      "fillColor": "Color"
+    },
+    "masks": {
+      "title": "Mask",
+      "add": "Add a mask component",
+      "empty": "This mask is empty. Add a component to limit where the adjustment applies.",
+      "selectLayer": "Select an adjustment layer to give it a mask.",
+      "layer": "Layer",
+      "kind": {
+        "gradient": "Linear gradient",
+        "radial": "Radial",
+        "brush": "Brush",
+        "luminosity": "Luminosity range",
+        "colorRange": "Color range",
+        "subject": "Select subject"
+      },
+      "mode": "How this component combines",
+      "mode_add": "Add",
+      "mode_subtract": "Subtract",
+      "mode_intersect": "Intersect",
+      "removeComponent": "Remove this component",
+      "draw": "Draw on the photo",
+      "feather": "Feather",
+      "rotate": "Rotation",
+      "maskFeather": "Mask feather",
+      "maskOpacity": "Mask strength",
+      "invert": "Invert",
+      "share": "Share this mask",
+      "remove": "Remove mask",
+      "view": "Mask view",
+      "view_off": "Off",
+      "view_overlay": "Overlay",
+      "view_alpha": "Mask only",
+      "localTitle": "Local adjustment",
+      "localType": "Adjustment",
+      "localBasic": "Exposure, tone and saturation",
+      "addLocal": "Add local adjustment",
+      "localHint": "Creates the adjustment with an empty mask and opens the brush. The combo shares one mask across its three layers.",
+      "luminosity": {
+        "lo": "From brightness",
+        "hi": "To brightness"
+      },
+      "colorRange": {
+        "pick": "Pick a color",
+        "shiftHint": "Shift-click adds another color (up to 8).",
+        "targets": "Selected colors",
+        "removeTarget": "Remove this color",
+        "fuzziness": "Fuzziness"
+      },
+      "subject": {
+        "working": "Finding the subject. This can take a few seconds.",
+        "failed": "Could not select the subject. Try again.",
+        "invertBackground": "Background instead"
+      },
+      "brush": {
+        "title": "Brush",
+        "paint": "Paint",
+        "erase": "Erase",
+        "size": "Size",
+        "hardness": "Hardness",
+        "flow": "Flow",
+        "keys": "B brush, E erase, [ and ] size, M mask view.",
+        "warn": "This photo's brush masks are getting large. Simplify or remove some soon.",
+        "full": "No room for more brush strokes in this project."
+      }
+    },
+    "heal": {
+      "title": "Heal",
+      "hint": "Paint over spots or blemishes, then press Heal. Healing runs on our GPU; this can take a minute.",
+      "brush": "Spot brush",
+      "press": "Heal",
+      "clear": "Clear spots",
+      "strokes": "Spots marked: {{count}}",
+      "done": "Heals applied: {{count}}",
+      "running": "Healing...",
+      "failed": "Healing did not finish. Nothing was changed.",
+      "unavailable": "Healing is not available right now."
+    },
+    "redEye": {
+      "title": "Red-eye",
+      "hint": "Click an eye in the photo. A small circular mask is placed and the red is removed inside it.",
+      "radius": "Radius (% of the long side)",
+      "clickEye": "Click an eye"
+    }
   }
 }

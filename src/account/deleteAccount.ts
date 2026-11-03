@@ -49,6 +49,8 @@ export interface FinishDeps {
   flushAnalytics(): Promise<void>;
   /** Stops flush timers and clears the analytics outbox BEFORE the wipe. */
   discardQueued(): void;
+  /** MA24: `messaging().deleteToken()` after the 200 (the server rows cascaded; no DELETE call). Never throws. */
+  deleteDeviceToken?(): Promise<void>;
   /** Local sign-out without a `signout` event (Firebase user is already gone server-side). */
   signOutLocal(): Promise<void>;
   /** Pauses redux-persist, clears every MMKV instance, then resumes it. */
@@ -70,6 +72,7 @@ export async function finishAccountDeletion(d: FinishDeps): Promise<void> {
   d.trackAccountDeleted();
   await d.flushAnalytics().catch(() => undefined);
   d.discardQueued();
+  await d.deleteDeviceToken?.().catch(() => undefined);
   await d.signOutLocal().catch(() => undefined);
   try {
     d.wipeFiles();

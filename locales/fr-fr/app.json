@@ -1105,5 +1105,22 @@
       "copied": "Diagnostic copié.",
       "contact": "Contacter l'assistance"
     }
+  },
+  "push": {
+    "channelName": "Suivi des tâches",
+    "prePrompt": {
+      "title": "Être averti lorsque les tâches longues sont terminées ?",
+      "body": "Nous vous enverrons une seule notification quand cette tâche sera terminée, pour que vous puissiez quitter l’application. Vous pouvez la désactiver dans {{path}}.",
+      "accept": "Me prévenir",
+      "dismiss": "Plus tard"
+    },
+    "settings": {
+      "denied": "Les notifications sont désactivées pour Media Manipulator",
+      "openSettings": "Ouvrir les réglages"
+    },
+    "toast": {
+      "open": "Ouvrir",
+      "fallback": "Votre tâche est terminée"
+    }
   }
 }

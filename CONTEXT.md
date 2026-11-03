@@ -86,3 +86,7 @@ Android package and iOS bundle id are both `com.mediamanipulator.app`; the `deve
 - **Sign out everywhere** (MA22): `POST /account/sessions/revoke`, then the normal local sign-out. Other devices may stay signed in up to an hour (ID token lifetime).
 - **Opt-out vs forget** (MA22): opt-out stops capture and keeps past data; "Delete my analytics data" (DSR) erases server data and rotates `visitorId`. Two separate paths.
 - **Account wipe** (MA22): after a successful `DELETE /account` the app erases all MMKV (`mm-app`, `mm-analytics`) and cache files and rotates `visitorId`. The analytics outbox is cleared first (`discardQueued`).
+- **Pre-prompt** (MA24): our own sheet ("Get notified when long jobs finish?") shown before the OS notification dialog, with surface `long_job` or `settings`. "Not now" or an OS denial silences the automatic one for 30 days (`pushPrePromptDismissedAt`).
+- **job_updates channel** (MA24): the Android notification channel (id `job_updates`, "Job updates", importance high) created at startup by `expo-notifications`; the API puts this id on every push (`internal/push/fcm.go`).
+- **Long job** (MA24): a job still `pending|processing` 20 s after the server accepted it. The first one triggers the pre-prompt; a push is how the user learns it finished after leaving the app.
+

@@ -8,11 +8,13 @@ export function ToggleRow({
   hint,
   value,
   onChange,
+  disabled,
 }: {
   label: string;
   hint?: string;
   value: boolean;
   onChange: (v: boolean) => void;
+  disabled?: boolean;
 }) {
   return (
     <View className="flex-row items-center gap-3" style={{ minHeight: 44 }}>
@@ -23,6 +25,7 @@ export function ToggleRow({
       <Switch
         accessibilityLabel={label}
         value={value}
+        disabled={disabled}
         onValueChange={onChange}
         trackColor={{ false: colors.surface3, true: colors.data }}
         thumbColor={colors.foreground}

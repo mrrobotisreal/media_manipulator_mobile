@@ -21,6 +21,7 @@ import { reset as quotaReset } from '@/state/slices/quota';
 import { analyticsOptOutSet, settingsReset } from '@/state/slices/settings';
 import { visitorRotated } from '@/state/slices/session';
 import { mmApi } from '@/api/mmApi';
+import { releasePushToken } from '@/push/runtime';
 import { analytics } from '@/analytics/runtime';
 import type { DeleteAccountDeps, FinishDeps } from './deleteAccount';
 import type { DeleteFilesDeps, DsrDeps, OptOutDeps } from './privacy';
@@ -79,6 +80,7 @@ export function realFinishDeps(): FinishDeps {
     flushAnalytics: () =>
       Promise.race([flushEvents(), new Promise<void>((r) => setTimeout(r, 3000))]),
     discardQueued: () => analytics.discardQueued(),
+    deleteDeviceToken: () => releasePushToken(store.dispatch, { server: false }),
     signOutLocal: () =>
       performSignOut(store.dispatch, undefined, { silent: true }).catch(() => undefined),
     wipeFiles: () => wipeCacheFiles(),

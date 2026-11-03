@@ -1487,7 +1487,11 @@
       "splitTone": "分割色調",
       "lut": "LUT",
       "effects": "效果",
-      "layers": "圖層"
+      "layers": "圖層",
+      "geometry": "幾何",
+      "masks": "遮色片",
+      "heal": "修復",
+      "redEye": "紅眼"
     },
     "slider": {
       "reset": "重設",
@@ -1668,7 +1672,7 @@
       "rename": "重新命名",
       "moveUp": "上移",
       "moveDown": "下移",
-      "mask": "遮罩功能將在後續更新中推出",
+      "mask": "新增遮色片",
       "selectLayer": "選取圖層 {{name}}",
       "type": {
         "exposure": "曝光度",
@@ -1698,7 +1702,8 @@
         "dehaze": "去朦朧",
         "vignette": "暈影",
         "grain": "顆粒"
-      }
+      },
+      "maskEdit": "編輯遮色片"
     },
     "export": {
       "title": "匯出",
@@ -1723,6 +1728,114 @@
       "cancel": "關閉",
       "anotherTime": "再次匯出"
     },
-    "openIn": "在 {{brand}} 中開啟"
+    "openIn": "在 {{brand}} 中開啟",
+    "geometry": {
+      "crop": "裁切",
+      "aspect": "長寬比",
+      "free": "自由",
+      "original": "原始",
+      "cropTool": "在畫布上裁切",
+      "resetCrop": "重設裁切",
+      "straighten": "拉直",
+      "angle": "角度(度)",
+      "drawLine": "畫線",
+      "drawLineHint": "沿著應保持水平或垂直的物體畫一條線,角度會自動設定。",
+      "orientation": "旋轉與翻轉",
+      "rotateLeft": "向左旋轉 90 度",
+      "rotateRight": "向右旋轉 90 度",
+      "rotate180": "旋轉 180 度",
+      "flipH": "水平翻轉",
+      "flipV": "垂直翻轉",
+      "perspective": "透視",
+      "perspectiveTool": "拖曳角點",
+      "resetPerspective": "重設透視",
+      "autoCrop": "自動裁切為最大矩形",
+      "fill": "填滿空白角落",
+      "fillTransparent": "透明",
+      "fillEdge": "延伸邊緣",
+      "fillColor": "顏色"
+    },
+    "masks": {
+      "title": "遮色片",
+      "add": "新增遮色片元件",
+      "empty": "此遮色片是空的。新增元件以限定調整的套用範圍。",
+      "selectLayer": "請選取一個調整圖層以為其加上遮色片。",
+      "layer": "圖層",
+      "kind": {
+        "gradient": "線性漸層",
+        "radial": "放射狀",
+        "brush": "筆刷",
+        "luminosity": "明度範圍",
+        "colorRange": "顏色範圍",
+        "subject": "選取主體"
+      },
+      "mode": "此元件的結合方式",
+      "mode_add": "加入",
+      "mode_subtract": "減去",
+      "mode_intersect": "交集",
+      "removeComponent": "移除此元件",
+      "draw": "在相片上繪製",
+      "feather": "羽化",
+      "rotate": "旋轉",
+      "maskFeather": "遮色片羽化",
+      "maskOpacity": "遮色片強度",
+      "invert": "反相",
+      "share": "共用此遮色片",
+      "remove": "移除遮色片",
+      "view": "遮色片檢視",
+      "view_off": "關閉",
+      "view_overlay": "疊加",
+      "view_alpha": "僅遮色片",
+      "localTitle": "局部調整",
+      "localType": "調整",
+      "localBasic": "曝光、色調與飽和度",
+      "addLocal": "新增局部調整",
+      "localHint": "建立帶有空白遮色片的調整並開啟筆刷。組合調整的三個圖層共用同一個遮色片。",
+      "luminosity": {
+        "lo": "起始亮度",
+        "hi": "結束亮度"
+      },
+      "colorRange": {
+        "pick": "選取顏色",
+        "shiftHint": "按住 Shift 並點擊可加入其他顏色(最多 8 種)。",
+        "targets": "已選顏色",
+        "removeTarget": "移除此顏色",
+        "fuzziness": "顏色容差"
+      },
+      "subject": {
+        "working": "正在辨識主體,可能需要幾秒鐘。",
+        "failed": "無法選取主體,請再試一次。",
+        "invertBackground": "改為選取背景"
+      },
+      "brush": {
+        "title": "筆刷",
+        "paint": "繪製",
+        "erase": "擦除",
+        "size": "大小",
+        "hardness": "硬度",
+        "flow": "流量",
+        "keys": "B 筆刷,E 擦除,[ 與 ] 大小,M 遮色片檢視。",
+        "warn": "這張相片的筆刷遮色片越來越大,請儘快簡化或移除部分內容。",
+        "full": "此專案已沒有空間容納更多筆刷筆觸。"
+      }
+    },
+    "heal": {
+      "title": "修復",
+      "hint": "塗抹斑點或瑕疵,然後按下「修復」。修復在我們的 GPU 上執行,可能需要一分鐘。",
+      "brush": "污點筆刷",
+      "press": "修復",
+      "clear": "清除斑點",
+      "strokes": "已標記斑點:{{count}}",
+      "done": "已套用修復:{{count}}",
+      "running": "正在修復...",
+      "failed": "修復未完成,未做任何變更。",
+      "unavailable": "修復功能目前無法使用。"
+    },
+    "redEye": {
+      "title": "紅眼",
+      "hint": "點擊相片中的眼睛。系統會放置一個小圓形遮色片,並消除其中的紅色。",
+      "radius": "半徑(長邊的百分比)",
+      "clickEye": "點擊眼睛"
+    }
   }
 }

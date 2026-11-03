@@ -1105,5 +1105,22 @@
       "copied": "Diagnóstico copiado.",
       "contact": "Contactar con soporte"
     }
+  },
+  "push": {
+    "channelName": "Actualizaciones de trabajos",
+    "prePrompt": {
+      "title": "¿Quieres que te avisemos cuando terminen los trabajos largos?",
+      "body": "Te enviaremos una sola notificación cuando este trabajo termine, así podrás salir de la aplicación. Puedes desactivarlo en {{path}}.",
+      "accept": "Avisarme",
+      "dismiss": "Ahora no"
+    },
+    "settings": {
+      "denied": "Las notificaciones están desactivadas para Media Manipulator",
+      "openSettings": "Abrir ajustes"
+    },
+    "toast": {
+      "open": "Abrir",
+      "fallback": "Tu trabajo ha terminado"
+    }
   }
 }

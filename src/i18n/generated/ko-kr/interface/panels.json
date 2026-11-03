@@ -1487,7 +1487,11 @@
       "splitTone": "스플릿 토닝",
       "lut": "LUT",
       "effects": "효과",
-      "layers": "레이어"
+      "layers": "레이어",
+      "geometry": "기하학",
+      "masks": "마스크",
+      "heal": "복구",
+      "redEye": "적목 현상"
     },
     "slider": {
       "reset": "재설정",
@@ -1668,7 +1672,7 @@
       "rename": "이름 바꾸기",
       "moveUp": "위로 이동",
       "moveDown": "아래로 이동",
-      "mask": "마스크는 이후 업데이트에서 제공됩니다",
+      "mask": "마스크 추가",
       "selectLayer": "{{name}} 레이어 선택",
       "type": {
         "exposure": "노출",
@@ -1698,7 +1702,8 @@
         "dehaze": "안개 제거",
         "vignette": "비네팅",
         "grain": "그레인"
-      }
+      },
+      "maskEdit": "마스크 편집"
     },
     "export": {
       "title": "내보내기",
@@ -1723,6 +1728,114 @@
       "cancel": "닫기",
       "anotherTime": "다시 내보내기"
     },
-    "openIn": "{{brand}}에서 열기"
+    "openIn": "{{brand}}에서 열기",
+    "geometry": {
+      "crop": "자르기",
+      "aspect": "가로세로 비율",
+      "free": "자유",
+      "original": "원본",
+      "cropTool": "캔버스에서 자르기",
+      "resetCrop": "자르기 초기화",
+      "straighten": "수평 맞추기",
+      "angle": "각도(도)",
+      "drawLine": "선 그리기",
+      "drawLineHint": "수평 또는 수직이어야 하는 대상을 따라 선을 그리면 각도가 자동으로 설정됩니다.",
+      "orientation": "회전 및 뒤집기",
+      "rotateLeft": "왼쪽으로 90도 회전",
+      "rotateRight": "오른쪽으로 90도 회전",
+      "rotate180": "180도 회전",
+      "flipH": "좌우 뒤집기",
+      "flipV": "상하 뒤집기",
+      "perspective": "원근",
+      "perspectiveTool": "모서리를 드래그하세요",
+      "resetPerspective": "원근 초기화",
+      "autoCrop": "가장 큰 직사각형으로 자동 자르기",
+      "fill": "빈 모서리 채우기",
+      "fillTransparent": "투명",
+      "fillEdge": "가장자리 늘리기",
+      "fillColor": "색상"
+    },
+    "masks": {
+      "title": "마스크",
+      "add": "마스크 구성 요소 추가",
+      "empty": "이 마스크는 비어 있습니다. 구성 요소를 추가하여 보정이 적용될 범위를 제한하세요.",
+      "selectLayer": "마스크를 적용할 보정 레이어를 선택하세요.",
+      "layer": "레이어",
+      "kind": {
+        "gradient": "선형 그레이디언트",
+        "radial": "방사형",
+        "brush": "브러시",
+        "luminosity": "휘도 범위",
+        "colorRange": "색상 범위",
+        "subject": "피사체 선택"
+      },
+      "mode": "이 구성 요소의 결합 방식",
+      "mode_add": "추가",
+      "mode_subtract": "빼기",
+      "mode_intersect": "교차",
+      "removeComponent": "이 구성 요소 제거",
+      "draw": "사진 위에 그리기",
+      "feather": "페더",
+      "rotate": "회전",
+      "maskFeather": "마스크 페더",
+      "maskOpacity": "마스크 강도",
+      "invert": "반전",
+      "share": "이 마스크 공유",
+      "remove": "마스크 제거",
+      "view": "마스크 보기",
+      "view_off": "끄기",
+      "view_overlay": "오버레이",
+      "view_alpha": "마스크만",
+      "localTitle": "로컬 보정",
+      "localType": "보정",
+      "localBasic": "노출, 톤, 채도",
+      "addLocal": "로컬 보정 추가",
+      "localHint": "빈 마스크로 보정을 만들고 브러시를 엽니다. 콤보는 세 레이어가 하나의 마스크를 공유합니다.",
+      "luminosity": {
+        "lo": "밝기 시작",
+        "hi": "밝기 끝"
+      },
+      "colorRange": {
+        "pick": "색상 선택",
+        "shiftHint": "Shift 키를 누르고 클릭하면 색상을 추가합니다(최대 8개).",
+        "targets": "선택한 색상",
+        "removeTarget": "이 색상 제거",
+        "fuzziness": "허용량"
+      },
+      "subject": {
+        "working": "피사체를 찾는 중입니다. 몇 초 걸릴 수 있습니다.",
+        "failed": "피사체를 선택하지 못했습니다. 다시 시도하세요.",
+        "invertBackground": "배경 선택"
+      },
+      "brush": {
+        "title": "브러시",
+        "paint": "칠하기",
+        "erase": "지우기",
+        "size": "크기",
+        "hardness": "경도",
+        "flow": "흐름",
+        "keys": "B 브러시, E 지우기, [ 및 ] 크기, M 마스크 보기.",
+        "warn": "이 사진의 브러시 마스크가 커지고 있습니다. 곧 단순화하거나 일부를 제거하세요.",
+        "full": "이 프로젝트에는 브러시 획을 더 추가할 공간이 없습니다."
+      }
+    },
+    "heal": {
+      "title": "복구",
+      "hint": "잡티나 얼룩 위를 칠한 다음 복구를 누르세요. 복구는 GPU에서 실행되며 1분 정도 걸릴 수 있습니다.",
+      "brush": "스팟 브러시",
+      "press": "복구",
+      "clear": "스팟 지우기",
+      "strokes": "표시한 스팟: {{count}}",
+      "done": "적용된 복구: {{count}}",
+      "running": "복구 중...",
+      "failed": "복구가 완료되지 않았습니다. 변경된 내용은 없습니다.",
+      "unavailable": "지금은 복구를 사용할 수 없습니다."
+    },
+    "redEye": {
+      "title": "적목 현상",
+      "hint": "사진에서 눈을 클릭하세요. 작은 원형 마스크가 배치되고 그 안의 붉은색이 제거됩니다.",
+      "radius": "반경(긴 변의 %)",
+      "clickEye": "눈을 클릭하세요"
+    }
   }
 }

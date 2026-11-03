@@ -1499,7 +1499,11 @@
       "splitTone": "Teiltonung",
       "lut": "LUT",
       "effects": "Effekte",
-      "layers": "Ebenen"
+      "layers": "Ebenen",
+      "geometry": "Geometrie",
+      "masks": "Masken",
+      "heal": "Reparieren",
+      "redEye": "Rote Augen"
     },
     "slider": {
       "reset": "Zurücksetzen",
@@ -1680,7 +1684,7 @@
       "rename": "Umbenennen",
       "moveUp": "Nach oben",
       "moveDown": "Nach unten",
-      "mask": "Masken folgen in einem späteren Update",
+      "mask": "Maske hinzufügen",
       "selectLayer": "Ebene {{name}} auswählen",
       "type": {
         "exposure": "Belichtung",
@@ -1710,7 +1714,8 @@
         "dehaze": "Dunst entfernen",
         "vignette": "Vignette",
         "grain": "Körnung"
-      }
+      },
+      "maskEdit": "Maske bearbeiten"
     },
     "export": {
       "title": "Exportieren",
@@ -1735,6 +1740,114 @@
       "cancel": "Schließen",
       "anotherTime": "Erneut exportieren"
     },
-    "openIn": "In {{brand}} öffnen"
+    "openIn": "In {{brand}} öffnen",
+    "geometry": {
+      "crop": "Zuschneiden",
+      "aspect": "Seitenverhältnis",
+      "free": "Frei",
+      "original": "Original",
+      "cropTool": "Auf der Arbeitsfläche zuschneiden",
+      "resetCrop": "Zuschnitt zurücksetzen",
+      "straighten": "Begradigen",
+      "angle": "Winkel (Grad)",
+      "drawLine": "Linie zeichnen",
+      "drawLineHint": "Zeichne eine Linie entlang von etwas, das waagerecht oder senkrecht sein soll; der Winkel wird automatisch eingestellt.",
+      "orientation": "Drehen und spiegeln",
+      "rotateLeft": "90 Grad nach links drehen",
+      "rotateRight": "90 Grad nach rechts drehen",
+      "rotate180": "180 Grad drehen",
+      "flipH": "Horizontal spiegeln",
+      "flipV": "Vertikal spiegeln",
+      "perspective": "Perspektive",
+      "perspectiveTool": "Ecken ziehen",
+      "resetPerspective": "Perspektive zurücksetzen",
+      "autoCrop": "Automatisch auf größtes Rechteck zuschneiden",
+      "fill": "Leere Ecken füllen",
+      "fillTransparent": "Transparent",
+      "fillEdge": "Rand dehnen",
+      "fillColor": "Farbe"
+    },
+    "masks": {
+      "title": "Maske",
+      "add": "Maskenkomponente hinzufügen",
+      "empty": "Diese Maske ist leer. Füge eine Komponente hinzu, um den Wirkungsbereich der Anpassung zu begrenzen.",
+      "selectLayer": "Wähle eine Einstellungsebene aus, um ihr eine Maske zuzuweisen.",
+      "layer": "Ebene",
+      "kind": {
+        "gradient": "Verlaufsmaske",
+        "radial": "Radial",
+        "brush": "Pinsel",
+        "luminosity": "Luminanzbereich",
+        "colorRange": "Farbbereich",
+        "subject": "Motiv auswählen"
+      },
+      "mode": "Wie diese Komponente kombiniert wird",
+      "mode_add": "Hinzufügen",
+      "mode_subtract": "Subtrahieren",
+      "mode_intersect": "Schnittmenge",
+      "removeComponent": "Diese Komponente entfernen",
+      "draw": "Auf dem Foto zeichnen",
+      "feather": "Weiche Kante",
+      "rotate": "Drehung",
+      "maskFeather": "Weiche Kante der Maske",
+      "maskOpacity": "Maskenstärke",
+      "invert": "Umkehren",
+      "share": "Diese Maske teilen",
+      "remove": "Maske entfernen",
+      "view": "Maskenansicht",
+      "view_off": "Aus",
+      "view_overlay": "Überlagerung",
+      "view_alpha": "Nur Maske",
+      "localTitle": "Lokale Anpassung",
+      "localType": "Anpassung",
+      "localBasic": "Belichtung, Tonwerte und Sättigung",
+      "addLocal": "Lokale Anpassung hinzufügen",
+      "localHint": "Erstellt die Anpassung mit leerer Maske und öffnet den Pinsel. Die Kombination teilt eine Maske über ihre drei Ebenen.",
+      "luminosity": {
+        "lo": "Ab Helligkeit",
+        "hi": "Bis Helligkeit"
+      },
+      "colorRange": {
+        "pick": "Farbe wählen",
+        "shiftHint": "Mit Umschalt-Klick fügst du eine weitere Farbe hinzu (max. 8).",
+        "targets": "Gewählte Farben",
+        "removeTarget": "Diese Farbe entfernen",
+        "fuzziness": "Toleranz"
+      },
+      "subject": {
+        "working": "Motiv wird gesucht. Das kann ein paar Sekunden dauern.",
+        "failed": "Das Motiv konnte nicht ausgewählt werden. Versuche es erneut.",
+        "invertBackground": "Stattdessen Hintergrund"
+      },
+      "brush": {
+        "title": "Pinsel",
+        "paint": "Malen",
+        "erase": "Radieren",
+        "size": "Größe",
+        "hardness": "Härte",
+        "flow": "Fluss",
+        "keys": "B Pinsel, E Radieren, [ und ] Größe, M Maskenansicht.",
+        "warn": "Die Pinselmasken dieses Fotos werden groß. Vereinfache oder entferne bald einige.",
+        "full": "Kein Platz mehr für weitere Pinselstriche in diesem Projekt."
+      }
+    },
+    "heal": {
+      "title": "Reparieren",
+      "hint": "Übermale Flecken oder Hautunreinheiten und tippe dann auf Reparieren. Die Reparatur läuft auf unserer GPU und kann eine Minute dauern.",
+      "brush": "Fleckenpinsel",
+      "press": "Reparieren",
+      "clear": "Flecken löschen",
+      "strokes": "Markierte Flecken: {{count}}",
+      "done": "Angewendete Reparaturen: {{count}}",
+      "running": "Wird repariert ...",
+      "failed": "Die Reparatur wurde nicht abgeschlossen. Es wurde nichts geändert.",
+      "unavailable": "Die Reparatur ist derzeit nicht verfügbar."
+    },
+    "redEye": {
+      "title": "Rote Augen",
+      "hint": "Klicke auf ein Auge im Foto. Es wird eine kleine runde Maske gesetzt und das Rot darin entfernt.",
+      "radius": "Radius (% der langen Seite)",
+      "clickEye": "Auf ein Auge klicken"
+    }
   }
 }

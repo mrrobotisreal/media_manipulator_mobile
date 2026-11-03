@@ -1,9 +1,12 @@
-import { ScrollView } from 'react-native';
+import { Linking, ScrollView } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Card, ScreenHeader } from '@/account/ui';
 import { useGetSettingsQuery, usePatchSettingsMutation } from '@/api/endpoints/accountSettings';
 import type { SettingsPatch } from '@/api/schemas/accountSettings';
-import { Screen, Text } from '@/ui/components';
+import { askForPush } from '@/push/promptFlow';
+import { usePushPermission } from '@/push/usePushPermission';
+import { useAppDispatch } from '@/state/hooks';
+import { Button, Screen, Text } from '@/ui/components';
 import { ToggleRow } from '@/ui/components/ToggleRow';
 import { showNotice } from '@/ui/notice';
 
@@ -12,6 +15,19 @@ export default function NotificationsScreen() {
   const settings = useGetSettingsQuery();
   const [patch] = usePatchSettingsMutation();
   const s = settings.data;
+  const dispatch = useAppDispatch();
+  const permission = usePushPermission();
+  const osOff = permission.state === 'denied';
+  const needsAsk = permission.state === 'undetermined';
+  const turnOnPush = async (v: boolean) => {
+    // Undetermined: the same pre-prompt as the long-job one, surface 'settings'; the server flag follows the OS answer.
+    if (v && needsAsk) {
+      const granted = await askForPush(dispatch, 'settings');
+      permission.refresh();
+      if (!granted) return;
+    }
+    await save({ pushJobFinished: v });
+  };
   const save = async (body: SettingsPatch) => {
     try {
       await patch(body).unwrap();
@@ -49,9 +65,22 @@ export default function NotificationsScreen() {
                 <Text className="font-semibold">{t('account.notifications.pushTitle')}</Text>
                 <ToggleRow
                   label={t('account.notifications.pushJobFinished')}
-                  value={s.pushJobFinished}
-                  onChange={(v) => void save({ pushJobFinished: v })}
+                  value={s.pushJobFinished && !osOff}
+                  disabled={osOff}
+                  onChange={(v) => void turnOnPush(v)}
                 />
+                {osOff ? (
+                  <>
+                    <Text className="text-sm text-subtle" testID="push-os-denied">
+                      {t('push.settings.denied')}
+                    </Text>
+                    <Button
+                      label={t('push.settings.openSettings')}
+                      variant="secondary"
+                      onPress={() => void Linking.openSettings()}
+                    />
+                  </>
+                ) : null}
               </Card>
             ) : null}
           </>
