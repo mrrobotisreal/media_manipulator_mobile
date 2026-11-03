@@ -152,4 +152,30 @@ describe('app.config', () => {
     expect(buildConfig({}, none).version).toBe(pkg.version);
     expect(APP_VERSION).toBe(pkg.version);
   });
+
+  it('wires the generated icons, splash and notification icon', () => {
+    const c = buildConfig({}, none);
+    expect(c.icon).toBe('./assets/icon.png');
+    expect(c.android?.adaptiveIcon).toEqual({
+      foregroundImage: './assets/adaptive-foreground.png',
+      monochromeImage: './assets/monochrome.png',
+      backgroundColor: '#0A0B0D',
+    });
+    const splash = (c.plugins ?? []).find(
+      (p) => Array.isArray(p) && p[0] === 'expo-splash-screen',
+    ) as [string, Record<string, unknown>] | undefined;
+    expect(splash?.[1]).toMatchObject({ backgroundColor: '#0A0B0D', imageWidth: 160 });
+    const n = (c.plugins ?? []).find((p) => Array.isArray(p) && p[0] === 'expo-notifications') as
+      [string, Record<string, unknown>] | undefined;
+    expect(n?.[1]).toMatchObject({ icon: './assets/notification-icon.png', color: '#FF6B4A' });
+    for (const f of [
+      'icon',
+      'adaptive-foreground',
+      'monochrome',
+      'splash-icon',
+      'notification-icon',
+    ]) {
+      expect(fs.existsSync(path.join(__dirname, 'assets', `${f}.png`))).toBe(true);
+    }
+  });
 });

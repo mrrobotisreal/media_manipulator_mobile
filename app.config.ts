@@ -27,6 +27,7 @@ export const BLOCKED_ANDROID_PERMISSIONS = [
 export const APP_VERSION = '1.0.0';
 
 const BACKGROUND = '#0A0B0D';
+const CORAL = '#FF6B4A';
 
 /** Must equal `internal/push/fcm.go` `AndroidChannelID` and `src/push/channel.ts`. */
 export const PUSH_CHANNEL_ID = 'job_updates';
@@ -60,7 +61,12 @@ export function buildConfig(
     'expo-font',
     [
       'expo-splash-screen',
-      { image: './assets/splash-icon.png', backgroundColor: BACKGROUND, imageWidth: 200 },
+      {
+        image: './assets/splash-icon.png',
+        backgroundColor: BACKGROUND,
+        imageWidth: 160,
+        dark: { image: './assets/splash-icon.png', backgroundColor: BACKGROUND },
+      },
     ],
     [
       'expo-build-properties',
@@ -124,6 +130,10 @@ export function buildConfig(
       {
         mode: variant === 'production' ? 'production' : 'development',
         enableBackgroundRemoteNotifications: true,
+        // Status-bar icon + accent for local and FCM notifications (white silhouette; @react-native-firebase/messaging's
+        // plugin reads these two from here, so there is no second declaration).
+        icon: './assets/notification-icon.png',
+        color: CORAL,
       },
     ],
   ];
@@ -159,7 +169,8 @@ export function buildConfig(
       permissions: ['android.permission.POST_NOTIFICATIONS'],
       package: `${ANDROID_PACKAGE}${v.suffix}`,
       adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
+        foregroundImage: './assets/adaptive-foreground.png',
+        monochromeImage: './assets/monochrome.png',
         backgroundColor: BACKGROUND,
       },
       ...(hasAndroidFirebase ? { googleServicesFile } : {}),
