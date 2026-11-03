@@ -1,0 +1,28 @@
+# History tab -> newest row -> result opens -> delete it (data hygiene: the converted result is removed).
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- launchApp
+- tapOn:
+    id: tab-history
+- extendedWaitUntil:
+    visible:
+      id: history-list
+    timeout: 15000
+- tapOn:
+    id: "history-row-.*"
+- extendedWaitUntil:
+    visible:
+      id: result-body
+    timeout: 30000
+- tapOn:
+    id: action-more
+- tapOn:
+    id: action-delete
+- tapOn:
+    id: action-delete-confirm
+- extendedWaitUntil:
+    notVisible:
+      id: result-body
+    timeout: 15000

@@ -1,0 +1,52 @@
+# Store screenshots for MA26/MA27: real app screens only. Signed-in Pro TEST account. Output: ~/.maestro/tests/<run>/ (or cwd).
+# Everything this flow creates (the converted image) is deleted at the end; nothing is fabricated.
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- launchApp
+- tapOn:
+    id: tab-tools
+- takeScreenshot: 01-tools
+- tapOn:
+    id: tool-row-image-convert
+- takeScreenshot: 02-tool-form
+- tapOn:
+    id: pick-media
+- extendedWaitUntil:
+    visible: Photos
+    timeout: 10000
+    optional: true
+- tapOn:
+    point: 20%,30%
+- tapOn:
+    id: convert-format-png
+- tapOn:
+    id: tool-start
+- extendedWaitUntil:
+    visible:
+      id: result-body
+    timeout: 120000
+- takeScreenshot: 03-result
+- tapOn:
+    id: tab-history
+- extendedWaitUntil:
+    visible:
+      id: history-list
+    timeout: 15000
+- takeScreenshot: 04-history
+- tapOn:
+    id: "history-row-.*"
+- extendedWaitUntil:
+    visible:
+      id: result-body
+    timeout: 30000
+- tapOn:
+    id: action-more
+- tapOn:
+    id: action-delete
+- tapOn:
+    id: action-delete-confirm
+- tapOn:
+    id: tab-account
+- takeScreenshot: 05-account

@@ -15,7 +15,8 @@
     "format": "prettier --write .",
     "test": "jest",
     "doctor": "expo-doctor",
-    "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor && node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main",
+    "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor && node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main && node scripts/gen-icons.mjs --check",
+    "version:bump": "node scripts/bump-version.mjs",
     "i18n:sync": "node scripts/sync-web-i18n.mjs --ref main",
     "i18n:check": "node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main"
   },
@@ -96,6 +97,7 @@
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "react-test-renderer": "^19.2.3",
+    "sharp": "^0.35.5",
     "typescript": "~6.0"
   }
 }

@@ -54,6 +54,7 @@ export default function ToolsTab() {
           onChangeText={setText}
           placeholder={t('tools.search.placeholder')}
           placeholderTextColor={colors.subtle}
+          testID="tools-search"
           accessibilityLabel={t('tools.search.placeholder')}
           autoCapitalize="none"
           autoCorrect={false}
@@ -106,6 +107,7 @@ export default function ToolsTab() {
     const { tool } = item;
     return (
       <Pressable
+        testID={`tool-row-${tool.id}`}
         accessibilityRole="button"
         onPress={() => open(tool, query ? 'search' : 'tools_tab')}
         className="mx-4 mb-2 flex-row items-center gap-3 rounded-lg border border-edge bg-surface-1 px-3 py-2"

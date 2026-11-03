@@ -16,6 +16,7 @@ export function ImageConvertForm({ value, onChange }: ToolFormProps<ConvertForm>
       <View className="gap-2">
         <FieldLabel>{t('tools.image.format')}</FieldLabel>
         <Chips
+          testIDPrefix="convert-format"
           label={t('tools.image.format')}
           options={FORMATS.map((f) => ({ value: f, label: t(`tools.image.formats.${f}`) }))}
           value={value.format}

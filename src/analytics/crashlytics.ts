@@ -66,6 +66,13 @@ export function crashlyticsRecord(error: unknown, name?: string): void {
   }
 }
 
+/** Native crash for MA28's Crashlytics check; only the preview-only About control calls it. */
+export function crashlyticsTestCrash(): void {
+  const x = get();
+  if (!x) return;
+  x.m.crash(x.c);
+}
+
 /** Test seam. */
 export function resetCrashlyticsForTests(): void {
   mod = null;

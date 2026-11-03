@@ -24,7 +24,10 @@ export const BLOCKED_ANDROID_PERMISSIONS = [
   'android.permission.RECORD_AUDIO',
 ];
 
+export const APP_VERSION = '1.0.0';
+
 const BACKGROUND = '#0A0B0D';
+const CORAL = '#FF6B4A';
 
 /** Must equal `internal/push/fcm.go` `AndroidChannelID` and `src/push/channel.ts`. */
 export const PUSH_CHANNEL_ID = 'job_updates';
@@ -58,7 +61,12 @@ export function buildConfig(
     'expo-font',
     [
       'expo-splash-screen',
-      { image: './assets/splash-icon.png', backgroundColor: BACKGROUND, imageWidth: 200 },
+      {
+        image: './assets/splash-icon.png',
+        backgroundColor: BACKGROUND,
+        imageWidth: 160,
+        dark: { image: './assets/splash-icon.png', backgroundColor: BACKGROUND },
+      },
     ],
     [
       'expo-build-properties',
@@ -122,6 +130,10 @@ export function buildConfig(
       {
         mode: variant === 'production' ? 'production' : 'development',
         enableBackgroundRemoteNotifications: true,
+        // Status-bar icon + accent for local and FCM notifications (white silhouette; @react-native-firebase/messaging's
+        // plugin reads these two from here, so there is no second declaration).
+        icon: './assets/notification-icon.png',
+        color: CORAL,
       },
     ],
   ];
@@ -143,7 +155,9 @@ export function buildConfig(
     name: v.name,
     slug: 'media-manipulator',
     scheme: v.scheme,
-    version: '1.0.0',
+    // User-visible semver; keep equal to package.json (scripts/bump-version.mjs edits both). The Android versionCode / iOS
+    // buildNumber are remote-managed by EAS (eas.json appVersionSource: remote, autoIncrement).
+    version: APP_VERSION,
     orientation: 'portrait',
     userInterfaceStyle: 'dark',
     backgroundColor: BACKGROUND,
@@ -155,7 +169,8 @@ export function buildConfig(
       permissions: ['android.permission.POST_NOTIFICATIONS'],
       package: `${ANDROID_PACKAGE}${v.suffix}`,
       adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
+        foregroundImage: './assets/adaptive-foreground.png',
+        monochromeImage: './assets/monochrome.png',
         backgroundColor: BACKGROUND,
       },
       ...(hasAndroidFirebase ? { googleServicesFile } : {}),
@@ -171,7 +186,12 @@ export function buildConfig(
   };
   if (EAS_OWNER) config.owner = EAS_OWNER;
   if (EAS_PROJECT_ID) {
-    config.updates = { url: `https://u.expo.dev/${EAS_PROJECT_ID}` };
+    // OTA (MA-0007): check on load, download in the background, apply on the next launch (never block the splash).
+    config.updates = {
+      url: `https://u.expo.dev/${EAS_PROJECT_ID}`,
+      checkAutomatically: 'ON_LOAD',
+      fallbackToCacheTimeout: 0,
+    };
     config.extra = { eas: { projectId: EAS_PROJECT_ID } };
   }
   return config;

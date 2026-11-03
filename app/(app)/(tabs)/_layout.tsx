@@ -21,6 +21,7 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: t('tabs.tools'),
+          tabBarButtonTestID: 'tab-tools',
           tabBarIcon: ({ color, size }) => <Wrench color={color} size={size} />,
         }}
       />
@@ -28,6 +29,7 @@ export default function TabsLayout() {
         name="history"
         options={{
           title: t('tabs.history'),
+          tabBarButtonTestID: 'tab-history',
           tabBarIcon: ({ color, size }) => <History color={color} size={size} />,
         }}
       />
@@ -35,6 +37,7 @@ export default function TabsLayout() {
         name="account"
         options={{
           title: t('tabs.account'),
+          tabBarButtonTestID: 'tab-account',
           tabBarIcon: ({ color, size }) => <CircleUser color={color} size={size} />,
         }}
       />

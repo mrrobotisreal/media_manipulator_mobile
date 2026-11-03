@@ -1951,6 +1951,20 @@
         "format": "Ce fichier n'est pas un export de préréglages.",
         "invalid": "Ce fichier contient des préréglages inutilisables.",
         "empty": "Ce fichier ne contient aucun préréglage."
+      },
+      "accountNote": "Enregistré dans votre compte.",
+      "limitReached": "Vous avez atteint la limite de préréglages enregistrés de votre forfait.",
+      "signInAgain": "Reconnectez-vous pour enregistrer des préréglages dans votre compte.",
+      "saveFailedAccount": "Le préréglage n'a pas pu être enregistré dans votre compte.",
+      "migrate": {
+        "title": "Conservez vos préréglages",
+        "prompt_one": "Conserver {{count}} préréglage dans votre compte ?",
+        "prompt_many": "Conserver {{count}} préréglages dans votre compte ?",
+        "prompt_other": "Conserver {{count}} préréglages dans votre compte ?",
+        "keepLocal": "Garder dans ce navigateur",
+        "accept": "Déplacer vers mon compte",
+        "done": "Vos préréglages sont maintenant dans votre compte.",
+        "partial": "Certains préréglages sont restés dans ce navigateur, car la limite de votre forfait a été atteinte."
       }
     },
     "history": {
@@ -2098,6 +2112,17 @@
       "zipMissing_one": "{{count}} photo n'a pas pu être ajoutée au ZIP.",
       "zipMissing_other": "{{count}} photos n'ont pas pu être ajoutées au ZIP.",
       "zipMissing_many": "{{count}} photos n'ont pas pu être ajoutées au ZIP."
+    },
+    "gate": {
+      "cta": {
+        "signup": "Se connecter gratuitement",
+        "premium": "Passer à Premium",
+        "pro": "Passer à Pro"
+      },
+      "sizes": {
+        "premium": "Les exports de plus de {{mp}} MP sont inclus avec Premium.",
+        "pro": "Les exports de plus de {{mp}} MP sont inclus avec Pro."
+      }
     }
   }
 }

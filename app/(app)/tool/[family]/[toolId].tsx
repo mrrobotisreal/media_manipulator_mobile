@@ -153,6 +153,7 @@ function ToolScreen({
         <Form value={form} onChange={onFormChange} ctx={ctx} />
         {tool.noRunButton ? null : (
           <Button
+            testID="tool-start"
             label={t(tool.startLabelKey ?? 'tool.start')}
             disabled={files.length === 0 || blocked !== null}
             loading={starting}

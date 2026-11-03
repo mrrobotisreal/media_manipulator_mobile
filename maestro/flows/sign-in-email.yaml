@@ -1,0 +1,23 @@
+# Signs in with the dedicated Pro TEST account (never Mitch's). Credentials come only from -e MM_TEST_EMAIL / MM_TEST_PASSWORD.
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: auth-email-toggle
+    optional: true
+- tapOn:
+    id: auth-email
+- inputText: ${MM_TEST_EMAIL}
+- tapOn:
+    id: auth-password
+- inputText: ${MM_TEST_PASSWORD}
+- hideKeyboard
+- tapOn:
+    id: auth-submit
+- extendedWaitUntil:
+    visible:
+      id: tab-tools
+    timeout: 30000

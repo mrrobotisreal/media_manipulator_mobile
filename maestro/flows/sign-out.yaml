@@ -1,0 +1,18 @@
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- launchApp
+- tapOn:
+    id: tab-account
+- scrollUntilVisible:
+    element:
+      id: account-sign-out
+- tapOn:
+    id: account-sign-out
+- tapOn:
+    id: sign-out-confirm
+- extendedWaitUntil:
+    visible:
+      id: auth-email-toggle
+    timeout: 15000

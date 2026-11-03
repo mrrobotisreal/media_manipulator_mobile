@@ -1,11 +1,13 @@
 import * as Application from 'expo-application';
 import * as Clipboard from 'expo-clipboard';
 import * as Updates from 'expo-updates';
-import { Linking, ScrollView, View } from 'react-native';
+import { useState } from 'react';
+import { Linking, Pressable, ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { diagnosticsText } from '@/account/diagnostics';
 import { Card, ScreenHeader } from '@/account/ui';
 import { API_BASE_URL } from '@/api/config';
+import { TestCrashControl } from '@/account/TestCrash';
 import { appVersionString } from '@/lib/userAgent';
 import { Button, Num, Screen, Text } from '@/ui/components';
 import { showNotice } from '@/ui/notice';
@@ -31,6 +33,7 @@ export default function AboutScreen() {
     apiBaseUrl: API_BASE_URL,
     application: Application.applicationId ?? null,
   };
+  const [taps, setTaps] = useState(0);
   const none = t('account.about.none');
   const copy = async () => {
     await Clipboard.setStringAsync(diagnosticsText(info));
@@ -41,7 +44,13 @@ export default function AboutScreen() {
       <ScreenHeader title={t('account.about.title')} />
       <ScrollView contentContainerClassName="gap-3 px-4 pb-8">
         <Card>
-          <Row label={t('account.about.version')} value={info.version} />
+          <Pressable
+            testID="about-version-row"
+            accessible={false}
+            onPress={() => setTaps((n) => n + 1)}
+          >
+            <Row label={t('account.about.version')} value={info.version} />
+          </Pressable>
           <Row
             label={t('account.about.update')}
             value={info.updateId ?? t('account.about.updateEmbedded')}
@@ -60,6 +69,7 @@ export default function AboutScreen() {
           variant="secondary"
           onPress={() => void Linking.openURL(`mailto:${SUPPORT_EMAIL}`).catch(() => undefined)}
         />
+        <TestCrashControl taps={taps} />
       </ScrollView>
     </Screen>
   );

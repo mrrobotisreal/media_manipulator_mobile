@@ -90,3 +90,8 @@ Android package and iOS bundle id are both `com.mediamanipulator.app`; the `deve
 - **job_updates channel** (MA24): the Android notification channel (id `job_updates`, "Job updates", importance high) created at startup by `expo-notifications`; the API puts this id on every push (`internal/push/fcm.go`).
 - **Long job** (MA24): a job still `pending|processing` 20 s after the server accepted it. The first one triggers the pre-prompt; a push is how the user learns it finished after leaving the app.
 
+- **Channel** (MA25): the EAS Update channel a build listens on; equals the build profile (`development`, `preview`, `production`). `eas update --channel <c>` publishes to it.
+- **Runtime fingerprint** (MA25): `runtimeVersion: { policy: 'fingerprint' }`; a hash of the native project. An OTA only reaches binaries with the same fingerprint, so a native change always needs a store build.
+- **Internal track** (MA25): Google Play's internal testing track; `eas submit --profile production` uploads a draft release there (promotion is MA28).
+- **Remote version** (MA25): `versionCode`/`buildNumber` are owned by EAS (`appVersionSource: remote`, `autoIncrement`); the semver lives in `package.json` + `APP_VERSION` (`scripts/bump-version.mjs`).
+- **Aperture assets** (MA25): every icon/splash/store PNG is rendered by `scripts/gen-icons.mjs` from the vector path data in `scripts/aperture.mjs`; `--check` (a gate) fails when a committed PNG differs from a fresh render.

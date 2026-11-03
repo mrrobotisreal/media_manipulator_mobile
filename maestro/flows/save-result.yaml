@@ -1,0 +1,13 @@
+# Runs on the open result screen from convert-image.yaml. Save to Photos shows a toast.
+appId: ${MM_APP_ID}
+env:
+  MM_APP_ID: com.mediamanipulator.app
+---
+- tapOn:
+    id: action-save
+- extendedWaitUntil:
+    visible:
+      id: notice
+    timeout: 20000
+- assertVisible:
+    id: notice

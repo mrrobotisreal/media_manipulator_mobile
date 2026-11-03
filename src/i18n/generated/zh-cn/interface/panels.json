@@ -1937,6 +1937,18 @@
         "format": "该文件不是预设导出文件。",
         "invalid": "该文件包含无法使用的预设。",
         "empty": "该文件中没有预设。"
+      },
+      "accountNote": "已保存到您的账户。",
+      "limitReached": "您已达到当前套餐的预设保存数量上限。",
+      "signInAgain": "请重新登录，以便将预设保存到账户。",
+      "saveFailedAccount": "无法将预设保存到您的账户。",
+      "migrate": {
+        "title": "保留您的预设",
+        "prompt_other": "要将您的 {{count}} 个预设保留在账户中吗？",
+        "keepLocal": "保留在此浏览器中",
+        "accept": "移到我的账户",
+        "done": "您的预设现已保存在账户中。",
+        "partial": "由于已达到套餐上限，部分预设仍保留在此浏览器中。"
       }
     },
     "history": {
@@ -2072,6 +2084,17 @@
       "zipping": "正在准备 ZIP…",
       "zipFailed": "无法准备 ZIP，请重试。",
       "zipMissing_other": "有 {{count}} 张照片无法添加到 ZIP。"
+    },
+    "gate": {
+      "cta": {
+        "signup": "免费登录",
+        "premium": "升级到Premium",
+        "pro": "升级到Pro"
+      },
+      "sizes": {
+        "premium": "超过 {{mp}} MP 的导出包含在 Premium 中。",
+        "pro": "超过 {{mp}} MP 的导出包含在 Pro 中。"
+      }
     }
   }
 }
