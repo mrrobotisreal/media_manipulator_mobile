@@ -124,7 +124,8 @@
     "operatedBy": "מופעל על ידי CreaTV Ltd. · קולורדו, ארה״ב",
     "changelog": "יומן שינויים",
     "status": "סטטוס",
-    "licenses": "רישיונות קוד פתוח"
+    "licenses": "רישיונות קוד פתוח",
+    "deleteAccount": "מחיקת החשבון"
   },
   "languageSelector": {
     "label": "שפה",

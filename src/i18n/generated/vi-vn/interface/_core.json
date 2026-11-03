@@ -115,7 +115,8 @@
     "operatedBy": "Vận hành bởi CreaTV Ltd. · Colorado, Hoa Kỳ",
     "changelog": "Nhật ký thay đổi",
     "status": "Trạng thái",
-    "licenses": "Giấy phép mã nguồn mở"
+    "licenses": "Giấy phép mã nguồn mở",
+    "deleteAccount": "Xóa tài khoản"
   },
   "languageSelector": {
     "label": "Ngôn ngữ",

@@ -118,7 +118,8 @@
     "operatedBy": "Exploité par CreaTV Ltd. · Colorado, États-Unis",
     "changelog": "Journal des modifications",
     "status": "État du service",
-    "licenses": "Licences open source"
+    "licenses": "Licences open source",
+    "deleteAccount": "Supprimer le compte"
   },
   "languageSelector": {
     "label": "Langue",
