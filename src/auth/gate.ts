@@ -19,7 +19,8 @@ authListener.startListening({
     // A 401 during the sync gate is handled there (-> syncFailed); signed-out users have nothing to expire.
     if (state.auth.status === 'syncing' || state.auth.status === 'signedOut') return;
     api.dispatch(noticeSet('sessionExpired'));
-    await performSignOut(api.dispatch as AppDispatch);
+    // The Bearer is already rejected: skip the push-token DELETE (MA24).
+    await performSignOut(api.dispatch as AppDispatch, undefined, { pushServer: false });
   },
 });
 

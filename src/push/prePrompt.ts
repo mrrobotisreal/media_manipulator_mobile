@@ -71,3 +71,38 @@ export async function runPrePrompt(surface: PromptSurface, deps: PrePromptDeps):
   deps.result(granted, surface);
   return granted;
 }
+
+export type LongJobCheck =
+  | { action: 'none' }
+  | { action: 'wait'; ms: number }
+  | { action: 'skip' }
+  | { action: 'prompt'; granted: boolean };
+
+export interface LongJobDeps {
+  jobs(): readonly TimedJob[];
+  now(): number;
+  /** False while the app is not in the foreground: no dialog is shown to a backgrounded app. */
+  active(): boolean;
+  permission(): Promise<PermissionState>;
+  dismissedAt(): number | null | undefined;
+  /** Runs the pre-prompt flow (`surface: 'long_job'`); true = granted. */
+  prompt(): Promise<boolean>;
+}
+
+/**
+ * Called when a job starts and again when the timer fires: nothing running -> `none`; the earliest running
+ * job has not reached 20 s -> `wait` (schedule); otherwise ask only if the OS state is undetermined and
+ * the 30-day window is clear. Android < 13 reports `granted` and so never prompts.
+ */
+export async function checkLongJobPrompt(deps: LongJobDeps): Promise<LongJobCheck> {
+  const now = deps.now();
+  const delay = longJobDelay(deps.jobs(), now);
+  if (delay === null) return { action: 'none' };
+  if (delay > 0) return { action: 'wait', ms: delay };
+  if (!deps.active()) return { action: 'skip' };
+  const permission = await deps.permission();
+  if (!shouldAutoPrompt({ permission, dismissedAt: deps.dismissedAt(), now })) {
+    return { action: 'skip' };
+  }
+  return { action: 'prompt', granted: await deps.prompt() };
+}

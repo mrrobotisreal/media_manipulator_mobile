@@ -20,6 +20,7 @@ import { startAuth } from '@/auth/gate';
 import { cleanupIntakeCache } from '@/files/intake';
 import { sweepResultCache } from '@/results/cache';
 import { useShareIntentRouting } from '@/files/share-intent';
+import { PushHost } from '@/push/PushHost';
 import { SyncLoading } from '@/auth/ui/SyncLoading';
 import { useAppSelector } from '@/state/hooks';
 import { AppState, View } from 'react-native';
@@ -147,6 +148,7 @@ export default function RootLayout() {
                     <ShareIntentRouter />
                     <IntakeCacheSweeper />
                     <JobEngineHost />
+                    <PushHost />
                     <Stack
                       screenOptions={{
                         headerShown: false,

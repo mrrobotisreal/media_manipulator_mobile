@@ -6,6 +6,8 @@ import PrivacyScreen from '../../../app/(app)/(tabs)/account/privacy';
 import { accountSettingsApi } from '@/api/endpoints/accountSettings';
 import { i18n } from '@/i18n';
 import { makeReadyStore } from '@/state/testing';
+import * as Notifications from 'expo-notifications';
+import { Linking } from 'react-native';
 
 jest.mock('@/analytics/track', () => ({
   track: jest.fn(),
@@ -36,6 +38,10 @@ jest.mock('@/account/realDeps', () => ({
   },
   realDsrDeps: () => ({}),
   realDeleteFilesDeps: () => ({}),
+}));
+const mockAskForPush = jest.fn(async (_d: unknown, _s: string) => false);
+jest.mock('@/push/promptFlow', () => ({
+  askForPush: (d: unknown, s: string) => mockAskForPush(d, s),
 }));
 const mockSetOptOut = jest.fn();
 const mockFetch = jest.fn(() => Promise.resolve({ ok: true, status: 202 }));
@@ -78,6 +84,49 @@ describe('notifications screen', () => {
     await mount(<NotificationsScreen />, { ...base, pushJobFinished: true });
     const sw = screen.getByLabelText('Push notification when a long job finishes');
     expect(sw.props.value).toBe(true);
+  });
+});
+
+describe('notifications screen: OS permission (MA24)', () => {
+  const pushOn = { ...base, pushJobFinished: true };
+  const setOs = (status: string) =>
+    (Notifications.getPermissionsAsync as jest.Mock).mockResolvedValue({ status });
+
+  it('notifications row disables the switch when OS permission is denied', async () => {
+    setOs('denied');
+    const open = jest.spyOn(Linking, 'openSettings').mockResolvedValue();
+    await mount(<NotificationsScreen />, pushOn);
+    await waitFor(() => expect(screen.getByTestId('push-os-denied')).toBeTruthy());
+    expect(screen.getByText('Notifications are off for Media Manipulator')).toBeTruthy();
+    const sw = screen.getByLabelText('Push notification when a long job finishes');
+    expect(sw.props.disabled).toBe(true);
+    expect(sw.props.value).toBe(false);
+    await fireEvent.press(screen.getByText('Open settings'));
+    expect(open).toHaveBeenCalled();
+  });
+
+  it('shows the plain switch (no settings link) when the OS permission is granted', async () => {
+    setOs('granted');
+    await mount(<NotificationsScreen />, pushOn);
+    await waitFor(() =>
+      expect(screen.getByLabelText('Push notification when a long job finishes')).toBeTruthy(),
+    );
+    expect(screen.queryByTestId('push-os-denied')).toBeNull();
+    expect(screen.getByLabelText('Push notification when a long job finishes').props.value).toBe(
+      true,
+    );
+  });
+
+  it('undetermined: turning it on runs the pre-prompt with surface settings', async () => {
+    setOs('undetermined');
+    const store = await mount(<NotificationsScreen />, { ...base, pushJobFinished: false });
+    void store;
+    await fireEvent(
+      screen.getByLabelText('Push notification when a long job finishes'),
+      'valueChange',
+      true,
+    );
+    await waitFor(() => expect(mockAskForPush).toHaveBeenCalledWith(expect.anything(), 'settings'));
   });
 });
 
