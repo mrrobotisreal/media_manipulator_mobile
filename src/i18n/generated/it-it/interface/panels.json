@@ -1461,7 +1461,8 @@
       "bigPhotoNote": "L'anteprima di questa foto è a dimensioni ridotte. Le esportazioni usano la risoluzione piena.",
       "exportSettingUp": "Esportazione in preparazione",
       "panelsTab": "Pannelli",
-      "layersTab": "Livelli"
+      "layersTab": "Livelli",
+      "shortcuts": "Scorciatoie da tastiera"
     },
     "banner": {
       "local": "Salvato solo in questo browser. Accedi per conservare fino a {{count}} progetti nel tuo account.",
@@ -1503,7 +1504,10 @@
       "geometry": "Geometria",
       "masks": "Maschere",
       "heal": "Ritocco",
-      "redEye": "Occhi rossi"
+      "redEye": "Occhi rossi",
+      "detail": "Dettaglio",
+      "presets": "Preset",
+      "history": "Cronologia"
     },
     "slider": {
       "reset": "Reimposta",
@@ -1715,7 +1719,8 @@
         "vignette": "Vignettatura",
         "grain": "Grana"
       },
-      "maskEdit": "Modifica maschera"
+      "maskEdit": "Modifica maschera",
+      "deleteGroup": "Elimina il gruppo {{name}}"
     },
     "export": {
       "title": "Esporta",
@@ -1738,7 +1743,9 @@
       "needFile": "La foto originale non è disponibile in questo browser. Riaprila per esportare.",
       "queued": "In coda…",
       "cancel": "Chiudi",
-      "anotherTime": "Esporta di nuovo"
+      "anotherTime": "Esporta di nuovo",
+      "estimateRange": "Circa da {{min}} a {{max}}",
+      "estimateNote": "Questa è una stima."
     },
     "openIn": "Apri in {{brand}}",
     "geometry": {
@@ -1848,6 +1855,249 @@
       "hint": "Fai clic su un occhio nella foto. Viene posizionata una piccola maschera circolare e il rosso al suo interno viene rimosso.",
       "radius": "Raggio (% del lato lungo)",
       "clickEye": "Fai clic su un occhio"
+    },
+    "detail": {
+      "judge": "Verifica al 100%",
+      "judgeHint": "Verifica nitidezza e rumore con zoom al 100%.",
+      "sharpen": {
+        "title": "Nitidezza",
+        "amount": "Quantità",
+        "radius": "Raggio",
+        "threshold": "Soglia"
+      },
+      "noise": {
+        "title": "Riduzione rumore",
+        "luminance": "Luminanza",
+        "color": "Colore"
+      },
+      "blur": {
+        "title": "Sfocatura",
+        "radius": "Raggio"
+      },
+      "presence": {
+        "title": "Presenza",
+        "clarity": "Chiarezza",
+        "texture": "Texture",
+        "dehaze": "Rimozione foschia"
+      },
+      "vignette": {
+        "title": "Vignettatura",
+        "amount": "Quantità",
+        "midpoint": "Punto medio",
+        "roundness": "Rotondità",
+        "feather": "Sfumatura",
+        "highlights": "Alteluci"
+      },
+      "grain": {
+        "title": "Grana",
+        "amount": "Quantità",
+        "size": "Dimensione",
+        "roughness": "Ruvidità"
+      }
+    },
+    "presets": {
+      "title": "Look",
+      "filter": "Filtra i look",
+      "category": {
+        "all": "Tutti",
+        "color": "Colore",
+        "bw": "Bianco e nero",
+        "film": "Pellicola",
+        "fix": "Correzione"
+      },
+      "appendNote": "Un look aggiunge le sue regolazioni sopra le tue modifiche. Annulla lo rimuove.",
+      "groupName": "Preset: {{name}}",
+      "name": {
+        "color-pop-red": "Colore selettivo: rosso",
+        "color-pop-yellow": "Colore selettivo: giallo",
+        "color-pop-green": "Colore selettivo: verde",
+        "color-pop-cyan": "Colore selettivo: ciano",
+        "color-pop-blue": "Colore selettivo: blu",
+        "color-pop-magenta": "Colore selettivo: magenta",
+        "bw-film": "Pellicola in bianco e nero",
+        "bw-high-contrast": "Bianco e nero ad alto contrasto",
+        "warm": "Caldo",
+        "cool": "Freddo",
+        "matte": "Opaco",
+        "fade": "Sbiadito",
+        "vivid": "Vivido",
+        "punch": "Incisivo",
+        "cross-process": "Cross-processing",
+        "vintage": "Vintage",
+        "portrait-soften": "Ammorbidimento ritratto",
+        "landscape": "Paesaggio",
+        "auto": "Auto"
+      },
+      "mine": "I miei preset",
+      "import": "Importa preset",
+      "export": "Esporta preset",
+      "browserNote": "Salvato in questo browser.",
+      "noneYet": "Non hai ancora salvato nessun preset.",
+      "layerCount_one": "{{count}} regolazione",
+      "layerCount_many": "{{count}} regolazioni",
+      "layerCount_other": "{{count}} regolazioni",
+      "rename": "Rinomina preset",
+      "delete": "Elimina preset",
+      "saveCurrent": "Salva le modifiche attuali come preset",
+      "nameLabel": "Nome del preset",
+      "namePlaceholder": "Nome del preset",
+      "whichLayers": "Regolazioni da includere",
+      "cancel": "Annulla",
+      "save": "Salva preset",
+      "saveFailed": "Impossibile salvare il preset in questo browser.",
+      "imported": "Preset importati.",
+      "importError": {
+        "json": "Il file non è un JSON valido.",
+        "format": "Il file non è un'esportazione di preset.",
+        "invalid": "Il file contiene preset non utilizzabili.",
+        "empty": "Il file non contiene preset."
+      }
+    },
+    "history": {
+      "title": "Cronologia",
+      "clear": "Cancella cronologia",
+      "original": "Originale",
+      "empty": "Ancora nessuna modifica.",
+      "snapshots": "Istantanee",
+      "snapshot": "Istantanea",
+      "snapshotName": "Nome dell'istantanea",
+      "snapshotDefault": "Istantanea {{n}}",
+      "snapshotSave": "Salva",
+      "snapshotDelete": "Elimina istantanea",
+      "snapshotsEmpty": "Le istantanee segnano una versione a cui puoi tornare.",
+      "sessionNote": "Le istantanee durano per questa sessione.",
+      "labels": {
+        "addColourRange": "Aggiungi intervallo di colore",
+        "addLocalAdjustment": "Aggiungi regolazione locale",
+        "addMask": "Aggiungi maschera",
+        "autoCrop": "Ritaglio automatico",
+        "blackWhite": "Bianco e nero",
+        "blendMode": "Metodo di fusione",
+        "blur": "Sfocatura",
+        "brush": "Pennello",
+        "channelMixer": "Miscelatore canale",
+        "clarity": "Chiarezza",
+        "color": "Colore",
+        "colorBalance": "Bilanciamento colore",
+        "colourTarget": "Colore di destinazione",
+        "crop": "Ritaglia",
+        "curves": "Curve",
+        "dehaze": "Rimozione foschia",
+        "deleteLayer": "Elimina livello",
+        "duplicateLayer": "Duplica livello",
+        "fill": "Riempimento",
+        "flip": "Rifletti",
+        "gamma": "Gamma",
+        "grain": "Grana",
+        "grayExcept": "Grigio tranne un colore",
+        "heal": "Ritocco",
+        "invertMask": "Inverti maschera",
+        "layerOpacity": "Opacità del livello",
+        "levels": "Livelli",
+        "lut": "LUT",
+        "mask": "Maschera",
+        "maskFeather": "Sfumatura maschera",
+        "maskOpacity": "Opacità maschera",
+        "noiseReduction": "Riduzione rumore",
+        "perspective": "Prospettiva",
+        "photoFilter": "Filtro foto",
+        "posterize": "Posterizza",
+        "redEye": "Occhi rossi",
+        "removeColourRange": "Rimuovi intervallo di colore",
+        "removeLUT": "Rimuovi LUT",
+        "removeMask": "Rimuovi maschera",
+        "removeMaskComponent": "Rimuovi parte della maschera",
+        "renameLayer": "Rinomina livello",
+        "reorderLayers": "Riordina livelli",
+        "reset": "Reimposta",
+        "resetColours": "Reimposta colori",
+        "resetCrop": "Reimposta ritaglio",
+        "resetLevels": "Reimposta livelli",
+        "resetPerspective": "Reimposta prospettiva",
+        "restoreDraft": "Ripristina bozza",
+        "rotate": "Ruota",
+        "selectSubject": "Seleziona soggetto",
+        "shareMask": "Condividi maschera",
+        "sharpen": "Nitidezza",
+        "splitToning": "Viraggio parziale",
+        "straighten": "Raddrizza",
+        "texture": "Texture",
+        "threshold": "Soglia",
+        "toggleLayer": "Mostra o nascondi livello",
+        "vignette": "Vignettatura",
+        "exposure": "Esposizione",
+        "snapshot": "Vai all'istantanea",
+        "deleteGroup": "Elimina gruppo",
+        "openFile": "Apri foto",
+        "preset": "Preset: {{name}}",
+        "brushGesture": "Impostazione pennello",
+        "maskGesture": "Impostazione maschera",
+        "geometryGesture": "Impostazione geometria",
+        "layerGesture": "Impostazione livello"
+      }
+    },
+    "shortcuts": {
+      "title": "Scorciatoie da tastiera",
+      "description": "Premi ? per aprire questo elenco in qualsiasi momento.",
+      "group": {
+        "general": "Generale",
+        "view": "Vista",
+        "tools": "Strumenti",
+        "masks": "Maschere e pennello"
+      },
+      "action": {
+        "undo": "Annulla",
+        "redo": "Ripeti",
+        "save": "Salva",
+        "export": "Esporta",
+        "shortcuts": "Mostra scorciatoie",
+        "before": "Tieni premuto per vedere l'originale",
+        "fit": "Adatta allo schermo",
+        "actual": "Zoom al 100%",
+        "zoomIn": "Ingrandisci",
+        "zoomOut": "Riduci",
+        "maskView": "Cambia vista maschera",
+        "brush": "Pennello",
+        "erase": "Attiva/disattiva cancellazione",
+        "brushSmaller": "Pennello più piccolo",
+        "brushLarger": "Pennello più grande",
+        "gradient": "Maschera sfumata",
+        "radial": "Maschera radiale",
+        "crop": "Ritaglia",
+        "heal": "Ritocco"
+      }
+    },
+    "batch": {
+      "title": "Applica a più foto",
+      "body": "Applica queste modifiche ad altre foto e scarica i risultati insieme.",
+      "signIn": "Accedi per applicare a più foto.",
+      "limit_one": "Il tuo piano applica le modifiche a {{count}} foto alla volta.",
+      "limit_many": "Il tuo piano applica le modifiche a {{count}} foto alla volta.",
+      "limit_other": "Il tuo piano applica le modifiche a {{count}} foto alla volta.",
+      "upTo_one": "Scegli {{count}} foto.",
+      "upTo_many": "Scegli fino a {{count}} foto.",
+      "upTo_other": "Scegli fino a {{count}} foto.",
+      "choose": "Scegli foto",
+      "dropped_one": "{{count}} foto è stata esclusa a causa del limite del tuo piano.",
+      "dropped_many": "{{count}} foto sono state escluse a causa del limite del tuo piano.",
+      "dropped_other": "{{count}} foto sono state escluse a causa del limite del tuo piano.",
+      "status": {
+        "preparing": "In preparazione",
+        "rendering": "Elaborazione {{percent}}%",
+        "done": "Fatto",
+        "failed": "Non riuscito"
+      },
+      "retry_one": "Riprova {{count}} foto non riuscita",
+      "retry_many": "Riprova {{count}} foto non riuscite",
+      "retry_other": "Riprova {{count}} foto non riuscite",
+      "zip_one": "Scarica {{count}} foto come ZIP",
+      "zip_many": "Scarica {{count}} foto come ZIP",
+      "zip_other": "Scarica {{count}} foto come ZIP",
+      "zipping": "Preparazione dello ZIP…",
+      "zipFailed": "Impossibile preparare lo ZIP. Riprova.",
+      "zipMissing_one": "Impossibile aggiungere {{count}} foto allo ZIP.",
+      "zipMissing_many": "Impossibile aggiungere {{count}} foto allo ZIP.",
+      "zipMissing_other": "Impossibile aggiungere {{count}} foto allo ZIP."
     }
   }
 }

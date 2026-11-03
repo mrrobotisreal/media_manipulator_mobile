@@ -1449,7 +1449,8 @@
       "bigPhotoNote": "此照片以缩小尺寸预览。导出将使用完整分辨率。",
       "exportSettingUp": "导出功能正在设置中",
       "panelsTab": "面板",
-      "layersTab": "图层"
+      "layersTab": "图层",
+      "shortcuts": "键盘快捷键"
     },
     "banner": {
       "local": "仅保存在此浏览器中。登录后可在账户中保留最多 {{count}} 个项目。",
@@ -1491,7 +1492,10 @@
       "geometry": "几何",
       "masks": "蒙版",
       "heal": "修复",
-      "redEye": "红眼"
+      "redEye": "红眼",
+      "detail": "细节",
+      "presets": "预设",
+      "history": "历史记录"
     },
     "slider": {
       "reset": "重置",
@@ -1703,7 +1707,8 @@
         "vignette": "晕影",
         "grain": "颗粒"
       },
-      "maskEdit": "编辑蒙版"
+      "maskEdit": "编辑蒙版",
+      "deleteGroup": "删除组 {{name}}"
     },
     "export": {
       "title": "导出",
@@ -1726,7 +1731,9 @@
       "needFile": "此浏览器中没有原始照片。请重新打开后再导出。",
       "queued": "排队中…",
       "cancel": "关闭",
-      "anotherTime": "再次导出"
+      "anotherTime": "再次导出",
+      "estimateRange": "约 {{min}} 至 {{max}}",
+      "estimateNote": "这只是估算值。"
     },
     "openIn": "在{{brand}}中打开",
     "geometry": {
@@ -1836,6 +1843,235 @@
       "hint": "点击照片中的眼睛。系统会放置一个小圆形蒙版,并消除其中的红色。",
       "radius": "半径(长边的百分比)",
       "clickEye": "点击眼睛"
+    },
+    "detail": {
+      "judge": "按 100% 查看",
+      "judgeHint": "在 100% 缩放下检查锐化和噪点效果。",
+      "sharpen": {
+        "title": "锐化",
+        "amount": "数量",
+        "radius": "半径",
+        "threshold": "阈值"
+      },
+      "noise": {
+        "title": "降噪",
+        "luminance": "明亮度",
+        "color": "颜色"
+      },
+      "blur": {
+        "title": "模糊",
+        "radius": "半径"
+      },
+      "presence": {
+        "title": "质感",
+        "clarity": "清晰度",
+        "texture": "纹理",
+        "dehaze": "去朦胧"
+      },
+      "vignette": {
+        "title": "晕影",
+        "amount": "数量",
+        "midpoint": "中点",
+        "roundness": "圆度",
+        "feather": "羽化",
+        "highlights": "高光"
+      },
+      "grain": {
+        "title": "颗粒",
+        "amount": "数量",
+        "size": "大小",
+        "roughness": "粗糙度"
+      }
+    },
+    "presets": {
+      "title": "风格",
+      "filter": "筛选风格",
+      "category": {
+        "all": "全部",
+        "color": "彩色",
+        "bw": "黑白",
+        "film": "胶片",
+        "fix": "修正"
+      },
+      "appendNote": "风格会在你现有编辑的基础上叠加调整。撤销即可移除。",
+      "groupName": "预设：{{name}}",
+      "name": {
+        "color-pop-red": "色彩突出：红色",
+        "color-pop-yellow": "色彩突出：黄色",
+        "color-pop-green": "色彩突出：绿色",
+        "color-pop-cyan": "色彩突出：青色",
+        "color-pop-blue": "色彩突出：蓝色",
+        "color-pop-magenta": "色彩突出：洋红色",
+        "bw-film": "黑白胶片",
+        "bw-high-contrast": "高对比度黑白",
+        "warm": "暖色",
+        "cool": "冷色",
+        "matte": "哑光",
+        "fade": "褪色",
+        "vivid": "鲜艳",
+        "punch": "强烈",
+        "cross-process": "交叉冲印",
+        "vintage": "复古",
+        "portrait-soften": "人像柔化",
+        "landscape": "风景",
+        "auto": "自动"
+      },
+      "mine": "我的预设",
+      "import": "导入预设",
+      "export": "导出预设",
+      "browserNote": "已保存在此浏览器中。",
+      "noneYet": "你还没有保存过预设。",
+      "layerCount_other": "{{count}} 项调整",
+      "rename": "重命名预设",
+      "delete": "删除预设",
+      "saveCurrent": "将当前编辑保存为预设",
+      "nameLabel": "预设名称",
+      "namePlaceholder": "预设名称",
+      "whichLayers": "要包含的调整",
+      "cancel": "取消",
+      "save": "保存预设",
+      "saveFailed": "无法将预设保存到此浏览器。",
+      "imported": "预设已导入。",
+      "importError": {
+        "json": "该文件不是有效的 JSON。",
+        "format": "该文件不是预设导出文件。",
+        "invalid": "该文件包含无法使用的预设。",
+        "empty": "该文件中没有预设。"
+      }
+    },
+    "history": {
+      "title": "历史记录",
+      "clear": "清除历史记录",
+      "original": "原始",
+      "empty": "还没有编辑。",
+      "snapshots": "快照",
+      "snapshot": "快照",
+      "snapshotName": "快照名称",
+      "snapshotDefault": "快照 {{n}}",
+      "snapshotSave": "保存",
+      "snapshotDelete": "删除快照",
+      "snapshotsEmpty": "快照可为某个版本添加书签，方便你随时回到该版本。",
+      "sessionNote": "快照仅在本次会话中保留。",
+      "labels": {
+        "addColourRange": "添加颜色范围",
+        "addLocalAdjustment": "添加局部调整",
+        "addMask": "添加蒙版",
+        "autoCrop": "自动裁剪",
+        "blackWhite": "黑白",
+        "blendMode": "混合模式",
+        "blur": "模糊",
+        "brush": "画笔",
+        "channelMixer": "通道混合器",
+        "clarity": "清晰度",
+        "color": "颜色",
+        "colorBalance": "色彩平衡",
+        "colourTarget": "目标颜色",
+        "crop": "裁剪",
+        "curves": "曲线",
+        "dehaze": "去朦胧",
+        "deleteLayer": "删除图层",
+        "duplicateLayer": "复制图层",
+        "fill": "填充",
+        "flip": "翻转",
+        "gamma": "灰度系数",
+        "grain": "颗粒",
+        "grayExcept": "仅保留一种颜色，其余变灰",
+        "heal": "修复",
+        "invertMask": "反转蒙版",
+        "layerOpacity": "图层不透明度",
+        "levels": "色阶",
+        "lut": "LUT",
+        "mask": "蒙版",
+        "maskFeather": "蒙版羽化",
+        "maskOpacity": "蒙版不透明度",
+        "noiseReduction": "降噪",
+        "perspective": "透视",
+        "photoFilter": "照片滤镜",
+        "posterize": "色调分离",
+        "redEye": "红眼",
+        "removeColourRange": "移除颜色范围",
+        "removeLUT": "移除 LUT",
+        "removeMask": "移除蒙版",
+        "removeMaskComponent": "移除蒙版部分",
+        "renameLayer": "重命名图层",
+        "reorderLayers": "调整图层顺序",
+        "reset": "重置",
+        "resetColours": "重置颜色",
+        "resetCrop": "重置裁剪",
+        "resetLevels": "重置色阶",
+        "resetPerspective": "重置透视",
+        "restoreDraft": "恢复草稿",
+        "rotate": "旋转",
+        "selectSubject": "选择主体",
+        "shareMask": "共享蒙版",
+        "sharpen": "锐化",
+        "splitToning": "分离色调",
+        "straighten": "拉直",
+        "texture": "纹理",
+        "threshold": "阈值",
+        "toggleLayer": "显示或隐藏图层",
+        "vignette": "晕影",
+        "exposure": "曝光度",
+        "snapshot": "转到快照",
+        "deleteGroup": "删除组",
+        "openFile": "打开照片",
+        "preset": "预设：{{name}}",
+        "brushGesture": "画笔设置",
+        "maskGesture": "蒙版设置",
+        "geometryGesture": "几何设置",
+        "layerGesture": "图层设置"
+      }
+    },
+    "shortcuts": {
+      "title": "键盘快捷键",
+      "description": "随时按 ? 即可打开此列表。",
+      "group": {
+        "general": "常规",
+        "view": "视图",
+        "tools": "工具",
+        "masks": "蒙版和画笔"
+      },
+      "action": {
+        "undo": "撤销",
+        "redo": "重做",
+        "save": "保存",
+        "export": "导出",
+        "shortcuts": "显示快捷键",
+        "before": "按住可查看原图",
+        "fit": "适应屏幕",
+        "actual": "缩放到 100%",
+        "zoomIn": "放大",
+        "zoomOut": "缩小",
+        "maskView": "循环切换蒙版视图",
+        "brush": "画笔",
+        "erase": "切换擦除",
+        "brushSmaller": "缩小画笔",
+        "brushLarger": "放大画笔",
+        "gradient": "渐变蒙版",
+        "radial": "径向蒙版",
+        "crop": "裁剪",
+        "heal": "修复"
+      }
+    },
+    "batch": {
+      "title": "应用到更多照片",
+      "body": "将这些编辑应用到其他照片，并一起下载结果。",
+      "signIn": "登录后即可应用到更多照片。",
+      "limit_other": "你的套餐一次最多可对 {{count}} 张照片应用编辑。",
+      "upTo_other": "最多选择 {{count}} 张照片。",
+      "choose": "选择照片",
+      "dropped_other": "由于套餐上限，有 {{count}} 张照片未被包含。",
+      "status": {
+        "preparing": "准备中",
+        "rendering": "正在渲染 {{percent}}%",
+        "done": "完成",
+        "failed": "失败"
+      },
+      "retry_other": "重试 {{count}} 张失败的照片",
+      "zip_other": "将 {{count}} 张照片下载为 ZIP",
+      "zipping": "正在准备 ZIP…",
+      "zipFailed": "无法准备 ZIP，请重试。",
+      "zipMissing_other": "有 {{count}} 张照片无法添加到 ZIP。"
     }
   }
 }

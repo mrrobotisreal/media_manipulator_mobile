@@ -1449,7 +1449,8 @@
       "bigPhotoNote": "この写真は縮小サイズでプレビューされています。エクスポートでは元の解像度が使われます。",
       "exportSettingUp": "エクスポートを準備中です",
       "panelsTab": "パネル",
-      "layersTab": "レイヤー"
+      "layersTab": "レイヤー",
+      "shortcuts": "キーボードショートカット"
     },
     "banner": {
       "local": "このブラウザーにのみ保存されています。サインインすると、アカウントに最大{{count}}件のプロジェクトを保持できます。",
@@ -1491,7 +1492,10 @@
       "geometry": "ジオメトリ",
       "masks": "マスク",
       "heal": "修復",
-      "redEye": "赤目"
+      "redEye": "赤目",
+      "detail": "ディテール",
+      "presets": "プリセット",
+      "history": "履歴"
     },
     "slider": {
       "reset": "リセット",
@@ -1703,7 +1707,8 @@
         "vignette": "周辺光量補正",
         "grain": "粒子"
       },
-      "maskEdit": "マスクを編集"
+      "maskEdit": "マスクを編集",
+      "deleteGroup": "グループ「{{name}}」を削除"
     },
     "export": {
       "title": "エクスポート",
@@ -1726,7 +1731,9 @@
       "needFile": "元の写真はこのブラウザーでは利用できません。エクスポートするには、もう一度開いてください。",
       "queued": "待機中…",
       "cancel": "閉じる",
-      "anotherTime": "もう一度エクスポート"
+      "anotherTime": "もう一度エクスポート",
+      "estimateRange": "約{{min}}～{{max}}",
+      "estimateNote": "これは概算です。"
     },
     "openIn": "{{brand}}で開く",
     "geometry": {
@@ -1836,6 +1843,235 @@
       "hint": "写真内の目をクリックしてください。小さな円形マスクが配置され、その内側の赤みが除去されます。",
       "radius": "半径(長辺の%)",
       "clickEye": "目をクリック"
+    },
+    "detail": {
+      "judge": "100%で確認",
+      "judgeHint": "シャープとノイズを100%ズームで確認します。",
+      "sharpen": {
+        "title": "シャープ",
+        "amount": "量",
+        "radius": "半径",
+        "threshold": "しきい値"
+      },
+      "noise": {
+        "title": "ノイズ軽減",
+        "luminance": "輝度",
+        "color": "カラー"
+      },
+      "blur": {
+        "title": "ぼかし",
+        "radius": "半径"
+      },
+      "presence": {
+        "title": "存在感",
+        "clarity": "明瞭度",
+        "texture": "テクスチャ",
+        "dehaze": "かすみの除去"
+      },
+      "vignette": {
+        "title": "周辺光量補正",
+        "amount": "量",
+        "midpoint": "中心点",
+        "roundness": "丸み",
+        "feather": "ぼかし",
+        "highlights": "ハイライト"
+      },
+      "grain": {
+        "title": "粒子",
+        "amount": "量",
+        "size": "サイズ",
+        "roughness": "粗さ"
+      }
+    },
+    "presets": {
+      "title": "ルック",
+      "filter": "ルックを絞り込む",
+      "category": {
+        "all": "すべて",
+        "color": "カラー",
+        "bw": "白黒",
+        "film": "フィルム",
+        "fix": "補正"
+      },
+      "appendNote": "ルックは、現在の編集の上に調整を追加します。元に戻すと取り消せます。",
+      "groupName": "プリセット：{{name}}",
+      "name": {
+        "color-pop-red": "カラーポップ：赤",
+        "color-pop-yellow": "カラーポップ：黄",
+        "color-pop-green": "カラーポップ：緑",
+        "color-pop-cyan": "カラーポップ：シアン",
+        "color-pop-blue": "カラーポップ：青",
+        "color-pop-magenta": "カラーポップ：マゼンタ",
+        "bw-film": "白黒フィルム",
+        "bw-high-contrast": "ハイコントラスト白黒",
+        "warm": "暖色",
+        "cool": "寒色",
+        "matte": "マット",
+        "fade": "フェード",
+        "vivid": "ビビッド",
+        "punch": "パンチ",
+        "cross-process": "クロスプロセス",
+        "vintage": "ヴィンテージ",
+        "portrait-soften": "ポートレートソフト",
+        "landscape": "風景",
+        "auto": "自動"
+      },
+      "mine": "マイプリセット",
+      "import": "プリセットを読み込む",
+      "export": "プリセットを書き出す",
+      "browserNote": "このブラウザーに保存されています。",
+      "noneYet": "保存したプリセットはまだありません。",
+      "layerCount_other": "調整{{count}}件",
+      "rename": "プリセット名を変更",
+      "delete": "プリセットを削除",
+      "saveCurrent": "現在の編集をプリセットとして保存",
+      "nameLabel": "プリセット名",
+      "namePlaceholder": "プリセット名",
+      "whichLayers": "含める調整",
+      "cancel": "キャンセル",
+      "save": "プリセットを保存",
+      "saveFailed": "このブラウザーにプリセットを保存できませんでした。",
+      "imported": "プリセットを読み込みました。",
+      "importError": {
+        "json": "このファイルは有効なJSONではありません。",
+        "format": "このファイルはプリセットの書き出しデータではありません。",
+        "invalid": "このファイルには使用できないプリセットが含まれています。",
+        "empty": "このファイルにはプリセットがありません。"
+      }
+    },
+    "history": {
+      "title": "履歴",
+      "clear": "履歴を消去",
+      "original": "オリジナル",
+      "empty": "編集はまだありません。",
+      "snapshots": "スナップショット",
+      "snapshot": "スナップショット",
+      "snapshotName": "スナップショット名",
+      "snapshotDefault": "スナップショット{{n}}",
+      "snapshotSave": "保存",
+      "snapshotDelete": "スナップショットを削除",
+      "snapshotsEmpty": "スナップショットは、後で戻れるバージョンのしおりです。",
+      "sessionNote": "スナップショットはこのセッション中のみ保持されます。",
+      "labels": {
+        "addColourRange": "カラー範囲を追加",
+        "addLocalAdjustment": "部分補正を追加",
+        "addMask": "マスクを追加",
+        "autoCrop": "自動トリミング",
+        "blackWhite": "白黒",
+        "blendMode": "描画モード",
+        "blur": "ぼかし",
+        "brush": "ブラシ",
+        "channelMixer": "チャンネルミキサー",
+        "clarity": "明瞭度",
+        "color": "カラー",
+        "colorBalance": "カラーバランス",
+        "colourTarget": "ターゲットカラー",
+        "crop": "切り抜き",
+        "curves": "トーンカーブ",
+        "dehaze": "かすみの除去",
+        "deleteLayer": "レイヤーを削除",
+        "duplicateLayer": "レイヤーを複製",
+        "fill": "塗りつぶし",
+        "flip": "反転",
+        "gamma": "ガンマ",
+        "grain": "粒子",
+        "grayExcept": "1色以外をグレーにする",
+        "heal": "修復",
+        "invertMask": "マスクを反転",
+        "layerOpacity": "レイヤーの不透明度",
+        "levels": "レベル補正",
+        "lut": "LUT",
+        "mask": "マスク",
+        "maskFeather": "マスクのぼかし",
+        "maskOpacity": "マスクの不透明度",
+        "noiseReduction": "ノイズ軽減",
+        "perspective": "パース",
+        "photoFilter": "写真フィルター",
+        "posterize": "ポスタリゼーション",
+        "redEye": "赤目",
+        "removeColourRange": "カラー範囲を削除",
+        "removeLUT": "LUTを削除",
+        "removeMask": "マスクを削除",
+        "removeMaskComponent": "マスクの一部を削除",
+        "renameLayer": "レイヤー名を変更",
+        "reorderLayers": "レイヤーを並べ替え",
+        "reset": "リセット",
+        "resetColours": "カラーをリセット",
+        "resetCrop": "切り抜きをリセット",
+        "resetLevels": "レベル補正をリセット",
+        "resetPerspective": "パースをリセット",
+        "restoreDraft": "下書きを復元",
+        "rotate": "回転",
+        "selectSubject": "被写体を選択",
+        "shareMask": "マスクを共有",
+        "sharpen": "シャープ",
+        "splitToning": "スプリットトーン",
+        "straighten": "角度補正",
+        "texture": "テクスチャ",
+        "threshold": "しきい値",
+        "toggleLayer": "レイヤーの表示/非表示",
+        "vignette": "周辺光量補正",
+        "exposure": "露光量",
+        "snapshot": "スナップショットへ移動",
+        "deleteGroup": "グループを削除",
+        "openFile": "写真を開く",
+        "preset": "プリセット：{{name}}",
+        "brushGesture": "ブラシ設定",
+        "maskGesture": "マスク設定",
+        "geometryGesture": "ジオメトリ設定",
+        "layerGesture": "レイヤー設定"
+      }
+    },
+    "shortcuts": {
+      "title": "キーボードショートカット",
+      "description": "?キーを押すと、いつでもこの一覧を開けます。",
+      "group": {
+        "general": "一般",
+        "view": "表示",
+        "tools": "ツール",
+        "masks": "マスクとブラシ"
+      },
+      "action": {
+        "undo": "元に戻す",
+        "redo": "やり直し",
+        "save": "保存",
+        "export": "エクスポート",
+        "shortcuts": "ショートカットを表示",
+        "before": "押し続けてオリジナルを表示",
+        "fit": "画面に合わせる",
+        "actual": "100%にズーム",
+        "zoomIn": "拡大",
+        "zoomOut": "縮小",
+        "maskView": "マスク表示を切り替え",
+        "brush": "ブラシ",
+        "erase": "消去の切り替え",
+        "brushSmaller": "ブラシを小さく",
+        "brushLarger": "ブラシを大きく",
+        "gradient": "グラデーションマスク",
+        "radial": "円形マスク",
+        "crop": "切り抜き",
+        "heal": "修復"
+      }
+    },
+    "batch": {
+      "title": "ほかの写真にも適用",
+      "body": "この編集をほかの写真に適用し、結果をまとめてダウンロードします。",
+      "signIn": "ほかの写真に適用するにはサインインしてください。",
+      "limit_other": "ご利用のプランでは、一度に{{count}}枚の写真に編集を適用できます。",
+      "upTo_other": "写真を最大{{count}}枚まで選択してください。",
+      "choose": "写真を選択",
+      "dropped_other": "プランの上限により、{{count}}枚の写真が除外されました。",
+      "status": {
+        "preparing": "準備中",
+        "rendering": "レンダリング中 {{percent}}%",
+        "done": "完了",
+        "failed": "失敗"
+      },
+      "retry_other": "失敗した{{count}}枚の写真を再試行",
+      "zip_other": "{{count}}枚の写真をZIPでダウンロード",
+      "zipping": "ZIPを準備中…",
+      "zipFailed": "ZIPを準備できませんでした。もう一度お試しください。",
+      "zipMissing_other": "{{count}}枚の写真をZIPに追加できませんでした。"
     }
   }
 }

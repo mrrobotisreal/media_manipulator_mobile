@@ -1461,7 +1461,8 @@
       "bigPhotoNote": "Dieses Foto wird in verkleinerter Größe angezeigt. Exporte verwenden die volle Auflösung.",
       "exportSettingUp": "Export wird eingerichtet",
       "panelsTab": "Bedienfelder",
-      "layersTab": "Ebenen"
+      "layersTab": "Ebenen",
+      "shortcuts": "Tastenkürzel"
     },
     "banner": {
       "local": "Nur in diesem Browser gespeichert. Melden Sie sich an, um bis zu {{count}} Projekte in Ihrem Konto zu behalten.",
@@ -1503,7 +1504,10 @@
       "geometry": "Geometrie",
       "masks": "Masken",
       "heal": "Reparieren",
-      "redEye": "Rote Augen"
+      "redEye": "Rote Augen",
+      "detail": "Detail",
+      "presets": "Voreinstellungen",
+      "history": "Verlauf"
     },
     "slider": {
       "reset": "Zurücksetzen",
@@ -1715,7 +1719,8 @@
         "vignette": "Vignette",
         "grain": "Körnung"
       },
-      "maskEdit": "Maske bearbeiten"
+      "maskEdit": "Maske bearbeiten",
+      "deleteGroup": "Gruppe {{name}} löschen"
     },
     "export": {
       "title": "Exportieren",
@@ -1738,7 +1743,9 @@
       "needFile": "Das Originalfoto ist in diesem Browser nicht verfügbar. Öffnen Sie es erneut, um zu exportieren.",
       "queued": "In der Warteschlange…",
       "cancel": "Schließen",
-      "anotherTime": "Erneut exportieren"
+      "anotherTime": "Erneut exportieren",
+      "estimateRange": "Etwa {{min}} bis {{max}}",
+      "estimateNote": "Dies ist eine Schätzung."
     },
     "openIn": "In {{brand}} öffnen",
     "geometry": {
@@ -1848,6 +1855,242 @@
       "hint": "Klicke auf ein Auge im Foto. Es wird eine kleine runde Maske gesetzt und das Rot darin entfernt.",
       "radius": "Radius (% der langen Seite)",
       "clickEye": "Auf ein Auge klicken"
+    },
+    "detail": {
+      "judge": "Bei 100 % beurteilen",
+      "judgeHint": "Schärfung und Rauschen bei 100 % Zoom beurteilen.",
+      "sharpen": {
+        "title": "Schärfen",
+        "amount": "Stärke",
+        "radius": "Radius",
+        "threshold": "Schwellenwert"
+      },
+      "noise": {
+        "title": "Rauschreduzierung",
+        "luminance": "Luminanz",
+        "color": "Farbe"
+      },
+      "blur": {
+        "title": "Weichzeichnen",
+        "radius": "Radius"
+      },
+      "presence": {
+        "title": "Präsenz",
+        "clarity": "Klarheit",
+        "texture": "Struktur",
+        "dehaze": "Dunst entfernen"
+      },
+      "vignette": {
+        "title": "Vignette",
+        "amount": "Stärke",
+        "midpoint": "Mittelpunkt",
+        "roundness": "Rundheit",
+        "feather": "Weiche Kante",
+        "highlights": "Lichter"
+      },
+      "grain": {
+        "title": "Körnung",
+        "amount": "Stärke",
+        "size": "Größe",
+        "roughness": "Rauheit"
+      }
+    },
+    "presets": {
+      "title": "Looks",
+      "filter": "Looks filtern",
+      "category": {
+        "all": "Alle",
+        "color": "Farbe",
+        "bw": "Schwarzweiß",
+        "film": "Film",
+        "fix": "Korrektur"
+      },
+      "appendNote": "Ein Look fügt seine Anpassungen zu Ihren Bearbeitungen hinzu. Mit „Rückgängig“ entfernen Sie ihn.",
+      "groupName": "Voreinstellung: {{name}}",
+      "name": {
+        "color-pop-red": "Farbakzent: Rot",
+        "color-pop-yellow": "Farbakzent: Gelb",
+        "color-pop-green": "Farbakzent: Grün",
+        "color-pop-cyan": "Farbakzent: Cyan",
+        "color-pop-blue": "Farbakzent: Blau",
+        "color-pop-magenta": "Farbakzent: Magenta",
+        "bw-film": "Schwarzweißfilm",
+        "bw-high-contrast": "Schwarzweiß mit hohem Kontrast",
+        "warm": "Warm",
+        "cool": "Kühl",
+        "matte": "Matt",
+        "fade": "Verblasst",
+        "vivid": "Lebendig",
+        "punch": "Kraftvoll",
+        "cross-process": "Kreuzentwicklung",
+        "vintage": "Vintage",
+        "portrait-soften": "Porträt weichzeichnen",
+        "landscape": "Landschaft",
+        "auto": "Automatisch"
+      },
+      "mine": "Meine Voreinstellungen",
+      "import": "Voreinstellungen importieren",
+      "export": "Voreinstellungen exportieren",
+      "browserNote": "In diesem Browser gespeichert.",
+      "noneYet": "Sie haben noch keine Voreinstellung gespeichert.",
+      "layerCount_one": "{{count}} Anpassung",
+      "layerCount_other": "{{count}} Anpassungen",
+      "rename": "Voreinstellung umbenennen",
+      "delete": "Voreinstellung löschen",
+      "saveCurrent": "Aktuelle Bearbeitung als Voreinstellung speichern",
+      "nameLabel": "Name der Voreinstellung",
+      "namePlaceholder": "Name der Voreinstellung",
+      "whichLayers": "Einzuschließende Anpassungen",
+      "cancel": "Abbrechen",
+      "save": "Voreinstellung speichern",
+      "saveFailed": "Die Voreinstellung konnte in diesem Browser nicht gespeichert werden.",
+      "imported": "Voreinstellungen importiert.",
+      "importError": {
+        "json": "Diese Datei ist kein gültiges JSON.",
+        "format": "Diese Datei ist kein Export von Voreinstellungen.",
+        "invalid": "Diese Datei enthält Voreinstellungen, die nicht verwendet werden können.",
+        "empty": "Diese Datei enthält keine Voreinstellungen."
+      }
+    },
+    "history": {
+      "title": "Verlauf",
+      "clear": "Verlauf löschen",
+      "original": "Original",
+      "empty": "Noch keine Bearbeitungen.",
+      "snapshots": "Schnappschüsse",
+      "snapshot": "Schnappschuss",
+      "snapshotName": "Name des Schnappschusses",
+      "snapshotDefault": "Schnappschuss {{n}}",
+      "snapshotSave": "Speichern",
+      "snapshotDelete": "Schnappschuss löschen",
+      "snapshotsEmpty": "Mit Schnappschüssen merken Sie sich eine Version, zu der Sie zurückkehren können.",
+      "sessionNote": "Schnappschüsse gelten nur für diese Sitzung.",
+      "labels": {
+        "addColourRange": "Farbbereich hinzufügen",
+        "addLocalAdjustment": "Lokale Anpassung hinzufügen",
+        "addMask": "Maske hinzufügen",
+        "autoCrop": "Automatisch zuschneiden",
+        "blackWhite": "Schwarzweiß",
+        "blendMode": "Füllmethode",
+        "blur": "Weichzeichnen",
+        "brush": "Pinsel",
+        "channelMixer": "Kanalmixer",
+        "clarity": "Klarheit",
+        "color": "Farbe",
+        "colorBalance": "Farbbalance",
+        "colourTarget": "Zielfarbe",
+        "crop": "Zuschneiden",
+        "curves": "Gradationskurven",
+        "dehaze": "Dunst entfernen",
+        "deleteLayer": "Ebene löschen",
+        "duplicateLayer": "Ebene duplizieren",
+        "fill": "Füllen",
+        "flip": "Spiegeln",
+        "gamma": "Gamma",
+        "grain": "Körnung",
+        "grayExcept": "Alles außer einer Farbe grau machen",
+        "heal": "Reparieren",
+        "invertMask": "Maske umkehren",
+        "layerOpacity": "Ebenendeckkraft",
+        "levels": "Tonwertkorrektur",
+        "lut": "LUT",
+        "mask": "Maske",
+        "maskFeather": "Maskenweichzeichnung",
+        "maskOpacity": "Maskendeckkraft",
+        "noiseReduction": "Rauschreduzierung",
+        "perspective": "Perspektive",
+        "photoFilter": "Fotofilter",
+        "posterize": "Tonwerttrennung",
+        "redEye": "Rote Augen",
+        "removeColourRange": "Farbbereich entfernen",
+        "removeLUT": "LUT entfernen",
+        "removeMask": "Maske entfernen",
+        "removeMaskComponent": "Maskenteil entfernen",
+        "renameLayer": "Ebene umbenennen",
+        "reorderLayers": "Ebenen neu anordnen",
+        "reset": "Zurücksetzen",
+        "resetColours": "Farben zurücksetzen",
+        "resetCrop": "Zuschnitt zurücksetzen",
+        "resetLevels": "Tonwerte zurücksetzen",
+        "resetPerspective": "Perspektive zurücksetzen",
+        "restoreDraft": "Entwurf wiederherstellen",
+        "rotate": "Drehen",
+        "selectSubject": "Motiv auswählen",
+        "shareMask": "Maske teilen",
+        "sharpen": "Schärfen",
+        "splitToning": "Teiltonung",
+        "straighten": "Ausrichten",
+        "texture": "Struktur",
+        "threshold": "Schwellenwert",
+        "toggleLayer": "Ebene ein- oder ausblenden",
+        "vignette": "Vignette",
+        "exposure": "Belichtung",
+        "snapshot": "Zum Schnappschuss wechseln",
+        "deleteGroup": "Gruppe löschen",
+        "openFile": "Foto öffnen",
+        "preset": "Voreinstellung: {{name}}",
+        "brushGesture": "Pinseleinstellung",
+        "maskGesture": "Maskeneinstellung",
+        "geometryGesture": "Geometrieeinstellung",
+        "layerGesture": "Ebeneneinstellung"
+      }
+    },
+    "shortcuts": {
+      "title": "Tastenkürzel",
+      "description": "Drücken Sie ?, um diese Liste jederzeit zu öffnen.",
+      "group": {
+        "general": "Allgemein",
+        "view": "Ansicht",
+        "tools": "Werkzeuge",
+        "masks": "Masken und Pinsel"
+      },
+      "action": {
+        "undo": "Rückgängig",
+        "redo": "Wiederholen",
+        "save": "Speichern",
+        "export": "Exportieren",
+        "shortcuts": "Tastenkürzel anzeigen",
+        "before": "Gedrückt halten, um das Original zu sehen",
+        "fit": "An Bildschirm anpassen",
+        "actual": "Auf 100 % zoomen",
+        "zoomIn": "Vergrößern",
+        "zoomOut": "Verkleinern",
+        "maskView": "Maskenansicht wechseln",
+        "brush": "Pinsel",
+        "erase": "Radieren ein/aus",
+        "brushSmaller": "Kleinerer Pinsel",
+        "brushLarger": "Größerer Pinsel",
+        "gradient": "Verlaufsmaske",
+        "radial": "Radialmaske",
+        "crop": "Zuschneiden",
+        "heal": "Reparieren"
+      }
+    },
+    "batch": {
+      "title": "Auf weitere Fotos anwenden",
+      "body": "Wenden Sie diese Bearbeitungen auf andere Fotos an und laden Sie die Ergebnisse gemeinsam herunter.",
+      "signIn": "Melden Sie sich an, um auf weitere Fotos anzuwenden.",
+      "limit_one": "Ihr Tarif wendet Bearbeitungen auf {{count}} Foto gleichzeitig an.",
+      "limit_other": "Ihr Tarif wendet Bearbeitungen auf {{count}} Fotos gleichzeitig an.",
+      "upTo_one": "Wählen Sie {{count}} Foto aus.",
+      "upTo_other": "Wählen Sie bis zu {{count}} Fotos aus.",
+      "choose": "Fotos auswählen",
+      "dropped_one": "{{count}} Foto wurde wegen des Limits Ihres Tarifs ausgelassen.",
+      "dropped_other": "{{count}} Fotos wurden wegen des Limits Ihres Tarifs ausgelassen.",
+      "status": {
+        "preparing": "Wird vorbereitet",
+        "rendering": "Wird gerendert {{percent}} %",
+        "done": "Fertig",
+        "failed": "Fehlgeschlagen"
+      },
+      "retry_one": "{{count}} fehlgeschlagenes Foto erneut versuchen",
+      "retry_other": "{{count}} fehlgeschlagene Fotos erneut versuchen",
+      "zip_one": "{{count}} Foto als ZIP herunterladen",
+      "zip_other": "{{count}} Fotos als ZIP herunterladen",
+      "zipping": "ZIP wird vorbereitet …",
+      "zipFailed": "Das ZIP konnte nicht vorbereitet werden. Bitte versuchen Sie es erneut.",
+      "zipMissing_one": "{{count}} Foto konnte dem ZIP nicht hinzugefügt werden.",
+      "zipMissing_other": "{{count}} Fotos konnten dem ZIP nicht hinzugefügt werden."
     }
   }
 }

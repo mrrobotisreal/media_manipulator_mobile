@@ -1461,7 +1461,8 @@
       "bigPhotoNote": "This photo is previewed at reduced size. Exports use the full resolution.",
       "exportSettingUp": "Export is being set up",
       "panelsTab": "Panels",
-      "layersTab": "Layers"
+      "layersTab": "Layers",
+      "shortcuts": "Keyboard shortcuts"
     },
     "banner": {
       "local": "Saved in this browser only. Sign in to keep up to {{count}} projects on your account.",
@@ -1503,7 +1504,10 @@
       "geometry": "Geometry",
       "masks": "Masks",
       "heal": "Heal",
-      "redEye": "Red-eye"
+      "redEye": "Red-eye",
+      "detail": "Detail",
+      "presets": "Presets",
+      "history": "History"
     },
     "slider": {
       "reset": "Reset",
@@ -1715,7 +1719,8 @@
         "vignette": "Vignette",
         "grain": "Grain"
       },
-      "maskEdit": "Edit mask"
+      "maskEdit": "Edit mask",
+      "deleteGroup": "Delete group {{name}}"
     },
     "export": {
       "title": "Export",
@@ -1738,7 +1743,9 @@
       "needFile": "The original photo is not available in this browser. Open it again to export.",
       "queued": "Queued…",
       "cancel": "Close",
-      "anotherTime": "Export again"
+      "anotherTime": "Export again",
+      "estimateRange": "About {{min}} to {{max}}",
+      "estimateNote": "This is an estimate."
     },
     "openIn": "Open in {{brand}}",
     "geometry": {
@@ -1848,6 +1855,242 @@
       "hint": "Click an eye in the photo. A small circular mask is placed and the red is removed inside it.",
       "radius": "Radius (% of the long side)",
       "clickEye": "Click an eye"
+    },
+    "detail": {
+      "judge": "Judge at 100%",
+      "judgeHint": "Judge sharpening and noise at 100% zoom.",
+      "sharpen": {
+        "title": "Sharpen",
+        "amount": "Amount",
+        "radius": "Radius",
+        "threshold": "Threshold"
+      },
+      "noise": {
+        "title": "Noise reduction",
+        "luminance": "Luminance",
+        "color": "Color"
+      },
+      "blur": {
+        "title": "Blur",
+        "radius": "Radius"
+      },
+      "presence": {
+        "title": "Presence",
+        "clarity": "Clarity",
+        "texture": "Texture",
+        "dehaze": "Dehaze"
+      },
+      "vignette": {
+        "title": "Vignette",
+        "amount": "Amount",
+        "midpoint": "Midpoint",
+        "roundness": "Roundness",
+        "feather": "Feather",
+        "highlights": "Highlights"
+      },
+      "grain": {
+        "title": "Grain",
+        "amount": "Amount",
+        "size": "Size",
+        "roughness": "Roughness"
+      }
+    },
+    "presets": {
+      "title": "Looks",
+      "filter": "Filter looks",
+      "category": {
+        "all": "All",
+        "color": "Color",
+        "bw": "Black & white",
+        "film": "Film",
+        "fix": "Fix"
+      },
+      "appendNote": "A look adds its adjustments on top of your edits. Undo removes it.",
+      "groupName": "Preset: {{name}}",
+      "name": {
+        "color-pop-red": "Color pop: red",
+        "color-pop-yellow": "Color pop: yellow",
+        "color-pop-green": "Color pop: green",
+        "color-pop-cyan": "Color pop: cyan",
+        "color-pop-blue": "Color pop: blue",
+        "color-pop-magenta": "Color pop: magenta",
+        "bw-film": "Black & white film",
+        "bw-high-contrast": "High-contrast black & white",
+        "warm": "Warm",
+        "cool": "Cool",
+        "matte": "Matte",
+        "fade": "Fade",
+        "vivid": "Vivid",
+        "punch": "Punch",
+        "cross-process": "Cross-process",
+        "vintage": "Vintage",
+        "portrait-soften": "Portrait soften",
+        "landscape": "Landscape",
+        "auto": "Auto"
+      },
+      "mine": "My presets",
+      "import": "Import presets",
+      "export": "Export presets",
+      "browserNote": "Saved in this browser.",
+      "noneYet": "You have not saved a preset yet.",
+      "layerCount_one": "{{count}} adjustment",
+      "layerCount_other": "{{count}} adjustments",
+      "rename": "Rename preset",
+      "delete": "Delete preset",
+      "saveCurrent": "Save current edits as a preset",
+      "nameLabel": "Preset name",
+      "namePlaceholder": "Preset name",
+      "whichLayers": "Adjustments to include",
+      "cancel": "Cancel",
+      "save": "Save preset",
+      "saveFailed": "The preset could not be saved in this browser.",
+      "imported": "Presets imported.",
+      "importError": {
+        "json": "That file is not valid JSON.",
+        "format": "That file is not a presets export.",
+        "invalid": "That file has presets that cannot be used.",
+        "empty": "That file has no presets."
+      }
+    },
+    "history": {
+      "title": "History",
+      "clear": "Clear history",
+      "original": "Original",
+      "empty": "No edits yet.",
+      "snapshots": "Snapshots",
+      "snapshot": "Snapshot",
+      "snapshotName": "Snapshot name",
+      "snapshotDefault": "Snapshot {{n}}",
+      "snapshotSave": "Save",
+      "snapshotDelete": "Delete snapshot",
+      "snapshotsEmpty": "Snapshots bookmark a version you can return to.",
+      "sessionNote": "Snapshots last for this session.",
+      "labels": {
+        "addColourRange": "Add color range",
+        "addLocalAdjustment": "Add local adjustment",
+        "addMask": "Add mask",
+        "autoCrop": "Auto-crop",
+        "blackWhite": "Black & white",
+        "blendMode": "Blend mode",
+        "blur": "Blur",
+        "brush": "Brush",
+        "channelMixer": "Channel mixer",
+        "clarity": "Clarity",
+        "color": "Color",
+        "colorBalance": "Color balance",
+        "colourTarget": "Color target",
+        "crop": "Crop",
+        "curves": "Curves",
+        "dehaze": "Dehaze",
+        "deleteLayer": "Delete layer",
+        "duplicateLayer": "Duplicate layer",
+        "fill": "Fill",
+        "flip": "Flip",
+        "gamma": "Gamma",
+        "grain": "Grain",
+        "grayExcept": "Gray all except one color",
+        "heal": "Heal",
+        "invertMask": "Invert mask",
+        "layerOpacity": "Layer opacity",
+        "levels": "Levels",
+        "lut": "LUT",
+        "mask": "Mask",
+        "maskFeather": "Mask feather",
+        "maskOpacity": "Mask opacity",
+        "noiseReduction": "Noise reduction",
+        "perspective": "Perspective",
+        "photoFilter": "Photo filter",
+        "posterize": "Posterize",
+        "redEye": "Red-eye",
+        "removeColourRange": "Remove color range",
+        "removeLUT": "Remove LUT",
+        "removeMask": "Remove mask",
+        "removeMaskComponent": "Remove mask part",
+        "renameLayer": "Rename layer",
+        "reorderLayers": "Reorder layers",
+        "reset": "Reset",
+        "resetColours": "Reset colors",
+        "resetCrop": "Reset crop",
+        "resetLevels": "Reset levels",
+        "resetPerspective": "Reset perspective",
+        "restoreDraft": "Restore draft",
+        "rotate": "Rotate",
+        "selectSubject": "Select subject",
+        "shareMask": "Share mask",
+        "sharpen": "Sharpen",
+        "splitToning": "Split toning",
+        "straighten": "Straighten",
+        "texture": "Texture",
+        "threshold": "Threshold",
+        "toggleLayer": "Show or hide layer",
+        "vignette": "Vignette",
+        "exposure": "Exposure",
+        "snapshot": "Go to snapshot",
+        "deleteGroup": "Delete group",
+        "openFile": "Open photo",
+        "preset": "Preset: {{name}}",
+        "brushGesture": "Brush setting",
+        "maskGesture": "Mask setting",
+        "geometryGesture": "Geometry setting",
+        "layerGesture": "Layer setting"
+      }
+    },
+    "shortcuts": {
+      "title": "Keyboard shortcuts",
+      "description": "Press ? to open this list at any time.",
+      "group": {
+        "general": "General",
+        "view": "View",
+        "tools": "Tools",
+        "masks": "Masks and brush"
+      },
+      "action": {
+        "undo": "Undo",
+        "redo": "Redo",
+        "save": "Save",
+        "export": "Export",
+        "shortcuts": "Show shortcuts",
+        "before": "Hold to see the original",
+        "fit": "Fit to screen",
+        "actual": "Zoom to 100%",
+        "zoomIn": "Zoom in",
+        "zoomOut": "Zoom out",
+        "maskView": "Cycle the mask view",
+        "brush": "Brush",
+        "erase": "Toggle erase",
+        "brushSmaller": "Smaller brush",
+        "brushLarger": "Larger brush",
+        "gradient": "Gradient mask",
+        "radial": "Radial mask",
+        "crop": "Crop",
+        "heal": "Heal"
+      }
+    },
+    "batch": {
+      "title": "Apply to more photos",
+      "body": "Apply these edits to other photos and download the results together.",
+      "signIn": "Sign in to apply to more photos.",
+      "limit_one": "Your plan applies edits to {{count}} photo at a time.",
+      "limit_other": "Your plan applies edits to {{count}} photos at a time.",
+      "upTo_one": "Choose {{count}} photo.",
+      "upTo_other": "Choose up to {{count}} photos.",
+      "choose": "Choose photos",
+      "dropped_one": "{{count}} photo was left out because of your plan limit.",
+      "dropped_other": "{{count}} photos were left out because of your plan limit.",
+      "status": {
+        "preparing": "Preparing",
+        "rendering": "Rendering {{percent}}%",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "retry_one": "Retry {{count}} failed photo",
+      "retry_other": "Retry {{count}} failed photos",
+      "zip_one": "Download {{count}} photo as ZIP",
+      "zip_other": "Download {{count}} photos as ZIP",
+      "zipping": "Preparing the ZIP…",
+      "zipFailed": "The ZIP could not be prepared. Please try again.",
+      "zipMissing_one": "{{count}} photo could not be added to the ZIP.",
+      "zipMissing_other": "{{count}} photos could not be added to the ZIP."
     }
   }
 }
