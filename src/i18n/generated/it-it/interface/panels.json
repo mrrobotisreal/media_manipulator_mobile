@@ -1461,7 +1461,7 @@
       "bigPhotoNote": "L'anteprima di questa foto è a dimensioni ridotte. Le esportazioni usano la risoluzione piena.",
       "exportSettingUp": "Esportazione in preparazione",
       "panelsTab": "Pannelli",
-      "layersTab": "Livelli",
+      "layersTab": "Strati",
       "shortcuts": "Scorciatoie da tastiera"
     },
     "banner": {
@@ -1500,7 +1500,7 @@
       "splitTone": "Viraggio parziale",
       "lut": "LUT",
       "effects": "Effetti",
-      "layers": "Livelli",
+      "layers": "Strati",
       "geometry": "Geometria",
       "masks": "Maschere",
       "heal": "Ritocco",
@@ -1672,10 +1672,10 @@
       "remove": "Rimuovi"
     },
     "layers": {
-      "title": "Livelli",
+      "title": "Strati",
       "empty": "Ancora nessuna regolazione. Sposta un cursore qualsiasi per aggiungerne una.",
-      "enable": "Mostra livello",
-      "disable": "Nascondi livello",
+      "enable": "Mostra strato",
+      "disable": "Nascondi strato",
       "opacity": "Opacità",
       "blend": "Fusione",
       "blendMode": {
@@ -1689,7 +1689,7 @@
       "moveUp": "Sposta su",
       "moveDown": "Sposta giù",
       "mask": "Aggiungi una maschera",
-      "selectLayer": "Seleziona il livello {{name}}",
+      "selectLayer": "Seleziona lo strato {{name}}",
       "type": {
         "exposure": "Esposizione",
         "brightnessContrast": "Luminosità / contrasto",
@@ -1778,8 +1778,8 @@
       "title": "Maschera",
       "add": "Aggiungi un componente di maschera",
       "empty": "Questa maschera è vuota. Aggiungi un componente per limitare dove si applica la regolazione.",
-      "selectLayer": "Seleziona un livello di regolazione per assegnargli una maschera.",
-      "layer": "Livello",
+      "selectLayer": "Seleziona uno strato di regolazione per assegnargli una maschera.",
+      "layer": "Strato",
       "kind": {
         "gradient": "Gradiente lineare",
         "radial": "Radiale",
@@ -1809,7 +1809,7 @@
       "localType": "Regolazione",
       "localBasic": "Esposizione, tono e saturazione",
       "addLocal": "Aggiungi regolazione locale",
-      "localHint": "Crea la regolazione con una maschera vuota e apre il pennello. Il combo condivide una maschera tra i suoi tre livelli.",
+      "localHint": "Crea la regolazione con una maschera vuota e apre il pennello. Il combo condivide una maschera tra i suoi tre strati.",
       "luminosity": {
         "lo": "Da luminosità",
         "hi": "A luminosità"
@@ -1951,6 +1951,20 @@
         "format": "Il file non è un'esportazione di preset.",
         "invalid": "Il file contiene preset non utilizzabili.",
         "empty": "Il file non contiene preset."
+      },
+      "accountNote": "Salvato nel tuo account.",
+      "limitReached": "Hai raggiunto il limite di preset salvati previsto dal tuo piano.",
+      "signInAgain": "Accedi di nuovo per salvare i preset nel tuo account.",
+      "saveFailedAccount": "Impossibile salvare il preset nel tuo account.",
+      "migrate": {
+        "title": "Conserva i tuoi preset",
+        "prompt_one": "Vuoi conservare il tuo preset ({{count}}) nel tuo account?",
+        "prompt_many": "Vuoi conservare i tuoi {{count}} preset nel tuo account?",
+        "prompt_other": "Vuoi conservare i tuoi {{count}} preset nel tuo account?",
+        "keepLocal": "Mantieni in questo browser",
+        "accept": "Sposta nel mio account",
+        "done": "I tuoi preset ora sono nel tuo account.",
+        "partial": "Alcuni preset sono rimasti in questo browser perché è stato raggiunto il limite del tuo piano."
       }
     },
     "history": {
@@ -1983,8 +1997,8 @@
         "crop": "Ritaglia",
         "curves": "Curve",
         "dehaze": "Rimozione foschia",
-        "deleteLayer": "Elimina livello",
-        "duplicateLayer": "Duplica livello",
+        "deleteLayer": "Elimina strato",
+        "duplicateLayer": "Duplica strato",
         "fill": "Riempimento",
         "flip": "Rifletti",
         "gamma": "Gamma",
@@ -1992,7 +2006,7 @@
         "grayExcept": "Grigio tranne un colore",
         "heal": "Ritocco",
         "invertMask": "Inverti maschera",
-        "layerOpacity": "Opacità del livello",
+        "layerOpacity": "Opacità dello strato",
         "levels": "Livelli",
         "lut": "LUT",
         "mask": "Maschera",
@@ -2007,8 +2021,8 @@
         "removeLUT": "Rimuovi LUT",
         "removeMask": "Rimuovi maschera",
         "removeMaskComponent": "Rimuovi parte della maschera",
-        "renameLayer": "Rinomina livello",
-        "reorderLayers": "Riordina livelli",
+        "renameLayer": "Rinomina strato",
+        "reorderLayers": "Riordina strati",
         "reset": "Reimposta",
         "resetColours": "Reimposta colori",
         "resetCrop": "Reimposta ritaglio",
@@ -2023,7 +2037,7 @@
         "straighten": "Raddrizza",
         "texture": "Texture",
         "threshold": "Soglia",
-        "toggleLayer": "Mostra o nascondi livello",
+        "toggleLayer": "Mostra o nascondi strato",
         "vignette": "Vignettatura",
         "exposure": "Esposizione",
         "snapshot": "Vai all'istantanea",
@@ -2033,7 +2047,7 @@
         "brushGesture": "Impostazione pennello",
         "maskGesture": "Impostazione maschera",
         "geometryGesture": "Impostazione geometria",
-        "layerGesture": "Impostazione livello"
+        "layerGesture": "Impostazione strato"
       }
     },
     "shortcuts": {
@@ -2098,6 +2112,17 @@
       "zipMissing_one": "Impossibile aggiungere {{count}} foto allo ZIP.",
       "zipMissing_many": "Impossibile aggiungere {{count}} foto allo ZIP.",
       "zipMissing_other": "Impossibile aggiungere {{count}} foto allo ZIP."
+    },
+    "gate": {
+      "cta": {
+        "signup": "Accedi gratis",
+        "premium": "Passa a Premium",
+        "pro": "Passa a Pro"
+      },
+      "sizes": {
+        "premium": "Le esportazioni oltre {{mp}} MP sono incluse in Premium.",
+        "pro": "Le esportazioni oltre {{mp}} MP sono incluse in Pro."
+      }
     }
   }
 }

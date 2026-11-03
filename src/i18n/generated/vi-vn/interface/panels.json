@@ -1937,6 +1937,18 @@
         "format": "Tệp đó không phải là bản xuất cài đặt sẵn.",
         "invalid": "Tệp đó có cài đặt sẵn không thể sử dụng.",
         "empty": "Tệp đó không có cài đặt sẵn nào."
+      },
+      "accountNote": "Đã lưu vào tài khoản của bạn.",
+      "limitReached": "Bạn đã đạt giới hạn cài đặt sẵn được lưu của gói hiện tại.",
+      "signInAgain": "Hãy đăng nhập lại để lưu cài đặt sẵn vào tài khoản.",
+      "saveFailedAccount": "Không thể lưu cài đặt sẵn vào tài khoản của bạn.",
+      "migrate": {
+        "title": "Giữ lại cài đặt sẵn của bạn",
+        "prompt_other": "Giữ {{count}} cài đặt sẵn của bạn trong tài khoản?",
+        "keepLocal": "Giữ trong trình duyệt này",
+        "accept": "Chuyển vào tài khoản của tôi",
+        "done": "Các cài đặt sẵn của bạn hiện đã nằm trong tài khoản.",
+        "partial": "Một số cài đặt sẵn vẫn ở trong trình duyệt này vì đã đạt giới hạn của gói."
       }
     },
     "history": {
@@ -2072,6 +2084,17 @@
       "zipping": "Đang chuẩn bị ZIP…",
       "zipFailed": "Không thể chuẩn bị ZIP. Vui lòng thử lại.",
       "zipMissing_other": "Không thể thêm {{count}} ảnh vào ZIP."
+    },
+    "gate": {
+      "cta": {
+        "signup": "Đăng nhập miễn phí",
+        "premium": "Nâng cấp lên Premium",
+        "pro": "Nâng cấp lên Pro"
+      },
+      "sizes": {
+        "premium": "Xuất ảnh trên {{mp}} MP được bao gồm trong Premium.",
+        "pro": "Xuất ảnh trên {{mp}} MP được bao gồm trong Pro."
+      }
     }
   }
 }

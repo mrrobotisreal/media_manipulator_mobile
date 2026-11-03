@@ -1950,6 +1950,19 @@
         "format": "That file is not a presets export.",
         "invalid": "That file has presets that cannot be used.",
         "empty": "That file has no presets."
+      },
+      "accountNote": "Saved to your account.",
+      "limitReached": "You have reached the saved presets limit for your plan.",
+      "signInAgain": "Sign in again to save presets to your account.",
+      "saveFailedAccount": "The preset could not be saved to your account.",
+      "migrate": {
+        "title": "Keep your presets",
+        "prompt_one": "Keep your {{count}} preset on your account?",
+        "prompt_other": "Keep your {{count}} presets on your account?",
+        "keepLocal": "Keep in this browser",
+        "accept": "Move to my account",
+        "done": "Your presets are now on your account.",
+        "partial": "Some presets stayed in this browser because your plan's limit was reached."
       }
     },
     "history": {
@@ -2091,6 +2104,17 @@
       "zipFailed": "The ZIP could not be prepared. Please try again.",
       "zipMissing_one": "{{count}} photo could not be added to the ZIP.",
       "zipMissing_other": "{{count}} photos could not be added to the ZIP."
+    },
+    "gate": {
+      "cta": {
+        "signup": "Sign in free",
+        "premium": "Upgrade to Premium",
+        "pro": "Upgrade to Pro"
+      },
+      "sizes": {
+        "premium": "Exports above {{mp}} MP are included with Premium.",
+        "pro": "Exports above {{mp}} MP are included with Pro."
+      }
     }
   }
 }

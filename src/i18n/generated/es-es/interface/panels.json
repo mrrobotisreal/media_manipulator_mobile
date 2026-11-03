@@ -1951,6 +1951,20 @@
         "format": "Ese archivo no es una exportación de preajustes.",
         "invalid": "Ese archivo contiene preajustes que no se pueden usar.",
         "empty": "Ese archivo no contiene preajustes."
+      },
+      "accountNote": "Guardado en tu cuenta.",
+      "limitReached": "Has alcanzado el límite de preajustes guardados de tu plan.",
+      "signInAgain": "Vuelve a iniciar sesión para guardar preajustes en tu cuenta.",
+      "saveFailedAccount": "No se pudo guardar el preajuste en tu cuenta.",
+      "migrate": {
+        "title": "Conserva tus preajustes",
+        "prompt_one": "¿Conservar {{count}} preajuste en tu cuenta?",
+        "prompt_many": "¿Conservar {{count}} preajustes en tu cuenta?",
+        "prompt_other": "¿Conservar {{count}} preajustes en tu cuenta?",
+        "keepLocal": "Conservar en este navegador",
+        "accept": "Mover a mi cuenta",
+        "done": "Tus preajustes ya están en tu cuenta.",
+        "partial": "Algunos preajustes se quedaron en este navegador porque se alcanzó el límite de tu plan."
       }
     },
     "history": {
@@ -2098,6 +2112,17 @@
       "zipMissing_one": "{{count}} foto no se pudo añadir al ZIP.",
       "zipMissing_other": "{{count}} fotos no se pudieron añadir al ZIP.",
       "zipMissing_many": "{{count}} fotos no se pudieron añadir al ZIP."
+    },
+    "gate": {
+      "cta": {
+        "signup": "Inicia sesión gratis",
+        "premium": "Actualizar a Premium",
+        "pro": "Actualizar a Pro"
+      },
+      "sizes": {
+        "premium": "Las exportaciones de más de {{mp}} MP están incluidas en Premium.",
+        "pro": "Las exportaciones de más de {{mp}} MP están incluidas en Pro."
+      }
     }
   }
 }

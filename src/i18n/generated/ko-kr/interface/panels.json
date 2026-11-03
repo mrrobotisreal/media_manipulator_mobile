@@ -1937,6 +1937,18 @@
         "format": "프리셋 내보내기 파일이 아닙니다.",
         "invalid": "사용할 수 없는 프리셋이 포함된 파일입니다.",
         "empty": "프리셋이 없는 파일입니다."
+      },
+      "accountNote": "계정에 저장되었습니다.",
+      "limitReached": "요금제에서 저장할 수 있는 프리셋 한도에 도달했습니다.",
+      "signInAgain": "프리셋을 계정에 저장하려면 다시 로그인하세요.",
+      "saveFailedAccount": "계정에 프리셋을 저장하지 못했습니다.",
+      "migrate": {
+        "title": "프리셋 보관하기",
+        "prompt_other": "프리셋 {{count}}개를 계정에 보관할까요?",
+        "keepLocal": "이 브라우저에 유지",
+        "accept": "내 계정으로 이동",
+        "done": "프리셋이 계정으로 이동되었습니다.",
+        "partial": "요금제 한도에 도달하여 일부 프리셋은 이 브라우저에 남아 있습니다."
       }
     },
     "history": {
@@ -2072,6 +2084,17 @@
       "zipping": "ZIP 파일을 준비하는 중…",
       "zipFailed": "ZIP 파일을 준비하지 못했습니다. 다시 시도해 주세요.",
       "zipMissing_other": "사진 {{count}}장을 ZIP에 추가하지 못했습니다."
+    },
+    "gate": {
+      "cta": {
+        "signup": "무료 로그인",
+        "premium": "Premium으로 업그레이드",
+        "pro": "Pro로 업그레이드"
+      },
+      "sizes": {
+        "premium": "{{mp}}MP를 초과하는 내보내기는 Premium에 포함됩니다.",
+        "pro": "{{mp}}MP를 초과하는 내보내기는 Pro에 포함됩니다."
+      }
     }
   }
 }

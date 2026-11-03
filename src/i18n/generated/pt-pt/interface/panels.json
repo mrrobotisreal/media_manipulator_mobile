@@ -1951,6 +1951,20 @@
         "format": "Esse ficheiro não é uma exportação de predefinições.",
         "invalid": "Esse ficheiro tem predefinições que não podem ser utilizadas.",
         "empty": "Esse ficheiro não tem predefinições."
+      },
+      "accountNote": "Guardado na sua conta.",
+      "limitReached": "Atingiu o limite de predefinições guardadas do seu plano.",
+      "signInAgain": "Inicie sessão novamente para guardar predefinições na sua conta.",
+      "saveFailedAccount": "Não foi possível guardar a predefinição na sua conta.",
+      "migrate": {
+        "title": "Manter as suas predefinições",
+        "prompt_one": "Manter a sua {{count}} predefinição na sua conta?",
+        "prompt_many": "Manter as suas {{count}} predefinições na sua conta?",
+        "prompt_other": "Manter as suas {{count}} predefinições na sua conta?",
+        "keepLocal": "Manter neste navegador",
+        "accept": "Mover para a minha conta",
+        "done": "As suas predefinições estão agora na sua conta.",
+        "partial": "Algumas predefinições ficaram neste navegador porque o limite do seu plano foi atingido."
       }
     },
     "history": {
@@ -2098,6 +2112,17 @@
       "zipMissing_one": "Não foi possível adicionar {{count}} fotografia ao ZIP.",
       "zipMissing_many": "Não foi possível adicionar {{count}} fotografias ao ZIP.",
       "zipMissing_other": "Não foi possível adicionar {{count}} fotografias ao ZIP."
+    },
+    "gate": {
+      "cta": {
+        "signup": "Iniciar sessão gratuitamente",
+        "premium": "Passar a Premium",
+        "pro": "Passar a Pro"
+      },
+      "sizes": {
+        "premium": "As exportações acima de {{mp}} MP estão incluídas no Premium.",
+        "pro": "As exportações acima de {{mp}} MP estão incluídas no Pro."
+      }
     }
   }
 }

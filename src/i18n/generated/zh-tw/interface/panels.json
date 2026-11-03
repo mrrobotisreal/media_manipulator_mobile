@@ -1937,6 +1937,18 @@
         "format": "該檔案不是預設集匯出檔。",
         "invalid": "該檔案包含無法使用的預設集。",
         "empty": "該檔案中沒有預設集。"
+      },
+      "accountNote": "已儲存到您的帳號。",
+      "limitReached": "您已達到目前方案的預設集儲存數量上限。",
+      "signInAgain": "請重新登入，以便將預設集儲存到帳號。",
+      "saveFailedAccount": "無法將預設集儲存到您的帳號。",
+      "migrate": {
+        "title": "保留您的預設集",
+        "prompt_other": "要將您的 {{count}} 個預設集保留在帳號中嗎？",
+        "keepLocal": "保留在此瀏覽器中",
+        "accept": "移至我的帳號",
+        "done": "您的預設集現已儲存在帳號中。",
+        "partial": "由於已達到方案上限，部分預設集仍保留在此瀏覽器中。"
       }
     },
     "history": {
@@ -2072,6 +2084,17 @@
       "zipping": "正在準備 ZIP…",
       "zipFailed": "無法準備 ZIP，請再試一次。",
       "zipMissing_other": "有 {{count}} 張相片無法加入 ZIP。"
+    },
+    "gate": {
+      "cta": {
+        "signup": "免費登入",
+        "premium": "升級至 Premium",
+        "pro": "升級至 Pro"
+      },
+      "sizes": {
+        "premium": "超過 {{mp}} MP 的匯出包含在 Premium 中。",
+        "pro": "超過 {{mp}} MP 的匯出包含在 Pro 中。"
+      }
     }
   }
 }
