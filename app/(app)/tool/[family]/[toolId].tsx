@@ -2,6 +2,7 @@ import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
+import { EVENTS } from '@/analytics/events';
 import { setContext, track } from '@/analytics/track';
 import { parseEntryPoint, trackToolViewed } from '@/analytics/toolEvents';
 import { FileArea } from '@/files/components/FileArea';
@@ -85,7 +86,7 @@ function ToolScreen({
           key,
           setTimeout(() => {
             timers.current.delete(key);
-            track('options_changed', { option: key });
+            track(EVENTS.OPTIONS_CHANGED, { option: key });
           }, OPTIONS_DEBOUNCE_MS),
         );
       }

@@ -948,5 +948,11 @@
       "loadingThumbs": "Carregando prévia…",
       "loading": "Carregando áudio"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "Compartilhar análises de uso",
+      "helper": "Ajuda a melhorar o app. Nomes e conteúdos de arquivos nunca são enviados."
+    }
   }
 }

@@ -936,5 +936,11 @@
       "loadingThumbs": "Đang tải bản xem trước…",
       "loading": "Đang tải âm thanh"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "Chia sẻ dữ liệu phân tích sử dụng",
+      "helper": "Giúp chúng tôi cải thiện ứng dụng. Tên và nội dung tệp không bao giờ được gửi đi."
+    }
   }
 }

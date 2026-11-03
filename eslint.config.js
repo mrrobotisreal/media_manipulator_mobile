@@ -32,6 +32,23 @@ module.exports = defineConfig([
     },
   },
   {
+    // MA07: analytics names only via EVENTS.X (src/analytics/events.ts), never an inline literal.
+    files: ['app/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "CallExpression[callee.name='track'] > Literal:first-child",
+          message: 'Use EVENTS.* from src/analytics/events.ts, never an inline event name.',
+        },
+        {
+          selector: "CallExpression[callee.name='track'] > TemplateLiteral:first-child",
+          message: 'Use EVENTS.* from src/analytics/events.ts, never an inline event name.',
+        },
+      ],
+    },
+  },
+  {
     // Firebase is reached only through src/auth/* (MA04 decision 2). Flat config replaces a rule
     // wholesale, so the app/ block repeats the Text/Button restriction.
     files: ['src/**/*.{ts,tsx}'],

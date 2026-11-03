@@ -1,3 +1,4 @@
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import type { TranscriptFormat } from './transcriptFormats';
 import { EXPORT_MIME, exportFileName, copyText, type TranscriptSource } from './transcriptModel';
@@ -14,7 +15,7 @@ export async function copyTranscript(
   deps: Pick<TranscriptActionDeps, 'copy'>,
 ): Promise<void> {
   await deps.copy(copyText(source));
-  track('feature_used', { feature: 'transcript', action: 'copy', value: 'txt' });
+  track(EVENTS.FEATURE_USED, { feature: 'transcript', action: 'copy', value: 'txt' });
 }
 
 export async function exportTranscript(
@@ -27,7 +28,7 @@ export async function exportTranscript(
   // Built once, from the same cues the list shows.
   const content = source.render(format);
   await deps.shareText(exportFileName(resultFileName, format), EXPORT_MIME[format], content, jobId);
-  track('feature_used', { feature: 'transcript', action: 'export', value: format });
+  track(EVENTS.FEATURE_USED, { feature: 'transcript', action: 'export', value: format });
 }
 
 /** Real bindings, required lazily so tests and the registry never load the native modules. */

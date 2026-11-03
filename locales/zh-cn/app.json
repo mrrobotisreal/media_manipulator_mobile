@@ -936,5 +936,11 @@
       "loadingThumbs": "正在加载预览…",
       "loading": "正在加载音频"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "共享使用情况分析",
+      "helper": "帮助我们改进应用。绝不会发送文件名或文件内容。"
+    }
   }
 }

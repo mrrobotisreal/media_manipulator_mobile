@@ -2,6 +2,7 @@
  * Auth analytics through MA03's stub (MA07 makes it real). Properties are method / stage / reason
  * codes only: never an email, a name or a raw error message.
  */
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import { authErrorCode } from './errors';
 import type { AuthMethod } from './methods';
@@ -18,21 +19,21 @@ export function setAuthEntrySource(source: AuthEntrySource): void {
 }
 
 export function trackAuthScreenShown(mode: AuthMode): void {
-  track('auth_modal_opened', { source: entrySource, mode });
+  track(EVENTS.AUTH_MODAL_OPENED, { source: entrySource, mode });
 }
 
 export function trackSignupStarted(method: AuthMethod): void {
-  track('signup_started', { method });
+  track(EVENTS.SIGNUP_STARTED, { method });
 }
 
 export function trackAuthSuccess(method: AuthMethod, isNewUser: boolean): void {
-  track(isNewUser ? 'signup_completed' : 'signin_completed', { method });
+  track(isNewUser ? EVENTS.SIGNUP_COMPLETED : EVENTS.SIGNIN_COMPLETED, { method });
 }
 
 export function trackAuthFailed(method: AuthMethod, stage: AuthStage, error: unknown): void {
-  track('auth_failed', { method, stage, reason: authErrorCode(error) });
+  track(EVENTS.AUTH_FAILED, { method, stage, reason: authErrorCode(error) });
 }
 
 export function trackPasswordResetRequested(): void {
-  track('password_reset_requested', { surface: 'app' });
+  track(EVENTS.PASSWORD_RESET_REQUESTED, { surface: 'app' });
 }

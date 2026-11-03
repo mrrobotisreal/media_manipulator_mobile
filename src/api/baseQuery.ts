@@ -1,5 +1,7 @@
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
 import type { ZodTypeAny } from 'zod';
+import { EVENTS } from '@/analytics/events';
+import { ensureFreshSession } from '@/analytics/session';
 import { track } from '@/analytics/track';
 import { uuidv4 } from '@/lib/ids';
 import { getRequestLocale } from '@/lib/locale';
@@ -40,8 +42,10 @@ export async function buildHeaders(
     Accept: 'application/json',
   };
   if (state) {
-    headers['X-MM-Session-ID'] = state.session.sessionId;
-    headers['X-MM-Visitor-ID'] = state.session.visitorId;
+    // Same 30-minute rotation as analytics `session_id` (MA07): an API call is activity too.
+    const ids = ensureFreshSession() ?? state.session;
+    headers['X-MM-Session-ID'] = ids.sessionId;
+    headers['X-MM-Visitor-ID'] = ids.visitorId;
   }
   if (opts.auth !== false) {
     const token = await getIdToken(opts.forceRefresh ?? false);
@@ -213,7 +217,7 @@ export const mmBaseQuery: BaseQueryFn<
       const parsed = req.schema.safeParse(body);
       if (!parsed.success) {
         const issues = [...new Set(parsed.error.issues.map((i) => i.path.join('.') || '(root)'))];
-        track('client_error', {
+        track(EVENTS.CLIENT_ERROR, {
           message: 'contract_mismatch',
           stage: api.endpoint,
           error_type: 'contract_mismatch',

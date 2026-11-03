@@ -10,7 +10,10 @@ import { ShareIntentProvider } from 'expo-share-intent';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { Component, useEffect, type ReactNode } from 'react';
+import { Component, useEffect, type ErrorInfo, type ReactNode } from 'react';
+import { AnalyticsHost } from '@/analytics/AnalyticsHost';
+import { reportClientError } from '@/analytics/errorHandlers';
+import { startCrashReporting } from '@/analytics/runtime';
 import { getJobEngine } from '@/jobs/runtime';
 import { isTerminal } from '@/jobs/types';
 import { startAuth } from '@/auth/gate';
@@ -32,6 +35,8 @@ import { Text } from '@/ui/components';
 import { colors } from '@/ui/tokens';
 
 void SplashScreen.preventAutoHideAsync();
+// Crashlytics' chained JS handler first, then ours (client_error), before anything can throw.
+startCrashReporting();
 
 function ErrorFallback() {
   const { t } = useTranslation();
@@ -46,6 +51,9 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean
   state = { failed: false };
   static getDerivedStateFromError() {
     return { failed: true };
+  }
+  componentDidCatch(error: Error, _info: ErrorInfo) {
+    reportClientError(error, 'react', { record: true });
   }
   render() {
     if (this.state.failed) return <ErrorFallback />;
@@ -132,6 +140,7 @@ export default function RootLayout() {
             <ShareIntentProvider options={{ resetOnBackground: false }}>
               <PersistGate loading={null} persistor={persistor}>
                 <LocaleApplier />
+                <AnalyticsHost />
                 <StatusBar style="light" />
                 <ErrorBoundary>
                   <AuthGate>

@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import { formatNumber } from '@/lib/format';
 import { Field } from '@/ui/components/Field';
@@ -28,7 +29,7 @@ export function AudioTrimForm({ value, onChange, ctx }: ToolFormProps<Form>) {
     (startTime: number, endTime: number) => {
       onChange({ ...value, startTime, endTime });
       // Track once per edit, never the times themselves.
-      track('options_changed', { option: 'trim' });
+      track(EVENTS.OPTIONS_CHANGED, { option: 'trim' });
     },
     [value, onChange],
   );

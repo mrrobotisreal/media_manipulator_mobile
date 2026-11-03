@@ -1,92 +1,33 @@
 /**
- * Analytics stub (MA03). MA07 replaces the bodies; the signatures are the contract.
- * Nothing else in the app imports an analytics transport before MA07.
+ * The analytics entry points every feature imports (signatures unchanged since the MA03 stub).
+ * Names only via `EVENTS` (src/analytics/events.ts); the client lives in `runtime.ts`.
  */
-export type StubEventName =
-  | 'client_error'
-  // Auth (MA04). Names match the analytics catalog (media-manipulator-analytics/internal/catalog).
-  | 'auth_modal_opened'
-  | 'signup_started'
-  | 'signup_completed'
-  | 'signin_completed'
-  | 'auth_failed'
-  | 'password_reset_requested'
-  | 'signout'
-  // Tools (MA10).
-  | 'tool_viewed'
-  | 'options_changed'
-  // File intake (MA11).
-  | 'file_selected'
-  | 'file_rejected'
-  | 'share_intent_received'
-  // Upload + jobs (MA12).
-  | 'upload_started'
-  | 'upload_completed'
-  | 'upload_failed'
-  | 'job_started'
-  | 'job_completed'
-  | 'job_failed'
-  | 'activation_first_job_completed'
-  // Results (MA13).
-  | 'result_viewed'
-  | 'result_previewed'
-  | 'result_compare_used'
-  | 'result_archive_entry_opened'
-  // Save / share / download (MA14).
-  | 'result_download_clicked'
-  | 'download_started'
-  | 'download_completed'
-  | 'download_failed'
-  | 'media_saved'
-  | 'share_link_copied'
-  | 'data_deleted'
-  // History (MA15).
-  | 'history_item_reopened'
-  // Quota (MA16).
-  | 'quota_warning_shown'
-  | 'quota_exceeded_shown'
-  // AI tools (MA20). Catalog: feature_used {feature, action, value}.
-  | 'feature_used'
-  // Metadata (MA21). Catalog: metadata_* in internal/catalog/catalog.go.
-  | 'metadata_inspected'
-  | 'metadata_section_toggled'
-  | 'metadata_search_used'
-  | 'metadata_privacy_filter_used'
-  | 'metadata_diff_opened';
+import type { EventName, EventPropsMap } from './events';
+import { analytics } from './runtime';
 
-export type EventProps = Record<string, string | number | boolean | null | undefined>;
+export { EVENTS, type EventName, type EventPropsMap } from './events';
+export { clearContext, getContext, setContext, type EventProps } from './context';
 
 /**
  * `context` overrides the ambient tool context for this one event (web `analytics.track`'s third
  * argument): job events fire after the tool screen is gone, so they carry their own `tool_slug`,
  * `media_kind` and `job_id`.
  */
-export function track(name: StubEventName, props?: EventProps, context?: EventProps): void {
-  if (__DEV__) console.debug('[analytics:stub] track', name, props, context);
+export function track<N extends EventName>(
+  name: N,
+  ...rest: EventPropsMap[N] extends Record<string, never>
+    ? [props?: EventPropsMap[N], context?: import('./context').EventProps]
+    : [props: EventPropsMap[N], context?: import('./context').EventProps]
+): void {
+  analytics.track(name, rest[0], rest[1]);
 }
 
-export function identify(uid: string, traits?: EventProps): void {
-  if (__DEV__) console.debug('[analytics:stub] identify', uid, traits);
+/** Sets `person_hint` (sync gate `ready`) and the Crashlytics user. */
+export function identify(uid: string, traits?: { tier?: string }): void {
+  analytics.identify(uid, traits);
 }
 
+/** Sign-out: clears `person_hint` and the Crashlytics user; `visitorId` is kept. */
 export function reset(): void {
-  if (__DEV__) console.debug('[analytics:stub] reset');
-}
-
-/**
- * Context patch (MA10 stub; MA07 replaces it with the real context store). `tool_slug` and
- * `media_kind` ride on every event while a tool screen is open (web ToolAnalyticsContext precedent).
- */
-const context: Record<string, string | number | boolean | null | undefined> = {};
-
-export function setContext(patch: EventProps): void {
-  Object.assign(context, patch);
-}
-
-export function clearContext(keys: string[]): void {
-  for (const k of keys) delete context[k];
-}
-
-export function getContext(): EventProps {
-  return { ...context };
+  analytics.reset();
 }

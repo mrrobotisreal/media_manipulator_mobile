@@ -9,6 +9,7 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
+import { registerSessionDispatch } from '@/analytics/session';
 import { registerStateGetter } from '@/api/stateRef';
 import { setupApiListeners } from '@/api/listeners';
 import { mmApi } from '@/api/mmApi';
@@ -39,6 +40,7 @@ export function makeStore() {
       }).concat(mmApi.middleware, authListener.middleware),
   });
   registerStateGetter(() => store.getState());
+  registerSessionDispatch(store.dispatch);
   return { store, persistor: persistStore(store) };
 }
 

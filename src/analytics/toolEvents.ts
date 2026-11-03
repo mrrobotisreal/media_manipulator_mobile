@@ -1,3 +1,4 @@
+import { EVENTS } from './events';
 import { clearContext, setContext, track } from './track';
 
 /** App values for `tool_viewed.entry_point` (passed as the route param `from`). */
@@ -25,6 +26,6 @@ export function trackToolViewed(
   entryPoint: ToolEntryPoint,
 ): () => void {
   setContext({ tool_slug: tool.analyticsSlug, media_kind: mediaKind });
-  track('tool_viewed', { entry_point: entryPoint });
+  track(EVENTS.TOOL_VIEWED, { entry_point: entryPoint });
   return () => clearContext(TOOL_CONTEXT_KEYS);
 }

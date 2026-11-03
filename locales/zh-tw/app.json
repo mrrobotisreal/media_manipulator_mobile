@@ -936,5 +936,11 @@
       "loadingThumbs": "正在載入預覽…",
       "loading": "正在載入音訊"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "分享使用情況分析",
+      "helper": "協助我們改善 App。絕不會傳送檔案名稱或檔案內容。"
+    }
   }
 }

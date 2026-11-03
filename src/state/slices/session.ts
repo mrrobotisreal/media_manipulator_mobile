@@ -20,13 +20,18 @@ const sessionSlice = createSlice({
     touched(state, action: PayloadAction<number>) {
       state.lastActiveAt = action.payload;
     },
-    /** New session id (cold start); rotation policy arrives in MA07. */
+    /** New session id (sign-out, AUTH §4). */
     sessionStarted(state) {
       state.sessionId = uuidv4();
       state.lastActiveAt = Date.now();
     },
+    /** 30-minute idle rotation (MA07 `src/analytics/session.ts`); the API headers read the new id. */
+    sessionRotated(state, action: PayloadAction<number>) {
+      state.sessionId = uuidv4();
+      state.lastActiveAt = action.payload;
+    },
   },
 });
 
-export const { touched, sessionStarted } = sessionSlice.actions;
+export const { touched, sessionStarted, sessionRotated } = sessionSlice.actions;
 export default sessionSlice.reducer;

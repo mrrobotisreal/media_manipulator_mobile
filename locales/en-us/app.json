@@ -942,5 +942,11 @@
       "loadingThumbs": "Loading preview…",
       "loading": "Loading audio"
     }
+  },
+  "analytics": {
+    "optOut": {
+      "title": "Share usage analytics",
+      "helper": "Helps us improve the app. No file names or contents are ever sent."
+    }
   }
 }

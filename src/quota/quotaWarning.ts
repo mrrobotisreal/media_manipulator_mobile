@@ -1,3 +1,4 @@
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import type { Allowance } from './useAllowance';
 
@@ -19,7 +20,7 @@ export function maybeWarn(allowance: Allowance | null): boolean {
   if (!allowance || allowance.unlimited || warned.has(allowance.metric)) return false;
   if (!shouldWarn(allowance.limit, allowance.remaining)) return false;
   warned.add(allowance.metric);
-  track('quota_warning_shown', {
+  track(EVENTS.QUOTA_WARNING_SHOWN, {
     limit: allowance.limit,
     remaining: allowance.remaining,
     scope: allowance.metric,

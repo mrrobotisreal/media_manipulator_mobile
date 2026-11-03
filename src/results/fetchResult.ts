@@ -1,4 +1,5 @@
 import { File } from 'expo-file-system';
+import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
 import { API_BASE_URL } from '@/api/config';
 import { buildHeaders } from '@/api/baseQuery';
@@ -114,7 +115,7 @@ async function downloadFresh(args: FetchResultArgs, deps: FetchResultDeps): Prom
   }
   const { url, usedFallback } = resolveLinkUrl(link);
   if (usedFallback) {
-    track('client_error', {
+    track(EVENTS.CLIENT_ERROR, {
       message: 'no_absolute_url',
       stage: 'download_link',
       error_type: 'no_absolute_url',
