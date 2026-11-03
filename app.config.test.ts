@@ -19,7 +19,10 @@ describe('app.config', () => {
     expect(c.android?.package).toBe(`${ANDROID_PACKAGE}${suffix}`);
     expect(c.ios?.bundleIdentifier).toBe(`${IOS_BUNDLE_ID}${suffix}`);
     expect(c.runtimeVersion).toEqual({ policy: 'fingerprint' });
-    expect(c.updates).toBeUndefined();
+    // EAS project linked (MA01): every variant shares the project, the update URL and the owner.
+    expect(c.updates).toEqual({ url: 'https://u.expo.dev/f8644b0d-44d2-4a4f-bec9-0b0cc4252f14' });
+    expect(c.extra).toEqual({ eas: { projectId: 'f8644b0d-44d2-4a4f-bec9-0b0cc4252f14' } });
+    expect(c.owner).toBe('mwintrow');
   });
 
   it('defaults to development', () => {
