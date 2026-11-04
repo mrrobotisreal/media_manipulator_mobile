@@ -2,6 +2,8 @@ module.exports = {
   preset: 'jest-expo',
   // redux-persist / MMKV mocks leave timers open; tests are hermetic so exit is safe.
   forceExit: true,
+  // RNGH's own mocks: GestureHandlerRootView (inside every Sheet's Modal) renders without the native module.
+  setupFiles: ['react-native-gesture-handler/jestSetup'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: { '^@/(.*)$': '<rootDir>/src/$1' },
   testPathIgnorePatterns: ['/node_modules/', '/android/', '/ios/'],
