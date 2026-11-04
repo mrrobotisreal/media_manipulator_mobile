@@ -165,7 +165,13 @@ export class PhotoPipeline {
   constructor(
     private readonly api: SkiaApi,
     private readonly alphas: AlphaSource = { get: () => null },
-    private readonly opts: { gpu?: boolean } = {},
+    private readonly opts: {
+      gpu?: boolean;
+      /** Mask feather: `exact` = the reference's Gaussian taps; `skia` = `ImageFilter.MakeBlur`. */
+      feather?: 'exact' | 'skia';
+      /** Masks are computed at most this long (preview speed); sampled bilinear when applied. */
+      maskMaxSide?: number;
+    } = {},
   ) {
     this.fx = effectsFor(api);
   }
@@ -276,7 +282,16 @@ export class PhotoPipeline {
     if (!prev) prev = this.bake(this.api.Shader.MakeColor(this.api.Color('black')), w, h);
     const sigma = featherSigma(mask.feather, w, h);
     let m = prev;
-    if (sigma >= 1e-3) {
+    if (sigma >= 1e-3 && this.opts.feather === 'skia') {
+      const s = this.surface(w, h);
+      const paint = this.api.Paint();
+      paint.setBlendMode(BLEND_SRC);
+      paint.setImageFilter(this.api.ImageFilter.MakeBlur(sigma, sigma, CLAMP, null));
+      s.getCanvas().drawImage(prev, 0, 0, paint);
+      s.flush();
+      const img = s.makeImageSnapshot();
+      m = this.opts.gpu ? (img.makeNonTextureImage() ?? img) : img;
+    } else if (sigma >= 1e-3) {
       // Separable Gaussian on the folded mask: the taps and edge replication of `blurMask`.
       const common = { uSize: [w, h], uSigma: sigma, uOpacity: 1 };
       const hp = this.bake(

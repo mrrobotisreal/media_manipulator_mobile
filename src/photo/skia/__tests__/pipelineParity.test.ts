@@ -15,7 +15,7 @@ import { readFileSync } from 'node:fs';
 import { PNG } from 'pngjs';
 import { GEOMETRY_BORDER_PX, GOLDEN_IMAGES, goldenDocs, goldenPath } from '../../goldens';
 import { grainHash, isDetailType, GRAIN_SALT } from '../../colorMath';
-import type { PhotoDoc } from '../../photoTypes';
+import type { Mask, PhotoDoc } from '../../photoTypes';
 import { hasGeometry } from '../../webMaskPlan';
 import { PhotoPipeline } from '../pipeline';
 import { GRAIN_HASH_PROBE_SKSL, seedLimbs } from '../shaders/detail';
@@ -177,6 +177,25 @@ describe('MA51 Skia pipeline vs the web goldens (real Skia via CanvasKit)', () =
         }
       expect([seed, wrong]).toEqual([seed, []]);
     }
+  });
+
+  it('the phone feather (Skia ImageFilter.MakeBlur, ticket decision 2) matches the reference taps within 1/255 at feather 80', () => {
+    const d = docs.find((x) => x.name === 'masks-all-kinds')!.doc;
+    const wide = {
+      ...d,
+      layers: d.layers.map((l) => ({ ...l, mask: { ...(l.mask as Mask), feather: 80 } })),
+    } as PhotoDoc;
+    const run = (feather: 'exact' | 'skia') =>
+      new PhotoPipeline(api, brushAlphaSource(api), { feather }).readPixels(
+        fixtureSource(api, 'photo'),
+        wide,
+      )!.pixels;
+    const a = run('exact');
+    const b = run('skia');
+    let max = 0;
+    for (let i = 0; i < a.length; i += 1)
+      if (i % 4 !== 3) max = Math.max(max, Math.abs(a[i]! - b[i]!));
+    expect(max).toBeLessThanOrEqual(1);
   });
 
   it('a slider drag on a masked layer reuses the cached mask (no recompute)', () => {
