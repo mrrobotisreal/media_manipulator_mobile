@@ -9,7 +9,7 @@ Expo SDK 57 / React Native dev-client app. Read `CONTEXT.md`, then the planning 
 
 ## Hard rules
 
-- Agents never start Metro, emulators, dev builds or EAS builds, and never touch Mitch's phones. Builds are Mitch's and **local only** (`npx eas-cli@latest build --platform android --profile development --local`); there is no paid Expo plan, so never add cloud-only build steps. `eas init`, `eas credentials`, `eas env:*` and `eas update` are fine.
+- Agents run EAS builds themselves, **local only** (`npx eas-cli@latest build --platform android --profile development --local`), and install them on Mitch's connected test phone with `adb install -r` (never clear its data or uninstall without asking). Never a cloud build: there is no paid Expo plan, so never add cloud-only build steps. Delete the build output afterwards (disk is tight). `eas init`, `eas credentials` and `eas env:*` are fine; `eas update` / `eas submit` publish to users, so confirm with Mitch first.
 - Never push. Never merge to `main` unless the ticket's flow says so (`--no-ff` after green gates). No destructive git commands.
 - CNG: `android/` and `ios/` are never committed and never generated into the repo (`expo prebuild` is not run here).
 - Secrets: never read, print or commit `.env*`, `google-services.json`, `GoogleService-Info.plist`, keystores or tokens. Name the variable instead (`GOOGLE_SERVICES_JSON`, `GOOGLE_SERVICE_INFO_PLIST`, `EXPO_PUBLIC_*`).
