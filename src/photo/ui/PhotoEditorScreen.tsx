@@ -114,6 +114,7 @@ function workspaceIo(): WorkspaceIo {
       return f.uri;
     },
     renderHealMask: (strokes, size) => renderHealMaskPng(Skia, strokes, size),
+    pending: mmkvStorage,
   };
 }
 
