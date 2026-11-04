@@ -536,11 +536,11 @@
       },
       "color-pop": {
         "title": "Color pop",
-        "description": "Keep one colour and turn the rest grey. Opens with the red colour-pop look."
+        "description": "Keep one colour and turn the rest grey. Opens with the Color pop: red look applied."
       },
       "black-white": {
         "title": "Black & white photo",
-        "description": "Convert a photo to black and white. Opens with the film look applied."
+        "description": "Convert a photo to black and white. Opens with the Black & white film look applied."
       },
       "curves": {
         "title": "Curves",

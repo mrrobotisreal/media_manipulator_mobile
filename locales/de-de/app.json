@@ -1228,8 +1228,8 @@
     "strip": {
       "basic": "Basis",
       "color": "Farbe",
-      "curves": "Kurven",
-      "levels": "Tonwerte",
+      "curves": "Gradationskurven",
+      "levels": "Tonwertkorrektur",
       "bw": "S/W",
       "more": "Mehr",
       "layers": "Ebenen",
@@ -1237,7 +1237,7 @@
       "geometry": "Geometrie",
       "heal": "Reparieren",
       "detail": "Details",
-      "presets": "Stile",
+      "presets": "Looks",
       "history": "Verlauf"
     },
     "greyExcept": "Alles grau außer diesem",

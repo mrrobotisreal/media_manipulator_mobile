@@ -196,6 +196,9 @@
     "vi-VN:tools.audio.effects.reverbType.plate",
     "vi-VN:tools.audio.mono",
     "vi-VN:tools.audio.stereo",
-    "vi-VN:tools.audio.waveform.output.video"
+    "vi-VN:tools.audio.waveform.output.video",
+    "de-DE:photo.strip.presets",
+    "pt-BR:photo.strip.presets",
+    "pt-PT:photo.strip.presets"
   ]
 }

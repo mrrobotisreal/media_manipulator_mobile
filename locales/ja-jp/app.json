@@ -1221,8 +1221,8 @@
     "strip": {
       "basic": "基本",
       "color": "カラー",
-      "curves": "カーブ",
-      "levels": "レベル",
+      "curves": "トーンカーブ",
+      "levels": "レベル補正",
       "bw": "白黒",
       "more": "その他",
       "layers": "レイヤー",
