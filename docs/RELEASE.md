@@ -1,6 +1,6 @@
 # Release runbook (MA25)
 
-Every `eas build|update|submit` is run by Mitch, on the laptop. **Builds are always local (`--local`), never cloud** (no paid Expo plan).
+Agents run `eas build` themselves, on the laptop, and install the result on the test phone. **Builds are always local (`--local`), never cloud** (no paid Expo plan). `eas update` and `eas submit` publish to users: confirm with Mitch first.
 eas-cli at writing: 27.4.0 (`npx eas-cli@latest` or `npm i -g eas-cli`). Project `media-manipulator`, owner `mwintrow`, id in `app.config.ts`.
 
 ## 1. One-time setup
