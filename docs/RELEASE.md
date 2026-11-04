@@ -14,7 +14,7 @@ eas-cli at writing: 27.4.0 (`npx eas-cli@latest` or `npm i -g eas-cli`). Project
    | `EXPO_PUBLIC_API_BASE_URL`         | API base URL                                                                | same                                      |
    | `EXPO_PUBLIC_ANALYTICS_BASE_URL`   | analytics base URL                                                          | same                                      |
    | `EXPO_PUBLIC_ANALYTICS_WRITE_KEY`  | the **mobile-dev** write key                                                | the **mobile** write key (set 2026-11-03) |
-   | `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID` | web OAuth client id                                                         | same                                      |
+   | `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID` | web OAuth client id (set in all three 2026-11-05)                           | same                                      |
    | `EXPO_PUBLIC_APPLE_SERVICE_ID`     | Apple Services ID (Apple on Android)                                        | same                                      |
    | `EXPO_PUBLIC_WEB_BASE_URL`         | optional (default `https://www.media-manipulator.com`)                      | same                                      |
    | `GOOGLE_SERVICES_JSON`             | **file** variable: `eas env:create --type file` with `google-services.json` | same                                      |
