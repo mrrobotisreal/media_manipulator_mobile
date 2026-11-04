@@ -4,6 +4,9 @@ import { EVENTS } from './events';
 import { track, type EventProps } from './track';
 import type { JobRecord } from '@/jobs/types';
 
+/** Starter jobs (MA50) emit no upload events; the narrowing keeps the catalog's two values. */
+const transportOf = (r: JobRecord) => (r.transport === 'starter' ? undefined : r.transport);
+
 /** Event context: ambient tool screen state is gone by the time a job finishes. */
 function ctx(r: JobRecord, withJobId = true): EventProps {
   return {
@@ -14,13 +17,13 @@ function ctx(r: JobRecord, withJobId = true): EventProps {
 }
 
 export function trackUploadStarted(r: JobRecord): void {
-  track(EVENTS.UPLOAD_STARTED, { size_bytes: r.sizeBytes, transport: r.transport }, ctx(r, false));
+  track(EVENTS.UPLOAD_STARTED, { size_bytes: r.sizeBytes, transport: transportOf(r) }, ctx(r, false));
 }
 
 export function trackUploadCompleted(r: JobRecord, durationMs: number): void {
   track(
     EVENTS.UPLOAD_COMPLETED,
-    { size_bytes: r.sizeBytes, duration_ms: durationMs, transport: r.transport },
+    { size_bytes: r.sizeBytes, duration_ms: durationMs, transport: transportOf(r) },
     ctx(r, false),
   );
 }
@@ -39,7 +42,7 @@ export function trackUploadFailed(
       status,
       size_bytes: r.sizeBytes,
       duration_ms: durationMs,
-      transport: r.transport,
+      transport: transportOf(r),
     },
     ctx(r, false),
   );

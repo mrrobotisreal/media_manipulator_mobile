@@ -35,7 +35,8 @@ export const JOB_STATES: readonly JobState[] = [
   'stopped',
 ];
 
-export type JobTransportKind = 'post' | 'presigned_put';
+/** `starter` (MA50): a JSON request that answers `{jobId}` (no file upload), see `src/jobs/starters/`. */
+export type JobTransportKind = 'post' | 'presigned_put' | 'starter';
 export type LostReason = 'server_restarted' | 'expired';
 
 export interface JobRecord {
@@ -48,6 +49,8 @@ export interface JobRecord {
   family: string;
   analyticsSlug: string;
   transport: JobTransportKind;
+  /** `starter` jobs: which registered starter sends the request (`photoExport`). */
+  starter?: string;
   /** IntakeFile id whose cache copy this job still needs (MA11's sweep reads it). */
   intakeFileId: string;
   /** What a retry (also after a relaunch) needs from the cache copy. Never sent to analytics. */

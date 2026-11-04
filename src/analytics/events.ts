@@ -10,7 +10,8 @@
  *
  * Only names the app emits, plus the rest of a parity batch the app has started: `data_deleted`
  * (emitted since MA14) is in the catalog's "MA22 account" batch, so that batch's other three names
- * are declared here and emitted by MA22.
+ * are declared here and emitted by MA22. Likewise MA50 declares the whole "MA52 photo" batch (17
+ * names) and emits the editor/export core; MA51/MA52 emit the mask, heal, preset and gate names.
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -91,6 +92,25 @@ export const EVENTS = {
   PUSH_PERMISSION_PROMPTED: 'push_permission_prompted',
   PUSH_PERMISSION_RESULT: 'push_permission_result',
   PUSH_OPENED: 'push_opened',
+
+  // --- Aperture (catalog batch "MA52 photo", MM101; MA50 emits the core set) ---
+  PHOTO_EDITOR_OPENED: 'photo_editor_opened',
+  PHOTO_PROJECT_CREATED: 'photo_project_created',
+  PHOTO_ADJUSTMENT_CHANGED: 'photo_adjustment_changed',
+  PHOTO_MASK_ADDED: 'photo_mask_added',
+  PHOTO_AI_MASK_REQUESTED: 'photo_ai_mask_requested',
+  PHOTO_AI_MASK_COMPLETED: 'photo_ai_mask_completed',
+  PHOTO_AI_MASK_FAILED: 'photo_ai_mask_failed',
+  PHOTO_HEAL_REQUESTED: 'photo_heal_requested',
+  PHOTO_HEAL_COMPLETED: 'photo_heal_completed',
+  PHOTO_HEAL_FAILED: 'photo_heal_failed',
+  PHOTO_PRESET_APPLIED: 'photo_preset_applied',
+  PHOTO_COMPARE_USED: 'photo_compare_used',
+  PHOTO_PROJECT_SAVED: 'photo_project_saved',
+  PHOTO_EXPORT_STARTED: 'photo_export_started',
+  PHOTO_EXPORT_COMPLETED: 'photo_export_completed',
+  PHOTO_EXPORT_FAILED: 'photo_export_failed',
+  PHOTO_EXPORT_GATED: 'photo_export_gated',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -154,6 +174,24 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   push_permission_prompted: PRIORITY_NORMAL,
   push_permission_result: PRIORITY_HIGH,
   push_opened: PRIORITY_HIGH,
+
+  photo_editor_opened: PRIORITY_HIGH,
+  photo_project_created: PRIORITY_HIGH,
+  photo_adjustment_changed: PRIORITY_LOW,
+  photo_mask_added: PRIORITY_NORMAL,
+  photo_ai_mask_requested: PRIORITY_NORMAL,
+  photo_ai_mask_completed: PRIORITY_NORMAL,
+  photo_ai_mask_failed: PRIORITY_NORMAL,
+  photo_heal_requested: PRIORITY_NORMAL,
+  photo_heal_completed: PRIORITY_NORMAL,
+  photo_heal_failed: PRIORITY_NORMAL,
+  photo_preset_applied: PRIORITY_NORMAL,
+  photo_compare_used: PRIORITY_LOW,
+  photo_project_saved: PRIORITY_NORMAL,
+  photo_export_started: PRIORITY_HIGH,
+  photo_export_completed: PRIORITY_HIGH,
+  photo_export_failed: PRIORITY_HIGH,
+  photo_export_gated: PRIORITY_HIGH,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -438,6 +476,102 @@ export interface PushOpenedProps {
   app_state: 'background' | 'quit' | 'foreground';
 }
 
+/* Aperture (MM101 catalog, design PHOTO_EDITOR.md §10). Enums and buckets only: never a slider
+ * value, a file name, a project name or a raw size. The app sends `source` app_intake | app_share |
+ * history | projects. */
+export type PhotoEditorSource =
+  'upload' | 'tool_page' | 'result' | 'history' | 'projects' | 'app_intake' | 'app_share';
+export type PhotoFormatProp = 'jpg' | 'png' | 'webp' | 'avif' | 'tiff';
+export type PhotoFailReason =
+  | 'locked'
+  | 'limit'
+  | 'quota'
+  | 'unavailable'
+  | 'too_large'
+  | 'unsupported'
+  | 'render'
+  | 'timeout'
+  | 'cancelled'
+  | 'error';
+
+export interface PhotoEditorOpenedProps {
+  source: PhotoEditorSource;
+  local_decode: boolean;
+}
+
+export interface PhotoProjectCreatedProps {
+  source_format: string;
+  megapixels_bucket: string;
+  has_alpha: boolean;
+}
+
+export interface PhotoAdjustmentChangedProps {
+  /** The layer type. */
+  adjustment: string;
+  /** The parameter KEY only, never its value. */
+  param: string;
+}
+
+export interface PhotoMaskAddedProps {
+  mask_kind: 'gradient' | 'radial' | 'brush' | 'luminosity' | 'colorRange' | 'subject';
+}
+
+export type PhotoAiRequestedProps = Record<string, never>;
+
+export interface PhotoAiCompletedProps {
+  ms: string;
+}
+
+export interface PhotoAiFailedProps {
+  ms: string;
+  reason: PhotoFailReason;
+}
+
+export interface PhotoPresetAppliedProps {
+  preset_id: string;
+  builtin: boolean;
+  scope: 'builtin' | 'server' | 'local';
+}
+
+export interface PhotoCompareUsedProps {
+  mode: 'hold' | 'split' | 'wipe';
+}
+
+export interface PhotoProjectSavedProps {
+  layers: string;
+  masks: string;
+  heals: string;
+  doc_bytes_bucket: string;
+}
+
+export interface PhotoExportStartedProps {
+  format: PhotoFormatProp;
+  megapixels_bucket: string;
+  layers: string;
+  masks: string;
+  batch_size: string;
+}
+
+export interface PhotoExportCompletedProps {
+  format: PhotoFormatProp;
+  megapixels_bucket: string;
+  ms: string;
+  bytes_bucket?: string;
+}
+
+export interface PhotoExportFailedProps {
+  format: PhotoFormatProp;
+  megapixels_bucket: string;
+  ms: string;
+  reason: PhotoFailReason;
+}
+
+export interface PhotoExportGatedProps {
+  reason: 'megapixels' | 'batch' | 'projects';
+  tier: string;
+  upgrade_path: 'signup' | 'premium' | 'pro' | 'none';
+}
+
 export interface EventPropsMap {
   screen_viewed: ScreenViewedProps;
   app_opened: AppOpenedProps;
@@ -496,6 +630,24 @@ export interface EventPropsMap {
   push_permission_prompted: PushPermissionPromptedProps;
   push_permission_result: PushPermissionResultProps;
   push_opened: PushOpenedProps;
+
+  photo_editor_opened: PhotoEditorOpenedProps;
+  photo_project_created: PhotoProjectCreatedProps;
+  photo_adjustment_changed: PhotoAdjustmentChangedProps;
+  photo_mask_added: PhotoMaskAddedProps;
+  photo_ai_mask_requested: PhotoAiRequestedProps;
+  photo_ai_mask_completed: PhotoAiCompletedProps;
+  photo_ai_mask_failed: PhotoAiFailedProps;
+  photo_heal_requested: PhotoAiRequestedProps;
+  photo_heal_completed: PhotoAiCompletedProps;
+  photo_heal_failed: PhotoAiFailedProps;
+  photo_preset_applied: PhotoPresetAppliedProps;
+  photo_compare_used: PhotoCompareUsedProps;
+  photo_project_saved: PhotoProjectSavedProps;
+  photo_export_started: PhotoExportStartedProps;
+  photo_export_completed: PhotoExportCompletedProps;
+  photo_export_failed: PhotoExportFailedProps;
+  photo_export_gated: PhotoExportGatedProps;
 }
 
 /**

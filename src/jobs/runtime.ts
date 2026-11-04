@@ -14,6 +14,12 @@ import { createJobEngine, type JobEngine, type JobEngineDeps } from './jobEngine
 import { createJobTransport, type StreamFetch } from './transport';
 import { uuidv4 } from '@/lib/ids';
 import { makeBeforeUpload } from '@/quota/quotaGuard';
+import { trackPhotoExportSettled } from '@/analytics/photoEvents';
+import {
+  makePhotoExportStarter,
+  PHOTO_EXPORT_STARTER,
+  rtkExportCall,
+} from './starters/photoExport';
 
 const KEEP_AWAKE_TAG = 'mm-upload';
 /** MMKV list of Firebase uids already counted (`activation_first_job_completed` once per uid). */
@@ -126,6 +132,11 @@ export function getJobEngine(): JobEngine {
     },
     beforeUpload: makeBeforeUpload(store.getState),
     newId: uuidv4,
+    starters: {
+      [PHOTO_EXPORT_STARTER]: makePhotoExportStarter(rtkExportCall(dispatch), {
+        settled: (r) => trackPhotoExportSettled(r),
+      }),
+    },
   };
   engine = createJobEngine(deps);
   return engine;

@@ -201,6 +201,127 @@
       "surface"
     ]
   },
+  "photo_adjustment_changed": {
+    "priority": 3,
+    "props": [
+      "adjustment",
+      "param"
+    ]
+  },
+  "photo_ai_mask_completed": {
+    "priority": 2,
+    "props": [
+      "ms"
+    ]
+  },
+  "photo_ai_mask_failed": {
+    "priority": 2,
+    "props": [
+      "ms",
+      "reason"
+    ]
+  },
+  "photo_ai_mask_requested": {
+    "priority": 2,
+    "props": []
+  },
+  "photo_compare_used": {
+    "priority": 3,
+    "props": [
+      "mode"
+    ]
+  },
+  "photo_editor_opened": {
+    "priority": 1,
+    "props": [
+      "source",
+      "local_decode"
+    ]
+  },
+  "photo_export_completed": {
+    "priority": 1,
+    "props": [
+      "format",
+      "megapixels_bucket",
+      "ms",
+      "bytes_bucket"
+    ]
+  },
+  "photo_export_failed": {
+    "priority": 1,
+    "props": [
+      "format",
+      "megapixels_bucket",
+      "ms",
+      "reason"
+    ]
+  },
+  "photo_export_gated": {
+    "priority": 1,
+    "props": [
+      "reason",
+      "tier",
+      "upgrade_path"
+    ]
+  },
+  "photo_export_started": {
+    "priority": 1,
+    "props": [
+      "format",
+      "megapixels_bucket",
+      "layers",
+      "masks",
+      "batch_size"
+    ]
+  },
+  "photo_heal_completed": {
+    "priority": 2,
+    "props": [
+      "ms"
+    ]
+  },
+  "photo_heal_failed": {
+    "priority": 2,
+    "props": [
+      "ms",
+      "reason"
+    ]
+  },
+  "photo_heal_requested": {
+    "priority": 2,
+    "props": []
+  },
+  "photo_mask_added": {
+    "priority": 2,
+    "props": [
+      "mask_kind"
+    ]
+  },
+  "photo_preset_applied": {
+    "priority": 2,
+    "props": [
+      "preset_id",
+      "builtin",
+      "scope"
+    ]
+  },
+  "photo_project_created": {
+    "priority": 1,
+    "props": [
+      "source_format",
+      "megapixels_bucket",
+      "has_alpha"
+    ]
+  },
+  "photo_project_saved": {
+    "priority": 2,
+    "props": [
+      "layers",
+      "masks",
+      "heals",
+      "doc_bytes_bucket"
+    ]
+  },
   "push_opened": {
     "priority": 1,
     "props": [
