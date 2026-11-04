@@ -1323,9 +1323,23 @@
       "tapEye": "Toca un ojo"
     },
     "presets": {
-      "saved": "Ajuste preestablecido guardado en este dispositivo.",
-      "saveFailed": "No se pudo guardar el ajuste preestablecido en este dispositivo.",
-      "deviceNote": "Guardado en este dispositivo."
+      "saved": "Ajuste preestablecido guardado en tu cuenta.",
+      "uploaded": "Ajuste preestablecido movido a tu cuenta.",
+      "upload": "Subir",
+      "cap_one": "Hasta {{count}} ajuste preestablecido guardado en tu plan",
+      "cap_many": "Hasta {{count}} ajustes preestablecidos guardados en tu plan",
+      "cap_other": "Hasta {{count}} ajustes preestablecidos guardados en tu plan",
+      "offline": "No tienes conexión; vuelve a intentarlo.",
+      "loadFailed": "No se pudieron cargar tus ajustes preestablecidos.",
+      "device": {
+        "title": "En este dispositivo",
+        "note": "Solo están en este teléfono. Sube uno para conservarlo en tu cuenta."
+      },
+      "migrate": {
+        "body": "Ahora solo están en este teléfono. En tu cuenta también aparecen en la web y en cualquier teléfono en el que inicies sesión.",
+        "notNow": "Conservar en este dispositivo",
+        "partial": "Algunos ajustes preestablecidos se quedaron en este dispositivo porque se alcanzó el límite de tu plan."
+      }
     },
     "history": {
       "exportSettings": "Configuración de exportación",

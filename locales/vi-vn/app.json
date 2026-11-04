@@ -1309,9 +1309,21 @@
       "tapEye": "Chạm vào một mắt"
     },
     "presets": {
-      "saved": "Đã lưu cài đặt sẵn trên thiết bị này.",
-      "saveFailed": "Không thể lưu cài đặt sẵn trên thiết bị này.",
-      "deviceNote": "Đã lưu trên thiết bị này."
+      "saved": "Đã lưu cài đặt sẵn vào tài khoản của bạn.",
+      "uploaded": "Đã chuyển cài đặt sẵn vào tài khoản của bạn.",
+      "upload": "Tải lên",
+      "cap_other": "Gói của bạn cho phép lưu tối đa {{count}} cài đặt sẵn",
+      "offline": "Bạn đang ngoại tuyến; hãy thử lại.",
+      "loadFailed": "Không thể tải cài đặt sẵn của bạn.",
+      "device": {
+        "title": "Trên thiết bị này",
+        "note": "Các cài đặt sẵn này chỉ có trên điện thoại này. Hãy tải một cài đặt sẵn lên để giữ trong tài khoản của bạn."
+      },
+      "migrate": {
+        "body": "Hiện chúng chỉ có trên điện thoại này. Khi ở trong tài khoản, chúng cũng hiển thị trên web và trên mọi điện thoại mà bạn đăng nhập.",
+        "notNow": "Giữ trên thiết bị này",
+        "partial": "Một số cài đặt sẵn vẫn ở trên thiết bị này vì đã đạt giới hạn của gói."
+      }
     },
     "history": {
       "exportSettings": "Cài đặt xuất",

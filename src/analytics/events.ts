@@ -12,7 +12,8 @@
  * (emitted since MA14) is in the catalog's "MA22 account" batch, so that batch's other three names
  * are declared here and emitted by MA22. Likewise MA50 declares the whole "MA52 photo" batch (17
  * names) and emits the editor/export core; MA51 the mask, heal and preset names; MA52 the gate
- * (`photo_export_gated`), so since MA52 the app emits every name of that batch.
+ * (`photo_export_gated`), so since MA52 the app emits every name of that batch. MA53 adds the
+ * "MA53 photo presets" batch (`photo_preset_saved`, `photo_presets_migrated`) and emits both.
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -112,6 +113,10 @@ export const EVENTS = {
   PHOTO_EXPORT_COMPLETED: 'photo_export_completed',
   PHOTO_EXPORT_FAILED: 'photo_export_failed',
   PHOTO_EXPORT_GATED: 'photo_export_gated',
+
+  // --- Aperture account presets (catalog batch "MA53 photo presets", MM103) ---
+  PHOTO_PRESET_SAVED: 'photo_preset_saved',
+  PHOTO_PRESETS_MIGRATED: 'photo_presets_migrated',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -193,6 +198,9 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   photo_export_completed: PRIORITY_HIGH,
   photo_export_failed: PRIORITY_HIGH,
   photo_export_gated: PRIORITY_HIGH,
+
+  photo_preset_saved: PRIORITY_NORMAL,
+  photo_presets_migrated: PRIORITY_NORMAL,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -534,6 +542,19 @@ export interface PhotoPresetAppliedProps {
   scope: 'builtin' | 'server' | 'local';
 }
 
+/** MM103 / MA53: a user preset saved; on the phone always `scope: 'server'` (the account). */
+export interface PhotoPresetSavedProps {
+  builtin: false;
+  scope: 'server' | 'local';
+  layers: string;
+}
+
+/** MM103 / MA53: the one-time migration prompt answered; `count` is a count bucket. */
+export interface PhotoPresetsMigratedProps {
+  count: string;
+  declined: boolean;
+}
+
 export interface PhotoCompareUsedProps {
   mode: 'hold' | 'split' | 'wipe';
 }
@@ -650,6 +671,8 @@ export interface EventPropsMap {
   photo_export_completed: PhotoExportCompletedProps;
   photo_export_failed: PhotoExportFailedProps;
   photo_export_gated: PhotoExportGatedProps;
+  photo_preset_saved: PhotoPresetSavedProps;
+  photo_presets_migrated: PhotoPresetsMigratedProps;
 }
 
 /**

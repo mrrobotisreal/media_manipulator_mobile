@@ -24,10 +24,13 @@ const DESIGN_10 = {
   photo_export_completed: PRIORITY_HIGH,
   photo_export_failed: PRIORITY_HIGH,
   photo_export_gated: PRIORITY_HIGH,
+  // MA53: the "MA53 photo presets" batch (MM103 account presets).
+  photo_preset_saved: PRIORITY_NORMAL,
+  photo_presets_migrated: PRIORITY_NORMAL,
 } as const;
 
 describe('photo_* mirror', () => {
-  it('equals the design §10 list (the MA52 photo catalog batch) with the catalog priorities', () => {
+  it('equals the design §10 list (the MA52 photo + MA53 photo presets batches) with the catalog priorities', () => {
     const names = Object.values(EVENTS)
       .filter((n) => n.startsWith('photo_'))
       .sort();

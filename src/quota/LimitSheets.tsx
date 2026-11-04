@@ -54,6 +54,7 @@ export function LimitSheet({ visible, error, onClose, toolSlug, footerExtra }: L
     if (variant.kind === 'height') return variant.limit;
     if (variant.kind === 'size') return limits?.maxFileBytes;
     if (variant.kind === 'long') return limits?.maxVideoSeconds;
+    if (variant.kind === 'presets') return variant.limit;
     return undefined;
   })();
 
@@ -160,6 +161,13 @@ function Body({
     });
     const fact = higherTierFact('maxVideoSeconds', tiers, tier);
     if (fact) facts.push(factText(t, fact));
+  } else if (variant.kind === 'presets') {
+    // MA53 (MA-0008): the neutral cap line only, no plan comparison or purchase link.
+    title = t('interface:photo.presets.limitReached');
+    body =
+      variant.limit !== undefined && variant.limit >= 0
+        ? t('photo.presets.cap', { count: variant.limit })
+        : null;
   } else {
     // Deployment caps are not tier caps: no higher-tier row.
     title = t('quota.deploymentCap.title');

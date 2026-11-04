@@ -31,8 +31,16 @@ export interface EditorTools {
     key: string,
     layers: import('../photoTypes').AdjustmentLayer[],
   ) => import('@shopify/react-native-skia').SkImage | null;
-  /** Analytics seams (names live in the analytics mirror). */
-  onPresetApplied?: (id: string, builtin: boolean) => void;
+  /** MA53: a 96 px PNG of the photo through `layers`, as a local file uri (the account thumbnail). */
+  presetThumbFile?: (layers: import('../photoTypes').AdjustmentLayer[]) => Promise<string | null>;
+  /** Analytics seams (names live in the analytics mirror). `scope`: MM103's builtin | server | local. */
+  onPresetApplied?: (id: string, scope: 'builtin' | 'server' | 'local') => void;
+  /** MA53: a preset saved to the account (stack size). */
+  onPresetSaved?: (layers: number) => void;
+  /** MA53: the migration prompt answered. */
+  onPresetsMigrated?: (count: number, declined: boolean) => void;
+  /** MA53: a 403 cap (or other plan refusal) for the MA16 limit sheet; true when shown. */
+  onLimit?: (e: import('@/api/errors').MmError) => boolean;
 }
 
 export interface EditorApi {

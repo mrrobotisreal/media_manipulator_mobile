@@ -1323,9 +1323,23 @@
       "tapEye": "Tocca un occhio"
     },
     "presets": {
-      "saved": "Preset salvato su questo dispositivo.",
-      "saveFailed": "Impossibile salvare il preset su questo dispositivo.",
-      "deviceNote": "Salvato su questo dispositivo."
+      "saved": "Preset salvato nel tuo account.",
+      "uploaded": "Preset spostato nel tuo account.",
+      "upload": "Carica",
+      "cap_one": "Fino a {{count}} preset salvato con il tuo piano",
+      "cap_many": "Fino a {{count}} preset salvati con il tuo piano",
+      "cap_other": "Fino a {{count}} preset salvati con il tuo piano",
+      "offline": "Sei offline; riprova.",
+      "loadFailed": "Impossibile caricare i tuoi preset.",
+      "device": {
+        "title": "Su questo dispositivo",
+        "note": "Sono solo su questo telefono. Caricane uno per conservarlo nel tuo account."
+      },
+      "migrate": {
+        "body": "Al momento sono solo su questo telefono. Nel tuo account compaiono anche sul web e su qualsiasi telefono su cui accedi.",
+        "notNow": "Mantieni su questo dispositivo",
+        "partial": "Alcuni preset sono rimasti su questo dispositivo perché è stato raggiunto il limite del tuo piano."
+      }
     },
     "history": {
       "exportSettings": "Impostazioni di esportazione",

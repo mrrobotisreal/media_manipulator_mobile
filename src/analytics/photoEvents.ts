@@ -221,13 +221,40 @@ export function trackPhotoHeal(slug?: string, now: () => number = Date.now) {
   };
 }
 
-/** A look applied: built-in id, or `custom` for a user preset (scope `local`: on this device). */
-export function trackPhotoPresetApplied(presetId: string, builtin: boolean, slug?: string): void {
+/** Where an applied preset came from (MM103): built-in, the account, or this device (MMKV). */
+export type PresetScope = 'builtin' | 'server' | 'local';
+
+/**
+ * A look applied: the built-in id, or `custom` for a user preset (MA53: `server` for an account
+ * preset, `local` for one still only on this device). A built-in always reports `builtin`.
+ */
+export function trackPhotoPresetApplied(
+  presetId: string,
+  scopeOrBuiltin: PresetScope | boolean,
+  slug?: string,
+): void {
+  const scope: PresetScope =
+    typeof scopeOrBuiltin === 'boolean' ? (scopeOrBuiltin ? 'builtin' : 'local') : scopeOrBuiltin;
+  const builtin = scope === 'builtin';
   track(
     EVENTS.PHOTO_PRESET_APPLIED,
-    { preset_id: builtin ? presetId : 'custom', builtin, scope: builtin ? 'builtin' : 'local' },
+    { preset_id: builtin ? presetId : 'custom', builtin, scope },
     ctx(slug),
   );
+}
+
+/** MA53: a preset saved to the account (`layers` = count bucket of the saved stack). */
+export function trackPhotoPresetSaved(layers: number, slug?: string): void {
+  track(
+    EVENTS.PHOTO_PRESET_SAVED,
+    { builtin: false, scope: 'server', layers: countBucket(layers) },
+    ctx(slug),
+  );
+}
+
+/** MA53: the migration prompt answered (`count` = device presets offered, bucketed). */
+export function trackPhotoPresetsMigrated(count: number, declined: boolean, slug?: string): void {
+  track(EVENTS.PHOTO_PRESETS_MIGRATED, { count: countBucket(count), declined }, ctx(slug));
 }
 
 /* MA52: a project deleted from the Projects list (the catalog's data_deleted, kind project). */
@@ -287,8 +314,7 @@ export function photoUpgradePath(
     return ctaFor(tier, t ?? null);
   }
   const mine = rowOf(tiers, tier)?.photoProjects ?? 0;
-  const raises = (n: number | undefined) =>
-    n !== undefined && mine >= 0 && (n < 0 || n > mine);
+  const raises = (n: number | undefined) => n !== undefined && mine >= 0 && (n < 0 || n > mine);
   return ctaFor(tier, above.find((x) => raises(rowOf(tiers, x)?.photoProjects)) ?? null);
 }
 
@@ -299,9 +325,5 @@ export function trackPhotoExportGated(
   upgradePath: PhotoUpgradePath,
   slug?: string,
 ): void {
-  track(
-    EVENTS.PHOTO_EXPORT_GATED,
-    { reason, tier, upgrade_path: upgradePath },
-    ctx(slug),
-  );
+  track(EVENTS.PHOTO_EXPORT_GATED, { reason, tier, upgrade_path: upgradePath }, ctx(slug));
 }

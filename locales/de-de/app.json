@@ -1316,9 +1316,22 @@
       "tapEye": "Auf ein Auge tippen"
     },
     "presets": {
-      "saved": "Voreinstellung auf diesem Gerät gespeichert.",
-      "saveFailed": "Die Voreinstellung konnte auf diesem Gerät nicht gespeichert werden.",
-      "deviceNote": "Auf diesem Gerät gespeichert."
+      "saved": "Voreinstellung in Ihrem Konto gespeichert.",
+      "uploaded": "Voreinstellung in Ihr Konto verschoben.",
+      "upload": "Hochladen",
+      "cap_one": "Bis zu {{count}} gespeicherte Voreinstellung in Ihrem Tarif",
+      "cap_other": "Bis zu {{count}} gespeicherte Voreinstellungen in Ihrem Tarif",
+      "offline": "Sie sind offline. Versuchen Sie es erneut.",
+      "loadFailed": "Ihre Voreinstellungen konnten nicht geladen werden.",
+      "device": {
+        "title": "Auf diesem Gerät",
+        "note": "Diese sind nur auf diesem Handy gespeichert. Laden Sie eine hoch, um sie in Ihrem Konto zu behalten."
+      },
+      "migrate": {
+        "body": "Diese sind derzeit nur auf diesem Handy gespeichert. In Ihrem Konto erscheinen sie auch im Web und auf jedem Handy, auf dem Sie sich anmelden.",
+        "notNow": "Auf diesem Gerät behalten",
+        "partial": "Einige Voreinstellungen sind auf diesem Gerät geblieben, weil das Limit Ihres Tarifs erreicht wurde."
+      }
     },
     "history": {
       "exportSettings": "Exporteinstellungen",

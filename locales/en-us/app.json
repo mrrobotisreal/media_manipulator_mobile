@@ -1316,9 +1316,22 @@
       "tapEye": "Tap an eye"
     },
     "presets": {
-      "saved": "Preset saved on this device.",
-      "saveFailed": "The preset could not be saved on this device.",
-      "deviceNote": "Saved on this device."
+      "saved": "Preset saved to your account.",
+      "uploaded": "Preset moved to your account.",
+      "upload": "Upload",
+      "cap_one": "Up to {{count}} saved preset on your plan",
+      "cap_other": "Up to {{count}} saved presets on your plan",
+      "offline": "You're offline; try again.",
+      "loadFailed": "Your presets could not be loaded.",
+      "device": {
+        "title": "On this device",
+        "note": "These are only on this phone. Upload one to keep it on your account."
+      },
+      "migrate": {
+        "body": "They are only on this phone now. On your account they also show up on the web and on any phone you sign in on.",
+        "notNow": "Keep on this device",
+        "partial": "Some presets stayed on this device because your plan's limit was reached."
+      }
     },
     "history": {
       "exportSettings": "Export settings",

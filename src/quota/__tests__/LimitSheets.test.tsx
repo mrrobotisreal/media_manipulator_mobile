@@ -126,6 +126,29 @@ describe('LimitSheet variants', () => {
     });
   });
 
+  it('403 photo_presets_limit (MA53): the neutral cap line, no plan comparison', async () => {
+    await show(
+      normaliseError(403, {
+        error: 'photo_presets_limit',
+        message: 'x',
+        limit: 10,
+        used: 10,
+        upgradePath: 'premium',
+      }),
+    );
+    expect(screen.getByTestId('limit-sheet-presets')).toBeTruthy();
+    expect(
+      screen.getByText('You have reached the saved presets limit for your plan.'),
+    ).toBeTruthy();
+    expect(screen.getByText('Up to 10 saved presets on your plan')).toBeTruthy();
+    expect(screen.queryByTestId('limit-fact')).toBeNull();
+    expect(events()[0]![1]).toEqual({
+      limit: 10,
+      scope: 'photo_presets_limit',
+      tool_slug: 'video-compress',
+    });
+  });
+
   it('403 on Pro: nothing higher, tells the user to lower the setting', async () => {
     await show(
       normaliseError(403, { error: 'output_height_limited', limit: 2160, requested: 4320 }),

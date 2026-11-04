@@ -25,6 +25,8 @@ import {
   trackPhotoHeal,
   trackPhotoMaskAdded,
   trackPhotoPresetApplied,
+  trackPhotoPresetSaved,
+  trackPhotoPresetsMigrated,
   trackPhotoProjectCreated,
   trackPhotoProjectDeleted,
   trackPhotoProjectSaved,
@@ -54,6 +56,9 @@ function emitAll(doc: PhotoDoc) {
   heal.completed();
   trackPhotoHeal().failed('timeout');
   trackPhotoPresetApplied('bw-film', true);
+  trackPhotoPresetApplied('custom', 'server');
+  trackPhotoPresetSaved(3);
+  trackPhotoPresetsMigrated(4, false);
   trackPhotoCompareUsed('hold');
   trackPhotoProjectSaved(doc);
   trackPhotoExportStarted(doc, 'jpg', 12);
@@ -79,7 +84,7 @@ describe('MA52 photo analytics parity', () => {
       for (const k of Object.keys(props ?? {}))
         expect([name, def!.props]).toEqual([name, expect.arrayContaining([k])]);
     }
-    // The whole "MA52 photo" batch is emitted (MA50 + MA51 + MA52's gate).
+    // The whole "MA52 photo" batch is emitted (MA50 + MA51 + MA52's gate), and MA53's two.
     const batch = Object.values(EVENTS).filter((n) => n.startsWith('photo_'));
     expect([...seen].sort()).toEqual([...batch].sort());
   });

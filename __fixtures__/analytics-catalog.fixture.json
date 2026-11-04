@@ -305,6 +305,21 @@
       "scope"
     ]
   },
+  "photo_preset_saved": {
+    "priority": 2,
+    "props": [
+      "builtin",
+      "scope",
+      "layers"
+    ]
+  },
+  "photo_presets_migrated": {
+    "priority": 2,
+    "props": [
+      "count",
+      "declined"
+    ]
+  },
   "photo_project_created": {
     "priority": 1,
     "props": [

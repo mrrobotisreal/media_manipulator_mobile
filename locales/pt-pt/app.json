@@ -1323,9 +1323,23 @@
       "tapEye": "Toque num olho"
     },
     "presets": {
-      "saved": "Predefinição guardada neste dispositivo.",
-      "saveFailed": "Não foi possível guardar a predefinição neste dispositivo.",
-      "deviceNote": "Guardado neste dispositivo."
+      "saved": "Predefinição guardada na sua conta.",
+      "uploaded": "Predefinição movida para a sua conta.",
+      "upload": "Enviar",
+      "cap_one": "Até {{count}} predefinição guardada no seu plano",
+      "cap_many": "Até {{count}} predefinições guardadas no seu plano",
+      "cap_other": "Até {{count}} predefinições guardadas no seu plano",
+      "offline": "Está offline; tente novamente.",
+      "loadFailed": "Não foi possível carregar as suas predefinições.",
+      "device": {
+        "title": "Neste dispositivo",
+        "note": "Estão apenas neste telemóvel. Envie uma para a manter na sua conta."
+      },
+      "migrate": {
+        "body": "Neste momento estão apenas neste telemóvel. Na sua conta, aparecem também na Web e em qualquer telemóvel onde inicie sessão.",
+        "notNow": "Manter neste dispositivo",
+        "partial": "Algumas predefinições ficaram neste dispositivo porque o limite do seu plano foi atingido."
+      }
     },
     "history": {
       "exportSettings": "Definições de exportação",

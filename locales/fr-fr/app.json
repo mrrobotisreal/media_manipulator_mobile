@@ -1323,9 +1323,23 @@
       "tapEye": "Touchez un œil"
     },
     "presets": {
-      "saved": "Préréglage enregistré sur cet appareil.",
-      "saveFailed": "Le préréglage n’a pas pu être enregistré sur cet appareil.",
-      "deviceNote": "Enregistré sur cet appareil."
+      "saved": "Préréglage enregistré dans votre compte.",
+      "uploaded": "Préréglage déplacé vers votre compte.",
+      "upload": "Envoyer",
+      "cap_one": "Jusqu’à {{count}} préréglage enregistré avec votre forfait",
+      "cap_many": "Jusqu’à {{count}} préréglages enregistrés avec votre forfait",
+      "cap_other": "Jusqu’à {{count}} préréglages enregistrés avec votre forfait",
+      "offline": "Vous êtes hors ligne. Réessayez.",
+      "loadFailed": "Vos préréglages n’ont pas pu être chargés.",
+      "device": {
+        "title": "Sur cet appareil",
+        "note": "Ils se trouvent uniquement sur ce téléphone. Envoyez-en un vers votre compte pour le conserver."
+      },
+      "migrate": {
+        "body": "Pour l’instant, ils se trouvent uniquement sur ce téléphone. Dans votre compte, ils apparaissent aussi sur le Web et sur tout téléphone où vous vous connectez.",
+        "notNow": "Garder sur cet appareil",
+        "partial": "Certains préréglages sont restés sur cet appareil, car la limite de votre forfait a été atteinte."
+      }
     },
     "history": {
       "exportSettings": "Paramètres d’export",
