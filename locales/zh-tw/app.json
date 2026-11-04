@@ -1139,7 +1139,13 @@
       "levels": "色階",
       "bw": "黑白",
       "more": "更多",
-      "layers": "圖層"
+      "layers": "圖層",
+      "masks": "遮色片",
+      "geometry": "幾何",
+      "heal": "修復",
+      "detail": "細節",
+      "presets": "風格",
+      "history": "歷程記錄"
     },
     "greyExcept": "除此之外轉灰",
     "before": "原圖",
@@ -1182,6 +1188,48 @@
       "projects": "你的方案最多可保留 {{limit}} 個 Aperture 專案。請在網頁端刪除一個後再新增。",
       "pixels": "這張相片超過 {{mp}} 百萬畫素，這是 Aperture 可開啟的上限。",
       "unsupported": "Aperture 無法開啟這種類型的檔案。"
+    },
+    "tools": {
+      "none": "未選取工具",
+      "gradient": "線性漸層：在相片上拖曳出一條線",
+      "radial": "放射狀：從中心向外拖曳",
+      "brush": "筆刷：單指塗抹，雙指縮放",
+      "eyedropper": "顏色範圍：點一下選取顏色，長按可再加入",
+      "crop": "裁切：拖曳控點",
+      "straighten": "拉直：沿著地平線畫一條線",
+      "perspective": "透視：拖曳四個角",
+      "heal": "修復：塗抹斑點",
+      "redEye": "紅眼：點一下眼睛",
+      "done": "完成"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "在相片上拖曳出一條線：效果會從起點到終點逐漸減弱。",
+        "radial": "從中心向外拖曳以繪製橢圓。拖曳控點即可移動、調整大小或旋轉。",
+        "brush": "用單指塗抹。雙指仍可縮放和平移。",
+        "eyedropper": "點一下相片即可選取顏色。長按可加入其他顏色（最多 8 種）。"
+      },
+      "colorTargets": "已選顏色：{{count}}/{{max}}",
+      "needsProject": "相片上傳完成後即可使用「選取主體」。"
+    },
+    "heal": {
+      "hint": "用單指塗抹斑點或瑕疵，然後按下「修復」。修復在我們的 GPU 上執行，可能需要一分鐘。",
+      "running": "正在修復… {{percent}}%",
+      "tooLarge": "這張相片太大，無法在手機上修復（超過 50 百萬畫素）。",
+      "needsProject": "相片上傳完成後即可使用修復。"
+    },
+    "redEye": {
+      "hint": "點一下相片中的眼睛。系統會放置一個小圓形遮色片，並消除其中的紅色。",
+      "tapEye": "點一下眼睛"
+    },
+    "presets": {
+      "saved": "預設集已儲存在這部裝置上。",
+      "saveFailed": "無法將預設集儲存到這部裝置。",
+      "deviceNote": "已儲存在這部裝置上。"
+    },
+    "history": {
+      "exportSettings": "匯出設定",
+      "source": "相片尺寸"
     }
   }
 }

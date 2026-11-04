@@ -52,21 +52,24 @@ export function useResultActions(src: ActionSource) {
   const lastTarget = useRef<SaveTarget | undefined>(undefined);
 
   /** Serialises actions: a second tap while one runs is ignored (web REPEAT_GUARD_MS idea). */
-  const guarded = useCallback(async (fn: () => Promise<void>) => {
-    if (busy.current) return;
-    busy.current = true;
-    try {
-      await fn();
-    } catch (e) {
-      // Never let an action fail silently (S25 run: Save did nothing on screen).
-      if (__DEV__) console.warn('[result action] failed', e instanceof Error ? e.message : e);
-      showNotice(t('save.failed'), 'error');
-    } finally {
-      busy.current = false;
-      setProgress(null);
-      setConverting(false);
-    }
-  }, [t]);
+  const guarded = useCallback(
+    async (fn: () => Promise<void>) => {
+      if (busy.current) return;
+      busy.current = true;
+      try {
+        await fn();
+      } catch (e) {
+        // Never let an action fail silently (S25 run: Save did nothing on screen).
+        if (__DEV__) console.warn('[result action] failed', e instanceof Error ? e.message : e);
+        showNotice(t('save.failed'), 'error');
+      } finally {
+        busy.current = false;
+        setProgress(null);
+        setConverting(false);
+      }
+    },
+    [t],
+  );
 
   const ensureFile = useCallback(async () => {
     setProgress(0);

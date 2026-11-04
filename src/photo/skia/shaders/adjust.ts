@@ -7,8 +7,8 @@
  * Differences from the GLSL, all mechanical (SkSL has no preprocessor, no 3D textures, no sampler
  * uniforms):
  * - one source per layer type, composed by `layerSksl(type)` (the GLSL's `#define T_<TYPE>`);
- * - textures are child shaders evaluated in pixel coordinates: `uSource`, `uMask` (always all-ones
- *   until MA51), `uCurves` (the four 256-entry curves as 16-bit values split over two bytes, one row each) and
+ * - textures are child shaders evaluated in pixel coordinates: `uSource`, `uMask` (the layer's finished
+ *   mask, MA51; all-ones when unmasked), `uCurves` (the four 256-entry curves as 16-bit values split over two bytes, one row each) and
  *   `uLut` (the byte cube as a 2D atlas of N slices); both are read with exact texel taps and
  *   interpolated in the shader like `sampleLut` / `sampleLut3D`, so no GPU filter precision and no
  *   float-texture support is involved;

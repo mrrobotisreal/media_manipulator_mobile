@@ -1146,7 +1146,13 @@
       "levels": "Levels",
       "bw": "B&W",
       "more": "More",
-      "layers": "Layers"
+      "layers": "Layers",
+      "masks": "Masks",
+      "geometry": "Geometry",
+      "heal": "Heal",
+      "detail": "Detail",
+      "presets": "Looks",
+      "history": "History"
     },
     "greyExcept": "Grey except this",
     "before": "Before",
@@ -1189,6 +1195,48 @@
       "projects": "Your plan keeps up to {{limit}} Aperture projects. Delete one on the web to start another.",
       "pixels": "This photo is larger than {{mp}} MP, the largest Aperture opens.",
       "unsupported": "Aperture cannot open this file type."
+    },
+    "tools": {
+      "none": "No tool",
+      "gradient": "Gradient: drag a line on the photo",
+      "radial": "Radial: drag out from the centre",
+      "brush": "Brush: paint with one finger, pinch with two",
+      "eyedropper": "Colour range: tap a colour, long-press to add another",
+      "crop": "Crop: drag the handles",
+      "straighten": "Straighten: draw a line along the horizon",
+      "perspective": "Perspective: drag the four corners",
+      "heal": "Heal: paint over the spots",
+      "redEye": "Red-eye: tap an eye",
+      "done": "Done"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Drag a line on the photo: the effect fades from the start to the end.",
+        "radial": "Drag from the centre outwards to draw an ellipse. Drag the handles to move, resize or rotate it.",
+        "brush": "Paint with one finger. Two fingers still zoom and pan.",
+        "eyedropper": "Tap the photo to pick a colour. Long-press to add another colour (up to 8)."
+      },
+      "colorTargets": "Colours picked: {{count}} of {{max}}",
+      "needsProject": "Select subject works once the photo has finished uploading."
+    },
+    "heal": {
+      "hint": "Paint over spots or blemishes with one finger, then press Heal. Healing runs on our GPU; this can take a minute.",
+      "running": "Healing… {{percent}} %",
+      "tooLarge": "This photo is too large to heal on the phone (over 50 MP).",
+      "needsProject": "Heal works once the photo has finished uploading."
+    },
+    "redEye": {
+      "hint": "Tap an eye in the photo. A small round mask is placed and the red is removed inside it.",
+      "tapEye": "Tap an eye"
+    },
+    "presets": {
+      "saved": "Preset saved on this device.",
+      "saveFailed": "The preset could not be saved on this device.",
+      "deviceNote": "Saved on this device."
+    },
+    "history": {
+      "exportSettings": "Export settings",
+      "source": "Photo size"
     }
   }
 }

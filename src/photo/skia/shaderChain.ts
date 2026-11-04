@@ -86,18 +86,23 @@ export function sourceShader(image: SkImage, sampling: SourceSampling = 'smooth'
     : image.makeShaderOptions(CLAMP, CLAMP, FILTER_LINEAR, MIP_NONE);
 }
 
-/** Wraps `input` in one shader per planned layer. Unplanned layers (rung 4, masks) are skipped. */
+/**
+ * Wraps `input` in one shader per planned layer. Unplanned layers (rung 4) are skipped. `maskFor`
+ * (MA51) gives a layer's finished mask as a shader (value in `.r`), or null when it has none.
+ */
 export function chainShaders(
   api: SkiaApi,
   input: SkShader,
   layers: readonly AdjustmentLayer[],
+  maskFor?: (layer: AdjustmentLayer) => SkShader | null,
 ): SkShader {
   const ones = api.Shader.MakeColor(api.Color('white'));
   let cur = input;
   for (const layer of planSkslLayers(layers)) {
-    const packed = packSkslLayer(layer);
+    const mask = maskFor?.(layer) ?? null;
+    const packed = packSkslLayer(layer, mask !== null);
     if (!packed) continue;
-    const children: SkShader[] = [cur, ones];
+    const children: SkShader[] = [cur, mask ?? ones];
     if (packed.curves) {
       const img = textureImage(api, layer.params, packed.curves);
       if (!img) continue;

@@ -17,7 +17,11 @@ export function Wordmark({
   const first = idx > 0 ? text.slice(0, idx) : text;
   const last = idx > 0 ? text.slice(idx + 1) : '';
   return (
-    <View accessible accessibilityLabel={text} className={`flex-row items-center ${size === 'xs' ? 'gap-2' : 'gap-3'}`}>
+    <View
+      accessible
+      accessibilityLabel={text}
+      className={`flex-row items-center ${size === 'xs' ? 'gap-2' : 'gap-3'}`}
+    >
       <ApertureMark size={MARK[size]} />
       <Text className={`font-semibold ${TYPE[size]}`}>
         {first}

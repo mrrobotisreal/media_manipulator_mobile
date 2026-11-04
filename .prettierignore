@@ -11,3 +11,15 @@ src/photo/curveEdit.ts
 src/photo/levelsEdit.ts
 src/photo/layerOps.ts
 src/photo/goldens.ts
+src/photo/maskOps.ts
+src/photo/maskAssets.ts
+src/photo/brushEngine.ts
+src/photo/toolMath.ts
+src/photo/geometryOps.ts
+src/photo/healOps.ts
+src/photo/webMaskPlan.ts
+src/photo/webDetailPlan.ts
+src/photo/webHistogram.ts
+src/photo/presets/index.ts
+src/photo/presets/autoPreset.ts
+src/photo/presets/userStore.ts

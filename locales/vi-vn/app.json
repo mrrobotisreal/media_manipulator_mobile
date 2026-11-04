@@ -1139,7 +1139,13 @@
       "levels": "Mức sáng",
       "bw": "Trắng đen",
       "more": "Thêm",
-      "layers": "Lớp"
+      "layers": "Lớp",
+      "masks": "Mặt nạ",
+      "geometry": "Hình học",
+      "heal": "Chữa lành",
+      "detail": "Chi tiết",
+      "presets": "Phong cách",
+      "history": "Lịch sử"
     },
     "greyExcept": "Xám trừ màu này",
     "before": "Trước",
@@ -1182,6 +1188,48 @@
       "projects": "Gói của bạn cho phép tối đa {{limit}} dự án Aperture. Hãy xóa một dự án trên web để bắt đầu dự án mới.",
       "pixels": "Ảnh này lớn hơn {{mp}} MP, mức tối đa Aperture có thể mở.",
       "unsupported": "Aperture không thể mở loại tệp này."
+    },
+    "tools": {
+      "none": "Chưa chọn công cụ",
+      "gradient": "Chuyển sắc tuyến tính: kéo một đường trên ảnh",
+      "radial": "Xuyên tâm: kéo từ tâm ra ngoài",
+      "brush": "Cọ: tô bằng một ngón, chụm hai ngón để thu phóng",
+      "eyedropper": "Dải màu: chạm vào một màu, nhấn giữ để thêm màu khác",
+      "crop": "Cắt: kéo các tay nắm",
+      "straighten": "Làm thẳng: vẽ một đường dọc theo đường chân trời",
+      "perspective": "Phối cảnh: kéo bốn góc",
+      "heal": "Chữa lành: tô lên các đốm",
+      "redEye": "Mắt đỏ: chạm vào một mắt",
+      "done": "Xong"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Kéo một đường trên ảnh: hiệu ứng nhạt dần từ điểm đầu đến điểm cuối.",
+        "radial": "Kéo từ tâm ra ngoài để vẽ hình elip. Kéo các tay nắm để di chuyển, đổi kích thước hoặc xoay.",
+        "brush": "Tô bằng một ngón tay. Hai ngón tay vẫn dùng để thu phóng và di chuyển.",
+        "eyedropper": "Chạm vào ảnh để chọn màu. Nhấn giữ để thêm màu khác (tối đa 8)."
+      },
+      "colorTargets": "Đã chọn màu: {{count}}/{{max}}",
+      "needsProject": "Chọn chủ thể sẽ dùng được khi ảnh đã tải lên xong."
+    },
+    "heal": {
+      "hint": "Dùng một ngón tay tô lên các đốm hoặc khuyết điểm, rồi nhấn Chữa lành. Quá trình chạy trên GPU của chúng tôi và có thể mất một phút.",
+      "running": "Đang chữa lành… {{percent}}%",
+      "tooLarge": "Ảnh này quá lớn để chữa lành trên điện thoại (trên 50 MP).",
+      "needsProject": "Chữa lành sẽ dùng được khi ảnh đã tải lên xong."
+    },
+    "redEye": {
+      "hint": "Chạm vào một mắt trong ảnh. Một mặt nạ tròn nhỏ sẽ được đặt và màu đỏ bên trong sẽ được loại bỏ.",
+      "tapEye": "Chạm vào một mắt"
+    },
+    "presets": {
+      "saved": "Đã lưu cài đặt sẵn trên thiết bị này.",
+      "saveFailed": "Không thể lưu cài đặt sẵn trên thiết bị này.",
+      "deviceNote": "Đã lưu trên thiết bị này."
+    },
+    "history": {
+      "exportSettings": "Cài đặt xuất",
+      "source": "Kích thước ảnh"
     }
   }
 }

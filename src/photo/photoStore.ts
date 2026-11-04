@@ -87,6 +87,10 @@ interface Payloads {
   selected: string | null;
   saved: { serverRevision: number; atRevision: number };
   replaced: { doc: PhotoDoc; serverRevision?: number | null; dirty?: boolean };
+  /** History sheet: move along the timeline by `steps` (negative = undo). */
+  jumped: number;
+  /** History sheet: forget the undo/redo stacks (the doc stays). */
+  historyCleared: void;
 }
 
 const handlers: Handlers = {
@@ -165,6 +169,18 @@ const handlers: Handlers = {
     serverRevision: p.serverRevision,
     dirty: s.revision === p.atRevision ? false : s.dirty,
   }),
+  jumped: (s, steps) => {
+    let cur = s;
+    const n = Math.abs(Math.trunc(steps));
+    for (let i = 0; i < n; i += 1) {
+      const next = steps < 0 ? handlers.undone(cur) : handlers.redone(cur);
+      if (next === cur) break;
+      cur = next;
+    }
+    return cur;
+  },
+  historyCleared: (s) =>
+    s.past.length === 0 && s.future.length === 0 ? s : { ...s, past: [], future: [] },
   /** Replace the doc without history ("Load theirs", a recovered draft). */
   replaced: (s, p) => ({
     ...s,
@@ -195,6 +211,8 @@ export const photoActions = {
   selected: make('selected'),
   saved: make('saved'),
   replaced: make('replaced'),
+  jumped: make('jumped'),
+  historyCleared: make('historyCleared'),
 };
 
 export function photoReducer(state: PhotoState | undefined, action: UnknownAction): PhotoState {

@@ -1,0 +1,1949 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RTL (Arabic) Masks and Geometry sheets render the Arabic copy (snapshot) 1`] = `
+<>
+  <View
+    className="gap-4"
+    testID="photo-masks-sheet"
+  >
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        تعديل موضعي
+      </Text>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-local-localBasic"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            التعريض والدرجات اللونية والتشبع
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-local-exposure"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            التعريض
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-local-tone"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            الدرجات
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-local-hsl"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            اللون (HSL)
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-local-whiteBalance"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            توازن الأبيض
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-local-curves"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            المنحنيات
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        الطبقة
+      </Text>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": true,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-primary bg-surface-3 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-layer-L"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold"
+          >
+            التعريض
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        إضافة عنصر قناع
+      </Text>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-add-gradient"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            تدرج خطي
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-add-radial"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            شعاعي
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-add-brush"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            فرشاة
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-add-luminosity"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            نطاق السطوع
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-add-colorRange"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            نطاق الألوان
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-mask-add-subject"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            تحديد العنصر الرئيسي
+          </Text>
+        </View>
+      </View>
+    </View>
+    <Text
+      className="font-sans text-foreground text-sm text-muted-fg"
+    >
+      هذا القناع فارغ. أضف عنصرًا لتحديد المنطقة التي يُطبَّق عليها التعديل.
+    </Text>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        عرض القناع
+      </Text>
+      <View
+        accessibilityRole="tablist"
+        className="flex-row rounded-md border border-edge bg-surface-2 p-0.5"
+        testID="segmented"
+      >
+        <View
+          accessibilityRole="tab"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": true,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="flex-1 items-center justify-center rounded-sm bg-surface-3"
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 40,
+            }
+          }
+        >
+          <Text
+            className="font-sans text-foreground font-semibold"
+          >
+            إيقاف
+          </Text>
+        </View>
+        <View
+          accessibilityRole="tab"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="flex-1 items-center justify-center rounded-sm "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 40,
+            }
+          }
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            تراكب
+          </Text>
+        </View>
+        <View
+          accessibilityRole="tab"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="flex-1 items-center justify-center rounded-sm "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 40,
+            }
+          }
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            القناع فقط
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    className="gap-4"
+    testID="photo-geometry-sheet"
+  >
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        اقتصاص
+      </Text>
+      <View
+        accessibilityLabel="نسبة العرض إلى الارتفاع"
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": true,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-primary bg-surface-3 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-free"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold"
+          >
+            حر
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-1:1"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            1:1
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-4:3"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            4:3
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-3:2"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            3:2
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-16:9"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            16:9
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-9:16"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            9:16
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-4:5"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            4:5
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-5:4"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            5:4
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-aspect-original"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            الأصلية
+          </Text>
+        </View>
+      </View>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-crop-tool"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            الاقتصاص على اللوحة
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": true,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control opacity-50"
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-crop-reset"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            إعادة ضبط الاقتصاص
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        تعديل الاستقامة
+      </Text>
+      <View
+        collapsable={false}
+      >
+        <View
+          className="gap-1"
+        >
+          <View
+            className="flex-row items-center justify-between"
+          >
+            <Text
+              className="font-sans text-foreground text-sm text-muted-fg"
+            >
+              الزاوية (بالدرجات)
+            </Text>
+            <Text
+              className="font-mono text-foreground text-sm"
+              style={
+                [
+                  {
+                    "fontVariant": [
+                      "tabular-nums",
+                    ],
+                  },
+                  undefined,
+                ]
+              }
+            >
+              0.0
+            </Text>
+          </View>
+          <View
+            accessibilityActions={
+              [
+                {
+                  "name": "increment",
+                },
+                {
+                  "name": "decrement",
+                },
+              ]
+            }
+            accessibilityLabel="الزاوية (بالدرجات)"
+            accessibilityRole="adjustable"
+            accessibilityValue={
+              {
+                "max": 45,
+                "min": -45,
+                "now": 0,
+                "text": "0.0",
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            onAccessibilityAction={[Function]}
+            onLayout={[Function]}
+            style={
+              {
+                "height": 44,
+                "justifyContent": "center",
+              }
+            }
+            testID="photo-straighten"
+          >
+            <View
+              className="h-1 rounded-full bg-surface-3"
+            >
+              <View
+                className="h-1 rounded-full bg-primary"
+                style={
+                  {
+                    "width": "50%",
+                  }
+                }
+              />
+            </View>
+            <View
+              className="absolute rounded-full bg-primary"
+              pointerEvents="none"
+              style={
+                {
+                  "height": 24,
+                  "start": 0,
+                  "top": 10,
+                  "width": 24,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": false,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+        collapsable={false}
+        focusable={true}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "minHeight": 44,
+          }
+        }
+        testID="photo-straighten-line"
+      >
+        <Text
+          className="font-sans text-foreground font-semibold text-foreground"
+        >
+          رسم خط
+        </Text>
+      </View>
+    </View>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        التدوير والقلب
+      </Text>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-rotate-left"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            تدوير 90 درجة لليسار
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-rotate-right"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            تدوير 90 درجة لليمين
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-rotate-180"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            تدوير 180 درجة
+          </Text>
+        </View>
+      </View>
+      <View
+        className="flex-row items-center gap-3"
+        style={
+          {
+            "minHeight": 44,
+          }
+        }
+      >
+        <View
+          className="flex-1"
+        >
+          <Text
+            className="font-sans text-foreground "
+          >
+            قلب أفقي
+          </Text>
+        </View>
+        <RCTSwitch
+          accessibilityLabel="قلب أفقي"
+          accessibilityRole="switch"
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#5EEAD4"
+          style={
+            {
+              "alignSelf": "flex-start",
+            }
+          }
+          thumbTintColor="#ECEFF4"
+          tintColor="#262B33"
+          value={false}
+        />
+      </View>
+      <View
+        className="flex-row items-center gap-3"
+        style={
+          {
+            "minHeight": 44,
+          }
+        }
+      >
+        <View
+          className="flex-1"
+        >
+          <Text
+            className="font-sans text-foreground "
+          >
+            قلب رأسي
+          </Text>
+        </View>
+        <RCTSwitch
+          accessibilityLabel="قلب رأسي"
+          accessibilityRole="switch"
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#5EEAD4"
+          style={
+            {
+              "alignSelf": "flex-start",
+            }
+          }
+          thumbTintColor="#ECEFF4"
+          tintColor="#262B33"
+          value={false}
+        />
+      </View>
+    </View>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        المنظور
+      </Text>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-perspective-tool"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            اسحب الزوايا
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": true,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control opacity-50"
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            إعادة ضبط المنظور
+          </Text>
+        </View>
+      </View>
+      <View
+        className="flex-row items-center gap-3"
+        style={
+          {
+            "minHeight": 44,
+          }
+        }
+      >
+        <View
+          className="flex-1"
+        >
+          <Text
+            className="font-sans text-foreground "
+          >
+            اقتصاص تلقائي لأكبر مستطيل
+          </Text>
+        </View>
+        <RCTSwitch
+          accessibilityLabel="اقتصاص تلقائي لأكبر مستطيل"
+          accessibilityRole="switch"
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#5EEAD4"
+          style={
+            {
+              "alignSelf": "flex-start",
+            }
+          }
+          thumbTintColor="#ECEFF4"
+          tintColor="#262B33"
+          value={false}
+        />
+      </View>
+    </View>
+    <View
+      className="gap-2"
+    >
+      <Text
+        className="font-sans text-foreground font-semibold"
+      >
+        ملء الزوايا الفارغة
+      </Text>
+      <View
+        className="flex-row flex-wrap gap-2"
+      >
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": true,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-primary bg-surface-3 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-fill-transparent"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold"
+          >
+            شفاف
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-fill-edge"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            مدّ الحافة
+          </Text>
+        </View>
+        <View
+          accessibilityRole="radio"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": false,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md border px-3 border-edge-control bg-surface-2 "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-fill-color"
+        >
+          <Text
+            className="font-sans text-foreground text-muted-fg"
+          >
+            اللون
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</>
+`;

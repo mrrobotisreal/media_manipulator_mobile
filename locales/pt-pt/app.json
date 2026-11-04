@@ -1153,7 +1153,13 @@
       "levels": "Níveis",
       "bw": "P/B",
       "more": "Mais",
-      "layers": "Camadas"
+      "layers": "Camadas",
+      "masks": "Máscaras",
+      "geometry": "Geometria",
+      "heal": "Corrigir",
+      "detail": "Detalhe",
+      "presets": "Estilos",
+      "history": "Histórico"
     },
     "greyExcept": "Tudo cinzento exceto isto",
     "before": "Antes",
@@ -1196,6 +1202,48 @@
       "projects": "O seu plano permite até {{limit}} projetos do Aperture. Elimine um na web para começar outro.",
       "pixels": "Esta fotografia tem mais de {{mp}} MP, o máximo que o Aperture abre.",
       "unsupported": "O Aperture não consegue abrir este tipo de ficheiro."
+    },
+    "tools": {
+      "none": "Nenhuma ferramenta",
+      "gradient": "Gradiente: arraste uma linha na fotografia",
+      "radial": "Radial: arraste do centro para fora",
+      "brush": "Pincel: pinte com um dedo, use dois para zoom",
+      "eyedropper": "Intervalo de cores: toque numa cor, mantenha premido para adicionar outra",
+      "crop": "Recortar: arraste as pegas",
+      "straighten": "Endireitar: desenhe uma linha ao longo do horizonte",
+      "perspective": "Perspetiva: arraste os quatro cantos",
+      "heal": "Corrigir: pinte sobre as manchas",
+      "redEye": "Olhos vermelhos: toque num olho",
+      "done": "Concluído"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Arraste uma linha na fotografia: o efeito esbate-se do início ao fim.",
+        "radial": "Arraste do centro para fora para desenhar uma elipse. Arraste as pegas para a mover, redimensionar ou rodar.",
+        "brush": "Pinte com um dedo. Com dois dedos continua a poder fazer zoom e deslocar a fotografia.",
+        "eyedropper": "Toque na fotografia para escolher uma cor. Mantenha premido para adicionar outra cor (até 8)."
+      },
+      "colorTargets": "Cores escolhidas: {{count}} de {{max}}",
+      "needsProject": "Selecionar motivo funciona depois de a fotografia ser enviada."
+    },
+    "heal": {
+      "hint": "Pinte com um dedo sobre manchas ou imperfeições e depois prima Corrigir. A correção é executada na nossa GPU; pode demorar um minuto.",
+      "running": "A corrigir… {{percent}}%",
+      "tooLarge": "Esta fotografia é demasiado grande para corrigir no telemóvel (mais de 50 MP).",
+      "needsProject": "Corrigir funciona depois de a fotografia ser enviada."
+    },
+    "redEye": {
+      "hint": "Toque num olho na fotografia. É colocada uma pequena máscara circular e o vermelho é removido no seu interior.",
+      "tapEye": "Toque num olho"
+    },
+    "presets": {
+      "saved": "Predefinição guardada neste dispositivo.",
+      "saveFailed": "Não foi possível guardar a predefinição neste dispositivo.",
+      "deviceNote": "Guardado neste dispositivo."
+    },
+    "history": {
+      "exportSettings": "Definições de exportação",
+      "source": "Tamanho da fotografia"
     }
   }
 }

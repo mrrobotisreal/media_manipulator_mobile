@@ -18,8 +18,32 @@ import { CurvesSheet } from './sheets/CurvesSheet';
 import { LayersSheet } from './sheets/LayersSheet';
 import { LevelsSheet } from './sheets/LevelsSheet';
 import { MoreSheet } from './sheets/MoreSheet';
+import { MasksSheet } from './sheets/MasksSheet';
+import { GeometrySheet } from './sheets/GeometrySheet';
+import { HealSheet } from './sheets/HealSheet';
+import { DetailSheet } from './sheets/DetailSheet';
+import { PresetsSheet } from './sheets/PresetsSheet';
+import { HistorySheet } from './sheets/HistorySheet';
+import type { PngEncoder } from '../brushEngine';
+import type { AlphaImage } from '../colorMath';
+import type { MaskComponent } from '../photoTypes';
 
-export const STRIP = ['basic', 'color', 'curves', 'levels', 'bw', 'more', 'layers'] as const;
+/** Design §1 strip: Basic · Colour · Curves · B&W · Masks · Geometry · Heal · Detail · Presets · Layers (+ MA50's Levels, More; MA51's History). */
+export const STRIP = [
+  'basic',
+  'color',
+  'curves',
+  'levels',
+  'bw',
+  'more',
+  'masks',
+  'geometry',
+  'heal',
+  'detail',
+  'presets',
+  'layers',
+  'history',
+] as const;
 export type StripTool = (typeof STRIP)[number];
 
 export function TopBar({
@@ -111,6 +135,7 @@ export function TopBar({
   );
 }
 
+// i18n-keys: photo.strip.masks, photo.strip.geometry, photo.strip.heal, photo.strip.detail, photo.strip.presets, photo.strip.history
 export function ToolStrip({
   active,
   onPick,
@@ -147,7 +172,21 @@ export function ToolStrip({
   );
 }
 
-export function SheetBody({ tool, histogram }: { tool: StripTool; histogram: Histogram64 | null }) {
+export interface SheetHooks {
+  encodePng: PngEncoder;
+  brushAlpha: (png: string) => AlphaImage | null;
+  onMaskAdded?: (kind: MaskComponent['kind']) => void;
+}
+
+export function SheetBody({
+  tool,
+  histogram,
+  hooks,
+}: {
+  tool: StripTool;
+  histogram: Histogram64 | null;
+  hooks?: SheetHooks;
+}) {
   const { t } = useTranslation();
   switch (tool) {
     case 'basic':
@@ -164,5 +203,19 @@ export function SheetBody({ tool, histogram }: { tool: StripTool; histogram: His
       return <MoreSheet />;
     case 'layers':
       return <LayersSheet />;
+    case 'masks':
+      return <MasksSheet onMaskAdded={hooks?.onMaskAdded} />;
+    case 'geometry':
+      return hooks ? (
+        <GeometrySheet encodePng={hooks.encodePng} brushAlpha={hooks.brushAlpha} />
+      ) : null;
+    case 'heal':
+      return <HealSheet />;
+    case 'detail':
+      return <DetailSheet />;
+    case 'presets':
+      return <PresetsSheet />;
+    case 'history':
+      return <HistorySheet />;
   }
 }

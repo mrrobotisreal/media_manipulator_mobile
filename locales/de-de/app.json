@@ -1146,7 +1146,13 @@
       "levels": "Tonwerte",
       "bw": "S/W",
       "more": "Mehr",
-      "layers": "Ebenen"
+      "layers": "Ebenen",
+      "masks": "Masken",
+      "geometry": "Geometrie",
+      "heal": "Reparieren",
+      "detail": "Details",
+      "presets": "Stile",
+      "history": "Verlauf"
     },
     "greyExcept": "Alles grau außer diesem",
     "before": "Vorher",
@@ -1189,6 +1195,48 @@
       "projects": "Dein Tarif umfasst bis zu {{limit}} Aperture-Projekte. Lösche eines im Web, um ein neues zu beginnen.",
       "pixels": "Dieses Foto ist größer als {{mp}} MP, das Maximum, das Aperture öffnet.",
       "unsupported": "Aperture kann diesen Dateityp nicht öffnen."
+    },
+    "tools": {
+      "none": "Kein Werkzeug",
+      "gradient": "Verlaufsmaske: Ziehe eine Linie über das Foto",
+      "radial": "Radial: Ziehe von der Mitte nach außen",
+      "brush": "Pinsel: Male mit einem Finger, zoome mit zwei",
+      "eyedropper": "Farbbereich: Tippe auf eine Farbe, lange drücken für eine weitere",
+      "crop": "Zuschneiden: Ziehe an den Griffen",
+      "straighten": "Begradigen: Zeichne eine Linie entlang des Horizonts",
+      "perspective": "Perspektive: Ziehe die vier Ecken",
+      "heal": "Reparieren: Übermale die Flecken",
+      "redEye": "Rote Augen: Tippe auf ein Auge",
+      "done": "Fertig"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Ziehe eine Linie über das Foto: Der Effekt läuft vom Anfang bis zum Ende weich aus.",
+        "radial": "Ziehe von der Mitte nach außen, um eine Ellipse aufzuziehen. Ziehe an den Griffen, um sie zu verschieben, zu skalieren oder zu drehen.",
+        "brush": "Male mit einem Finger. Mit zwei Fingern zoomst und verschiebst du weiterhin.",
+        "eyedropper": "Tippe auf das Foto, um eine Farbe aufzunehmen. Lange drücken fügt eine weitere Farbe hinzu (max. 8)."
+      },
+      "colorTargets": "Gewählte Farben: {{count}} von {{max}}",
+      "needsProject": "„Motiv auswählen“ funktioniert, sobald das Foto hochgeladen ist."
+    },
+    "heal": {
+      "hint": "Übermale Flecken oder Hautunreinheiten mit einem Finger und tippe dann auf Reparieren. Die Reparatur läuft auf unserer GPU und kann eine Minute dauern.",
+      "running": "Wird repariert… {{percent}} %",
+      "tooLarge": "Dieses Foto ist zu groß, um es auf dem Handy zu reparieren (über 50 MP).",
+      "needsProject": "Reparieren funktioniert, sobald das Foto hochgeladen ist."
+    },
+    "redEye": {
+      "hint": "Tippe auf ein Auge im Foto. Es wird eine kleine runde Maske gesetzt und das Rot darin entfernt.",
+      "tapEye": "Auf ein Auge tippen"
+    },
+    "presets": {
+      "saved": "Voreinstellung auf diesem Gerät gespeichert.",
+      "saveFailed": "Die Voreinstellung konnte auf diesem Gerät nicht gespeichert werden.",
+      "deviceNote": "Auf diesem Gerät gespeichert."
+    },
+    "history": {
+      "exportSettings": "Exporteinstellungen",
+      "source": "Fotogröße"
     }
   }
 }

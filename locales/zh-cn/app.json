@@ -1139,7 +1139,13 @@
       "levels": "色阶",
       "bw": "黑白",
       "more": "更多",
-      "layers": "图层"
+      "layers": "图层",
+      "masks": "蒙版",
+      "geometry": "几何",
+      "heal": "修复",
+      "detail": "细节",
+      "presets": "风格",
+      "history": "历史记录"
     },
     "greyExcept": "除此之外变灰",
     "before": "原图",
@@ -1182,6 +1188,48 @@
       "projects": "你的套餐最多可保留 {{limit}} 个 Aperture 项目。请在网页端删除一个后再新建。",
       "pixels": "此照片超过 {{mp}} 百万像素，这是 Aperture 可打开的上限。",
       "unsupported": "Aperture 无法打开此类型的文件。"
+    },
+    "tools": {
+      "none": "未选工具",
+      "gradient": "线性渐变：在照片上拖出一条线",
+      "radial": "径向：从中心向外拖动",
+      "brush": "画笔：单指涂抹，双指缩放",
+      "eyedropper": "颜色范围：轻点选取颜色，长按添加更多",
+      "crop": "裁剪：拖动控制柄",
+      "straighten": "拉直：沿地平线画一条线",
+      "perspective": "透视：拖动四个角",
+      "heal": "修复：涂抹斑点",
+      "redEye": "红眼：轻点眼睛",
+      "done": "完成"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "在照片上拖出一条线：效果从起点到终点逐渐减弱。",
+        "radial": "从中心向外拖动以绘制椭圆。拖动控制柄可移动、调整大小或旋转。",
+        "brush": "用单指涂抹。双指仍可缩放和平移。",
+        "eyedropper": "轻点照片以拾取颜色。长按可添加其他颜色（最多 8 种）。"
+      },
+      "colorTargets": "已选颜色：{{count}}/{{max}}",
+      "needsProject": "照片上传完成后即可使用“选择主体”。"
+    },
+    "heal": {
+      "hint": "用单指涂抹斑点或瑕疵，然后点按“修复”。修复在我们的 GPU 上运行，可能需要一分钟。",
+      "running": "正在修复… {{percent}}%",
+      "tooLarge": "此照片过大，无法在手机上修复（超过 50 百万像素）。",
+      "needsProject": "照片上传完成后即可使用修复。"
+    },
+    "redEye": {
+      "hint": "轻点照片中的眼睛。系统会放置一个小圆形蒙版，并消除其中的红色。",
+      "tapEye": "轻点眼睛"
+    },
+    "presets": {
+      "saved": "预设已保存在此设备上。",
+      "saveFailed": "无法将预设保存到此设备。",
+      "deviceNote": "已保存在此设备上。"
+    },
+    "history": {
+      "exportSettings": "导出设置",
+      "source": "照片尺寸"
     }
   }
 }

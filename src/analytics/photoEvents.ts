@@ -189,3 +189,43 @@ export function trackPhotoExportSettled(rec: JobRecord, now = Date.now()): void 
     rec.state === 'failed' ? 'render' : photoFailReason(rec.error?.code, rec.error?.status);
   track(EVENTS.PHOTO_EXPORT_FAILED, { ...base, reason }, c);
 }
+
+/* MA51: masks, AI masks, heal, presets (names mirrored from MM101's catalog by MA50). */
+
+export type PhotoMaskKind =
+  'gradient' | 'radial' | 'brush' | 'luminosity' | 'colorRange' | 'subject';
+
+export function trackPhotoMaskAdded(kind: PhotoMaskKind, slug?: string): void {
+  track(EVENTS.PHOTO_MASK_ADDED, { mask_kind: kind }, ctx(slug));
+}
+
+/** One AI subject request: requested now, completed / failed with an ms bucket when it settles. */
+export function trackPhotoAiMask(slug?: string, now: () => number = Date.now) {
+  const t0 = now();
+  track(EVENTS.PHOTO_AI_MASK_REQUESTED, {}, ctx(slug));
+  return {
+    completed: () => track(EVENTS.PHOTO_AI_MASK_COMPLETED, { ms: msBucket(now() - t0) }, ctx(slug)),
+    failed: (reason: PhotoFailReason) =>
+      track(EVENTS.PHOTO_AI_MASK_FAILED, { ms: msBucket(now() - t0), reason }, ctx(slug)),
+  };
+}
+
+/** One Heal press (`ai_ops`): requested now, completed / failed when the job settles. */
+export function trackPhotoHeal(slug?: string, now: () => number = Date.now) {
+  const t0 = now();
+  track(EVENTS.PHOTO_HEAL_REQUESTED, {}, ctx(slug));
+  return {
+    completed: () => track(EVENTS.PHOTO_HEAL_COMPLETED, { ms: msBucket(now() - t0) }, ctx(slug)),
+    failed: (reason: PhotoFailReason) =>
+      track(EVENTS.PHOTO_HEAL_FAILED, { ms: msBucket(now() - t0), reason }, ctx(slug)),
+  };
+}
+
+/** A look applied: built-in id, or `custom` for a user preset (scope `local`: on this device). */
+export function trackPhotoPresetApplied(presetId: string, builtin: boolean, slug?: string): void {
+  track(
+    EVENTS.PHOTO_PRESET_APPLIED,
+    { preset_id: builtin ? presetId : 'custom', builtin, scope: builtin ? 'builtin' : 'local' },
+    ctx(slug),
+  );
+}

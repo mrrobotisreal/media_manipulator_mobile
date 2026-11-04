@@ -1,7 +1,7 @@
 {
   "webRepo": "media-manipulator-ui",
-  "webCommit": "a87fd7945b5c56df0d260b68eba9f85c445f891a",
-  "syncedAt": "2026-11-04T14:13:50.337Z",
+  "webCommit": "4f508a746fa3b5554bdd3ce221f1d3fe5ad84efe",
+  "syncedAt": "2026-11-04T17:34:59.050Z",
   "files": {
     "en-us/interface/_core.json": "efc7b82a7bae67f78cf2cb91ff3b27744063080d9efe9fa20e96f7ec96439ae5",
     "en-us/interface/components.json": "d82f63ba57d41a550a3661f5c45d159b35c37157d468dfd112829acbfee60547",
@@ -110,7 +110,7 @@
     "ar-sa/interface/_core.json": "d223df544a876877dd1d050281fd5c812b13826d9a03ffc992719417b5567cd7",
     "ar-sa/interface/components.json": "32c59f03b6b516afb5c7c04adb024075f1930c7dc14c407981c378326aaa7f37",
     "ar-sa/interface/forms.json": "8bc2f2ed5f737d67e3dadb4328e481654d1dd805eeb08a4659b5d4553e71cc13",
-    "ar-sa/interface/panels.json": "5dbaa9ab073df51d823a0d9f1626b453c90a356304802c8b72fb8580d4d1690a",
+    "ar-sa/interface/panels.json": "ac15ea2e1e1e2e03b34197c7ac8b6ff0d198964d8c7a3a378bcc0543f96d7878",
     "ar-sa/interface/tools.json": "ff48bef5832b92719676d9d4c9c8e5ec3be56a8a865f3de439b76fe730c34749",
     "ar-sa/error/_core.json": "723ca36d2c043610c92e3aa5cadae157092bef5e0adb8b789704c1bbbbb5322a",
     "ar-sa/accessibility/_core.json": "a0ca441265031ca22c754deb382dd437c752c0ea277fffa07b54db8c12431aad",

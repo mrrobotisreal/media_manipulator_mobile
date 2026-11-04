@@ -43,6 +43,20 @@ export const TS_FILES = {
   'lib/photo/layerOps.ts': 'layerOps.ts',
   // Test-only (node:fs + pngjs): the golden renderer the parity tests share with the web.
   'lib/photo/goldens.ts': 'goldens.ts',
+  // MA51: masks, geometry, heal and presets (pure document edits and maths; DOM-only helpers in
+  // them are never called on the phone, which injects its own encoder / decoder).
+  'lib/photo/maskOps.ts': 'maskOps.ts',
+  'lib/photo/maskAssets.ts': 'maskAssets.ts',
+  'lib/photo/brushEngine.ts': 'brushEngine.ts',
+  'lib/photo/toolMath.ts': 'toolMath.ts',
+  'lib/photo/geometryOps.ts': 'geometryOps.ts',
+  'lib/photo/healOps.ts': 'healOps.ts',
+  'lib/photo/gl/maskPlan.ts': 'webMaskPlan.ts',
+  'lib/photo/gl/detailPlan.ts': 'webDetailPlan.ts',
+  'lib/photo/gl/histogram.ts': 'webHistogram.ts',
+  'lib/photo/presets/index.ts': 'presets/index.ts',
+  'lib/photo/presets/autoPreset.ts': 'presets/autoPreset.ts',
+  'lib/photo/presets/userStore.ts': 'presets/userStore.ts',
 };
 
 /** Directory trees copied byte for byte: web dir -> app dir. */
@@ -51,15 +65,28 @@ export const TREES = {
   'lib/photo/presets/builtin': 'presets/builtin',
 };
 
-/** Import specifiers rewritten in the copied TypeScript. */
-export const IMPORT_MAP = {
-  '@/lib/photo/photoTypes': './photoTypes',
-  '@/lib/photo/colorMath': './colorMath',
-  '@/lib/studio/colorMath': './studioColorMath',
-  '@/lib/studio/lutParser': './studioLutParser',
-  '@/lib/photo/layerOps': './layerOps',
-  '@/lib/photo/goldens': './goldens',
-};
+/**
+ * Import specifiers in the copied TypeScript are resolved against the web tree (`@/x` = the web
+ * repo root, `./x` = relative to the web file) and rewritten to the app copy, relative to the app
+ * file. A specifier that resolves to something this sync does not copy is an error.
+ */
+export function resolveImport(spec, webPath, appPath) {
+  let target;
+  if (spec.startsWith('@/')) target = spec.slice(2);
+  else if (spec.startsWith('.')) target = posix(join(dirname(webPath), spec));
+  else return null; // a package import: left alone
+  let app = TS_FILES[`${target}.ts`] ?? null;
+  if (!app) {
+    for (const [webDir, appDir] of Object.entries(TREES)) {
+      if (target.startsWith(`${webDir}/`)) app = `${appDir}/${target.slice(webDir.length + 1)}`;
+    }
+  }
+  if (!app) return undefined;
+  const stripped = app.replace(/\.ts$/, '');
+  let rel = posix(relative(dirname(appPath), stripped));
+  if (!rel.startsWith('.')) rel = `./${rel}`;
+  return rel;
+}
 
 const sha256 = (buf) => createHash('sha256').update(buf).digest('hex');
 const posix = (p) => p.split(sep).join('/');
@@ -125,14 +152,15 @@ function makeSource(web, ref) {
   };
 }
 
-export function transformTs(src, webPath) {
+export function transformTs(src, webPath, appPath = TS_FILES[webPath] ?? posix(webPath)) {
   let text = src.toString('utf8');
-  for (const [from, to] of Object.entries(IMPORT_MAP)) {
-    text = text.split(`'${from}'`).join(`'${to}'`);
-  }
-  // The web resolves @/ to its repo root; anything still pointing there is a copy we do not make.
-  const leftover = /from '@\/[^']+'/.exec(text);
-  if (leftover) throw new Error(`${webPath}: unmapped import ${leftover[0]}`);
+  text = text.replace(/(from |import\()'([^']+)'/g, (whole, lead, spec) => {
+    const to = resolveImport(spec, webPath, appPath);
+    if (to === null) return whole;
+    // The web resolves @/ to its repo root; anything we do not copy is an error.
+    if (to === undefined) throw new Error(`${webPath}: unmapped import '${spec}'`);
+    return `${lead}'${to}'`;
+  });
   const header = [
     `// DO NOT EDIT. Copied from media-manipulator-ui ${webPath} by scripts/sync-photo-fixtures.mjs`,
     '// (npm run photo:sync). The web repo is the source of the model and the math (ADR MA-0010);',
@@ -163,7 +191,7 @@ export function expectedFiles(source) {
       problems.push(`missing in web: ${webPath}`);
       continue;
     }
-    files.set(appPath, transformTs(buf, webPath));
+    files.set(appPath, transformTs(buf, webPath, appPath));
   }
   for (const [webDir, appDir] of Object.entries(TREES)) {
     const list = source.list(webDir);

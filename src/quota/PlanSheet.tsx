@@ -90,13 +90,7 @@ function meter(
 }
 
 /** The plain Free/Premium/Pro comparison (facts from `/api/tiers`; no prices, no buttons). Shared with the Account plan card. */
-export function PlanTable({
-  list,
-  tier,
-}: {
-  list: TiersResponse['tiers'];
-  tier: string | null;
-}) {
+export function PlanTable({ list, tier }: { list: TiersResponse['tiers']; tier: string | null }) {
   const { t } = useTranslation();
   return (
     <View className="rounded-lg border border-edge" testID="plan-table">
