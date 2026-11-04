@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RTL (Arabic) the migration sheet renders the Arabic copy (snapshot) 1`] = `
+<Modal
+  animationType="slide"
+  navigationBarTranslucent={true}
+  onRequestClose={[MockFunction]}
+  statusBarTranslucent={true}
+  transparent={true}
+  visible={true}
+>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+    testID="sheet-gesture-root"
+  >
+    <View
+      accessibilityLabel="إغلاق"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      className="flex-1 bg-black/60"
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    />
+    <View
+      className="rounded-t-xl border-t border-edge bg-surface-1 p-4"
+      style={
+        {
+          "paddingBottom": 16,
+        }
+      }
+      testID="sheet-panel"
+    >
+      <View
+        className="gap-3"
+        testID="photo-preset-migrate"
+      >
+        <Text
+          className="font-sans text-foreground text-lg font-semibold"
+        >
+          هل تريد الاحتفاظ بإعداداتك المسبقة الـ4 في حسابك؟
+        </Text>
+        <Text
+          className="font-sans text-foreground text-muted-fg"
+        >
+          هي الآن موجودة على هذا الهاتف فقط. وفي حسابك تظهر أيضًا على الويب وعلى أي هاتف تسجّل الدخول عليه.
+        </Text>
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-primary "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-preset-migrate-keep"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-on-primary"
+          >
+            نقل إلى حسابي
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": false,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          className="items-center justify-center rounded-md px-4 bg-surface-2 border border-edge-control "
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "minHeight": 44,
+            }
+          }
+          testID="photo-preset-migrate-not-now"
+        >
+          <Text
+            className="font-sans text-foreground font-semibold text-foreground"
+          >
+            الاحتفاظ بها على هذا الجهاز
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;

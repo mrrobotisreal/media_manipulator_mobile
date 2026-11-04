@@ -1,5 +1,6 @@
 /**
- * Presets on the phone (ticket MA51 decision 8). Built-ins and Auto are the web's code
+ * Presets on the phone (ticket MA51 decision 8; MA53: the MMKV store is now only the source of the
+ * one-time migration to the account, `migration.ts`, and of the per-preset Upload). Built-ins and Auto are the web's code
  * (`presets/index.ts`, `presets/autoPreset.ts`, copied by the sync). User presets live in MMKV
  * under `photoPresets`, one JSON array of the web's `UserPreset` records (`id, name, category,
  * layers, createdAt`: MM103's `photo_presets` columns plus the local id), validated through the
@@ -7,8 +8,8 @@
  * export/import uses the web's `aperture-presets` v1 format (`exportUserPresets`,
  * `parseUserPresetsJson`).
  *
- * Deviation (logged): signed-in users' presets are on the account since MM103; the account sync on
- * the phone is MA53's (ticket split kept), so MA51 keeps every user preset on the device.
+ * Since MA53 every new preset is saved on the account (`../presetsApi.ts`); nothing writes new
+ * presets here any more, only the migration removes the ones it uploaded.
  */
 import { computeAutoPreset } from './autoPreset';
 import {
@@ -98,6 +99,15 @@ export async function listUserPresets(kv: KvStorage): Promise<UserPreset[]> {
     .sort((a, b) => (a.createdAt < b.createdAt ? 1 : a.createdAt > b.createdAt ? -1 : 0));
 }
 
+/** A saved stack: masks and group headers belong to the photo, not the look (MA51; MA53 reuses it). */
+export function presetLayersOf(layers: AdjustmentLayer[]): AdjustmentLayer[] {
+  return layers.map((l) => {
+    const { group: _g, ...rest } = l as AdjustmentLayer & { group?: string };
+    void _g;
+    return { ...rest, mask: null } as AdjustmentLayer;
+  });
+}
+
 async function write(kv: KvStorage, list: UserPreset[]): Promise<void> {
   await kv.setItem(USER_PRESETS_KEY, JSON.stringify(list));
 }
@@ -111,12 +121,7 @@ export async function saveUserPreset(
     id: newPresetId(),
     name: input.name,
     category: input.category ?? 'custom',
-    // Saved stack: masks and group headers belong to the photo, not the look.
-    layers: input.layers.map((l) => {
-      const { group: _g, ...rest } = l as AdjustmentLayer & { group?: string };
-      void _g;
-      return { ...rest, mask: null } as AdjustmentLayer;
-    }),
+    layers: presetLayersOf(input.layers),
     createdAt: now(),
   });
   if (!p) return null;

@@ -63,3 +63,28 @@ export interface PhotoExportRequest {
   maxMegapixels?: number;
   name?: string;
 }
+
+/**
+ * MM103 account presets (`internal/handlers/photo_presets.go`): one row of `GET /photo/presets`
+ * (`layers` only with `?full=1`), and the body of create / get / save. `layers` is parsed layer by
+ * layer with the shared `layerSchema` (`presetsApi.ts`), never with a hand-written copy.
+ */
+export const photoPresetSchema = z.object({
+  id: z.string().min(1),
+  name: z.string(),
+  category: z.string().nullable().optional(),
+  revision: z.number().int(),
+  hasThumbnail: z.boolean().optional().default(false),
+  thumbnailUrl: z.string().optional(),
+  createdAt: z.string().optional().default(''),
+  updatedAt: z.string().optional().default(''),
+  layers: z.unknown().optional(),
+});
+export type PhotoPresetRow = z.infer<typeof photoPresetSchema>;
+
+/** `GET /photo/presets`: `limit` is the tier cap (-1 unlimited), `used` the live count. */
+export const photoPresetListSchema = z.object({
+  presets: z.array(photoPresetSchema),
+  limit: z.number().optional().default(-1),
+  used: z.number().optional(),
+});

@@ -9,6 +9,8 @@ import {
   trackPhotoHeal,
   trackPhotoMaskAdded,
   trackPhotoPresetApplied,
+  trackPhotoPresetSaved,
+  trackPhotoPresetsMigrated,
 } from '../photoEvents';
 import catalog from '../../../__fixtures__/analytics-catalog.fixture.json';
 
@@ -67,6 +69,30 @@ describe('MA51 photo analytics', () => {
       ],
       ['photo_preset_applied', { preset_id: 'custom', builtin: false, scope: 'local' }, 'aperture'],
     ]);
+  });
+
+  it('MA53: account presets report scope server; saved / migrated carry buckets only', () => {
+    trackPhotoPresetApplied('custom', 'server');
+    trackPhotoPresetApplied('custom', 'local');
+    trackPhotoPresetApplied('warm', 'builtin');
+    trackPhotoPresetSaved(12, 'aperture');
+    trackPhotoPresetsMigrated(3, false);
+    trackPhotoPresetsMigrated(0, true);
+    expect(calls()).toEqual([
+      [
+        'photo_preset_applied',
+        { preset_id: 'custom', builtin: false, scope: 'server' },
+        'aperture',
+      ],
+      ['photo_preset_applied', { preset_id: 'custom', builtin: false, scope: 'local' }, 'aperture'],
+      ['photo_preset_applied', { preset_id: 'warm', builtin: true, scope: 'builtin' }, 'aperture'],
+      ['photo_preset_saved', { builtin: false, scope: 'server', layers: '11-50' }, 'aperture'],
+      ['photo_presets_migrated', { count: '1-10', declined: false }, 'aperture'],
+      ['photo_presets_migrated', { count: '0', declined: true }, 'aperture'],
+    ]);
+    for (const [name, props] of calls())
+      for (const k of Object.keys(props as object))
+        expect([name, catalogProps(name as string)]).toEqual([name, expect.arrayContaining([k])]);
   });
 
   it('every prop sent is a catalog prop', () => {

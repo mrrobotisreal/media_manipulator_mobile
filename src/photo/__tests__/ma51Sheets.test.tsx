@@ -19,6 +19,8 @@ import { HealSheet } from '../ui/sheets/HealSheet';
 import { HistorySheet } from '../ui/sheets/HistorySheet';
 import { MasksSheet } from '../ui/sheets/MasksSheet';
 import { PresetsSheet } from '../ui/sheets/PresetsSheet';
+import { Provider } from 'react-redux';
+import { makeReadyStore } from '@/state/testing';
 import type { KvStorage } from '../presets/presetStore';
 
 jest.mock('lucide-react-native', () => new Proxy({}, { get: () => () => null }));
@@ -26,6 +28,7 @@ jest.mock('@shopify/react-native-skia', () => ({ Canvas: () => null, Image: () =
 jest.mock('expo-sharing', () => ({ shareAsync: jest.fn() }));
 jest.mock('expo-document-picker', () => ({ getDocumentAsync: jest.fn() }));
 jest.mock('@/quota/QuotaChip', () => ({ QuotaChip: () => null }));
+jest.mock('expo-image', () => ({ Image: () => null }));
 
 const pngEncoder = async (rgba: Uint8ClampedArray, width: number, height: number) => {
   const png = new PNG({ width, height });
@@ -154,7 +157,14 @@ describe('Presets sheet', () => {
       setItem: async (k, v) => void map.set(k, v),
     };
     const onPresetApplied = jest.fn();
-    const { store } = await setup(<PresetsSheet kv={kv} />, { onPresetApplied });
+    // MA53: the sheet reads the account list through RTK Query (the fetch fails: no account rows).
+    const { store: app } = await makeReadyStore();
+    const { store } = await setup(
+      <Provider store={app}>
+        <PresetsSheet kv={kv} />
+      </Provider>,
+      { onPresetApplied },
+    );
     await fireEvent.press(screen.getByTestId('photo-preset-color-pop-blue'));
     const groups = new Set(
       store
@@ -164,7 +174,7 @@ describe('Presets sheet', () => {
     );
     expect([...groups]).toEqual(['Preset: Color pop: blue']);
     expect(store.getState().past.at(-1)!.label).toBe('Preset|builtin:color-pop-blue');
-    expect(onPresetApplied).toHaveBeenCalledWith('color-pop-blue', true);
+    expect(onPresetApplied).toHaveBeenCalledWith('color-pop-blue', 'builtin');
   });
 });
 

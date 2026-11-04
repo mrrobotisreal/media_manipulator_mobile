@@ -1323,9 +1323,23 @@
       "tapEye": "Toque em um olho"
     },
     "presets": {
-      "saved": "Predefinição salva neste dispositivo.",
-      "saveFailed": "Não foi possível salvar a predefinição neste dispositivo.",
-      "deviceNote": "Salvo neste dispositivo."
+      "saved": "Predefinição salva na sua conta.",
+      "uploaded": "Predefinição movida para a sua conta.",
+      "upload": "Enviar",
+      "cap_one": "Até {{count}} predefinição salva no seu plano",
+      "cap_many": "Até {{count}} predefinições salvas no seu plano",
+      "cap_other": "Até {{count}} predefinições salvas no seu plano",
+      "offline": "Você está offline; tente novamente.",
+      "loadFailed": "Não foi possível carregar suas predefinições.",
+      "device": {
+        "title": "Neste dispositivo",
+        "note": "Elas estão só neste celular. Envie uma para mantê-la na sua conta."
+      },
+      "migrate": {
+        "body": "Agora elas estão só neste celular. Na sua conta, elas também aparecem na web e em qualquer celular em que você entrar.",
+        "notNow": "Manter neste dispositivo",
+        "partial": "Algumas predefinições ficaram neste dispositivo porque o limite do seu plano foi atingido."
+      }
     },
     "history": {
       "exportSettings": "Configurações de exportação",

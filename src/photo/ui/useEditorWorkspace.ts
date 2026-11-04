@@ -24,6 +24,8 @@ import {
   trackPhotoHeal,
   trackPhotoMaskAdded,
   trackPhotoPresetApplied,
+  trackPhotoPresetSaved,
+  trackPhotoPresetsMigrated,
   type PhotoMaskKind,
 } from '@/analytics/photoEvents';
 import {
@@ -68,7 +70,7 @@ export interface WorkspaceIo {
   subjectBytes: (projectId: string, maskRef: string) => Promise<Uint8Array | null>;
   /** The canvas source for a heal base (its proxy), or null when it cannot be had. */
   baseImage: (projectId: string, baseRef: string) => Promise<SkImage | null>;
-  /** Write the heal mask PNG to a local file; its uri. */
+  /** Write PNG bytes (the heal mask; MA53 a preset thumbnail) to a local cache file; its uri. */
   writeMask: (bytes: Uint8Array) => Promise<string>;
   renderHealMask: (strokes: { pts: Point[]; diameter: number }[], size: MaskSize) => Uint8Array;
   /** MA56: where a heal in flight is kept across an app kill (MMKV in the app). */
@@ -92,6 +94,10 @@ export interface WorkspaceProps {
 }
 
 const THUMB_SIDE = 256;
+/** MA53 account thumbnail: 96 px (MM103 design), PNG (`ImageFormat.PNG` = 4), ≤ 64 KB. */
+const PRESET_THUMB_PX = 96;
+const PNG_FORMAT = 4;
+const PRESET_THUMB_MAX_BYTES = 64 * 1024;
 
 /**
  * MA56: editors mounted per project, newest last. Only the newest resumes and installs a pending
@@ -474,11 +480,9 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     return { image: s.makeImageSnapshot(), id: `${source.id}:thumb` };
   }, [source, api]);
   const thumbPipeline = useMemo(() => new PhotoPipeline(api), [api]);
-  const presetThumb = useCallback(
-    (key: string, layers: AdjustmentLayer[]) => {
+  const renderThumb = useCallback(
+    (layers: AdjustmentLayer[]): SkImage | null => {
       if (!thumbSource) return null;
-      const k = `${thumbSource.id}|${key}`;
-      if (thumbs.current.has(k)) return thumbs.current.get(k) ?? null;
       const d = store.getState().doc;
       const doc: Pick<PhotoDoc, 'layers' | 'geometry' | 'masks'> = {
         layers,
@@ -492,17 +496,56 @@ export function useEditorWorkspace(p: WorkspaceProps) {
         },
       };
       const r = thumbPipeline.readPixels(thumbSource, doc);
-      const img = r
+      return r
         ? api.Image.MakeImage(
             { width: r.width, height: r.height, colorType: 4, alphaType: 3 },
             api.Data.fromBytes(r.pixels),
             r.width * 4,
           )
         : null;
+    },
+    [thumbSource, thumbPipeline, store, api],
+  );
+  const presetThumb = useCallback(
+    (key: string, layers: AdjustmentLayer[]) => {
+      if (!thumbSource) return null;
+      const k = `${thumbSource.id}|${key}`;
+      if (thumbs.current.has(k)) return thumbs.current.get(k) ?? null;
+      const img = renderThumb(layers);
       thumbs.current.set(k, img);
       return img;
     },
-    [thumbSource, thumbPipeline, store, api],
+    [thumbSource, renderThumb],
+  );
+  // MA53: the account thumbnail (MM103: PNG ≤ 64 KB, ≤ 256 px): the photo through the preset at
+  // 96 px on the long side, written to a cache file for the multipart upload. Best effort.
+  const presetThumbFile = useCallback(
+    async (layers: AdjustmentLayer[]): Promise<string | null> => {
+      try {
+        const img = renderThumb(layers);
+        if (!img) return null;
+        const w = img.width();
+        const h = img.height();
+        const k = Math.min(1, PRESET_THUMB_PX / Math.max(w, h));
+        const tw = Math.max(1, Math.round(w * k));
+        const th = Math.max(1, Math.round(h * k));
+        const s = api.Surface.Make(tw, th);
+        if (!s) return null;
+        s.getCanvas().drawImageRect(
+          img,
+          api.XYWHRect(0, 0, w, h),
+          api.XYWHRect(0, 0, tw, th),
+          api.Paint(),
+        );
+        s.flush();
+        const bytes = s.makeImageSnapshot().encodeToBytes(PNG_FORMAT);
+        if (!bytes || bytes.length === 0 || bytes.length > PRESET_THUMB_MAX_BYTES) return null;
+        return await io.writeMask(bytes);
+      } catch {
+        return null;
+      }
+    },
+    [renderThumb, api, io],
   );
 
   const hist = useCallback((): Histogram256 | null => {
@@ -532,7 +575,11 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     clearHealStrokes,
     histogram256: hist,
     presetThumb,
-    onPresetApplied: (id, builtin) => trackPhotoPresetApplied(id, builtin, p.slug),
+    presetThumbFile,
+    onPresetApplied: (id, scope) => trackPhotoPresetApplied(id, scope, p.slug),
+    onPresetSaved: (layers) => trackPhotoPresetSaved(layers, p.slug),
+    onPresetsMigrated: (count, declined) => trackPhotoPresetsMigrated(count, declined, p.slug),
+    onLimit: (e) => p.onLimit(e),
   };
 
   return {

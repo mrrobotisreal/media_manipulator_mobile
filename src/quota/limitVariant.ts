@@ -7,7 +7,9 @@ export type LimitVariant =
   | { kind: 'height'; requested?: number; limit?: number }
   | { kind: 'size' }
   | { kind: 'long'; reason: string }
-  | { kind: 'cap'; reason: string };
+  | { kind: 'cap'; reason: string }
+  /** MA53: 403 `photo_presets_limit {limit, used, upgradePath}` (MM103 saved-preset cap). */
+  | { kind: 'presets'; limit?: number };
 
 const num = (v: unknown): number | undefined =>
   typeof v === 'number' && Number.isFinite(v) ? v : undefined;
@@ -36,6 +38,8 @@ export function limitVariantFor(error: MmError | undefined): LimitVariant | null
     case 'payload_too_large':
     case 'photo_file_too_large':
       return { kind: 'size' };
+    case 'photo_presets_limit':
+      return { kind: 'presets', limit: num(d.limit) };
     case 'source_limit_exceeded': {
       const reason = typeof d.reason === 'string' ? d.reason : '';
       return reason === 'video_duration' || reason === 'audio_duration'
@@ -59,6 +63,8 @@ export function exceededScope(v: LimitVariant): string | null {
     case 'long':
     case 'cap':
       return v.reason;
+    case 'presets':
+      return 'photo_presets_limit';
     case 'rate':
       return null;
   }

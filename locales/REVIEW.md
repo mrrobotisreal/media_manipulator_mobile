@@ -34,3 +34,9 @@ pt-PT is the web's own (English-identical) term and allowlisted by key.
 | Locale             | Aperture strings reviewed | Reviewer | Date |
 | ------------------ | ------------------------- | -------- | ---- |
 | all 17 non-English | no (model-written)        |          |      |
+
+MA53 (2026-11-04): `photo.presets.*` (account presets, the MMKV migration prompt, Upload, the cap line
+`photo.presets.cap_*` with each locale's CLDR plural categories, offline) model-written in the 17
+non-English locales by one Opus 5.5 subagent, mirroring the web shard's `photo.presets.*` words and
+address form (so de-DE uses "Sie" here, like the web, while older app strings use "du"); ru-RU, de-DE,
+ja-JP, ar-SA and he-IL read by the implementing session. **Not reviewed** by a native speaker.
