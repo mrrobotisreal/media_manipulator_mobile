@@ -1,3 +1,4 @@
+import type { IntakeFile } from '@/files/types';
 import type { ComponentType } from 'react';
 
 export type ToolFamily = 'image' | 'video' | 'audio' | 'ai' | 'metadata';
@@ -40,6 +41,12 @@ export interface ToolInputInfo {
 export interface ToolContext {
   input?: ToolInputInfo;
   limits?: { maxOutputHeight?: number };
+  /**
+   * Additive (Aperture launcher fix, 2026-11-04): the screen's selected files, so a form that
+   * hands the file itself to another screen (Aperture) does not depend on the intake session,
+   * which only share/intake fill. A photo picked on the tool screen is never in that session.
+   */
+  files?: readonly IntakeFile[];
 }
 
 export interface ToolFormProps<F = ToolOptions> {
