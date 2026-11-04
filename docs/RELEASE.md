@@ -42,6 +42,8 @@ eas-cli at writing: 27.4.0 (`npx eas-cli@latest` or `npm i -g eas-cli`). Project
 
 ## 2. Build (local)
 
+`google-services.json` is gitignored, so EAS does not copy it into the local build's sandbox: without it the sandbox config has no Firebase and the build fails with "Runtime version mismatch" in the Configure expo-updates phase. Until the `GOOGLE_SERVICES_JSON` file variable exists in the EAS environment, point the variable at the local file for every local build: prefix the command with `GOOGLE_SERVICES_JSON="$PWD/google-services.json"`. Remove any stale `android/` directory first (it is gitignored, but it feeds the fingerprint).
+
 ```sh
 npx eas-cli@latest build --profile preview --platform android --local      # APK, installs beside dev/production
 npx eas-cli@latest build --profile production --platform android --local   # AAB for Play
