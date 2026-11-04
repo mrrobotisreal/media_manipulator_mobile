@@ -31,6 +31,10 @@ export const tierLimitsSchema = z.object({
   voicesMaxSeconds: z.number().optional(),
   voicesConvert: z.boolean().optional(),
   voicesConvertMaxSeconds: z.number().optional(),
+  // MA52: Aperture caps (the web's gating ladder for `photo_export_gated.upgrade_path`); -1 = unlimited.
+  photoProjects: z.number().optional(),
+  photoMaxMegapixels: z.number().optional(),
+  photoBatch: z.number().optional(),
 });
 
 export type TierLimits = z.infer<typeof tierLimitsSchema>;

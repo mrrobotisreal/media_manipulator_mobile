@@ -29,7 +29,12 @@ const caps = (maxMegapixels: number): PhotoCapabilities => ({
 // A 24 MP photo (6000 x 4000).
 const doc = upsertAdjustment(newPhotoDoc(6000, 4000), 'exposure', (p) => ({ ...p, ev: 1 })).doc;
 
-async function renderSheet(c: PhotoCapabilities, onExport = jest.fn(), ready = true) {
+async function renderSheet(
+  c: PhotoCapabilities,
+  onExport = jest.fn(),
+  ready = true,
+  onLockedSize?: (mp: number) => void,
+) {
   await render(
     <I18nextProvider i18n={i18n}>
       <EditorProvider value={{ store: makePhotoStore(), haptics: false }}>
@@ -40,6 +45,7 @@ async function renderSheet(c: PhotoCapabilities, onExport = jest.fn(), ready = t
           capabilities={c}
           ready={ready}
           onExport={onExport}
+          onLockedSize={onLockedSize}
         />
       </EditorProvider>
     </I18nextProvider>,
@@ -56,6 +62,16 @@ describe('Export sheet', () => {
     expect([0, 12, 24, 64, 120].map(disabled)).toEqual([true, false, true, true, true]);
     expect(screen.getByText('Exports up to 12 MP on your plan')).toBeTruthy();
     expect(screen.queryByText(/upgrade|price|\$/i)).toBeNull();
+  });
+
+  it('MA52: a locked size stays unselected and reports the gate with its megapixels', async () => {
+    const onLocked = jest.fn();
+    const onExport = await renderSheet(caps(12), jest.fn(), true, onLocked);
+    await fireEvent.press(screen.getByTestId('photo-export-size-64'));
+    await fireEvent.press(screen.getByTestId('photo-export-size-0'));
+    expect(onLocked.mock.calls).toEqual([[64], [24]]);
+    await fireEvent.press(screen.getByTestId('photo-export-start'));
+    expect((onExport.mock.calls[0]![0] as ExportChoice).maxSize).toBe(12);
   });
 
   it('pro (120 MP cap): nothing is disabled', async () => {

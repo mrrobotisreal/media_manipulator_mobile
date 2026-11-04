@@ -9,14 +9,17 @@ import { Skia, type SkImage } from '@shopify/react-native-skia';
 import { File, Paths } from 'expo-file-system';
 import { router, type Href } from 'expo-router';
 import { usePreventRemove } from 'expo-router/react-navigation';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AppState, ScrollView, View } from 'react-native';
 import {
   trackPhotoCompareUsed,
   trackPhotoEditorOpened,
+  trackPhotoExportGated,
   trackPhotoExportStarted,
   trackPhotoPresetApplied,
+  photoTierProp,
+  photoUpgradePath,
   trackPhotoProjectCreated,
   trackPhotoProjectSaved,
   createAdjustmentTracker,
@@ -24,6 +27,7 @@ import {
 } from '@/analytics/photoEvents';
 import { setContext } from '@/analytics/track';
 import { mmApi } from '@/api/mmApi';
+import { useGetTiersQuery } from '@/api/endpoints/tiers';
 import { getJobEngine } from '@/jobs/runtime';
 import { photoExportOptions, PHOTO_EXPORT_STARTER } from '@/jobs/starters/photoExport';
 import { LimitSheet, hasLimitSheet } from '@/quota/LimitSheets';
@@ -153,7 +157,34 @@ export function PhotoEditorScreen({
   const slug = request?.toolSlug ?? savedSlug ?? PHOTO_TOOL_SLUG;
   const haptics = useAppSelector((s) => s.settings.haptics);
   const caps = useGetPhotoCapabilitiesQuery();
+  const tiers = useGetTiersQuery();
   const adjust = useMemo(() => createAdjustmentTracker(), []);
+  // MA52 photo_export_gated: each gate key once (per open export dialog for sizes, once per
+  // editor for the projects wall), like the web's export dialog / editor.
+  const gated = useRef(new Set<string>());
+  const gateInfo = useRef({
+    tier: undefined as string | undefined,
+    tiers: tiers.data?.tiers,
+    slug,
+  });
+  useEffect(() => {
+    gateInfo.current = { tier: caps.data?.tier, tiers: tiers.data?.tiers, slug };
+  }, [caps.data?.tier, tiers.data?.tiers, slug]);
+  const reportGate = useCallback(
+    (reason: 'megapixels' | 'projects', key: string, megapixels = 0) => {
+      if (gated.current.has(key)) return;
+      gated.current.add(key);
+      const info = gateInfo.current;
+      const tier = photoTierProp(info.tier);
+      trackPhotoExportGated(
+        reason,
+        tier,
+        photoUpgradePath(reason, tier, info.tiers, megapixels),
+        info.slug,
+      );
+    },
+    [],
+  );
 
   const [preview, setPreview] = useState<PreviewSource<SkImage> | null>(null);
   const [failed, setFailed] = useState(false);
@@ -170,6 +201,12 @@ export function PhotoEditorScreen({
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => setContext({ tool_slug: slug }), [slug]);
+  // A new export dialog may report its locked sizes again (the web clears its keys on close).
+  useEffect(() => {
+    if (exportOpen) return;
+    const keys = gated.current;
+    for (const k of [...keys]) if (k.startsWith('mp:')) keys.delete(k);
+  }, [exportOpen]);
   useEffect(() => {
     const off = session.subscribe(() => setUpload(session.upload()));
     return () => {
@@ -239,6 +276,7 @@ export function PhotoEditorScreen({
             }
           }
         } else if (res.kind === 'failed') {
+          if (res.error.code === 'photo_projects_limit') reportGate('projects', 'projects');
           const copy = refusalCopy(res.error);
           if (hasLimitSheet(res.error)) setLimitError(res.error);
           else if (copy) showNotice(t(copy.key, copy.values), 'error');
@@ -263,7 +301,7 @@ export function PhotoEditorScreen({
     return () => {
       cancelled = true;
     };
-  }, [request, projectId, session, slug, t, store, savedSource]);
+  }, [request, projectId, session, slug, t, store, savedSource, reportGate]);
 
   // Drafts: every 2 s while dirty, flushed when the app goes to the background.
   useEffect(() => {
@@ -576,6 +614,7 @@ export function PhotoEditorScreen({
           capabilities={caps.data}
           ready={upload.kind === 'ready'}
           onExport={startExport}
+          onLockedSize={(mp) => reportGate('megapixels', `mp:${Math.round(mp)}`, mp)}
         />
       ) : null}
       <ConflictSheet

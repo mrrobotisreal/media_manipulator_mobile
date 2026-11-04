@@ -48,6 +48,7 @@ export function ExportSheet({
   ready,
   onExport,
   busy,
+  onLockedSize,
 }: {
   visible: boolean;
   onClose: () => void;
@@ -57,6 +58,8 @@ export function ExportSheet({
   ready: boolean;
   onExport: (choice: ExportChoice) => void;
   busy?: boolean;
+  /** MA52: a locked Max size was pressed (`photo_export_gated` reason megapixels); MP of the size. */
+  onLockedSize?: (megapixels: number) => void;
 }) {
   const { t } = useTranslation();
   const formats = (
@@ -76,10 +79,10 @@ export function ExportSheet({
     value: o,
     label:
       o === 0 ? t('interface:photo.export.original') : t('interface:photo.export.mp', { mp: o }),
-    disabled: isSizeLocked(o, cap, original),
+    locked: isSizeLocked(o, cap, original),
   }));
   // The default must not sit on a locked option (a free plan with a 24 MP photo: 12 MP).
-  const firstOpen = sizes.find((s) => !s.disabled)?.value ?? 12;
+  const firstOpen = sizes.find((s) => !s.locked)?.value ?? 12;
   const maxSize: MaxSizeOption = isSizeLocked(choice.maxSize, cap, original)
     ? (firstOpen as MaxSizeOption)
     : choice.maxSize;
@@ -121,6 +124,7 @@ export function ExportSheet({
           options={sizes}
           value={maxSize}
           onChange={(o) => set({ maxSize: o })}
+          onLockedPress={(o) => onLockedSize?.(o === 0 ? original : o)}
           testIDPrefix="photo-export-size"
         />
         {cap > 0 ? (

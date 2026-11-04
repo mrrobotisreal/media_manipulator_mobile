@@ -11,7 +11,8 @@
  * Only names the app emits, plus the rest of a parity batch the app has started: `data_deleted`
  * (emitted since MA14) is in the catalog's "MA22 account" batch, so that batch's other three names
  * are declared here and emitted by MA22. Likewise MA50 declares the whole "MA52 photo" batch (17
- * names) and emits the editor/export core; MA51/MA52 emit the mask, heal, preset and gate names.
+ * names) and emits the editor/export core; MA51 the mask, heal and preset names; MA52 the gate
+ * (`photo_export_gated`), so since MA52 the app emits every name of that batch.
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -568,6 +569,7 @@ export interface PhotoExportFailedProps {
 
 export interface PhotoExportGatedProps {
   reason: 'megapixels' | 'batch' | 'projects';
+  /** The catalog tier vocabulary (anonymous | free | premium | pro | operator). */
   tier: string;
   upgrade_path: 'signup' | 'premium' | 'pro' | 'none';
 }
