@@ -131,6 +131,29 @@ describe('Aperture entry rows (MA52)', () => {
     },
   );
 
+  // Regression (S25, 2026-11-04): a photo picked on the tool screen itself is not in the intake
+  // session, so the launcher stayed disabled. The screen now passes its selection as ctx.files.
+  it('a photo picked on the tool screen (not in the intake session) opens the editor', async () => {
+    const t = TOOL_BY_ID.get('aperture-black-white')!;
+    setIntakeBatch(null);
+    const picked = photo('picked-1');
+    const r = await render(
+      <I18nextProvider i18n={i18n}>
+        <t.Form
+          value={t.defaults}
+          onChange={() => undefined}
+          ctx={{
+            input: { id: 'picked-1', name: 'x.jpg', extension: 'jpg', mime: 'image/jpeg', mediaKind: 'image' },
+            files: [picked],
+          }}
+        />
+      </I18nextProvider>,
+    );
+    await fireEvent.press(r.getByTestId('photo-open-editor'));
+    expect(mockPush).toHaveBeenLastCalledWith('/(app)/photo/new');
+    expect(takePhotoOpenRequest()).toMatchObject({ source: 'app_intake', toolSlug: 'black-and-white-photo' });
+  });
+
   it('a shared photo opened from a row reports app_share', async () => {
     const t = TOOL_BY_ID.get('aperture-curves')!;
     setIntakeBatch({ files: [photo('s1', 'share')], rejected: [] });

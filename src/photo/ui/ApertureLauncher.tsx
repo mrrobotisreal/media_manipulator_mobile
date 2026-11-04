@@ -28,7 +28,12 @@ export function ApertureLauncher({
   const { t } = useTranslation();
   const caps = useGetPhotoCapabilitiesQuery();
   const input = ctx?.input;
-  const file = input?.id ? getIntakeFiles([input.id])[0] : undefined;
+  // The screen's own selection first (a photo picked here is never in the intake session), then
+  // the session (share-into / intake hand files over by id).
+  const file =
+    ctx?.files?.find((f) => f.id === input?.id) ??
+    ctx?.files?.[0] ??
+    (input?.id ? getIntakeFiles([input.id])[0] : undefined);
   const available = caps.data ? caps.data.enabled && caps.data.render !== false : true;
   const open = () => {
     if (!file) return;

@@ -67,8 +67,9 @@ function ToolScreen({
           }
         : undefined,
       limits: limits ? { maxOutputHeight: limits.maxOutputHeight } : undefined,
+      files,
     }),
-    [first, limits],
+    [first, files, limits],
   );
 
   // options_changed: keys only, debounced per option (web precedent: sliders are high volume).
