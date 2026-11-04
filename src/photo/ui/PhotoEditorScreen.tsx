@@ -358,13 +358,14 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
   );
 
   const io = useMemo(() => workspaceIo(), []);
+  // The project id lands in the store once the upload / open finishes (Select subject and Heal need it).
+  const storeProjectId = usePhotoProjectId(store);
   const ws = useEditorWorkspace({
     api: Skia,
     io,
     store,
     original: preview?.image ?? null,
-    projectId:
-      upload.kind === 'ready' || projectId !== NEW_PROJECT ? (session.project()?.id ?? null) : null,
+    projectId: storeProjectId,
     capabilities: caps.data ? { aiMasks: caps.data.aiMasks, heal: caps.data.heal } : undefined,
     slug,
     gpu: true,
@@ -582,6 +583,12 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
       ) : null}
     </EditorProvider>
   );
+}
+
+function usePhotoProjectId(store: ReturnType<typeof makePhotoStore>): string | null {
+  const [id, setId] = useState(store.getState().projectId);
+  useEffect(() => store.subscribe(() => setId(store.getState().projectId)), [store]);
+  return id;
 }
 
 function usePhotoDirty(store: ReturnType<typeof makePhotoStore>): boolean {
