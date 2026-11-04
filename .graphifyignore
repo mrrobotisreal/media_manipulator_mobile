@@ -27,3 +27,6 @@ maestro/out/
 .claude/
 *.log
 maestro/fixtures/
+# Aperture fixtures and goldens copied from the web (scripts/sync-photo-fixtures.mjs)
+src/photo/fixtures/
+src/photo/presets/builtin/

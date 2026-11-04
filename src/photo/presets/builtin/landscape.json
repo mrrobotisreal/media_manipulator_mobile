@@ -1,0 +1,36 @@
+{
+ "id": "landscape",
+ "nameKey": "photo.presets.name.landscape",
+ "category": "fix",
+ "layers": [
+  {
+   "id": "preset-landscape-1",
+   "type": "dehaze",
+   "params": {
+    "amount": 20
+   }
+  },
+  {
+   "id": "preset-landscape-2",
+   "type": "vibranceSaturation",
+   "params": {
+    "vibrance": 25
+   }
+  },
+  {
+   "id": "preset-landscape-3",
+   "type": "clarity",
+   "params": {
+    "amount": 20
+   }
+  },
+  {
+   "id": "preset-landscape-4",
+   "type": "tone",
+   "params": {
+    "highlights": -20,
+    "shadows": 15
+   }
+  }
+ ]
+}
