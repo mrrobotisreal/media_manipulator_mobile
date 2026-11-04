@@ -7,6 +7,9 @@ import { track } from '@/analytics/track';
 import { jobsApi } from '@/api/endpoints/jobs';
 import { mmApi } from '@/api/mmApi';
 import { useActiveLocale } from '@/i18n/useActiveLocale';
+import { resolveHealProject } from '@/photo/healPending';
+import { NEW_PROJECT } from '@/photo/openRequest';
+import { mmkvStorage } from '@/state/persist';
 import { useAppDispatch, useAppSelector } from '@/state/hooks';
 import type { TFunction } from 'i18next';
 import type { JobsState } from '@/state/slices/jobs';
@@ -54,9 +57,25 @@ const handlers = createPushHandlers({
   route: (href) => queue.push(href),
   trackOpened: (p) =>
     track(EVENTS.PUSH_OPENED, { tool: p.tool, status: p.status, app_state: p.app_state }),
+  // MA56: a heal's project from the phone's pending record, else the job's `options.projectId`.
+  healProject: (jobId) =>
+    resolveHealProject(mmkvStorage, jobId, async (id) => {
+      if (!ctx) throw new Error('push host not mounted');
+      const job = await ctx
+        .dispatch(jobsApi.endpoints.getJob.initiate(id, { subscribe: false, forceRefetch: true }))
+        .unwrap();
+      return { options: job.options };
+    }),
+  currentPhotoProjectId: () => {
+    const id = PHOTO_PATH.exec(ctx?.pathname ?? '')?.[1];
+    if (!id) return null;
+    const decoded = decodeURIComponent(id);
+    return decoded === NEW_PROJECT ? null : decoded;
+  },
 });
 
 const JOB_PATH = /\/job\/([^/?#]+)/;
+const PHOTO_PATH = /\/photo\/([^/?#]+)/;
 
 /**
  * Mounted once under the auth gate (after `startAuth`, MA24 `initPush`). Creates the channel, registers

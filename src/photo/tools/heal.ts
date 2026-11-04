@@ -97,19 +97,23 @@ export type HealResult =
   | { ok: true; outcome: HealOutcome; doc: (d: PhotoDoc) => PhotoDoc }
   | { ok: false; error: MmError };
 
-/** Upload the mask, wait for the job; the doc edit is returned for the caller's single mutate. */
-export async function runHeal(
+export interface HealRequest {
+  projectId: string;
+  doc: PhotoDoc;
+  strokes: readonly HealStroke[];
+  out: MaskSize;
+  mask: MaskSize;
+}
+
+/**
+ * Render the mask and `POST …/heal`: the `photo_heal` job id and the base hash it heals ('' = the
+ * original). MA56: the editor persists `{jobId, base}` before it polls, so a heal outlives
+ * backgrounding and an app kill.
+ */
+export async function beginHeal(
   deps: HealDeps,
-  req: {
-    projectId: string;
-    doc: PhotoDoc;
-    strokes: readonly HealStroke[];
-    out: MaskSize;
-    mask: MaskSize;
-    onProgress?: (p: number) => void;
-    signal?: AbortSignal;
-  },
-): Promise<HealResult> {
+  req: HealRequest,
+): Promise<{ ok: true; jobId: string; base: string } | { ok: false; error: MmError }> {
   const mapped = strokesInMaskSpace(
     req.strokes,
     req.doc.geometry,
@@ -129,7 +133,17 @@ export async function runHeal(
   const base = baseHashOf(currentBaseRef(req.doc));
   const started = await startHeal(deps.ai, req.projectId, uri, base);
   if (!started.ok) return started;
-  const done = await waitForHeal(deps.ai, started.value, {
+  return { ok: true, jobId: started.value, base: base ?? '' };
+}
+
+/** Upload the mask, wait for the job; the doc edit is returned for the caller's single mutate. */
+export async function runHeal(
+  deps: HealDeps,
+  req: HealRequest & { onProgress?: (p: number) => void; signal?: AbortSignal },
+): Promise<HealResult> {
+  const started = await beginHeal(deps, req);
+  if (!started.ok) return started;
+  const done = await waitForHeal(deps.ai, started.jobId, {
     onProgress: req.onProgress,
     signal: req.signal,
   });

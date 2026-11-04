@@ -7,12 +7,16 @@
  * - the render pipeline + mask asset store (brush / subject rasters; redraw when they arrive);
  * - the preview source per heal base (`heals[].baseRef` → that base's proxy; undo swaps back);
  * - Select subject (POST masks/subject → cache the PNG → install a `subject` component);
- * - Heal (strokes → base-size mask → POST heal → job → swap the source, append the heal);
+ * - Heal (strokes → base-size mask → POST heal → job → swap the source, append the heal); the job
+ *   id is kept in MMKV until it settles, the poll stops in the background (so the API's push
+ *   fires) and resumes on the foreground, on reopening the project and on a `photo_heal` push tap
+ *   (MA56);
  * - preset thumbnails (the photo at 256 px through each look, cached per source), Auto's
  *   256-bin histogram, the eyedropper readback, snapshots, analytics.
  */
 import type { SkImage } from '@shopify/react-native-skia';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AppState } from 'react-native';
 import type { MmError } from '@/api/errors';
 import {
   photoFailReason,
@@ -22,9 +26,23 @@ import {
   trackPhotoPresetApplied,
   type PhotoMaskKind,
 } from '@/analytics/photoEvents';
-import { requestSubjectMask, type AiDeps } from '../aiApi';
+import {
+  requestSubjectMask,
+  waitForHeal,
+  type AiDeps,
+  type AiResult,
+  type HealOutcome,
+} from '../aiApi';
 import { createSnapshots } from '../history';
-import { currentBaseRef, baseHashOf } from '../healOps';
+import { appendHeal, currentBaseRef, baseHashOf } from '../healOps';
+import {
+  clearPendingHeal,
+  readPendingHeal,
+  savePendingHeal,
+  trackHealSettled,
+  type HealKv,
+  type PendingHeal,
+} from '../healPending';
 import { addComponent, maskOfLayer } from '../maskOps';
 import { mutate, type PhotoStore } from '../photoStore';
 import { maskComponentSchema, type AdjustmentLayer, type PhotoDoc } from '../photoTypes';
@@ -34,7 +52,13 @@ import { PhotoPipeline } from '../skia/pipeline';
 import type { SkiaApi } from '../skia/shaderChain';
 import { skiaPngEncoder } from '../tools/brush';
 import { pixelAt, type Point } from '../tools/canvasMath';
-import { healMaskSize, healRefusal, runHeal, type HealStroke, type MaskSize } from '../tools/heal';
+import {
+  beginHeal,
+  healMaskSize,
+  healRefusal,
+  type HealStroke,
+  type MaskSize,
+} from '../tools/heal';
 import { createToolStore } from '../tools/toolState';
 import type { EditorTools } from './EditorContext';
 import { outputSizeOf } from '../tools/ToolOverlay';
@@ -47,6 +71,9 @@ export interface WorkspaceIo {
   /** Write the heal mask PNG to a local file; its uri. */
   writeMask: (bytes: Uint8Array) => Promise<string>;
   renderHealMask: (strokes: { pts: Point[]; diameter: number }[], size: MaskSize) => Uint8Array;
+  /** MA56: where a heal in flight is kept across an app kill (MMKV in the app). */
+  pending?: HealKv;
+  now?: () => number;
 }
 
 export interface WorkspaceProps {
@@ -65,6 +92,15 @@ export interface WorkspaceProps {
 }
 
 const THUMB_SIDE = 256;
+
+/**
+ * MA56: editors mounted per project, newest last. Only the newest resumes and installs a pending
+ * heal, so an editor left under another screen (a push tap opened a second one) never installs it
+ * twice.
+ */
+const healOwners = new Map<string, symbol[]>();
+const isHealOwner = (projectId: string, token: symbol) =>
+  healOwners.get(projectId)?.at(-1) === token;
 
 export function useEditorWorkspace(p: WorkspaceProps) {
   const { api, io, store, projectId } = p;
@@ -237,6 +273,144 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     tools.set({ healStrokes: 0 });
   }, [tools, healStrokes]);
 
+  // MA56: the heal in flight survives backgrounding (the poll stops; the API pushes when nobody
+  // polls) and an app kill (MMKV `photoHealPending:<projectId>`). One poll per job at a time; a
+  // job is installed at most once per editor.
+  const pending = useRef<PendingHeal | null>(null);
+  const poll = useRef<{ jobId: string; abort: AbortController } | null>(null);
+  const settled = useRef(new Set<string>());
+  const startedHere = useRef(new Set<string>());
+  const kv = io.pending;
+  const now = io.now ?? Date.now;
+  const owner = useMemo(() => Symbol('heal-owner'), []);
+  const latest = useRef(p);
+  useEffect(() => {
+    latest.current = p;
+  });
+
+  const settle = useCallback(
+    async (rec: PendingHeal, r: AiResult<HealOutcome>) => {
+      const { onLimit } = latest.current;
+      if (settled.current.has(rec.jobId) || !isHealOwner(rec.projectId, owner)) return;
+      const forget = async () => {
+        settled.current.add(rec.jobId);
+        if (pending.current?.jobId === rec.jobId) pending.current = null;
+        if (kv) await clearPendingHeal(kv, rec.projectId, rec.jobId);
+      };
+      if (!r.ok) {
+        // A dropped connection keeps the record: the next foreground polls again.
+        if (r.error.status === 'FETCH_ERROR') {
+          setHealState({ phase: 'failed', progress: 0 });
+          return;
+        }
+        await forget();
+        trackHealSettled(
+          rec,
+          { ok: false, reason: photoFailReason(r.error.code, r.error.status) },
+          now(),
+        );
+        setHealState({ phase: onLimit(r.error) ? 'idle' : 'failed', progress: 0 });
+        return;
+      }
+      const o = r.value;
+      const d = store.getState().doc;
+      if (!d || projectRef.current !== rec.projectId) return;
+      // Already in the doc (installed before an app kill and saved): nothing to do.
+      if (currentBaseRef(d) === o.baseRef) {
+        await forget();
+        setHealState({ phase: 'idle', progress: 0 });
+        return;
+      }
+      // The doc moved to another base meanwhile (undo, another device): this heal no longer fits.
+      if ((baseHashOf(currentBaseRef(d)) ?? '') !== rec.base) {
+        await forget();
+        trackHealSettled(rec, { ok: false, reason: 'error' }, now());
+        setHealState({ phase: 'failed', progress: 0 });
+        return;
+      }
+      settled.current.add(rec.jobId);
+      // Install the new base first (a fetch failure leaves the doc untouched), then record it.
+      const img = await io.baseImage(rec.projectId, o.baseRef);
+      if (!img) {
+        settled.current.delete(rec.jobId); // retried on the next foreground
+        setHealState({ phase: 'failed', progress: 0 });
+        return;
+      }
+      bases.current.set(o.baseRef, img);
+      if (o.width > 0) baseSizes.current[o.baseRef] = { width: o.width, height: o.height };
+      mutate(store, 'heal', (doc) => appendHeal(doc, { baseRef: o.baseRef, maskRef: o.maskRef }));
+      await forget();
+      if (startedHere.current.has(rec.jobId)) clearHealStrokes();
+      setHealState({ phase: 'idle', progress: 0 });
+      trackHealSettled(rec, { ok: true }, now());
+    },
+    [store, io, kv, now, owner, clearHealStrokes],
+  );
+
+  /** Poll the pending heal's job (no-op while that job is already polled). */
+  const resumeHeal = useCallback(
+    async (rec: PendingHeal) => {
+      if (settled.current.has(rec.jobId)) return;
+      pending.current = rec;
+      // Backgrounded (e.g. during the heal POST): the foreground listener resumes it.
+      if (AppState.currentState !== 'active') return;
+      const cur = poll.current;
+      if (cur && cur.jobId === rec.jobId && !cur.abort.signal.aborted) return;
+      cur?.abort.abort();
+      const mine = { jobId: rec.jobId, abort: new AbortController() };
+      poll.current = mine;
+      setHealState({ phase: 'running', progress: 0 });
+      const r = await waitForHeal(io.ai, rec.jobId, {
+        signal: mine.abort.signal,
+        onProgress: (pr) => {
+          if (poll.current === mine) setHealState({ phase: 'running', progress: pr });
+        },
+      });
+      if (poll.current === mine) poll.current = null;
+      // Backgrounded or unmounted: the record stays; the next foreground resumes.
+      if (!r.ok && mine.abort.signal.aborted) return;
+      await settle(rec, r);
+    },
+    [io, settle],
+  );
+
+  // Resume: the project's persisted heal once its doc is open, and on every return to the foreground.
+  useEffect(() => {
+    if (!projectId) return;
+    let alive = true;
+    let opened = false;
+    healOwners.set(projectId, [...(healOwners.get(projectId) ?? []), owner]);
+    const resume = async () => {
+      if (!store.getState().doc || !isHealOwner(projectId, owner)) return;
+      opened = true;
+      const rec =
+        pending.current?.projectId === projectId
+          ? pending.current
+          : kv
+            ? await readPendingHeal(kv, projectId, now())
+            : null;
+      if (alive && rec) void resumeHeal(rec);
+    };
+    void resume();
+    // The doc may land after the project id (an open in flight): check once when it does.
+    const unsub = store.subscribe(() => {
+      if (!opened && store.getState().doc) void resume();
+    });
+    const app = AppState.addEventListener('change', (st) => {
+      if (st === 'active') void resume();
+      else poll.current?.abort.abort();
+    });
+    return () => {
+      alive = false;
+      unsub();
+      app.remove();
+      poll.current?.abort.abort();
+      const left = (healOwners.get(projectId) ?? []).filter((t) => t !== owner);
+      if (left.length) healOwners.set(projectId, left);
+      else healOwners.delete(projectId);
+    };
+  }, [projectId, store, kv, now, owner, resumeHeal]);
+
   const heal = useCallback(async () => {
     const pid = projectRef.current;
     const d = store.getState().doc;
@@ -249,9 +423,11 @@ export function useEditorWorkspace(p: WorkspaceProps) {
       else if (refusal === 'unavailable') p.onNotice('interface:photo.heal.unavailable');
       return;
     }
+    if (poll.current) return;
     setHealState({ phase: 'running', progress: 0 });
+    const startedAt = now();
     const ev = trackPhotoHeal(p.slug);
-    const r = await runHeal(
+    const r = await beginHeal(
       {
         ai: io.ai,
         renderMask: async (strokes, size) => io.writeMask(io.renderHealMask(strokes, size)),
@@ -262,7 +438,6 @@ export function useEditorWorkspace(p: WorkspaceProps) {
         strokes: [...healStrokes],
         out: outputSizeOf(d, { width: d.source.width, height: d.source.height }),
         mask,
-        onProgress: (pr) => setHealState({ phase: 'running', progress: pr }),
       },
     );
     if (!r.ok) {
@@ -270,21 +445,13 @@ export function useEditorWorkspace(p: WorkspaceProps) {
       setHealState({ phase: p.onLimit(r.error) ? 'idle' : 'failed', progress: 0 });
       return;
     }
-    // Install the new base first (a fetch failure leaves the doc untouched), then record it.
-    const img = await io.baseImage(pid!, r.outcome.baseRef);
-    if (!img) {
-      ev.failed('error');
-      setHealState({ phase: 'failed', progress: 0 });
-      return;
-    }
-    bases.current.set(r.outcome.baseRef, img);
-    if (r.outcome.width > 0)
-      baseSizes.current[r.outcome.baseRef] = { width: r.outcome.width, height: r.outcome.height };
-    mutate(store, 'heal', r.doc);
-    clearHealStrokes();
-    setHealState({ phase: 'idle', progress: 0 });
-    ev.completed();
-  }, [store, io, p, clearHealStrokes, healStrokes]);
+    const rec: PendingHeal = { jobId: r.jobId, projectId: pid!, base: r.base, startedAt };
+    if (p.slug) rec.slug = p.slug;
+    startedHere.current.add(rec.jobId);
+    pending.current = rec;
+    if (kv) await savePendingHeal(kv, rec);
+    await resumeHeal(rec);
+  }, [store, io, p, healStrokes, kv, now, resumeHeal]);
 
   // Preset thumbnails: the photo at <= 256 px through each look (cached per source + preset).
   const thumbs = useRef(new Map<string, SkImage | null>());
