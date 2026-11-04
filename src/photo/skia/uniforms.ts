@@ -31,7 +31,7 @@ export interface SkslLayer {
   lut?: RgbaTexture & { size: number; cols: number };
 }
 
-/** Layers the phone preview draws, in order: enabled, visible, rung-1 (rung 4 / masks are MA51). */
+/** Per-pixel layers the shader chain draws, in order: enabled, visible, rung-1 (rung 4 runs in `pipeline.ts`). */
 export function planSkslLayers(layers: readonly AdjustmentLayer[]): AdjustmentLayer[] {
   return layers.filter((l) => l.enabled && l.opacity > 0 && isSkslLayerType(l.type));
 }
@@ -94,10 +94,7 @@ export function lutAtlas(cube: string): (RgbaTexture & { size: number; cols: num
   return { width, height, bytes, size: n, cols };
 }
 
-/**
- * Everything one layer's shader needs. `hasMask` stays false in MA50 (masks are MA51; the shader
- * already takes the mask child and is passed an all-ones one).
- */
+/** Everything one layer's shader needs. `hasMask`: the `uMask` child carries the layer's mask (MA51). */
 export function packSkslLayer(layer: AdjustmentLayer, hasMask = false): SkslLayer | null {
   if (!isSkslLayerType(layer.type)) return null;
   const p = packLayerUniforms(layer);
