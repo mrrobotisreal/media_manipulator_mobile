@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Metadaten bearbeiten",
         "description": "Im Bild gespeicherte Details ändern."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Bearbeite ein Foto mit Live-Anpassungen: Licht, Farbe, Kurven, Tonwerte und mehr."
       }
     },
     "metadata": {
@@ -1114,6 +1118,77 @@
     "toast": {
       "open": "Öffnen",
       "fallback": "Dein Auftrag ist fertig"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Wird hochgeladen… {{percent}} %",
+    "uploadFailed": "Das Foto wurde nicht hochgeladen. Deine Änderungen bleiben auf diesem Handy.",
+    "uploadRetry": "Upload erneut versuchen",
+    "previewReduced": "Vorschau aus einer verkleinerten Kopie. Exporte nutzen das Original.",
+    "waitingForPreview": "Vorschau wird vorbereitet…",
+    "decodeFailed": "Dieses Foto konnte nicht geöffnet werden.",
+    "unsaved": "Ungespeicherte Änderungen verwerfen?",
+    "discard": "Verwerfen",
+    "keepEditing": "Weiter bearbeiten",
+    "saved": "Gespeichert",
+    "saveFailed": "Das Projekt wurde nicht gespeichert. Versuche es erneut.",
+    "conflict": {
+      "title": "Dieses Projekt wurde woanders geändert",
+      "body": "Eine neuere Version wurde auf einem anderen Gerät gespeichert. Wähle, welche du behalten möchtest.",
+      "keepMine": "Meine behalten",
+      "loadTheirs": "Neuere laden"
+    },
+    "strip": {
+      "basic": "Basis",
+      "color": "Farbe",
+      "curves": "Kurven",
+      "levels": "Tonwerte",
+      "bw": "S/W",
+      "more": "Mehr",
+      "layers": "Ebenen"
+    },
+    "greyExcept": "Alles grau außer diesem",
+    "before": "Vorher",
+    "draftRecovered": "Ungespeicherte Änderungen wiederhergestellt",
+    "draftPrompt": {
+      "title": "Ungespeicherte Änderungen wiederherstellen?",
+      "body": "Auf diesem Handy wurden nicht gespeicherte Änderungen gefunden.",
+      "restore": "Wiederherstellen",
+      "discard": "Verwerfen"
+    },
+    "unavailable": "{{brand}} ist gerade nicht verfügbar.",
+    "open": {
+      "lead": "Wähle ein Foto und bearbeite es mit Live-Anpassungen. Änderungen werden als Projekt in deinem Konto gespeichert.",
+      "choose": "Foto auswählen"
+    },
+    "export": {
+      "title": "Exportieren",
+      "mpCap": "Exporte bis {{mp}} MP in deinem Tarif",
+      "estimate": "Etwa {{size}}",
+      "unavailable": "Der Export wird noch eingerichtet. Versuche es später erneut.",
+      "start": "Exportieren",
+      "uploadFirst": "Der Export ist verfügbar, sobald das Foto hochgeladen ist."
+    },
+    "curves": {
+      "refused": "Ein Punkt kann seinen Nachbarn nicht überholen.",
+      "add": "Punkt hinzufügen",
+      "hint": "Ziehe einen Punkt. Tippe auf die Kurve, um einen hinzuzufügen."
+    },
+    "more": {
+      "lutPick": ".cube-Datei auswählen",
+      "lutTooBig": "Diese LUT ist größer als 1 MB.",
+      "lutInvalid": "Diese .cube-Datei konnte nicht gelesen werden.",
+      "effects": "Effekte"
+    },
+    "layers": {
+      "reorder": "Gedrückt halten und ziehen zum Sortieren"
+    },
+    "reset": "Doppeltippen auf einen Regler setzt ihn zurück",
+    "refused": {
+      "projects": "Dein Tarif umfasst bis zu {{limit}} Aperture-Projekte. Lösche eines im Web, um ein neues zu beginnen.",
+      "pixels": "Dieses Foto ist größer als {{mp}} MP, das Maximum, das Aperture öffnet.",
+      "unsupported": "Aperture kann diesen Dateityp nicht öffnen."
     }
   }
 }

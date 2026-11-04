@@ -100,6 +100,11 @@ export interface ToolDefinition<F = ToolOptions> {
   resultHint: ResultKind;
   minTier?: never;
   presets?: ToolPreset<F>[];
+  /**
+   * Additive (MA50): a server capability the row needs; the Tools tab hides the row when the
+   * capability is off (`useToolAvailability`). `photo` = `GET /photo/capabilities` enabled + render.
+   */
+  capability?: 'photo';
 }
 
 /** Erased form type for heterogeneous registries. */

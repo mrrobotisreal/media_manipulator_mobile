@@ -163,6 +163,9 @@ export function extensionOf(fileName: string | undefined): string {
  */
 const KIND_BY_TASK: Record<string, ResultKind> = {
   inspect_metadata: 'metadata',
+  // MA50: an Aperture export is an image whatever the chosen format (jpg/png/webp/avif/tiff).
+  photo_export: 'image',
+  aperture: 'image',
   transcribe_video: 'transcript',
   srt_generator: 'captions',
   caption_translator: 'captions',

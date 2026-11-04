@@ -17,7 +17,11 @@ function ctx(r: JobRecord, withJobId = true): EventProps {
 }
 
 export function trackUploadStarted(r: JobRecord): void {
-  track(EVENTS.UPLOAD_STARTED, { size_bytes: r.sizeBytes, transport: transportOf(r) }, ctx(r, false));
+  track(
+    EVENTS.UPLOAD_STARTED,
+    { size_bytes: r.sizeBytes, transport: transportOf(r) },
+    ctx(r, false),
+  );
 }
 
 export function trackUploadCompleted(r: JobRecord, durationMs: number): void {

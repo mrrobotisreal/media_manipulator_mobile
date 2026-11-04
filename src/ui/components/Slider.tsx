@@ -20,6 +20,9 @@ export function Slider({
   step = 1,
   onChange,
   format,
+  onStart,
+  onEnd,
+  testID,
 }: {
   label: string;
   value: number;
@@ -28,6 +31,10 @@ export function Slider({
   step?: number;
   onChange: (value: number) => void;
   format?: (value: number) => string;
+  /** Additive (MA50): a drag begins / ends (the photo editor coalesces one drag into one undo step). */
+  onStart?: () => void;
+  onEnd?: () => void;
+  testID?: string;
 }) {
   const [width, setWidth] = useState(0);
   const rtl = I18nManager.isRTL;
@@ -45,8 +52,12 @@ export function Slider({
   const pan = Gesture.Pan()
     .runOnJS(true)
     .minDistance(0)
-    .onBegin((e) => setFromX(e.x))
-    .onUpdate((e) => setFromX(e.x));
+    .onBegin((e) => {
+      onStart?.();
+      setFromX(e.x);
+    })
+    .onUpdate((e) => setFromX(e.x))
+    .onFinalize(() => onEnd?.());
 
   return (
     <View className="gap-1">
@@ -57,6 +68,7 @@ export function Slider({
       <GestureDetector gesture={pan}>
         <View
           accessible
+          testID={testID}
           accessibilityRole="adjustable"
           accessibilityLabel={label}
           accessibilityValue={{ min, max, now: value, text: format ? format(value) : undefined }}

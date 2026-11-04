@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Modifier les métadonnées",
         "description": "Changez les détails enregistrés dans une image."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Retouchez une photo avec des réglages en direct : lumière, couleur, courbes, niveaux et plus."
       }
     },
     "metadata": {
@@ -1121,6 +1125,77 @@
     "toast": {
       "open": "Ouvrir",
       "fallback": "Votre tâche est terminée"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Envoi… {{percent}} %",
+    "uploadFailed": "La photo n’a pas été envoyée. Vos modifications sont conservées sur ce téléphone.",
+    "uploadRetry": "Relancer l’envoi",
+    "previewReduced": "Aperçu d’une copie réduite. Les exports utilisent l’original.",
+    "waitingForPreview": "Préparation de l’aperçu…",
+    "decodeFailed": "Impossible d’ouvrir cette photo.",
+    "unsaved": "Ignorer les modifications non enregistrées ?",
+    "discard": "Ignorer",
+    "keepEditing": "Continuer l’édition",
+    "saved": "Enregistré",
+    "saveFailed": "Le projet n’a pas été enregistré. Réessayez.",
+    "conflict": {
+      "title": "Ce projet a été modifié ailleurs",
+      "body": "Une version plus récente a été enregistrée depuis un autre appareil. Choisissez celle à conserver.",
+      "keepMine": "Garder la mienne",
+      "loadTheirs": "Charger la plus récente"
+    },
+    "strip": {
+      "basic": "Base",
+      "color": "Couleur",
+      "curves": "Courbes",
+      "levels": "Niveaux",
+      "bw": "N&B",
+      "more": "Plus",
+      "layers": "Calques"
+    },
+    "greyExcept": "Tout en gris sauf ceci",
+    "before": "Avant",
+    "draftRecovered": "Modifications non enregistrées récupérées",
+    "draftPrompt": {
+      "title": "Restaurer les modifications non enregistrées ?",
+      "body": "Des modifications non enregistrées ont été trouvées sur ce téléphone.",
+      "restore": "Restaurer",
+      "discard": "Ignorer"
+    },
+    "unavailable": "{{brand}} n’est pas disponible pour le moment.",
+    "open": {
+      "lead": "Choisissez une photo à retoucher avec des réglages en direct. Vos modifications sont enregistrées dans votre compte sous forme de projet.",
+      "choose": "Choisir une photo"
+    },
+    "export": {
+      "title": "Exporter",
+      "mpCap": "Exports jusqu’à {{mp}} Mpx avec votre offre",
+      "estimate": "Environ {{size}}",
+      "unavailable": "L’export est en cours de configuration. Réessayez plus tard.",
+      "start": "Exporter",
+      "uploadFirst": "L’export sera disponible une fois la photo envoyée."
+    },
+    "curves": {
+      "refused": "Un point ne peut pas dépasser son voisin.",
+      "add": "Ajouter un point",
+      "hint": "Faites glisser un point. Touchez la courbe pour en ajouter un."
+    },
+    "more": {
+      "lutPick": "Choisir un fichier .cube",
+      "lutTooBig": "Ce LUT dépasse 1 Mo.",
+      "lutInvalid": "Impossible de lire ce fichier .cube.",
+      "effects": "Effets"
+    },
+    "layers": {
+      "reorder": "Maintenez et faites glisser pour réorganiser"
+    },
+    "reset": "Touchez deux fois un curseur pour le réinitialiser",
+    "refused": {
+      "projects": "Votre offre permet jusqu’à {{limit}} projets Aperture. Supprimez-en un sur le web pour en commencer un autre.",
+      "pixels": "Cette photo dépasse {{mp}} Mpx, le maximum qu’Aperture peut ouvrir.",
+      "unsupported": "Aperture ne peut pas ouvrir ce type de fichier."
     }
   }
 }

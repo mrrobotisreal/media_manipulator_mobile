@@ -4,6 +4,38 @@
  * (content/toolPages.ts + content/toolPagesCatalog.ts slugs, content/toolAliases.ts TOOL_ALIAS_OF keys,
  * components/quota-chip.tsx AI_UPLOAD_OPERATIONS). The ticket's planning hash 87a988c is stale.
  */
+/**
+ * MM100 (Aperture): the landing page and its 24 adjustment pages live in content/photo/ (slugs.ts
+ * PHOTO_ADJUSTMENT_SLUGS + pages-a.ts `aperture`), copied from UI main 058ddd3 on 2026-11-04 (MA50).
+ */
+export const WEB_PHOTO_SLUGS: readonly string[] = [
+  'aperture',
+  'brighten-image',
+  'adjust-image-contrast',
+  'fix-photo-exposure',
+  'adjust-image-hue',
+  'change-image-color',
+  'color-pop',
+  'image-saturation',
+  'photo-levels',
+  'photo-curves',
+  'white-balance-photo',
+  'black-and-white-photo',
+  'tint-photo',
+  'color-balance-photo',
+  'split-toning',
+  'apply-lut-to-photo',
+  'invert-image-colors',
+  'posterize-image',
+  'reduce-image-noise',
+  'add-vignette',
+  'sharpen-photo-online',
+  'straighten-photo',
+  'fix-perspective-photo',
+  'remove-blemishes',
+  'select-by-color',
+];
+
 export const WEB_TOOL_SLUGS: readonly string[] = [
   'add-reverb-to-audio',
   'add-text-to-image',

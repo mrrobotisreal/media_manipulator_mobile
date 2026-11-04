@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Editar metadados",
         "description": "Altere os detalhes salvos em uma imagem."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Edite uma foto com ajustes em tempo real: luz, cor, curvas, níveis e mais."
       }
     },
     "metadata": {
@@ -1121,6 +1125,77 @@
     "toast": {
       "open": "Abrir",
       "fallback": "Sua tarefa foi concluída"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Enviando… {{percent}}%",
+    "uploadFailed": "A foto não foi enviada. Suas edições ficam salvas neste celular.",
+    "uploadRetry": "Tentar enviar de novo",
+    "previewReduced": "Prévia de uma cópia reduzida. As exportações usam o original.",
+    "waitingForPreview": "Preparando a prévia…",
+    "decodeFailed": "Não foi possível abrir esta foto.",
+    "unsaved": "Descartar as alterações não salvas?",
+    "discard": "Descartar",
+    "keepEditing": "Continuar editando",
+    "saved": "Salvo",
+    "saveFailed": "O projeto não foi salvo. Tente novamente.",
+    "conflict": {
+      "title": "Este projeto foi alterado em outro lugar",
+      "body": "Uma versão mais recente foi salva em outro dispositivo. Escolha qual manter.",
+      "keepMine": "Manter a minha",
+      "loadTheirs": "Carregar a mais recente"
+    },
+    "strip": {
+      "basic": "Básico",
+      "color": "Cor",
+      "curves": "Curvas",
+      "levels": "Níveis",
+      "bw": "P&B",
+      "more": "Mais",
+      "layers": "Camadas"
+    },
+    "greyExcept": "Tudo cinza exceto isto",
+    "before": "Antes",
+    "draftRecovered": "Alterações não salvas recuperadas",
+    "draftPrompt": {
+      "title": "Restaurar edições não salvas?",
+      "body": "Foram encontradas neste celular edições que não foram salvas.",
+      "restore": "Restaurar",
+      "discard": "Descartar"
+    },
+    "unavailable": "O {{brand}} não está disponível no momento.",
+    "open": {
+      "lead": "Escolha uma foto para editar com ajustes em tempo real. As edições são salvas na sua conta como um projeto.",
+      "choose": "Escolher uma foto"
+    },
+    "export": {
+      "title": "Exportar",
+      "mpCap": "Exporta até {{mp}} MP no seu plano",
+      "estimate": "Cerca de {{size}}",
+      "unavailable": "A exportação está sendo configurada. Tente mais tarde.",
+      "start": "Exportar",
+      "uploadFirst": "A exportação fica disponível depois que a foto for enviada."
+    },
+    "curves": {
+      "refused": "Um ponto não pode passar do vizinho.",
+      "add": "Adicionar ponto",
+      "hint": "Arraste um ponto. Toque na curva para adicionar outro."
+    },
+    "more": {
+      "lutPick": "Escolher um arquivo .cube",
+      "lutTooBig": "Esta LUT tem mais de 1 MB.",
+      "lutInvalid": "Não foi possível ler este arquivo .cube.",
+      "effects": "Efeitos"
+    },
+    "layers": {
+      "reorder": "Mantenha pressionado e arraste para reordenar"
+    },
+    "reset": "Toque duas vezes em um controle deslizante para redefini-lo",
+    "refused": {
+      "projects": "Seu plano permite até {{limit}} projetos do Aperture. Exclua um na web para começar outro.",
+      "pixels": "Esta foto tem mais de {{mp}} MP, o máximo que o Aperture abre.",
+      "unsupported": "O Aperture não consegue abrir este tipo de arquivo."
     }
   }
 }

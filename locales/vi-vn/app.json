@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Sửa metadata",
         "description": "Thay đổi thông tin lưu trong ảnh."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Chỉnh sửa ảnh với điều chỉnh trực tiếp: ánh sáng, màu, đường cong, mức sáng và hơn thế."
       }
     },
     "metadata": {
@@ -1107,6 +1111,77 @@
     "toast": {
       "open": "Mở",
       "fallback": "Tác vụ của bạn đã hoàn tất"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Đang tải lên… {{percent}}%",
+    "uploadFailed": "Ảnh chưa được tải lên. Các chỉnh sửa vẫn được giữ trên điện thoại này.",
+    "uploadRetry": "Thử tải lên lại",
+    "previewReduced": "Xem trước từ bản thu nhỏ. Khi xuất sẽ dùng ảnh gốc.",
+    "waitingForPreview": "Đang chuẩn bị bản xem trước…",
+    "decodeFailed": "Không thể mở ảnh này.",
+    "unsaved": "Bỏ các thay đổi chưa lưu?",
+    "discard": "Bỏ",
+    "keepEditing": "Tiếp tục chỉnh sửa",
+    "saved": "Đã lưu",
+    "saveFailed": "Chưa lưu được dự án. Hãy thử lại.",
+    "conflict": {
+      "title": "Dự án này đã thay đổi ở nơi khác",
+      "body": "Một phiên bản mới hơn đã được lưu từ thiết bị khác. Hãy chọn bản muốn giữ.",
+      "keepMine": "Giữ bản của tôi",
+      "loadTheirs": "Tải bản mới hơn"
+    },
+    "strip": {
+      "basic": "Cơ bản",
+      "color": "Màu",
+      "curves": "Đường cong",
+      "levels": "Mức sáng",
+      "bw": "Trắng đen",
+      "more": "Thêm",
+      "layers": "Lớp"
+    },
+    "greyExcept": "Xám trừ màu này",
+    "before": "Trước",
+    "draftRecovered": "Đã khôi phục thay đổi chưa lưu",
+    "draftPrompt": {
+      "title": "Khôi phục chỉnh sửa chưa lưu?",
+      "body": "Đã tìm thấy chỉnh sửa chưa lưu trên điện thoại này.",
+      "restore": "Khôi phục",
+      "discard": "Bỏ"
+    },
+    "unavailable": "{{brand}} hiện không khả dụng.",
+    "open": {
+      "lead": "Chọn một ảnh để chỉnh sửa với điều chỉnh trực tiếp. Chỉnh sửa được lưu vào tài khoản của bạn dưới dạng dự án.",
+      "choose": "Chọn ảnh"
+    },
+    "export": {
+      "title": "Xuất",
+      "mpCap": "Gói của bạn cho phép xuất tối đa {{mp}} MP",
+      "estimate": "Khoảng {{size}}",
+      "unavailable": "Tính năng xuất đang được thiết lập. Hãy thử lại sau.",
+      "start": "Xuất",
+      "uploadFirst": "Có thể xuất sau khi ảnh đã tải lên xong."
+    },
+    "curves": {
+      "refused": "Một điểm không thể vượt qua điểm bên cạnh.",
+      "add": "Thêm điểm",
+      "hint": "Kéo một điểm. Chạm vào đường cong để thêm điểm."
+    },
+    "more": {
+      "lutPick": "Chọn tệp .cube",
+      "lutTooBig": "LUT này lớn hơn 1 MB.",
+      "lutInvalid": "Không thể đọc tệp .cube này.",
+      "effects": "Hiệu ứng"
+    },
+    "layers": {
+      "reorder": "Nhấn giữ và kéo để sắp xếp lại"
+    },
+    "reset": "Chạm hai lần vào thanh trượt để đặt lại",
+    "refused": {
+      "projects": "Gói của bạn cho phép tối đa {{limit}} dự án Aperture. Hãy xóa một dự án trên web để bắt đầu dự án mới.",
+      "pixels": "Ảnh này lớn hơn {{mp}} MP, mức tối đa Aperture có thể mở.",
+      "unsupported": "Aperture không thể mở loại tệp này."
     }
   }
 }

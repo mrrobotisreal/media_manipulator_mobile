@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Editar metadados",
         "description": "Altere os detalhes guardados numa imagem."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Edite uma fotografia com ajustes em tempo real: luz, cor, curvas, níveis e mais."
       }
     },
     "metadata": {
@@ -1121,6 +1125,77 @@
     "toast": {
       "open": "Abrir",
       "fallback": "A sua tarefa terminou"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "A enviar… {{percent}}%",
+    "uploadFailed": "A fotografia não foi enviada. As suas edições ficam guardadas neste telemóvel.",
+    "uploadRetry": "Tentar enviar novamente",
+    "previewReduced": "Pré-visualização de uma cópia reduzida. As exportações usam o original.",
+    "waitingForPreview": "A preparar a pré-visualização…",
+    "decodeFailed": "Não foi possível abrir esta fotografia.",
+    "unsaved": "Descartar as alterações não guardadas?",
+    "discard": "Descartar",
+    "keepEditing": "Continuar a editar",
+    "saved": "Guardado",
+    "saveFailed": "O projeto não foi guardado. Tente novamente.",
+    "conflict": {
+      "title": "Este projeto foi alterado noutro local",
+      "body": "Foi guardada uma versão mais recente noutro dispositivo. Escolha qual pretende manter.",
+      "keepMine": "Manter a minha",
+      "loadTheirs": "Carregar a mais recente"
+    },
+    "strip": {
+      "basic": "Básico",
+      "color": "Cor",
+      "curves": "Curvas",
+      "levels": "Níveis",
+      "bw": "P/B",
+      "more": "Mais",
+      "layers": "Camadas"
+    },
+    "greyExcept": "Tudo cinzento exceto isto",
+    "before": "Antes",
+    "draftRecovered": "Alterações não guardadas recuperadas",
+    "draftPrompt": {
+      "title": "Restaurar as edições não guardadas?",
+      "body": "Foram encontradas neste telemóvel edições que não foram guardadas.",
+      "restore": "Restaurar",
+      "discard": "Descartar"
+    },
+    "unavailable": "O {{brand}} não está disponível de momento.",
+    "open": {
+      "lead": "Escolha uma fotografia para editar com ajustes em tempo real. As edições são guardadas na sua conta como um projeto.",
+      "choose": "Escolher uma fotografia"
+    },
+    "export": {
+      "title": "Exportar",
+      "mpCap": "Exporta até {{mp}} MP no seu plano",
+      "estimate": "Cerca de {{size}}",
+      "unavailable": "A exportação está a ser configurada. Tente mais tarde.",
+      "start": "Exportar",
+      "uploadFirst": "A exportação fica disponível depois de a fotografia ser enviada."
+    },
+    "curves": {
+      "refused": "Um ponto não pode ultrapassar o vizinho.",
+      "add": "Adicionar ponto",
+      "hint": "Arraste um ponto. Toque na curva para adicionar outro."
+    },
+    "more": {
+      "lutPick": "Escolher um ficheiro .cube",
+      "lutTooBig": "Esta LUT tem mais de 1 MB.",
+      "lutInvalid": "Não foi possível ler este ficheiro .cube.",
+      "effects": "Efeitos"
+    },
+    "layers": {
+      "reorder": "Mantenha premido e arraste para reordenar"
+    },
+    "reset": "Toque duas vezes num cursor para o repor",
+    "refused": {
+      "projects": "O seu plano permite até {{limit}} projetos do Aperture. Elimine um na web para começar outro.",
+      "pixels": "Esta fotografia tem mais de {{mp}} MP, o máximo que o Aperture abre.",
+      "unsupported": "O Aperture não consegue abrir este tipo de ficheiro."
     }
   }
 }

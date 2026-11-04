@@ -28,6 +28,8 @@ export const TOOL_ID_BY_API_TOOL: Readonly<Record<string, string>> = {
   ai_isolate_vocals: 'isolate-vocals',
   ai_remove_vocals: 'remove-vocals',
   ai_frame_interpolation: 'frame-interpolation',
+  // MA50: the API records Aperture exports with the job's tool option (`photo_export`).
+  photo_export: 'aperture',
 };
 
 const CONVERT_BY_KIND: Readonly<Record<string, string>> = {

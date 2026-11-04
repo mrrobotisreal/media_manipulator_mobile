@@ -8,6 +8,7 @@ import { ImageTextForm } from '../forms/image/ImageTextForm';
 import { ImageToPdfForm } from '../forms/image/ImageToPdfForm';
 import { ImageToSvgForm } from '../forms/image/ImageToSvgForm';
 import { PdfToImageForm } from '../forms/image/PdfToImageForm';
+import { ApertureLauncher } from '@/photo/ui/ApertureLauncher';
 import * as o from '../options/image';
 import type { AnyToolDefinition } from '../types';
 import { IMAGE_ACCEPTS, PDF_ACCEPTS, imageBase, mergeAccepts, row } from './shared';
@@ -254,4 +255,76 @@ export const imageTools: AnyToolDefinition[] = [
       },
     ],
   }),
+  // MA50: Aperture, the photo editor. Opens the editor (`/photo/new`), which creates a project and
+  // exports through the `photoExport` job starter; preset rows are MA52.
+  {
+    ...row({
+      id: 'aperture',
+      family: 'image',
+      icon: 'SlidersHorizontal',
+      // The API's photo source set (photoAcceptedExts): no SVG / ICO.
+      accepts: {
+        kinds: ['image'],
+        mime: [
+          'image/jpeg',
+          'image/png',
+          'image/webp',
+          'image/gif',
+          'image/avif',
+          'image/heic',
+          'image/heif',
+          'image/bmp',
+          'image/tiff',
+        ],
+        extensions: [
+          'jpg',
+          'jpeg',
+          'png',
+          'webp',
+          'gif',
+          'avif',
+          'heic',
+          'heif',
+          'bmp',
+          'tif',
+          'tiff',
+        ],
+      },
+      endpoint: 'photoProject',
+      defaults: {},
+      metric: 'ops',
+      analyticsSlug: 'aperture',
+      webTask: 'aperture',
+      resultHint: 'image',
+      // MM100 slugs (the folded tool pages), as search words.
+      keywords: [
+        'aperture',
+        'photo-editor',
+        'brighten-image',
+        'adjust-image-contrast',
+        'fix-photo-exposure',
+        'adjust-image-hue',
+        'change-image-color',
+        'color-pop',
+        'image-saturation',
+        'photo-levels',
+        'photo-curves',
+        'white-balance-photo',
+        'black-and-white-photo',
+        'tint-photo',
+        'color-balance-photo',
+        'split-toning',
+        'apply-lut-to-photo',
+        'invert-image-colors',
+        'posterize-image',
+        'colour',
+        'grey',
+        'gray',
+        'lightroom',
+      ],
+    }),
+    Form: ApertureLauncher,
+    noRunButton: true,
+    capability: 'photo',
+  },
 ];
