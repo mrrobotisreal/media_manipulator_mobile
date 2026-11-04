@@ -229,3 +229,79 @@ export function trackPhotoPresetApplied(presetId: string, builtin: boolean, slug
     ctx(slug),
   );
 }
+
+/* MA52: a project deleted from the Projects list (the catalog's data_deleted, kind project). */
+export function trackPhotoProjectDeleted(): void {
+  track(EVENTS.DATA_DELETED, { scope: 'item', kind: 'project' }, ctx());
+}
+
+/* MA52: plan gates (the web's lib/photo/gating.ts ladder, MM101). The app shows the neutral line
+ * only (MA-0008: no purchase link until MA42); `upgrade_path` is what the web would offer, so the
+ * admin gating table compares web and app. */
+
+export type PhotoGateTier = 'anonymous' | 'free' | 'premium' | 'pro' | 'operator';
+export type PhotoUpgradePath = 'signup' | 'premium' | 'pro' | 'none';
+
+const LADDER: readonly PhotoGateTier[] = ['anonymous', 'free', 'premium', 'pro'];
+
+/** The web's `photoTierProp`: a tier-ish string narrowed to the catalog's tiers. */
+export const photoTierProp = (tier: string | undefined): PhotoGateTier =>
+  tier === 'free' || tier === 'premium' || tier === 'pro' || tier === 'operator'
+    ? tier
+    : 'anonymous';
+
+export interface PhotoTierRow {
+  tier: string;
+  limits: { photoMaxMegapixels?: number; photoProjects?: number };
+}
+
+const rowOf = (tiers: readonly PhotoTierRow[], t: PhotoGateTier) =>
+  tiers.find((r) => r.tier === t)?.limits;
+
+function ctaFor(caller: PhotoGateTier, target: PhotoGateTier | null): PhotoUpgradePath {
+  if (!target || caller === 'pro' || caller === 'operator') return 'none';
+  if (LADDER.indexOf(target) <= LADDER.indexOf(caller)) return 'none';
+  if (target === 'free') return 'signup';
+  return target === 'premium' || target === 'pro' ? target : 'none';
+}
+
+/**
+ * The upgrade path the web offers for a gate (`resolvePhotoGate` / `resolveProjectsGate`):
+ * megapixels = the lowest public tier whose cap covers the size; projects = the next tier that
+ * raises the project count (negative = unlimited). No served table: the ladder default.
+ */
+export function photoUpgradePath(
+  reason: 'megapixels' | 'projects',
+  tier: PhotoGateTier,
+  tiers: readonly PhotoTierRow[] | undefined,
+  megapixels = 0,
+): PhotoUpgradePath {
+  if (tier === 'operator' || tier === 'pro') return 'none';
+  const above = LADDER.filter((t) => LADDER.indexOf(t) > LADDER.indexOf(tier));
+  if (!tiers || tiers.length === 0) {
+    if (reason === 'megapixels') return tier === 'premium' ? 'pro' : 'premium';
+    return ctaFor(tier, above[0] ?? null);
+  }
+  if (reason === 'megapixels') {
+    const t = above.find((x) => (rowOf(tiers, x)?.photoMaxMegapixels ?? 0) >= megapixels);
+    return ctaFor(tier, t ?? null);
+  }
+  const mine = rowOf(tiers, tier)?.photoProjects ?? 0;
+  const raises = (n: number | undefined) =>
+    n !== undefined && mine >= 0 && (n < 0 || n > mine);
+  return ctaFor(tier, above.find((x) => raises(rowOf(tiers, x)?.photoProjects)) ?? null);
+}
+
+/** One `photo_export_gated`; callers dedupe per dialog (the web sends each gate key once). */
+export function trackPhotoExportGated(
+  reason: 'megapixels' | 'batch' | 'projects',
+  tier: PhotoGateTier,
+  upgradePath: PhotoUpgradePath,
+  slug?: string,
+): void {
+  track(
+    EVENTS.PHOTO_EXPORT_GATED,
+    { reason, tier, upgrade_path: upgradePath },
+    ctx(slug),
+  );
+}

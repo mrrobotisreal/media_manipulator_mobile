@@ -50,7 +50,7 @@ describe('aperture registry row (MA50 decision 9)', () => {
     ).toBe(true);
   });
 
-  it('a photo_export job describes as an image result and History labels it Aperture', () => {
+  it('a photo_export job describes as an image result and History labels it "Aperture export" (MA52)', () => {
     const d = describeResult({
       job: { id: 'j1' },
       task: 'photo_export',
@@ -58,7 +58,7 @@ describe('aperture registry row (MA50 decision 9)', () => {
     expect(d.kind).toBe('image');
     expect(toolLabel({ tool: 'photo_export', mode: 'jpg', mediaKind: 'image' })).toEqual({
       toolId: 'aperture',
-      key: 'tools.items.aperture.title',
+      key: 'history.tool.photo_export',
     });
   });
 });

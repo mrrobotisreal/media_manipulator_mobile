@@ -516,6 +516,72 @@
       "auto": "Detect automatically",
       "other": "Other language",
       "otherHint": "Two- or three-letter code, e.g. \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Brighten image",
+        "description": "Lift a dark photo with exposure, brightness and shadows in Aperture."
+      },
+      "contrast": {
+        "title": "Adjust contrast",
+        "description": "Give a flat photo more punch, or soften a harsh one, in Aperture."
+      },
+      "exposure": {
+        "title": "Fix exposure",
+        "description": "Correct a too-bright or too-dark photo with exposure and the histogram."
+      },
+      "hue": {
+        "title": "Adjust image hue",
+        "description": "Shift every colour, or one colour range, in Aperture's Colour sheet."
+      },
+      "color-pop": {
+        "title": "Color pop",
+        "description": "Keep one colour and turn the rest grey. Opens with the Color pop: red look applied."
+      },
+      "black-white": {
+        "title": "Black & white photo",
+        "description": "Convert a photo to black and white. Opens with the Black & white film look applied."
+      },
+      "curves": {
+        "title": "Curves",
+        "description": "Shape the tones of a photo on the RGB or channel curves."
+      },
+      "levels": {
+        "title": "Levels",
+        "description": "Set the black, white and midtone points against the histogram."
+      },
+      "white-balance": {
+        "title": "White balance",
+        "description": "Remove a yellow, blue or green colour cast with temperature and tint."
+      },
+      "straighten": {
+        "title": "Straighten a photo",
+        "description": "Level a tilted horizon by angle or by drawing a line along it."
+      },
+      "perspective": {
+        "title": "Fix perspective",
+        "description": "Drag the corners to straighten converging lines on buildings and documents."
+      },
+      "blemishes": {
+        "title": "Remove blemishes",
+        "description": "Paint over spots and blemishes, then press Heal once."
+      },
+      "select-color": {
+        "title": "Select by color",
+        "description": "Pick a colour on the photo and adjust only that part with a colour-range mask."
+      },
+      "sharpen": {
+        "title": "Sharpen a photo",
+        "description": "Bring back crisp detail with amount, radius and threshold."
+      },
+      "noise": {
+        "title": "Reduce image noise",
+        "description": "Smooth colour and luminance noise from low-light photos."
+      },
+      "vignette": {
+        "title": "Add a vignette",
+        "description": "Darken or lighten the edges of a photo to frame the subject."
+      }
     }
   },
   "tool": {
@@ -767,7 +833,8 @@
       "tooLarge": "This caption file is too large to show. Save it to open it elsewhere.",
       "safety": "Safety",
       "sentiment": "Sentiment"
-    }
+    },
+    "editAgain": "Edit again"
   },
   "actions": {
     "save": "Save",
@@ -856,7 +923,26 @@
       "studio_export": "Studio export",
       "video_summary": "Video summary",
       "vector_vectorize": "Vectorize",
-      "studio_reverse_proxy": "Studio preview proxy"
+      "studio_reverse_proxy": "Studio preview proxy",
+      "photo_export": "Aperture export"
+    },
+    "segments": {
+      "jobs": "Jobs",
+      "projects": "Projects"
+    },
+    "projects": {
+      "updated": "Edited {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Still processing",
+      "loadFailed": "Couldn't load your Aperture projects.",
+      "empty": {
+        "title": "No Aperture projects yet",
+        "body": "Edit a photo in Aperture and the project appears here, ready to open again."
+      },
+      "deleteTitle": "Delete this project?",
+      "deleteBody": "The photo and its edits are removed from your account. Exports you already saved are kept. This can't be undone.",
+      "deleted": "Project deleted",
+      "deleteFailed": "Couldn't delete this project. Try again."
     }
   },
   "quota": {

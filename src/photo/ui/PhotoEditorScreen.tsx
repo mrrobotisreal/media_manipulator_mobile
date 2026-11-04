@@ -9,13 +9,17 @@ import { Skia, type SkImage } from '@shopify/react-native-skia';
 import { File, Paths } from 'expo-file-system';
 import { router, type Href } from 'expo-router';
 import { usePreventRemove } from 'expo-router/react-navigation';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AppState, ScrollView, View } from 'react-native';
 import {
   trackPhotoCompareUsed,
   trackPhotoEditorOpened,
+  trackPhotoExportGated,
   trackPhotoExportStarted,
+  trackPhotoPresetApplied,
+  photoTierProp,
+  photoUpgradePath,
   trackPhotoProjectCreated,
   trackPhotoProjectSaved,
   createAdjustmentTracker,
@@ -23,6 +27,7 @@ import {
 } from '@/analytics/photoEvents';
 import { setContext } from '@/analytics/track';
 import { mmApi } from '@/api/mmApi';
+import { useGetTiersQuery } from '@/api/endpoints/tiers';
 import { getJobEngine } from '@/jobs/runtime';
 import { photoExportOptions, PHOTO_EXPORT_STARTER } from '@/jobs/starters/photoExport';
 import { LimitSheet, hasLimitSheet } from '@/quota/LimitSheets';
@@ -43,7 +48,13 @@ import {
   type ExportChoice,
 } from '../exportPlan';
 import type { Histogram64 } from '../histogram';
-import { NEW_PROJECT, takePhotoOpenRequest, type PhotoOpenRequest } from '../openRequest';
+import { applyEntryPreset } from '../entry';
+import {
+  NEW_PROJECT,
+  takePhotoOpenRequest,
+  type PhotoOpenRequest,
+  type SavedProjectSource,
+} from '../openRequest';
 import { createPhotoProject, realCreateDeps } from '../projectCreate';
 import { photoApi, useGetPhotoCapabilitiesQuery } from '../projectsApi';
 import { refusalCopy } from '../refusals';
@@ -122,9 +133,18 @@ export interface PhotoEditorScreenProps {
   projectId: string;
   /** Tests inject; the route reads `takePhotoOpenRequest()`. */
   request?: PhotoOpenRequest | null;
+  /** A saved project: opened from History (Edit again) or the Projects list (MA52). */
+  savedSource?: SavedProjectSource;
+  /** A saved project: the tool slug of the export it came from (History), else `aperture`. */
+  savedSlug?: string;
 }
 
-export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorScreenProps) {
+export function PhotoEditorScreen({
+  projectId,
+  request: injected,
+  savedSource = 'projects',
+  savedSlug,
+}: PhotoEditorScreenProps) {
   const { t } = useTranslation();
   const store = useMemo(() => makePhotoStore(), []);
   const session = useMemo(
@@ -135,15 +155,43 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
     () => (projectId === NEW_PROJECT ? (injected ?? takePhotoOpenRequest()) : null),
     [projectId, injected],
   );
-  const slug = request?.toolSlug ?? PHOTO_TOOL_SLUG;
+  const slug = request?.toolSlug ?? savedSlug ?? PHOTO_TOOL_SLUG;
   const haptics = useAppSelector((s) => s.settings.haptics);
   const caps = useGetPhotoCapabilitiesQuery();
+  const tiers = useGetTiersQuery();
   const adjust = useMemo(() => createAdjustmentTracker(), []);
+  // MA52 photo_export_gated: each gate key once (per open export dialog for sizes, once per
+  // editor for the projects wall), like the web's export dialog / editor.
+  const gated = useRef(new Set<string>());
+  const gateInfo = useRef({
+    tier: undefined as string | undefined,
+    tiers: tiers.data?.tiers,
+    slug,
+  });
+  useEffect(() => {
+    gateInfo.current = { tier: caps.data?.tier, tiers: tiers.data?.tiers, slug };
+  }, [caps.data?.tier, tiers.data?.tiers, slug]);
+  const reportGate = useCallback(
+    (reason: 'megapixels' | 'projects', key: string, megapixels = 0) => {
+      if (gated.current.has(key)) return;
+      gated.current.add(key);
+      const info = gateInfo.current;
+      const tier = photoTierProp(info.tier);
+      trackPhotoExportGated(
+        reason,
+        tier,
+        photoUpgradePath(reason, tier, info.tiers, megapixels),
+        info.slug,
+      );
+    },
+    [],
+  );
 
   const [preview, setPreview] = useState<PreviewSource<SkImage> | null>(null);
   const [failed, setFailed] = useState(false);
   const [upload, setUpload] = useState<UploadStatus>({ kind: 'idle' });
-  const [sheet, setSheet] = useState<StripTool | null>(null);
+  // MA52 entry rows open with their sheet in front.
+  const [sheet, setSheet] = useState<StripTool | null>(() => request?.panel ?? null);
   const [histogram, setHistogram] = useState<Histogram64 | null>(null);
   const [conflict, setConflict] = useState<number | null>(null);
   const [unsaved, setUnsaved] = useState(false);
@@ -154,6 +202,12 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => setContext({ tool_slug: slug }), [slug]);
+  // A new export dialog may report its locked sizes again (the web clears its keys on close).
+  useEffect(() => {
+    if (exportOpen) return;
+    const keys = gated.current;
+    for (const k of [...keys]) if (k.startsWith('mp:')) keys.delete(k);
+  }, [exportOpen]);
   useEffect(() => {
     const off = session.subscribe(() => setUpload(session.upload()));
     return () => {
@@ -183,18 +237,32 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
         const w = f.width ?? local?.width ?? 1;
         const h = f.height ?? local?.height ?? 1;
         trackPhotoEditorOpened(request.source, !!local, slug);
-        const done = session.openFile({
-          intakeId: f.id,
-          uri: f.uri,
-          mimeType: f.mimeType,
-          name: f.name.replace(/\.[^.]+$/, ''),
-          width: w,
-          height: h,
-        });
+        const preset = request.preset;
+        const done = session.openFile(
+          {
+            intakeId: f.id,
+            uri: f.uri,
+            mimeType: f.mimeType,
+            name: f.name.replace(/\.[^.]+$/, ''),
+            width: w,
+            height: h,
+          },
+          {
+            // MA52: an entry row's look (colour pop, black & white film), applied once.
+            onLoaded: ({ fresh }) => {
+              if (!fresh || !preset) return;
+              // i18n-keys: interface:photo.presets.name.color-pop-red, interface:photo.presets.name.bw-film
+              const name = t(`interface:photo.presets.name.${preset}`);
+              if (applyEntryPreset(store, preset, name))
+                trackPhotoPresetApplied(preset, true, slug);
+            },
+          },
+        );
         const res = await done;
         if (cancelled) return;
         const project = session.project();
         if (res.kind === 'ready' && project) {
+          appStore.dispatch(mmApi.util.invalidateTags(['PhotoProjects']));
           trackPhotoProjectCreated(
             f.extension,
             (project.width * project.height) / 1_000_000,
@@ -209,6 +277,7 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
             }
           }
         } else if (res.kind === 'failed') {
+          if (res.error.code === 'photo_projects_limit') reportGate('projects', 'projects');
           const copy = refusalCopy(res.error);
           if (hasLimitSheet(res.error)) setLimitError(res.error);
           else if (copy) showNotice(t(copy.key, copy.values), 'error');
@@ -227,13 +296,13 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
       if (cancelled) return;
       if (proxy) setPreview(proxy);
       else setFailed(true);
-      trackPhotoEditorOpened('projects', false, slug);
+      trackPhotoEditorOpened(savedSource, false, slug);
       if (r.recovered) setDraft(r.recovered);
     })();
     return () => {
       cancelled = true;
     };
-  }, [request, projectId, session, slug, t]);
+  }, [request, projectId, session, slug, t, store, savedSource, reportGate]);
 
   // Drafts: every 2 s while dirty, flushed when the app goes to the background.
   useEffect(() => {
@@ -344,7 +413,7 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
           if (rec.jobId) void session.afterExport(exported);
         });
       }
-      appStore.dispatch(mmApi.util.invalidateTags(['History']));
+      appStore.dispatch(mmApi.util.invalidateTags(['History', 'PhotoProjects']));
       setExportOpen(false);
       if (localId) router.push(`/(app)/job/${localId}`);
     },
@@ -546,6 +615,7 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
           capabilities={caps.data}
           ready={upload.kind === 'ready'}
           onExport={startExport}
+          onLockedSize={(mp) => reportGate('megapixels', `mp:${Math.round(mp)}`, mp)}
         />
       ) : null}
       <ConflictSheet

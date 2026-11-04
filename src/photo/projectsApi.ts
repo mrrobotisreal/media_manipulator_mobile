@@ -39,6 +39,8 @@ export const photoApi = mmApi.injectEndpoints({
         skipAccountInvalidation: true,
       }),
       transformResponse: (r: { projects: PhotoProject[] }) => r.projects,
+      // MA52: History's Projects segment refetches after a save, an export or a delete.
+      providesTags: ['PhotoProjects'],
     }),
     getPhotoProject: build.query<PhotoProjectResponse, string>({
       query: (id) => ({
@@ -61,6 +63,7 @@ export const photoApi = mmApi.injectEndpoints({
         schema: photoProjectResponseSchema,
         skipAccountInvalidation: true,
       }),
+      invalidatesTags: ['PhotoProjects'],
     }),
     deletePhotoProject: build.mutation<unknown, string>({
       query: (id) => ({
@@ -68,6 +71,7 @@ export const photoApi = mmApi.injectEndpoints({
         method: 'DELETE',
         skipAccountInvalidation: true,
       }),
+      invalidatesTags: ['PhotoProjects'],
     }),
     /** `POST /photo/projects/:id/export` → 202 `{jobId}` (one `ops`; the doc is saved first). */
     exportPhotoProject: build.mutation<

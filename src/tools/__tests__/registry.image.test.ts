@@ -15,11 +15,11 @@ const SLUGS: Record<string, string> = {
 };
 
 describe('image family registry rows', () => {
-  it('has the ten ids with ops metric, upload endpoint and the analytics slug (+ aperture, MA50)', () => {
+  it('has the ten ids with ops metric, upload endpoint and the analytics slug (+ aperture, MA50, and its MA52 entry rows)', () => {
     expect(
       toolsByFamily('image')
         .map((t) => t.id)
-        .filter((id) => id !== 'aperture')
+        .filter((id) => id !== 'aperture' && !id.startsWith('aperture-'))
         .sort(),
     ).toEqual(Object.keys(SLUGS).sort());
     for (const [id, slug] of Object.entries(SLUGS)) {

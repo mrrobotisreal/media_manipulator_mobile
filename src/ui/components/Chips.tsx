@@ -7,6 +7,11 @@ export interface ChipOption<T extends string | number> {
   label: string;
   /** Additive (MA19): greyed and not pressable (plan limits). */
   disabled?: boolean;
+  /**
+   * Additive (MA52): greyed and announced as disabled but still pressable, and a press calls
+   * `onLockedPress` instead of selecting (Aperture's locked export sizes report the plan gate).
+   */
+  locked?: boolean;
 }
 
 /** Wrapping chip row. Single-select via `Chips`, multi-select via `MultiChips`. */
@@ -16,12 +21,14 @@ export function Chips<T extends string | number>({
   onChange,
   label,
   testIDPrefix,
+  onLockedPress,
 }: {
   options: ChipOption<T>[];
   value: T | null;
   onChange: (value: T) => void;
   label?: string;
   testIDPrefix?: string;
+  onLockedPress?: (value: T) => void;
 }) {
   return (
     <View accessibilityLabel={label} className="flex-row flex-wrap gap-2">
@@ -30,9 +37,10 @@ export function Chips<T extends string | number>({
           key={String(o.value)}
           label={o.label}
           selected={o.value === value}
-          onPress={() => onChange(o.value)}
+          onPress={() => (o.locked ? onLockedPress?.(o.value) : onChange(o.value))}
           role="radio"
           disabled={o.disabled}
+          locked={o.locked}
           testID={testIDPrefix ? `${testIDPrefix}-${o.value}` : undefined}
         />
       ))}
@@ -76,6 +84,7 @@ function Chip({
   onPress,
   role,
   disabled,
+  locked,
   testID,
 }: {
   label: string;
@@ -83,8 +92,10 @@ function Chip({
   onPress: () => void;
   role: 'radio' | 'checkbox';
   disabled?: boolean;
+  locked?: boolean;
   testID?: string;
 }) {
+  const greyed = Boolean(disabled) || Boolean(locked);
   return (
     <Pressable
       testID={testID}
@@ -92,12 +103,12 @@ function Chip({
       disabled={disabled}
       accessibilityState={{
         ...(role === 'radio' ? { selected } : { checked: selected }),
-        disabled: Boolean(disabled),
+        disabled: greyed,
       }}
       onPress={onPress}
       className={`items-center justify-center rounded-md border px-3 ${
         selected ? 'border-primary bg-surface-3' : 'border-edge-control bg-surface-2'
-      } ${disabled ? 'opacity-40' : ''}`}
+      } ${greyed ? 'opacity-40' : ''}`}
       style={{ minHeight: hitTarget }}
     >
       <Text className={selected ? 'font-semibold' : 'text-muted-fg'}>{label}</Text>

@@ -521,6 +521,72 @@
       "auto": "Détecter automatiquement",
       "other": "Autre langue",
       "otherHint": "Code de deux ou trois lettres, p. ex. \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Éclaircir une image",
+        "description": "Éclaircissez une photo sombre avec l’exposition, la luminosité et les ombres dans Aperture."
+      },
+      "contrast": {
+        "title": "Régler le contraste",
+        "description": "Donnez du peps à une photo terne, ou adoucissez une photo trop dure, dans Aperture."
+      },
+      "exposure": {
+        "title": "Corriger l’exposition",
+        "description": "Corrigez une photo trop claire ou trop sombre grâce à l’exposition et à l’histogramme."
+      },
+      "hue": {
+        "title": "Régler la teinte d’une image",
+        "description": "Décalez toutes les couleurs, ou une seule plage, dans le panneau Couleur d’Aperture."
+      },
+      "color-pop": {
+        "title": "Couleur isolée",
+        "description": "Gardez une couleur et passez le reste en gris. S’ouvre avec le style « Couleur isolée : rouge »."
+      },
+      "black-white": {
+        "title": "Photo en noir et blanc",
+        "description": "Passez une photo en noir et blanc. S’ouvre avec le style « Film noir et blanc » appliqué."
+      },
+      "curves": {
+        "title": "Courbes",
+        "description": "Modelez les tons d’une photo sur la courbe RVB ou les courbes des couches."
+      },
+      "levels": {
+        "title": "Niveaux",
+        "description": "Réglez les points noir, blanc et des tons moyens d’après l’histogramme."
+      },
+      "white-balance": {
+        "title": "Balance des blancs",
+        "description": "Supprimez une dominante jaune, bleue ou verte avec la température et la teinte."
+      },
+      "straighten": {
+        "title": "Redresser une photo",
+        "description": "Redressez un horizon penché par angle ou en traçant une ligne le long de celui-ci."
+      },
+      "perspective": {
+        "title": "Corriger la perspective",
+        "description": "Faites glisser les coins pour redresser les lignes fuyantes des bâtiments et documents."
+      },
+      "blemishes": {
+        "title": "Retirer les imperfections",
+        "description": "Peignez sur les taches et imperfections, puis appuyez une fois sur Corriger."
+      },
+      "select-color": {
+        "title": "Sélectionner par couleur",
+        "description": "Choisissez une couleur sur la photo et ne réglez que cette zone avec un masque Plage de couleurs."
+      },
+      "sharpen": {
+        "title": "Accentuer la netteté d’une photo",
+        "description": "Retrouvez des détails nets avec la quantité, le rayon et le seuil."
+      },
+      "noise": {
+        "title": "Réduire le bruit d’une image",
+        "description": "Lissez le bruit de couleur et de luminance des photos prises en faible lumière."
+      },
+      "vignette": {
+        "title": "Ajouter un vignettage",
+        "description": "Assombrissez ou éclaircissez les bords d’une photo pour encadrer le sujet."
+      }
     }
   },
   "tool": {
@@ -773,7 +839,8 @@
       "tooLarge": "Ce fichier de sous-titres est trop volumineux pour être affiché. Enregistrez-le pour l'ouvrir ailleurs.",
       "safety": "Sécurité",
       "sentiment": "Tonalité"
-    }
+    },
+    "editAgain": "Modifier à nouveau"
   },
   "actions": {
     "save": "Enregistrer",
@@ -862,7 +929,26 @@
       "studio_export": "Export Studio",
       "video_summary": "Résumé vidéo",
       "vector_vectorize": "Vectorisation",
-      "studio_reverse_proxy": "Proxy d’aperçu Studio"
+      "studio_reverse_proxy": "Proxy d’aperçu Studio",
+      "photo_export": "Export Aperture"
+    },
+    "segments": {
+      "jobs": "Tâches",
+      "projects": "Projets"
+    },
+    "projects": {
+      "updated": "Modifié le {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Traitement en cours",
+      "loadFailed": "Impossible de charger vos projets Aperture.",
+      "empty": {
+        "title": "Aucun projet Aperture pour le moment",
+        "body": "Retouchez une photo dans Aperture et le projet apparaîtra ici, prêt à être rouvert."
+      },
+      "deleteTitle": "Supprimer ce projet ?",
+      "deleteBody": "La photo et ses modifications sont supprimées de votre compte. Les exports déjà enregistrés sont conservés. Cette action est irréversible.",
+      "deleted": "Projet supprimé",
+      "deleteFailed": "Impossible de supprimer ce projet. Réessayez."
     }
   },
   "quota": {

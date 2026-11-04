@@ -13,3 +13,24 @@ speaker reviews each locale; record the result here.
 
 Notes: `placeholders.*` strings are temporary scaffolding (they name later tickets) and are replaced as those
 screens land. `it-IT` keeps "Account" (native usage; allowlisted in `scripts/i18n-allowlist.json`).
+
+## Aperture (MA50–MA52)
+
+The `photo.*` (MA50, MA51) and `tools.aperture.*`, `history.segments.*`, `history.projects.*`,
+`history.tool.photo_export`, `result.editAgain` (MA52) strings are model-written in all 17 non-English
+locales (Opus 5.5 subagents); ru-RU, de-DE, ja-JP, ar-SA and he-IL were read by the implementing
+session, none by a native speaker yet. Same status as the table above: **not reviewed**.
+
+MA52 glossary pass (2026-11-04): the Aperture words follow the web's synced shard
+(`src/i18n/generated/<code>/interface/panels.json`, `photo.*`), pinned per locale by
+`src/photo/__tests__/glossary.test.ts` (Mask, Layer, Preset = the web's "Looks", Heal, Curves, Levels;
+the Exposure, slider and layer labels are read from the shard itself). Aligned to the web in that pass:
+de-DE strip "Stile" → "Looks", "Kurven" → "Gradationskurven", "Tonwerte" → "Tonwertkorrektur";
+pt-BR / pt-PT "Estilos" → "Looks"; ja-JP "カーブ" → "トーンカーブ", "レベル" → "レベル補正";
+hi-IN "कर्व" → "कर्व्स", "लेवल" → "लेवल्स"; vi-VN "Mức sáng" → "Mức". The entry-row titles are the
+web's localized MM100 page names (`i18n/locales/<code>/toolPages.ts` `name`). "Looks" in de-DE / pt-BR /
+pt-PT is the web's own (English-identical) term and allowlisted by key.
+
+| Locale             | Aperture strings reviewed | Reviewer | Date |
+| ------------------ | ------------------------- | -------- | ---- |
+| all 17 non-English | no (model-written)        |          |      |

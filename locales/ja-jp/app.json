@@ -511,6 +511,72 @@
       "auto": "自動検出",
       "other": "その他の言語",
       "otherHint": "2〜3文字のコード（例：\"pl\"）"
+    },
+    "aperture": {
+      "brighten": {
+        "title": "画像を明るくする",
+        "description": "Aperture で露光量・明るさ・シャドウを使って暗い写真を明るくします。"
+      },
+      "contrast": {
+        "title": "コントラストを調整",
+        "description": "Aperture で、のっぺりした写真にメリハリを付けたり、硬すぎる写真を和らげたりします。"
+      },
+      "exposure": {
+        "title": "露出を補正",
+        "description": "明るすぎる・暗すぎる写真を露光量とヒストグラムで補正します。"
+      },
+      "hue": {
+        "title": "画像の色相を調整",
+        "description": "Aperture のカラーパネルで、すべての色または特定の色範囲の色相をずらします。"
+      },
+      "color-pop": {
+        "title": "カラーポップ",
+        "description": "1色だけ残して、ほかをグレーにします。ルック「カラーポップ：赤」を適用した状態で開きます。"
+      },
+      "black-white": {
+        "title": "白黒写真",
+        "description": "写真を白黒に変換します。ルック「白黒フィルム」を適用した状態で開きます。"
+      },
+      "curves": {
+        "title": "トーンカーブ",
+        "description": "RGB カーブまたはチャンネルごとのカーブで写真のトーンを調整します。"
+      },
+      "levels": {
+        "title": "レベル補正",
+        "description": "ヒストグラムを見ながら黒・白・中間調のポイントを設定します。"
+      },
+      "white-balance": {
+        "title": "ホワイトバランス",
+        "description": "色温度と色かぶり補正で、黄・青・緑の色かぶりを取り除きます。"
+      },
+      "straighten": {
+        "title": "写真の傾きを補正",
+        "description": "角度の入力、または水平線に沿って線を引いて、傾いた水平線を補正します。"
+      },
+      "perspective": {
+        "title": "パースを補正",
+        "description": "角をドラッグして、建物や書類のすぼまった線をまっすぐにします。"
+      },
+      "blemishes": {
+        "title": "傷や汚れを除去",
+        "description": "スポットや傷の上をなぞってから、「修復」を1回押します。"
+      },
+      "select-color": {
+        "title": "色で選択",
+        "description": "写真上の色を選び、色域指定マスクでその部分だけを調整します。"
+      },
+      "sharpen": {
+        "title": "写真をシャープにする",
+        "description": "量・半径・しきい値で、くっきりしたディテールを取り戻します。"
+      },
+      "noise": {
+        "title": "画像のノイズを軽減",
+        "description": "暗い場所で撮った写真のカラーノイズと輝度ノイズを滑らかにします。"
+      },
+      "vignette": {
+        "title": "周辺光量補正を追加",
+        "description": "写真の周辺を暗く、または明るくして被写体を引き立てます。"
+      }
     }
   },
   "tool": {
@@ -761,7 +827,8 @@
       "tooLarge": "この字幕ファイルは大きすぎて表示できません。保存して別のアプリで開いてください。",
       "safety": "安全性",
       "sentiment": "感情"
-    }
+    },
+    "editAgain": "もう一度編集"
   },
   "actions": {
     "save": "保存",
@@ -850,7 +917,26 @@
       "studio_export": "Studioエクスポート",
       "video_summary": "動画の要約",
       "vector_vectorize": "ベクター化",
-      "studio_reverse_proxy": "Studioプレビュープロキシ"
+      "studio_reverse_proxy": "Studioプレビュープロキシ",
+      "photo_export": "Apertureエクスポート"
+    },
+    "segments": {
+      "jobs": "ジョブ",
+      "projects": "プロジェクト"
+    },
+    "projects": {
+      "updated": "{{date}}に編集",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "まだ処理中",
+      "loadFailed": "Aperture のプロジェクトを読み込めませんでした。",
+      "empty": {
+        "title": "Aperture のプロジェクトはまだありません",
+        "body": "Aperture で写真を編集すると、プロジェクトがここに表示され、いつでも開き直せます。"
+      },
+      "deleteTitle": "このプロジェクトを削除しますか？",
+      "deleteBody": "写真と編集内容がアカウントから削除されます。保存済みのエクスポートは残ります。この操作は元に戻せません。",
+      "deleted": "プロジェクトを削除しました",
+      "deleteFailed": "このプロジェクトを削除できませんでした。もう一度お試しください。"
     }
   },
   "quota": {
@@ -1135,8 +1221,8 @@
     "strip": {
       "basic": "基本",
       "color": "カラー",
-      "curves": "カーブ",
-      "levels": "レベル",
+      "curves": "トーンカーブ",
+      "levels": "レベル補正",
       "bw": "白黒",
       "more": "その他",
       "layers": "レイヤー",

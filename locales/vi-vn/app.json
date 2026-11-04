@@ -511,6 +511,72 @@
       "auto": "Tự động nhận diện",
       "other": "Ngôn ngữ khác",
       "otherHint": "Mã hai hoặc ba chữ cái, ví dụ \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Làm sáng ảnh",
+        "description": "Làm sáng ảnh tối bằng phơi sáng, độ sáng và vùng tối trong Aperture."
+      },
+      "contrast": {
+        "title": "Chỉnh độ tương phản",
+        "description": "Tăng độ nổi cho ảnh nhạt, hoặc làm dịu ảnh quá gắt, trong Aperture."
+      },
+      "exposure": {
+        "title": "Sửa phơi sáng",
+        "description": "Sửa ảnh quá sáng hoặc quá tối bằng phơi sáng và biểu đồ histogram."
+      },
+      "hue": {
+        "title": "Chỉnh sắc độ ảnh",
+        "description": "Dịch chuyển mọi màu, hoặc một dải màu, trong bảng Màu của Aperture."
+      },
+      "color-pop": {
+        "title": "Nổi bật màu",
+        "description": "Giữ lại một màu và chuyển phần còn lại sang xám. Mở sẵn phong cách Nổi bật màu: đỏ."
+      },
+      "black-white": {
+        "title": "Ảnh đen trắng",
+        "description": "Chuyển ảnh sang đen trắng. Mở sẵn phong cách Phim đen trắng."
+      },
+      "curves": {
+        "title": "Đường cong",
+        "description": "Định hình tông màu của ảnh trên đường cong RGB hoặc đường cong từng kênh."
+      },
+      "levels": {
+        "title": "Mức",
+        "description": "Đặt điểm đen, điểm trắng và tông trung bình dựa trên biểu đồ histogram."
+      },
+      "white-balance": {
+        "title": "Cân bằng trắng",
+        "description": "Loại bỏ ám vàng, xanh dương hoặc xanh lá bằng nhiệt độ màu và sắc thái."
+      },
+      "straighten": {
+        "title": "Chỉnh thẳng ảnh",
+        "description": "Làm thẳng đường chân trời bị nghiêng theo góc hoặc bằng cách vẽ một đường dọc theo nó."
+      },
+      "perspective": {
+        "title": "Sửa phối cảnh",
+        "description": "Kéo các góc để làm thẳng các đường hội tụ trên tòa nhà và tài liệu."
+      },
+      "blemishes": {
+        "title": "Xóa khuyết điểm",
+        "description": "Tô lên các đốm và khuyết điểm, rồi nhấn Chữa lành một lần."
+      },
+      "select-color": {
+        "title": "Chọn theo màu",
+        "description": "Chọn một màu trên ảnh và chỉ chỉnh phần đó bằng mặt nạ dải màu."
+      },
+      "sharpen": {
+        "title": "Làm nét ảnh",
+        "description": "Lấy lại chi tiết sắc nét bằng lượng, bán kính và ngưỡng."
+      },
+      "noise": {
+        "title": "Giảm nhiễu ảnh",
+        "description": "Làm mịn nhiễu màu và nhiễu độ chói trong ảnh chụp thiếu sáng."
+      },
+      "vignette": {
+        "title": "Thêm tối góc",
+        "description": "Làm tối hoặc sáng viền ảnh để làm nổi bật chủ thể."
+      }
     }
   },
   "tool": {
@@ -761,7 +827,8 @@
       "tooLarge": "Tệp phụ đề này quá lớn để hiển thị. Hãy lưu để mở ở nơi khác.",
       "safety": "An toàn",
       "sentiment": "Cảm xúc"
-    }
+    },
+    "editAgain": "Chỉnh sửa lại"
   },
   "actions": {
     "save": "Lưu",
@@ -850,7 +917,26 @@
       "studio_export": "Xuất từ Studio",
       "video_summary": "Tóm tắt video",
       "vector_vectorize": "Vector hóa",
-      "studio_reverse_proxy": "Proxy xem trước Studio"
+      "studio_reverse_proxy": "Proxy xem trước Studio",
+      "photo_export": "Xuất từ Aperture"
+    },
+    "segments": {
+      "jobs": "Tác vụ",
+      "projects": "Dự án"
+    },
+    "projects": {
+      "updated": "Đã chỉnh sửa {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Vẫn đang xử lý",
+      "loadFailed": "Không thể tải các dự án Aperture của bạn.",
+      "empty": {
+        "title": "Chưa có dự án Aperture nào",
+        "body": "Chỉnh sửa ảnh trong Aperture và dự án sẽ hiển thị tại đây, sẵn sàng để mở lại."
+      },
+      "deleteTitle": "Xóa dự án này?",
+      "deleteBody": "Ảnh và các chỉnh sửa sẽ bị xóa khỏi tài khoản của bạn. Các bản xuất bạn đã lưu vẫn được giữ. Không thể hoàn tác.",
+      "deleted": "Đã xóa dự án",
+      "deleteFailed": "Không thể xóa dự án này. Hãy thử lại."
     }
   },
   "quota": {
@@ -1136,7 +1222,7 @@
       "basic": "Cơ bản",
       "color": "Màu",
       "curves": "Đường cong",
-      "levels": "Mức sáng",
+      "levels": "Mức",
       "bw": "Trắng đen",
       "more": "Thêm",
       "layers": "Lớp",

@@ -516,6 +516,72 @@
       "auto": "Automatisch erkennen",
       "other": "Andere Sprache",
       "otherHint": "Zwei- oder dreistelliger Code, z. B. \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Bild aufhellen",
+        "description": "Dunkles Foto in Aperture mit Belichtung, Helligkeit und Tiefen aufhellen."
+      },
+      "contrast": {
+        "title": "Kontrast anpassen",
+        "description": "Flauem Foto mehr Biss geben oder ein zu hartes Foto in Aperture abmildern."
+      },
+      "exposure": {
+        "title": "Belichtung korrigieren",
+        "description": "Zu helles oder zu dunkles Foto mit Belichtung und Histogramm korrigieren."
+      },
+      "hue": {
+        "title": "Bildfarbton anpassen",
+        "description": "Alle Farben oder einen einzelnen Farbbereich im Aperture-Bedienfeld „Farbe“ verschieben."
+      },
+      "color-pop": {
+        "title": "Farbakzent",
+        "description": "Eine Farbe behalten, den Rest grau färben. Öffnet mit dem Look „Farbakzent: Rot“."
+      },
+      "black-white": {
+        "title": "Schwarzweißfoto",
+        "description": "Foto in Schwarzweiß umwandeln. Öffnet mit dem Look „Schwarzweißfilm“."
+      },
+      "curves": {
+        "title": "Gradationskurven",
+        "description": "Tonwerte eines Fotos mit der RGB-Kurve oder den Kanalkurven formen."
+      },
+      "levels": {
+        "title": "Tonwertkorrektur",
+        "description": "Schwarz-, Weiß- und Mitteltonpunkt anhand des Histogramms setzen."
+      },
+      "white-balance": {
+        "title": "Weißabgleich",
+        "description": "Gelb-, Blau- oder Grünstich mit Temperatur und Farbton entfernen."
+      },
+      "straighten": {
+        "title": "Foto begradigen",
+        "description": "Schiefen Horizont per Winkel oder mit einer Linie entlang des Horizonts begradigen."
+      },
+      "perspective": {
+        "title": "Perspektive korrigieren",
+        "description": "Ecken ziehen, um stürzende Linien bei Gebäuden und Dokumenten zu begradigen."
+      },
+      "blemishes": {
+        "title": "Makel entfernen",
+        "description": "Flecken und Makel übermalen, dann einmal auf „Reparieren“ tippen."
+      },
+      "select-color": {
+        "title": "Nach Farbe auswählen",
+        "description": "Farbe im Foto wählen und nur diesen Teil mit einer Farbbereichsmaske anpassen."
+      },
+      "sharpen": {
+        "title": "Foto schärfen",
+        "description": "Knackige Details mit Stärke, Radius und Schwellenwert zurückholen."
+      },
+      "noise": {
+        "title": "Bildrauschen reduzieren",
+        "description": "Farb- und Luminanzrauschen in Fotos bei wenig Licht glätten."
+      },
+      "vignette": {
+        "title": "Vignette hinzufügen",
+        "description": "Ränder eines Fotos abdunkeln oder aufhellen, um das Motiv einzurahmen."
+      }
     }
   },
   "tool": {
@@ -767,7 +833,8 @@
       "sentiment": "Stimmung",
       "cues_one": "{{count}} Zeile",
       "cues_other": "{{count}} Zeilen"
-    }
+    },
+    "editAgain": "Erneut bearbeiten"
   },
   "actions": {
     "save": "Speichern",
@@ -856,7 +923,26 @@
       "studio_export": "Studio-Export",
       "video_summary": "Video-Zusammenfassung",
       "vector_vectorize": "Vektorisieren",
-      "studio_reverse_proxy": "Studio-Vorschau-Proxy"
+      "studio_reverse_proxy": "Studio-Vorschau-Proxy",
+      "photo_export": "Aperture-Export"
+    },
+    "segments": {
+      "jobs": "Aufträge",
+      "projects": "Projekte"
+    },
+    "projects": {
+      "updated": "Bearbeitet am {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Wird noch verarbeitet",
+      "loadFailed": "Deine Aperture-Projekte konnten nicht geladen werden.",
+      "empty": {
+        "title": "Noch keine Aperture-Projekte",
+        "body": "Bearbeite ein Foto in Aperture, und das Projekt erscheint hier, bereit zum erneuten Öffnen."
+      },
+      "deleteTitle": "Dieses Projekt löschen?",
+      "deleteBody": "Das Foto und seine Bearbeitungen werden aus deinem Konto entfernt. Bereits gespeicherte Exporte bleiben erhalten. Das lässt sich nicht rückgängig machen.",
+      "deleted": "Projekt gelöscht",
+      "deleteFailed": "Dieses Projekt konnte nicht gelöscht werden. Versuche es erneut."
     }
   },
   "quota": {
@@ -1142,8 +1228,8 @@
     "strip": {
       "basic": "Basis",
       "color": "Farbe",
-      "curves": "Kurven",
-      "levels": "Tonwerte",
+      "curves": "Gradationskurven",
+      "levels": "Tonwertkorrektur",
       "bw": "S/W",
       "more": "Mehr",
       "layers": "Ebenen",
@@ -1151,7 +1237,7 @@
       "geometry": "Geometrie",
       "heal": "Reparieren",
       "detail": "Details",
-      "presets": "Stile",
+      "presets": "Looks",
       "history": "Verlauf"
     },
     "greyExcept": "Alles grau außer diesem",

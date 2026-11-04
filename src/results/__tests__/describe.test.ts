@@ -289,8 +289,8 @@ const EXCEPTIONS: Record<string, ResultKind> = {
 };
 
 describe('describe() over the app registry', () => {
-  it('covers all 39 rows (38 v1 + aperture, MA50)', () => {
-    expect(TOOLS).toHaveLength(39);
+  it('covers all 55 rows (38 v1 + aperture, MA50, + 16 Aperture entry rows, MA52)', () => {
+    expect(TOOLS).toHaveLength(55);
   });
 
   it.each(TOOLS.map((r) => [r.id, r] as const))('%s resolves to its resultHint', (_id, row) => {

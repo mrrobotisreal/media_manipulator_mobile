@@ -50,23 +50,40 @@ const EXPECTED_IDS = [
   'edit-metadata',
   // MA50
   'aperture',
+  // MA52: the MM100 pages as entry rows
+  'aperture-brighten',
+  'aperture-contrast',
+  'aperture-exposure',
+  'aperture-hue',
+  'aperture-color-pop',
+  'aperture-black-white',
+  'aperture-curves',
+  'aperture-levels',
+  'aperture-white-balance',
+  'aperture-straighten',
+  'aperture-perspective',
+  'aperture-blemishes',
+  'aperture-select-color',
+  'aperture-sharpen',
+  'aperture-noise',
+  'aperture-vignette',
 ];
 
 const en = JSON.parse(readFileSync(join(__dirname, '../../../locales/en-us/app.json'), 'utf8'));
 const lookup = (key: string): unknown => key.split('.').reduce((o: any, k) => o?.[k], en);
 
 describe('tool registry invariants', () => {
-  it('has exactly the 38 v1 ids plus aperture (MA50) with unique kebab-case ids', () => {
+  it('has exactly the 38 v1 ids plus aperture (MA50) and its 16 entry rows (MA52) with unique kebab-case ids', () => {
     expect(TOOLS.map((t) => t.id).sort()).toEqual([...EXPECTED_IDS].sort());
-    expect(new Set(TOOLS.map((t) => t.id)).size).toBe(39);
+    expect(new Set(TOOLS.map((t) => t.id)).size).toBe(55);
     for (const t of TOOLS) expect(t.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
-    expect(TOOL_BY_ID.size).toBe(39);
+    expect(TOOL_BY_ID.size).toBe(55);
   });
 
-  it('family sizes are 11/10/4/11/3', () => {
+  it('family sizes are 27/10/4/11/3', () => {
     expect(
       (['image', 'video', 'audio', 'ai', 'metadata'] as const).map((f) => toolsByFamily(f).length),
-    ).toEqual([11, 10, 4, 11, 3]);
+    ).toEqual([27, 10, 4, 11, 3]);
   });
 
   it('every title/description key exists in en-US app.json', () => {
