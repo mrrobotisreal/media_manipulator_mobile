@@ -1153,7 +1153,13 @@
       "levels": "Niveles",
       "bw": "B/N",
       "more": "Más",
-      "layers": "Capas"
+      "layers": "Capas",
+      "masks": "Máscaras",
+      "geometry": "Geometría",
+      "heal": "Reparar",
+      "detail": "Detalle",
+      "presets": "Estilos",
+      "history": "Historial"
     },
     "greyExcept": "Todo gris menos esto",
     "before": "Antes",
@@ -1196,6 +1202,48 @@
       "projects": "Tu plan permite hasta {{limit}} proyectos de Aperture. Elimina uno en la web para empezar otro.",
       "pixels": "Esta foto supera los {{mp}} MP, el máximo que abre Aperture.",
       "unsupported": "Aperture no puede abrir este tipo de archivo."
+    },
+    "tools": {
+      "none": "Sin herramienta",
+      "gradient": "Degradado: arrastra una línea sobre la foto",
+      "radial": "Radial: arrastra desde el centro hacia fuera",
+      "brush": "Pincel: pinta con un dedo, pellizca con dos",
+      "eyedropper": "Rango de color: toca un color, mantén pulsado para añadir otro",
+      "crop": "Recortar: arrastra los tiradores",
+      "straighten": "Enderezar: dibuja una línea sobre el horizonte",
+      "perspective": "Perspectiva: arrastra las cuatro esquinas",
+      "heal": "Reparar: pinta sobre las manchas",
+      "redEye": "Ojos rojos: toca un ojo",
+      "done": "Hecho"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Arrastra una línea sobre la foto: el efecto se desvanece del inicio al final.",
+        "radial": "Arrastra desde el centro hacia fuera para dibujar una elipse. Arrastra los tiradores para moverla, cambiar su tamaño o girarla.",
+        "brush": "Pinta con un dedo. Con dos dedos puedes seguir haciendo zoom y desplazarte.",
+        "eyedropper": "Toca la foto para elegir un color. Mantén pulsado para añadir otro color (hasta 8)."
+      },
+      "colorTargets": "Colores elegidos: {{count}} de {{max}}",
+      "needsProject": "Seleccionar sujeto funcionará cuando la foto se haya subido."
+    },
+    "heal": {
+      "hint": "Pinta con un dedo sobre las manchas o imperfecciones y pulsa Reparar. La reparación se ejecuta en nuestra GPU y puede tardar un minuto.",
+      "running": "Reparando… {{percent}} %",
+      "tooLarge": "Esta foto es demasiado grande para repararla en el teléfono (más de 50 MP).",
+      "needsProject": "Reparar funcionará cuando la foto se haya subido."
+    },
+    "redEye": {
+      "hint": "Toca un ojo de la foto. Se coloca una pequeña máscara circular y se elimina el rojo dentro de ella.",
+      "tapEye": "Toca un ojo"
+    },
+    "presets": {
+      "saved": "Preajuste guardado en este dispositivo.",
+      "saveFailed": "No se pudo guardar el preajuste en este dispositivo.",
+      "deviceNote": "Guardado en este dispositivo."
+    },
+    "history": {
+      "exportSettings": "Ajustes de exportación",
+      "source": "Tamaño de la foto"
     }
   }
 }

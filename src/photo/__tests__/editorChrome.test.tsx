@@ -48,7 +48,21 @@ describe('editor chrome in Arabic (RTL)', () => {
     await changeAppLanguage(i18n, 'ar-SA');
     const r = await chrome();
     expect(screen.getByTestId('photo-upload-chip')).toBeTruthy();
-    for (const k of ['basic', 'color', 'curves', 'levels', 'bw', 'more', 'layers']) {
+    for (const k of [
+      'basic',
+      'color',
+      'curves',
+      'levels',
+      'bw',
+      'more',
+      'masks',
+      'geometry',
+      'heal',
+      'detail',
+      'presets',
+      'layers',
+      'history',
+    ]) {
       expect(screen.getByTestId(`photo-strip-${k}`)).toBeTruthy();
     }
     // Not English: the strip label for Basic is the Arabic one.

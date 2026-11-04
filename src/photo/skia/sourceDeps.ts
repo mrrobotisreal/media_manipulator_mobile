@@ -16,6 +16,56 @@ async function decodeFile(uri: string): Promise<SkImage | null> {
   return Skia.Image.MakeImageFromEncoded(data);
 }
 
+/**
+ * A healed base's proxy (`bases/<hash>.proxy.jpg`, MM96) for the canvas: cached under
+ * `cache/photo/<projectId>/bases/` by hash, decoded with Skia. Null when it cannot be fetched.
+ */
+export async function decodeBaseProxy(projectId: string, baseRef: string): Promise<SkImage | null> {
+  const m = /^bases\/([A-Za-z0-9_-]{1,64})\.png$/.exec(baseRef);
+  if (!m) return null;
+  const dir = new Directory(photoCacheDir(projectId), 'bases');
+  dir.create({ intermediates: true, idempotent: true });
+  const dest = new File(dir, `${m[1]}.proxy.jpg`);
+  try {
+    if (!dest.exists) {
+      const headers = await buildHeaders();
+      await File.downloadFileAsync(
+        `${API_BASE_URL}/photo/projects/${encodeURIComponent(projectId)}/files/bases/${m[1]}.proxy.jpg`,
+        dest,
+        { headers, idempotent: true },
+      );
+    }
+    return await decodeFile(dest.uri);
+  } catch {
+    return null;
+  }
+}
+
+/** Subject mask PNG bytes (`masks/<id>.png`), cached under `cache/photo/<projectId>/masks/`. */
+export async function subjectMaskBytes(
+  projectId: string,
+  maskRef: string,
+): Promise<Uint8Array | null> {
+  const m = /^masks\/([A-Za-z0-9_-]{1,40})\.png$/.exec(maskRef);
+  if (!m) return null;
+  const dir = new Directory(photoCacheDir(projectId), 'masks');
+  dir.create({ intermediates: true, idempotent: true });
+  const dest = new File(dir, `${m[1]}.png`);
+  try {
+    if (!dest.exists) {
+      const headers = await buildHeaders();
+      await File.downloadFileAsync(
+        `${API_BASE_URL}/photo/projects/${encodeURIComponent(projectId)}/files/${maskRef}`,
+        dest,
+        { headers, idempotent: true },
+      );
+    }
+    return await dest.bytes();
+  } catch {
+    return null;
+  }
+}
+
 export const skiaSourceDeps: SourceDeps<SkImage> = {
   decodeLocal: decodeFile,
   async decodeProxy(projectId) {

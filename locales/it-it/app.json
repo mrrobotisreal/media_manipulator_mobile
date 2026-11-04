@@ -1153,7 +1153,13 @@
       "levels": "Livelli",
       "bw": "B/N",
       "more": "Altro",
-      "layers": "Strati"
+      "layers": "Strati",
+      "masks": "Maschere",
+      "geometry": "Geometria",
+      "heal": "Ritocco",
+      "detail": "Dettaglio",
+      "presets": "Look",
+      "history": "Cronologia"
     },
     "greyExcept": "Tutto grigio tranne questo",
     "before": "Prima",
@@ -1196,6 +1202,48 @@
       "projects": "Il tuo piano consente fino a {{limit}} progetti Aperture. Eliminane uno dal web per iniziarne un altro.",
       "pixels": "Questa foto supera i {{mp}} MP, il massimo che Aperture può aprire.",
       "unsupported": "Aperture non può aprire questo tipo di file."
+    },
+    "tools": {
+      "none": "Nessuno strumento",
+      "gradient": "Gradiente: trascina una linea sulla foto",
+      "radial": "Radiale: trascina dal centro verso l'esterno",
+      "brush": "Pennello: dipingi con un dito, pizzica con due",
+      "eyedropper": "Intervallo di colore: tocca un colore, tieni premuto per aggiungerne un altro",
+      "crop": "Ritaglia: trascina le maniglie",
+      "straighten": "Raddrizza: traccia una linea lungo l'orizzonte",
+      "perspective": "Prospettiva: trascina i quattro angoli",
+      "heal": "Ritocco: dipingi sulle macchie",
+      "redEye": "Occhi rossi: tocca un occhio",
+      "done": "Fatto"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Trascina una linea sulla foto: l'effetto sfuma dall'inizio alla fine.",
+        "radial": "Trascina dal centro verso l'esterno per disegnare un'ellisse. Trascina le maniglie per spostarla, ridimensionarla o ruotarla.",
+        "brush": "Dipingi con un dito. Con due dita puoi ancora zoomare e spostarti.",
+        "eyedropper": "Tocca la foto per scegliere un colore. Tieni premuto per aggiungere un altro colore (fino a 8)."
+      },
+      "colorTargets": "Colori scelti: {{count}} di {{max}}",
+      "needsProject": "Seleziona soggetto funziona dopo il caricamento della foto."
+    },
+    "heal": {
+      "hint": "Passa un dito su macchie o imperfezioni, poi premi Ritocca. Il ritocco viene eseguito sulla nostra GPU e può richiedere un minuto.",
+      "running": "Ritocco in corso… {{percent}}%",
+      "tooLarge": "Questa foto è troppo grande per il ritocco sul telefono (oltre 50 MP).",
+      "needsProject": "Il ritocco funziona dopo il caricamento della foto."
+    },
+    "redEye": {
+      "hint": "Tocca un occhio nella foto. Viene posizionata una piccola maschera circolare e il rosso al suo interno viene rimosso.",
+      "tapEye": "Tocca un occhio"
+    },
+    "presets": {
+      "saved": "Preset salvato su questo dispositivo.",
+      "saveFailed": "Impossibile salvare il preset su questo dispositivo.",
+      "deviceNote": "Salvato su questo dispositivo."
+    },
+    "history": {
+      "exportSettings": "Impostazioni di esportazione",
+      "source": "Dimensioni della foto"
     }
   }
 }

@@ -9,6 +9,7 @@
  * normalized coordinates, so any size works). The Skia API and the file I/O are injected.
  */
 import type { SkImage } from '@shopify/react-native-skia';
+import type { AlphaImage } from '../colorMath';
 import { docAssetIds } from '../maskAssets';
 import type { PhotoDoc } from '../photoTypes';
 import type { AlphaSource } from './pipeline';
@@ -28,6 +29,16 @@ float4 main(float2 p) {
 }
 `;
 
+/** Any pixel with alpha < 255 (the web's rule for subject PNGs: alpha if transparent, else red). */
+function hasTransparency(img: SkImage): boolean {
+  const w = img.width();
+  const h = img.height();
+  const px = img.readPixels(0, 0, { width: w, height: h, colorType: 4, alphaType: 3 });
+  if (!(px instanceof Uint8Array)) return false;
+  for (let i = 3; i < px.length; i += 4) if (px[i] !== 255) return true;
+  return false;
+}
+
 export interface MaskAssetIo {
   /** Bytes of the subject mask PNG for `maskRef` (from the cache, downloading when missing). */
   subjectBytes(maskRef: string): Promise<Uint8Array | null>;
@@ -35,6 +46,7 @@ export interface MaskAssetIo {
 
 export class MaskAssetStore implements AlphaSource {
   private images = new Map<string, SkImage>();
+  private alphas = new Map<string, AlphaImage>();
   private pending = new Map<string, Promise<SkImage | null>>();
   private listeners = new Set<() => void>();
   private effect: ReturnType<SkiaApi['RuntimeEffect']['Make']> = null;
@@ -65,6 +77,41 @@ export class MaskAssetStore implements AlphaSource {
     this.listeners.forEach((l) => l());
   }
 
+  /** The 8-bit alpha of a loaded raster (brush continuation, crop re-map), read back once. */
+  alphaOf(id: string): AlphaImage | null {
+    const hit = this.alphas.get(id);
+    if (hit) return hit;
+    const img = this.images.get(id);
+    if (!img) return null;
+    const w = img.width();
+    const h = img.height();
+    const px = img.readPixels(0, 0, { width: w, height: h, colorType: 4, alphaType: 3 });
+    if (!(px instanceof Uint8Array)) return null;
+    const alpha = new Uint8Array(w * h);
+    for (let i = 0; i < alpha.length; i += 1) alpha[i] = px[i * 4]!;
+    const a = { width: w, height: h, alpha };
+    this.alphas.set(id, a);
+    return a;
+  }
+
+  /** A brush baked on the phone: install its raster from the alpha (no PNG decode). */
+  putAlpha(id: string, a: AlphaImage): void {
+    const rgba = new Uint8Array(a.width * a.height * 4);
+    for (let i = 0; i < a.width * a.height; i += 1) {
+      const v = a.alpha[i] as number;
+      rgba[i * 4] = rgba[i * 4 + 1] = rgba[i * 4 + 2] = v;
+      rgba[i * 4 + 3] = 255;
+    }
+    const img = this.api.Image.MakeImage(
+      { width: a.width, height: a.height, colorType: 4, alphaType: ALPHA_OPAQUE },
+      this.api.Data.fromBytes(rgba),
+      a.width * 4,
+    );
+    if (!img) return;
+    this.alphas.set(id, a);
+    this.put(id, img);
+  }
+
   /** Grey raster of an encoded PNG: alpha for brushes; for subjects alpha when the PNG has any. */
   toGrey(encoded: SkImage, kind: 'brush' | 'subject', maxSide = Infinity): SkImage | null {
     if (!this.effect) this.effect = this.api.RuntimeEffect.Make(GREY_SKSL);
@@ -74,7 +121,7 @@ export class MaskAssetStore implements AlphaSource {
     const k = Math.min(1, maxSide / Math.max(w0, h0));
     const w = Math.max(1, Math.round(w0 * k));
     const h = Math.max(1, Math.round(h0 * k));
-    const useAlpha = kind === 'brush' || encoded.getImageInfo().alphaType !== ALPHA_OPAQUE;
+    const useAlpha = kind === 'brush' || hasTransparency(encoded);
     const img = encoded.makeShaderOptions(0, 0, k < 1 ? 1 : 0, 0, this.api.Matrix().scale(k, k));
     const s =
       (this.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ?? this.api.Surface.Make(w, h);

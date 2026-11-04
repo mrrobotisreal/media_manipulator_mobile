@@ -5,7 +5,8 @@
  * B&W · More · Layers). The chrome follows the locale's direction; the canvas and the graphs are
  * always LTR.
  */
-import type { SkImage } from '@shopify/react-native-skia';
+import { Skia, type SkImage } from '@shopify/react-native-skia';
+import { File, Paths } from 'expo-file-system';
 import { router, type Href } from 'expo-router';
 import { usePreventRemove } from 'expo-router/react-navigation';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -48,7 +49,11 @@ import { photoApi, useGetPhotoCapabilitiesQuery } from '../projectsApi';
 import { refusalCopy } from '../refusals';
 import { makePhotoStore } from '../photoStore';
 import { PhotoCanvas, type DocFeed } from '../skia/PhotoCanvas';
-import { skiaSourceDeps } from '../skia/sourceDeps';
+import { renderHealMaskPng } from '../skia/healMask';
+import { decodeBaseProxy, skiaSourceDeps, subjectMaskBytes } from '../skia/sourceDeps';
+import { realAiDeps } from '../aiApi';
+import { useToolOverlay } from '../tools/ToolOverlay';
+import { useEditorWorkspace, type WorkspaceIo } from './useEditorWorkspace';
 import { createSession, type UploadStatus } from '../session';
 import { loadLocalPreview, loadProxyPreview, type PreviewSource } from '../source';
 import { ConflictSheet, DraftSheet, UnsavedSheet } from './ConflictSheet';
@@ -93,6 +98,22 @@ function sessionApi() {
         ? { ok: false as const, error: r.error as MmError }
         : { ok: true as const, response: (r as { data: never }).data };
     },
+  };
+}
+
+/** Native I/O of the MA51 workspace (AI routes, cached files, the base-size heal mask). */
+function workspaceIo(): WorkspaceIo {
+  return {
+    ai: realAiDeps((q) => appStore.dispatch(observed(q))),
+    subjectBytes: subjectMaskBytes,
+    baseImage: decodeBaseProxy,
+    async writeMask(bytes) {
+      const f = new File(Paths.cache, `photo-heal-mask-${Date.now()}.png`);
+      f.create();
+      f.write(bytes);
+      return f.uri;
+    },
+    renderHealMask: (strokes, size) => renderHealMaskPng(Skia, strokes, size),
   };
 }
 
@@ -336,9 +357,67 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
     [slug],
   );
 
+  const io = useMemo(() => workspaceIo(), []);
+  const ws = useEditorWorkspace({
+    api: Skia,
+    io,
+    store,
+    original: preview?.image ?? null,
+    projectId:
+      upload.kind === 'ready' || projectId !== NEW_PROJECT ? (session.project()?.id ?? null) : null,
+    capabilities: caps.data ? { aiMasks: caps.data.aiMasks, heal: caps.data.heal } : undefined,
+    slug,
+    gpu: true,
+    onLimit: (e) => {
+      if (!hasLimitSheet(e)) return false;
+      setLimitError(e);
+      return true;
+    },
+    onNotice: (key, kind) => showNotice(t(key), kind),
+  });
+  const [toolRevision, setToolRevision] = useState(0);
+  useEffect(() => ws.tools.subscribe(() => setToolRevision((n) => n + 1)), [ws.tools]);
+  const toolHost = useToolOverlay(
+    {
+      store,
+      tools: ws.tools,
+      sourceSize: ws.extra.sourceSize,
+      readPixel: ws.readPixel,
+      brushAlpha: ws.brushAlpha,
+      encodePng: ws.encodePng,
+      onBrushBaked: ws.onBrushBaked,
+      healStrokes: ws.healStrokes,
+      onMaskAdded: ws.onMaskAdded,
+      onRefused: (r) =>
+        showNotice(
+          t(
+            r === 'no_layer'
+              ? 'interface:photo.masks.selectLayer'
+              : r === 'brush_full'
+                ? 'interface:photo.masks.brush.full'
+                : 'interface:photo.masks.brush.warn',
+          ),
+          r === 'no_layer' ? undefined : 'error',
+        ),
+    },
+    toolRevision + ws.assetsRevision,
+  );
+  const armed = ws.tools.get().tool;
+  const zoomActual = ws.tools.get().zoomActual;
+  // The sheet is a modal over the canvas: while a canvas tool is armed it steps aside for a slim
+  // bar (tool name + Done), and comes back when the tool is put down. toolRevision re-renders.
+  void toolRevision;
+  const sheetHidden = armed !== 'none';
+  // i18n-keys: photo.tools.none, photo.tools.gradient, photo.tools.radial, photo.tools.brush, photo.tools.eyedropper, photo.tools.crop, photo.tools.straighten, photo.tools.perspective, photo.tools.heal, photo.tools.redEye, photo.masks.needsProject, photo.heal.tooLarge, photo.heal.needsProject
+
   const editorApi = useMemo(
-    () => ({ store, haptics, noteAdjustment: (a: string, p: string) => adjust.note(a, p) }),
-    [store, haptics, adjust],
+    () => ({
+      store,
+      haptics,
+      noteAdjustment: (a: string, p: string) => adjust.note(a, p),
+      extra: ws.extra,
+    }),
+    [store, haptics, adjust, ws.extra],
   );
 
   const doc = store.getState().doc;
@@ -363,12 +442,17 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
           onExport={() => setExportOpen(true)}
         />
         <View className="flex-1" style={{ direction: 'ltr' }}>
-          {preview ? (
+          {preview && ws.source ? (
             <PhotoCanvas
               testID="photo-canvas"
-              image={preview.image}
+              image={ws.source.image}
+              sourceId={ws.source.id}
               previewScale={preview.scale}
               doc={feed}
+              pipeline={ws.pipeline}
+              tools={toolHost}
+              assetsRevision={ws.assetsRevision}
+              zoomActual={zoomActual}
               onHistogram={setHistogram}
               onCompare={onCompare}
             />
@@ -409,16 +493,45 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
             />
           </View>
         ) : null}
-        <ToolStrip active={sheet} onPick={(k) => setSheet((cur) => (cur === k ? null : k))} />
+        {sheetHidden ? (
+          <View className="flex-row items-center gap-2 border-t border-edge bg-surface-1 px-3 py-2">
+            <Text testID="photo-tool-armed" className="flex-1 text-sm">
+              {t(`photo.tools.${armed}`)}
+            </Text>
+            <Button
+              testID="photo-tool-done"
+              label={t('photo.tools.done')}
+              onPress={() => ws.tools.set({ tool: 'none' })}
+            />
+          </View>
+        ) : null}
+        <ToolStrip
+          active={sheet}
+          onPick={(k) => {
+            setSheet((cur) => (cur === k ? null : k));
+            // Leaving a sheet disarms its canvas tool.
+            if (k !== 'masks' && k !== 'geometry' && k !== 'heal') ws.tools.set({ tool: 'none' });
+          }}
+        />
       </View>
 
-      <Sheet visible={sheet !== null} onClose={() => setSheet(null)}>
+      <Sheet visible={sheet !== null && !sheetHidden} onClose={() => setSheet(null)}>
         <View style={{ maxHeight: 460 }}>
           {sheet === 'basic' || sheet === 'curves' ? (
             <HistogramView histogram={histogram} height={48} />
           ) : null}
           <ScrollView keyboardShouldPersistTaps="handled" contentContainerClassName="gap-3 pt-2">
-            {sheet ? <SheetBody tool={sheet} histogram={histogram} /> : null}
+            {sheet ? (
+              <SheetBody
+                tool={sheet}
+                histogram={histogram}
+                hooks={{
+                  encodePng: ws.encodePng,
+                  brushAlpha: ws.brushAlpha,
+                  onMaskAdded: ws.onMaskAdded,
+                }}
+              />
+            ) : null}
           </ScrollView>
         </View>
       </Sheet>

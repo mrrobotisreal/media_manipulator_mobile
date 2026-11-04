@@ -1153,7 +1153,13 @@
       "levels": "Níveis",
       "bw": "P&B",
       "more": "Mais",
-      "layers": "Camadas"
+      "layers": "Camadas",
+      "masks": "Máscaras",
+      "geometry": "Geometria",
+      "heal": "Retocar",
+      "detail": "Detalhe",
+      "presets": "Estilos",
+      "history": "Histórico"
     },
     "greyExcept": "Tudo cinza exceto isto",
     "before": "Antes",
@@ -1196,6 +1202,48 @@
       "projects": "Seu plano permite até {{limit}} projetos do Aperture. Exclua um na web para começar outro.",
       "pixels": "Esta foto tem mais de {{mp}} MP, o máximo que o Aperture abre.",
       "unsupported": "O Aperture não consegue abrir este tipo de arquivo."
+    },
+    "tools": {
+      "none": "Nenhuma ferramenta",
+      "gradient": "Gradiente: arraste uma linha na foto",
+      "radial": "Radial: arraste do centro para fora",
+      "brush": "Pincel: pinte com um dedo, faça pinça com dois",
+      "eyedropper": "Faixa de cores: toque em uma cor, mantenha pressionado para adicionar outra",
+      "crop": "Cortar: arraste as alças",
+      "straighten": "Endireitar: desenhe uma linha ao longo do horizonte",
+      "perspective": "Perspectiva: arraste os quatro cantos",
+      "heal": "Retocar: pinte sobre as manchas",
+      "redEye": "Olhos vermelhos: toque em um olho",
+      "done": "Concluído"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Arraste uma linha na foto: o efeito vai sumindo do início ao fim.",
+        "radial": "Arraste do centro para fora para desenhar uma elipse. Arraste as alças para mover, redimensionar ou girar a elipse.",
+        "brush": "Pinte com um dedo. Com dois dedos, você ainda pode dar zoom e mover a foto.",
+        "eyedropper": "Toque na foto para escolher uma cor. Mantenha pressionado para adicionar outra cor (até 8)."
+      },
+      "colorTargets": "Cores escolhidas: {{count}} de {{max}}",
+      "needsProject": "Selecionar assunto funciona depois que a foto for enviada."
+    },
+    "heal": {
+      "hint": "Pinte com um dedo sobre manchas ou imperfeições e toque em Retocar. O retoque roda na nossa GPU e pode levar um minuto.",
+      "running": "Retocando… {{percent}}%",
+      "tooLarge": "Esta foto é grande demais para retocar no celular (mais de 50 MP).",
+      "needsProject": "O retoque funciona depois que a foto for enviada."
+    },
+    "redEye": {
+      "hint": "Toque em um olho na foto. Uma pequena máscara circular é colocada e o vermelho dentro dela é removido.",
+      "tapEye": "Toque em um olho"
+    },
+    "presets": {
+      "saved": "Predefinição salva neste dispositivo.",
+      "saveFailed": "Não foi possível salvar a predefinição neste dispositivo.",
+      "deviceNote": "Salvo neste dispositivo."
+    },
+    "history": {
+      "exportSettings": "Configurações de exportação",
+      "source": "Tamanho da foto"
     }
   }
 }

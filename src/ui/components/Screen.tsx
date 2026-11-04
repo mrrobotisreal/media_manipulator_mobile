@@ -19,7 +19,9 @@ export function Screen({
   return (
     <View
       className={`flex-1 bg-surface-0 ${className}`}
-      style={edges === 'both' ? { paddingTop: insets.top, paddingBottom: insets.bottom } : undefined}
+      style={
+        edges === 'both' ? { paddingTop: insets.top, paddingBottom: insets.bottom } : undefined
+      }
     >
       {children}
     </View>

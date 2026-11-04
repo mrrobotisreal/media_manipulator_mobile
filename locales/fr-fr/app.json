@@ -1153,7 +1153,13 @@
       "levels": "Niveaux",
       "bw": "N&B",
       "more": "Plus",
-      "layers": "Calques"
+      "layers": "Calques",
+      "masks": "Masques",
+      "geometry": "Géométrie",
+      "heal": "Correction",
+      "detail": "Détail",
+      "presets": "Styles",
+      "history": "Historique"
     },
     "greyExcept": "Tout en gris sauf ceci",
     "before": "Avant",
@@ -1196,6 +1202,48 @@
       "projects": "Votre offre permet jusqu’à {{limit}} projets Aperture. Supprimez-en un sur le web pour en commencer un autre.",
       "pixels": "Cette photo dépasse {{mp}} Mpx, le maximum qu’Aperture peut ouvrir.",
       "unsupported": "Aperture ne peut pas ouvrir ce type de fichier."
+    },
+    "tools": {
+      "none": "Aucun outil",
+      "gradient": "Dégradé : faites glisser une ligne sur la photo",
+      "radial": "Radial : faites glisser depuis le centre vers l’extérieur",
+      "brush": "Pinceau : peignez avec un doigt, pincez avec deux",
+      "eyedropper": "Plage de couleurs : touchez une couleur, appui long pour en ajouter une autre",
+      "crop": "Recadrer : faites glisser les poignées",
+      "straighten": "Redresser : tracez une ligne le long de l’horizon",
+      "perspective": "Perspective : faites glisser les quatre coins",
+      "heal": "Correction : peignez sur les taches",
+      "redEye": "Yeux rouges : touchez un œil",
+      "done": "Terminé"
+    },
+    "masks": {
+      "hint": {
+        "gradient": "Faites glisser une ligne sur la photo : l’effet s’estompe du début à la fin.",
+        "radial": "Faites glisser depuis le centre vers l’extérieur pour tracer une ellipse. Faites glisser les poignées pour la déplacer, la redimensionner ou la faire pivoter.",
+        "brush": "Peignez avec un doigt. Avec deux doigts, vous pouvez toujours zoomer et vous déplacer.",
+        "eyedropper": "Touchez la photo pour choisir une couleur. Appuyez longuement pour en ajouter une autre (jusqu’à 8)."
+      },
+      "colorTargets": "Couleurs choisies : {{count}} sur {{max}}",
+      "needsProject": "Sélectionner le sujet fonctionnera une fois la photo envoyée."
+    },
+    "heal": {
+      "hint": "Peignez avec un doigt sur les taches ou imperfections, puis appuyez sur Corriger. La correction s’exécute sur notre GPU et peut prendre une minute.",
+      "running": "Correction en cours… {{percent}} %",
+      "tooLarge": "Cette photo est trop grande pour être corrigée sur le téléphone (plus de 50 Mpx).",
+      "needsProject": "La correction fonctionnera une fois la photo envoyée."
+    },
+    "redEye": {
+      "hint": "Touchez un œil sur la photo. Un petit masque circulaire est placé et le rouge est supprimé à l’intérieur.",
+      "tapEye": "Touchez un œil"
+    },
+    "presets": {
+      "saved": "Préréglage enregistré sur cet appareil.",
+      "saveFailed": "Le préréglage n’a pas pu être enregistré sur cet appareil.",
+      "deviceNote": "Enregistré sur cet appareil."
+    },
+    "history": {
+      "exportSettings": "Paramètres d’export",
+      "source": "Taille de la photo"
     }
   }
 }

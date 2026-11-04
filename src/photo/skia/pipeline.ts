@@ -169,8 +169,6 @@ export class PhotoPipeline {
       gpu?: boolean;
       /** Mask feather: `exact` = the reference's Gaussian taps; `skia` = `ImageFilter.MakeBlur`. */
       feather?: 'exact' | 'skia';
-      /** Masks are computed at most this long (preview speed); sampled bilinear when applied. */
-      maskMaxSide?: number;
     } = {},
   ) {
     this.fx = effectsFor(api);

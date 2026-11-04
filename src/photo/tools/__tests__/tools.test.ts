@@ -5,7 +5,7 @@
  */
 import { PNG } from 'pngjs';
 import { brushAlpha } from '../../goldens';
-import { maskOfLayer , dataUriBytes } from '../../maskOps';
+import { maskOfLayer, dataUriBytes } from '../../maskOps';
 import {
   newPhotoDoc,
   parsePhotoDoc,
