@@ -1,3 +1,5 @@
+// Must run before i18next builds any plural resolver (Hermes has no Intl.PluralRules).
+import './pluralRules';
 import { createInstance, type i18n as I18nInstance } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import * as Localization from 'expo-localization';
