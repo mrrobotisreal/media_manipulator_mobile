@@ -1,4 +1,5 @@
 import type { HistoryEntry, HistoryPage } from '@/api/schemas/history';
+import { isHiddenInHistory } from './toolLabel';
 
 /** The shape RTK Query keeps for an infinite query. */
 export interface HistoryData {
@@ -6,14 +7,17 @@ export interface HistoryData {
   pageParams: number[];
 }
 
-/** Every loaded row, in server order, de-duplicated by `jobId` (offset paging can repeat a row when new jobs land). */
+/**
+ * Every loaded row, in server order, de-duplicated by `jobId` (offset paging can repeat a row when
+ * new jobs land), without the internal steps (`photo_heal`, MA52).
+ */
 export function flattenHistory(data: HistoryData | undefined): HistoryEntry[] {
   if (!data) return [];
   const seen = new Set<string>();
   const out: HistoryEntry[] = [];
   for (const page of data.pages)
     for (const e of page.entries) {
-      if (seen.has(e.jobId)) continue;
+      if (seen.has(e.jobId) || isHiddenInHistory(e)) continue;
       seen.add(e.jobId);
       out.push(e);
     }

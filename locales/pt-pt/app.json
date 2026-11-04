@@ -521,6 +521,72 @@
       "auto": "Detetar automaticamente",
       "other": "Outro idioma",
       "otherHint": "Código de duas ou três letras, p. ex. \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Aclarar imagem",
+        "description": "Clareie uma fotografia escura com a exposição, o brilho e as sombras no Aperture."
+      },
+      "contrast": {
+        "title": "Ajustar contraste",
+        "description": "Dê mais impacto a uma fotografia baça, ou suavize uma demasiado dura, no Aperture."
+      },
+      "exposure": {
+        "title": "Corrigir exposição",
+        "description": "Corrija uma fotografia demasiado clara ou escura com a exposição e o histograma."
+      },
+      "hue": {
+        "title": "Ajustar a tonalidade da imagem",
+        "description": "Desloque todas as cores, ou um só intervalo, no painel Cor do Aperture."
+      },
+      "color-pop": {
+        "title": "Cor em destaque",
+        "description": "Mantenha uma cor e passe o resto a cinzento. Abre com o look «Cor em destaque: vermelho»."
+      },
+      "black-white": {
+        "title": "Fotografia a preto e branco",
+        "description": "Converta uma fotografia para preto e branco. Abre com o look «Película a preto e branco»."
+      },
+      "curves": {
+        "title": "Curvas",
+        "description": "Molde os tons de uma fotografia na curva RGB ou nas curvas de canal."
+      },
+      "levels": {
+        "title": "Níveis",
+        "description": "Defina os pontos de preto, branco e meios-tons com base no histograma."
+      },
+      "white-balance": {
+        "title": "Equilíbrio de brancos",
+        "description": "Remova uma dominante amarela, azul ou verde com a temperatura e a tonalidade."
+      },
+      "straighten": {
+        "title": "Endireitar fotografia",
+        "description": "Endireite um horizonte inclinado por ângulo ou desenhando uma linha ao longo dele."
+      },
+      "perspective": {
+        "title": "Corrigir perspetiva",
+        "description": "Arraste os cantos para endireitar linhas convergentes em edifícios e documentos."
+      },
+      "blemishes": {
+        "title": "Remover imperfeições",
+        "description": "Pinte sobre manchas e imperfeições e depois prima Corrigir uma vez."
+      },
+      "select-color": {
+        "title": "Selecionar por cor",
+        "description": "Escolha uma cor na fotografia e ajuste só essa parte com uma máscara de intervalo de cores."
+      },
+      "sharpen": {
+        "title": "Aumentar a nitidez da fotografia",
+        "description": "Recupere detalhes nítidos com a quantidade, o raio e o limiar."
+      },
+      "noise": {
+        "title": "Reduzir o ruído da imagem",
+        "description": "Suavize o ruído de cor e de luminância em fotografias com pouca luz."
+      },
+      "vignette": {
+        "title": "Adicionar uma vinheta",
+        "description": "Escureça ou clareie as margens de uma fotografia para enquadrar o motivo."
+      }
     }
   },
   "tool": {
@@ -773,7 +839,8 @@
       "tooLarge": "Este ficheiro de legendas é demasiado grande para ser mostrado. Guarde-o para o abrir noutro local.",
       "safety": "Segurança",
       "sentiment": "Sentimento"
-    }
+    },
+    "editAgain": "Editar novamente"
   },
   "actions": {
     "save": "Guardar",
@@ -862,7 +929,26 @@
       "studio_export": "Exportação do Studio",
       "video_summary": "Resumo de vídeo",
       "vector_vectorize": "Vetorizar",
-      "studio_reverse_proxy": "Proxy de pré-visualização do Studio"
+      "studio_reverse_proxy": "Proxy de pré-visualização do Studio",
+      "photo_export": "Exportação do Aperture"
+    },
+    "segments": {
+      "jobs": "Tarefas",
+      "projects": "Projetos"
+    },
+    "projects": {
+      "updated": "Editado a {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Ainda a processar",
+      "loadFailed": "Não foi possível carregar os seus projetos do Aperture.",
+      "empty": {
+        "title": "Ainda sem projetos do Aperture",
+        "body": "Edite uma fotografia no Aperture e o projeto aparece aqui, pronto a abrir de novo."
+      },
+      "deleteTitle": "Eliminar este projeto?",
+      "deleteBody": "A fotografia e as respetivas edições são removidas da sua conta. As exportações que já guardou são mantidas. Não pode ser anulado.",
+      "deleted": "Projeto eliminado",
+      "deleteFailed": "Não foi possível eliminar este projeto. Tente novamente."
     }
   },
   "quota": {

@@ -1,6 +1,6 @@
 import { useFocusEffect, router, type Href } from 'expo-router';
 import { History } from 'lucide-react-native';
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, RefreshControl, SectionList, View } from 'react-native';
 import { useGetHistoryInfiniteQuery } from '@/api/endpoints/history';
@@ -15,9 +15,12 @@ import { pendingRecords } from '@/history/pendingMerge';
 import { useHistoryActions } from '@/history/useHistoryActions';
 import { formatDateTime, formatRetention } from '@/lib/format';
 import { useAppSelector } from '@/state/hooks';
+import { ProjectsList } from '@/photo/ui/ProjectsList';
+import { useGetPhotoCapabilitiesQuery } from '@/photo/projectsApi';
 import { Button } from '@/ui/components/Button';
 import { EmptyState } from '@/ui/components/EmptyState';
 import { Screen } from '@/ui/components/Screen';
+import { Segmented } from '@/ui/components/Segmented';
 import { Text } from '@/ui/components/Text';
 import { colors } from '@/ui/tokens';
 
@@ -26,7 +29,43 @@ const TOOLS_TAB = '/(app)/(tabs)' as Href;
 
 type Row = { type: 'entry'; entry: HistoryEntry } | { type: 'pending'; localId: string };
 
+type Segment = 'jobs' | 'projects';
+
+/**
+ * History (MA15) with MA52's "Jobs · Projects" segmented control: Projects lists the Aperture
+ * projects. The control is shown while Aperture is available (`GET /photo/capabilities` enabled,
+ * or not known yet), like the Tools-tab row.
+ */
 export default function HistoryTab() {
+  const { t } = useTranslation();
+  const caps = useGetPhotoCapabilitiesQuery();
+  const photo = !caps.data || caps.data.enabled;
+  const [segment, setSegment] = useState<Segment>('jobs');
+  const seg: Segment = photo ? segment : 'jobs';
+  const segments = photo ? (
+    <View className="px-4 pb-2">
+      <Segmented
+        options={[
+          { value: 'jobs', label: t('history.segments.jobs') },
+          { value: 'projects', label: t('history.segments.projects') },
+        ]}
+        value={seg}
+        onChange={setSegment}
+      />
+    </View>
+  ) : null;
+  return seg === 'projects' ? (
+    <Screen edges="none">
+      <Text className="px-4 pb-2 pt-3 text-xl font-semibold">{t('history.title')}</Text>
+      {segments}
+      <ProjectsList onOpenTools={() => router.navigate(TOOLS_TAB)} />
+    </Screen>
+  ) : (
+    <JobsHistory segments={segments} />
+  );
+}
+
+function JobsHistory({ segments }: { segments: React.ReactNode }) {
   const { t } = useTranslation();
   const q = useGetHistoryInfiniteQuery(undefined);
   const me = useGetAccountMeQuery();
@@ -94,6 +133,10 @@ export default function HistoryTab() {
     const hours = me.data?.limits.resultRetentionHours;
     return (
       <Screen edges="none">
+        {segments ? (
+          <Text className="px-4 pb-2 pt-3 text-xl font-semibold">{t('history.title')}</Text>
+        ) : null}
+        {segments}
         <EmptyState
           icon={History}
           title={t('history.empty.title')}
@@ -112,6 +155,7 @@ export default function HistoryTab() {
   return (
     <Screen edges="none">
       <Text className="px-4 pb-2 pt-3 text-xl font-semibold">{t('history.title')}</Text>
+      {segments}
       {failed ? (
         <View className="items-center gap-3 px-8 py-10" testID="history-error">
           <Text className="text-center text-muted-fg">{t('history.loadFailed')}</Text>
@@ -173,4 +217,4 @@ export default function HistoryTab() {
   );
 }
 
-// i18n-keys: history.title, history.today, history.yesterday, history.inProgress
+// i18n-keys: history.title, history.today, history.yesterday, history.inProgress, history.segments.jobs, history.segments.projects

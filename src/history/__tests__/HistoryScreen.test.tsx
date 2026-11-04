@@ -53,8 +53,10 @@ const realFetch = global.fetch;
 
 function mockFetch() {
   global.fetch = jest.fn((url: string) => {
-    void url;
-    const body = { entries: rows, total: rows.length, limit: 50, offset: 0 };
+    // MA52: the History tab also reads the Aperture capabilities (Jobs · Projects segment).
+    const body = url.includes('/photo/capabilities')
+      ? { enabled: true, render: true }
+      : { entries: rows, total: rows.length, limit: 50, offset: 0 };
     return Promise.resolve({
       status: 200,
       headers: new Headers(),

@@ -16,6 +16,7 @@ import {
   trackPhotoCompareUsed,
   trackPhotoEditorOpened,
   trackPhotoExportStarted,
+  trackPhotoPresetApplied,
   trackPhotoProjectCreated,
   trackPhotoProjectSaved,
   createAdjustmentTracker,
@@ -43,7 +44,13 @@ import {
   type ExportChoice,
 } from '../exportPlan';
 import type { Histogram64 } from '../histogram';
-import { NEW_PROJECT, takePhotoOpenRequest, type PhotoOpenRequest } from '../openRequest';
+import { applyEntryPreset } from '../entry';
+import {
+  NEW_PROJECT,
+  takePhotoOpenRequest,
+  type PhotoOpenRequest,
+  type SavedProjectSource,
+} from '../openRequest';
 import { createPhotoProject, realCreateDeps } from '../projectCreate';
 import { photoApi, useGetPhotoCapabilitiesQuery } from '../projectsApi';
 import { refusalCopy } from '../refusals';
@@ -121,9 +128,18 @@ export interface PhotoEditorScreenProps {
   projectId: string;
   /** Tests inject; the route reads `takePhotoOpenRequest()`. */
   request?: PhotoOpenRequest | null;
+  /** A saved project: opened from History (Edit again) or the Projects list (MA52). */
+  savedSource?: SavedProjectSource;
+  /** A saved project: the tool slug of the export it came from (History), else `aperture`. */
+  savedSlug?: string;
 }
 
-export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorScreenProps) {
+export function PhotoEditorScreen({
+  projectId,
+  request: injected,
+  savedSource = 'projects',
+  savedSlug,
+}: PhotoEditorScreenProps) {
   const { t } = useTranslation();
   const store = useMemo(() => makePhotoStore(), []);
   const session = useMemo(
@@ -134,7 +150,7 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
     () => (projectId === NEW_PROJECT ? (injected ?? takePhotoOpenRequest()) : null),
     [projectId, injected],
   );
-  const slug = request?.toolSlug ?? PHOTO_TOOL_SLUG;
+  const slug = request?.toolSlug ?? savedSlug ?? PHOTO_TOOL_SLUG;
   const haptics = useAppSelector((s) => s.settings.haptics);
   const caps = useGetPhotoCapabilitiesQuery();
   const adjust = useMemo(() => createAdjustmentTracker(), []);
@@ -142,7 +158,8 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
   const [preview, setPreview] = useState<PreviewSource<SkImage> | null>(null);
   const [failed, setFailed] = useState(false);
   const [upload, setUpload] = useState<UploadStatus>({ kind: 'idle' });
-  const [sheet, setSheet] = useState<StripTool | null>(null);
+  // MA52 entry rows open with their sheet in front.
+  const [sheet, setSheet] = useState<StripTool | null>(() => request?.panel ?? null);
   const [histogram, setHistogram] = useState<Histogram64 | null>(null);
   const [conflict, setConflict] = useState<number | null>(null);
   const [unsaved, setUnsaved] = useState(false);
@@ -182,18 +199,32 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
         const w = f.width ?? local?.width ?? 1;
         const h = f.height ?? local?.height ?? 1;
         trackPhotoEditorOpened(request.source, !!local, slug);
-        const done = session.openFile({
-          intakeId: f.id,
-          uri: f.uri,
-          mimeType: f.mimeType,
-          name: f.name.replace(/\.[^.]+$/, ''),
-          width: w,
-          height: h,
-        });
+        const preset = request.preset;
+        const done = session.openFile(
+          {
+            intakeId: f.id,
+            uri: f.uri,
+            mimeType: f.mimeType,
+            name: f.name.replace(/\.[^.]+$/, ''),
+            width: w,
+            height: h,
+          },
+          {
+            // MA52: an entry row's look (colour pop, black & white film), applied once.
+            onLoaded: ({ fresh }) => {
+              if (!fresh || !preset) return;
+              // i18n-keys: interface:photo.presets.name.color-pop-red, interface:photo.presets.name.bw-film
+              const name = t(`interface:photo.presets.name.${preset}`);
+              if (applyEntryPreset(store, preset, name))
+                trackPhotoPresetApplied(preset, true, slug);
+            },
+          },
+        );
         const res = await done;
         if (cancelled) return;
         const project = session.project();
         if (res.kind === 'ready' && project) {
+          appStore.dispatch(mmApi.util.invalidateTags(['PhotoProjects']));
           trackPhotoProjectCreated(
             f.extension,
             (project.width * project.height) / 1_000_000,
@@ -226,13 +257,13 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
       if (cancelled) return;
       if (proxy) setPreview(proxy);
       else setFailed(true);
-      trackPhotoEditorOpened('projects', false, slug);
+      trackPhotoEditorOpened(savedSource, false, slug);
       if (r.recovered) setDraft(r.recovered);
     })();
     return () => {
       cancelled = true;
     };
-  }, [request, projectId, session, slug, t]);
+  }, [request, projectId, session, slug, t, store, savedSource]);
 
   // Drafts: every 2 s while dirty, flushed when the app goes to the background.
   useEffect(() => {
@@ -343,7 +374,7 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
           if (rec.jobId) void session.afterExport(exported);
         });
       }
-      appStore.dispatch(mmApi.util.invalidateTags(['History']));
+      appStore.dispatch(mmApi.util.invalidateTags(['History', 'PhotoProjects']));
       setExportOpen(false);
       if (localId) router.push(`/(app)/job/${localId}`);
     },

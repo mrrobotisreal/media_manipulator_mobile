@@ -8,7 +8,8 @@ import { ImageTextForm } from '../forms/image/ImageTextForm';
 import { ImageToPdfForm } from '../forms/image/ImageToPdfForm';
 import { ImageToSvgForm } from '../forms/image/ImageToSvgForm';
 import { PdfToImageForm } from '../forms/image/PdfToImageForm';
-import { ApertureLauncher } from '@/photo/ui/ApertureLauncher';
+import { ApertureLauncher, apertureLauncherFor } from '@/photo/ui/ApertureLauncher';
+import { APERTURE_PRESET_ROWS, type AperturePresetRow } from '@/photo/entryRows';
 import * as o from '../options/image';
 import type { AnyToolDefinition } from '../types';
 import { IMAGE_ACCEPTS, PDF_ACCEPTS, imageBase, mergeAccepts, row } from './shared';
@@ -180,6 +181,47 @@ const filterPreset = (slug: string, filter: o.FilterId) => ({
   defaults: { filter },
 });
 
+/** The `aperture` row's photo source set (the API's photoAcceptedExts: no SVG / ICO). */
+const PHOTO_ACCEPTS = {
+  kinds: ['image' as const],
+  mime: [
+    'image/jpeg',
+    'image/png',
+    'image/webp',
+    'image/gif',
+    'image/avif',
+    'image/heic',
+    'image/heif',
+    'image/bmp',
+    'image/tiff',
+  ],
+  extensions: ['jpg', 'jpeg', 'png', 'webp', 'gif', 'avif', 'heic', 'heif', 'bmp', 'tif', 'tiff'],
+};
+
+/** One MA52 entry row: an `aperture` sibling that opens the editor on `panel` (+ `preset`). */
+function apertureRow(r: AperturePresetRow): AnyToolDefinition {
+  return {
+    ...row({
+      id: r.id,
+      family: 'image',
+      icon: r.icon,
+      accepts: PHOTO_ACCEPTS,
+      endpoint: 'photoProject',
+      defaults: r.preset ? { panel: r.panel, preset: r.preset } : { panel: r.panel },
+      metric: 'ops',
+      analyticsSlug: r.slug,
+      webTask: 'aperture',
+      resultHint: 'image',
+      keywords: [r.slug, 'aperture', ...r.keywords],
+    }),
+    titleKey: `tools.aperture.${r.short}.title`,
+    descriptionKey: `tools.aperture.${r.short}.description`,
+    Form: apertureLauncherFor(r.slug),
+    noRunButton: true,
+    capability: r.panel === 'heal' ? 'photoHeal' : 'photo',
+  };
+}
+
 export const imageTools: AnyToolDefinition[] = [
   withForm(byId('image-convert'), {
     Form: ImageConvertForm,
@@ -262,34 +304,7 @@ export const imageTools: AnyToolDefinition[] = [
       id: 'aperture',
       family: 'image',
       icon: 'SlidersHorizontal',
-      // The API's photo source set (photoAcceptedExts): no SVG / ICO.
-      accepts: {
-        kinds: ['image'],
-        mime: [
-          'image/jpeg',
-          'image/png',
-          'image/webp',
-          'image/gif',
-          'image/avif',
-          'image/heic',
-          'image/heif',
-          'image/bmp',
-          'image/tiff',
-        ],
-        extensions: [
-          'jpg',
-          'jpeg',
-          'png',
-          'webp',
-          'gif',
-          'avif',
-          'heic',
-          'heif',
-          'bmp',
-          'tif',
-          'tiff',
-        ],
-      },
+      accepts: PHOTO_ACCEPTS,
       endpoint: 'photoProject',
       defaults: {},
       metric: 'ops',
@@ -327,4 +342,8 @@ export const imageTools: AnyToolDefinition[] = [
     noRunButton: true,
     capability: 'photo',
   },
+  // MA52: the MM100 tool pages as Tools-tab rows. Each opens Aperture with its sheet in front (and,
+  // for colour pop / black & white, the web page's built-in look applied); `analyticsSlug` is the
+  // web page slug so web and app funnels compare.
+  ...APERTURE_PRESET_ROWS.map(apertureRow),
 ];

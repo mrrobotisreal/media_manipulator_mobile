@@ -511,6 +511,72 @@
       "auto": "자동 감지",
       "other": "다른 언어",
       "otherHint": "두세 글자 코드 (예: \"pl\")"
+    },
+    "aperture": {
+      "brighten": {
+        "title": "이미지 밝게 하기",
+        "description": "Aperture에서 노출, 밝기, 그림자로 어두운 사진을 밝게 합니다."
+      },
+      "contrast": {
+        "title": "대비 조정",
+        "description": "Aperture에서 밋밋한 사진은 또렷하게, 너무 강한 사진은 부드럽게 만듭니다."
+      },
+      "exposure": {
+        "title": "노출 보정",
+        "description": "너무 밝거나 어두운 사진을 노출과 히스토그램으로 보정합니다."
+      },
+      "hue": {
+        "title": "이미지 색조 조정",
+        "description": "Aperture의 색상 패널에서 모든 색 또는 한 가지 색상 범위를 이동합니다."
+      },
+      "color-pop": {
+        "title": "컬러 팝",
+        "description": "한 가지 색만 남기고 나머지는 회색으로 바꿉니다. 컬러 팝: 빨강 룩이 적용된 채로 열립니다."
+      },
+      "black-white": {
+        "title": "흑백 사진",
+        "description": "사진을 흑백으로 변환합니다. 흑백 필름 룩이 적용된 채로 열립니다."
+      },
+      "curves": {
+        "title": "커브",
+        "description": "RGB 커브나 채널별 커브로 사진의 톤을 다듬습니다."
+      },
+      "levels": {
+        "title": "레벨",
+        "description": "히스토그램을 보며 블랙, 화이트, 중간 톤 포인트를 설정합니다."
+      },
+      "white-balance": {
+        "title": "화이트 밸런스",
+        "description": "색온도와 색조로 노란색, 파란색, 초록색 색 치우침을 없앱니다."
+      },
+      "straighten": {
+        "title": "사진 수평 맞추기",
+        "description": "각도를 입력하거나 수평선을 따라 선을 그어 기울어진 수평선을 바로잡습니다."
+      },
+      "perspective": {
+        "title": "원근 보정",
+        "description": "모서리를 드래그해 건물과 문서의 모이는 선을 곧게 폅니다."
+      },
+      "blemishes": {
+        "title": "잡티 제거",
+        "description": "잡티와 얼룩 위를 칠한 다음 복구를 한 번 누릅니다."
+      },
+      "select-color": {
+        "title": "색상으로 선택",
+        "description": "사진에서 색을 골라 색상 범위 마스크로 그 부분만 조정합니다."
+      },
+      "sharpen": {
+        "title": "사진 선명하게",
+        "description": "양, 반경, 한계값으로 선명한 디테일을 되살립니다."
+      },
+      "noise": {
+        "title": "이미지 노이즈 줄이기",
+        "description": "어두운 곳에서 찍은 사진의 색상 노이즈와 휘도 노이즈를 부드럽게 줄입니다."
+      },
+      "vignette": {
+        "title": "비네팅 추가",
+        "description": "사진 가장자리를 어둡게 또는 밝게 해 피사체를 돋보이게 합니다."
+      }
     }
   },
   "tool": {
@@ -761,7 +827,8 @@
       "tooLarge": "이 자막 파일은 너무 커서 표시할 수 없어요. 저장해서 다른 곳에서 열어 보세요.",
       "safety": "안전성",
       "sentiment": "감정"
-    }
+    },
+    "editAgain": "다시 편집"
   },
   "actions": {
     "save": "저장",
@@ -850,7 +917,26 @@
       "studio_export": "Studio 내보내기",
       "video_summary": "영상 요약",
       "vector_vectorize": "벡터화",
-      "studio_reverse_proxy": "Studio 미리보기 프록시"
+      "studio_reverse_proxy": "Studio 미리보기 프록시",
+      "photo_export": "Aperture 내보내기"
+    },
+    "segments": {
+      "jobs": "작업",
+      "projects": "프로젝트"
+    },
+    "projects": {
+      "updated": "{{date}}에 편집됨",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "아직 처리 중",
+      "loadFailed": "Aperture 프로젝트를 불러오지 못했어요.",
+      "empty": {
+        "title": "아직 Aperture 프로젝트가 없어요",
+        "body": "Aperture에서 사진을 편집하면 프로젝트가 여기에 표시되고 언제든 다시 열 수 있어요."
+      },
+      "deleteTitle": "이 프로젝트를 삭제할까요?",
+      "deleteBody": "사진과 편집 내용이 계정에서 삭제돼요. 이미 저장한 내보내기 파일은 유지돼요. 되돌릴 수 없어요.",
+      "deleted": "프로젝트를 삭제했어요",
+      "deleteFailed": "이 프로젝트를 삭제하지 못했어요. 다시 시도해 주세요."
     }
   },
   "quota": {

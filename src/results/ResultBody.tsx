@@ -18,6 +18,7 @@ import { useAppSelector } from '@/state/hooks';
 import { describe, type ResultDescriptor, type ResultKind } from './describe';
 import { viewerFor } from './viewers';
 import { MetadataResultLine } from '@/metadata/ui/MetadataResultLine';
+import { EditAgainButton } from '@/photo/ui/EditAgainButton';
 
 export interface ResultSource {
   job: ConversionJob;
@@ -92,6 +93,10 @@ export function ResultBody({ source, surface }: { source: ResultSource; surface:
         strippedCount={descriptor.strippedCount}
         toolSlug={source.toolSlug}
       />
+      {/* MA52: from History only (right after an export the editor is still under this screen). */}
+      {surface === 'history' ? (
+        <EditAgainButton job={source.job} toolSlug={source.toolSlug} />
+      ) : null}
       <ActionsBar
         actions={actions}
         haptics={haptics}

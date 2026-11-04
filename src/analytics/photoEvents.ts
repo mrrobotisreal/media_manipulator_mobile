@@ -229,3 +229,8 @@ export function trackPhotoPresetApplied(presetId: string, builtin: boolean, slug
     ctx(slug),
   );
 }
+
+/* MA52: a project deleted from the Projects list (the catalog's data_deleted, kind project). */
+export function trackPhotoProjectDeleted(): void {
+  track(EVENTS.DATA_DELETED, { scope: 'item', kind: 'project' }, ctx());
+}

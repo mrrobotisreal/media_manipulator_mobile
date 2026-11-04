@@ -521,6 +521,72 @@
       "auto": "Detectar automáticamente",
       "other": "Otro idioma",
       "otherHint": "Código de dos o tres letras, p. ej. \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Aclarar imagen",
+        "description": "Aclara una foto oscura con la exposición, el brillo y las sombras en Aperture."
+      },
+      "contrast": {
+        "title": "Ajustar contraste",
+        "description": "Da más fuerza a una foto apagada, o suaviza una demasiado dura, en Aperture."
+      },
+      "exposure": {
+        "title": "Corregir exposición",
+        "description": "Corrige una foto demasiado clara u oscura con la exposición y el histograma."
+      },
+      "hue": {
+        "title": "Ajustar el matiz de una imagen",
+        "description": "Desplaza todos los colores, o un solo rango, en el panel Color de Aperture."
+      },
+      "color-pop": {
+        "title": "Resalte de color",
+        "description": "Conserva un color y pasa el resto a gris. Se abre con el estilo «Resalte de color: rojo»."
+      },
+      "black-white": {
+        "title": "Foto en blanco y negro",
+        "description": "Pasa una foto a blanco y negro. Se abre con el estilo «Película en blanco y negro»."
+      },
+      "curves": {
+        "title": "Curvas",
+        "description": "Moldea los tonos de una foto en la curva RGB o en las curvas de canal."
+      },
+      "levels": {
+        "title": "Niveles",
+        "description": "Ajusta los puntos de negro, blanco y tonos medios con el histograma."
+      },
+      "white-balance": {
+        "title": "Balance de blancos",
+        "description": "Elimina una dominante amarilla, azul o verde con la temperatura y el matiz."
+      },
+      "straighten": {
+        "title": "Enderezar una foto",
+        "description": "Endereza un horizonte torcido por ángulo o dibujando una línea sobre él."
+      },
+      "perspective": {
+        "title": "Corregir la perspectiva",
+        "description": "Arrastra las esquinas para enderezar líneas convergentes en edificios y documentos."
+      },
+      "blemishes": {
+        "title": "Eliminar imperfecciones",
+        "description": "Pinta sobre manchas e imperfecciones y presiona Reparar una sola vez."
+      },
+      "select-color": {
+        "title": "Seleccionar por color",
+        "description": "Elige un color en la foto y ajusta solo esa zona con una máscara de rango de color."
+      },
+      "sharpen": {
+        "title": "Enfocar una foto",
+        "description": "Recupera detalles nítidos con la cantidad, el radio y el umbral."
+      },
+      "noise": {
+        "title": "Reducir el ruido de una imagen",
+        "description": "Suaviza el ruido de color y de luminancia en fotos con poca luz."
+      },
+      "vignette": {
+        "title": "Agregar una viñeta",
+        "description": "Oscurece o aclara los bordes de una foto para enmarcar al sujeto."
+      }
     }
   },
   "tool": {
@@ -773,7 +839,8 @@
       "tooLarge": "Este archivo de subtítulos es demasiado grande para mostrarlo. Guárdalo para abrirlo en otra app.",
       "safety": "Seguridad",
       "sentiment": "Sentimiento"
-    }
+    },
+    "editAgain": "Editar de nuevo"
   },
   "actions": {
     "save": "Guardar",
@@ -862,7 +929,26 @@
       "studio_export": "Exportación de Studio",
       "video_summary": "Resumen de video",
       "vector_vectorize": "Vectorizar",
-      "studio_reverse_proxy": "Proxy de vista previa de Studio"
+      "studio_reverse_proxy": "Proxy de vista previa de Studio",
+      "photo_export": "Exportación de Aperture"
+    },
+    "segments": {
+      "jobs": "Trabajos",
+      "projects": "Proyectos"
+    },
+    "projects": {
+      "updated": "Editado el {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Aún en proceso",
+      "loadFailed": "No se pudieron cargar tus proyectos de Aperture.",
+      "empty": {
+        "title": "Aún no hay proyectos de Aperture",
+        "body": "Edita una foto en Aperture y el proyecto aparecerá aquí, listo para abrirlo de nuevo."
+      },
+      "deleteTitle": "¿Eliminar este proyecto?",
+      "deleteBody": "La foto y sus ediciones se borran de tu cuenta. Las exportaciones que ya guardaste se conservan. Esta acción no se puede deshacer.",
+      "deleted": "Proyecto eliminado",
+      "deleteFailed": "No se pudo eliminar este proyecto. Inténtalo de nuevo."
     }
   },
   "quota": {

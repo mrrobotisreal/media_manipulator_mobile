@@ -84,9 +84,20 @@ export function toolLabel(entry: Pick<HistoryEntry, 'tool' | 'mode' | 'mediaKind
   let toolId = TOOL_ID_BY_API_TOOL[api];
   if (!toolId && api === 'convert') toolId = CONVERT_BY_KIND[entry.mediaKind ?? ''];
   const tool = toolId ? getTool(toolId) : undefined;
+  // MA52: an Aperture export reads "Aperture export" (the Aperture icon comes from the registry row).
+  if (tool?.id === 'aperture') return { toolId: tool.id, key: 'history.tool.photo_export' };
   if (tool) return { toolId: tool.id, key: tool.titleKey };
   if ((FALLBACK_LABEL_TOOLS as readonly string[]).includes(api)) {
     return { key: `history.tool.${api}` };
   }
   return { text: prettifyToolId(api) };
 }
+
+/**
+ * Internal steps that never show in History (MA52 decision 3): a `photo_heal` job is one press of
+ * Heal inside the editor; its result is the project's new base, not a file to open.
+ */
+export const HIDDEN_API_TOOLS: ReadonlySet<string> = new Set(['photo_heal']);
+
+export const isHiddenInHistory = (entry: Pick<HistoryEntry, 'tool' | 'mode'>): boolean =>
+  HIDDEN_API_TOOLS.has(apiToolOf(entry));

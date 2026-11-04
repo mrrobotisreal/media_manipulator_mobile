@@ -27,24 +27,9 @@ import { HistorySheet } from './sheets/HistorySheet';
 import type { PngEncoder } from '../brushEngine';
 import type { AlphaImage } from '../colorMath';
 import type { MaskComponent } from '../photoTypes';
+import { STRIP, type StripTool } from './stripTools';
 
-/** Design §1 strip: Basic · Colour · Curves · B&W · Masks · Geometry · Heal · Detail · Presets · Layers (+ MA50's Levels, More; MA51's History). */
-export const STRIP = [
-  'basic',
-  'color',
-  'curves',
-  'levels',
-  'bw',
-  'more',
-  'masks',
-  'geometry',
-  'heal',
-  'detail',
-  'presets',
-  'layers',
-  'history',
-] as const;
-export type StripTool = (typeof STRIP)[number];
+export { STRIP, type StripTool };
 
 export function TopBar({
   name,

@@ -102,9 +102,10 @@ export interface ToolDefinition<F = ToolOptions> {
   presets?: ToolPreset<F>[];
   /**
    * Additive (MA50): a server capability the row needs; the Tools tab hides the row when the
-   * capability is off (`useToolAvailability`). `photo` = `GET /photo/capabilities` enabled + render.
+   * capability is off (`useToolAvailability`). `photo` = `GET /photo/capabilities` enabled + render;
+   * `photoHeal` (MA52, the Remove blemishes row) = `photo` and `heal`.
    */
-  capability?: 'photo';
+  capability?: 'photo' | 'photoHeal';
 }
 
 /** Erased form type for heterogeneous registries. */

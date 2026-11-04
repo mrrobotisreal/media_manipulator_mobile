@@ -521,6 +521,72 @@
       "auto": "Rileva automaticamente",
       "other": "Altra lingua",
       "otherHint": "Codice di due o tre lettere, es. \"pl\""
+    },
+    "aperture": {
+      "brighten": {
+        "title": "Schiarisci immagine",
+        "description": "Schiarisci una foto scura con esposizione, luminosità e ombre in Aperture."
+      },
+      "contrast": {
+        "title": "Regola contrasto",
+        "description": "Dai più carattere a una foto piatta, o ammorbidisci una troppo dura, in Aperture."
+      },
+      "exposure": {
+        "title": "Correggi esposizione",
+        "description": "Correggi una foto troppo chiara o troppo scura con esposizione e istogramma."
+      },
+      "hue": {
+        "title": "Regola la tonalità",
+        "description": "Sposta tutti i colori, o un solo intervallo, nel pannello Colore di Aperture."
+      },
+      "color-pop": {
+        "title": "Colore selettivo",
+        "description": "Mantieni un colore e rendi grigio il resto. Si apre con il look Colore selettivo: rosso."
+      },
+      "black-white": {
+        "title": "Foto in bianco e nero",
+        "description": "Converti una foto in bianco e nero. Si apre con il look Pellicola in bianco e nero."
+      },
+      "curves": {
+        "title": "Curve",
+        "description": "Modella i toni di una foto sulla curva RGB o sulle curve dei canali."
+      },
+      "levels": {
+        "title": "Livelli",
+        "description": "Imposta i punti del nero, del bianco e dei mezzitoni sull'istogramma."
+      },
+      "white-balance": {
+        "title": "Bilanciamento del bianco",
+        "description": "Elimina una dominante gialla, blu o verde con temperatura e tinta."
+      },
+      "straighten": {
+        "title": "Raddrizza una foto",
+        "description": "Raddrizza un orizzonte storto con l'angolo o tracciando una linea lungo di esso."
+      },
+      "perspective": {
+        "title": "Correggi la prospettiva",
+        "description": "Trascina gli angoli per raddrizzare le linee convergenti di edifici e documenti."
+      },
+      "blemishes": {
+        "title": "Rimuovi le imperfezioni",
+        "description": "Passa un dito su macchie e imperfezioni, poi premi Ritocca una volta."
+      },
+      "select-color": {
+        "title": "Seleziona per colore",
+        "description": "Scegli un colore nella foto e regola solo quella parte con una maschera Intervallo di colore."
+      },
+      "sharpen": {
+        "title": "Aumenta la nitidezza di una foto",
+        "description": "Recupera dettagli nitidi con quantità, raggio e soglia."
+      },
+      "noise": {
+        "title": "Riduci il rumore dell\\'immagine",
+        "description": "Attenua il rumore di colore e di luminanza nelle foto scattate con poca luce."
+      },
+      "vignette": {
+        "title": "Aggiungi una vignettatura",
+        "description": "Scurisci o schiarisci i bordi di una foto per incorniciare il soggetto."
+      }
     }
   },
   "tool": {
@@ -773,7 +839,8 @@
       "tooLarge": "Questo file di sottotitoli è troppo grande per essere mostrato. Salvalo per aprirlo altrove.",
       "safety": "Sicurezza",
       "sentiment": "Sentimento"
-    }
+    },
+    "editAgain": "Modifica di nuovo"
   },
   "actions": {
     "save": "Salva",
@@ -862,7 +929,26 @@
       "studio_export": "Esportazione Studio",
       "video_summary": "Riepilogo video",
       "vector_vectorize": "Vettorializza",
-      "studio_reverse_proxy": "Proxy anteprima Studio"
+      "studio_reverse_proxy": "Proxy anteprima Studio",
+      "photo_export": "Esportazione Aperture"
+    },
+    "segments": {
+      "jobs": "Lavori",
+      "projects": "Progetti"
+    },
+    "projects": {
+      "updated": "Modificato il {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "Ancora in elaborazione",
+      "loadFailed": "Impossibile caricare i tuoi progetti Aperture.",
+      "empty": {
+        "title": "Ancora nessun progetto Aperture",
+        "body": "Modifica una foto in Aperture e il progetto apparirà qui, pronto per essere riaperto."
+      },
+      "deleteTitle": "Eliminare questo progetto?",
+      "deleteBody": "La foto e le sue modifiche vengono rimosse dal tuo account. Le esportazioni già salvate restano. Non si può annullare.",
+      "deleted": "Progetto eliminato",
+      "deleteFailed": "Impossibile eliminare questo progetto. Riprova."
     }
   },
   "quota": {

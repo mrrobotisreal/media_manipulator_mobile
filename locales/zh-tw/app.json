@@ -511,6 +511,72 @@
       "auto": "自動偵測",
       "other": "其他語言",
       "otherHint": "兩位或三位字母代碼，例如「pl」"
+    },
+    "aperture": {
+      "brighten": {
+        "title": "提亮圖片",
+        "description": "在 Aperture 中以曝光度、亮度和陰影提亮偏暗的照片。"
+      },
+      "contrast": {
+        "title": "調整對比",
+        "description": "在 Aperture 中讓平淡的照片更有張力，或柔化過硬的照片。"
+      },
+      "exposure": {
+        "title": "修正曝光",
+        "description": "以曝光度和直方圖校正過亮或過暗的照片。"
+      },
+      "hue": {
+        "title": "調整圖片色相",
+        "description": "在 Aperture 的顏色面板中偏移所有色彩或單一顏色範圍。"
+      },
+      "color-pop": {
+        "title": "色彩強調",
+        "description": "保留一種顏色，其餘轉為灰色。開啟時已套用「色彩強調：紅色」風格。"
+      },
+      "black-white": {
+        "title": "黑白照片",
+        "description": "將照片轉為黑白。開啟時已套用「黑白底片」風格。"
+      },
+      "curves": {
+        "title": "曲線",
+        "description": "在 RGB 曲線或各色版曲線上調整照片的色調。"
+      },
+      "levels": {
+        "title": "色階",
+        "description": "對照直方圖設定黑點、白點和中間調。"
+      },
+      "white-balance": {
+        "title": "白平衡",
+        "description": "以色溫和色調去除偏黃、偏藍或偏綠的色偏。"
+      },
+      "straighten": {
+        "title": "拉直照片",
+        "description": "輸入角度或沿著地平線畫線，拉直傾斜的地平線。"
+      },
+      "perspective": {
+        "title": "修正透視",
+        "description": "拖曳角點，拉直建築物和文件上的匯聚線條。"
+      },
+      "blemishes": {
+        "title": "移除瑕疵",
+        "description": "塗抹斑點和瑕疵，然後按一次「修復」。"
+      },
+      "select-color": {
+        "title": "依顏色選取",
+        "description": "在照片上選取顏色，以顏色範圍遮色片只調整該部分。"
+      },
+      "sharpen": {
+        "title": "銳利化照片",
+        "description": "透過強度、半徑和臨界值找回清晰的細節。"
+      },
+      "noise": {
+        "title": "降低圖片雜訊",
+        "description": "平滑低光照片中的色彩雜訊和明亮度雜訊。"
+      },
+      "vignette": {
+        "title": "加入暈影",
+        "description": "壓暗或提亮照片邊緣，襯托主體。"
+      }
     }
   },
   "tool": {
@@ -761,7 +827,8 @@
       "tooLarge": "此字幕檔太大，無法顯示。請儲存後在其他應用程式中開啟。",
       "safety": "安全性",
       "sentiment": "情緒"
-    }
+    },
+    "editAgain": "再次編輯"
   },
   "actions": {
     "save": "儲存",
@@ -850,7 +917,26 @@
       "studio_export": "Studio 匯出",
       "video_summary": "影片摘要",
       "vector_vectorize": "向量化",
-      "studio_reverse_proxy": "Studio 預覽代理"
+      "studio_reverse_proxy": "Studio 預覽代理",
+      "photo_export": "Aperture 匯出"
+    },
+    "segments": {
+      "jobs": "工作",
+      "projects": "專案"
+    },
+    "projects": {
+      "updated": "編輯於 {{date}}",
+      "dimensions": "{{width}} × {{height}} px",
+      "notReady": "仍在處理中",
+      "loadFailed": "無法載入你的 Aperture 專案。",
+      "empty": {
+        "title": "還沒有 Aperture 專案",
+        "body": "在 Aperture 中編輯照片後，專案會顯示在這裡，隨時可以再次開啟。"
+      },
+      "deleteTitle": "刪除此專案？",
+      "deleteBody": "照片及其編輯內容將從你的帳號中移除。已儲存的匯出檔案會保留。此操作無法復原。",
+      "deleted": "專案已刪除",
+      "deleteFailed": "無法刪除此專案。請再試一次。"
     }
   },
   "quota": {

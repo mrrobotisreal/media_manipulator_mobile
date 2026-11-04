@@ -82,8 +82,16 @@ export function createSession(deps: SessionDeps) {
     emit();
   };
 
-  /** Starts editing a picked file now; uploads it in the background. Resolves when the upload ends. */
-  async function openFile(file: LocalFile): Promise<UploadStatus> {
+  /**
+   * Starts editing a picked file now; uploads it in the background. Resolves when the upload ends.
+   * `onLoaded` (MA52 entry rows) runs once the doc is in the store and before the upload reads it,
+   * so an entry look applied there is undoable and reaches the server with the create; `fresh` is
+   * false when a local draft was restored instead (the look is then already in it).
+   */
+  async function openFile(
+    file: LocalFile,
+    opts: { onLoaded?: (info: { fresh: boolean }) => void } = {},
+  ): Promise<UploadStatus> {
     const draft = await readDraft(deps.drafts, localDraftKey(file.intakeId));
     store.dispatch(
       photoActions.loaded({
@@ -92,6 +100,7 @@ export function createSession(deps: SessionDeps) {
         name: file.name ?? '',
       }),
     );
+    opts.onLoaded?.({ fresh: !draft });
     return uploadFile(file);
   }
 
