@@ -4,7 +4,7 @@ import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { AppState, Platform } from 'react-native';
 import { accountApi } from '@/api/endpoints/account';
 import { mmApi } from '@/api/mmApi';
-import { keepOriginal as keepOriginalCopy, releaseIntakeFile } from '@/files/intake';
+import { copyOriginal, keepOriginal as keepOriginalCopy, releaseIntakeFile } from '@/files/intake';
 import { mmkvStorage } from '@/state/persist';
 import { jobUpserted } from '@/state/slices/jobs';
 import { store } from '@/state/store';
@@ -101,6 +101,10 @@ export function getJobEngine(): JobEngine {
       release: releaseIntakeFile,
       keepOriginal: (r) => {
         if (!r.jobId) return;
+        if (r.transport === 'starter') {
+          if (r.fileUri) copyOriginal({ uri: r.fileUri, name: r.fileName }, r.jobId);
+          return;
+        }
         keepOriginalCopy(
           {
             id: r.intakeFileId,

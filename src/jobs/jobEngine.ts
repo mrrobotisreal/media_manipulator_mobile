@@ -102,6 +102,14 @@ export function createJobEngine(deps: JobEngineDeps) {
 
   const foreground = () => deps.appState.current() === 'active';
 
+  /**
+   * A starter job (MA50) never owns its source file: the Aperture editor keeps using it (retry
+   * upload, the next export), so the engine must not delete it.
+   */
+  function releaseCopy(rec: JobRecord): void {
+    if (rec.transport !== 'starter') deps.files.release(rec.intakeFileId);
+  }
+
   function apply(localId: string, event: JobEvent): JobRecord | undefined {
     const rec = store.get(localId);
     if (!rec) return undefined;
@@ -223,7 +231,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     events.trackUploadFailed(rec, outcome.reason, elapsed(), outcome.status);
     if (outcome.kind === 'rejected') {
       apply(localId, { type: 'rejected', error: outcome.error });
-      deps.files.release(rec.intakeFileId);
+      releaseCopy(rec);
     } else {
       apply(localId, { type: 'upload_failed', error: outcome.error });
     }
@@ -294,7 +302,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec) return;
     events.trackUploadFailed(rec, error.code, durationMs);
     apply(localId, { type: 'rejected', error });
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   function accepted(localId: string, jobId: string): void {
@@ -302,7 +310,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec) return;
     events.trackJobStarted(rec);
     // The retry copy is no longer needed; image originals wait for completion (MA13 compare).
-    if (rec.mediaKind !== 'image') deps.files.release(rec.intakeFileId);
+    if (rec.mediaKind !== 'image') releaseCopy(rec);
     ensureTracking(localId);
   }
 
@@ -317,7 +325,7 @@ export function createJobEngine(deps: JobEngineDeps) {
       events.trackUploadFailed(rec, 'cancelled', deps.now() - (rec.uploadStartedAt ?? deps.now()));
       if (current?.localId === localId) current.abort.abort();
     }
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   /** Re-enqueue an `upload_failed` job from its cached copy. Returns false when the copy is gone. */
@@ -441,7 +449,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec || !isServerActive(rec.state)) return;
     teardown(localId);
     apply(localId, { type: 'lost', reason: lostReasonFor(rec, deps.now()) });
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   function applySnapshot(localId: string, job: ConversionJob): void {
@@ -470,7 +478,7 @@ export function createJobEngine(deps: JobEngineDeps) {
       // The server's error text can echo file names, so it never goes to analytics; dev logs only.
       if (__DEV__) console.warn('[job] failed', job.id, job.currentStage ?? '', job.error ?? '');
       events.trackJobFailed(rec, job, duration);
-      deps.files.release(rec.intakeFileId);
+      releaseCopy(rec);
     }
     if (rec.transport === 'starter') starterSettled(rec);
     deps.onSettled(rec);
@@ -511,7 +519,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec || !isServerActive(rec.state)) return;
     teardown(localId);
     apply(localId, { type: 'stop' });
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   // ---------------------------------------------------------------- lifecycle

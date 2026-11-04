@@ -310,10 +310,21 @@ export function PhotoEditorScreen({ projectId, request: injected }: PhotoEditorS
           optionsHash: exportOptionsHash(s.doc, choice.format, mp),
         },
       ]);
-      // The export saves the doc first (one round trip): the next PUT must use the new revision.
+      // The export saves the doc first (revision + 1): once the server accepted it, re-read the
+      // revision so the next Save does not 409.
+      const exported = s.doc;
+      const localId = ids[0];
+      if (localId) {
+        const unsub = appStore.subscribe(() => {
+          const rec = appStore.getState().jobs.byLocalId[localId];
+          if (!rec || rec.state === 'queued' || rec.state === 'uploading') return;
+          unsub();
+          if (rec.jobId) void session.afterExport(exported);
+        });
+      }
       appStore.dispatch(mmApi.util.invalidateTags(['History']));
       setExportOpen(false);
-      if (ids[0]) router.push(`/(app)/job/${ids[0]}`);
+      if (localId) router.push(`/(app)/job/${localId}`);
     },
     [store, session, request, caps.data, slug],
   );

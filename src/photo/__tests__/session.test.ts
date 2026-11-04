@@ -187,6 +187,27 @@ describe('editor session', () => {
     expect((await readDraft(drafts, draftKey('p1')))!.baseRevision).toBe(1);
   });
 
+  it('after an export (which saves the doc server-side) the next Save uses the new revision', async () => {
+    const saves: number[] = [];
+    const { store, session } = setup({
+      getProject: async () => ({
+        ok: true,
+        response: response(newPhotoDoc(4032, 3024), { revision: 2 }),
+      }),
+      saveProject: async (i) => {
+        saves.push(i.revision);
+        return { ok: true, response: response(i.doc, { revision: i.revision + 1 }) };
+      },
+    });
+    await session.openFile(file);
+    mutate(store, 'exposure', setEv(1));
+    await session.afterExport(store.getState().doc!);
+    expect(store.getState()).toMatchObject({ serverRevision: 2, dirty: false });
+    mutate(store, 'exposure', setEv(2));
+    await session.save();
+    expect(saves).toEqual([2]);
+  });
+
   it('a refused upload reports the error (MA16 sheet) and the edits stay', async () => {
     const err: MmError = {
       status: 403,

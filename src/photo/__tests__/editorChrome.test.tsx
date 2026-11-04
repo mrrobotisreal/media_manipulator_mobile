@@ -21,11 +21,20 @@ afterEach(async () => {
 
 async function chrome() {
   const store = makePhotoStore();
-  store.dispatch(photoActions.loaded({ projectId: 'p1', doc: newPhotoDoc(400, 300), name: 'IMG_1' }));
+  store.dispatch(
+    photoActions.loaded({ projectId: 'p1', doc: newPhotoDoc(400, 300), name: 'IMG_1' }),
+  );
   return render(
     <I18nextProvider i18n={i18n}>
       <EditorProvider value={{ store, haptics: false }}>
-        <TopBar name="IMG_1" upload={{ kind: 'uploading', fraction: 0.42 }} onBack={() => undefined} onSave={() => undefined} onExport={() => undefined} saving={false} />
+        <TopBar
+          name="IMG_1"
+          upload={{ kind: 'uploading', fraction: 0.42 }}
+          onBack={() => undefined}
+          onSave={() => undefined}
+          onExport={() => undefined}
+          saving={false}
+        />
         <ToolStrip active="color" onPick={() => undefined} />
         <CurvesSheet />
       </EditorProvider>

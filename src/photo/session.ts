@@ -198,6 +198,24 @@ export function createSession(deps: SessionDeps) {
     return { kind: 'failed', error: res.error };
   }
 
+  /**
+   * After an export: the export saved the doc on the server first (revision + 1), so re-read the
+   * revision; the doc is marked saved when it is still the one that was exported.
+   */
+  async function afterExport(exportedDoc: PhotoDoc): Promise<void> {
+    const id = store.getState().projectId;
+    if (!id) return;
+    const res = await api.getProject(id);
+    if (!res.ok) return;
+    const s = store.getState();
+    store.dispatch(
+      photoActions.saved({
+        serverRevision: res.response.project.revision,
+        atRevision: s.doc === exportedDoc ? s.revision : -1,
+      }),
+    );
+  }
+
   /** Conflict sheet, "Keep mine": overwrite on top of the server's revision. */
   const keepMine = (serverRevision: number) => save({ overrideRevision: serverRevision });
 
@@ -224,6 +242,7 @@ export function createSession(deps: SessionDeps) {
     save,
     keepMine,
     loadTheirs,
+    afterExport,
     project: () => created,
     upload: () => upload,
     subscribe(l: () => void) {

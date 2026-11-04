@@ -136,6 +136,7 @@ describe('photoExport starter on the job engine', () => {
       optionsHash: '1l-0m-jpg-<=16',
     });
     expect(files.exists).not.toHaveBeenCalled(); // no cached-copy check for a starter
+    expect(files.release).not.toHaveBeenCalled(); // the editor still owns its source file
 
     engine.watch(id);
     const done: ConversionJob = snapshot({
@@ -147,6 +148,8 @@ describe('photoExport starter on the job engine', () => {
     streams[0]!.h.onSnapshot(done);
     await flush();
     expect(records.get(id)!.state).toBe('completed');
+    expect(files.release).not.toHaveBeenCalled();
+    expect(files.keepOriginal).toHaveBeenCalledTimes(1); // runtime copies (not moves) for starters
     const order = tracked().filter((n) => n !== 'activation_first_job_completed');
     expect(order).toEqual([
       'photo_export_started',
@@ -169,11 +172,12 @@ describe('photoExport starter on the job engine', () => {
 
   it('a refused export (402/403/429) is rejected with the API error and reports photo_export_failed', async () => {
     const err: MmError = { status: 429, code: 'quota_exceeded', details: { metric: 'ops' } };
-    const { engine, records } = setup(async () => ({ ok: false, error: err }));
+    const { engine, records, files } = setup(async () => ({ ok: false, error: err }));
     await engine.start();
     const id = start(engine);
     await flush();
     expect(records.get(id)).toMatchObject({ state: 'rejected', error: err });
+    expect(files.release).not.toHaveBeenCalled();
     expect(tracked()).toEqual(['photo_export_started', 'photo_export_failed']);
     expect((track as jest.Mock).mock.calls[1][1]).toMatchObject({ reason: 'quota' });
   });
