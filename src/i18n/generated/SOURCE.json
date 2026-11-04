@@ -1,7 +1,7 @@
 {
   "webRepo": "media-manipulator-ui",
-  "webCommit": "058ddd32d5510af2a8f885e2a8cc18bbef8f98cc",
-  "syncedAt": "2026-11-04T12:22:26.959Z",
+  "webCommit": "a87fd7945b5c56df0d260b68eba9f85c445f891a",
+  "syncedAt": "2026-11-04T14:13:50.337Z",
   "files": {
     "en-us/interface/_core.json": "efc7b82a7bae67f78cf2cb91ff3b27744063080d9efe9fa20e96f7ec96439ae5",
     "en-us/interface/components.json": "d82f63ba57d41a550a3661f5c45d159b35c37157d468dfd112829acbfee60547",
@@ -126,7 +126,7 @@
     "pt-pt/interface/_core.json": "fafecb4f580eca7a5b1a117a25d47a21563db44563c23baa4073a2d94f7714a7",
     "pt-pt/interface/components.json": "5ebf3eadf0b9307b687c84cf39eb8f4f648e624774fb1c14d03a66ccc0c18714",
     "pt-pt/interface/forms.json": "32d86f54ab09ac8e7153fca40649bb0d1a9986f4c5edf2c54770fef7a948f65e",
-    "pt-pt/interface/panels.json": "d91c60f52ad2df48e33d5e3b7d60889d4bd0dcd028ba920d2a6a425f18ebe988",
+    "pt-pt/interface/panels.json": "ac0a96feda7d9afb3556d2b7b3fbbdcf40d3ee9f245371cfc6e1eddc1a4d426c",
     "pt-pt/interface/tools.json": "41e45002469cd8a5ef2f03ed61d3d819cb19c25ad017816af033385311844104",
     "pt-pt/error/_core.json": "72214d9e6712ae174cfe0f370d5f8b91c53a3cb547a76dfb7798a3156233a3a9",
     "pt-pt/accessibility/_core.json": "fcead2b37111c4c3c3a3fa600159f7f5420352b85565c7fe6e35b021631e4cdf",
