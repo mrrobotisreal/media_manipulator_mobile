@@ -1664,7 +1664,7 @@
       "title": "Effekte",
       "invert": "Umkehren",
       "posterize": "Tonwerttrennung",
-      "levels": "Tonwertkorrektur",
+      "levels": "Stufen",
       "threshold": "Schwellenwert",
       "level": "Stufe",
       "gamma": "Gamma",
