@@ -1,0 +1,45 @@
+{
+ "id": "color-pop-cyan",
+ "nameKey": "photo.presets.name.color-pop-cyan",
+ "category": "color",
+ "layers": [
+  {
+   "id": "preset-color-pop-cyan-1",
+   "type": "hsl",
+   "params": {
+    "ranges": [
+     {
+      "id": "reds",
+      "center": 0,
+      "saturation": -100
+     },
+     {
+      "id": "yellows",
+      "center": 60,
+      "saturation": -100
+     },
+     {
+      "id": "greens",
+      "center": 120,
+      "saturation": -100
+     },
+     {
+      "id": "cyans",
+      "center": 180,
+      "saturation": 10
+     },
+     {
+      "id": "blues",
+      "center": 240,
+      "saturation": -100
+     },
+     {
+      "id": "magentas",
+      "center": 300,
+      "saturation": -100
+     }
+    ]
+   }
+  }
+ ]
+}

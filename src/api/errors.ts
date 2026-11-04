@@ -21,7 +21,7 @@ export const CLIENT_ERROR_CODES = [
   'unknown',
 ] as const;
 
-/** snake_case `error` codes present in media_manipulator_api internal/ + cmd/ on 2026-11-01 (MA08 main f4d1d80). */
+/** snake_case `error` codes present in media_manipulator_api internal/ + cmd/ on 2026-11-01 (MA08 main f4d1d80); `photo_*` added by MA50 (API main 2f341a2, handlers/photo*.go). */
 export const API_ERROR_CODES = [
   'account_not_synced',
   'already_on_plan',
@@ -65,6 +65,17 @@ export const API_ERROR_CODES = [
   'offer_not_available',
   'operator_account',
   'output_height_limited',
+  'photo_disabled',
+  'photo_doc_invalid',
+  'photo_doc_too_large',
+  'photo_export_invalid',
+  'photo_file_too_large',
+  'photo_ingest_failed',
+  'photo_not_ready',
+  'photo_projects_limit',
+  'photo_render_unavailable',
+  'photo_too_many_pixels',
+  'photo_unsupported_source',
   'processing_failed',
   'project_limit_reached',
   'quota_exceeded',

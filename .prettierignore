@@ -1,1 +1,13 @@
 src/i18n/generated
+src/photo/fixtures
+src/photo/presets/builtin
+src/photo/SOURCE.json
+src/photo/photoTypes.ts
+src/photo/colorMath.ts
+src/photo/studioColorMath.ts
+src/photo/studioLutParser.ts
+src/photo/webUniforms.ts
+src/photo/curveEdit.ts
+src/photo/levelsEdit.ts
+src/photo/layerOps.ts
+src/photo/goldens.ts

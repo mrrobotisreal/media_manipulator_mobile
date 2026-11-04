@@ -1,0 +1,21 @@
+{
+ "id": "vivid",
+ "nameKey": "photo.presets.name.vivid",
+ "category": "color",
+ "layers": [
+  {
+   "id": "preset-vivid-1",
+   "type": "vibranceSaturation",
+   "params": {
+    "vibrance": 30
+   }
+  },
+  {
+   "id": "preset-vivid-2",
+   "type": "clarity",
+   "params": {
+    "amount": 15
+   }
+  }
+ ]
+}

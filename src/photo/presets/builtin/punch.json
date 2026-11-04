@@ -1,0 +1,30 @@
+{
+ "id": "punch",
+ "nameKey": "photo.presets.name.punch",
+ "category": "color",
+ "layers": [
+  {
+   "id": "preset-punch-1",
+   "type": "brightnessContrast",
+   "params": {
+    "contrast": 15
+   }
+  },
+  {
+   "id": "preset-punch-2",
+   "type": "vibranceSaturation",
+   "params": {
+    "vibrance": 20
+   }
+  },
+  {
+   "id": "preset-punch-3",
+   "type": "sharpen",
+   "params": {
+    "amount": 60,
+    "radius": 1,
+    "threshold": 0
+   }
+  }
+ ]
+}

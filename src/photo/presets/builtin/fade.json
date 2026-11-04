@@ -1,0 +1,39 @@
+{
+ "id": "fade",
+ "nameKey": "photo.presets.name.fade",
+ "category": "film",
+ "layers": [
+  {
+   "id": "preset-fade-1",
+   "type": "curves",
+   "params": {
+    "master": {
+     "points": [
+      {
+       "x": 0,
+       "y": 0.12
+      },
+      {
+       "x": 1,
+       "y": 0.92
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "preset-fade-2",
+   "type": "tone",
+   "params": {
+    "highlights": -20
+   }
+  },
+  {
+   "id": "preset-fade-3",
+   "type": "vibranceSaturation",
+   "params": {
+    "saturation": -20
+   }
+  }
+ ]
+}

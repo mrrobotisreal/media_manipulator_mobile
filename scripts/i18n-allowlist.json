@@ -29,7 +29,9 @@
     "180°",
     "{{width}} × {{height}} px",
     "{{speed}}×",
-    "Gamma"
+    "Gamma",
+    "Aperture",
+    "{{brand}}"
   ],
   "keys": [
     "it-IT:tabs.account",

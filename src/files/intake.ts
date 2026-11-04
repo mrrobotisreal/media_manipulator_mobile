@@ -75,6 +75,19 @@ export function keepOriginal(file: IntakeFile, jobId: string): string | null {
   }
 }
 
+/** Like `keepOriginal` but COPIES (MA50: the Aperture editor still owns the source file). */
+export function copyOriginal(file: Pick<IntakeFile, 'uri' | 'name'>, jobId: string): string | null {
+  try {
+    const dest = new Directory(root(ORIGINALS_DIR), jobId);
+    dest.create({ intermediates: true, idempotent: true });
+    const target = new File(dest, sanitizeName(file.name));
+    if (!target.exists) new File(file.uri).copy(target);
+    return target.uri;
+  } catch {
+    return null;
+  }
+}
+
 export interface CleanupOptions {
   now?: number;
   /** Intake ids referenced by a non-terminal job; these survive regardless of age. */

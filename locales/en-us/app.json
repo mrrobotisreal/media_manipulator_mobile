@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Edit metadata",
         "description": "Change the details stored in a picture."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Edit a photo with live adjustments: light, colour, curves, levels and more."
       }
     },
     "metadata": {
@@ -1114,6 +1118,77 @@
     "toast": {
       "open": "Open",
       "fallback": "Your job has finished"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Uploading… {{percent}} %",
+    "uploadFailed": "The photo did not upload. Your edits are kept on this phone.",
+    "uploadRetry": "Try the upload again",
+    "previewReduced": "Preview from a reduced copy. Exports use the original.",
+    "waitingForPreview": "Preparing the preview…",
+    "decodeFailed": "This photo could not be opened.",
+    "unsaved": "Discard unsaved changes?",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "saved": "Saved",
+    "saveFailed": "The project was not saved. Try again.",
+    "conflict": {
+      "title": "This project changed elsewhere",
+      "body": "A newer version was saved from another device. Choose which one to keep.",
+      "keepMine": "Keep mine",
+      "loadTheirs": "Load theirs"
+    },
+    "strip": {
+      "basic": "Basic",
+      "color": "Colour",
+      "curves": "Curves",
+      "levels": "Levels",
+      "bw": "B&W",
+      "more": "More",
+      "layers": "Layers"
+    },
+    "greyExcept": "Grey except this",
+    "before": "Before",
+    "draftRecovered": "Recovered unsaved changes",
+    "draftPrompt": {
+      "title": "Restore unsaved edits?",
+      "body": "Edits that were not saved were found on this phone.",
+      "restore": "Restore",
+      "discard": "Discard"
+    },
+    "unavailable": "{{brand}} isn't available right now.",
+    "open": {
+      "lead": "Pick a photo to edit with live adjustments. Edits are saved to your account as a project.",
+      "choose": "Choose a photo"
+    },
+    "export": {
+      "title": "Export",
+      "mpCap": "Exports up to {{mp}} MP on your plan",
+      "estimate": "About {{size}}",
+      "unavailable": "Export is being set up. Try again later.",
+      "start": "Export",
+      "uploadFirst": "Export is available once the photo has uploaded."
+    },
+    "curves": {
+      "refused": "A point cannot pass its neighbour.",
+      "add": "Add point",
+      "hint": "Drag a point. Tap the curve to add one."
+    },
+    "more": {
+      "lutPick": "Choose a .cube file",
+      "lutTooBig": "This LUT is larger than 1 MB.",
+      "lutInvalid": "This .cube file could not be read.",
+      "effects": "Effects"
+    },
+    "layers": {
+      "reorder": "Hold and drag to reorder"
+    },
+    "reset": "Double-tap a slider to reset it",
+    "refused": {
+      "projects": "Your plan keeps up to {{limit}} Aperture projects. Delete one on the web to start another.",
+      "pixels": "This photo is larger than {{mp}} MP, the largest Aperture opens.",
+      "unsupported": "Aperture cannot open this file type."
     }
   }
 }

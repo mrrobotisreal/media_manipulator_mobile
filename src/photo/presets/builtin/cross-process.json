@@ -1,0 +1,75 @@
+{
+ "id": "cross-process",
+ "nameKey": "photo.presets.name.cross-process",
+ "category": "film",
+ "layers": [
+  {
+   "id": "preset-cross-process-1",
+   "type": "splitTone",
+   "params": {
+    "shadows": {
+     "hue": 190,
+     "saturation": 35
+    },
+    "highlights": {
+     "hue": 55,
+     "saturation": 35
+    }
+   }
+  },
+  {
+   "id": "preset-cross-process-2",
+   "type": "curves",
+   "params": {
+    "r": {
+     "points": [
+      {
+       "x": 0,
+       "y": 0
+      },
+      {
+       "x": 0.5,
+       "y": 0.58
+      },
+      {
+       "x": 1,
+       "y": 1
+      }
+     ]
+    },
+    "g": {
+     "points": [
+      {
+       "x": 0,
+       "y": 0
+      },
+      {
+       "x": 0.5,
+       "y": 0.52
+      },
+      {
+       "x": 1,
+       "y": 1
+      }
+     ]
+    },
+    "b": {
+     "points": [
+      {
+       "x": 0,
+       "y": 0.1
+      },
+      {
+       "x": 0.5,
+       "y": 0.45
+      },
+      {
+       "x": 1,
+       "y": 0.9
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

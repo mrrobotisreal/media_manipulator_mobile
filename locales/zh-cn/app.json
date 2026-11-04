@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "编辑元数据",
         "description": "更改图片中存储的信息。"
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "通过实时调整编辑照片：光线、颜色、曲线、色阶等。"
       }
     },
     "metadata": {
@@ -1107,6 +1111,77 @@
     "toast": {
       "open": "打开",
       "fallback": "你的任务已完成"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "正在上传… {{percent}}%",
+    "uploadFailed": "照片未能上传。你的编辑已保留在此手机上。",
+    "uploadRetry": "重新上传",
+    "previewReduced": "预览来自缩小的副本。导出时使用原图。",
+    "waitingForPreview": "正在准备预览…",
+    "decodeFailed": "无法打开此照片。",
+    "unsaved": "放弃未保存的更改？",
+    "discard": "放弃",
+    "keepEditing": "继续编辑",
+    "saved": "已保存",
+    "saveFailed": "项目未保存。请重试。",
+    "conflict": {
+      "title": "此项目已在别处更改",
+      "body": "另一台设备保存了较新的版本。请选择保留哪一个。",
+      "keepMine": "保留我的",
+      "loadTheirs": "加载较新的"
+    },
+    "strip": {
+      "basic": "基本",
+      "color": "颜色",
+      "curves": "曲线",
+      "levels": "色阶",
+      "bw": "黑白",
+      "more": "更多",
+      "layers": "图层"
+    },
+    "greyExcept": "除此之外变灰",
+    "before": "原图",
+    "draftRecovered": "已恢复未保存的更改",
+    "draftPrompt": {
+      "title": "恢复未保存的编辑？",
+      "body": "在此手机上发现了未保存的编辑。",
+      "restore": "恢复",
+      "discard": "放弃"
+    },
+    "unavailable": "{{brand}} 暂时不可用。",
+    "open": {
+      "lead": "选择一张照片，通过实时调整进行编辑。编辑会作为项目保存到你的账户。",
+      "choose": "选择照片"
+    },
+    "export": {
+      "title": "导出",
+      "mpCap": "你的套餐最高可导出 {{mp}} 百万像素",
+      "estimate": "约 {{size}}",
+      "unavailable": "导出功能正在设置中。请稍后再试。",
+      "start": "导出",
+      "uploadFirst": "照片上传完成后即可导出。"
+    },
+    "curves": {
+      "refused": "控制点不能越过相邻的点。",
+      "add": "添加控制点",
+      "hint": "拖动控制点。轻点曲线可添加控制点。"
+    },
+    "more": {
+      "lutPick": "选择 .cube 文件",
+      "lutTooBig": "此 LUT 超过 1 MB。",
+      "lutInvalid": "无法读取此 .cube 文件。",
+      "effects": "效果"
+    },
+    "layers": {
+      "reorder": "按住并拖动以重新排序"
+    },
+    "reset": "双击滑块可将其重置",
+    "refused": {
+      "projects": "你的套餐最多可保留 {{limit}} 个 Aperture 项目。请在网页端删除一个后再新建。",
+      "pixels": "此照片超过 {{mp}} 百万像素，这是 Aperture 可打开的上限。",
+      "unsupported": "Aperture 无法打开此类型的文件。"
     }
   }
 }

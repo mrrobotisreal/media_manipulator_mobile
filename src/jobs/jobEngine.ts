@@ -7,7 +7,7 @@ import type { IntakeFile } from '@/files/types';
 import { optionsHash } from './optionsHash';
 import { lostReasonFor, restoreJobs } from './restore';
 import { isServerActive, isTerminal, transition, type JobEvent, type JobRecord } from './types';
-import type { JobTransport } from './transport';
+import type { Failure, JobTransport } from './transport';
 import { runUpload } from './upload';
 
 export const SSE_SILENCE_MS = 60_000;
@@ -51,6 +51,8 @@ export interface JobEngineDeps {
   /** MA16's quota pre-flight hook: a returned error rejects the job before any bytes move. */
   beforeUpload?: (record: JobRecord) => Promise<MmError | null>;
   newId(): string;
+  /** Starters by name (`StartInput.starter`); MA50 registers `photoExport`. */
+  starters?: Readonly<Record<string, JobStarter>>;
 }
 
 export interface StartInput {
@@ -58,6 +60,24 @@ export interface StartInput {
   file: IntakeFile;
   /** Already built (`tool.optionsBuilder(form)`). */
   options: ToolOptions;
+  /**
+   * MA50 starter seam (MA29 decision 5): the job is created by this registered starter's JSON
+   * request instead of a file upload; the rest (tracking, restore, result) is unchanged. `file`
+   * then describes the source the result compares against (it is never uploaded).
+   */
+  starter?: string;
+  /** Optional `options_hash` override (a starter's documented recipe); default FNV of `options`. */
+  optionsHash?: string;
+}
+
+/** A registered starter: sends the request that creates the server job. */
+export interface JobStarter {
+  start(record: JobRecord, signal: AbortSignal): Promise<{ ok: true; jobId: string } | Failure>;
+  /**
+   * Once per job, after the engine's own events, when it ends `completed` / `failed` (server) or
+   * `rejected` / `upload_failed` (the start request): the starter's feature events go here.
+   */
+  settled?(record: JobRecord): void;
 }
 
 type TrackerKind = 'sse' | 'poll2' | 'poll5';
@@ -82,6 +102,14 @@ export function createJobEngine(deps: JobEngineDeps) {
 
   const foreground = () => deps.appState.current() === 'active';
 
+  /**
+   * A starter job (MA50) never owns its source file: the Aperture editor keeps using it (retry
+   * upload, the next export), so the engine must not delete it.
+   */
+  function releaseCopy(rec: JobRecord): void {
+    if (rec.transport !== 'starter') deps.files.release(rec.intakeFileId);
+  }
+
   function apply(localId: string, event: JobEvent): JobRecord | undefined {
     const rec = store.get(localId);
     if (!rec) return undefined;
@@ -95,10 +123,13 @@ export function createJobEngine(deps: JobEngineDeps) {
   function startJobs(inputs: StartInput[]): string[] {
     const ids: string[] = [];
     const batchId = inputs.length > 1 ? `batch_${deps.newId()}` : undefined;
-    for (const { tool, file, options } of inputs) {
-      const t = resolveTransport(tool, file.mediaKind);
+    for (const { tool, file, options, starter, optionsHash: hash } of inputs) {
+      const t = starter ? 'starter' : resolveTransport(tool, file.mediaKind);
       if (t === 'metadataInspect')
         throw new Error('metadataInspect does not run through the job engine');
+      if (t === 'photoProject')
+        throw new Error('photoProject tools open the Aperture editor, not a job');
+      if (starter && !deps.starters?.[starter]) throw new Error(`unknown job starter ${starter}`);
       const localId = `local_${deps.newId()}`;
       store.put({
         localId,
@@ -106,7 +137,8 @@ export function createJobEngine(deps: JobEngineDeps) {
         toolId: tool.id,
         family: tool.family,
         analyticsSlug: tool.analyticsSlug,
-        transport: t === 'presign' ? 'presigned_put' : 'post',
+        transport: t === 'presign' ? 'presigned_put' : t === 'starter' ? 'starter' : 'post',
+        ...(starter ? { starter } : {}),
         intakeFileId: file.id,
         fileUri: file.uri,
         fileName: file.name,
@@ -115,7 +147,7 @@ export function createJobEngine(deps: JobEngineDeps) {
         sizeBytes: file.sizeBytes,
         mediaKind: file.mediaKind,
         options,
-        optionsHash: optionsHash(options),
+        optionsHash: hash ?? optionsHash(options),
         state: 'queued',
         uploadProgress: 0,
         progress: 0,
@@ -154,6 +186,7 @@ export function createJobEngine(deps: JobEngineDeps) {
   async function runOne(localId: string, abort: AbortController): Promise<void> {
     let rec = apply(localId, { type: 'upload_start', at: deps.now() });
     if (!rec) return;
+    if (rec.transport === 'starter') return runStarter(localId, rec, abort);
     events.trackUploadStarted(rec);
     const startedAt = rec.uploadStartedAt ?? deps.now();
     const elapsed = () => deps.now() - startedAt;
@@ -198,9 +231,69 @@ export function createJobEngine(deps: JobEngineDeps) {
     events.trackUploadFailed(rec, outcome.reason, elapsed(), outcome.status);
     if (outcome.kind === 'rejected') {
       apply(localId, { type: 'rejected', error: outcome.error });
-      deps.files.release(rec.intakeFileId);
+      releaseCopy(rec);
     } else {
       apply(localId, { type: 'upload_failed', error: outcome.error });
+    }
+  }
+
+  /**
+   * A starter job (MA50): one JSON request creates the server job. No bytes move, so no upload_*
+   * events; the starter's own feature events (e.g. photo_export_*) bracket it. The quota
+   * pre-flight still applies (an export costs one `ops`).
+   */
+  async function runStarter(
+    localId: string,
+    rec: JobRecord,
+    abort: AbortController,
+  ): Promise<void> {
+    const guard = await deps.beforeUpload?.(rec);
+    if (guard) {
+      const ended = apply(localId, { type: 'rejected', error: guard });
+      if (ended) starterSettled(ended);
+      return;
+    }
+    const starter = rec.starter ? deps.starters?.[rec.starter] : undefined;
+    if (!starter) {
+      apply(localId, {
+        type: 'rejected',
+        error: { status: 'FETCH_ERROR', code: 'unknown', details: { starter: rec.starter } },
+      });
+      return;
+    }
+    let outcome: Awaited<ReturnType<JobStarter['start']>>;
+    try {
+      outcome = await starter.start(rec, abort.signal);
+    } catch (e) {
+      outcome = {
+        ok: false,
+        kind: 'failed',
+        error: {
+          status: 'FETCH_ERROR',
+          code: 'unknown',
+          message: e instanceof Error ? e.message : undefined,
+          details: {},
+        },
+        reason: 'unknown',
+      };
+    }
+    const cur = store.get(localId);
+    if (!cur || cur.state === 'cancelled') return;
+    if (outcome.ok) return accepted(localId, outcome.jobId);
+    if (outcome.kind === 'cancelled') return;
+    const ended = apply(localId, {
+      type: outcome.kind === 'rejected' ? 'rejected' : 'upload_failed',
+      error: outcome.error,
+    });
+    if (ended) starterSettled(ended);
+  }
+
+  function starterSettled(rec: JobRecord): void {
+    const hook = rec.starter ? deps.starters?.[rec.starter]?.settled : undefined;
+    try {
+      hook?.(rec);
+    } catch {
+      // analytics never breaks the flow
     }
   }
 
@@ -209,7 +302,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec) return;
     events.trackUploadFailed(rec, error.code, durationMs);
     apply(localId, { type: 'rejected', error });
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   function accepted(localId: string, jobId: string): void {
@@ -217,7 +310,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec) return;
     events.trackJobStarted(rec);
     // The retry copy is no longer needed; image originals wait for completion (MA13 compare).
-    if (rec.mediaKind !== 'image') deps.files.release(rec.intakeFileId);
+    if (rec.mediaKind !== 'image') releaseCopy(rec);
     ensureTracking(localId);
   }
 
@@ -232,14 +325,14 @@ export function createJobEngine(deps: JobEngineDeps) {
       events.trackUploadFailed(rec, 'cancelled', deps.now() - (rec.uploadStartedAt ?? deps.now()));
       if (current?.localId === localId) current.abort.abort();
     }
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   /** Re-enqueue an `upload_failed` job from its cached copy. Returns false when the copy is gone. */
   function retry(localId: string): boolean {
     const rec = store.get(localId);
     if (!rec || rec.state !== 'upload_failed') return false;
-    if (!deps.files.exists(rec.fileUri)) {
+    if (rec.transport !== 'starter' && !deps.files.exists(rec.fileUri)) {
       store.put({
         ...rec,
         error: { status: 'FETCH_ERROR', code: 'file_gone', details: {} },
@@ -356,7 +449,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec || !isServerActive(rec.state)) return;
     teardown(localId);
     apply(localId, { type: 'lost', reason: lostReasonFor(rec, deps.now()) });
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   function applySnapshot(localId: string, job: ConversionJob): void {
@@ -385,8 +478,9 @@ export function createJobEngine(deps: JobEngineDeps) {
       // The server's error text can echo file names, so it never goes to analytics; dev logs only.
       if (__DEV__) console.warn('[job] failed', job.id, job.currentStage ?? '', job.error ?? '');
       events.trackJobFailed(rec, job, duration);
-      deps.files.release(rec.intakeFileId);
+      releaseCopy(rec);
     }
+    if (rec.transport === 'starter') starterSettled(rec);
     deps.onSettled(rec);
   }
 
@@ -425,7 +519,7 @@ export function createJobEngine(deps: JobEngineDeps) {
     if (!rec || !isServerActive(rec.state)) return;
     teardown(localId);
     apply(localId, { type: 'stop' });
-    deps.files.release(rec.intakeFileId);
+    releaseCopy(rec);
   }
 
   // ---------------------------------------------------------------- lifecycle

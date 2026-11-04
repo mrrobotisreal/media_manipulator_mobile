@@ -1,0 +1,40 @@
+{
+ "id": "portrait-soften",
+ "nameKey": "photo.presets.name.portrait-soften",
+ "category": "fix",
+ "layers": [
+  {
+   "id": "preset-portrait-soften-1",
+   "type": "clarity",
+   "params": {
+    "amount": -20
+   }
+  },
+  {
+   "id": "preset-portrait-soften-2",
+   "type": "texture",
+   "params": {
+    "amount": -15
+   }
+  },
+  {
+   "id": "preset-portrait-soften-3",
+   "type": "sharpen",
+   "params": {
+    "amount": 30,
+    "radius": 1,
+    "threshold": 0
+   },
+   "mask": {
+    "components": [
+     {
+      "kind": "luminosity",
+      "lo": 0.25,
+      "hi": 0.75,
+      "feather": 0.2
+     }
+    ]
+   }
+  }
+ ]
+}

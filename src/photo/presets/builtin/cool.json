@@ -1,0 +1,22 @@
+{
+ "id": "cool",
+ "nameKey": "photo.presets.name.cool",
+ "category": "color",
+ "layers": [
+  {
+   "id": "preset-cool-1",
+   "type": "whiteBalance",
+   "params": {
+    "temperature": -25,
+    "tint": -5
+   }
+  },
+  {
+   "id": "preset-cool-2",
+   "type": "vibranceSaturation",
+   "params": {
+    "vibrance": 10
+   }
+  }
+ ]
+}

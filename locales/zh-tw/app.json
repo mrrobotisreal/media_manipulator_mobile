@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "編輯中繼資料",
         "description": "更改圖片中儲存的資訊。"
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "透過即時調整編輯相片：光線、顏色、曲線、色階等。"
       }
     },
     "metadata": {
@@ -1107,6 +1111,77 @@
     "toast": {
       "open": "開啟",
       "fallback": "你的工作已完成"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "上傳中… {{percent}}%",
+    "uploadFailed": "相片未能上傳。你的編輯已保留在這支手機上。",
+    "uploadRetry": "重新上傳",
+    "previewReduced": "預覽來自縮小的副本。匯出時會使用原圖。",
+    "waitingForPreview": "正在準備預覽…",
+    "decodeFailed": "無法開啟這張相片。",
+    "unsaved": "要捨棄未儲存的變更嗎？",
+    "discard": "捨棄",
+    "keepEditing": "繼續編輯",
+    "saved": "已儲存",
+    "saveFailed": "專案未儲存。請再試一次。",
+    "conflict": {
+      "title": "這個專案已在其他地方變更",
+      "body": "另一部裝置儲存了較新的版本。請選擇要保留哪一個。",
+      "keepMine": "保留我的",
+      "loadTheirs": "載入較新的"
+    },
+    "strip": {
+      "basic": "基本",
+      "color": "顏色",
+      "curves": "曲線",
+      "levels": "色階",
+      "bw": "黑白",
+      "more": "更多",
+      "layers": "圖層"
+    },
+    "greyExcept": "除此之外轉灰",
+    "before": "原圖",
+    "draftRecovered": "已復原未儲存的變更",
+    "draftPrompt": {
+      "title": "要復原未儲存的編輯嗎？",
+      "body": "在這支手機上找到未儲存的編輯。",
+      "restore": "復原",
+      "discard": "捨棄"
+    },
+    "unavailable": "{{brand}} 目前無法使用。",
+    "open": {
+      "lead": "選擇一張相片，透過即時調整進行編輯。編輯內容會以專案形式儲存到你的帳號。",
+      "choose": "選擇相片"
+    },
+    "export": {
+      "title": "匯出",
+      "mpCap": "你的方案最高可匯出 {{mp}} 百萬畫素",
+      "estimate": "約 {{size}}",
+      "unavailable": "匯出功能正在設定中。請稍後再試。",
+      "start": "匯出",
+      "uploadFirst": "相片上傳完成後即可匯出。"
+    },
+    "curves": {
+      "refused": "控制點不能越過相鄰的點。",
+      "add": "新增控制點",
+      "hint": "拖曳控制點。點一下曲線即可新增。"
+    },
+    "more": {
+      "lutPick": "選擇 .cube 檔案",
+      "lutTooBig": "這個 LUT 超過 1 MB。",
+      "lutInvalid": "無法讀取這個 .cube 檔案。",
+      "effects": "效果"
+    },
+    "layers": {
+      "reorder": "按住並拖曳以重新排序"
+    },
+    "reset": "點兩下滑桿即可重設",
+    "refused": {
+      "projects": "你的方案最多可保留 {{limit}} 個 Aperture 專案。請在網頁端刪除一個後再新增。",
+      "pixels": "這張相片超過 {{mp}} 百萬畫素，這是 Aperture 可開啟的上限。",
+      "unsupported": "Aperture 無法開啟這種類型的檔案。"
     }
   }
 }

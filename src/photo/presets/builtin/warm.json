@@ -1,0 +1,22 @@
+{
+ "id": "warm",
+ "nameKey": "photo.presets.name.warm",
+ "category": "color",
+ "layers": [
+  {
+   "id": "preset-warm-1",
+   "type": "whiteBalance",
+   "params": {
+    "temperature": 25,
+    "tint": 5
+   }
+  },
+  {
+   "id": "preset-warm-2",
+   "type": "vibranceSaturation",
+   "params": {
+    "vibrance": 10
+   }
+  }
+ ]
+}

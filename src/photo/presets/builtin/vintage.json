@@ -1,0 +1,31 @@
+{
+ "id": "vintage",
+ "nameKey": "photo.presets.name.vintage",
+ "category": "film",
+ "layers": [
+  {
+   "id": "preset-vintage-1",
+   "type": "photoFilter",
+   "params": {
+    "density": 30
+   }
+  },
+  {
+   "id": "preset-vintage-2",
+   "type": "vignette",
+   "params": {
+    "amount": -25
+   }
+  },
+  {
+   "id": "preset-vintage-3",
+   "type": "grain",
+   "params": {
+    "amount": 15,
+    "size": 1,
+    "roughness": 50,
+    "seed": 7
+   }
+  }
+ ]
+}

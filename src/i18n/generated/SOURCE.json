@@ -1,7 +1,7 @@
 {
   "webRepo": "media-manipulator-ui",
-  "webCommit": "310d496e4032db62f0547338b238ab4994adc1e2",
-  "syncedAt": "2026-11-03T19:25:20.923Z",
+  "webCommit": "a87fd7945b5c56df0d260b68eba9f85c445f891a",
+  "syncedAt": "2026-11-04T14:13:50.337Z",
   "files": {
     "en-us/interface/_core.json": "efc7b82a7bae67f78cf2cb91ff3b27744063080d9efe9fa20e96f7ec96439ae5",
     "en-us/interface/components.json": "d82f63ba57d41a550a3661f5c45d159b35c37157d468dfd112829acbfee60547",
@@ -38,7 +38,7 @@
     "de-de/interface/_core.json": "362066cee52028f768d47138c7bfd2b51c53a9b3f389c066259e3d2a845d81a9",
     "de-de/interface/components.json": "29a23a6ea45e1d8ada1e6be04a75f3d79513c16c6e36f9f6d8a9b5c4c917cd7f",
     "de-de/interface/forms.json": "cc398e00dd252c96d7d95938be61363fbd1ded0685c94560682bee8e9783e810",
-    "de-de/interface/panels.json": "eba335ce120449946c789bafef39350dbdefd8c55f447459e7f5961bcc701da3",
+    "de-de/interface/panels.json": "019a9ac385f25beccc68784b9a250812f3bb83eba0be73042871519a702af512",
     "de-de/interface/tools.json": "bdfcd7d5902294b5a9de55147c885834b92bf5454ceb48d3b60201b59423b803",
     "de-de/error/_core.json": "bc522591b01b43de05e611c63d6c8404bdd3c4e75a2fc0bf1e12006817f11185",
     "de-de/accessibility/_core.json": "7fb01333ff6ae83e320bb8a636a0c8a8f4c4017167bcf7bef49b241b2ba1dd99",
@@ -126,7 +126,7 @@
     "pt-pt/interface/_core.json": "fafecb4f580eca7a5b1a117a25d47a21563db44563c23baa4073a2d94f7714a7",
     "pt-pt/interface/components.json": "5ebf3eadf0b9307b687c84cf39eb8f4f648e624774fb1c14d03a66ccc0c18714",
     "pt-pt/interface/forms.json": "32d86f54ab09ac8e7153fca40649bb0d1a9986f4c5edf2c54770fef7a948f65e",
-    "pt-pt/interface/panels.json": "d91c60f52ad2df48e33d5e3b7d60889d4bd0dcd028ba920d2a6a425f18ebe988",
+    "pt-pt/interface/panels.json": "ac0a96feda7d9afb3556d2b7b3fbbdcf40d3ee9f245371cfc6e1eddc1a4d426c",
     "pt-pt/interface/tools.json": "41e45002469cd8a5ef2f03ed61d3d819cb19c25ad017816af033385311844104",
     "pt-pt/error/_core.json": "72214d9e6712ae174cfe0f370d5f8b91c53a3cb547a76dfb7798a3156233a3a9",
     "pt-pt/accessibility/_core.json": "fcead2b37111c4c3c3a3fa600159f7f5420352b85565c7fe6e35b021631e4cdf",

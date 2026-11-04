@@ -1,0 +1,48 @@
+{
+ "id": "bw-film",
+ "nameKey": "photo.presets.name.bw-film",
+ "category": "bw",
+ "layers": [
+  {
+   "id": "preset-bw-film-1",
+   "type": "blackWhite",
+   "params": {}
+  },
+  {
+   "id": "preset-bw-film-2",
+   "type": "curves",
+   "params": {
+    "master": {
+     "points": [
+      {
+       "x": 0,
+       "y": 0
+      },
+      {
+       "x": 0.25,
+       "y": 0.22
+      },
+      {
+       "x": 0.75,
+       "y": 0.78
+      },
+      {
+       "x": 1,
+       "y": 1
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "preset-bw-film-3",
+   "type": "grain",
+   "params": {
+    "amount": 20,
+    "size": 1,
+    "roughness": 50,
+    "seed": 1
+   }
+  }
+ ]
+}

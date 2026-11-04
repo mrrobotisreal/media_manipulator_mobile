@@ -11,6 +11,7 @@ import { recentTools } from '@/tools/recents';
 import { searchTools, type SearchableTool } from '@/tools/search';
 import type { AnyToolDefinition } from '@/tools/types';
 import { useSearchableTools } from '@/tools/useSearchableTools';
+import { useToolAvailability } from '@/tools/availability';
 import { Screen } from '@/ui/components/Screen';
 import { Text } from '@/ui/components/Text';
 import { colors, hitTarget } from '@/ui/tokens';
@@ -30,12 +31,15 @@ function useDebounced<T>(value: T, ms: number): T {
 export default function ToolsTab() {
   const { t } = useTranslation();
   const router = useRouter();
-  const items = useSearchableTools();
+  const available = useToolAvailability();
+  const all = useSearchableTools();
+  const items = all.filter((i) => available(i.tool));
   const lastToolIds = useAppSelector((s) => s.settings.lastToolIds);
   const [text, setText] = useState('');
   const query = useDebounced(text.trim(), SEARCH_DEBOUNCE_MS);
-  const sections = useMemo(() => searchTools(items, query), [items, query]);
-  const recents = useMemo(() => recentTools(lastToolIds), [lastToolIds]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- `items` is a fresh filter each render; the inputs are `all` + availability.
+  const sections = useMemo(() => searchTools(items, query), [all, query, items.length]);
+  const recents = recentTools(lastToolIds).filter(available);
 
   const open = (tool: AnyToolDefinition, from: 'tools_tab' | 'search' | 'recents') =>
     router.push(`/(app)/tool/${tool.family}/${tool.id}?from=${from}` as Href);

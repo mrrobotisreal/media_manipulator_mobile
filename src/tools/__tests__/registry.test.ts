@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import {
   WEB_AI_UPLOAD_OPERATIONS,
   WEB_TOOL_ALIASES,
+  WEB_PHOTO_SLUGS,
   WEB_TOOL_SLUGS,
 } from '../__fixtures__/webTools';
 import { AI_OPS_UPLOAD_OPERATIONS, quotaMetricForJob } from '../metric';
@@ -47,23 +48,25 @@ const EXPECTED_IDS = [
   'inspect-metadata',
   'strip-metadata',
   'edit-metadata',
+  // MA50
+  'aperture',
 ];
 
 const en = JSON.parse(readFileSync(join(__dirname, '../../../locales/en-us/app.json'), 'utf8'));
 const lookup = (key: string): unknown => key.split('.').reduce((o: any, k) => o?.[k], en);
 
 describe('tool registry invariants', () => {
-  it('has exactly the 38 v1 ids with unique kebab-case ids', () => {
+  it('has exactly the 38 v1 ids plus aperture (MA50) with unique kebab-case ids', () => {
     expect(TOOLS.map((t) => t.id).sort()).toEqual([...EXPECTED_IDS].sort());
-    expect(new Set(TOOLS.map((t) => t.id)).size).toBe(38);
+    expect(new Set(TOOLS.map((t) => t.id)).size).toBe(39);
     for (const t of TOOLS) expect(t.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
-    expect(TOOL_BY_ID.size).toBe(38);
+    expect(TOOL_BY_ID.size).toBe(39);
   });
 
-  it('family sizes are 10/10/4/11/3', () => {
+  it('family sizes are 11/10/4/11/3', () => {
     expect(
       (['image', 'video', 'audio', 'ai', 'metadata'] as const).map((f) => toolsByFamily(f).length),
-    ).toEqual([10, 10, 4, 11, 3]);
+    ).toEqual([11, 10, 4, 11, 3]);
   });
 
   it('every title/description key exists in en-US app.json', () => {
@@ -74,11 +77,12 @@ describe('tool registry invariants', () => {
   });
 
   it('analytics slugs are real web slugs and never aliases', () => {
+    const slugs = [...WEB_TOOL_SLUGS, ...WEB_PHOTO_SLUGS];
     for (const t of TOOLS) {
-      expect(WEB_TOOL_SLUGS).toContain(t.analyticsSlug);
+      expect(slugs).toContain(t.analyticsSlug);
       expect(WEB_TOOL_ALIASES).not.toContain(t.analyticsSlug);
       for (const p of t.presets ?? []) {
-        expect(WEB_TOOL_SLUGS).toContain(p.analyticsSlug);
+        expect(slugs).toContain(p.analyticsSlug);
         expect(WEB_TOOL_ALIASES).not.toContain(p.analyticsSlug);
       }
     }
@@ -135,9 +139,13 @@ describe('tool registry invariants', () => {
   });
 
   it('identity builders carry the API-required keys', () => {
+    // aperture (MA50) never builds /upload options: it opens the editor (endpoint photoProject).
     for (const t of toolsByFamily('image')
       .concat(toolsByFamily('metadata'))
-      .filter((x) => x.id !== 'inspect-metadata' && x.id !== 'pdf-to-image')) {
+      .filter(
+        (x) =>
+          x.id !== 'inspect-metadata' && x.id !== 'pdf-to-image' && x.endpoint !== 'photoProject',
+      )) {
       const o = t.optionsBuilder(t.defaults);
       expect(o.format).toBeDefined();
       expect(o.quality).toBeGreaterThanOrEqual(1);

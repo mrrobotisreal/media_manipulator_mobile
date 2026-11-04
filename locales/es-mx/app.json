@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Editar metadatos",
         "description": "Cambia los datos guardados en una imagen."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Edita una foto con ajustes en vivo: luz, color, curvas, niveles y más."
       }
     },
     "metadata": {
@@ -1121,6 +1125,77 @@
     "toast": {
       "open": "Abrir",
       "fallback": "Tu trabajo ya terminó"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Subiendo… {{percent}} %",
+    "uploadFailed": "No se subió la foto. Tus cambios siguen en este teléfono.",
+    "uploadRetry": "Reintentar la subida",
+    "previewReduced": "Vista previa de una copia reducida. Las exportaciones usan el original.",
+    "waitingForPreview": "Preparando la vista previa…",
+    "decodeFailed": "No se pudo abrir esta foto.",
+    "unsaved": "¿Descartar los cambios sin guardar?",
+    "discard": "Descartar",
+    "keepEditing": "Seguir editando",
+    "saved": "Guardado",
+    "saveFailed": "No se guardó el proyecto. Inténtalo de nuevo.",
+    "conflict": {
+      "title": "Este proyecto cambió en otro lugar",
+      "body": "Se guardó una versión más reciente desde otro dispositivo. Elige cuál quieres conservar.",
+      "keepMine": "Conservar la mía",
+      "loadTheirs": "Cargar la nueva"
+    },
+    "strip": {
+      "basic": "Básico",
+      "color": "Color",
+      "curves": "Curvas",
+      "levels": "Niveles",
+      "bw": "B/N",
+      "more": "Más",
+      "layers": "Capas"
+    },
+    "greyExcept": "Todo gris menos esto",
+    "before": "Antes",
+    "draftRecovered": "Cambios sin guardar recuperados",
+    "draftPrompt": {
+      "title": "¿Restaurar los cambios sin guardar?",
+      "body": "Se encontraron en este teléfono cambios que no se guardaron.",
+      "restore": "Restaurar",
+      "discard": "Descartar"
+    },
+    "unavailable": "{{brand}} no está disponible en este momento.",
+    "open": {
+      "lead": "Elige una foto para editarla con ajustes en vivo. Los cambios se guardan en tu cuenta como un proyecto.",
+      "choose": "Elegir una foto"
+    },
+    "export": {
+      "title": "Exportar",
+      "mpCap": "Exporta hasta {{mp}} MP con tu plan",
+      "estimate": "Aprox. {{size}}",
+      "unavailable": "La exportación se está configurando. Inténtalo más tarde.",
+      "start": "Exportar",
+      "uploadFirst": "Podrás exportar cuando la foto termine de subirse."
+    },
+    "curves": {
+      "refused": "Un punto no puede pasar a su vecino.",
+      "add": "Agregar punto",
+      "hint": "Arrastra un punto. Toca la curva para agregar uno."
+    },
+    "more": {
+      "lutPick": "Elige un archivo .cube",
+      "lutTooBig": "Este LUT supera 1 MB.",
+      "lutInvalid": "No se pudo leer este archivo .cube.",
+      "effects": "Efectos"
+    },
+    "layers": {
+      "reorder": "Mantén presionado y arrastra para reordenar"
+    },
+    "reset": "Toca dos veces un control deslizante para restablecerlo",
+    "refused": {
+      "projects": "Tu plan permite hasta {{limit}} proyectos de Aperture. Elimina uno en la web para empezar otro.",
+      "pixels": "Esta foto supera los {{mp}} MP, el máximo que abre Aperture.",
+      "unsupported": "Aperture no puede abrir este tipo de archivo."
     }
   }
 }

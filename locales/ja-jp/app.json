@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "メタデータを編集",
         "description": "画像に保存されている情報を変更します。"
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "リアルタイム調整で写真を編集：明るさ、カラー、カーブ、レベルなど。"
       }
     },
     "metadata": {
@@ -1107,6 +1111,77 @@
     "toast": {
       "open": "開く",
       "fallback": "処理が完了しました"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "アップロード中… {{percent}}%",
+    "uploadFailed": "写真をアップロードできませんでした。編集内容はこのスマートフォンに残っています。",
+    "uploadRetry": "もう一度アップロード",
+    "previewReduced": "縮小コピーでプレビューしています。書き出しには元の画像を使います。",
+    "waitingForPreview": "プレビューを準備中…",
+    "decodeFailed": "この写真を開けませんでした。",
+    "unsaved": "保存していない変更を破棄しますか？",
+    "discard": "破棄",
+    "keepEditing": "編集を続ける",
+    "saved": "保存しました",
+    "saveFailed": "プロジェクトを保存できませんでした。もう一度お試しください。",
+    "conflict": {
+      "title": "このプロジェクトは別の場所で変更されました",
+      "body": "別のデバイスで新しいバージョンが保存されました。残す方を選んでください。",
+      "keepMine": "こちらを残す",
+      "loadTheirs": "新しい方を読み込む"
+    },
+    "strip": {
+      "basic": "基本",
+      "color": "カラー",
+      "curves": "カーブ",
+      "levels": "レベル",
+      "bw": "白黒",
+      "more": "その他",
+      "layers": "レイヤー"
+    },
+    "greyExcept": "これ以外をグレーに",
+    "before": "編集前",
+    "draftRecovered": "未保存の変更を復元しました",
+    "draftPrompt": {
+      "title": "未保存の編集を復元しますか？",
+      "body": "保存されていない編集がこのスマートフォンで見つかりました。",
+      "restore": "復元",
+      "discard": "破棄"
+    },
+    "unavailable": "{{brand}}は現在ご利用いただけません。",
+    "open": {
+      "lead": "写真を選んで、リアルタイムに調整しながら編集できます。編集内容はプロジェクトとしてアカウントに保存されます。",
+      "choose": "写真を選ぶ"
+    },
+    "export": {
+      "title": "書き出し",
+      "mpCap": "ご利用のプランでは最大{{mp}}MPまで書き出せます",
+      "estimate": "約{{size}}",
+      "unavailable": "書き出しは準備中です。しばらくしてからお試しください。",
+      "start": "書き出す",
+      "uploadFirst": "写真のアップロード後に書き出せます。"
+    },
+    "curves": {
+      "refused": "ポイントは隣のポイントを越えられません。",
+      "add": "ポイントを追加",
+      "hint": "ポイントをドラッグします。カーブをタップすると追加できます。"
+    },
+    "more": {
+      "lutPick": ".cubeファイルを選ぶ",
+      "lutTooBig": "このLUTは1MBを超えています。",
+      "lutInvalid": "この.cubeファイルを読み込めませんでした。",
+      "effects": "エフェクト"
+    },
+    "layers": {
+      "reorder": "長押ししてドラッグで並べ替え"
+    },
+    "reset": "スライダーをダブルタップでリセット",
+    "refused": {
+      "projects": "ご利用のプランではApertureのプロジェクトを{{limit}}件まで保存できます。新しく始めるには、Webで1件削除してください。",
+      "pixels": "この写真は{{mp}}MPを超えています。Apertureで開ける上限です。",
+      "unsupported": "Apertureではこの種類のファイルを開けません。"
     }
   }
 }

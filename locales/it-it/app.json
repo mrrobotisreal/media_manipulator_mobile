@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "Modifica metadati",
         "description": "Cambia i dettagli salvati in un'immagine."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "Modifica una foto con regolazioni in tempo reale: luce, colore, curve, livelli e altro."
       }
     },
     "metadata": {
@@ -1121,6 +1125,77 @@
     "toast": {
       "open": "Apri",
       "fallback": "La tua attività è terminata"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "Caricamento… {{percent}}%",
+    "uploadFailed": "La foto non è stata caricata. Le modifiche restano su questo telefono.",
+    "uploadRetry": "Riprova il caricamento",
+    "previewReduced": "Anteprima da una copia ridotta. Le esportazioni usano l'originale.",
+    "waitingForPreview": "Preparazione dell'anteprima…",
+    "decodeFailed": "Impossibile aprire questa foto.",
+    "unsaved": "Scartare le modifiche non salvate?",
+    "discard": "Scarta",
+    "keepEditing": "Continua a modificare",
+    "saved": "Salvato",
+    "saveFailed": "Il progetto non è stato salvato. Riprova.",
+    "conflict": {
+      "title": "Questo progetto è stato modificato altrove",
+      "body": "È stata salvata una versione più recente da un altro dispositivo. Scegli quale tenere.",
+      "keepMine": "Tieni la mia",
+      "loadTheirs": "Carica la nuova"
+    },
+    "strip": {
+      "basic": "Base",
+      "color": "Colore",
+      "curves": "Curve",
+      "levels": "Livelli",
+      "bw": "B/N",
+      "more": "Altro",
+      "layers": "Strati"
+    },
+    "greyExcept": "Tutto grigio tranne questo",
+    "before": "Prima",
+    "draftRecovered": "Modifiche non salvate recuperate",
+    "draftPrompt": {
+      "title": "Ripristinare le modifiche non salvate?",
+      "body": "Su questo telefono sono state trovate modifiche non salvate.",
+      "restore": "Ripristina",
+      "discard": "Scarta"
+    },
+    "unavailable": "{{brand}} non è disponibile al momento.",
+    "open": {
+      "lead": "Scegli una foto da modificare con regolazioni in tempo reale. Le modifiche vengono salvate nel tuo account come progetto.",
+      "choose": "Scegli una foto"
+    },
+    "export": {
+      "title": "Esporta",
+      "mpCap": "Esportazioni fino a {{mp}} MP con il tuo piano",
+      "estimate": "Circa {{size}}",
+      "unavailable": "L'esportazione è in fase di configurazione. Riprova più tardi.",
+      "start": "Esporta",
+      "uploadFirst": "L'esportazione sarà disponibile dopo il caricamento della foto."
+    },
+    "curves": {
+      "refused": "Un punto non può superare quello vicino.",
+      "add": "Aggiungi punto",
+      "hint": "Trascina un punto. Tocca la curva per aggiungerne uno."
+    },
+    "more": {
+      "lutPick": "Scegli un file .cube",
+      "lutTooBig": "Questa LUT supera 1 MB.",
+      "lutInvalid": "Impossibile leggere questo file .cube.",
+      "effects": "Effetti"
+    },
+    "layers": {
+      "reorder": "Tieni premuto e trascina per riordinare"
+    },
+    "reset": "Tocca due volte un cursore per azzerarlo",
+    "refused": {
+      "projects": "Il tuo piano consente fino a {{limit}} progetti Aperture. Eliminane uno dal web per iniziarne un altro.",
+      "pixels": "Questa foto supera i {{mp}} MP, il massimo che Aperture può aprire.",
+      "unsupported": "Aperture non può aprire questo tipo di file."
     }
   }
 }

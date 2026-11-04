@@ -4,7 +4,7 @@ import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { AppState, Platform } from 'react-native';
 import { accountApi } from '@/api/endpoints/account';
 import { mmApi } from '@/api/mmApi';
-import { keepOriginal as keepOriginalCopy, releaseIntakeFile } from '@/files/intake';
+import { copyOriginal, keepOriginal as keepOriginalCopy, releaseIntakeFile } from '@/files/intake';
 import { mmkvStorage } from '@/state/persist';
 import { jobUpserted } from '@/state/slices/jobs';
 import { store } from '@/state/store';
@@ -14,6 +14,12 @@ import { createJobEngine, type JobEngine, type JobEngineDeps } from './jobEngine
 import { createJobTransport, type StreamFetch } from './transport';
 import { uuidv4 } from '@/lib/ids';
 import { makeBeforeUpload } from '@/quota/quotaGuard';
+import { trackPhotoExportSettled } from '@/analytics/photoEvents';
+import {
+  makePhotoExportStarter,
+  PHOTO_EXPORT_STARTER,
+  rtkExportCall,
+} from './starters/photoExport';
 
 const KEEP_AWAKE_TAG = 'mm-upload';
 /** MMKV list of Firebase uids already counted (`activation_first_job_completed` once per uid). */
@@ -95,6 +101,10 @@ export function getJobEngine(): JobEngine {
       release: releaseIntakeFile,
       keepOriginal: (r) => {
         if (!r.jobId) return;
+        if (r.transport === 'starter') {
+          if (r.fileUri) copyOriginal({ uri: r.fileUri, name: r.fileName }, r.jobId);
+          return;
+        }
         keepOriginalCopy(
           {
             id: r.intakeFileId,
@@ -126,6 +136,11 @@ export function getJobEngine(): JobEngine {
     },
     beforeUpload: makeBeforeUpload(store.getState),
     newId: uuidv4,
+    starters: {
+      [PHOTO_EXPORT_STARTER]: makePhotoExportStarter(rtkExportCall(dispatch), {
+        settled: (r) => trackPhotoExportSettled(r),
+      }),
+    },
   };
   engine = createJobEngine(deps);
   return engine;

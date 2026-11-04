@@ -186,6 +186,10 @@
       "edit-metadata": {
         "title": "메타데이터 편집",
         "description": "이미지에 저장된 정보를 변경합니다."
+      },
+      "aperture": {
+        "title": "Aperture",
+        "description": "실시간 조정으로 사진 편집: 빛, 색상, 커브, 레벨 등."
       }
     },
     "metadata": {
@@ -1107,6 +1111,77 @@
     "toast": {
       "open": "열기",
       "fallback": "작업이 완료되었어요"
+    }
+  },
+  "photo": {
+    "title": "{{brand}}",
+    "uploading": "업로드 중… {{percent}}%",
+    "uploadFailed": "사진을 업로드하지 못했어요. 편집 내용은 이 휴대폰에 남아 있어요.",
+    "uploadRetry": "다시 업로드",
+    "previewReduced": "축소된 사본으로 미리 보는 중이에요. 내보낼 때는 원본을 사용해요.",
+    "waitingForPreview": "미리보기 준비 중…",
+    "decodeFailed": "이 사진을 열 수 없어요.",
+    "unsaved": "저장하지 않은 변경 사항을 버릴까요?",
+    "discard": "버리기",
+    "keepEditing": "계속 편집",
+    "saved": "저장됨",
+    "saveFailed": "프로젝트를 저장하지 못했어요. 다시 시도해 주세요.",
+    "conflict": {
+      "title": "다른 곳에서 이 프로젝트가 변경되었어요",
+      "body": "다른 기기에서 더 최신 버전이 저장되었어요. 유지할 버전을 선택하세요.",
+      "keepMine": "내 버전 유지",
+      "loadTheirs": "최신 버전 불러오기"
+    },
+    "strip": {
+      "basic": "기본",
+      "color": "색상",
+      "curves": "커브",
+      "levels": "레벨",
+      "bw": "흑백",
+      "more": "더보기",
+      "layers": "레이어"
+    },
+    "greyExcept": "이것만 남기고 회색",
+    "before": "원본",
+    "draftRecovered": "저장하지 않은 변경 사항을 복구했어요",
+    "draftPrompt": {
+      "title": "저장하지 않은 편집을 복원할까요?",
+      "body": "이 휴대폰에서 저장하지 않은 편집을 찾았어요.",
+      "restore": "복원",
+      "discard": "버리기"
+    },
+    "unavailable": "지금은 {{brand}}을(를) 사용할 수 없어요.",
+    "open": {
+      "lead": "사진을 골라 실시간 조정으로 편집하세요. 편집 내용은 계정에 프로젝트로 저장돼요.",
+      "choose": "사진 선택"
+    },
+    "export": {
+      "title": "내보내기",
+      "mpCap": "현재 플랜에서는 최대 {{mp}}MP까지 내보낼 수 있어요",
+      "estimate": "약 {{size}}",
+      "unavailable": "내보내기를 준비 중이에요. 나중에 다시 시도해 주세요.",
+      "start": "내보내기",
+      "uploadFirst": "사진 업로드가 끝나면 내보낼 수 있어요."
+    },
+    "curves": {
+      "refused": "점은 옆에 있는 점을 넘어갈 수 없어요.",
+      "add": "점 추가",
+      "hint": "점을 드래그하세요. 곡선을 탭하면 점이 추가돼요."
+    },
+    "more": {
+      "lutPick": ".cube 파일 선택",
+      "lutTooBig": "이 LUT는 1MB보다 커요.",
+      "lutInvalid": "이 .cube 파일을 읽을 수 없어요.",
+      "effects": "효과"
+    },
+    "layers": {
+      "reorder": "길게 누른 채 드래그해 순서 변경"
+    },
+    "reset": "슬라이더를 두 번 탭하면 초기화돼요",
+    "refused": {
+      "projects": "현재 플랜에서는 Aperture 프로젝트를 최대 {{limit}}개까지 보관할 수 있어요. 새로 시작하려면 웹에서 하나를 삭제하세요.",
+      "pixels": "이 사진은 {{mp}}MP보다 커요. Aperture에서 열 수 있는 최대 크기예요.",
+      "unsupported": "Aperture에서는 이 파일 형식을 열 수 없어요."
     }
   }
 }

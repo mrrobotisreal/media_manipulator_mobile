@@ -114,3 +114,38 @@ jest.mock('@react-native-firebase/messaging', () => ({
   getInitialNotification: jest.fn(() => Promise.resolve(null)),
   setBackgroundMessageHandler: jest.fn(),
 }));
+
+// MA50: RN Skia has no native module in jest. Components render as plain Views; `Skia` covers the
+// few calls the sheets make during render. The SkSL parity tests use the real CanvasKit API
+// directly (`src/photo/skia/testing/skiaTestApi.ts`), never this mock.
+jest.mock('@shopify/react-native-skia', () => {
+  const { View } = require('react-native');
+  const path = () => {
+    const p: Record<string, unknown> = {};
+    for (const k of ['moveTo', 'lineTo', 'close', 'cubicTo']) p[k] = () => p;
+    return p;
+  };
+  const node = (name: string) => {
+    const C = (props: { children?: unknown }) =>
+      require('react').createElement(View, { testID: `skia-${name}` }, props.children);
+    C.displayName = name;
+    return C;
+  };
+  return {
+    Canvas: node('Canvas'),
+    Group: node('Group'),
+    Picture: node('Picture'),
+    Path: node('Path'),
+    Circle: node('Circle'),
+    Line: node('Line'),
+    vec: (x: number, y: number) => ({ x, y }),
+    Skia: {
+      Path: { Make: path, MakeFromSVGString: path },
+      XYWHRect: (x: number, y: number, width: number, height: number) => ({ x, y, width, height }),
+      PictureRecorder: () => ({
+        beginRecording: () => ({ drawRect: () => undefined }),
+        finishRecordingAsPicture: () => ({}),
+      }),
+    },
+  };
+});

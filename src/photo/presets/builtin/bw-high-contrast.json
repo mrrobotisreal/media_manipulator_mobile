@@ -1,0 +1,30 @@
+{
+ "id": "bw-high-contrast",
+ "nameKey": "photo.presets.name.bw-high-contrast",
+ "category": "bw",
+ "layers": [
+  {
+   "id": "preset-bw-high-contrast-1",
+   "type": "blackWhite",
+   "params": {
+    "reds": 40,
+    "yellows": 40,
+    "blues": -40
+   }
+  },
+  {
+   "id": "preset-bw-high-contrast-2",
+   "type": "brightnessContrast",
+   "params": {
+    "contrast": 40
+   }
+  },
+  {
+   "id": "preset-bw-high-contrast-3",
+   "type": "clarity",
+   "params": {
+    "amount": 25
+   }
+  }
+ ]
+}

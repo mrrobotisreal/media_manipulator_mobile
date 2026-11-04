@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { I18nManager, Pressable, ScrollView, View } from 'react-native';
 import { FileCard, RejectionCard } from '@/files/components/FileCard';
 import { toolsForKinds } from '@/files/intakeTools';
+import { useToolAvailability } from '@/tools/availability';
 import { getIntakeBatch } from '@/files/session';
 import type { IntakeFile, Rejection } from '@/files/types';
 import { useAppSelector } from '@/state/hooks';
@@ -28,7 +29,8 @@ export default function IntakeScreen() {
   const rejected = batch?.rejected ?? NONE_REJECTED;
 
   const kinds = files.map((f) => f.mediaKind);
-  const tools = toolsForKinds(kinds, lastToolIds);
+  const available = useToolAvailability();
+  const tools = toolsForKinds(kinds, lastToolIds).filter(available);
   // Inspect metadata accepts every kind, so the intersection is never empty; still say why the list is short.
   const mixed = new Set(kinds).size > 1;
   const back = () => router.replace(TOOLS_TAB);

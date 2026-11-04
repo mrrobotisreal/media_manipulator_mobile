@@ -34,6 +34,7 @@ export function limitVariantFor(error: MmError | undefined): LimitVariant | null
       return { kind: 'height', requested: num(d.requested), limit: num(d.limit) };
     case 'file_too_large':
     case 'payload_too_large':
+    case 'photo_file_too_large':
       return { kind: 'size' };
     case 'source_limit_exceeded': {
       const reason = typeof d.reason === 'string' ? d.reason : '';

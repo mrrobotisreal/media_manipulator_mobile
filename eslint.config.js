@@ -11,7 +11,26 @@ module.exports = defineConfig([
   expoConfig,
   prettierConfig,
   {
-    ignores: ['android/*', 'ios/*', '.expo/*', 'dist/*', 'coverage/*', 'graphify-out/*', 'src/i18n/generated/*'],
+    ignores: [
+      'android/*',
+      'ios/*',
+      '.expo/*',
+      'dist/*',
+      'coverage/*',
+      'graphify-out/*',
+      'src/i18n/generated/*',
+      // Copies of the web's Aperture model/math (scripts/sync-photo-fixtures.mjs); linted in the web repo.
+      'src/photo/photoTypes.ts',
+      'src/photo/colorMath.ts',
+      'src/photo/studioColorMath.ts',
+      'src/photo/studioLutParser.ts',
+      'src/photo/webUniforms.ts',
+      'src/photo/curveEdit.ts',
+      'src/photo/levelsEdit.ts',
+      'src/photo/layerOps.ts',
+      'src/photo/goldens.ts',
+      'src/photo/fixtures/**',
+    ],
   },
   {
     files: ['app/**/*.{ts,tsx}', 'src/features/**/*.{ts,tsx}'],

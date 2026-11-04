@@ -1,0 +1,36 @@
+{
+ "id": "matte",
+ "nameKey": "photo.presets.name.matte",
+ "category": "film",
+ "layers": [
+  {
+   "id": "preset-matte-1",
+   "type": "curves",
+   "params": {
+    "master": {
+     "points": [
+      {
+       "x": 0,
+       "y": 0.08
+      },
+      {
+       "x": 0.5,
+       "y": 0.5
+      },
+      {
+       "x": 1,
+       "y": 0.95
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "preset-matte-2",
+   "type": "vibranceSaturation",
+   "params": {
+    "saturation": -10
+   }
+  }
+ ]
+}

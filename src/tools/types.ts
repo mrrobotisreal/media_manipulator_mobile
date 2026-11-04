@@ -6,9 +6,13 @@ export const TOOL_FAMILIES: readonly ToolFamily[] = ['image', 'video', 'audio', 
 export type MediaKind = 'image' | 'video' | 'audio' | 'pdf';
 export type QuotaMetric = 'ops' | 'ai_ops';
 
-/** 'auto' = presign for a video file, multipart upload otherwise (resolved by resolveTransport). */
-export type ToolEndpoint = 'upload' | 'presign' | 'auto' | 'metadataInspect';
-export type ResolvedTransport = 'upload' | 'presign' | 'metadataInspect';
+/**
+ * 'auto' = presign for a video file, multipart upload otherwise (resolved by resolveTransport).
+ * 'photoProject' (MA50) = the tool opens the Aperture editor, which creates a project
+ * (`POST /photo/projects`) and exports through the `photoExport` job starter.
+ */
+export type ToolEndpoint = 'upload' | 'presign' | 'auto' | 'metadataInspect' | 'photoProject';
+export type ResolvedTransport = 'upload' | 'presign' | 'metadataInspect' | 'photoProject';
 
 export type ResultKind =
   'image' | 'gif' | 'video' | 'audio' | 'pdf' | 'archive' | 'transcript' | 'metadata' | 'unknown';
@@ -96,6 +100,11 @@ export interface ToolDefinition<F = ToolOptions> {
   resultHint: ResultKind;
   minTier?: never;
   presets?: ToolPreset<F>[];
+  /**
+   * Additive (MA50): a server capability the row needs; the Tools tab hides the row when the
+   * capability is off (`useToolAvailability`). `photo` = `GET /photo/capabilities` enabled + render.
+   */
+  capability?: 'photo';
 }
 
 /** Erased form type for heterogeneous registries. */
