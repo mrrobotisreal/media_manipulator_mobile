@@ -1345,5 +1345,46 @@
       "exportSettings": "Ajustes de exportación",
       "source": "Tamaño de la foto"
     }
+  },
+  "assistant": {
+    "open": "Pregunta a {{brand}}, la guía de Media Manipulator",
+    "title": "{{brand}}",
+    "subtitle": "Tu guía para cada herramienta",
+    "newChat": "Nuevo chat",
+    "chat": "Chat",
+    "history": "Historial",
+    "historyEmpty": "Tus chats con {{brand}} aparecen aquí.",
+    "historyLoadFailed": "No se han podido cargar tus chats. Inténtalo de nuevo.",
+    "untitled": "Chat sin título",
+    "deleteChat": "Eliminar este chat",
+    "welcome": "Hola, soy {{brand}}. Pregúntame qué herramienta usar o cómo hacer algo con un vídeo, una foto, un sonido o un documento.",
+    "placeholder": "Pregunta a {{brand}} lo que quieras",
+    "send": "Enviar",
+    "stop": "Detener",
+    "thinking": "Pensando…",
+    "searching": "Buscando en las páginas de ayuda…",
+    "stopped": "Detenido.",
+    "disclaimer": "{{brand}} es una IA y puede cometer errores. Tus mensajes se envían a nuestro proveedor de IA para poder responderte.",
+    "starters": {
+      "whichTool": "¿Qué herramienta necesito?",
+      "gif": "Crear un GIF a partir de un vídeo",
+      "premium": "¿Qué incluye Premium?",
+      "photoPro": "Editar una foto como un profesional"
+    },
+    "notSure": "¿Tienes dudas? Pregunta a {{brand}}",
+    "openOnWeb": "Abrir en la web",
+    "resting": "Hoy estoy descansando. Estas páginas deberían ayudarte:",
+    "helpful": "Útil",
+    "notHelpful": "No es útil",
+    "thanks": "Gracias por tu opinión.",
+    "errors": {
+      "upstream": "{{brand}} no ha podido responder ahora mismo. Inténtalo de nuevo.",
+      "rateLimited": "Son muchas preguntas en poco tiempo. Espera un minuto e inténtalo de nuevo.",
+      "paused": "{{brand}} ha alcanzado el límite de hoy y descansa hasta la medianoche UTC.",
+      "signIn": "Inicia sesión de nuevo para continuar este chat.",
+      "unavailable": "{{brand}} no está disponible en este momento.",
+      "network": "Sin conexión. Revisa tu red y reintenta.",
+      "generic": "Algo ha salido mal. Inténtalo de nuevo."
+    }
   }
 }

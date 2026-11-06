@@ -1329,5 +1329,46 @@
       "exportSettings": "匯出設定",
       "source": "相片尺寸"
     }
+  },
+  "assistant": {
+    "open": "問問 Media Manipulator 指南 {{brand}}",
+    "title": "{{brand}}",
+    "subtitle": "每個工具的使用指南",
+    "newChat": "新對話",
+    "chat": "對話",
+    "history": "你的對話",
+    "historyEmpty": "你與 {{brand}} 的對話會顯示在這裡。",
+    "historyLoadFailed": "無法載入你的對話，請再試一次。",
+    "untitled": "未命名的對話",
+    "deleteChat": "刪除這個對話",
+    "welcome": "嗨，我是 {{brand}}。你可以問我該用哪個工具，或是如何處理影片、照片、聲音或文件。",
+    "placeholder": "任何問題都可以問 {{brand}}",
+    "send": "傳送",
+    "stop": "停止",
+    "thinking": "思考中…",
+    "searching": "正在查閱說明頁面…",
+    "stopped": "已停止。",
+    "disclaimer": "{{brand}} 是 AI，可能會出錯。為了回答你，你的訊息會傳送給我們的 AI 供應商。",
+    "starters": {
+      "whichTool": "我需要用哪個工具？",
+      "gif": "把影片做成 GIF",
+      "premium": "Premium 包含哪些內容？",
+      "photoPro": "像專業人士一樣編輯照片"
+    },
+    "notSure": "不確定嗎？問問 {{brand}}",
+    "openOnWeb": "在網頁端開啟",
+    "resting": "我今天先休息了。這些頁面應該能幫上忙：",
+    "helpful": "有幫助",
+    "notHelpful": "沒有幫助",
+    "thanks": "感謝你的意見回饋。",
+    "errors": {
+      "upstream": "{{brand}} 暫時無法回答，請再試一次。",
+      "rateLimited": "短時間內問了太多問題。請稍候一分鐘再試一次。",
+      "paused": "{{brand}} 已達到今天的上限，會休息到 UTC 午夜。",
+      "signIn": "請重新登入以繼續這個對話。",
+      "unavailable": "{{brand}} 目前無法使用。",
+      "network": "沒有網路連線。請檢查網路後再試一次。",
+      "generic": "發生錯誤，請再試一次。"
+    }
   }
 }

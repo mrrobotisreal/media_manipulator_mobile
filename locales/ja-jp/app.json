@@ -1329,5 +1329,46 @@
       "exportSettings": "書き出し設定",
       "source": "写真のサイズ"
     }
+  },
+  "assistant": {
+    "open": "Media Manipulatorのガイド、{{brand}}に質問する",
+    "title": "{{brand}}",
+    "subtitle": "すべてのツールのガイド",
+    "newChat": "新しいチャット",
+    "chat": "チャット",
+    "history": "チャット履歴",
+    "historyEmpty": "{{brand}}とのチャットはここに表示されます。",
+    "historyLoadFailed": "チャットを読み込めませんでした。もう一度お試しください。",
+    "untitled": "無題のチャット",
+    "deleteChat": "このチャットを削除",
+    "welcome": "こんにちは、{{brand}}です。どのツールを使えばよいか、動画・写真・音声・ドキュメントで何かをする方法などをお気軽に聞いてください。",
+    "placeholder": "{{brand}}に何でも質問できます",
+    "send": "送信",
+    "stop": "停止",
+    "thinking": "考え中…",
+    "searching": "ヘルプページを確認しています…",
+    "stopped": "停止しました。",
+    "disclaimer": "{{brand}}はAIのため、間違えることがあります。回答のため、メッセージは当社のAIプロバイダーに送信されます。",
+    "starters": {
+      "whichTool": "どのツールを使えばいい？",
+      "gif": "動画からGIFを作りたい",
+      "premium": "Premiumには何が含まれる？",
+      "photoPro": "写真をプロのように編集したい"
+    },
+    "notSure": "迷ったら{{brand}}に質問",
+    "openOnWeb": "Webで開く",
+    "resting": "今日はお休み中です。こちらのページが役に立つはずです：",
+    "helpful": "役に立った",
+    "notHelpful": "役に立たなかった",
+    "thanks": "フィードバックありがとうございます。",
+    "errors": {
+      "upstream": "{{brand}}は今は回答できませんでした。もう一度お試しください。",
+      "rateLimited": "短時間に多くの質問が送信されました。1分ほど待ってからもう一度お試しください。",
+      "paused": "{{brand}}は本日の上限に達したため、UTCの午前0時まで休止しています。",
+      "signIn": "このチャットを続けるには、もう一度ログインしてください。",
+      "unavailable": "{{brand}}は現在ご利用いただけません。",
+      "network": "接続がありません。ネットワークを確認して再試行してください。",
+      "generic": "問題が発生しました。もう一度お試しください。"
+    }
   }
 }

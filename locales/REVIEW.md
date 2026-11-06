@@ -40,3 +40,20 @@ MA53 (2026-11-04): `photo.presets.*` (account presets, the MMKV migration prompt
 non-English locales by one Opus 5.5 subagent, mirroring the web shard's `photo.presets.*` words and
 address form (so de-DE uses "Sie" here, like the web, while older app strings use "du"); ru-RU, de-DE,
 ja-JP, ar-SA and he-IL read by the implementing session. **Not reviewed** by a native speaker.
+
+## Medi (MA54)
+
+The `assistant.*` strings (the Medi guide sheet, 35 keys) are model-written in all 17 non-English locales
+(Opus 5.5 subagents, one locale at a time). Each was seeded with the web's shipped Medi copy for the same locale
+(`media-manipulator-ui/i18n/locales/<code>/interface/assistant.json`, `assistant.guide` / `assistant.errors`) so the phone
+and the web read the same, and with the app's own words for History, Retry, Sign in, "No connection" and "on the web".
+**Not reviewed by a native speaker.** Items a reviewer should check:
+
+- `assistant.history` (the sheet's second segment) follows the app's History tab word in most locales (`Historial`, `Historique`,
+  `Verlauf`, `История`...) rather than the web's "your chats"; es-MX, it-IT, ja-JP, ko-KR, zh-TW keep the web's "your chats" wording.
+- de-DE uses the web's formal "Sie" for the Medi strings while the rest of the app's German uses "du".
+- `assistant.historyEmpty` (uk-UA, ru-RU) leaves "Medi" undeclined after "з/с"; the web avoids it with "з гідом / с гидом".
+- Genuinely new wording (no web equivalent): `notSure` ("Not sure? Ask Medi"), `openOnWeb`, `errors.signIn`, `errors.network`, `chat`, `welcome`'s "documents" ending.
+- ko-KR particles after `{{brand}}` assume a vowel-final name ("Medi").
+- it-IT `errors.upstream` keeps the web's masculine "non è riuscito".
+- `assistant.chat` is "Chat" in de-DE, es-ES, es-MX and it-IT (the native word; allowlisted).
