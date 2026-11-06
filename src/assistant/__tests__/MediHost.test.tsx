@@ -42,4 +42,18 @@ describe('MediHost', () => {
     await act(async () => closeMedi());
     expect(screen.queryByTestId('medi-input')).toBeNull(); // Modal hidden; state kept in the mounted sheet
   });
+
+  it('the very first open from an empty search lands the search text in the composer', async () => {
+    // S25 (2026-11-06): the sheet mounted on that first open and skipped its prefill.
+    const { store } = await makeReadyStore();
+    await render(
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <MediHost />
+        </I18nextProvider>
+      </Provider>,
+    );
+    await act(async () => openMedi('empty_search', 'zzqxw'));
+    expect(screen.getByTestId('medi-input').props.value).toBe('zzqxw');
+  });
 });

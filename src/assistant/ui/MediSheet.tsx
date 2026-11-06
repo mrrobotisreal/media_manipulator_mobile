@@ -78,7 +78,9 @@ export function MediSheet({ stream }: { stream?: StreamFn } = {}) {
   const insets = useSafeAreaInsets();
 
   // Each open (and each prefill while open) resets the view and lands the search text in the composer.
-  const [seenNonce, setSeenNonce] = useState(ui.nonce);
+  // MediHost mounts this sheet on the first open, so that open must not count as seen yet, or its
+  // prefill is lost (S25, 2026-11-06: "Not sure? Ask Medi" opened an empty composer).
+  const [seenNonce, setSeenNonce] = useState(ui.open ? ui.nonce - 1 : ui.nonce);
   if (seenNonce !== ui.nonce) {
     setSeenNonce(ui.nonce);
     if (ui.open) {
