@@ -171,6 +171,8 @@
       "h264": "H.264 (más compatible)",
       "h265": "H.265 / HEVC (más pequeño, dispositivos modernos)"
     },
+    "crfLabel": "Valor CRF manual (opcional)",
+    "crfHint": "Control fino más allá del nivel: {{min}} es casi sin pérdidas y {{max}} es muy pequeño. Déjalo vacío para usar el nivel.",
     "stripAudio": "Eliminar la pista de audio para un archivo aún más pequeño",
     "note": "Recodificamos el vídeo con el nivel elegido. La salida MP4 usa H.264 + AAC con faststart para una reproducción instantánea.",
     "running": "Comprimiendo…",
@@ -1184,6 +1186,39 @@
           "invalid": "Ese archivo Lottie no se pudo convertir en una animación."
         }
       }
+    },
+    "templates": {
+      "button": "Plantillas",
+      "title": "Añadir una animación lista",
+      "lowerThird": "Rótulo inferior",
+      "logoReveal": "Revelado del logotipo",
+      "titlePop": "Título que aparece",
+      "bulletReveal": "Viñetas una a una",
+      "counter": "Contador",
+      "badgeBounce": "Insignia que rebota",
+      "hint": {
+        "lowerThird": "Nombre y cargo que entran deslizándose sobre una barra de acento.",
+        "logoReveal": "Dibuja los contornos seleccionados; las demás capas aparecen y crecen.",
+        "titlePop": "Un título grande y centrado que salta y se asienta.",
+        "bulletReveal": "Tres puntos que entran uno tras otro.",
+        "counter": "Un número que sube y se detiene en el total.",
+        "badgeBounce": "Una insignia redonda que cae y rebota."
+      },
+      "placeholder": {
+        "name": "Tu nombre",
+        "role": "Tu cargo",
+        "title": "Tu titular",
+        "bullet": "Punto {{n}}",
+        "badge": "NUEVO"
+      },
+      "failed": {
+        "logo": "Primero dibuja una forma o importa tu logotipo y luego selecciónalo.",
+        "generic": "No se ha podido añadir esta plantilla a la animación."
+      }
+    },
+    "medi": {
+      "label": "Pide a {{brand}} que anime (Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1462,7 +1497,9 @@
       "exportSettingUp": "Se está preparando la exportación",
       "panelsTab": "Paneles",
       "layersTab": "Capas",
-      "shortcuts": "Atajos de teclado"
+      "shortcuts": "Atajos de teclado",
+      "medi": "{{brand}}",
+      "mediLabel": "Pide a {{brand}} que edite (Ctrl+J)"
     },
     "banner": {
       "local": "Guardado solo en este navegador. Inicia sesión para conservar hasta {{count}} proyectos en tu cuenta.",
@@ -2047,7 +2084,8 @@
         "brushGesture": "Ajuste del pincel",
         "maskGesture": "Ajuste de la máscara",
         "geometryGesture": "Ajuste de la geometría",
-        "layerGesture": "Ajuste de la capa"
+        "layerGesture": "Ajuste de la capa",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2078,7 +2116,8 @@
         "gradient": "Máscara de degradado",
         "radial": "Máscara radial",
         "crop": "Recortar",
-        "heal": "Reparar"
+        "heal": "Reparar",
+        "medi": "Abrir {{brand}}"
       }
     },
     "batch": {

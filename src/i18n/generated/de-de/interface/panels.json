@@ -171,6 +171,8 @@
       "h264": "H.264 (beste Kompatibilität)",
       "h265": "H.265 / HEVC (kleiner, moderne Geräte)"
     },
+    "crfLabel": "CRF-Wert überschreiben (optional)",
+    "crfHint": "Feinsteuerung über die Stufe hinaus: {{min}} ist fast verlustfrei, {{max}} sehr klein. Leer lassen, um die Stufe zu nutzen.",
     "stripAudio": "Audiospur entfernen für eine noch kleinere Datei",
     "note": "Wir kodieren das Video in der gewählten Stufe neu. Die MP4-Ausgabe verwendet H.264 + AAC mit Faststart für sofortige Wiedergabe.",
     "running": "Wird komprimiert…",
@@ -1184,6 +1186,39 @@
           "invalid": "Diese Lottie-Datei konnte nicht in eine Animation umgewandelt werden."
         }
       }
+    },
+    "templates": {
+      "button": "Vorlagen",
+      "title": "Fertige Animation hinzufügen",
+      "lowerThird": "Bauchbinde",
+      "logoReveal": "Logo-Enthüllung",
+      "titlePop": "Titel-Pop",
+      "bulletReveal": "Stichpunkte nacheinander",
+      "counter": "Zähler",
+      "badgeBounce": "Hüpfendes Badge",
+      "hint": {
+        "lowerThird": "Name und Funktion gleiten über einen Akzentbalken herein.",
+        "logoReveal": "Zeichnet die ausgewählten Konturen; andere Ebenen blenden ein und wachsen.",
+        "titlePop": "Ein großer zentrierter Titel, der aufploppt und sich setzt.",
+        "bulletReveal": "Drei Punkte, die nacheinander hereingleiten.",
+        "counter": "Eine Zahl, die hochzählt und bei der Summe stehen bleibt.",
+        "badgeBounce": "Ein rundes Badge, das hereinfällt und federt."
+      },
+      "placeholder": {
+        "name": "Dein Name",
+        "role": "Deine Funktion",
+        "title": "Deine Überschrift",
+        "bullet": "Punkt {{n}}",
+        "badge": "NEU"
+      },
+      "failed": {
+        "logo": "Zeichne zuerst eine Form oder importiere dein Logo und wähle es dann aus.",
+        "generic": "Diese Vorlage konnte der Animation nicht hinzugefügt werden."
+      }
+    },
+    "medi": {
+      "label": "{{brand}} um eine Animation bitten (Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1462,7 +1497,9 @@
       "exportSettingUp": "Export wird eingerichtet",
       "panelsTab": "Bedienfelder",
       "layersTab": "Ebenen",
-      "shortcuts": "Tastenkürzel"
+      "shortcuts": "Tastenkürzel",
+      "medi": "{{brand}}",
+      "mediLabel": "{{brand}} um eine Bearbeitung bitten (Ctrl+J)"
     },
     "banner": {
       "local": "Nur in diesem Browser gespeichert. Melden Sie sich an, um bis zu {{count}} Projekte in Ihrem Konto zu behalten.",
@@ -2045,7 +2082,8 @@
         "brushGesture": "Pinseleinstellung",
         "maskGesture": "Maskeneinstellung",
         "geometryGesture": "Geometrieeinstellung",
-        "layerGesture": "Ebeneneinstellung"
+        "layerGesture": "Ebeneneinstellung",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2076,7 +2114,8 @@
         "gradient": "Verlaufsmaske",
         "radial": "Radialmaske",
         "crop": "Zuschneiden",
-        "heal": "Reparieren"
+        "heal": "Reparieren",
+        "medi": "{{brand}} öffnen"
       }
     },
     "batch": {

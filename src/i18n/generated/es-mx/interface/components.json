@@ -633,7 +633,11 @@
       "exportsUnlimited": "Premium no tiene límite diario de exportaciones.",
       "height": "Premium exporta hasta {{value}}p.",
       "projects": "Premium guarda hasta {{value}} proyectos.",
-      "projectsUnlimited": "Premium no tiene límite de proyectos guardados."
+      "projectsUnlimited": "Premium no tiene límite de proyectos guardados.",
+      "studioFormats": "Premium agrega MOV, WebM, MKV, audio Opus, pistas de subtítulos integradas y los ajustes avanzados de exportación.",
+      "captionLooks": "Premium guarda hasta {{value}} estilos de subtítulos.",
+      "captionLooksUnlimited": "Premium no tiene límite de estilos de subtítulos guardados.",
+      "captionWords": "Premium agrega la sincronización y el énfasis de subtítulos por palabra."
     },
     "noHigherPlan": "Ningún plan aumenta más este límite. Reduce el ajuste para continuar.",
     "proNote": "Al actualizar se cobra hoy la diferencia prorrateada; tu fecha de renovación sigue igual.",
@@ -643,7 +647,24 @@
       "aiOps": "Pro permite {{value}} trabajos de IA al día.",
       "aiOpsUnlimited": "Pro no tiene límite diario de trabajos de IA.",
       "exports": "Pro permite {{value}} exportaciones al día.",
-      "exportsUnlimited": "Pro no tiene límite diario de exportaciones."
+      "exportsUnlimited": "Pro no tiene límite diario de exportaciones.",
+      "captionLooks": "Pro guarda hasta {{value}} estilos de subtítulos.",
+      "captionLooksUnlimited": "Pro guarda estilos de subtítulos ilimitados."
+    },
+    "format": {
+      "title": "Este formato de exportación no está en tu plan",
+      "bodyPlan": "Las exportaciones en {{option}} forman parte de {{plan}}.",
+      "bodyFree": "Las exportaciones en {{option}} requieren una cuenta gratuita. Créala y se desbloquean.",
+      "advanced": "Los ajustes avanzados de exportación (tu propio contenedor y códecs, la tasa de bits de audio y mono) forman parte de {{plan}}."
+    },
+    "captionLooks": {
+      "title": "Alcanzaste el límite de estilos de subtítulos guardados",
+      "body": "Tu plan guarda hasta {{limit}} estilos de subtítulos.",
+      "bodyNone": "Guardar tus propios estilos de subtítulos es parte de Premium."
+    },
+    "captionWords": {
+      "title": "La sincronización de subtítulos por palabra es una función Premium",
+      "body": "Con Premium o Pro, arrastra los límites de las palabras para resincronizarlas y haz clic en una palabra para enfatizarla."
     }
   },
   "recentStrip": {
@@ -773,5 +794,8 @@
     "aiOpsUnlimited": "Trabajos de IA ilimitados al día",
     "fileSize": "Archivos de hasta {{value}}",
     "compare": "Comparar todos los planes"
+  },
+  "mediGuideButton": {
+    "label": "Preguntarle a {{brand}}, la guía de Media Manipulator"
   }
 }

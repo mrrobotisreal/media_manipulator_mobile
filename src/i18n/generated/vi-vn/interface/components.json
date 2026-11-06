@@ -630,7 +630,11 @@
       "exportsUnlimited": "Premium không giới hạn lượt xuất hằng ngày.",
       "height": "Premium xuất tối đa {{value}}p.",
       "projects": "Premium lưu tối đa {{value}} dự án.",
-      "projectsUnlimited": "Premium không giới hạn dự án được lưu."
+      "projectsUnlimited": "Premium không giới hạn dự án được lưu.",
+      "studioFormats": "Premium bổ sung MOV, WebM, MKV, âm thanh Opus, track phụ đề nhúng và cài đặt xuất nâng cao.",
+      "captionLooks": "Premium lưu tối đa {{value}} kiểu phụ đề.",
+      "captionLooksUnlimited": "Premium không giới hạn số kiểu phụ đề đã lưu.",
+      "captionWords": "Premium có thêm căn thời gian và nhấn mạnh phụ đề theo từng từ."
     },
     "noHigherPlan": "Không có gói nào nâng giới hạn này cao hơn. Hãy hạ cài đặt xuống để tiếp tục.",
     "proNote": "Nâng cấp sẽ tính phần chênh lệch theo tỷ lệ ngay hôm nay; ngày gia hạn của bạn không đổi.",
@@ -640,7 +644,24 @@
       "aiOps": "Pro cho phép {{value}} tác vụ AI mỗi ngày.",
       "aiOpsUnlimited": "Pro không giới hạn tác vụ AI hằng ngày.",
       "exports": "Pro cho phép {{value}} lượt xuất mỗi ngày.",
-      "exportsUnlimited": "Pro không giới hạn lượt xuất hằng ngày."
+      "exportsUnlimited": "Pro không giới hạn lượt xuất hằng ngày.",
+      "captionLooks": "Pro lưu tối đa {{value}} kiểu phụ đề.",
+      "captionLooksUnlimited": "Pro lưu không giới hạn kiểu phụ đề."
+    },
+    "format": {
+      "title": "Định dạng xuất này không có trong gói của bạn",
+      "bodyPlan": "Xuất {{option}} thuộc gói {{plan}}.",
+      "bodyFree": "Xuất {{option}} cần tài khoản miễn phí. Tạo tài khoản là dùng được ngay.",
+      "advanced": "Cài đặt xuất nâng cao (tự chọn định dạng chứa và codec, bitrate âm thanh và mono) thuộc gói {{plan}}."
+    },
+    "captionLooks": {
+      "title": "Bạn đã đạt giới hạn kiểu phụ đề đã lưu",
+      "body": "Gói của bạn lưu tối đa {{limit}} kiểu phụ đề.",
+      "bodyNone": "Lưu kiểu phụ đề riêng thuộc gói Premium."
+    },
+    "captionWords": {
+      "title": "Căn thời gian phụ đề theo từng từ là tính năng Premium",
+      "body": "Với Premium hoặc Pro, kéo ranh giới các từ để căn lại thời gian và nhấp vào một từ để nhấn mạnh."
     }
   },
   "recentStrip": {
@@ -770,5 +791,8 @@
     "aiOpsUnlimited": "Không giới hạn tác vụ AI mỗi ngày",
     "fileSize": "Tệp tối đa {{value}}",
     "compare": "So sánh tất cả các gói"
+  },
+  "mediGuideButton": {
+    "label": "Hỏi {{brand}}, hướng dẫn viên của Media Manipulator"
   }
 }

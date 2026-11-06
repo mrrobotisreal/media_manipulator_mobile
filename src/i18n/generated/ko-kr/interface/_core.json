@@ -127,7 +127,7 @@
     "contentStudioCta": {
       "title": "Darkroom",
       "badge": "신규",
-      "body": "멀티트랙 타임라인에서 동영상과 오디오를 편집하고, 레이어를 쌓고, 믹싱한 뒤 MP4로 내보내세요. Premiere Pro 스타일의 편집기를 브라우저에서 바로 사용할 수 있어요.",
+      "body": "멀티트랙 타임라인에서 동영상과 오디오를 편집하고, 레이어를 쌓고, 믹싱한 뒤 MP4, MOV, WebM, MKV로 내보내세요. Premiere Pro 스타일의 편집기를 브라우저에서 바로 사용할 수 있어요.",
       "cta": "Darkroom 사용해 보기"
     },
     "hero": {

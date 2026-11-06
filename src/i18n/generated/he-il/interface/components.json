@@ -637,7 +637,11 @@
       "exportsUnlimited": "ב-Premium אין הגבלה יומית על ייצואים.",
       "height": "Premium מייצא עד {{value}}p.",
       "projects": "Premium שומר עד {{value}} פרויקטים.",
-      "projectsUnlimited": "ב-Premium אין הגבלה על פרויקטים שמורים."
+      "projectsUnlimited": "ב-Premium אין הגבלה על פרויקטים שמורים.",
+      "studioFormats": "Premium מוסיף MOV, ‏WebM, ‏MKV, אודיו Opus, רצועות כתוביות מוטמעות והגדרות ייצוא מתקדמות.",
+      "captionLooks": "Premium שומר עד {{value}} סגנונות כתוביות.",
+      "captionLooksUnlimited": "ב-Premium אין הגבלה על סגנונות כתוביות שמורים.",
+      "captionWords": "Premium מוסיף תזמון והדגשה של כתוביות לפי מילה."
     },
     "noHigherPlan": "אין מסלול שמגדיל את המגבלה הזו עוד. הקטינו את ההגדרה כדי להמשיך.",
     "proNote": "שדרוג מחייב היום את ההפרש היחסי; תאריך החידוש נשאר זהה.",
@@ -647,7 +651,24 @@
       "aiOps": "Pro מאפשר {{value}} משימות AI ביום.",
       "aiOpsUnlimited": "ב-Pro אין הגבלה יומית על משימות AI.",
       "exports": "Pro מאפשר {{value}} ייצואים ביום.",
-      "exportsUnlimited": "ב-Pro אין הגבלה יומית על ייצואים."
+      "exportsUnlimited": "ב-Pro אין הגבלה יומית על ייצואים.",
+      "captionLooks": "Pro שומר עד {{value}} סגנונות כתוביות.",
+      "captionLooksUnlimited": "Pro שומר סגנונות כתוביות ללא הגבלה."
+    },
+    "format": {
+      "title": "פורמט הייצוא הזה לא כלול במסלול שלכם",
+      "bodyPlan": "ייצוא ב־{{option}} הוא חלק מ־{{plan}}.",
+      "bodyFree": "ייצוא ב־{{option}} דורש חשבון חינמי. צרו חשבון והוא ייפתח.",
+      "advanced": "הגדרות ייצוא מתקדמות (מכולה ומקודדים לבחירתכם, קצב סיביות של האודיו ומונו) הן חלק מ־{{plan}}."
+    },
+    "captionLooks": {
+      "title": "הגעתם למגבלת סגנונות הכתוביות השמורים",
+      "body": "המסלול שלכם שומר עד {{limit}} סגנונות כתוביות.",
+      "bodyNone": "שמירת סגנונות כתוביות משלכם היא חלק מ-Premium."
+    },
+    "captionWords": {
+      "title": "תזמון כתוביות לפי מילה הוא תכונה של Premium",
+      "body": "עם Premium או Pro גררו את גבולות המילים כדי לתזמן אותן מחדש, ולחצו על מילה כדי להדגיש אותה."
     }
   },
   "recentStrip": {
@@ -777,5 +798,8 @@
     "aiOpsUnlimited": "משימות AI ללא הגבלה ביום",
     "fileSize": "קבצים עד {{value}}",
     "compare": "השוואת כל התוכניות"
+  },
+  "mediGuideButton": {
+    "label": "לשאול את {{brand}}, המדריך של Media Manipulator"
   }
 }

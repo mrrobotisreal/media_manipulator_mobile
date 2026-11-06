@@ -633,7 +633,11 @@
       "exportsUnlimited": "Premium non ha limiti giornalieri di esportazioni.",
       "height": "Premium produce output fino a {{value}}p.",
       "projects": "Premium conserva fino a {{value}} progetti salvati.",
-      "projectsUnlimited": "Premium non ha limiti di progetti salvati."
+      "projectsUnlimited": "Premium non ha limiti di progetti salvati.",
+      "studioFormats": "Premium aggiunge MOV, WebM, MKV, l'audio Opus, le tracce di sottotitoli incorporate e le impostazioni di esportazione avanzate.",
+      "captionLooks": "Premium salva fino a {{value}} stili dei sottotitoli.",
+      "captionLooksUnlimited": "Premium non ha limiti di stili dei sottotitoli salvati.",
+      "captionWords": "Premium aggiunge sincronizzazione ed enfasi dei sottotitoli per parola."
     },
     "noHigherPlan": "Nessun piano alza ulteriormente questo limite. Riduci l'impostazione per continuare.",
     "proNote": "Il passaggio addebita oggi la differenza proporzionale; la data di rinnovo resta la stessa.",
@@ -643,7 +647,24 @@
       "aiOps": "Pro consente {{value}} lavori IA al giorno.",
       "aiOpsUnlimited": "Pro non ha limiti giornalieri di lavori IA.",
       "exports": "Pro consente {{value}} esportazioni al giorno.",
-      "exportsUnlimited": "Pro non ha limiti giornalieri di esportazioni."
+      "exportsUnlimited": "Pro non ha limiti giornalieri di esportazioni.",
+      "captionLooks": "Pro salva fino a {{value}} stili dei sottotitoli.",
+      "captionLooksUnlimited": "Pro salva stili dei sottotitoli senza limiti."
+    },
+    "format": {
+      "title": "Questo formato di esportazione non è incluso nel tuo piano",
+      "bodyPlan": "Le esportazioni in {{option}} fanno parte di {{plan}}.",
+      "bodyFree": "Le esportazioni in {{option}} richiedono un account gratuito. Crealo e si sbloccano.",
+      "advanced": "Le impostazioni di esportazione avanzate (contenitore e codec a tua scelta, bitrate audio e mono) fanno parte di {{plan}}."
+    },
+    "captionLooks": {
+      "title": "Hai raggiunto il limite di stili dei sottotitoli salvati",
+      "body": "Il tuo piano salva fino a {{limit}} stili dei sottotitoli.",
+      "bodyNone": "Salvare i tuoi stili dei sottotitoli fa parte di Premium."
+    },
+    "captionWords": {
+      "title": "La sincronizzazione dei sottotitoli per parola è una funzione Premium",
+      "body": "Con Premium o Pro trascina i confini delle parole per risincronizzarle e fai clic su una parola per enfatizzarla."
     }
   },
   "recentStrip": {
@@ -773,5 +794,8 @@
     "aiOpsUnlimited": "Lavori IA illimitati al giorno",
     "fileSize": "File fino a {{value}}",
     "compare": "Confronta tutti i piani"
+  },
+  "mediGuideButton": {
+    "label": "Chiedi a {{brand}}, la guida di Media Manipulator"
   }
 }

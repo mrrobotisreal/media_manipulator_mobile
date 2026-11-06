@@ -630,7 +630,11 @@
       "exportsUnlimited": "Premium 沒有每日匯出上限。",
       "height": "Premium 最高可輸出 {{value}}p。",
       "projects": "Premium 最多可保留 {{value}} 個已儲存的專案。",
-      "projectsUnlimited": "Premium 沒有已儲存專案的上限。"
+      "projectsUnlimited": "Premium 沒有已儲存專案的上限。",
+      "studioFormats": "Premium 新增 MOV、WebM、MKV、Opus 音訊、內嵌字幕軌與進階匯出設定。",
+      "captionLooks": "Premium 最多可儲存 {{value}} 個字幕樣式。",
+      "captionLooksUnlimited": "Premium 的已儲存字幕樣式沒有數量上限。",
+      "captionWords": "Premium 新增逐字字幕計時與強調。"
     },
     "noHigherPlan": "沒有任何方案能進一步提高這個限額。請調低設定以繼續。",
     "proNote": "升級時今天會收取按比例計算的差額；你的續訂日期維持不變。",
@@ -640,7 +644,24 @@
       "aiOps": "Pro 每天允許 {{value}} 個 AI 工作。",
       "aiOpsUnlimited": "Pro 沒有每日 AI 工作上限。",
       "exports": "Pro 每天允許 {{value}} 次匯出。",
-      "exportsUnlimited": "Pro 沒有每日匯出上限。"
+      "exportsUnlimited": "Pro 沒有每日匯出上限。",
+      "captionLooks": "Pro 最多可儲存 {{value}} 個字幕樣式。",
+      "captionLooksUnlimited": "Pro 可儲存不限數量的字幕樣式。"
+    },
+    "format": {
+      "title": "你的方案不包含這個匯出格式",
+      "bodyPlan": "{{option}} 匯出屬於 {{plan}}。",
+      "bodyFree": "{{option}} 匯出需要免費帳號。建立帳號後即可使用。",
+      "advanced": "進階匯出設定（自選容器與編碼器、音訊位元率與單聲道）屬於 {{plan}}。"
+    },
+    "captionLooks": {
+      "title": "你已達到已儲存字幕樣式的上限",
+      "body": "你的方案最多可儲存 {{limit}} 個字幕樣式。",
+      "bodyNone": "儲存自己的字幕樣式屬於 Premium 功能。"
+    },
+    "captionWords": {
+      "title": "逐字字幕計時是 Premium 功能",
+      "body": "使用 Premium 或 Pro，拖曳字詞邊界重新計時，點選字詞即可強調。"
     }
   },
   "recentStrip": {
@@ -770,5 +791,8 @@
     "aiOpsUnlimited": "每天無限個 AI 工作",
     "fileSize": "檔案最大 {{value}}",
     "compare": "比較所有方案"
+  },
+  "mediGuideButton": {
+    "label": "詢問 Media Manipulator 嚮導 {{brand}}"
   }
 }

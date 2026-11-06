@@ -170,6 +170,8 @@
       "h264": "H.264 (가장 호환성 높음)",
       "h265": "H.265 / HEVC (더 작음, 최신 기기)"
     },
+    "crfLabel": "CRF 값 직접 지정(선택)",
+    "crfHint": "단계보다 세밀하게 조절합니다. {{min}}은 거의 무손실, {{max}}는 매우 작은 파일입니다. 비워 두면 선택한 단계를 사용합니다.",
     "stripAudio": "오디오 트랙을 제거해 파일을 더 작게",
     "note": "선택한 수준으로 동영상을 다시 인코딩합니다. MP4 출력은 즉시 재생을 위해 faststart가 적용된 H.264 + AAC를 사용합니다.",
     "running": "압축 중…",
@@ -1172,6 +1174,39 @@
           "invalid": "이 Lottie 파일을 애니메이션으로 변환할 수 없습니다."
         }
       }
+    },
+    "templates": {
+      "button": "템플릿",
+      "title": "완성된 애니메이션 추가",
+      "lowerThird": "하단 자막",
+      "logoReveal": "로고 등장",
+      "titlePop": "타이틀 팝",
+      "bulletReveal": "항목 순서대로 등장",
+      "counter": "카운터",
+      "badgeBounce": "튀는 배지",
+      "hint": {
+        "lowerThird": "이름과 직함이 강조 막대 위로 슬라이드해 들어와요.",
+        "logoReveal": "선택한 윤곽선을 그려요. 다른 레이어는 서서히 나타나며 커져요.",
+        "titlePop": "가운데 큰 제목이 튀어나왔다가 자리를 잡아요.",
+        "bulletReveal": "세 항목이 하나씩 차례로 들어와요.",
+        "counter": "숫자가 올라가다가 합계에서 멈춰요.",
+        "badgeBounce": "둥근 배지가 떨어지며 통통 튀어요."
+      },
+      "placeholder": {
+        "name": "이름",
+        "role": "직함",
+        "title": "제목",
+        "bullet": "항목 {{n}}",
+        "badge": "신규"
+      },
+      "failed": {
+        "logo": "먼저 도형을 그리거나 로고를 가져온 뒤 선택해 주세요.",
+        "generic": "이 템플릿을 애니메이션에 추가할 수 없어요."
+      }
+    },
+    "medi": {
+      "label": "{{brand}}에게 애니메이션 요청 (Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1450,7 +1485,9 @@
       "exportSettingUp": "내보내기를 준비하고 있습니다",
       "panelsTab": "패널",
       "layersTab": "레이어",
-      "shortcuts": "키보드 단축키"
+      "shortcuts": "키보드 단축키",
+      "medi": "{{brand}}",
+      "mediLabel": "{{brand}}에게 편집 요청 (Ctrl+J)"
     },
     "banner": {
       "local": "이 브라우저에만 저장되었습니다. 로그인하면 계정에 프로젝트를 최대 {{count}}개까지 보관할 수 있습니다.",
@@ -2031,7 +2068,8 @@
         "brushGesture": "브러시 설정",
         "maskGesture": "마스크 설정",
         "geometryGesture": "기하학 설정",
-        "layerGesture": "레이어 설정"
+        "layerGesture": "레이어 설정",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2062,7 +2100,8 @@
         "gradient": "그레이디언트 마스크",
         "radial": "원형 마스크",
         "crop": "자르기",
-        "heal": "복구"
+        "heal": "복구",
+        "medi": "{{brand}} 열기"
       }
     },
     "batch": {

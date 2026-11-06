@@ -633,7 +633,11 @@
       "exportsUnlimited": "O Premium não tem limite diário de exportações.",
       "height": "O Premium gera saídas de até {{value}}p.",
       "projects": "O Premium guarda até {{value}} projetos salvos.",
-      "projectsUnlimited": "O Premium não tem limite de projetos salvos."
+      "projectsUnlimited": "O Premium não tem limite de projetos salvos.",
+      "studioFormats": "O Premium adiciona MOV, WebM, MKV, áudio Opus, faixas de legenda embutidas e as configurações avançadas de exportação.",
+      "captionLooks": "O Premium salva até {{value}} estilos de legenda.",
+      "captionLooksUnlimited": "O Premium não tem limite de estilos de legenda salvos.",
+      "captionWords": "O Premium adiciona sincronização e ênfase de legendas por palavra."
     },
     "noHigherPlan": "Nenhum plano aumenta mais este limite. Reduza a configuração para continuar.",
     "proNote": "Ao fazer o upgrade, a diferença proporcional é cobrada hoje; sua data de renovação continua a mesma.",
@@ -643,7 +647,24 @@
       "aiOps": "O Pro permite {{value}} trabalhos de IA por dia.",
       "aiOpsUnlimited": "O Pro não tem limite diário de trabalhos de IA.",
       "exports": "O Pro permite {{value}} exportações por dia.",
-      "exportsUnlimited": "O Pro não tem limite diário de exportações."
+      "exportsUnlimited": "O Pro não tem limite diário de exportações.",
+      "captionLooks": "O Pro salva até {{value}} estilos de legenda.",
+      "captionLooksUnlimited": "O Pro salva estilos de legenda ilimitados."
+    },
+    "format": {
+      "title": "Este formato de exportação não está no seu plano",
+      "bodyPlan": "As exportações em {{option}} fazem parte do {{plan}}.",
+      "bodyFree": "As exportações em {{option}} exigem uma conta gratuita. Crie uma e elas são liberadas.",
+      "advanced": "As configurações avançadas de exportação (seu próprio contêiner e codecs, taxa de bits do áudio e mono) fazem parte do {{plan}}."
+    },
+    "captionLooks": {
+      "title": "Você atingiu o limite de estilos de legenda salvos",
+      "body": "Seu plano salva até {{limit}} estilos de legenda.",
+      "bodyNone": "Salvar seus próprios estilos de legenda faz parte do Premium."
+    },
+    "captionWords": {
+      "title": "A sincronização de legendas por palavra é um recurso Premium",
+      "body": "Com Premium ou Pro, arraste os limites das palavras para ressincronizá-las e clique em uma palavra para enfatizá-la."
     }
   },
   "recentStrip": {
@@ -773,5 +794,8 @@
     "aiOpsUnlimited": "Trabalhos de IA ilimitados por dia",
     "fileSize": "Arquivos de até {{value}}",
     "compare": "Comparar todos os planos"
+  },
+  "mediGuideButton": {
+    "label": "Perguntar ao {{brand}}, o guia do Media Manipulator"
   }
 }

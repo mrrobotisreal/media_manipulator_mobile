@@ -170,6 +170,8 @@
       "h264": "H.264（兼容性最好）",
       "h265": "H.265 / HEVC（更小，适合现代设备）"
     },
+    "crfLabel": "自定义 CRF 值（可选）",
+    "crfHint": "在压缩级别之外精细调整：{{min}} 接近无损，{{max}} 文件极小。留空则使用所选级别。",
     "stripAudio": "移除音轨以获得更小的文件",
     "note": "我们会按所选级别重新编码视频。MP4输出使用H.264 + AAC并启用faststart，以便即时播放。",
     "running": "压缩中…",
@@ -1172,6 +1174,39 @@
           "invalid": "无法将该Lottie文件转换为动画。"
         }
       }
+    },
+    "templates": {
+      "button": "模板",
+      "title": "添加现成动画",
+      "lowerThird": "下方字幕条",
+      "logoReveal": "标志出场",
+      "titlePop": "标题弹出",
+      "bulletReveal": "要点逐条出现",
+      "counter": "计数器",
+      "badgeBounce": "弹跳徽章",
+      "hint": {
+        "lowerThird": "姓名和职位在强调色条上滑入。",
+        "logoReveal": "描绘选中的轮廓;其他图层淡入并放大。",
+        "titlePop": "居中的大标题弹出后稳住。",
+        "bulletReveal": "三个要点依次滑入。",
+        "counter": "数字向上计数,停在总数上。",
+        "badgeBounce": "圆形徽章落下并弹跳。"
+      },
+      "placeholder": {
+        "name": "你的名字",
+        "role": "你的职位",
+        "title": "你的标题",
+        "bullet": "要点 {{n}}",
+        "badge": "新品"
+      },
+      "failed": {
+        "logo": "请先绘制一个形状或导入你的标志,然后选中它。",
+        "generic": "无法将此模板添加到动画中。"
+      }
+    },
+    "medi": {
+      "label": "让{{brand}}做动画（Ctrl+J）",
+      "historyLabel": "{{brand}}:{{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1450,7 +1485,9 @@
       "exportSettingUp": "导出功能正在设置中",
       "panelsTab": "面板",
       "layersTab": "图层",
-      "shortcuts": "键盘快捷键"
+      "shortcuts": "键盘快捷键",
+      "medi": "{{brand}}",
+      "mediLabel": "让{{brand}}编辑（Ctrl+J）"
     },
     "banner": {
       "local": "仅保存在此浏览器中。登录后可在账户中保留最多 {{count}} 个项目。",
@@ -2031,7 +2068,8 @@
         "brushGesture": "画笔设置",
         "maskGesture": "蒙版设置",
         "geometryGesture": "几何设置",
-        "layerGesture": "图层设置"
+        "layerGesture": "图层设置",
+        "medi": "{{brand}}：{{summary}}"
       }
     },
     "shortcuts": {
@@ -2062,7 +2100,8 @@
         "gradient": "渐变蒙版",
         "radial": "径向蒙版",
         "crop": "裁剪",
-        "heal": "修复"
+        "heal": "修复",
+        "medi": "打开{{brand}}"
       }
     },
     "batch": {

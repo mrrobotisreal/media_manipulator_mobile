@@ -170,6 +170,8 @@
       "h264": "H.264 (tương thích nhất)",
       "h265": "H.265 / HEVC (nhỏ hơn, thiết bị hiện đại)"
     },
+    "crfLabel": "Tự đặt giá trị CRF (không bắt buộc)",
+    "crfHint": "Tinh chỉnh vượt ngoài mức đã chọn: {{min}} gần như không mất chất lượng, {{max}} cho tệp rất nhỏ. Để trống để dùng theo mức.",
     "stripAudio": "Bỏ bản âm thanh để tệp còn nhỏ hơn nữa",
     "note": "Chúng tôi mã hóa lại video ở mức đã chọn. Đầu ra MP4 dùng H.264 + AAC với faststart để phát ngay lập tức.",
     "running": "Đang nén…",
@@ -1172,6 +1174,39 @@
           "invalid": "Không thể chuyển tệp Lottie đó thành hoạt ảnh."
         }
       }
+    },
+    "templates": {
+      "button": "Mẫu",
+      "title": "Thêm hoạt ảnh có sẵn",
+      "lowerThird": "Dải chữ dưới",
+      "logoReveal": "Hiện logo",
+      "titlePop": "Tiêu đề bật lên",
+      "bulletReveal": "Gạch đầu dòng lần lượt",
+      "counter": "Bộ đếm",
+      "badgeBounce": "Huy hiệu nảy",
+      "hint": {
+        "lowerThird": "Tên và chức danh trượt vào trên một thanh màu nhấn.",
+        "logoReveal": "Vẽ dần các đường viền đã chọn; các lớp khác hiện dần và lớn lên.",
+        "titlePop": "Một tiêu đề lớn ở giữa bật lên rồi đứng yên.",
+        "bulletReveal": "Ba ý lần lượt trượt vào.",
+        "counter": "Một con số đếm lên và dừng ở tổng.",
+        "badgeBounce": "Một huy hiệu tròn rơi xuống và nảy lên."
+      },
+      "placeholder": {
+        "name": "Tên của bạn",
+        "role": "Chức danh của bạn",
+        "title": "Tiêu đề của bạn",
+        "bullet": "Ý {{n}}",
+        "badge": "MỚI"
+      },
+      "failed": {
+        "logo": "Hãy vẽ một hình hoặc nhập logo trước, rồi chọn nó.",
+        "generic": "Không thể thêm mẫu này vào hoạt ảnh."
+      }
+    },
+    "medi": {
+      "label": "Nhờ {{brand}} tạo hoạt ảnh (Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1450,7 +1485,9 @@
       "exportSettingUp": "Tính năng xuất đang được thiết lập",
       "panelsTab": "Bảng",
       "layersTab": "Lớp",
-      "shortcuts": "Phím tắt"
+      "shortcuts": "Phím tắt",
+      "medi": "{{brand}}",
+      "mediLabel": "Nhờ {{brand}} chỉnh sửa (Ctrl+J)"
     },
     "banner": {
       "local": "Chỉ được lưu trong trình duyệt này. Đăng nhập để giữ tối đa {{count}} dự án trong tài khoản.",
@@ -2031,7 +2068,8 @@
         "brushGesture": "Thiết lập cọ",
         "maskGesture": "Thiết lập mặt nạ",
         "geometryGesture": "Thiết lập hình học",
-        "layerGesture": "Thiết lập lớp"
+        "layerGesture": "Thiết lập lớp",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2062,7 +2100,8 @@
         "gradient": "Mặt nạ chuyển sắc",
         "radial": "Mặt nạ tròn",
         "crop": "Cắt",
-        "heal": "Chữa lành"
+        "heal": "Chữa lành",
+        "medi": "Mở {{brand}}"
       }
     },
     "batch": {

@@ -170,6 +170,8 @@
       "h264": "H.264（最も互換性が高い）",
       "h265": "H.265 / HEVC（より小さい、最新デバイス向け）"
     },
+    "crfLabel": "CRF値の指定（任意）",
+    "crfHint": "レベルより細かく調整できます。{{min}}はほぼ劣化なし、{{max}}はとても小さいファイルです。空欄にするとレベルの設定を使います。",
     "stripAudio": "音声トラックを削除してさらに小さくする",
     "note": "選択したレベルで動画を再エンコードします。MP4出力はH.264 + AACにfaststartを適用し、すぐに再生できます。",
     "running": "圧縮中…",
@@ -1172,6 +1174,39 @@
           "invalid": "そのLottieファイルをアニメーションに変換できませんでした。"
         }
       }
+    },
+    "templates": {
+      "button": "テンプレート",
+      "title": "既製のアニメーションを追加",
+      "lowerThird": "テロップ",
+      "logoReveal": "ロゴリビール",
+      "titlePop": "タイトルポップ",
+      "bulletReveal": "箇条書きを順に表示",
+      "counter": "カウンター",
+      "badgeBounce": "弾むバッジ",
+      "hint": {
+        "lowerThird": "名前と肩書きがアクセントバーの上にスライドイン。",
+        "logoReveal": "選択した輪郭を描き、他のレイヤーはフェードしながら拡大。",
+        "titlePop": "中央の大きなタイトルがポップして落ち着きます。",
+        "bulletReveal": "3つの項目が順番にスライドイン。",
+        "counter": "数字がカウントアップして合計で止まります。",
+        "badgeBounce": "丸いバッジが落ちてきて弾みます。"
+      },
+      "placeholder": {
+        "name": "お名前",
+        "role": "肩書き",
+        "title": "見出し",
+        "bullet": "項目{{n}}",
+        "badge": "新着"
+      },
+      "failed": {
+        "logo": "まず図形を描くかロゴを読み込んでから、それを選択してください。",
+        "generic": "このテンプレートをアニメーションに追加できませんでした。"
+      }
+    },
+    "medi": {
+      "label": "{{brand}}にアニメーションを頼む(Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1450,7 +1485,9 @@
       "exportSettingUp": "エクスポートを準備中です",
       "panelsTab": "パネル",
       "layersTab": "レイヤー",
-      "shortcuts": "キーボードショートカット"
+      "shortcuts": "キーボードショートカット",
+      "medi": "{{brand}}",
+      "mediLabel": "編集を{{brand}}に頼む（Ctrl+J）"
     },
     "banner": {
       "local": "このブラウザーにのみ保存されています。サインインすると、アカウントに最大{{count}}件のプロジェクトを保持できます。",
@@ -2031,7 +2068,8 @@
         "brushGesture": "ブラシ設定",
         "maskGesture": "マスク設定",
         "geometryGesture": "ジオメトリ設定",
-        "layerGesture": "レイヤー設定"
+        "layerGesture": "レイヤー設定",
+        "medi": "{{brand}}：{{summary}}"
       }
     },
     "shortcuts": {
@@ -2062,7 +2100,8 @@
         "gradient": "グラデーションマスク",
         "radial": "円形マスク",
         "crop": "切り抜き",
-        "heal": "修復"
+        "heal": "修復",
+        "medi": "{{brand}}を開く"
       }
     },
     "batch": {
