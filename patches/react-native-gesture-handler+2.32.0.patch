@@ -1,0 +1,76 @@
+diff --git a/node_modules/react-native-gesture-handler/lib/commonjs/components/ReanimatedSwipeable/ReanimatedSwipeable.js b/node_modules/react-native-gesture-handler/lib/commonjs/components/ReanimatedSwipeable/ReanimatedSwipeable.js
+index 551ab92..bc74a85 100644
+--- a/node_modules/react-native-gesture-handler/lib/commonjs/components/ReanimatedSwipeable/ReanimatedSwipeable.js
++++ b/node_modules/react-native-gesture-handler/lib/commonjs/components/ReanimatedSwipeable/ReanimatedSwipeable.js
+@@ -199,7 +199,9 @@ const Swipeable = props => {
+ 
+   const leftActionAnimation = (0, _reactNativeReanimated.useAnimatedStyle)(() => {
+     return {
+-      opacity: showLeftProgress.value === 0 ? 0 : 1
++      opacity: showLeftProgress.value === 0 ? 0 : 1,
++      // Backport of RNGH 2.33: the inactive action container must not intercept touches.
++      pointerEvents: showLeftProgress.value === 0 ? 'none' : 'auto'
+     };
+   });
+   const leftElement = (0, _react.useCallback)(() => /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNativeReanimated.default.View, {
+@@ -211,7 +213,9 @@ const Swipeable = props => {
+   }), [appliedTranslation, leftActionAnimation, leftLayoutRef, leftWrapperLayoutRef, renderLeftActions, showLeftProgress, swipeableMethods]);
+   const rightActionAnimation = (0, _reactNativeReanimated.useAnimatedStyle)(() => {
+     return {
+-      opacity: showRightProgress.value === 0 ? 0 : 1
++      opacity: showRightProgress.value === 0 ? 0 : 1,
++      // Backport of RNGH 2.33: the inactive action container must not intercept touches.
++      pointerEvents: showRightProgress.value === 0 ? 'none' : 'auto'
+     };
+   });
+   const rightElement = (0, _react.useCallback)(() => /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNativeReanimated.default.View, {
+diff --git a/node_modules/react-native-gesture-handler/lib/module/components/ReanimatedSwipeable/ReanimatedSwipeable.js b/node_modules/react-native-gesture-handler/lib/module/components/ReanimatedSwipeable/ReanimatedSwipeable.js
+index a2835d5..d515d92 100644
+--- a/node_modules/react-native-gesture-handler/lib/module/components/ReanimatedSwipeable/ReanimatedSwipeable.js
++++ b/node_modules/react-native-gesture-handler/lib/module/components/ReanimatedSwipeable/ReanimatedSwipeable.js
+@@ -194,7 +194,9 @@ const Swipeable = props => {
+ 
+   const leftActionAnimation = useAnimatedStyle(() => {
+     return {
+-      opacity: showLeftProgress.value === 0 ? 0 : 1
++      opacity: showLeftProgress.value === 0 ? 0 : 1,
++      // Backport of RNGH 2.33: the inactive action container must not intercept touches.
++      pointerEvents: showLeftProgress.value === 0 ? 'none' : 'auto'
+     };
+   });
+   const leftElement = useCallback(() => /*#__PURE__*/_jsxs(Animated.View, {
+@@ -206,7 +208,9 @@ const Swipeable = props => {
+   }), [appliedTranslation, leftActionAnimation, leftLayoutRef, leftWrapperLayoutRef, renderLeftActions, showLeftProgress, swipeableMethods]);
+   const rightActionAnimation = useAnimatedStyle(() => {
+     return {
+-      opacity: showRightProgress.value === 0 ? 0 : 1
++      opacity: showRightProgress.value === 0 ? 0 : 1,
++      // Backport of RNGH 2.33: the inactive action container must not intercept touches.
++      pointerEvents: showRightProgress.value === 0 ? 'none' : 'auto'
+     };
+   });
+   const rightElement = useCallback(() => /*#__PURE__*/_jsxs(Animated.View, {
+diff --git a/node_modules/react-native-gesture-handler/src/components/ReanimatedSwipeable/ReanimatedSwipeable.tsx b/node_modules/react-native-gesture-handler/src/components/ReanimatedSwipeable/ReanimatedSwipeable.tsx
+index b6134c9..a8f2fd6 100644
+--- a/node_modules/react-native-gesture-handler/src/components/ReanimatedSwipeable/ReanimatedSwipeable.tsx
++++ b/node_modules/react-native-gesture-handler/src/components/ReanimatedSwipeable/ReanimatedSwipeable.tsx
+@@ -372,6 +372,9 @@ const Swipeable = (props: SwipeableProps) => {
+   const leftActionAnimation = useAnimatedStyle(() => {
+     return {
+       opacity: showLeftProgress.value === 0 ? 0 : 1,
++      // Backport of RNGH 2.33: both action containers use `absoluteFill` and overlap, so the
++      // inactive one must not intercept touches meant for the visible actions.
++      pointerEvents: showLeftProgress.value === 0 ? 'none' : 'auto',
+     };
+   });
+ 
+@@ -402,6 +405,9 @@ const Swipeable = (props: SwipeableProps) => {
+   const rightActionAnimation = useAnimatedStyle(() => {
+     return {
+       opacity: showRightProgress.value === 0 ? 0 : 1,
++      // Backport of RNGH 2.33: both action containers use `absoluteFill` and overlap, so the
++      // inactive one must not intercept touches meant for the visible actions.
++      pointerEvents: showRightProgress.value === 0 ? 'none' : 'auto',
+     };
+   });
+ 
