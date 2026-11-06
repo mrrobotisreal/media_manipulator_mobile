@@ -127,7 +127,7 @@
     "contentStudioCta": {
       "title": "Darkroom",
       "badge": "新登場",
-      "body": "マルチトラックのタイムラインで動画と音声を編集・重ね合わせ・ミックスし、MP4で書き出せます。Premiere Pro風のエディターがブラウザでそのまま使えます。",
+      "body": "マルチトラックのタイムラインで動画と音声を編集・重ね合わせ・ミックスし、MP4・MOV・WebM・MKVで書き出せます。Premiere Pro風のエディターがブラウザでそのまま使えます。",
       "cta": "Darkroomを試す"
     },
     "hero": {

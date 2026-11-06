@@ -171,6 +171,8 @@
       "h264": "H.264 (most compatible)",
       "h265": "H.265 / HEVC (smaller, modern devices)"
     },
+    "crfLabel": "CRF override (optional)",
+    "crfHint": "Fine control beyond the level: {{min}} is near lossless, {{max}} is very small. Leave empty to use the level.",
     "stripAudio": "Remove the audio track for an even smaller file",
     "note": "We re-encode the video at the chosen level. MP4 output uses H.264 + AAC with faststart for instant playback.",
     "running": "Compressing…",
@@ -1184,6 +1186,39 @@
           "invalid": "That Lottie file could not be turned into an animation."
         }
       }
+    },
+    "templates": {
+      "button": "Templates",
+      "title": "Add a ready-made animation",
+      "lowerThird": "Lower third",
+      "logoReveal": "Logo reveal",
+      "titlePop": "Title pop",
+      "bulletReveal": "Bullet reveal",
+      "counter": "Counter",
+      "badgeBounce": "Badge bounce",
+      "hint": {
+        "lowerThird": "Name and role that slide in over an accent bar.",
+        "logoReveal": "Draws the selected outlines on; other layers fade and grow in.",
+        "titlePop": "A big centred title that pops in and settles.",
+        "bulletReveal": "Three points that slide in one after another.",
+        "counter": "A number that counts up and settles on the total.",
+        "badgeBounce": "A round badge that drops in and bounces."
+      },
+      "placeholder": {
+        "name": "Your name",
+        "role": "Your title",
+        "title": "Your headline",
+        "bullet": "Point {{n}}",
+        "badge": "NEW"
+      },
+      "failed": {
+        "logo": "Draw a shape or import your logo first, then select it.",
+        "generic": "That template could not be added to this animation."
+      }
+    },
+    "medi": {
+      "label": "Ask {{brand}} to animate (Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1462,7 +1497,9 @@
       "exportSettingUp": "Export is being set up",
       "panelsTab": "Panels",
       "layersTab": "Layers",
-      "shortcuts": "Keyboard shortcuts"
+      "shortcuts": "Keyboard shortcuts",
+      "medi": "{{brand}}",
+      "mediLabel": "Ask {{brand}} to edit (Ctrl+J)"
     },
     "banner": {
       "local": "Saved in this browser only. Sign in to keep up to {{count}} projects on your account.",
@@ -2045,7 +2082,8 @@
         "brushGesture": "Brush setting",
         "maskGesture": "Mask setting",
         "geometryGesture": "Geometry setting",
-        "layerGesture": "Layer setting"
+        "layerGesture": "Layer setting",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2076,7 +2114,8 @@
         "gradient": "Gradient mask",
         "radial": "Radial mask",
         "crop": "Crop",
-        "heal": "Heal"
+        "heal": "Heal",
+        "medi": "Open {{brand}}"
       }
     },
     "batch": {

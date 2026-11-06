@@ -171,6 +171,8 @@
       "h264": "H.264 (il più compatibile)",
       "h265": "H.265 / HEVC (più piccolo, dispositivi moderni)"
     },
+    "crfLabel": "Valore CRF manuale (facoltativo)",
+    "crfHint": "Controllo fine oltre il livello: {{min}} è quasi senza perdita, {{max}} dà un file molto piccolo. Lascia vuoto per usare il livello.",
     "stripAudio": "Rimuovi la traccia audio per un file ancora più piccolo",
     "note": "Ricodifichiamo il video al livello scelto. L'output MP4 usa H.264 + AAC con faststart per una riproduzione immediata.",
     "running": "Compressione…",
@@ -1184,6 +1186,39 @@
           "invalid": "Impossibile trasformare quel file Lottie in un'animazione."
         }
       }
+    },
+    "templates": {
+      "button": "Modelli",
+      "title": "Aggiungi un’animazione pronta",
+      "lowerThird": "Sottopancia",
+      "logoReveal": "Rivelazione del logo",
+      "titlePop": "Titolo che spunta",
+      "bulletReveal": "Punti uno alla volta",
+      "counter": "Contatore",
+      "badgeBounce": "Badge che rimbalza",
+      "hint": {
+        "lowerThird": "Nome e ruolo scivolano dentro sopra una barra d’accento.",
+        "logoReveal": "Disegna i contorni selezionati; gli altri livelli compaiono e crescono.",
+        "titlePop": "Un grande titolo centrato che spunta e si assesta.",
+        "bulletReveal": "Tre punti che scivolano dentro uno dopo l’altro.",
+        "counter": "Un numero che sale e si ferma sul totale.",
+        "badgeBounce": "Un badge rotondo che cade e rimbalza."
+      },
+      "placeholder": {
+        "name": "Il tuo nome",
+        "role": "Il tuo ruolo",
+        "title": "Il tuo titolo",
+        "bullet": "Punto {{n}}",
+        "badge": "NUOVO"
+      },
+      "failed": {
+        "logo": "Prima disegna una forma o importa il tuo logo, poi selezionalo.",
+        "generic": "Impossibile aggiungere questo modello all’animazione."
+      }
+    },
+    "medi": {
+      "label": "Chiedi a {{brand}} di animare (Ctrl+J)",
+      "historyLabel": "{{brand}}: {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1462,7 +1497,9 @@
       "exportSettingUp": "Esportazione in preparazione",
       "panelsTab": "Pannelli",
       "layersTab": "Strati",
-      "shortcuts": "Scorciatoie da tastiera"
+      "shortcuts": "Scorciatoie da tastiera",
+      "medi": "{{brand}}",
+      "mediLabel": "Chiedi a {{brand}} di modificare (Ctrl+J)"
     },
     "banner": {
       "local": "Salvato solo in questo browser. Accedi per conservare fino a {{count}} progetti nel tuo account.",
@@ -2047,7 +2084,8 @@
         "brushGesture": "Impostazione pennello",
         "maskGesture": "Impostazione maschera",
         "geometryGesture": "Impostazione geometria",
-        "layerGesture": "Impostazione strato"
+        "layerGesture": "Impostazione strato",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2078,7 +2116,8 @@
         "gradient": "Maschera sfumata",
         "radial": "Maschera radiale",
         "crop": "Ritaglia",
-        "heal": "Ritocco"
+        "heal": "Ritocco",
+        "medi": "Apri {{brand}}"
       }
     },
     "batch": {

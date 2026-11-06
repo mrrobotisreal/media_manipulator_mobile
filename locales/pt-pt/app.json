@@ -1345,5 +1345,46 @@
       "exportSettings": "Definições de exportação",
       "source": "Tamanho da fotografia"
     }
+  },
+  "assistant": {
+    "open": "Perguntar ao {{brand}}, o guia do Media Manipulator",
+    "title": "{{brand}}",
+    "subtitle": "O seu guia para cada ferramenta",
+    "newChat": "Nova conversa",
+    "chat": "Conversa",
+    "history": "Histórico",
+    "historyEmpty": "As suas conversas com o {{brand}} aparecem aqui.",
+    "historyLoadFailed": "Não foi possível carregar as suas conversas. Tente novamente.",
+    "untitled": "Conversa sem título",
+    "deleteChat": "Eliminar esta conversa",
+    "welcome": "Olá, sou o {{brand}}. Pergunte-me que ferramenta usar ou como fazer algo com um vídeo, uma fotografia, um som ou um documento.",
+    "placeholder": "Pergunte ao {{brand}} o que quiser",
+    "send": "Enviar",
+    "stop": "Parar",
+    "thinking": "A pensar…",
+    "searching": "A consultar as páginas de ajuda…",
+    "stopped": "Parado.",
+    "disclaimer": "O {{brand}} é uma IA e pode cometer erros. As suas mensagens são enviadas ao nosso fornecedor de IA para lhe responder.",
+    "starters": {
+      "whichTool": "De que ferramenta preciso?",
+      "gif": "Criar um GIF a partir de um vídeo",
+      "premium": "O que inclui o Premium?",
+      "photoPro": "Editar uma fotografia como um profissional"
+    },
+    "notSure": "Não tem a certeza? Pergunte ao {{brand}}",
+    "openOnWeb": "Abrir na web",
+    "resting": "Hoje estou a descansar. Estas páginas devem ajudar:",
+    "helpful": "Útil",
+    "notHelpful": "Pouco útil",
+    "thanks": "Obrigado pelo feedback.",
+    "errors": {
+      "upstream": "O {{brand}} não conseguiu responder agora. Tente novamente.",
+      "rateLimited": "São muitas perguntas num curto espaço de tempo. Aguarde um minuto e tente novamente.",
+      "paused": "O {{brand}} atingiu o limite de hoje e está a descansar até à meia-noite UTC.",
+      "signIn": "Inicie sessão novamente para continuar esta conversa.",
+      "unavailable": "O {{brand}} não está disponível neste momento.",
+      "network": "Sem ligação. Verifique a rede e tente novamente.",
+      "generic": "Algo correu mal. Tente novamente."
+    }
   }
 }

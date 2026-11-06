@@ -34,6 +34,11 @@
     "{{brand}}"
   ],
   "keys": [
+    "assistant.title",
+    "de-DE:assistant.chat",
+    "es-ES:assistant.chat",
+    "es-MX:assistant.chat",
+    "it-IT:assistant.chat",
     "it-IT:tabs.account",
     "de-DE:auth.signUp.name",
     "he-IL:tools.families.ai",

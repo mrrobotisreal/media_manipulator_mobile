@@ -630,7 +630,11 @@
       "exportsUnlimited": "Premium没有每日导出次数限制。",
       "height": "Premium最高可输出{{value}}p。",
       "projects": "Premium最多保留{{value}}个已保存项目。",
-      "projectsUnlimited": "Premium没有已保存项目数量限制。"
+      "projectsUnlimited": "Premium没有已保存项目数量限制。",
+      "studioFormats": "Premium 新增 MOV、WebM、MKV、Opus 音频、内嵌字幕轨和高级导出设置。",
+      "captionLooks": "Premium最多保存{{value}}个字幕样式。",
+      "captionLooksUnlimited": "Premium对已保存的字幕样式没有数量限制。",
+      "captionWords": "Premium新增逐词字幕计时和强调。"
     },
     "noHigherPlan": "没有套餐能进一步提高此限额。请调低设置以继续。",
     "proNote": "升级会在今天收取按比例计算的差价；你的续订日期保持不变。",
@@ -640,7 +644,24 @@
       "aiOps": "Pro每天允许{{value}}个AI任务。",
       "aiOpsUnlimited": "Pro没有每日AI任务限制。",
       "exports": "Pro每天允许{{value}}次导出。",
-      "exportsUnlimited": "Pro没有每日导出次数限制。"
+      "exportsUnlimited": "Pro没有每日导出次数限制。",
+      "captionLooks": "Pro最多保存{{value}}个字幕样式。",
+      "captionLooksUnlimited": "Pro可保存不限数量的字幕样式。"
+    },
+    "format": {
+      "title": "你的套餐不包含此导出格式",
+      "bodyPlan": "{{option}}导出属于{{plan}}。",
+      "bodyFree": "{{option}}导出需要免费账号。创建账号后即可使用。",
+      "advanced": "高级导出设置（自选容器和编解码器、音频码率和单声道）属于{{plan}}。"
+    },
+    "captionLooks": {
+      "title": "你已达到已保存字幕样式的上限",
+      "body": "你的套餐最多保存{{limit}}个字幕样式。",
+      "bodyNone": "保存自己的字幕样式属于Premium功能。"
+    },
+    "captionWords": {
+      "title": "逐词字幕计时是Premium功能",
+      "body": "使用Premium或Pro，拖动词的边界重新计时，点击某个词即可强调。"
     }
   },
   "recentStrip": {
@@ -770,5 +791,8 @@
     "aiOpsUnlimited": "每天不限数量的AI任务",
     "fileSize": "文件最大{{value}}",
     "compare": "比较所有套餐"
+  },
+  "mediGuideButton": {
+    "label": "询问 Media Manipulator 向导 {{brand}}"
   }
 }

@@ -1329,5 +1329,46 @@
       "exportSettings": "내보내기 설정",
       "source": "사진 크기"
     }
+  },
+  "assistant": {
+    "open": "Media Manipulator 가이드 {{brand}}에게 물어보기",
+    "title": "{{brand}}",
+    "subtitle": "모든 도구를 안내해 드려요",
+    "newChat": "새 채팅",
+    "chat": "채팅",
+    "history": "내 채팅",
+    "historyEmpty": "{{brand}}와 나눈 채팅이 여기에 표시돼요.",
+    "historyLoadFailed": "채팅을 불러오지 못했어요. 다시 시도해 주세요.",
+    "untitled": "제목 없는 채팅",
+    "deleteChat": "이 채팅 삭제",
+    "welcome": "안녕하세요, {{brand}}예요. 어떤 도구를 써야 할지, 동영상·사진·소리·문서로 원하는 작업을 어떻게 할 수 있는지 물어보세요.",
+    "placeholder": "{{brand}}에게 무엇이든 물어보세요",
+    "send": "보내기",
+    "stop": "중지",
+    "thinking": "생각하는 중…",
+    "searching": "도움말 페이지를 살펴보는 중…",
+    "stopped": "중지했어요.",
+    "disclaimer": "{{brand}}는 AI이므로 실수할 수 있어요. 답변을 위해 메시지가 저희 AI 제공업체로 전송돼요.",
+    "starters": {
+      "whichTool": "어떤 도구가 필요할까요?",
+      "gif": "동영상으로 GIF 만들기",
+      "premium": "Premium에는 무엇이 포함되나요?",
+      "photoPro": "사진을 전문가처럼 편집하기"
+    },
+    "notSure": "잘 모르겠다면 {{brand}}에게 물어보세요",
+    "openOnWeb": "웹에서 열기",
+    "resting": "오늘은 쉬는 중이에요. 이 페이지들이 도움이 될 거예요:",
+    "helpful": "도움이 됐어요",
+    "notHelpful": "도움이 안 됐어요",
+    "thanks": "의견을 보내 주셔서 감사해요.",
+    "errors": {
+      "upstream": "{{brand}}가 지금은 답변하지 못했어요. 다시 시도해 주세요.",
+      "rateLimited": "짧은 시간에 질문이 너무 많아요. 1분 정도 기다린 후 다시 시도해 주세요.",
+      "paused": "{{brand}}가 오늘의 한도에 도달해 UTC 자정까지 쉬고 있어요.",
+      "signIn": "이 채팅을 계속하려면 다시 로그인해 주세요.",
+      "unavailable": "지금은 {{brand}}를 사용할 수 없어요.",
+      "network": "연결되지 않았어요. 네트워크를 확인하고 다시 시도하세요.",
+      "generic": "문제가 발생했어요. 다시 시도해 주세요."
+    }
   }
 }

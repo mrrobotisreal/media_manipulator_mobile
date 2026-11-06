@@ -170,6 +170,8 @@
       "h264": "H.264（相容性最佳）",
       "h265": "H.265 / HEVC（更小，適用於新式裝置）"
     },
+    "crfLabel": "自訂 CRF 值（選填）",
+    "crfHint": "在壓縮等級之外進行細部調整：{{min}} 接近無損，{{max}} 檔案極小。留空則使用所選等級。",
     "stripAudio": "移除音軌以取得更小的檔案",
     "note": "我們會以所選等級重新編碼影片。MP4 輸出使用 H.264 + AAC 並啟用 faststart，以便立即播放。",
     "running": "壓縮中…",
@@ -1172,6 +1174,39 @@
           "invalid": "該 Lottie 檔案無法轉換為動畫。"
         }
       }
+    },
+    "templates": {
+      "button": "範本",
+      "title": "新增現成動畫",
+      "lowerThird": "下方字幕條",
+      "logoReveal": "標誌登場",
+      "titlePop": "標題彈出",
+      "bulletReveal": "重點逐條出現",
+      "counter": "計數器",
+      "badgeBounce": "彈跳徽章",
+      "hint": {
+        "lowerThird": "姓名與職稱在強調色條上滑入。",
+        "logoReveal": "描繪選取的輪廓；其他圖層淡入並放大。",
+        "titlePop": "置中的大標題彈出後穩住。",
+        "bulletReveal": "三個重點依序滑入。",
+        "counter": "數字往上計數，停在總數。",
+        "badgeBounce": "圓形徽章落下並彈跳。"
+      },
+      "placeholder": {
+        "name": "你的名字",
+        "role": "你的職稱",
+        "title": "你的標題",
+        "bullet": "重點 {{n}}",
+        "badge": "新品"
+      },
+      "failed": {
+        "logo": "請先畫一個形狀或匯入你的標誌，再選取它。",
+        "generic": "無法將這個範本加入動畫。"
+      }
+    },
+    "medi": {
+      "label": "請 {{brand}} 製作動畫（Ctrl+J）",
+      "historyLabel": "{{brand}}：{{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1450,7 +1485,9 @@
       "exportSettingUp": "匯出功能正在設定中",
       "panelsTab": "面板",
       "layersTab": "圖層",
-      "shortcuts": "鍵盤快速鍵"
+      "shortcuts": "鍵盤快速鍵",
+      "medi": "{{brand}}",
+      "mediLabel": "請 {{brand}} 編輯（Ctrl+J）"
     },
     "banner": {
       "local": "僅儲存在此瀏覽器中。登入後可在帳號中保留最多 {{count}} 個專案。",
@@ -2031,7 +2068,8 @@
         "brushGesture": "筆刷設定",
         "maskGesture": "遮色片設定",
         "geometryGesture": "幾何設定",
-        "layerGesture": "圖層設定"
+        "layerGesture": "圖層設定",
+        "medi": "{{brand}}：{{summary}}"
       }
     },
     "shortcuts": {
@@ -2062,7 +2100,8 @@
         "gradient": "漸層遮色片",
         "radial": "放射狀遮色片",
         "crop": "裁切",
-        "heal": "修復"
+        "heal": "修復",
+        "medi": "開啟 {{brand}}"
       }
     },
     "batch": {

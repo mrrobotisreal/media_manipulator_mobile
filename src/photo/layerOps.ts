@@ -104,8 +104,13 @@ export function moveLayer(doc: PhotoDoc, id: string, toIndex: number): PhotoDoc 
  * the chosen one. The default ranges and any custom ones are all treated alike.
  */
 export function greyExcept(ranges: HslRange[], keepId: string): HslRange[] {
+  return greyExceptAll(ranges, [keepId]);
+}
+
+/** `greyExcept` keeping several ranges (Medi's `grey_except`, MM108). */
+export function greyExceptAll(ranges: HslRange[], keepIds: readonly string[]): HslRange[] {
   return ranges.map((r) => {
-    const saturation = r.id === keepId ? 0 : -100;
+    const saturation = keepIds.includes(r.id) ? 0 : -100;
     return r.saturation === saturation ? r : { ...r, saturation };
   });
 }

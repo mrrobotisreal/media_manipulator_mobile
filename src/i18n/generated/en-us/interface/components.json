@@ -633,7 +633,11 @@
       "exportsUnlimited": "Premium has no daily export limit.",
       "height": "Premium outputs up to {{value}}p.",
       "projects": "Premium keeps up to {{value}} saved projects.",
-      "projectsUnlimited": "Premium has no saved-project limit."
+      "projectsUnlimited": "Premium has no saved-project limit.",
+      "studioFormats": "Premium adds MOV, WebM, MKV, Opus audio, embedded caption tracks and Advanced export settings.",
+      "captionLooks": "Premium saves up to {{value}} caption looks.",
+      "captionLooksUnlimited": "Premium has no saved caption look limit.",
+      "captionWords": "Premium adds per-word caption timing and emphasis."
     },
     "noHigherPlan": "No plan raises this limit further. Lower the setting to continue.",
     "proNote": "Upgrading charges the prorated difference today; your renewal date stays the same.",
@@ -643,7 +647,24 @@
       "aiOps": "Pro allows {{value}} AI jobs a day.",
       "aiOpsUnlimited": "Pro has no daily AI job limit.",
       "exports": "Pro allows {{value}} exports a day.",
-      "exportsUnlimited": "Pro has no daily export limit."
+      "exportsUnlimited": "Pro has no daily export limit.",
+      "captionLooks": "Pro saves up to {{value}} caption looks.",
+      "captionLooksUnlimited": "Pro saves unlimited caption looks."
+    },
+    "format": {
+      "title": "This export format isn't in your plan",
+      "bodyPlan": "{{option}} exports are part of {{plan}}.",
+      "bodyFree": "{{option}} exports need a free account. Create one and they unlock.",
+      "advanced": "Advanced export settings (your own container and codecs, audio bitrate and mono) are part of {{plan}}."
+    },
+    "captionLooks": {
+      "title": "You've reached your saved caption look limit",
+      "body": "Your plan saves up to {{limit}} caption looks.",
+      "bodyNone": "Saving your own caption looks is part of Premium."
+    },
+    "captionWords": {
+      "title": "Per-word caption timing is a Premium feature",
+      "body": "Drag word edges to retime them and click a word to emphasise it with Premium or Pro."
     }
   },
   "recentStrip": {
@@ -773,5 +794,8 @@
     "aiOpsUnlimited": "Unlimited AI jobs a day",
     "fileSize": "Files up to {{value}}",
     "compare": "Compare all plans"
+  },
+  "mediGuideButton": {
+    "label": "Ask {{brand}}, the Media Manipulator guide"
   }
 }

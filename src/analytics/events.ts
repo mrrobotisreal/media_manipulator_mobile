@@ -14,6 +14,8 @@
  * names) and emits the editor/export core; MA51 the mask, heal and preset names; MA52 the gate
  * (`photo_export_gated`), so since MA52 the app emits every name of that batch. MA53 adds the
  * "MA53 photo presets" batch (`photo_preset_saved`, `photo_presets_migrated`) and emits both.
+ * MA54 adds the "MA54 assistant guide" batch (the seven guide `assistant_*` names) and emits all of
+ * them; the "MA55 assistant copilot" batch (`assistant_edits_*` and friends) is not mirrored yet.
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -117,6 +119,15 @@ export const EVENTS = {
   // --- Aperture account presets (catalog batch "MA53 photo presets", MM103) ---
   PHOTO_PRESET_SAVED: 'photo_preset_saved',
   PHOTO_PRESETS_MIGRATED: 'photo_presets_migrated',
+
+  // --- Medi guide (catalog batch "MA54 assistant guide", MM107) ---------------
+  ASSISTANT_OPENED: 'assistant_opened',
+  ASSISTANT_MESSAGE_SENT: 'assistant_message_sent',
+  ASSISTANT_RESPONSE_COMPLETED: 'assistant_response_completed',
+  ASSISTANT_RESPONSE_FAILED: 'assistant_response_failed',
+  ASSISTANT_ACTION_CLICKED: 'assistant_action_clicked',
+  ASSISTANT_LINK_CLICKED: 'assistant_link_clicked',
+  ASSISTANT_FEEDBACK_GIVEN: 'assistant_feedback_given',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -201,6 +212,14 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
 
   photo_preset_saved: PRIORITY_NORMAL,
   photo_presets_migrated: PRIORITY_NORMAL,
+
+  assistant_opened: PRIORITY_HIGH,
+  assistant_message_sent: PRIORITY_HIGH,
+  assistant_response_completed: PRIORITY_NORMAL,
+  assistant_response_failed: PRIORITY_HIGH,
+  assistant_action_clicked: PRIORITY_NORMAL,
+  assistant_link_clicked: PRIORITY_NORMAL,
+  assistant_feedback_given: PRIORITY_NORMAL,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -595,6 +614,56 @@ export interface PhotoExportGatedProps {
   upgrade_path: 'signup' | 'premium' | 'pro' | 'none';
 }
 
+// --- Medi guide (MA54) ----------------------------------------------------------------------
+// Enums, counts and buckets only: never message text, an answer, a URL or a doc id (design
+// MEDI_ASSISTANT.md §14). The phone has the guide surface only (the Aperture copilot is MA55).
+
+export type AssistantSurfaceProp = 'guide';
+/** `assistant_opened.entry` values the phone sends: the Tools-tab button, and the empty-search row. */
+export type AssistantEntryProp = 'button' | 'empty_search';
+export type AssistantTurnIndexBucket = '1' | '2-3' | '4-10' | '11+';
+export type AssistantLatencyBucket = '<1s' | '1-3s' | '3-10s' | '10-30s' | '30s+';
+export type AssistantOutcomeProp = 'text' | 'action' | 'ask' | 'static' | 'out_of_scope';
+export type AssistantFailReasonProp =
+  'upstream' | 'timeout' | 'paused' | 'rate_limited' | 'sign_in' | 'aborted' | 'error';
+export type AssistantActionKindProp = 'navigate' | 'open_tool';
+export type AssistantLinkTargetProp = 'tool' | 'page' | 'editor' | 'pricing';
+
+export interface AssistantOpenedProps {
+  surface: AssistantSurfaceProp;
+  entry: AssistantEntryProp;
+}
+export interface AssistantMessageSentProps {
+  surface: AssistantSurfaceProp;
+  has_frame: boolean;
+  turn_index_bucket: AssistantTurnIndexBucket;
+  plan: boolean;
+}
+export interface AssistantResponseCompletedProps {
+  surface: AssistantSurfaceProp;
+  model_tier: 'guide';
+  latency_bucket: AssistantLatencyBucket;
+  /** Server tool rounds seen on the stream (0-4). */
+  tool_rounds: number;
+  outcome: AssistantOutcomeProp;
+}
+export interface AssistantResponseFailedProps {
+  surface: AssistantSurfaceProp;
+  reason: AssistantFailReasonProp;
+}
+export interface AssistantActionClickedProps {
+  surface: AssistantSurfaceProp;
+  kind: AssistantActionKindProp;
+}
+export interface AssistantLinkClickedProps {
+  surface: AssistantSurfaceProp;
+  target_kind: AssistantLinkTargetProp;
+}
+export interface AssistantFeedbackGivenProps {
+  surface: AssistantSurfaceProp;
+  rating: 'up' | 'down';
+}
+
 export interface EventPropsMap {
   screen_viewed: ScreenViewedProps;
   app_opened: AppOpenedProps;
@@ -673,6 +742,14 @@ export interface EventPropsMap {
   photo_export_gated: PhotoExportGatedProps;
   photo_preset_saved: PhotoPresetSavedProps;
   photo_presets_migrated: PhotoPresetsMigratedProps;
+
+  assistant_opened: AssistantOpenedProps;
+  assistant_message_sent: AssistantMessageSentProps;
+  assistant_response_completed: AssistantResponseCompletedProps;
+  assistant_response_failed: AssistantResponseFailedProps;
+  assistant_action_clicked: AssistantActionClickedProps;
+  assistant_link_clicked: AssistantLinkClickedProps;
+  assistant_feedback_given: AssistantFeedbackGivenProps;
 }
 
 /**

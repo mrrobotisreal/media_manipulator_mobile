@@ -1345,5 +1345,46 @@
       "exportSettings": "Impostazioni di esportazione",
       "source": "Dimensioni della foto"
     }
+  },
+  "assistant": {
+    "open": "Chiedi a {{brand}}, la guida di Media Manipulator",
+    "title": "{{brand}}",
+    "subtitle": "La tua guida a ogni strumento",
+    "newChat": "Nuova chat",
+    "chat": "Chat",
+    "history": "Le tue chat",
+    "historyEmpty": "Le tue chat con {{brand}} compaiono qui.",
+    "historyLoadFailed": "Impossibile caricare le tue chat. Riprova.",
+    "untitled": "Chat senza titolo",
+    "deleteChat": "Elimina questa chat",
+    "welcome": "Ciao, sono {{brand}}. Chiedimi quale strumento usare o come fare qualcosa con un video, una foto, un suono o un documento.",
+    "placeholder": "Chiedi a {{brand}} qualsiasi cosa",
+    "send": "Invia",
+    "stop": "Interrompi",
+    "thinking": "Sto pensando…",
+    "searching": "Sto consultando le pagine di aiuto…",
+    "stopped": "Interrotto.",
+    "disclaimer": "{{brand}} è un'IA e può commettere errori. I tuoi messaggi vengono inviati al nostro fornitore di IA per risponderti.",
+    "starters": {
+      "whichTool": "Quale strumento mi serve?",
+      "gif": "Creare una GIF da un video",
+      "premium": "Cosa include Premium?",
+      "photoPro": "Modificare una foto come un professionista"
+    },
+    "notSure": "Hai dubbi? Chiedi a {{brand}}",
+    "openOnWeb": "Apri sul web",
+    "resting": "Per oggi mi sto riposando. Queste pagine dovrebbero aiutarti:",
+    "helpful": "Utile",
+    "notHelpful": "Non utile",
+    "thanks": "Grazie per il feedback.",
+    "errors": {
+      "upstream": "{{brand}} non è riuscito a rispondere in questo momento. Riprova.",
+      "rateLimited": "Sono tante domande in poco tempo. Attendi un minuto e riprova.",
+      "paused": "{{brand}} ha raggiunto il limite di oggi e si riposa fino alla mezzanotte UTC.",
+      "signIn": "Accedi di nuovo per continuare questa chat.",
+      "unavailable": "{{brand}} non è disponibile in questo momento.",
+      "network": "Nessuna connessione. Controlla la rete e riprova.",
+      "generic": "Qualcosa è andato storto. Riprova."
+    }
   }
 }

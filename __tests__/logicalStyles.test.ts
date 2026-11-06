@@ -21,9 +21,13 @@ function files(dir: string, out: string[] = []): string[] {
 }
 
 describe('RTL: logical styles only', () => {
-  it('app/ and src/ui use start/end, never left/right', () => {
+  it('app/, src/ui and src/assistant use start/end, never left/right', () => {
     const hits: string[] = [];
-    for (const f of [...files(join(ROOT, 'app')), ...files(join(ROOT, 'src/ui'))]) {
+    for (const f of [
+      ...files(join(ROOT, 'app')),
+      ...files(join(ROOT, 'src/ui')),
+      ...files(join(ROOT, 'src/assistant')),
+    ]) {
       readFileSync(f, 'utf8')
         .split('\n')
         .forEach((line, i) => {

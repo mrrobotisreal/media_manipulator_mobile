@@ -1345,5 +1345,46 @@
       "exportSettings": "Configuración de exportación",
       "source": "Tamaño de la foto"
     }
+  },
+  "assistant": {
+    "open": "Pregúntale a {{brand}}, la guía de Media Manipulator",
+    "title": "{{brand}}",
+    "subtitle": "Tu guía para cada herramienta",
+    "newChat": "Nuevo chat",
+    "chat": "Chat",
+    "history": "Tus chats",
+    "historyEmpty": "Tus chats con {{brand}} aparecen aquí.",
+    "historyLoadFailed": "No se pudieron cargar tus chats. Inténtalo de nuevo.",
+    "untitled": "Chat sin título",
+    "deleteChat": "Eliminar este chat",
+    "welcome": "Hola, soy {{brand}}. Pregúntame qué herramienta usar o cómo hacer algo con un video, una foto, un sonido o un documento.",
+    "placeholder": "Pregúntale a {{brand}} lo que quieras",
+    "send": "Enviar",
+    "stop": "Detener",
+    "thinking": "Pensando…",
+    "searching": "Buscando en las páginas de ayuda…",
+    "stopped": "Detenido.",
+    "disclaimer": "{{brand}} es una IA y puede cometer errores. Tus mensajes se envían a nuestro proveedor de IA para poder responderte.",
+    "starters": {
+      "whichTool": "¿Qué herramienta necesito?",
+      "gif": "Hacer un GIF a partir de un video",
+      "premium": "¿Qué incluye Premium?",
+      "photoPro": "Editar una foto como un profesional"
+    },
+    "notSure": "¿Tienes dudas? Pregúntale a {{brand}}",
+    "openOnWeb": "Abrir en la web",
+    "resting": "Hoy estoy descansando. Estas páginas deberían ayudarte:",
+    "helpful": "Útil",
+    "notHelpful": "No es útil",
+    "thanks": "Gracias por tus comentarios.",
+    "errors": {
+      "upstream": "{{brand}} no pudo responder en este momento. Inténtalo de nuevo.",
+      "rateLimited": "Son muchas preguntas en poco tiempo. Espera un minuto e inténtalo de nuevo.",
+      "paused": "{{brand}} alcanzó el límite de hoy y descansa hasta la medianoche UTC.",
+      "signIn": "Inicia sesión de nuevo para continuar este chat.",
+      "unavailable": "{{brand}} no está disponible en este momento.",
+      "network": "Sin conexión. Revisa tu red y reintenta.",
+      "generic": "Algo salió mal. Inténtalo de nuevo."
+    }
   }
 }

@@ -630,7 +630,11 @@
       "exportsUnlimited": "Premiumには1日のエクスポート回数の上限がありません。",
       "height": "Premiumなら最大{{value}}pで出力できます。",
       "projects": "Premiumならプロジェクトを{{value}}件まで保存できます。",
-      "projectsUnlimited": "Premiumには保存プロジェクト数の上限がありません。"
+      "projectsUnlimited": "Premiumには保存プロジェクト数の上限がありません。",
+      "studioFormats": "PremiumではMOV、WebM、MKV、Opus音声、埋め込み字幕トラック、エクスポートの詳細設定が使えます。",
+      "captionLooks": "Premiumなら字幕スタイルを{{value}}件まで保存できます。",
+      "captionLooksUnlimited": "Premiumには保存できる字幕スタイルの上限がありません。",
+      "captionWords": "Premiumなら単語ごとの字幕タイミングと強調が使えます。"
     },
     "noHigherPlan": "この上限をさらに引き上げるプランはありません。続行するには設定値を下げてください。",
     "proNote": "アップグレードすると日割りの差額が本日請求されます。更新日は変わりません。",
@@ -640,7 +644,24 @@
       "aiOps": "Proなら1日{{value}}回のAIジョブができます。",
       "aiOpsUnlimited": "ProにはAIジョブの1日の上限がありません。",
       "exports": "Proなら1日{{value}}回のエクスポートができます。",
-      "exportsUnlimited": "Proには1日のエクスポート回数の上限がありません。"
+      "exportsUnlimited": "Proには1日のエクスポート回数の上限がありません。",
+      "captionLooks": "Proなら字幕スタイルを{{value}}件まで保存できます。",
+      "captionLooksUnlimited": "Proなら字幕スタイルを無制限に保存できます。"
+    },
+    "format": {
+      "title": "このエクスポート形式はお使いのプランに含まれていません",
+      "bodyPlan": "{{option}}でのエクスポートは{{plan}}に含まれます。",
+      "bodyFree": "{{option}}でのエクスポートには無料アカウントが必要です。作成すると使えるようになります。",
+      "advanced": "エクスポートの詳細設定（コンテナとコーデックの自由な組み合わせ、音声ビットレート、モノラル）は{{plan}}に含まれます。"
+    },
+    "captionLooks": {
+      "title": "保存できる字幕スタイルの上限に達しました",
+      "body": "お使いのプランでは字幕スタイルを{{limit}}件まで保存できます。",
+      "bodyNone": "自分の字幕スタイルの保存はPremiumの機能です。"
+    },
+    "captionWords": {
+      "title": "単語ごとの字幕タイミングはPremiumの機能です",
+      "body": "PremiumまたはProなら、単語の境界をドラッグしてタイミングを調整し、単語をクリックして強調できます。"
     }
   },
   "recentStrip": {
@@ -770,5 +791,8 @@
     "aiOpsUnlimited": "1日のAIジョブ数無制限",
     "fileSize": "ファイルは最大{{value}}まで",
     "compare": "すべてのプランを比較"
+  },
+  "mediGuideButton": {
+    "label": "Media Manipulator のガイド {{brand}} に質問する"
   }
 }

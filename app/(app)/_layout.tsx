@@ -1,4 +1,5 @@
 import { Redirect, Stack } from 'expo-router';
+import { MediHost } from '@/assistant/ui/MediHost';
 import { useAppSelector } from '@/state/hooks';
 import { NoticeHost } from '@/ui/components/NoticeHost';
 
@@ -9,6 +10,7 @@ export default function AppLayout() {
   return (
     <>
       <Stack screenOptions={{ headerShown: false }} />
+      <MediHost />
       <NoticeHost />
     </>
   );

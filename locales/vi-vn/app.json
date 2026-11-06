@@ -1329,5 +1329,46 @@
       "exportSettings": "Cài đặt xuất",
       "source": "Kích thước ảnh"
     }
+  },
+  "assistant": {
+    "open": "Hỏi {{brand}}, trợ lý hướng dẫn của Media Manipulator",
+    "title": "{{brand}}",
+    "subtitle": "Hướng dẫn cho mọi công cụ",
+    "newChat": "Cuộc trò chuyện mới",
+    "chat": "Trò chuyện",
+    "history": "Lịch sử",
+    "historyEmpty": "Các cuộc trò chuyện với {{brand}} sẽ hiện ở đây.",
+    "historyLoadFailed": "Không thể tải các cuộc trò chuyện của bạn. Hãy thử lại.",
+    "untitled": "Cuộc trò chuyện chưa có tên",
+    "deleteChat": "Xóa cuộc trò chuyện này",
+    "welcome": "Xin chào, mình là {{brand}}. Hãy hỏi mình nên dùng công cụ nào, hoặc cách xử lý video, ảnh, âm thanh hay tài liệu.",
+    "placeholder": "Hỏi {{brand}} bất cứ điều gì",
+    "send": "Gửi",
+    "stop": "Dừng",
+    "thinking": "Đang suy nghĩ…",
+    "searching": "Đang tìm trong các trang trợ giúp…",
+    "stopped": "Đã dừng.",
+    "disclaimer": "{{brand}} là AI và có thể mắc lỗi. Tin nhắn của bạn được gửi đến nhà cung cấp AI của chúng tôi để trả lời bạn.",
+    "starters": {
+      "whichTool": "Tôi cần công cụ nào?",
+      "gif": "Tạo GIF từ video",
+      "premium": "Gói Premium có những gì?",
+      "photoPro": "Chỉnh ảnh như dân chuyên nghiệp"
+    },
+    "notSure": "Chưa chắc? Hỏi {{brand}}",
+    "openOnWeb": "Mở trên web",
+    "resting": "Hôm nay mình nghỉ rồi. Những trang này có thể giúp bạn:",
+    "helpful": "Hữu ích",
+    "notHelpful": "Không hữu ích",
+    "thanks": "Cảm ơn bạn đã góp ý.",
+    "errors": {
+      "upstream": "{{brand}} chưa thể trả lời lúc này. Vui lòng thử lại.",
+      "rateLimited": "Bạn đã hỏi khá nhiều trong thời gian ngắn. Vui lòng đợi một phút rồi thử lại.",
+      "paused": "{{brand}} đã đạt giới hạn hôm nay và sẽ nghỉ đến nửa đêm theo giờ UTC.",
+      "signIn": "Đăng nhập lại để tiếp tục cuộc trò chuyện này.",
+      "unavailable": "{{brand}} hiện không khả dụng.",
+      "network": "Không có kết nối. Hãy kiểm tra mạng và thử lại.",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+    }
   }
 }

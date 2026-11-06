@@ -633,7 +633,11 @@
       "exportsUnlimited": "Premium n'a pas de limite quotidienne d'exports.",
       "height": "Premium produit des sorties jusqu'à {{value}}p.",
       "projects": "Premium conserve jusqu'à {{value}} projets enregistrés.",
-      "projectsUnlimited": "Premium n'a pas de limite de projets enregistrés."
+      "projectsUnlimited": "Premium n'a pas de limite de projets enregistrés.",
+      "studioFormats": "Premium ajoute MOV, WebM, MKV, l'audio Opus, les pistes de sous-titres intégrées et les réglages d'export avancés.",
+      "captionLooks": "Premium enregistre jusqu'à {{value}} styles de sous-titres.",
+      "captionLooksUnlimited": "Premium n'a pas de limite de styles de sous-titres enregistrés.",
+      "captionWords": "Premium ajoute le minutage et l'accentuation des sous-titres mot à mot."
     },
     "noHigherPlan": "Aucune offre ne relève davantage cette limite. Réduisez le réglage pour continuer.",
     "proNote": "La mise à niveau facture aujourd'hui la différence au prorata ; votre date de renouvellement ne change pas.",
@@ -643,7 +647,24 @@
       "aiOps": "Pro autorise {{value}} tâches IA par jour.",
       "aiOpsUnlimited": "Pro n'a pas de limite quotidienne de tâches IA.",
       "exports": "Pro autorise {{value}} exports par jour.",
-      "exportsUnlimited": "Pro n'a pas de limite quotidienne d'exports."
+      "exportsUnlimited": "Pro n'a pas de limite quotidienne d'exports.",
+      "captionLooks": "Pro enregistre jusqu'à {{value}} styles de sous-titres.",
+      "captionLooksUnlimited": "Pro enregistre des styles de sous-titres sans limite."
+    },
+    "format": {
+      "title": "Ce format d'export n'est pas inclus dans votre offre",
+      "bodyPlan": "Les exports {{option}} font partie de {{plan}}.",
+      "bodyFree": "Les exports {{option}} nécessitent un compte gratuit. Créez-en un pour les débloquer.",
+      "advanced": "Les réglages d'export avancés (votre propre conteneur et vos codecs, le débit audio et le mono) font partie de {{plan}}."
+    },
+    "captionLooks": {
+      "title": "Vous avez atteint votre limite de styles de sous-titres enregistrés",
+      "body": "Votre offre enregistre jusqu'à {{limit}} styles de sous-titres.",
+      "bodyNone": "Enregistrer vos propres styles de sous-titres fait partie de Premium."
+    },
+    "captionWords": {
+      "title": "Le minutage des sous-titres mot à mot est une fonction Premium",
+      "body": "Avec Premium ou Pro, faites glisser les limites des mots pour les recaler et cliquez sur un mot pour l'accentuer."
     }
   },
   "recentStrip": {
@@ -773,5 +794,8 @@
     "aiOpsUnlimited": "Tâches IA illimitées par jour",
     "fileSize": "Fichiers jusqu'à {{value}}",
     "compare": "Comparer toutes les offres"
+  },
+  "mediGuideButton": {
+    "label": "Demander à {{brand}}, le guide de Media Manipulator"
   }
 }

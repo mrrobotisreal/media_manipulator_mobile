@@ -630,7 +630,11 @@
       "exportsUnlimited": "Premium은 일일 내보내기 한도가 없어요.",
       "height": "Premium은 최대 {{value}}p까지 출력할 수 있어요.",
       "projects": "Premium은 프로젝트를 최대 {{value}}개까지 저장할 수 있어요.",
-      "projectsUnlimited": "Premium은 저장 프로젝트 한도가 없어요."
+      "projectsUnlimited": "Premium은 저장 프로젝트 한도가 없어요.",
+      "studioFormats": "Premium에서는 MOV, WebM, MKV, Opus 오디오, 내장 자막 트랙과 고급 내보내기 설정을 쓸 수 있어요.",
+      "captionLooks": "Premium은 자막 스타일을 최대 {{value}}개까지 저장할 수 있어요.",
+      "captionLooksUnlimited": "Premium은 저장할 수 있는 자막 스타일에 한도가 없어요.",
+      "captionWords": "Premium은 단어별 자막 타이밍과 강조를 제공해요."
     },
     "noHigherPlan": "이 한도를 더 늘려 주는 요금제는 없어요. 계속하려면 설정값을 낮춰 주세요.",
     "proNote": "업그레이드하면 차액이 오늘 청구되고 갱신일은 그대로 유지돼요.",
@@ -640,7 +644,24 @@
       "aiOps": "Pro는 하루 {{value}}회 AI 작업이 가능해요.",
       "aiOpsUnlimited": "Pro는 일일 AI 작업 한도가 없어요.",
       "exports": "Pro는 하루 {{value}}회 내보내기가 가능해요.",
-      "exportsUnlimited": "Pro는 일일 내보내기 한도가 없어요."
+      "exportsUnlimited": "Pro는 일일 내보내기 한도가 없어요.",
+      "captionLooks": "Pro는 자막 스타일을 최대 {{value}}개까지 저장할 수 있어요.",
+      "captionLooksUnlimited": "Pro는 자막 스타일을 무제한으로 저장할 수 있어요."
+    },
+    "format": {
+      "title": "이 내보내기 형식은 현재 요금제에 포함되지 않아요",
+      "bodyPlan": "{{option}} 내보내기는 {{plan}}에 포함돼요.",
+      "bodyFree": "{{option}} 내보내기에는 무료 계정이 필요해요. 계정을 만들면 바로 사용할 수 있어요.",
+      "advanced": "고급 내보내기 설정(컨테이너와 코덱 직접 선택, 오디오 비트레이트, 모노)은 {{plan}}에 포함돼요."
+    },
+    "captionLooks": {
+      "title": "저장 자막 스타일 한도에 도달했어요",
+      "body": "현재 요금제는 자막 스타일을 최대 {{limit}}개까지 저장할 수 있어요.",
+      "bodyNone": "내 자막 스타일 저장은 Premium 기능이에요."
+    },
+    "captionWords": {
+      "title": "단어별 자막 타이밍은 Premium 기능이에요",
+      "body": "Premium이나 Pro에서는 단어 경계를 드래그해 타이밍을 다시 맞추고, 단어를 클릭해 강조할 수 있어요."
     }
   },
   "recentStrip": {
@@ -770,5 +791,8 @@
     "aiOpsUnlimited": "하루 AI 작업 횟수 무제한",
     "fileSize": "최대 {{value}} 파일",
     "compare": "모든 요금제 비교"
+  },
+  "mediGuideButton": {
+    "label": "Media Manipulator 가이드 {{brand}}에게 물어보기"
   }
 }

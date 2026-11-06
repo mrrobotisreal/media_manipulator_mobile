@@ -1345,5 +1345,46 @@
       "exportSettings": "Paramètres d’export",
       "source": "Taille de la photo"
     }
+  },
+  "assistant": {
+    "open": "Demander à {{brand}}, le guide de Media Manipulator",
+    "title": "{{brand}}",
+    "subtitle": "Votre guide pour chaque outil",
+    "newChat": "Nouvelle conversation",
+    "chat": "Conversation",
+    "history": "Historique",
+    "historyEmpty": "Vos conversations avec {{brand}} apparaissent ici.",
+    "historyLoadFailed": "Impossible de charger vos conversations. Réessayez.",
+    "untitled": "Conversation sans titre",
+    "deleteChat": "Supprimer cette conversation",
+    "welcome": "Bonjour, je suis {{brand}}. Demandez-moi quel outil utiliser, ou comment faire ce que vous voulez avec une vidéo, une photo, un son ou un document.",
+    "placeholder": "Posez une question à {{brand}}",
+    "send": "Envoyer",
+    "stop": "Arrêter",
+    "thinking": "Réflexion…",
+    "searching": "Recherche dans les pages d'aide…",
+    "stopped": "Arrêté.",
+    "disclaimer": "{{brand}} est une IA et peut se tromper. Vos messages sont transmis à notre fournisseur d'IA pour vous répondre.",
+    "starters": {
+      "whichTool": "De quel outil ai-je besoin ?",
+      "gif": "Créer un GIF à partir d'une vidéo",
+      "premium": "Que comprend Premium ?",
+      "photoPro": "Retoucher une photo comme un pro"
+    },
+    "notSure": "Vous hésitez ? Demandez à {{brand}}",
+    "openOnWeb": "Ouvrir sur le web",
+    "resting": "Je me repose pour aujourd'hui. Ces pages devraient vous aider :",
+    "helpful": "Utile",
+    "notHelpful": "Pas utile",
+    "thanks": "Merci pour votre avis.",
+    "errors": {
+      "upstream": "{{brand}} n'a pas pu répondre pour le moment. Veuillez réessayer.",
+      "rateLimited": "Cela fait beaucoup de questions en peu de temps. Patientez une minute et réessayez.",
+      "paused": "{{brand}} a atteint la limite du jour et se repose jusqu'à minuit UTC.",
+      "signIn": "Reconnectez-vous pour poursuivre cette conversation.",
+      "unavailable": "{{brand}} n'est pas disponible pour le moment.",
+      "network": "Pas de connexion. Vérifiez votre réseau et réessayez.",
+      "generic": "Une erreur s'est produite. Veuillez réessayer."
+    }
   }
 }

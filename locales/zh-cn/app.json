@@ -1329,5 +1329,46 @@
       "exportSettings": "导出设置",
       "source": "照片尺寸"
     }
+  },
+  "assistant": {
+    "open": "问问{{brand}}——Media Manipulator指南",
+    "title": "{{brand}}",
+    "subtitle": "每个工具的使用指南",
+    "newChat": "新对话",
+    "chat": "对话",
+    "history": "历史记录",
+    "historyEmpty": "你与{{brand}}的对话会显示在这里。",
+    "historyLoadFailed": "无法加载你的对话，请重试。",
+    "untitled": "未命名对话",
+    "deleteChat": "删除此对话",
+    "welcome": "你好，我是{{brand}}。你可以问我该用哪个工具，或者如何处理视频、照片、声音或文档。",
+    "placeholder": "任何问题都可以问{{brand}}",
+    "send": "发送",
+    "stop": "停止",
+    "thinking": "正在思考…",
+    "searching": "正在查阅帮助页面…",
+    "stopped": "已停止。",
+    "disclaimer": "{{brand}}是AI，可能会出错。为了回答你，你的消息会发送给我们的AI服务商。",
+    "starters": {
+      "whichTool": "我需要用哪个工具？",
+      "gif": "把视频做成GIF",
+      "premium": "Premium包含什么？",
+      "photoPro": "像专业人士一样编辑照片"
+    },
+    "notSure": "不确定？问问{{brand}}",
+    "openOnWeb": "在网页端打开",
+    "resting": "我今天先休息了。这些页面应该能帮到你：",
+    "helpful": "有帮助",
+    "notHelpful": "没有帮助",
+    "thanks": "感谢你的反馈。",
+    "errors": {
+      "upstream": "{{brand}}暂时无法回答，请重试。",
+      "rateLimited": "短时间内提问太多了。请稍等一分钟再试。",
+      "paused": "{{brand}}已达到今天的上限，将休息到UTC午夜。",
+      "signIn": "请重新登录以继续此对话。",
+      "unavailable": "{{brand}}目前不可用。",
+      "network": "无网络连接。请检查网络后重试。",
+      "generic": "出了点问题，请重试。"
+    }
   }
 }

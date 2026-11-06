@@ -171,6 +171,8 @@
       "h264": "H.264 (le plus compatible)",
       "h265": "H.265 / HEVC (plus léger, appareils récents)"
     },
+    "crfLabel": "Valeur CRF personnalisée (facultatif)",
+    "crfHint": "Réglage fin au-delà du niveau : {{min}} est presque sans perte, {{max}} donne un fichier très petit. Laissez vide pour utiliser le niveau.",
     "stripAudio": "Supprimer la piste audio pour un fichier encore plus léger",
     "note": "Nous réencodons la vidéo au niveau choisi. La sortie MP4 utilise H.264 + AAC avec faststart pour une lecture instantanée.",
     "running": "Compression…",
@@ -1184,6 +1186,39 @@
           "invalid": "Ce fichier Lottie n'a pas pu être converti en animation."
         }
       }
+    },
+    "templates": {
+      "button": "Modèles",
+      "title": "Ajouter une animation toute prête",
+      "lowerThird": "Bandeau titre",
+      "logoReveal": "Révélation du logo",
+      "titlePop": "Titre qui surgit",
+      "bulletReveal": "Puces une à une",
+      "counter": "Compteur",
+      "badgeBounce": "Pastille rebondissante",
+      "hint": {
+        "lowerThird": "Nom et fonction glissent sur une barre d’accent.",
+        "logoReveal": "Trace les contours sélectionnés ; les autres calques apparaissent en grandissant.",
+        "titlePop": "Un grand titre centré qui surgit puis se pose.",
+        "bulletReveal": "Trois points qui glissent l’un après l’autre.",
+        "counter": "Un nombre qui défile jusqu’au total.",
+        "badgeBounce": "Une pastille ronde qui tombe et rebondit."
+      },
+      "placeholder": {
+        "name": "Votre nom",
+        "role": "Votre fonction",
+        "title": "Votre titre",
+        "bullet": "Point {{n}}",
+        "badge": "NOUVEAU"
+      },
+      "failed": {
+        "logo": "Dessinez d’abord une forme ou importez votre logo, puis sélectionnez-le.",
+        "generic": "Impossible d’ajouter ce modèle à l’animation."
+      }
+    },
+    "medi": {
+      "label": "Demander une animation à {{brand}} (Ctrl+J)",
+      "historyLabel": "{{brand}} : {{summary}}"
     }
   },
   "metadataInspectPanel": {
@@ -1462,7 +1497,9 @@
       "exportSettingUp": "L'export est en cours de préparation",
       "panelsTab": "Panneaux",
       "layersTab": "Calques",
-      "shortcuts": "Raccourcis clavier"
+      "shortcuts": "Raccourcis clavier",
+      "medi": "{{brand}}",
+      "mediLabel": "Demander une retouche à {{brand}} (Ctrl+J)"
     },
     "banner": {
       "local": "Enregistré uniquement dans ce navigateur. Connectez-vous pour conserver jusqu'à {{count}} projets sur votre compte.",
@@ -2047,7 +2084,8 @@
         "brushGesture": "Réglage du pinceau",
         "maskGesture": "Réglage du masque",
         "geometryGesture": "Réglage de la géométrie",
-        "layerGesture": "Réglage du calque"
+        "layerGesture": "Réglage du calque",
+        "medi": "{{brand}}: {{summary}}"
       }
     },
     "shortcuts": {
@@ -2078,7 +2116,8 @@
         "gradient": "Masque dégradé",
         "radial": "Masque radial",
         "crop": "Recadrer",
-        "heal": "Correction"
+        "heal": "Correction",
+        "medi": "Ouvrir {{brand}}"
       }
     },
     "batch": {

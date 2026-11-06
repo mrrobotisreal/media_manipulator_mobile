@@ -633,7 +633,11 @@
       "exportsUnlimited": "Premium hat kein tägliches Exportlimit.",
       "height": "Premium gibt bis zu {{value}}p aus.",
       "projects": "Premium speichert bis zu {{value}} Projekte.",
-      "projectsUnlimited": "Premium hat kein Limit für gespeicherte Projekte."
+      "projectsUnlimited": "Premium hat kein Limit für gespeicherte Projekte.",
+      "studioFormats": "Premium fügt MOV, WebM, MKV, Opus-Audio, eingebettete Untertitelspuren und erweiterte Exporteinstellungen hinzu.",
+      "captionLooks": "Premium speichert bis zu {{value}} Untertitelstile.",
+      "captionLooksUnlimited": "Premium hat kein Limit für gespeicherte Untertitelstile.",
+      "captionWords": "Premium ergänzt wortgenaues Untertitel-Timing und Betonung."
     },
     "noHigherPlan": "Kein Tarif erhöht dieses Limit weiter. Verringere die Einstellung, um fortzufahren.",
     "proNote": "Beim Upgrade wird heute die anteilige Differenz abgebucht; dein Verlängerungsdatum bleibt gleich.",
@@ -643,7 +647,24 @@
       "aiOps": "Pro erlaubt {{value}} KI-Aufträge pro Tag.",
       "aiOpsUnlimited": "Pro hat kein tägliches Limit für KI-Aufträge.",
       "exports": "Pro erlaubt {{value}} Exporte pro Tag.",
-      "exportsUnlimited": "Pro hat kein tägliches Exportlimit."
+      "exportsUnlimited": "Pro hat kein tägliches Exportlimit.",
+      "captionLooks": "Pro speichert bis zu {{value}} Untertitelstile.",
+      "captionLooksUnlimited": "Pro speichert unbegrenzt viele Untertitelstile."
+    },
+    "format": {
+      "title": "Dieses Exportformat ist nicht in deinem Tarif enthalten",
+      "bodyPlan": "{{option}}-Exporte sind Teil von {{plan}}.",
+      "bodyFree": "{{option}}-Exporte erfordern ein kostenloses Konto. Erstelle eines, und sie werden freigeschaltet.",
+      "advanced": "Erweiterte Exporteinstellungen (eigener Container und eigene Codecs, Audio-Bitrate und Mono) sind Teil von {{plan}}."
+    },
+    "captionLooks": {
+      "title": "Du hast dein Limit für gespeicherte Untertitelstile erreicht",
+      "body": "Dein Tarif speichert bis zu {{limit}} Untertitelstile.",
+      "bodyNone": "Eigene Untertitelstile zu speichern gehört zu Premium."
+    },
+    "captionWords": {
+      "title": "Wortgenaues Untertitel-Timing ist eine Premium-Funktion",
+      "body": "Ziehe mit Premium oder Pro Wortgrenzen, um sie neu zu timen, und klicke auf ein Wort, um es zu betonen."
     }
   },
   "recentStrip": {
@@ -773,5 +794,8 @@
     "aiOpsUnlimited": "Unbegrenzte KI-Aufträge pro Tag",
     "fileSize": "Dateien bis {{value}}",
     "compare": "Alle Tarife vergleichen"
+  },
+  "mediGuideButton": {
+    "label": "{{brand}} fragen, den Guide von Media Manipulator"
   }
 }
