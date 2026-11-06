@@ -3,6 +3,9 @@ import { ChevronRight, Search, X } from 'lucide-react-native';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { I18nManager, Pressable, ScrollView, SectionList, TextInput, View } from 'react-native';
+import { guideEnabled, useGetAssistantCapabilitiesQuery } from '@/api/endpoints/assistant';
+import { MEDI_BRAND } from '@/assistant/brand';
+import { openMedi } from '@/assistant/mediUi';
 import { AuthBanners } from '@/auth/ui/AuthBanners';
 import { useAppSelector } from '@/state/hooks';
 import { QuotaHeader } from '@/quota/QuotaHeader';
@@ -12,6 +15,7 @@ import { searchTools, type SearchableTool } from '@/tools/search';
 import type { AnyToolDefinition } from '@/tools/types';
 import { useSearchableTools } from '@/tools/useSearchableTools';
 import { useToolAvailability } from '@/tools/availability';
+import { MediMark } from '@/assistant/ui/MediMark';
 import { Screen } from '@/ui/components/Screen';
 import { Text } from '@/ui/components/Text';
 import { colors, hitTarget } from '@/ui/tokens';
@@ -32,6 +36,7 @@ export default function ToolsTab() {
   const { t } = useTranslation();
   const router = useRouter();
   const available = useToolAvailability();
+  const medi = guideEnabled(useGetAssistantCapabilitiesQuery().data);
   const all = useSearchableTools();
   const items = all.filter((i) => available(i.tool));
   const lastToolIds = useAppSelector((s) => s.settings.lastToolIds);
@@ -158,9 +163,25 @@ export default function ToolsTab() {
         )}
         renderItem={({ item }) => renderRow(item)}
         ListEmptyComponent={
-          <Text className="mx-4 mt-8 text-center text-muted-fg">
-            {t('tools.search.empty', { query })}
-          </Text>
+          <View>
+            <Text className="mx-4 mt-8 text-center text-muted-fg">
+              {t('tools.search.empty', { query })}
+            </Text>
+            {medi && query !== '' ? (
+              <Pressable
+                testID="ask-medi-row"
+                accessibilityRole="button"
+                onPress={() => openMedi('empty_search', query)}
+                className="mx-4 mt-4 flex-row items-center justify-center gap-2 rounded-lg border border-edge-control bg-surface-1 px-3"
+                style={{ minHeight: hitTarget }}
+              >
+                <MediMark size={22} />
+                <Text className="font-semibold">
+                  {t('assistant.notSure', { brand: MEDI_BRAND })}
+                </Text>
+              </Pressable>
+            ) : null}
+          </View>
         }
       />
     </Screen>

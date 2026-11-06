@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 import { CircleUser, History, Wrench } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
+import { MediButton } from '@/assistant/ui/MediButton';
 import { BrandBar } from '@/ui/components';
 import { colors, fonts } from '@/ui/tokens';
 
@@ -21,6 +22,8 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: t('tabs.tools'),
+          // MA54: the Medi guide button sits on the Tools tab's brand bar only.
+          header: () => <BrandBar right={<MediButton />} />,
           tabBarButtonTestID: 'tab-tools',
           tabBarIcon: ({ color, size }) => <Wrench color={color} size={size} />,
         }}

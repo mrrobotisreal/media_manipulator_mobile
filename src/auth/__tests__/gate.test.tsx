@@ -5,6 +5,7 @@ import AppLayout from '../../../app/(app)/_layout';
 import { sessionExpired, statusChanged } from '@/state/slices/auth';
 import { makeReadyStore } from '@/state/testing';
 
+jest.mock('@/assistant/ui/MediHost', () => ({ MediHost: () => null }));
 jest.mock('expo-router', () => {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { Text } = require('react-native');

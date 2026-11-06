@@ -21,6 +21,60 @@
       "ota_update_id"
     ]
   },
+  "assistant_action_clicked": {
+    "priority": 2,
+    "props": [
+      "surface",
+      "kind"
+    ]
+  },
+  "assistant_feedback_given": {
+    "priority": 2,
+    "props": [
+      "surface",
+      "rating"
+    ]
+  },
+  "assistant_link_clicked": {
+    "priority": 2,
+    "props": [
+      "surface",
+      "target_kind"
+    ]
+  },
+  "assistant_message_sent": {
+    "priority": 1,
+    "props": [
+      "surface",
+      "has_frame",
+      "turn_index_bucket",
+      "plan"
+    ]
+  },
+  "assistant_opened": {
+    "priority": 1,
+    "props": [
+      "surface",
+      "entry"
+    ]
+  },
+  "assistant_response_completed": {
+    "priority": 2,
+    "props": [
+      "surface",
+      "model_tier",
+      "latency_bucket",
+      "tool_rounds",
+      "outcome"
+    ]
+  },
+  "assistant_response_failed": {
+    "priority": 1,
+    "props": [
+      "surface",
+      "reason"
+    ]
+  },
   "auth_failed": {
     "priority": 1,
     "props": [

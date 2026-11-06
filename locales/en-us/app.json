@@ -1337,5 +1337,46 @@
       "exportSettings": "Export settings",
       "source": "Photo size"
     }
+  },
+  "assistant": {
+    "open": "Ask {{brand}}, the Media Manipulator guide",
+    "title": "{{brand}}",
+    "subtitle": "Your guide to every tool",
+    "newChat": "New chat",
+    "chat": "Chat",
+    "history": "History",
+    "historyEmpty": "Your chats with {{brand}} appear here.",
+    "historyLoadFailed": "Couldn't load your chats. Try again.",
+    "untitled": "Untitled chat",
+    "deleteChat": "Delete this chat",
+    "welcome": "Hi, I'm {{brand}}. Ask me which tool to use, or how to get something done with a video, photo, sound or document.",
+    "placeholder": "Ask {{brand}} anything",
+    "send": "Send",
+    "stop": "Stop",
+    "thinking": "Thinking…",
+    "searching": "Looking through the help pages…",
+    "stopped": "Stopped.",
+    "disclaimer": "{{brand}} is an AI and can make mistakes. Your messages go to our AI provider to answer you.",
+    "starters": {
+      "whichTool": "Which tool do I need?",
+      "gif": "Make a GIF from a video",
+      "premium": "What does Premium include?",
+      "photoPro": "Edit a photo like a pro"
+    },
+    "notSure": "Not sure? Ask {{brand}}",
+    "openOnWeb": "Open on the web",
+    "resting": "I'm resting for today. These pages should help:",
+    "helpful": "Helpful",
+    "notHelpful": "Not helpful",
+    "thanks": "Thanks for the feedback.",
+    "errors": {
+      "upstream": "{{brand}} couldn't answer just now. Please try again.",
+      "rateLimited": "That's a lot of questions in a short time. Please wait a minute and try again.",
+      "paused": "{{brand}} has reached today's limit and is resting until midnight UTC.",
+      "signIn": "Sign in again to continue this chat.",
+      "unavailable": "{{brand}} isn't available right now.",
+      "network": "No connection. Check your network and try again.",
+      "generic": "Something went wrong. Please try again."
+    }
   }
 }

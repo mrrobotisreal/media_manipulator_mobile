@@ -15,10 +15,13 @@ export function Sheet({
   visible,
   onClose,
   children,
+  fullHeight = false,
 }: {
   visible: boolean;
   onClose: () => void;
   children: ReactNode;
+  /** Additive (MA54): the panel fills the screen below the status bar (Medi's chat). */
+  fullHeight?: boolean;
 }) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
@@ -33,13 +36,14 @@ export function Sheet({
     >
       <GestureHandlerRootView style={{ flex: 1 }} testID="sheet-gesture-root">
         <Pressable
-          className="flex-1 bg-black/60"
+          className={fullHeight ? 'bg-black/60' : 'flex-1 bg-black/60'}
+          style={fullHeight ? { height: insets.top + 12 } : undefined}
           onPress={onClose}
           accessibilityLabel={t('common.close')}
         />
         <View
-          className="rounded-t-xl border-t border-edge bg-surface-1 p-4"
-          style={{ paddingBottom: 16 + insets.bottom }}
+          className={`rounded-t-xl border-t border-edge bg-surface-1 ${fullHeight ? 'flex-1 px-4 pt-3' : 'p-4'}`}
+          style={{ paddingBottom: fullHeight ? insets.bottom : 16 + insets.bottom }}
           testID="sheet-panel"
         >
           {children}
