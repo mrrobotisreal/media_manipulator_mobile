@@ -2,6 +2,7 @@ import { useRouter } from 'expo-router';
 import { History, Plus, Send, Square, ThumbsDown, ThumbsUp, Trash2, X } from 'lucide-react-native';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   ActivityIndicator,
   I18nManager,
@@ -54,6 +55,16 @@ type View_ = 'chat' | 'history';
  * Medi's full-height chat sheet (ticket MA54 decision 2). Mount once (`MediHost`); the Tools tab opens
  * it through `openMedi`. Closing aborts the request in flight (decision 3).
  */
+/** Space above the full-height sheet's content below the status bar: Sheet's 12 dp backdrop strip + the panel's pt-3. */
+export const MEDI_SHEET_TOP_GAP = 24;
+
+/**
+ * KeyboardAvoidingView's offset for the full-height sheet. It compares its parent-relative frame with the
+ * keyboard's screen position, so everything above the sheet content (status bar + top gap) must be added,
+ * or the keyboard covers the composer.
+ */
+export const mediKeyboardOffset = (topInset: number): number => topInset + MEDI_SHEET_TOP_GAP;
+
 export function MediSheet({ stream }: { stream?: StreamFn } = {}) {
   const { t } = useTranslation();
   const router = useRouter();
@@ -64,6 +75,7 @@ export function MediSheet({ stream }: { stream?: StreamFn } = {}) {
   const [draft, setDraft] = useState('');
   const list = useRef<ScrollView>(null);
   const brand = { brand: MEDI_BRAND };
+  const insets = useSafeAreaInsets();
 
   // Each open (and each prefill while open) resets the view and lands the search text in the composer.
   const [seenNonce, setSeenNonce] = useState(ui.nonce);
@@ -121,7 +133,15 @@ export function MediSheet({ stream }: { stream?: StreamFn } = {}) {
 
   return (
     <Sheet visible={ui.open} onClose={close} fullHeight>
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+      {/* The full-height sheet starts below the status bar (Sheet: backdrop insets.top + 12, then the
+          panel's pt-3), but KeyboardAvoidingView compares its parent-relative frame with the keyboard's
+          screen position: without this offset it lifted the composer ~60 dp too little and the keyboard
+          covered the input and Send (S25, 2026-11-06). */}
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior="padding"
+        keyboardVerticalOffset={mediKeyboardOffset(insets.top)}
+      >
         <View className="flex-row items-center gap-3 pb-3">
           <MediMark size={32} />
           <View className="flex-1">

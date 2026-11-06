@@ -6,7 +6,7 @@ import { i18n } from '@/i18n';
 import { makeReadyStore } from '@/state/testing';
 import { track } from '@/analytics/track';
 import { closeMedi, openMedi, resetMediUiForTests } from '../mediUi';
-import { MediSheet } from '../ui/MediSheet';
+import { MEDI_SHEET_TOP_GAP, MediSheet, mediKeyboardOffset } from '../ui/MediSheet';
 import type { StreamFn } from '../useMediChat';
 
 const mockPush = jest.fn();
@@ -80,6 +80,13 @@ beforeEach(() => {
 });
 
 describe('MediSheet (MA54 S2)', () => {
+  it('offsets the composer by everything above the full-height sheet so the keyboard never covers it', () => {
+    // S25 (2026-11-06): with no offset the keyboard covered the input and Send.
+    expect(MEDI_SHEET_TOP_GAP).toBe(24);
+    expect(mediKeyboardOffset(0)).toBe(24);
+    expect(mediKeyboardOffset(37)).toBe(61);
+  });
+
   it('renders the welcome copy and the starter chips; a chip sends its text as the message', async () => {
     const bodies: AssistantChatBody[] = [];
     await mount(scripted([META, { type: 'delta', text: 'ok' }, { type: 'done' }], bodies));
