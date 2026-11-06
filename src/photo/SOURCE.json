@@ -1,7 +1,7 @@
 {
   "webRepo": "media-manipulator-ui",
-  "webCommit": "615d7c08ddd8404d105b94b8edcbdcb19e7f29d6",
-  "syncedAt": "2026-11-04T15:34:13.839Z",
+  "webCommit": "f9c2b9f84968bd60cca202a4543d0d2038b34040",
+  "syncedAt": "2026-11-06T20:45:11.175Z",
   "files": {
     "photoTypes.ts": "3b216084c844bcba5f406b1d0a81c04421b36176183348b78556a5ca9731f8d7",
     "colorMath.ts": "dbe91356dcea0596a3c4c0b88db3d37d2941d9c5a00282115a6f31a5a7a0c9c0",
@@ -10,7 +10,7 @@
     "webUniforms.ts": "bff321da88e063b86e5717a82e73fca8e037fc3997d8b9fc21e9a6ecd8b41e6f",
     "curveEdit.ts": "3a13c4cddedfb5a666dc0fc4fbccf0ebc59e92c7b5d74a2d2bf7af22256c7e55",
     "levelsEdit.ts": "477c96a8c32ec2fbf6cfee7c5e3cf56acb972a4ca90f45c283024c5b0018bc04",
-    "layerOps.ts": "428e140a571768e34f5d5b3fa611487f19b66682a6a6495014fe38e0d24fe25d",
+    "layerOps.ts": "9d4a0c646d31666f2952904b8274b5664feb3f3fb6d89b16e130db077c4dcc9c",
     "goldens.ts": "251de8577d1bbd5b5c59027cf14116324c5d528fad51731349813b7a76348598",
     "maskOps.ts": "fcac6ce2d60c0b1095720c3176bc799274c538fb9140d03c0797f42f65e871de",
     "maskAssets.ts": "0810f46ad9ed07ee06615273c50b4cda74bfb311baa66398b62c9685b24e2859",
