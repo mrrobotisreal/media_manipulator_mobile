@@ -29,7 +29,8 @@
       "video": "Vídeo",
       "audio": "Audio",
       "ai": "IA",
-      "metadata": "Metadatos"
+      "metadata": "Metadatos",
+      "voices": "Voces"
     },
     "badge": {
       "ai": "IA"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "Edita una foto con ajustes en directo: luz, color, curvas, niveles y más."
+      },
+      "voice-clone": {
+        "title": "Clonar una voz",
+        "description": "Graba tu voz, confirma el consentimiento y consérvala para locutar cualquier texto."
+      },
+      "voice-design": {
+        "title": "Diseñar una voz",
+        "description": "Describe una voz, escucha una vista previa y consérvala para locutar cualquier texto."
+      },
+      "voice-change": {
+        "title": "Cambiar voz (IA)",
+        "description": "Haz que una grabación suene como una voz guardada o predefinida."
+      },
+      "voice-shift": {
+        "title": "Modificar voz",
+        "description": "Sube o baja el tono de una grabación, o elige un ajuste predefinido."
       }
     },
     "metadata": {
@@ -587,6 +604,49 @@
         "title": "Añadir una viñeta",
         "description": "Oscurece o aclara los bordes de una foto para enmarcar al sujeto."
       }
+    },
+    "voices": {
+      "limitReached": "Has guardado {{used}} de {{limit}} voces de tu plan. Elimina una para hacer sitio.",
+      "deleteConfirm": "La voz y su muestra se eliminan ahora. El habla que ya hayas generado se conserva hasta que termine su propio periodo de conservación.",
+      "openShifter": "Abrir el modificador de voz",
+      "consent": {
+        "terms": "Lee la sección 8.11 de los Términos"
+      },
+      "micPermission": {
+        "title": "¿Usar el micrófono?",
+        "body": "Media Manipulator necesita el micrófono para grabar tu muestra de voz.",
+        "denied": "No se ha permitido el acceso al micrófono. Permítelo para grabar o elige un archivo de audio en su lugar.",
+        "blocked": "El acceso al micrófono está bloqueado para esta app. Actívalo en Ajustes o elige un archivo de audio en su lugar.",
+        "openSettings": "Abrir Ajustes",
+        "iosUsage": "Media Manipulator usa el micrófono solo cuando grabas una muestra de voz o una grabación para cambiarla."
+      },
+      "recorder": {
+        "limit": "Hasta {{max}}",
+        "tooShort": "Graba al menos {{min}} segundos.",
+        "playTake": "Reproducir tu grabación",
+        "rerecord": "Volver a grabar",
+        "interrupted": "La grabación se ha detenido porque la app ha salido de la pantalla.",
+        "autoStopped": "La grabación se ha detenido al llegar al límite de tiempo.",
+        "failed": "No se ha podido grabar. Inténtalo de nuevo o elige un archivo de audio en su lugar."
+      },
+      "clone": {
+        "another": "Crear otra voz"
+      },
+      "design": {
+        "tryAnother": "Probar otra"
+      },
+      "myVoices": {
+        "created": "Creada el {{date}}",
+        "consent": "Consentimiento confirmado el {{date}}",
+        "speakWith": "Locutar con esta voz",
+        "rename": "Cambiar nombre",
+        "delete": "Eliminar",
+        "deleteTitle": "¿Eliminar esta voz?",
+        "save": "Guardar",
+        "deleted": "Voz eliminada",
+        "loadFailed": "No se han podido cargar tus voces.",
+        "openClone": "Crear una voz"
+      }
     }
   },
   "tool": {
@@ -930,7 +990,8 @@
       "video_summary": "Resumen de vídeo",
       "vector_vectorize": "Vectorizar",
       "studio_reverse_proxy": "Proxy de vista previa de Studio",
-      "photo_export": "Exportación de Aperture"
+      "photo_export": "Exportación de Aperture",
+      "voice_tts": "Habla"
     },
     "segments": {
       "jobs": "Trabajos",

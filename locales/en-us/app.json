@@ -29,7 +29,8 @@
       "video": "Video",
       "audio": "Audio",
       "ai": "AI",
-      "metadata": "Metadata"
+      "metadata": "Metadata",
+      "voices": "Voices"
     },
     "badge": {
       "ai": "AI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "Edit a photo with live adjustments: light, colour, curves, levels and more."
+      },
+      "voice-clone": {
+        "title": "Clone a voice",
+        "description": "Record your voice, confirm consent and keep it to speak any text."
+      },
+      "voice-design": {
+        "title": "Design a voice",
+        "description": "Describe a voice, hear a preview and keep it to speak any text."
+      },
+      "voice-change": {
+        "title": "Change voice (AI)",
+        "description": "Make a recording sound like a saved or preset voice."
+      },
+      "voice-shift": {
+        "title": "Shift voice",
+        "description": "Raise or lower the pitch of a recording, or pick a preset."
       }
     },
     "metadata": {
@@ -582,6 +599,49 @@
         "title": "Add a vignette",
         "description": "Darken or lighten the edges of a photo to frame the subject."
       }
+    },
+    "voices": {
+      "limitReached": "You've saved {{used}} of {{limit}} voices on your plan. Delete one to make room.",
+      "deleteConfirm": "The voice and its sample are deleted now. Speech you already generated stays until its own retention ends.",
+      "openShifter": "Open the voice shifter",
+      "consent": {
+        "terms": "Read Terms section 8.11"
+      },
+      "micPermission": {
+        "title": "Use the microphone?",
+        "body": "Media Manipulator needs the microphone to record your voice sample.",
+        "denied": "Microphone access was not allowed. Allow it to record, or choose an audio file instead.",
+        "blocked": "Microphone access is blocked for this app. Turn it on in Settings, or choose an audio file instead.",
+        "openSettings": "Open Settings",
+        "iosUsage": "Media Manipulator uses the microphone only when you record a voice sample or a recording to change."
+      },
+      "recorder": {
+        "limit": "Up to {{max}}",
+        "tooShort": "Record at least {{min}} seconds.",
+        "playTake": "Play your recording",
+        "rerecord": "Re-record",
+        "interrupted": "Recording stopped because the app left the screen.",
+        "autoStopped": "Recording stopped at the time limit.",
+        "failed": "Couldn't record. Try again, or choose an audio file instead."
+      },
+      "clone": {
+        "another": "Create another voice"
+      },
+      "design": {
+        "tryAnother": "Try another"
+      },
+      "myVoices": {
+        "created": "Created {{date}}",
+        "consent": "Consent confirmed {{date}}",
+        "speakWith": "Speak with this voice",
+        "rename": "Rename",
+        "delete": "Delete",
+        "deleteTitle": "Delete this voice?",
+        "save": "Save",
+        "deleted": "Voice deleted",
+        "loadFailed": "Couldn't load your voices.",
+        "openClone": "Create a voice"
+      }
     }
   },
   "tool": {
@@ -924,7 +984,8 @@
       "video_summary": "Video summary",
       "vector_vectorize": "Vectorize",
       "studio_reverse_proxy": "Studio preview proxy",
-      "photo_export": "Aperture export"
+      "photo_export": "Aperture export",
+      "voice_tts": "Speech"
     },
     "segments": {
       "jobs": "Jobs",

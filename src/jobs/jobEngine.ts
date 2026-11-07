@@ -474,6 +474,9 @@ export function createJobEngine(deps: JobEngineDeps) {
       events.trackJobCompleted(rec, job, duration);
       void activate(rec);
       if (rec.mediaKind === 'image') deps.files.keepOriginal(rec);
+      // MA34: a voice convert / shift keeps its recording for the result's A/B toggle (copied, not moved).
+      else if (rec.transport === 'starter' && rec.mediaKind === 'audio' && rec.fileUri)
+        deps.files.keepOriginal(rec);
     } else {
       // The server's error text can echo file names, so it never goes to analytics; dev logs only.
       if (__DEV__) console.warn('[job] failed', job.id, job.currentStage ?? '', job.error ?? '');

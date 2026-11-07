@@ -29,7 +29,8 @@
       "video": "動画",
       "audio": "音声",
       "ai": "AI",
-      "metadata": "メタデータ"
+      "metadata": "メタデータ",
+      "voices": "ボイス"
     },
     "badge": {
       "ai": "AI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "リアルタイム調整で写真を編集：明るさ、カラー、カーブ、レベルなど。"
+      },
+      "voice-clone": {
+        "title": "ボイスをクローン",
+        "description": "自分の声を録音して同意を確認し、保存すれば、どんなテキストでも読み上げられます。"
+      },
+      "voice-design": {
+        "title": "ボイスをデザイン",
+        "description": "ボイスを説明してプレビューを聞き、保存すれば、どんなテキストでも読み上げられます。"
+      },
+      "voice-change": {
+        "title": "ボイスを変更（AI）",
+        "description": "録音を、保存したボイスまたはプリセットのボイスのように聞こえるようにします。"
+      },
+      "voice-shift": {
+        "title": "声をシフト",
+        "description": "録音のピッチを上げ下げするか、プリセットを選びます。"
       }
     },
     "metadata": {
@@ -577,6 +594,49 @@
         "title": "周辺光量補正を追加",
         "description": "写真の周辺を暗く、または明るくして被写体を引き立てます。"
       }
+    },
+    "voices": {
+      "limitReached": "ご利用のプランで保存できるボイスは{{limit}}件で、{{used}}件を保存済みです。空きを作るには1件削除してください。",
+      "deleteConfirm": "ボイスとそのサンプルはただちに削除されます。すでに生成した音声は、それぞれの保存期間が終わるまで残ります。",
+      "openShifter": "ボイスシフターを開く",
+      "consent": {
+        "terms": "利用規約のセクション8.11を読む"
+      },
+      "micPermission": {
+        "title": "マイクを使用しますか？",
+        "body": "声のサンプルを録音するには、Media Manipulatorにマイクへのアクセスが必要です。",
+        "denied": "マイクへのアクセスが許可されませんでした。録音するには許可するか、代わりに音声ファイルを選んでください。",
+        "blocked": "このアプリのマイクへのアクセスがブロックされています。設定でオンにするか、代わりに音声ファイルを選んでください。",
+        "openSettings": "設定を開く",
+        "iosUsage": "Media Manipulatorがマイクを使用するのは、声のサンプルや変更したい音声を録音するときだけです。"
+      },
+      "recorder": {
+        "limit": "最大{{max}}",
+        "tooShort": "{{min}}秒以上録音してください。",
+        "playTake": "録音を再生",
+        "rerecord": "録音し直す",
+        "interrupted": "アプリが画面から離れたため、録音を停止しました。",
+        "autoStopped": "制限時間に達したため、録音を停止しました。",
+        "failed": "録音できませんでした。もう一度お試しいただくか、代わりに音声ファイルを選んでください。"
+      },
+      "clone": {
+        "another": "別のボイスを作成"
+      },
+      "design": {
+        "tryAnother": "別の案を試す"
+      },
+      "myVoices": {
+        "created": "作成日：{{date}}",
+        "consent": "同意確認日：{{date}}",
+        "speakWith": "このボイスで読み上げる",
+        "rename": "名前を変更",
+        "delete": "削除",
+        "deleteTitle": "このボイスを削除しますか？",
+        "save": "保存",
+        "deleted": "ボイスを削除しました",
+        "loadFailed": "ボイスを読み込めませんでした。",
+        "openClone": "ボイスを作成"
+      }
     }
   },
   "tool": {
@@ -918,7 +978,8 @@
       "video_summary": "動画の要約",
       "vector_vectorize": "ベクター化",
       "studio_reverse_proxy": "Studioプレビュープロキシ",
-      "photo_export": "Apertureエクスポート"
+      "photo_export": "Apertureエクスポート",
+      "voice_tts": "音声生成"
     },
     "segments": {
       "jobs": "ジョブ",

@@ -15,6 +15,16 @@ import { createJobTransport, type StreamFetch } from './transport';
 import { uuidv4 } from '@/lib/ids';
 import { makeBeforeUpload } from '@/quota/quotaGuard';
 import { trackPhotoExportSettled } from '@/analytics/photoEvents';
+import { trackVoiceGeneratedFor } from '@/voices/jobAnalytics';
+import {
+  makeVoiceConvertStarter,
+  makeVoiceShiftStarter,
+  makeVoiceSpeakStarter,
+  rtkSpeakCall,
+  VOICE_CONVERT_STARTER,
+  VOICE_SHIFT_STARTER,
+  VOICE_SPEAK_STARTER,
+} from './starters/voices';
 import {
   makePhotoExportStarter,
   PHOTO_EXPORT_STARTER,
@@ -140,6 +150,18 @@ export function getJobEngine(): JobEngine {
       [PHOTO_EXPORT_STARTER]: makePhotoExportStarter(rtkExportCall(dispatch), {
         settled: (r) => trackPhotoExportSettled(r),
       }),
+      // MA34: voice jobs. `voice_generated` fires once per completed job, from the settled hook.
+      [VOICE_SPEAK_STARTER]: makeVoiceSpeakStarter(rtkSpeakCall(dispatch), {
+        settled: trackVoiceGeneratedFor,
+      }),
+      [VOICE_CONVERT_STARTER]: {
+        ...makeVoiceConvertStarter(),
+        settled: trackVoiceGeneratedFor,
+      },
+      [VOICE_SHIFT_STARTER]: {
+        ...makeVoiceShiftStarter(),
+        settled: trackVoiceGeneratedFor,
+      },
     },
   };
   engine = createJobEngine(deps);

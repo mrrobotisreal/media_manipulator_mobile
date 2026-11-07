@@ -110,7 +110,7 @@ function toolIndex(): ToolIndex {
 /**
  * The registry row behind a web tool slug (`convert-video-to-animated-gif`), and the preset the slug
  * itself names (`convert-audio-to-wav` -> audio-convert + `wav`). Null when the phone has no such tool
- * (Darkroom, Motion, voices, transcoding, ...).
+ * (Darkroom, Motion, transcoding, ...).
  */
 export function findToolBySlug(slug: string): { tool: AnyToolDefinition; preset?: string } | null {
   const i = toolIndex();
@@ -162,6 +162,7 @@ export function resolveSitePath(path: string, localeCode: string): MediTarget {
     case '/account': {
       const tab = params.get('tab');
       if (tab === 'privacy') return { kind: 'route', href: `${ACCOUNT}/privacy` };
+      if (tab === 'voices') return { kind: 'route', href: `${ACCOUNT}/voices` };
       if (tab === 'history' || tab === 'projects')
         return { kind: 'route', href: `${TABS}/history` };
       return { kind: 'route', href: ACCOUNT };

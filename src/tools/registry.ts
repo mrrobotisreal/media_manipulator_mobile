@@ -3,6 +3,7 @@ import { audioTools } from './families/audio';
 import { imageTools } from './families/image';
 import { metadataTools } from './families/metadata';
 import { videoTools } from './families/video';
+import { voiceTools } from './families/voices';
 import type { AnyToolDefinition, MediaKind, ToolFamily } from './types';
 
 export * from './types';
@@ -12,6 +13,7 @@ export const TOOLS: readonly AnyToolDefinition[] = [
   ...videoTools,
   ...audioTools,
   ...aiTools,
+  ...voiceTools,
   ...metadataTools,
 ];
 

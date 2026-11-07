@@ -96,7 +96,8 @@ describe('Aperture entry rows (MA52)', () => {
       expect(typeof lookup(t.titleKey)).toBe('string');
       expect(typeof lookup(t.descriptionKey)).toBe('string');
     }
-    const slugs = TOOLS.map((t) => t.analyticsSlug);
+    // MA34: voice-change and voice-shift share the web's `voice-changer` page slug (ticket decision 1).
+    const slugs = TOOLS.filter((t) => t.id !== 'voice-shift').map((t) => t.analyticsSlug);
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
@@ -143,7 +144,13 @@ describe('Aperture entry rows (MA52)', () => {
           value={t.defaults}
           onChange={() => undefined}
           ctx={{
-            input: { id: 'picked-1', name: 'x.jpg', extension: 'jpg', mime: 'image/jpeg', mediaKind: 'image' },
+            input: {
+              id: 'picked-1',
+              name: 'x.jpg',
+              extension: 'jpg',
+              mime: 'image/jpeg',
+              mediaKind: 'image',
+            },
             files: [picked],
           }}
         />
@@ -151,7 +158,10 @@ describe('Aperture entry rows (MA52)', () => {
     );
     await fireEvent.press(r.getByTestId('photo-open-editor'));
     expect(mockPush).toHaveBeenLastCalledWith('/(app)/photo/new');
-    expect(takePhotoOpenRequest()).toMatchObject({ source: 'app_intake', toolSlug: 'black-and-white-photo' });
+    expect(takePhotoOpenRequest()).toMatchObject({
+      source: 'app_intake',
+      toolSlug: 'black-and-white-photo',
+    });
   });
 
   it('a shared photo opened from a row reports app_share', async () => {

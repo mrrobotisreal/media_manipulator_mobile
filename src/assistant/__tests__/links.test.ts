@@ -70,7 +70,6 @@ describe('findToolBySlug', () => {
     expect(f?.preset).toBe('wav');
   });
   it('returns null for a slug the phone does not have', () => {
-    expect(findToolBySlug('voice-cloning')).toBeNull();
     expect(findToolBySlug('content-studio')).toBeNull();
     expect(findToolBySlug('medi')).toBeNull();
   });
@@ -116,16 +115,37 @@ describe('resolveAction (action routing)', () => {
     expect(t).toMatchObject({ kind: 'tool', toolId: 'audio-convert', preset: 'wav' });
   });
 
+  it('the three voice slugs open the phone Voices tools (MA34), not the web', () => {
+    expect(findToolBySlug('voice-cloning')?.tool.id).toBe('voice-clone');
+    expect(findToolBySlug('voice-designer')?.tool.id).toBe('voice-design');
+    // The web's voice-changer page holds both the AI converter and the shifter; Medi opens the converter,
+    // whose form says plainly when the plan lacks it and points to the shifter.
+    expect(findToolBySlug('voice-changer')?.tool.id).toBe('voice-change');
+    expect(resolveAction('open_tool', { slug: 'voice-cloning' }, 'en-US')).toMatchObject({
+      kind: 'tool',
+      family: 'voices',
+      toolId: 'voice-clone',
+    });
+    expect(resolveAction('navigate', { target: '/account?tab=voices' }, 'en-US')).toEqual({
+      kind: 'route',
+      href: '/(app)/(tabs)/account/voices',
+    });
+  });
+
   it('an unknown slug falls back to the site page in the user locale (Open on the web)', () => {
     expect(
-      resolveAction('open_tool', { slug: 'voice-cloning', route: '/tools/voice-cloning' }, 'en-US'),
+      resolveAction(
+        'open_tool',
+        { slug: 'content-studio', route: '/tools/content-studio' },
+        'en-US',
+      ),
     ).toEqual({
       kind: 'web',
-      url: 'https://www.media-manipulator.com/tools/voice-cloning',
+      url: 'https://www.media-manipulator.com/tools/content-studio',
     });
-    expect(resolveAction('open_tool', { slug: 'voice-cloning' }, 'ru-RU')).toEqual({
+    expect(resolveAction('open_tool', { slug: 'content-studio' }, 'ru-RU')).toEqual({
       kind: 'web',
-      url: 'https://www.media-manipulator.com/ru/tools/voice-cloning',
+      url: 'https://www.media-manipulator.com/ru/tools/content-studio',
     });
   });
 

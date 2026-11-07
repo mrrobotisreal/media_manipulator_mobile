@@ -29,7 +29,8 @@
       "video": "Video",
       "audio": "Âm thanh",
       "ai": "AI",
-      "metadata": "Metadata"
+      "metadata": "Metadata",
+      "voices": "Giọng nói"
     },
     "badge": {
       "ai": "AI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "Chỉnh sửa ảnh với điều chỉnh trực tiếp: ánh sáng, màu, đường cong, mức sáng và hơn thế."
+      },
+      "voice-clone": {
+        "title": "Sao chép giọng nói",
+        "description": "Ghi âm giọng của bạn, xác nhận sự đồng ý và giữ lại để đọc bất kỳ văn bản nào."
+      },
+      "voice-design": {
+        "title": "Thiết kế giọng nói",
+        "description": "Mô tả một giọng nói, nghe thử và giữ lại để đọc bất kỳ văn bản nào."
+      },
+      "voice-change": {
+        "title": "Chuyển giọng nói (AI)",
+        "description": "Làm cho bản ghi âm nghe như một giọng nói đã lưu hoặc có sẵn."
+      },
+      "voice-shift": {
+        "title": "Đổi giọng",
+        "description": "Nâng hoặc hạ cao độ của bản ghi âm, hoặc chọn một mẫu có sẵn."
       }
     },
     "metadata": {
@@ -577,6 +594,49 @@
         "title": "Thêm tối góc",
         "description": "Làm tối hoặc sáng viền ảnh để làm nổi bật chủ thể."
       }
+    },
+    "voices": {
+      "limitReached": "Bạn đã lưu {{used}} trên {{limit}} giọng nói theo gói của bạn. Hãy xóa một giọng để có chỗ trống.",
+      "deleteConfirm": "Giọng nói và mẫu giọng của nó sẽ bị xóa ngay bây giờ. Lời nói bạn đã tạo vẫn được giữ cho đến khi hết thời hạn lưu giữ riêng của nó.",
+      "openShifter": "Mở công cụ đổi giọng",
+      "consent": {
+        "terms": "Đọc mục 8.11 của Điều khoản"
+      },
+      "micPermission": {
+        "title": "Dùng micro?",
+        "body": "Media Manipulator cần micro để ghi âm mẫu giọng của bạn.",
+        "denied": "Quyền truy cập micro chưa được cho phép. Hãy cho phép để ghi âm, hoặc chọn một tệp âm thanh thay thế.",
+        "blocked": "Quyền truy cập micro đang bị chặn cho ứng dụng này. Hãy bật trong Cài đặt, hoặc chọn một tệp âm thanh thay thế.",
+        "openSettings": "Mở cài đặt",
+        "iosUsage": "Media Manipulator chỉ dùng micro khi bạn ghi âm mẫu giọng hoặc một bản ghi âm cần thay đổi."
+      },
+      "recorder": {
+        "limit": "Tối đa {{max}}",
+        "tooShort": "Hãy ghi âm ít nhất {{min}} giây.",
+        "playTake": "Phát bản ghi âm của bạn",
+        "rerecord": "Ghi âm lại",
+        "interrupted": "Đã dừng ghi âm vì ứng dụng rời khỏi màn hình.",
+        "autoStopped": "Đã dừng ghi âm khi đạt giới hạn thời gian.",
+        "failed": "Không thể ghi âm. Hãy thử lại, hoặc chọn một tệp âm thanh thay thế."
+      },
+      "clone": {
+        "another": "Tạo giọng nói khác"
+      },
+      "design": {
+        "tryAnother": "Thử giọng khác"
+      },
+      "myVoices": {
+        "created": "Tạo ngày {{date}}",
+        "consent": "Đã xác nhận đồng ý ngày {{date}}",
+        "speakWith": "Đọc bằng giọng này",
+        "rename": "Đổi tên",
+        "delete": "Xóa",
+        "deleteTitle": "Xóa giọng nói này?",
+        "save": "Lưu",
+        "deleted": "Đã xóa giọng nói",
+        "loadFailed": "Không thể tải giọng nói của bạn.",
+        "openClone": "Tạo giọng nói"
+      }
     }
   },
   "tool": {
@@ -918,7 +978,8 @@
       "video_summary": "Tóm tắt video",
       "vector_vectorize": "Vector hóa",
       "studio_reverse_proxy": "Proxy xem trước Studio",
-      "photo_export": "Xuất từ Aperture"
+      "photo_export": "Xuất từ Aperture",
+      "voice_tts": "Lời nói"
     },
     "segments": {
       "jobs": "Tác vụ",

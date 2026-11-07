@@ -29,7 +29,8 @@
       "video": "视频",
       "audio": "音频",
       "ai": "AI",
-      "metadata": "元数据"
+      "metadata": "元数据",
+      "voices": "声音"
     },
     "badge": {
       "ai": "AI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "通过实时调整编辑照片：光线、颜色、曲线、色阶等。"
+      },
+      "voice-clone": {
+        "title": "克隆声音",
+        "description": "录下你的声音，确认同意并保存，即可用它朗读任意文本。"
+      },
+      "voice-design": {
+        "title": "设计声音",
+        "description": "描述一个声音，试听预览并保存，即可用它朗读任意文本。"
+      },
+      "voice-change": {
+        "title": "转换声音（AI）",
+        "description": "让录音听起来像某个已保存或预设的声音。"
+      },
+      "voice-shift": {
+        "title": "变声",
+        "description": "升高或降低录音的音高，或选择一个预设。"
       }
     },
     "metadata": {
@@ -577,6 +594,49 @@
         "title": "添加晕影",
         "description": "压暗或提亮照片边缘，衬托主体。"
       }
+    },
+    "voices": {
+      "limitReached": "你的套餐已保存 {{used}}/{{limit}} 个声音。请删除一个以腾出空间。",
+      "deleteConfirm": "声音及其样本会立即删除。你已生成的语音会保留，直到其自身的保留期结束。",
+      "openShifter": "打开变声器",
+      "consent": {
+        "terms": "阅读服务条款第8.11节"
+      },
+      "micPermission": {
+        "title": "允许使用麦克风？",
+        "body": "Media Manipulator 需要使用麦克风来录制你的声音样本。",
+        "denied": "未获得麦克风权限。请允许后再录音，或改为选择音频文件。",
+        "blocked": "此应用的麦克风权限已被阻止。请在“设置”中开启，或改为选择音频文件。",
+        "openSettings": "打开设置",
+        "iosUsage": "Media Manipulator 仅在你录制声音样本或要更改的录音时使用麦克风。"
+      },
+      "recorder": {
+        "limit": "最长 {{max}}",
+        "tooShort": "请至少录制 {{min}} 秒。",
+        "playTake": "播放你的录音",
+        "rerecord": "重新录音",
+        "interrupted": "应用离开了此屏幕，录音已停止。",
+        "autoStopped": "已达到时长上限，录音已停止。",
+        "failed": "无法录音。请重试，或改为选择音频文件。"
+      },
+      "clone": {
+        "another": "再创建一个声音"
+      },
+      "design": {
+        "tryAnother": "换一个试试"
+      },
+      "myVoices": {
+        "created": "创建于 {{date}}",
+        "consent": "同意已确认于 {{date}}",
+        "speakWith": "用此声音朗读",
+        "rename": "重命名",
+        "delete": "删除",
+        "deleteTitle": "删除此声音？",
+        "save": "保存",
+        "deleted": "声音已删除",
+        "loadFailed": "无法加载你的声音。",
+        "openClone": "创建声音"
+      }
     }
   },
   "tool": {
@@ -918,7 +978,8 @@
       "video_summary": "视频摘要",
       "vector_vectorize": "矢量化",
       "studio_reverse_proxy": "Studio 预览代理",
-      "photo_export": "Aperture 导出"
+      "photo_export": "Aperture 导出",
+      "voice_tts": "语音"
     },
     "segments": {
       "jobs": "任务",

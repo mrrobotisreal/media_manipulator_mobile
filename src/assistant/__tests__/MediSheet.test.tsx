@@ -182,19 +182,19 @@ describe('MediSheet (MA54 S2)', () => {
           type: 'action',
           callId: 'c2',
           kind: 'open_tool',
-          label: 'Open Voice Cloning',
-          params: { slug: 'voice-cloning', route: '/tools/voice-cloning' },
+          label: 'Open Content Studio',
+          params: { slug: 'content-studio', route: '/tools/content-studio' },
         },
         { type: 'done' },
       ]),
     );
     await act(async () => openMedi('button'));
-    await ask('clone my voice');
+    await ask('edit a video timeline');
     const btn = await screen.findByTestId('medi-action-c2');
     expect(screen.getByText('Open on the web')).toBeTruthy();
     await fireEvent.press(btn);
     expect(mockOpenWeb).toHaveBeenCalledWith(
-      'https://www.media-manipulator.com/tools/voice-cloning',
+      'https://www.media-manipulator.com/tools/content-studio',
     );
     expect(mockPush).not.toHaveBeenCalled();
     expect(screen.getByTestId('medi-input')).toBeTruthy();

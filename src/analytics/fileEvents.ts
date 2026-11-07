@@ -22,8 +22,8 @@ export function trackFileSelected(file: IntakeFile): void {
     size_bytes: file.sizeBytes,
     file_size_mb: mb(file.sizeBytes),
     media_kind: catalogKind(file.mediaKind),
-    // Catalog source vocabulary: picker | share (documents are a picker on mobile).
-    source: file.source === 'share' ? 'share' : 'picker',
+    // Catalog source vocabulary: picker | share | recorder (documents are a picker on mobile; MA34 recorder).
+    source: file.source === 'share' ? 'share' : file.source === 'recorder' ? 'recorder' : 'picker',
   });
 }
 

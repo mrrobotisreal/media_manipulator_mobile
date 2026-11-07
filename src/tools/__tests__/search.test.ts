@@ -21,6 +21,7 @@ describe('tool search', () => {
       'video',
       'audio',
       'ai',
+      'voices',
       'metadata',
     ]);
   });
