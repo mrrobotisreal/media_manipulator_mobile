@@ -132,8 +132,11 @@ describe('app.config', () => {
         'zh-Hant',
       ].sort(),
     );
-    for (const v of Object.values(l))
-      expect(v.NSMicrophoneUsageDescription.length).toBeGreaterThan(10);
+    for (const v of Object.values(l)) {
+      // iOS-only: a top-level key would also land in Android strings.xml and fail Android lint.
+      expect(Object.keys(v)).toEqual(['ios']);
+      expect(v.ios.NSMicrophoneUsageDescription.length).toBeGreaterThan(10);
+    }
     expect(buildConfig({}, none).locales).toEqual(l);
   });
 

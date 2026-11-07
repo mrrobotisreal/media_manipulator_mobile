@@ -15,14 +15,17 @@ export const IOS_BUNDLE_ID = 'com.mediamanipulator.app';
 /**
  * iOS `NSMicrophoneUsageDescription` per locale, from `locales/<dir>/app.json` `tools.voices.micPermission.iosUsage`
  * (all 18 locales, ticket MA34 decision 12), keyed by the lproj name iOS expects. Built at config time.
+ * Nested under `ios`: Expo writes a locale's top-level keys to BOTH platforms, and Android's lint fails the
+ * build on an iOS-only key in the values strings.xml files ("translated here but not found in default locale",
+ * preview build 6, 2026-11-07).
  */
 const LPROJ: Record<string, string> = { 'zh-CN': 'zh-Hans', 'zh-TW': 'zh-Hant' };
 
 export function microphoneLocales(
   read: (p: string) => string = (p) => fs.readFileSync(p, 'utf8'),
   root: string = __dirname,
-): Record<string, { NSMicrophoneUsageDescription: string }> {
-  const out: Record<string, { NSMicrophoneUsageDescription: string }> = {};
+): Record<string, { ios: { NSMicrophoneUsageDescription: string } }> {
+  const out: Record<string, { ios: { NSMicrophoneUsageDescription: string } }> = {};
   const codes = [
     'en-US',
     'uk-UA',
@@ -53,7 +56,7 @@ export function microphoneLocales(
         out[
           LPROJ[code] ??
             (code.startsWith('pt') || code.startsWith('es-MX') ? code : code.split('-')[0]!)
-        ] = { NSMicrophoneUsageDescription: text };
+        ] = { ios: { NSMicrophoneUsageDescription: text } };
     } catch {
       // a missing locale file just falls back to the English default
     }
