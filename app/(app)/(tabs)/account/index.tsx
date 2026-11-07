@@ -16,6 +16,8 @@ import { useAppDispatch } from '@/state/hooks';
 import { Button, Screen, Sheet, Text } from '@/ui/components';
 import { showNotice } from '@/ui/notice';
 import { openWebPage } from '@/account/openWeb';
+import { isVoiceCapabilityMet } from '@/voices/gating';
+import { useVoicesCapabilities } from '@/voices/useVoicesCapabilities';
 
 /** Catalog `status` values the app can derive from `/account/me` (web `billingState`, subscription users only). */
 function subscriptionStatus(
@@ -31,6 +33,9 @@ export default function AccountOverview() {
   const dispatch = useAppDispatch();
   const locale = useActiveLocale();
   const me = useAccountMeQuery();
+  // MA34: the Voices row shows when the server offers saved voices (the same gate as voice-clone).
+  const { caps: voiceCaps } = useVoicesCapabilities();
+  const voicesOn = isVoiceCapabilityMet('voiceClone', voiceCaps);
   const [sheet, setSheet] = useState<'signOut' | 'everywhere' | null>(null);
   const [busy, setBusy] = useState(false);
   const data = me.data;
@@ -82,6 +87,13 @@ export default function AccountOverview() {
             href="/(app)/(tabs)/account/notifications"
           />
           <NavRow label={t('language.title')} href="/(app)/(tabs)/account/language" />
+          {voicesOn ? (
+            <NavRow
+              testID="account-voices"
+              label={t('interface:voiceTools.myVoices.title')}
+              href="/(app)/(tabs)/account/voices"
+            />
+          ) : null}
         </View>
 
         <SectionLabel>{t('account.sections.privacy')}</SectionLabel>

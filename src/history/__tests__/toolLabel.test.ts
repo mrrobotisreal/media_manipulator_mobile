@@ -37,6 +37,10 @@ const API_TOOLS = [
   'ai_object_removal',
   'ai_voice_cleanup',
   'video_summary',
+  // MA34: the voices job tools
+  'voice_tts',
+  'voice_convert',
+  'voice_shift',
 ];
 
 describe('toolLabel', () => {
@@ -68,6 +72,22 @@ describe('toolLabel', () => {
     expect(toolLabel({ tool: 'ai_remove_background' }).toolId).toBe('remove-background');
     expect(toolLabel({ tool: 'ai_ai_upscale' }).toolId).toBe('upscale');
     expect(toolLabel({ tool: 'extract_frames' }).toolId).toBe('video-extract-frames');
+  });
+
+  it('voices jobs re-open under their Voices tools (MA34 decision 10)', () => {
+    expect(toolLabel({ tool: 'voice_convert' })).toEqual({
+      toolId: 'voice-change',
+      key: 'tools.items.voice-change.title',
+    });
+    expect(toolLabel({ tool: 'voice_shift' })).toEqual({
+      toolId: 'voice-shift',
+      key: 'tools.items.voice-shift.title',
+    });
+    // Speech has no row of its own: the cloning row's icon, the "Speech" label.
+    expect(toolLabel({ tool: 'voice_tts' })).toEqual({
+      toolId: 'voice-clone',
+      key: 'history.tool.voice_tts',
+    });
   });
 
   it('prettifies an unknown tool', () => {

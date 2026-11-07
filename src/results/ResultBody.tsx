@@ -40,7 +40,9 @@ export function buildDescriptor(src: ResultSource): ResultDescriptor {
     task: src.webTask,
     mode: job.mode,
     kindHint: src.resultHint,
-    original: original && original.kind === 'image' ? original : undefined,
+    // Images compare (MA13); audio keeps its original for the voice A/B toggle (MA34).
+    original:
+      original && (original.kind === 'image' || original.kind === 'audio') ? original : undefined,
   });
 }
 

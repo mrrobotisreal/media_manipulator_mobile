@@ -1,6 +1,7 @@
 import type { MediaKind } from '@/tools/types';
 
-export type IntakeSource = 'picker' | 'documents' | 'share';
+/** `recorder` (MA34): a voice sample recorded in the app. */
+export type IntakeSource = 'picker' | 'documents' | 'share' | 'recorder';
 
 /** A stable local copy of a user file. `name` is display-only and never leaves the device. */
 export interface IntakeFile {

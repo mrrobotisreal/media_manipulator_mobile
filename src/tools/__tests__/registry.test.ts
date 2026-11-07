@@ -67,23 +67,30 @@ const EXPECTED_IDS = [
   'aperture-sharpen',
   'aperture-noise',
   'aperture-vignette',
+  // MA34: the Voices family
+  'voice-clone',
+  'voice-design',
+  'voice-change',
+  'voice-shift',
 ];
 
 const en = JSON.parse(readFileSync(join(__dirname, '../../../locales/en-us/app.json'), 'utf8'));
 const lookup = (key: string): unknown => key.split('.').reduce((o: any, k) => o?.[k], en);
 
 describe('tool registry invariants', () => {
-  it('has exactly the 38 v1 ids plus aperture (MA50) and its 16 entry rows (MA52) with unique kebab-case ids', () => {
+  it('has exactly the 38 v1 ids plus aperture (MA50), its 16 entry rows (MA52) and the 4 Voices rows (MA34) with unique kebab-case ids', () => {
     expect(TOOLS.map((t) => t.id).sort()).toEqual([...EXPECTED_IDS].sort());
-    expect(new Set(TOOLS.map((t) => t.id)).size).toBe(55);
+    expect(new Set(TOOLS.map((t) => t.id)).size).toBe(59);
     for (const t of TOOLS) expect(t.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
-    expect(TOOL_BY_ID.size).toBe(55);
+    expect(TOOL_BY_ID.size).toBe(59);
   });
 
-  it('family sizes are 27/10/4/11/3', () => {
+  it('family sizes are 27/10/4/11/4/3 (image/video/audio/ai/voices/metadata)', () => {
     expect(
-      (['image', 'video', 'audio', 'ai', 'metadata'] as const).map((f) => toolsByFamily(f).length),
-    ).toEqual([27, 10, 4, 11, 3]);
+      (['image', 'video', 'audio', 'ai', 'voices', 'metadata'] as const).map(
+        (f) => toolsByFamily(f).length,
+      ),
+    ).toEqual([27, 10, 4, 11, 4, 3]);
   });
 
   it('every title/description key exists in en-US app.json', () => {
@@ -143,8 +150,9 @@ describe('tool registry invariants', () => {
       );
   });
 
-  it('gpu is true exactly for AI-family rows (MA20 decision 1)', () => {
-    for (const t of TOOLS) expect(t.gpu).toBe(t.family === 'ai');
+  it('gpu is true for AI-family rows (MA20 decision 1) and for the Voices rows that spend ai_ops (MA34)', () => {
+    for (const t of TOOLS)
+      expect(t.gpu).toBe(t.family === 'ai' || (t.family === 'voices' && t.metric === 'ai_ops'));
   });
 
   it('toolsAccepting(pdf) is pdf-to-image and inspect-metadata', () => {

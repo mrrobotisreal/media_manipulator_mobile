@@ -14,7 +14,19 @@ export const AI_OPS_UPLOAD_OPERATIONS: ReadonlySet<string> = new Set([
   'frame_interpolation',
 ]);
 
+/**
+ * MA34: Voices jobs and creations. The API charges `ai_ops` for speak, convert, clone and design
+ * (`cmd/api/main.go` quota rows) and `ops` for shift; the job record's options carry that `tool`.
+ */
+const VOICE_AI_OPS_TOOLS: ReadonlySet<string> = new Set([
+  'voice_tts',
+  'voice_convert',
+  'voice_clone',
+  'voice_design',
+]);
+
 export function quotaMetricForJob(options: ToolOptions): 'ops' | 'ai_ops' {
+  if (typeof options.tool === 'string' && VOICE_AI_OPS_TOOLS.has(options.tool)) return 'ai_ops';
   const mode = options.mode;
   if (typeof mode === 'string' && mode.trim().toLowerCase() === 'transcribe') return 'ai_ops';
   const ai = options.ai;

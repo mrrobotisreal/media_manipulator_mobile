@@ -43,6 +43,13 @@ function ToolScreen({
   // Start hands the cached copies to their jobs (the engine moves or deletes them when the job ends),
   // so the screen lets go of them: Back then Start again must not upload a file that is gone.
   const [consumed, setConsumed] = useState(0);
+  // MA34: a Form may hand the screen a file it made (the Voices recorder): the area remounts around it.
+  const [seed, setSeed] = useState<IntakeFile[] | null>(null);
+  const adoptFiles = useCallback((next: IntakeFile[]) => {
+    setFiles(next);
+    setSeed(next);
+    setConsumed((n) => n + 1);
+  }, []);
 
   const [form, setForm] = useState<ToolOptions>(() => ({
     ...tool.defaults,
@@ -115,10 +122,16 @@ function ToolScreen({
           : tool.analyticsSlug,
       };
       const ids = getJobEngine().startJobs(
-        files.map((file) => ({ tool: runTool, file, options: tool.optionsBuilder(ready, ctx) })),
+        files.map((file) => ({
+          tool: runTool,
+          file,
+          options: tool.optionsBuilder(ready, ctx),
+          ...(tool.starter ? { starter: tool.starter } : {}),
+        })),
       );
       const firstId = ids[0];
       setFiles([]);
+      setSeed(null);
       setConsumed((n) => n + 1);
       if (firstId) router.push(`/(app)/job/${firstId}`);
     } finally {
@@ -143,15 +156,19 @@ function ToolScreen({
           <Text className="flex-1 text-xl font-semibold">{t(tool.titleKey)}</Text>
         </View>
         <Text className="text-muted-fg">{t(tool.descriptionKey)}</Text>
-        <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
+        {tool.noFileArea ? null : (
+          <Text className="text-sm text-subtle">{t('tool.accepts', { kinds })}</Text>
+        )}
         <QuotaChip metric={tool.metric} />
-        <FileArea
-          key={consumed}
-          tool={tool}
-          initialFiles={consumed ? [] : attached}
-          onFilesChange={setFiles}
-        />
-        <Form value={form} onChange={onFormChange} ctx={ctx} />
+        {tool.noFileArea ? null : (
+          <FileArea
+            key={consumed}
+            tool={tool}
+            initialFiles={seed ?? (consumed ? [] : attached)}
+            onFilesChange={setFiles}
+          />
+        )}
+        <Form value={form} onChange={onFormChange} ctx={ctx} onFiles={adoptFiles} />
         {tool.noRunButton ? null : (
           <Button
             testID="tool-start"

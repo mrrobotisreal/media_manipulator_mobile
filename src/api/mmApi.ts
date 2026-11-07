@@ -13,6 +13,7 @@ export const mmApi = createApi({
     'PhotoProjects',
     'PhotoPresets',
     'Assistant',
+    'Voices',
   ],
   // Focus/reconnect refetch is opt-in per endpoint (Account only) to avoid /account/me storms.
   refetchOnFocus: false,

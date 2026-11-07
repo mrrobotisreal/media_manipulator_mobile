@@ -50,7 +50,7 @@ export function FileArea({
   initialFiles = [],
   onFilesChange,
 }: {
-  tool: AnyToolDefinition;
+  tool: Pick<AnyToolDefinition, 'accepts' | 'titleKey'> & { batch?: boolean };
   /** Files attached from the intake screen. */
   initialFiles?: IntakeFile[];
   onFilesChange?: (files: IntakeFile[]) => void;

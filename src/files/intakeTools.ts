@@ -16,7 +16,8 @@ export function toolsForKinds(
 ): AnyToolDefinition[] {
   if (kinds.length === 0) return [];
   const unique = [...new Set(kinds)];
-  const ok = (t: AnyToolDefinition) => unique.every((k) => t.accepts.kinds.includes(k));
+  const ok = (t: AnyToolDefinition) =>
+    !t.noIntake && unique.every((k) => t.accepts.kinds.includes(k));
   const recents = recentTools(lastToolIds).filter(ok);
   const rest = TOOLS.filter((t) => ok(t) && !recents.includes(t));
   const aperture = rest.filter((t) => t.id === 'aperture');

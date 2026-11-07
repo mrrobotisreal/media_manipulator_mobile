@@ -121,6 +121,9 @@ export const EVENTS = {
   PHOTO_PRESETS_MIGRATED: 'photo_presets_migrated',
 
   // --- Medi guide (catalog batch "MA54 assistant guide", MM107) ---------------
+  VOICE_CREATED: 'voice_created',
+  VOICE_GENERATED: 'voice_generated',
+
   ASSISTANT_OPENED: 'assistant_opened',
   ASSISTANT_MESSAGE_SENT: 'assistant_message_sent',
   ASSISTANT_RESPONSE_COMPLETED: 'assistant_response_completed',
@@ -213,6 +216,9 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   photo_preset_saved: PRIORITY_NORMAL,
   photo_presets_migrated: PRIORITY_NORMAL,
 
+  voice_created: PRIORITY_NORMAL,
+  voice_generated: PRIORITY_NORMAL,
+
   assistant_opened: PRIORITY_HIGH,
   assistant_message_sent: PRIORITY_HIGH,
   assistant_response_completed: PRIORITY_NORMAL,
@@ -293,7 +299,30 @@ export interface FileSelectedProps {
   size_bytes: number;
   file_size_mb?: number;
   media_kind?: MediaKind;
-  source?: 'picker' | 'share';
+  source?: 'picker' | 'share' | 'recorder';
+}
+
+/**
+ * Voices (MA34, catalog MM79; web `lib/analytics/events.ts`). Closed vocabularies and a length bucket:
+ * never a voice name, description, the spoken text or audio.
+ */
+export type VoiceCreatedKindProp = 'cloned' | 'designed';
+export type VoiceGeneratedKindProp = 'tts' | 'convert' | 'shift';
+export type VoiceSecondsBucketProp = '0-10' | '10-30' | '30-60' | '60-300' | '300+';
+/** The web union is `tool_page | darkroom | account`; the app sends the first and the last. */
+export type VoiceSourceProp = 'tool_page' | 'account';
+
+export interface VoiceCreatedProps {
+  kind: VoiceCreatedKindProp;
+  languageHint: string;
+}
+
+export interface VoiceGeneratedProps {
+  kind: VoiceGeneratedKindProp;
+  secondsBucket: VoiceSecondsBucketProp;
+  /** The requested language code, or `none` (shift, convert to a saved voice). */
+  language: string;
+  source: VoiceSourceProp;
 }
 
 export interface FileRejectedProps {
@@ -742,6 +771,9 @@ export interface EventPropsMap {
   photo_export_gated: PhotoExportGatedProps;
   photo_preset_saved: PhotoPresetSavedProps;
   photo_presets_migrated: PhotoPresetsMigratedProps;
+
+  voice_created: VoiceCreatedProps;
+  voice_generated: VoiceGeneratedProps;
 
   assistant_opened: AssistantOpenedProps;
   assistant_message_sent: AssistantMessageSentProps;

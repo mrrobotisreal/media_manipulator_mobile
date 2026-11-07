@@ -30,6 +30,11 @@ export const TOOL_ID_BY_API_TOOL: Readonly<Record<string, string>> = {
   ai_frame_interpolation: 'frame-interpolation',
   // MA50: the API records Aperture exports with the job's tool option (`photo_export`).
   photo_export: 'aperture',
+  // MA34: the voices job tools. `voice_tts` has no row of its own (speech starts from a saved voice, in
+  // Clone / Design / My voices); it opens the cloning row's icon with the "Speech" label (see toolLabel).
+  voice_tts: 'voice-clone',
+  voice_convert: 'voice-change',
+  voice_shift: 'voice-shift',
 };
 
 const CONVERT_BY_KIND: Readonly<Record<string, string>> = {
@@ -86,6 +91,7 @@ export function toolLabel(entry: Pick<HistoryEntry, 'tool' | 'mode' | 'mediaKind
   const tool = toolId ? getTool(toolId) : undefined;
   // MA52: an Aperture export reads "Aperture export" (the Aperture icon comes from the registry row).
   if (tool?.id === 'aperture') return { toolId: tool.id, key: 'history.tool.photo_export' };
+  if (api === 'voice_tts') return { toolId: tool?.id, key: 'history.tool.voice_tts' };
   if (tool) return { toolId: tool.id, key: tool.titleKey };
   if ((FALLBACK_LABEL_TOOLS as readonly string[]).includes(api)) {
     return { key: `history.tool.${api}` };
