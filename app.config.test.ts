@@ -6,6 +6,7 @@ import {
   ANDROID_PACKAGE,
   IOS_BUNDLE_ID,
   buildConfig,
+  microphoneLocales,
 } from './app.config';
 
 const none = () => false;
@@ -76,6 +77,64 @@ describe('app.config', () => {
         'android.permission.READ_EXTERNAL_STORAGE',
       ]),
     );
+  });
+
+  it('MA34: the microphone is allowed (expo-audio adds RECORD_AUDIO), CAMERA and READ_MEDIA_* stay blocked', () => {
+    const c = buildConfig({}, none);
+    const blocked = c.android?.blockedPermissions ?? [];
+    expect(blocked).not.toContain('android.permission.RECORD_AUDIO');
+    for (const p of [
+      'android.permission.CAMERA',
+      'android.permission.READ_MEDIA_IMAGES',
+      'android.permission.READ_MEDIA_VIDEO',
+      'android.permission.READ_MEDIA_AUDIO',
+      'android.permission.READ_MEDIA_VISUAL_USER_SELECTED',
+      'android.permission.READ_EXTERNAL_STORAGE',
+    ])
+      expect(blocked).toContain(p);
+    const audio = (c.plugins ?? []).find((p) => Array.isArray(p) && p[0] === 'expo-audio') as
+      [string, Record<string, unknown>] | undefined;
+    expect(audio?.[1]).toMatchObject({
+      recordAudioAndroid: true,
+      enableBackgroundRecording: false,
+      enableBackgroundPlayback: false,
+    });
+    expect(typeof audio?.[1].microphonePermission).toBe('string');
+    // expo-image-picker with `microphonePermission: false` would block RECORD_AUDIO app-wide.
+    const picker = (c.plugins ?? []).find(
+      (p) => Array.isArray(p) && p[0] === 'expo-image-picker',
+    ) as [string, Record<string, unknown>] | undefined;
+    expect(picker?.[1].microphonePermission).not.toBe(false);
+    expect(picker?.[1].cameraPermission).toBe(false);
+  });
+
+  it('MA34: NSMicrophoneUsageDescription is localized for all 18 locales (zh as Hans / Hant lprojs)', () => {
+    const l = microphoneLocales();
+    expect(Object.keys(l).sort()).toEqual(
+      [
+        'ar',
+        'de',
+        'en',
+        'es',
+        'es-MX',
+        'fr',
+        'he',
+        'hi',
+        'it',
+        'ja',
+        'ko',
+        'pt-BR',
+        'pt-PT',
+        'ru',
+        'uk',
+        'vi',
+        'zh-Hans',
+        'zh-Hant',
+      ].sort(),
+    );
+    for (const v of Object.values(l))
+      expect(v.NSMicrophoneUsageDescription.length).toBeGreaterThan(10);
+    expect(buildConfig({}, none).locales).toEqual(l);
   });
 
   it('declares push: POST_NOTIFICATIONS and the job_updates default channel (MA24)', () => {

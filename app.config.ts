@@ -12,6 +12,55 @@ export const ANDROID_PACKAGE = 'com.mediamanipulator.app';
 export const IOS_BUNDLE_ID = 'com.mediamanipulator.app';
 
 // The system Photo Picker / Storage Access Framework need none of these; keep them out of the merged manifest.
+/**
+ * iOS `NSMicrophoneUsageDescription` per locale, from `locales/<dir>/app.json` `tools.voices.micPermission.iosUsage`
+ * (all 18 locales, ticket MA34 decision 12), keyed by the lproj name iOS expects. Built at config time.
+ */
+const LPROJ: Record<string, string> = { 'zh-CN': 'zh-Hans', 'zh-TW': 'zh-Hant' };
+
+export function microphoneLocales(
+  read: (p: string) => string = (p) => fs.readFileSync(p, 'utf8'),
+  root: string = __dirname,
+): Record<string, { NSMicrophoneUsageDescription: string }> {
+  const out: Record<string, { NSMicrophoneUsageDescription: string }> = {};
+  const codes = [
+    'en-US',
+    'uk-UA',
+    'ru-RU',
+    'he-IL',
+    'de-DE',
+    'es-ES',
+    'es-MX',
+    'fr-FR',
+    'it-IT',
+    'ja-JP',
+    'zh-CN',
+    'zh-TW',
+    'ko-KR',
+    'ar-SA',
+    'hi-IN',
+    'pt-PT',
+    'pt-BR',
+    'vi-VN',
+  ];
+  for (const code of codes) {
+    try {
+      const json = JSON.parse(read(`${root}/locales/${code.toLowerCase()}/app.json`)) as {
+        tools?: { voices?: { micPermission?: { iosUsage?: string } } };
+      };
+      const text = json.tools?.voices?.micPermission?.iosUsage;
+      if (text)
+        out[
+          LPROJ[code] ??
+            (code.startsWith('pt') || code.startsWith('es-MX') ? code : code.split('-')[0]!)
+        ] = { NSMicrophoneUsageDescription: text };
+    } catch {
+      // a missing locale file just falls back to the English default
+    }
+  }
+  return out;
+}
+
 export const BLOCKED_ANDROID_PERMISSIONS = [
   'android.permission.READ_MEDIA_IMAGES',
   'android.permission.READ_MEDIA_VIDEO',
@@ -21,10 +70,15 @@ export const BLOCKED_ANDROID_PERMISSIONS = [
   // WRITE_EXTERNAL_STORAGE is NOT blocked: MediaStore inserts on Android 8-9 (minSdk 26) need it. It is
   // capped to API <= 28 by `withWriteStorageMaxSdk28` below, so it is absent on Android 10+ (MA14).
   'android.permission.CAMERA',
-  'android.permission.RECORD_AUDIO',
+  // RECORD_AUDIO is NOT blocked since MA34: the Voices recorder (clone, change, shift) needs the microphone.
+  // It is requested at runtime on the first Record tap only, and the expo-audio plugin below adds it.
 ];
 
 export const APP_VERSION = '1.0.0';
+
+/** iOS `NSMicrophoneUsageDescription` default (English); the per-locale strings live in `locales/<code>/infoplist.json`. */
+export const MICROPHONE_USAGE =
+  'Media Manipulator uses the microphone only when you record a voice sample or a recording to change.';
 
 const BACKGROUND = '#0A0B0D';
 const CORAL = '#FF6B4A';
@@ -81,9 +135,11 @@ export function buildConfig(
       },
     ],
     // File intake (MA11). System pickers need no storage permissions (ARCHITECTURE section 11).
+    // MA34: `microphonePermission` is the same string as expo-audio's, not `false`: `false` makes this plugin
+    // BLOCK RECORD_AUDIO for the whole app (it would remove the Voices recorder's permission).
     [
       'expo-image-picker',
-      { photosPermission: false, cameraPermission: false, microphonePermission: false },
+      { photosPermission: false, cameraPermission: false, microphonePermission: MICROPHONE_USAGE },
     ],
     'expo-document-picker',
     // Result PDF open on iOS and MA14 Share (MA13).
@@ -105,9 +161,17 @@ export function buildConfig(
       },
     ],
     'expo-video',
+    // MA34: the voice recorder uses the microphone (Android RECORD_AUDIO, iOS NSMicrophoneUsageDescription;
+    // the iOS string is localized per locale through `locales` below). Never a background recording, never
+    // background playback: no foreground service, no UIBackgroundModes audio.
     [
       'expo-audio',
-      { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false },
+      {
+        microphonePermission: MICROPHONE_USAGE,
+        recordAudioAndroid: true,
+        enableBackgroundPlayback: false,
+        enableBackgroundRecording: false,
+      },
     ],
     // Android share-into only; the iOS share extension is MA36 (ADR MA-0002). The plugin's typed MIME list
     // has no audio/pdf, so `*/*` receives everything and src/files/share-intent.ts filters by MIME in JS.
@@ -181,6 +245,7 @@ export function buildConfig(
       usesAppleSignIn: true,
       ...(hasIosFirebase ? { googleServicesFile: googleServiceInfoPlist } : {}),
     },
+    locales: microphoneLocales(),
     experiments: { typedRoutes: true },
     plugins,
   };
