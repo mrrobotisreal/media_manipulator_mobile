@@ -57,3 +57,11 @@ and the web read the same, and with the app's own words for History, Retry, Sign
 - ko-KR particles after `{{brand}}` assume a vowel-final name ("Medi").
 - it-IT `errors.upstream` keeps the web's masculine "non è riuscito".
 - `assistant.chat` is "Chat" in de-DE, es-ES, es-MX and it-IT (the native word; allowlisted).
+
+## Voices (MA34)
+
+The `tools.voices.*`, `tools.items.voice-*`, `tools.families.voices` and `history.tool.voice_tts` strings, and the iOS
+microphone usage text (`tools.voices.micPermission.iosUsage`, built into `NSMicrophoneUsageDescription` per locale by
+`app.config.ts`), are model-written in all 17 non-English locales (Opus 5.5 subagents, one locale at a time), using
+each locale's synced web `voiceTools` vocabulary. None were read by a native speaker: **not reviewed**. The consent
+sentence and the error copy are not app strings; they are the web's synced `interface:voiceTools.*` strings.

@@ -29,7 +29,8 @@
       "video": "비디오",
       "audio": "오디오",
       "ai": "AI",
-      "metadata": "메타데이터"
+      "metadata": "메타데이터",
+      "voices": "음성"
     },
     "badge": {
       "ai": "AI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "실시간 조정으로 사진 편집: 빛, 색상, 커브, 레벨 등."
+      },
+      "voice-clone": {
+        "title": "음성 클론",
+        "description": "내 목소리를 녹음하고 동의를 확인한 뒤 보관해서 어떤 텍스트든 읽게 하세요."
+      },
+      "voice-design": {
+        "title": "음성 디자인",
+        "description": "음성을 설명하고 미리 들어 본 뒤 보관해서 어떤 텍스트든 읽게 하세요."
+      },
+      "voice-change": {
+        "title": "음성 변환(AI)",
+        "description": "녹음을 저장한 음성이나 프리셋 음성처럼 들리게 바꿔요."
+      },
+      "voice-shift": {
+        "title": "음높이 변경",
+        "description": "녹음의 음높이를 올리거나 내리거나, 프리셋을 선택하세요."
       }
     },
     "metadata": {
@@ -577,6 +594,49 @@
         "title": "비네팅 추가",
         "description": "사진 가장자리를 어둡게 또는 밝게 해 피사체를 돋보이게 합니다."
       }
+    },
+    "voices": {
+      "limitReached": "요금제에서 저장할 수 있는 음성 {{limit}}개 중 {{used}}개를 저장했어요. 더 저장하려면 하나를 삭제하세요.",
+      "deleteConfirm": "음성과 샘플은 지금 바로 삭제돼요. 이미 생성한 말소리는 각각의 보존 기간이 끝날 때까지 남아 있어요.",
+      "openShifter": "음높이 변경 도구 열기",
+      "consent": {
+        "terms": "이용약관 8.11항 읽기"
+      },
+      "micPermission": {
+        "title": "마이크를 사용할까요?",
+        "body": "Media Manipulator에서 음성 샘플을 녹음하려면 마이크가 필요해요.",
+        "denied": "마이크 접근이 허용되지 않았어요. 녹음하려면 허용하거나, 대신 오디오 파일을 선택하세요.",
+        "blocked": "이 앱의 마이크 접근이 차단되어 있어요. 설정에서 켜거나, 대신 오디오 파일을 선택하세요.",
+        "openSettings": "설정 열기",
+        "iosUsage": "Media Manipulator는 음성 샘플이나 변환할 녹음을 녹음할 때만 마이크를 사용해요."
+      },
+      "recorder": {
+        "limit": "최대 {{max}}",
+        "tooShort": "최소 {{min}}초 이상 녹음하세요.",
+        "playTake": "내 녹음 재생",
+        "rerecord": "다시 녹음",
+        "interrupted": "앱이 화면을 벗어나서 녹음이 중지되었어요.",
+        "autoStopped": "시간 제한에 도달해서 녹음이 중지되었어요.",
+        "failed": "녹음할 수 없었어요. 다시 시도하거나, 대신 오디오 파일을 선택하세요."
+      },
+      "clone": {
+        "another": "다른 음성 만들기"
+      },
+      "design": {
+        "tryAnother": "다른 음성 시도"
+      },
+      "myVoices": {
+        "created": "{{date}}에 만듦",
+        "consent": "{{date}}에 동의 확인됨",
+        "speakWith": "이 음성으로 말하기",
+        "rename": "이름 변경",
+        "delete": "삭제",
+        "deleteTitle": "이 음성을 삭제할까요?",
+        "save": "저장",
+        "deleted": "음성을 삭제했어요",
+        "loadFailed": "내 음성을 불러올 수 없었어요.",
+        "openClone": "음성 만들기"
+      }
     }
   },
   "tool": {
@@ -918,7 +978,8 @@
       "video_summary": "영상 요약",
       "vector_vectorize": "벡터화",
       "studio_reverse_proxy": "Studio 미리보기 프록시",
-      "photo_export": "Aperture 내보내기"
+      "photo_export": "Aperture 내보내기",
+      "voice_tts": "음성 생성"
     },
     "segments": {
       "jobs": "작업",

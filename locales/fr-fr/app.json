@@ -29,7 +29,8 @@
       "video": "Vidéo",
       "audio": "Audio",
       "ai": "IA",
-      "metadata": "Métadonnées"
+      "metadata": "Métadonnées",
+      "voices": "Voix"
     },
     "badge": {
       "ai": "IA"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "Retouchez une photo avec des réglages en direct : lumière, couleur, courbes, niveaux et plus."
+      },
+      "voice-clone": {
+        "title": "Cloner une voix",
+        "description": "Enregistrez votre voix, confirmez votre consentement et conservez-la pour lui faire dire n’importe quel texte."
+      },
+      "voice-design": {
+        "title": "Concevoir une voix",
+        "description": "Décrivez une voix, écoutez un aperçu et conservez-la pour lui faire dire n’importe quel texte."
+      },
+      "voice-change": {
+        "title": "Changer de voix (IA)",
+        "description": "Faites sonner un enregistrement comme une voix enregistrée ou prédéfinie."
+      },
+      "voice-shift": {
+        "title": "Décaler la voix",
+        "description": "Montez ou baissez la hauteur d’un enregistrement, ou choisissez un préréglage."
       }
     },
     "metadata": {
@@ -587,6 +604,49 @@
         "title": "Ajouter un vignettage",
         "description": "Assombrissez ou éclaircissez les bords d’une photo pour encadrer le sujet."
       }
+    },
+    "voices": {
+      "limitReached": "Vous avez enregistré {{used}} voix sur {{limit}} dans votre offre. Supprimez-en une pour faire de la place.",
+      "deleteConfirm": "La voix et son échantillon sont supprimés dès maintenant. La parole que vous avez déjà générée est conservée jusqu’à la fin de sa propre durée de conservation.",
+      "openShifter": "Ouvrir le changeur de hauteur",
+      "consent": {
+        "terms": "Lire la section 8.11 des Conditions"
+      },
+      "micPermission": {
+        "title": "Utiliser le microphone ?",
+        "body": "Media Manipulator a besoin du microphone pour enregistrer votre échantillon de voix.",
+        "denied": "L’accès au microphone n’a pas été autorisé. Autorisez-le pour enregistrer, ou choisissez plutôt un fichier audio.",
+        "blocked": "L’accès au microphone est bloqué pour cette app. Activez-le dans Réglages, ou choisissez plutôt un fichier audio.",
+        "openSettings": "Ouvrir les réglages",
+        "iosUsage": "Media Manipulator utilise le microphone uniquement lorsque vous enregistrez un échantillon de voix ou un enregistrement à modifier."
+      },
+      "recorder": {
+        "limit": "Jusqu’à {{max}}",
+        "tooShort": "Enregistrez au moins {{min}} secondes.",
+        "playTake": "Écouter votre enregistrement",
+        "rerecord": "Réenregistrer",
+        "interrupted": "L’enregistrement s’est arrêté, car l’app a quitté l’écran.",
+        "autoStopped": "L’enregistrement s’est arrêté à la durée maximale.",
+        "failed": "Impossible d’enregistrer. Réessayez, ou choisissez plutôt un fichier audio."
+      },
+      "clone": {
+        "another": "Créer une autre voix"
+      },
+      "design": {
+        "tryAnother": "Essayer une autre"
+      },
+      "myVoices": {
+        "created": "Créée le {{date}}",
+        "consent": "Consentement confirmé le {{date}}",
+        "speakWith": "Parler avec cette voix",
+        "rename": "Renommer",
+        "delete": "Supprimer",
+        "deleteTitle": "Supprimer cette voix ?",
+        "save": "Enregistrer",
+        "deleted": "Voix supprimée",
+        "loadFailed": "Impossible de charger vos voix.",
+        "openClone": "Créer une voix"
+      }
     }
   },
   "tool": {
@@ -930,7 +990,8 @@
       "video_summary": "Résumé vidéo",
       "vector_vectorize": "Vectorisation",
       "studio_reverse_proxy": "Proxy d’aperçu Studio",
-      "photo_export": "Export Aperture"
+      "photo_export": "Export Aperture",
+      "voice_tts": "Parole"
     },
     "segments": {
       "jobs": "Tâches",

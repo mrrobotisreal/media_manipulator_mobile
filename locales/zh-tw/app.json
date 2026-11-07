@@ -29,7 +29,8 @@
       "video": "影片",
       "audio": "音訊",
       "ai": "AI",
-      "metadata": "中繼資料"
+      "metadata": "中繼資料",
+      "voices": "語音"
     },
     "badge": {
       "ai": "AI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "透過即時調整編輯相片：光線、顏色、曲線、色階等。"
+      },
+      "voice-clone": {
+        "title": "複製語音",
+        "description": "錄下你的聲音、確認同意後保留，即可用來朗讀任何文字。"
+      },
+      "voice-design": {
+        "title": "設計語音",
+        "description": "描述一個語音、試聽預覽後保留，即可用來朗讀任何文字。"
+      },
+      "voice-change": {
+        "title": "變更語音（AI）",
+        "description": "讓錄音聽起來像某個已儲存或預設的語音。"
+      },
+      "voice-shift": {
+        "title": "變調",
+        "description": "調高或調低錄音的音高，或選擇一個預設。"
       }
     },
     "metadata": {
@@ -577,6 +594,49 @@
         "title": "加入暈影",
         "description": "壓暗或提亮照片邊緣，襯托主體。"
       }
+    },
+    "voices": {
+      "limitReached": "你的方案已儲存 {{used}} / {{limit}} 個語音。請刪除一個以騰出空間。",
+      "deleteConfirm": "語音及其樣本會立即刪除。你已產生的語音內容會保留，直到其各自的保留期限結束。",
+      "openShifter": "開啟變調器",
+      "consent": {
+        "terms": "閱讀服務條款第 8.11 節"
+      },
+      "micPermission": {
+        "title": "要使用麥克風嗎？",
+        "body": "Media Manipulator 需要使用麥克風來錄製你的語音樣本。",
+        "denied": "未允許存取麥克風。請允許存取以進行錄音，或改為選擇音訊檔案。",
+        "blocked": "此應用程式的麥克風存取已被封鎖。請在「設定」中開啟，或改為選擇音訊檔案。",
+        "openSettings": "開啟設定",
+        "iosUsage": "Media Manipulator 只會在你錄製語音樣本或要變更的錄音時使用麥克風。"
+      },
+      "recorder": {
+        "limit": "最長 {{max}}",
+        "tooShort": "請至少錄製 {{min}} 秒。",
+        "playTake": "播放你的錄音",
+        "rerecord": "重新錄音",
+        "interrupted": "因應用程式離開此畫面，錄音已停止。",
+        "autoStopped": "已達時間上限，錄音已停止。",
+        "failed": "無法錄音。請再試一次，或改為選擇音訊檔案。"
+      },
+      "clone": {
+        "another": "再建立一個語音"
+      },
+      "design": {
+        "tryAnother": "再試一個"
+      },
+      "myVoices": {
+        "created": "建立於 {{date}}",
+        "consent": "已於 {{date}} 確認同意",
+        "speakWith": "使用此語音朗讀",
+        "rename": "重新命名",
+        "delete": "刪除",
+        "deleteTitle": "要刪除此語音嗎？",
+        "save": "儲存",
+        "deleted": "語音已刪除",
+        "loadFailed": "無法載入你的語音。",
+        "openClone": "建立語音"
+      }
     }
   },
   "tool": {
@@ -918,7 +978,8 @@
       "video_summary": "影片摘要",
       "vector_vectorize": "向量化",
       "studio_reverse_proxy": "Studio 預覽代理",
-      "photo_export": "Aperture 匯出"
+      "photo_export": "Aperture 匯出",
+      "voice_tts": "語音合成"
     },
     "segments": {
       "jobs": "工作",

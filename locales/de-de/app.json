@@ -29,7 +29,8 @@
       "video": "Video",
       "audio": "Audio",
       "ai": "KI",
-      "metadata": "Metadaten"
+      "metadata": "Metadaten",
+      "voices": "Stimmen"
     },
     "badge": {
       "ai": "KI"
@@ -190,6 +191,22 @@
       "aperture": {
         "title": "Aperture",
         "description": "Bearbeite ein Foto mit Live-Anpassungen: Licht, Farbe, Kurven, Tonwerte und mehr."
+      },
+      "voice-clone": {
+        "title": "Stimme klonen",
+        "description": "Nehmen Sie Ihre Stimme auf, bestätigen Sie die Einwilligung und behalten Sie sie, um beliebigen Text zu sprechen."
+      },
+      "voice-design": {
+        "title": "Stimme entwerfen",
+        "description": "Beschreiben Sie eine Stimme, hören Sie eine Vorschau und behalten Sie sie, um beliebigen Text zu sprechen."
+      },
+      "voice-change": {
+        "title": "Stimme umwandeln (KI)",
+        "description": "Lässt eine Aufnahme wie eine gespeicherte oder voreingestellte Stimme klingen."
+      },
+      "voice-shift": {
+        "title": "Stimme verschieben",
+        "description": "Heben oder senken Sie die Tonhöhe einer Aufnahme oder wählen Sie eine Voreinstellung."
       }
     },
     "metadata": {
@@ -582,6 +599,49 @@
         "title": "Vignette hinzufügen",
         "description": "Ränder eines Fotos abdunkeln oder aufhellen, um das Motiv einzurahmen."
       }
+    },
+    "voices": {
+      "limitReached": "Sie haben {{used}} von {{limit}} Stimmen in Ihrem Tarif gespeichert. Löschen Sie eine, um Platz zu schaffen.",
+      "deleteConfirm": "Die Stimme und ihre Aufnahmeprobe werden sofort gelöscht. Bereits erzeugte Sprache bleibt erhalten, bis ihre eigene Aufbewahrungsfrist endet.",
+      "openShifter": "Tonhöhenverschieber öffnen",
+      "consent": {
+        "terms": "Abschnitt 8.11 der Nutzungsbedingungen lesen"
+      },
+      "micPermission": {
+        "title": "Mikrofon verwenden?",
+        "body": "Media Manipulator benötigt das Mikrofon, um Ihre Stimmprobe aufzunehmen.",
+        "denied": "Der Mikrofonzugriff wurde nicht erlaubt. Erlauben Sie ihn, um aufzunehmen, oder wählen Sie stattdessen eine Audiodatei.",
+        "blocked": "Der Mikrofonzugriff ist für diese App blockiert. Aktivieren Sie ihn in den Einstellungen oder wählen Sie stattdessen eine Audiodatei.",
+        "openSettings": "Einstellungen öffnen",
+        "iosUsage": "Media Manipulator verwendet das Mikrofon nur, wenn Sie eine Stimmprobe oder eine zu ändernde Aufnahme aufnehmen."
+      },
+      "recorder": {
+        "limit": "Bis zu {{max}}",
+        "tooShort": "Nehmen Sie mindestens {{min}} Sekunden auf.",
+        "playTake": "Ihre Aufnahme abspielen",
+        "rerecord": "Neu aufnehmen",
+        "interrupted": "Die Aufnahme wurde beendet, weil die App den Bildschirm verlassen hat.",
+        "autoStopped": "Die Aufnahme wurde beim Zeitlimit beendet.",
+        "failed": "Aufnahme nicht möglich. Versuchen Sie es erneut oder wählen Sie stattdessen eine Audiodatei."
+      },
+      "clone": {
+        "another": "Weitere Stimme erstellen"
+      },
+      "design": {
+        "tryAnother": "Andere ausprobieren"
+      },
+      "myVoices": {
+        "created": "Erstellt am {{date}}",
+        "consent": "Einwilligung bestätigt am {{date}}",
+        "speakWith": "Mit dieser Stimme sprechen",
+        "rename": "Umbenennen",
+        "delete": "Löschen",
+        "deleteTitle": "Diese Stimme löschen?",
+        "save": "Speichern",
+        "deleted": "Stimme gelöscht",
+        "loadFailed": "Ihre Stimmen konnten nicht geladen werden.",
+        "openClone": "Stimme erstellen"
+      }
     }
   },
   "tool": {
@@ -924,7 +984,8 @@
       "video_summary": "Video-Zusammenfassung",
       "vector_vectorize": "Vektorisieren",
       "studio_reverse_proxy": "Studio-Vorschau-Proxy",
-      "photo_export": "Aperture-Export"
+      "photo_export": "Aperture-Export",
+      "voice_tts": "Sprache"
     },
     "segments": {
       "jobs": "Aufträge",
