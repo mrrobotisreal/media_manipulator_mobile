@@ -31,7 +31,8 @@
     "{{speed}}×",
     "Gamma",
     "Aperture",
-    "{{brand}}"
+    "{{brand}}",
+    "Motion"
   ],
   "keys": [
     "assistant.title",

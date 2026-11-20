@@ -1,0 +1,525 @@
+{
+  "_source": "Recorded shape of GET /api/studio/export-options (media_manipulator_api handlers/studio_exports.go ExportOptions): table = internal/services/testdata/studio_outputs.json at API main 77816cc, required = the default ladder, caller = a free account with the default TIER_*_STUDIO_FORMATS. Test data only; the app reads the live answer.",
+  "table": {
+    "containers": [
+      {
+        "key": "mp4",
+        "ext": ".mp4",
+        "mime": "video/mp4",
+        "mediaKind": "video",
+        "audioOnly": false,
+        "videoCodecs": [
+          "h264",
+          "hevc",
+          "av1"
+        ],
+        "audioCodecs": [
+          "aac",
+          "opus"
+        ],
+        "faststart": true,
+        "subtitleCodec": "mov_text"
+      },
+      {
+        "key": "mov",
+        "ext": ".mov",
+        "mime": "video/quicktime",
+        "mediaKind": "video",
+        "audioOnly": false,
+        "videoCodecs": [
+          "h264",
+          "hevc",
+          "prores"
+        ],
+        "audioCodecs": [
+          "aac",
+          "pcm_s16le",
+          "pcm_s24le"
+        ],
+        "faststart": true,
+        "subtitleCodec": "mov_text"
+      },
+      {
+        "key": "mkv",
+        "ext": ".mkv",
+        "mime": "video/x-matroska",
+        "mediaKind": "video",
+        "audioOnly": false,
+        "videoCodecs": [
+          "h264",
+          "hevc",
+          "vp9",
+          "av1"
+        ],
+        "audioCodecs": [
+          "aac",
+          "pcm_s16le",
+          "mp3",
+          "opus",
+          "vorbis",
+          "flac",
+          "pcm_s24le"
+        ],
+        "faststart": false,
+        "subtitleCodec": "srt"
+      },
+      {
+        "key": "webm",
+        "ext": ".webm",
+        "mime": "video/webm",
+        "mediaKind": "video",
+        "audioOnly": false,
+        "videoCodecs": [
+          "vp9",
+          "av1"
+        ],
+        "audioCodecs": [
+          "opus",
+          "vorbis"
+        ],
+        "faststart": false,
+        "subtitleCodec": "webvtt"
+      },
+      {
+        "key": "mp3",
+        "ext": ".mp3",
+        "mime": "audio/mpeg",
+        "mediaKind": "audio",
+        "audioOnly": true,
+        "videoCodecs": [
+          "none"
+        ],
+        "audioCodecs": [
+          "mp3"
+        ],
+        "faststart": false
+      },
+      {
+        "key": "wav",
+        "ext": ".wav",
+        "mime": "audio/wav",
+        "mediaKind": "audio",
+        "audioOnly": true,
+        "videoCodecs": [
+          "none"
+        ],
+        "audioCodecs": [
+          "pcm_s16le",
+          "pcm_s24le"
+        ],
+        "faststart": false
+      },
+      {
+        "key": "opus",
+        "ext": ".opus",
+        "mime": "audio/ogg",
+        "mediaKind": "audio",
+        "audioOnly": true,
+        "videoCodecs": [
+          "none"
+        ],
+        "audioCodecs": [
+          "opus"
+        ],
+        "faststart": false
+      },
+      {
+        "key": "flac",
+        "ext": ".flac",
+        "mime": "audio/flac",
+        "mediaKind": "audio",
+        "audioOnly": true,
+        "videoCodecs": [
+          "none"
+        ],
+        "audioCodecs": [
+          "flac"
+        ],
+        "faststart": false
+      }
+    ],
+    "codecs": [
+      {
+        "key": "h264",
+        "kind": "video",
+        "bitrates": [],
+        "defaultBitrate": 0
+      },
+      {
+        "key": "hevc",
+        "kind": "video",
+        "bitrates": [],
+        "defaultBitrate": 0
+      },
+      {
+        "key": "vp9",
+        "kind": "video",
+        "bitrates": [],
+        "defaultBitrate": 0
+      },
+      {
+        "key": "av1",
+        "kind": "video",
+        "bitrates": [],
+        "defaultBitrate": 0,
+        "fallback": [
+          "hevc",
+          "vp9"
+        ]
+      },
+      {
+        "key": "prores",
+        "kind": "video",
+        "bitrates": [],
+        "defaultBitrate": 0,
+        "audioCodecs": [
+          "pcm_s24le",
+          "pcm_s16le"
+        ],
+        "estimateKbps": 147000,
+        "fallback": [
+          "hevc"
+        ],
+        "noFaststart": true
+      },
+      {
+        "key": "aac",
+        "kind": "audio",
+        "bitrates": [
+          128,
+          192,
+          256,
+          320
+        ],
+        "defaultBitrate": 192
+      },
+      {
+        "key": "pcm_s16le",
+        "kind": "audio",
+        "bitrates": [],
+        "defaultBitrate": 0,
+        "estimateKbps": 1536
+      },
+      {
+        "key": "mp3",
+        "kind": "audio",
+        "bitrates": [
+          128,
+          192,
+          256,
+          320
+        ],
+        "defaultBitrate": 192
+      },
+      {
+        "key": "opus",
+        "kind": "audio",
+        "bitrates": [
+          64,
+          96,
+          128,
+          160,
+          256
+        ],
+        "defaultBitrate": 128
+      },
+      {
+        "key": "vorbis",
+        "kind": "audio",
+        "bitrates": [
+          128,
+          192,
+          256
+        ],
+        "defaultBitrate": 192
+      },
+      {
+        "key": "flac",
+        "kind": "audio",
+        "bitrates": [],
+        "defaultBitrate": 0,
+        "fallback": [
+          "pcm_s16le"
+        ]
+      },
+      {
+        "key": "pcm_s24le",
+        "kind": "audio",
+        "bitrates": [],
+        "defaultBitrate": 0,
+        "estimateKbps": 2304,
+        "fallback": [
+          "pcm_s16le"
+        ]
+      }
+    ],
+    "warnings": [
+      {
+        "warning": "apple_incompatible",
+        "container": "mkv"
+      },
+      {
+        "warning": "no_browser_preview",
+        "container": "mkv"
+      },
+      {
+        "warning": "no_browser_preview",
+        "container": "mov",
+        "audioCodec": "pcm_s16le"
+      },
+      {
+        "warning": "apple_incompatible",
+        "container": "mp4",
+        "audioCodec": "opus"
+      },
+      {
+        "warning": "apple_incompatible",
+        "container": "webm"
+      },
+      {
+        "warning": "apple_incompatible",
+        "container": "opus"
+      },
+      {
+        "warning": "av1_playback",
+        "videoCodec": "av1"
+      },
+      {
+        "warning": "no_browser_preview",
+        "container": "mov",
+        "audioCodec": "pcm_s24le"
+      }
+    ],
+    "presets": [
+      {
+        "key": "mp4_h264",
+        "container": "mp4",
+        "videoCodec": "h264",
+        "audioCodec": "aac"
+      },
+      {
+        "key": "mp4_hevc",
+        "container": "mp4",
+        "videoCodec": "hevc",
+        "audioCodec": "aac"
+      },
+      {
+        "key": "mov_h264",
+        "container": "mov",
+        "videoCodec": "h264",
+        "audioCodec": "aac"
+      },
+      {
+        "key": "mov_hevc",
+        "container": "mov",
+        "videoCodec": "hevc",
+        "audioCodec": "aac"
+      },
+      {
+        "key": "webm_vp9_opus",
+        "container": "webm",
+        "videoCodec": "vp9",
+        "audioCodec": "opus"
+      },
+      {
+        "key": "mkv_hevc_aac",
+        "container": "mkv",
+        "videoCodec": "hevc",
+        "audioCodec": "aac"
+      },
+      {
+        "key": "mkv_hevc_opus",
+        "container": "mkv",
+        "videoCodec": "hevc",
+        "audioCodec": "opus"
+      },
+      {
+        "key": "audio_mp3",
+        "container": "mp3",
+        "videoCodec": "none",
+        "audioCodec": "mp3"
+      },
+      {
+        "key": "audio_wav",
+        "container": "wav",
+        "videoCodec": "none",
+        "audioCodec": "pcm_s16le"
+      },
+      {
+        "key": "audio_opus",
+        "container": "opus",
+        "videoCodec": "none",
+        "audioCodec": "opus"
+      },
+      {
+        "key": "mp4_av1",
+        "container": "mp4",
+        "videoCodec": "av1",
+        "audioCodec": "aac"
+      },
+      {
+        "key": "webm_av1_opus",
+        "container": "webm",
+        "videoCodec": "av1",
+        "audioCodec": "opus"
+      },
+      {
+        "key": "mov_prores",
+        "container": "mov",
+        "videoCodec": "prores",
+        "audioCodec": "pcm_s24le"
+      },
+      {
+        "key": "audio_flac",
+        "container": "flac",
+        "videoCodec": "none",
+        "audioCodec": "flac"
+      },
+      {
+        "key": "audio_wav24",
+        "container": "wav",
+        "videoCodec": "none",
+        "audioCodec": "pcm_s24le"
+      }
+    ],
+    "legacyFormats": {
+      "h264": "mp4_h264",
+      "hevc": "mp4_hevc",
+      "mp3": "audio_mp3",
+      "wav": "audio_wav"
+    },
+    "formats": [
+      "h264",
+      "hevc",
+      "mp3",
+      "wav",
+      "mp4_h264_opus",
+      "mp4_hevc_opus",
+      "mp4_av1_aac",
+      "mp4_av1_opus",
+      "mov_h264_aac",
+      "mov_h264_pcm_s16le",
+      "mov_h264_pcm_s24le",
+      "mov_hevc_aac",
+      "mov_hevc_pcm_s16le",
+      "mov_hevc_pcm_s24le",
+      "mov_prores_pcm_s24le",
+      "mov_prores_pcm_s16le",
+      "mkv_h264_aac",
+      "mkv_h264_pcm_s16le",
+      "mkv_h264_mp3",
+      "mkv_h264_opus",
+      "mkv_h264_vorbis",
+      "mkv_h264_flac",
+      "mkv_h264_pcm_s24le",
+      "mkv_hevc_aac",
+      "mkv_hevc_pcm_s16le",
+      "mkv_hevc_mp3",
+      "mkv_hevc_opus",
+      "mkv_hevc_vorbis",
+      "mkv_hevc_flac",
+      "mkv_hevc_pcm_s24le",
+      "mkv_vp9_aac",
+      "mkv_vp9_pcm_s16le",
+      "mkv_vp9_mp3",
+      "mkv_vp9_opus",
+      "mkv_vp9_vorbis",
+      "mkv_vp9_flac",
+      "mkv_vp9_pcm_s24le",
+      "mkv_av1_aac",
+      "mkv_av1_pcm_s16le",
+      "mkv_av1_mp3",
+      "mkv_av1_opus",
+      "mkv_av1_vorbis",
+      "mkv_av1_flac",
+      "mkv_av1_pcm_s24le",
+      "webm_vp9_opus",
+      "webm_vp9_vorbis",
+      "webm_av1_opus",
+      "webm_av1_vorbis",
+      "wav_none_pcm_s24le",
+      "opus_none_opus",
+      "flac_none_flac"
+    ],
+    "tokens": [
+      "mp4",
+      "mov",
+      "mkv",
+      "webm",
+      "mp3",
+      "wav",
+      "opus",
+      "flac",
+      "h264",
+      "hevc",
+      "vp9",
+      "av1",
+      "prores",
+      "aac",
+      "pcm_s16le",
+      "vorbis",
+      "pcm_s24le",
+      "subs_embedded"
+    ],
+    "minTier": {
+      "aac": "anonymous",
+      "av1": "pro",
+      "flac": "pro",
+      "h264": "anonymous",
+      "hevc": "free",
+      "mkv": "premium",
+      "mov": "premium",
+      "mp3": "anonymous",
+      "mp4": "anonymous",
+      "opus": "premium",
+      "pcm_s16le": "anonymous",
+      "pcm_s24le": "pro",
+      "prores": "pro",
+      "subs_embedded": "premium",
+      "vorbis": "premium",
+      "vp9": "premium",
+      "wav": "anonymous",
+      "webm": "premium"
+    },
+    "advancedMinTier": "premium",
+    "defaultChannels": 2,
+    "channels": [
+      2,
+      1
+    ]
+  },
+  "required": {
+    "aac": "anonymous",
+    "av1": "pro",
+    "flac": "pro",
+    "h264": "anonymous",
+    "hevc": "free",
+    "mkv": "premium",
+    "mov": "premium",
+    "mp3": "anonymous",
+    "mp4": "anonymous",
+    "opus": "premium",
+    "pcm_s16le": "anonymous",
+    "pcm_s24le": "pro",
+    "prores": "pro",
+    "subs_embedded": "premium",
+    "vorbis": "premium",
+    "vp9": "premium",
+    "wav": "anonymous",
+    "webm": "premium",
+    "advanced": "premium"
+  },
+  "caller": {
+    "tier": "free",
+    "formats": [
+      "aac",
+      "h264",
+      "hevc",
+      "mp3",
+      "mp4",
+      "pcm_s16le",
+      "wav"
+    ],
+    "advanced": false
+  }
+}

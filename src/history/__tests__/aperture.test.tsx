@@ -12,7 +12,7 @@ import { setIdTokenProvider } from '@/api/authToken';
 import { i18n } from '@/i18n';
 import { exportProjectId } from '@/photo/editAgain';
 import { EditAgainButton } from '@/photo/ui/EditAgainButton';
-import { thumbUri } from '@/photo/ui/ProjectsList';
+import { thumbUri } from '@/projects/ProjectsList';
 import { makeReadyStore } from '@/state/testing';
 import { flattenHistory } from '../cacheOps';
 import { isHiddenInHistory, toolLabel } from '../toolLabel';
@@ -270,16 +270,26 @@ describe('History: Projects segment (MA52 decision 4)', () => {
     );
   });
 
-  it('shows the empty state', async () => {
+  it('shows the empty state (MA58: the All filter covers every product)', async () => {
     await openProjects();
+    expect(await screen.findByText('No projects yet')).toBeTruthy();
+    fireEvent.press(screen.getByTestId('projects-filter-aperture'));
     expect(await screen.findByText('No Aperture projects yet')).toBeTruthy();
   });
 
-  it('the segment is hidden when Aperture is off for the account', async () => {
+  it('Aperture off for the account: no Aperture source or chip (MA58: the segment stays for Darkroom/Motion)', async () => {
     fake.capabilities = { enabled: false, render: false };
     fake.history = [entry('e1')];
     await mount(<HistoryTab />);
     await screen.findByTestId('history-row-e1');
-    await waitFor(() => expect(screen.queryByText('Projects')).toBeNull());
+    await waitFor(() =>
+      expect(fake.calls.some((c) => c.url.includes('/photo/capabilities'))).toBe(true),
+    );
+    fireEvent.press(screen.getByText('Projects'));
+    await screen.findByTestId('projects-filter');
+    await waitFor(() => expect(screen.queryByTestId('projects-filter-aperture')).toBeNull());
+    expect(fake.calls.some((c) => c.method === 'GET' && /\/photo\/projects$/.test(c.url))).toBe(
+      false,
+    );
   });
 });

@@ -1040,7 +1040,8 @@
     },
     "metricName": {
       "ops": "operações",
-      "ai_ops": "operações de IA"
+      "ai_ops": "operações de IA",
+      "export": "exportações"
     },
     "exceeded": {
       "title": "Utilizou todas as {{limit}} {{metricName}} de hoje.",
@@ -1446,6 +1447,44 @@
       "unavailable": "O {{brand}} não está disponível neste momento.",
       "network": "Sem ligação. Verifique a rede e tente novamente.",
       "generic": "Algo correu mal. Tente novamente."
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "Filtrar projetos",
+      "all": "Todos",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "Mais ações"
+    },
+    "untitled": "Projeto sem título",
+    "darkroomWebHint": "Abre o Darkroom na Web. Escolha lá este projeto entre os seus projetos recentes.",
+    "empty": {
+      "all": {
+        "title": "Ainda sem projetos",
+        "body": "Os projetos que cria no Aperture, ou no Darkroom e no Motion na Web, aparecem aqui."
+      },
+      "darkroom": {
+        "title": "Ainda sem projetos do Darkroom",
+        "body": "Crie um projeto de vídeo no Darkroom na Web e ele aparece aqui, pronto a exportar."
+      },
+      "motion": {
+        "title": "Ainda sem projetos do Motion",
+        "body": "Crie uma animação no Motion na Web e ela aparece aqui."
+      }
+    },
+    "loadFailed": {
+      "darkroom": "Não foi possível carregar os seus projetos do Darkroom.",
+      "motion": "Não foi possível carregar os seus projetos do Motion."
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "Não incluído no seu plano",
+      "savedVersion": "Exporta o projeto tal como foi guardado pela última vez.",
+      "optionsFailed": "Não foi possível carregar as opções de exportação.",
+      "openResult": "Abrir"
     }
   }
 }

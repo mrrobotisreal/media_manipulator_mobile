@@ -207,6 +207,10 @@
     "priority": 2,
     "props": ["layers", "masks", "heals", "doc_bytes_bucket"]
   },
+  "projects_filter_changed": {
+    "priority": 2,
+    "props": ["filter"]
+  },
   "push_opened": {
     "priority": 1,
     "props": ["tool", "status", "app_state"]
@@ -278,6 +282,26 @@
   "signup_started": {
     "priority": 1,
     "props": ["method"]
+  },
+  "studio_export_completed": {
+    "priority": 0,
+    "props": ["preset", "format", "container", "videoCodec", "audioCodec", "audioBitrate", "audioChannels", "mode", "resolution", "captionsMode", "durationRatioBucket", "host", "captionAnimation"]
+  },
+  "studio_export_failed": {
+    "priority": 0,
+    "props": ["preset", "format", "container", "videoCodec", "audioCodec", "audioBitrate", "audioChannels", "mode", "resolution", "captionsMode", "durationRatioBucket", "host", "captionAnimation"]
+  },
+  "studio_export_format_locked": {
+    "priority": 1,
+    "props": ["option", "required", "tier", "host"]
+  },
+  "studio_export_started": {
+    "priority": 0,
+    "props": ["preset", "format", "container", "videoCodec", "audioCodec", "audioBitrate", "audioChannels", "mode", "resolution", "captionsMode", "host", "captionAnimation"]
+  },
+  "studio_project_opened": {
+    "priority": 1,
+    "props": ["host", "surface"]
   },
   "subscription_status_viewed": {
     "priority": 0,

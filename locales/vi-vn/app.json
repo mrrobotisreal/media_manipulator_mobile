@@ -1028,7 +1028,8 @@
     },
     "metricName": {
       "ops": "thao tác",
-      "ai_ops": "thao tác AI"
+      "ai_ops": "thao tác AI",
+      "export": "lượt xuất"
     },
     "exceeded": {
       "title": "Bạn đã dùng hết {{limit}} {{metricName}} trong hôm nay.",
@@ -1430,6 +1431,44 @@
       "unavailable": "{{brand}} hiện không khả dụng.",
       "network": "Không có kết nối. Hãy kiểm tra mạng và thử lại.",
       "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "Lọc dự án",
+      "all": "Tất cả",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "Thao tác khác"
+    },
+    "untitled": "Dự án chưa đặt tên",
+    "darkroomWebHint": "Mở Darkroom trên web. Hãy chọn dự án này trong các dự án gần đây ở đó.",
+    "empty": {
+      "all": {
+        "title": "Chưa có dự án nào",
+        "body": "Các dự án bạn tạo trong Aperture, hoặc trong Darkroom và Motion trên web, sẽ hiển thị tại đây."
+      },
+      "darkroom": {
+        "title": "Chưa có dự án Darkroom nào",
+        "body": "Tạo một dự án video trong Darkroom trên web và dự án sẽ hiển thị tại đây, sẵn sàng để xuất."
+      },
+      "motion": {
+        "title": "Chưa có dự án Motion nào",
+        "body": "Tạo một ảnh động trong Motion trên web và nó sẽ hiển thị tại đây."
+      }
+    },
+    "loadFailed": {
+      "darkroom": "Không thể tải các dự án Darkroom của bạn.",
+      "motion": "Không thể tải các dự án Motion của bạn."
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "Không có trong gói của bạn",
+      "savedVersion": "Xuất dự án theo phiên bản được lưu gần nhất.",
+      "optionsFailed": "Không thể tải các tùy chọn xuất.",
+      "openResult": "Mở"
     }
   }
 }

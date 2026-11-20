@@ -1028,7 +1028,8 @@
     },
     "metricName": {
       "ops": "操作",
-      "ai_ops": "AI 操作"
+      "ai_ops": "AI 操作",
+      "export": "导出"
     },
     "exceeded": {
       "title": "你今天的 {{limit}} 次{{metricName}}已全部用完。",
@@ -1430,6 +1431,44 @@
       "unavailable": "{{brand}}目前不可用。",
       "network": "无网络连接。请检查网络后重试。",
       "generic": "出了点问题，请重试。"
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "筛选项目",
+      "all": "全部",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "更多操作"
+    },
+    "untitled": "未命名项目",
+    "darkroomWebHint": "在网页版中打开 Darkroom，然后从最近的项目中选择此项目。",
+    "empty": {
+      "all": {
+        "title": "还没有项目",
+        "body": "在 Aperture 中，或在网页版 Darkroom 和 Motion 中创建的项目会显示在这里。"
+      },
+      "darkroom": {
+        "title": "还没有 Darkroom 项目",
+        "body": "在网页版 Darkroom 中创建视频项目后，它会显示在这里，随时可以导出。"
+      },
+      "motion": {
+        "title": "还没有 Motion 项目",
+        "body": "在网页版 Motion 中创建动画后，它会显示在这里。"
+      }
+    },
+    "loadFailed": {
+      "darkroom": "无法加载你的 Darkroom 项目。",
+      "motion": "无法加载你的 Motion 项目。"
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "不在你的套餐内",
+      "savedVersion": "按最近一次保存的版本导出项目。",
+      "optionsFailed": "无法加载导出选项。",
+      "openResult": "打开"
     }
   }
 }
