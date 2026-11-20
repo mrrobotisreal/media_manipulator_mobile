@@ -22,5 +22,8 @@ export const vectorProjectSummarySchema = z
 export type VectorProjectSummary = z.infer<typeof vectorProjectSummarySchema>;
 
 export const vectorProjectListSchema = z.object({
-  projects: z.array(vectorProjectSummarySchema).nullish().transform((p) => p ?? []),
+  projects: z
+    .array(vectorProjectSummarySchema)
+    .nullish()
+    .transform((p) => p ?? []),
 });

@@ -75,7 +75,9 @@ const container = (t: StudioOutputTable, key: string) => t.containers.find((c) =
 const codec = (t: StudioOutputTable, key: string) => t.codecs.find((c) => c.key === key);
 
 /** The gated tokens of a choice: container, video codec (unless none), audio codec (unless it is the container). */
-export function choiceTokens(c: Pick<OutputChoice, 'container' | 'videoCodec' | 'audioCodec'>): string[] {
+export function choiceTokens(
+  c: Pick<OutputChoice, 'container' | 'videoCodec' | 'audioCodec'>,
+): string[] {
   const out = [c.container];
   if (c.videoCodec && c.videoCodec !== 'none') out.push(c.videoCodec);
   if (c.audioCodec && c.audioCodec !== c.container) out.push(c.audioCodec);
@@ -83,7 +85,11 @@ export function choiceTokens(c: Pick<OutputChoice, 'container' | 'videoCodec' | 
 }
 
 /** The first token the caller lacks (null = allowed; the operator has everything). */
-export function lockFor(tokens: string[], access: OutputAccess, advanced = false): OptionLock | null {
+export function lockFor(
+  tokens: string[],
+  access: OutputAccess,
+  advanced = false,
+): OptionLock | null {
   if (access.tier === 'operator') return null;
   const have = new Set(access.formats);
   const missing = tokens.find((tok) => !have.has(tok));
@@ -108,7 +114,8 @@ export function presetFor(
   t: StudioOutputTable,
 ): StudioOutputPreset | undefined {
   return t.presets.find(
-    (p) => p.container === c.container && p.videoCodec === c.videoCodec && p.audioCodec === c.audioCodec,
+    (p) =>
+      p.container === c.container && p.videoCodec === c.videoCodec && p.audioCodec === c.audioCodec,
   );
 }
 
@@ -123,7 +130,11 @@ export function containerFile(key: string, t: StudioOutputTable): { ext: string;
 }
 
 /** The audio codecs a container offers with a video codec (the API's StudioAudioCodecsFor). */
-export function audioCodecsFor(containerKey: string, videoCodec: string, t: StudioOutputTable): string[] {
+export function audioCodecsFor(
+  containerKey: string,
+  videoCodec: string,
+  t: StudioOutputTable,
+): string[] {
   const c = container(t, containerKey);
   if (!c) return [];
   const narrow = codec(t, videoCodec)?.audioCodecs;
@@ -227,7 +238,8 @@ export function fitChoice(c: OutputChoice, t: StudioOutputTable): OutputChoice {
   const audioCodec = audio.includes(c.audioCodec) ? c.audioCodec : (audio[0] ?? '');
   const rates = bitrateOptions(audioCodec, t);
   const def = codec(t, audioCodec)?.defaultBitrate ?? 0;
-  const audioBitrate = rates.length === 0 ? 0 : rates.includes(c.audioBitrate) ? c.audioBitrate : def;
+  const audioBitrate =
+    rates.length === 0 ? 0 : rates.includes(c.audioBitrate) ? c.audioBitrate : def;
   const audioChannels = t.channels.includes(c.audioChannels) ? c.audioChannels : t.defaultChannels;
   return { container: k.key, videoCodec, audioCodec, audioBitrate, audioChannels };
 }
@@ -243,7 +255,11 @@ export function choiceOutput(
 }
 
 /** The lock on the whole choice (what Start would be refused for), or null. */
-export function choiceLock(c: ExportChoices, t: StudioOutputTable, access: OutputAccess): OptionLock | null {
+export function choiceLock(
+  c: ExportChoices,
+  t: StudioOutputTable,
+  access: OutputAccess,
+): OptionLock | null {
   const out = choiceOutput(c, t);
   const tokens = choiceTokens(out);
   if (c.captionsMode === 'embedded' && !isAudioOnlyContainer(out.container, t))
@@ -258,7 +274,10 @@ export interface ResolutionOption {
   overCap: boolean;
 }
 
-export function resolutionOptions(canvasHeight: number, maxOutputHeight?: number): ResolutionOption[] {
+export function resolutionOptions(
+  canvasHeight: number,
+  maxOutputHeight?: number,
+): ResolutionOption[] {
   const cap = maxOutputHeight && maxOutputHeight > 0 ? maxOutputHeight : undefined;
   return RESOLUTION_RUNGS.map((value) => {
     const height = value === 0 ? canvasHeight : value;
@@ -278,7 +297,8 @@ export function defaultChoices(
   fileName: string,
   hasCaptions: boolean,
 ): ExportChoices {
-  const first = presetRows(t, access).find((r) => !r.lock && !r.audioOnly) ?? presetRows(t, access)[0]!;
+  const first =
+    presetRows(t, access).find((r) => !r.lock && !r.audioOnly) ?? presetRows(t, access)[0]!;
   return {
     fileName,
     quality: 'high',

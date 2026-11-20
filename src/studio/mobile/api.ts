@@ -44,16 +44,17 @@ export const studioApi = mmApi.injectEndpoints({
       keepUnusedDataFor: 300,
     }),
     /** `POST /studio/projects/:id/export` -> 200 `{jobId}` (one `export` unit). */
-    exportStudioProject: build.mutation<{ jobId: string }, { id: string; body: StudioExportRequest }>(
-      {
-        query: ({ id, body }) => ({
-          url: `/studio/projects/${enc(id)}/export`,
-          method: 'POST',
-          body,
-          schema: studioExportResponseSchema,
-        }),
-      },
-    ),
+    exportStudioProject: build.mutation<
+      { jobId: string },
+      { id: string; body: StudioExportRequest }
+    >({
+      query: ({ id, body }) => ({
+        url: `/studio/projects/${enc(id)}/export`,
+        method: 'POST',
+        body,
+        schema: studioExportResponseSchema,
+      }),
+    }),
     /** `GET /studio/projects/:id/exports`: the render history, newest first. */
     listStudioExports: build.query<StudioExportRow[], string>({
       query: (id) => ({

@@ -63,7 +63,13 @@ const studio = (id: string, name: string, h: number, assetId = '') => ({
   durationSeconds: 75,
   tracks: [
     { id: 'a1', kind: 'audio', index: 0, muted: false, clips: [{ id: 'c0', assetId: 'aud' }] },
-    { id: 'v1', kind: 'video', index: 0, muted: false, clips: assetId ? [{ id: 'c1', assetId }] : [] },
+    {
+      id: 'v1',
+      kind: 'video',
+      index: 0,
+      muted: false,
+      clips: assetId ? [{ id: 'c1', assetId }] : [],
+    },
   ],
   captions: [],
   captionsEnabled: true,
@@ -91,13 +97,18 @@ interface Fake {
 let fake: Fake;
 const realFetch = global.fetch;
 const json = (status: number, body: unknown) =>
-  Promise.resolve({ status, headers: new Headers(), text: () => Promise.resolve(JSON.stringify(body)) });
+  Promise.resolve({
+    status,
+    headers: new Headers(),
+    text: () => Promise.resolve(JSON.stringify(body)),
+  });
 
 function installFetch() {
   global.fetch = jest.fn((url: string) => {
     const path = new URL(url).pathname.replace(/^\/api/, '');
     fake.calls.push(path);
-    if (path === '/account/history') return json(200, { entries: [], total: 0, limit: 50, offset: 0 });
+    if (path === '/account/history')
+      return json(200, { entries: [], total: 0, limit: 50, offset: 0 });
     if (path === '/photo/capabilities') return json(200, { enabled: true, render: true });
     for (const [src, route] of [
       ['photo', '/photo/projects'],
@@ -122,7 +133,7 @@ async function mountProjects() {
       </I18nextProvider>
     </Provider>,
   );
-  fireEvent.press(await screen.findByText('Projects'));
+  await fireEvent.press(await screen.findByText('Projects'));
   return { store, ...utils };
 }
 
@@ -145,7 +156,12 @@ describe('mergeProjects (pure)', () => {
       darkroom: [studio('s1', 'Trip cut', 1) as never, studio('s2', 'Old', 50) as never],
       motion: [vector('m1', 'Logo', 3) as never],
     });
-    expect(rows.map((r) => r.key)).toEqual(['darkroom:s1', 'motion:m1', 'aperture:p1', 'darkroom:s2']);
+    expect(rows.map((r) => r.key)).toEqual([
+      'darkroom:s1',
+      'motion:m1',
+      'aperture:p1',
+      'darkroom:s2',
+    ]);
     expect(filterRows(rows, 'motion').map((r) => r.key)).toEqual(['motion:m1']);
     expect(filterRows(rows, 'all')).toHaveLength(4);
   });
@@ -161,7 +177,9 @@ describe('mergeProjects (pure)', () => {
   it('the web URLs: Motion opens its (unlocalized) editor, Darkroom its localized page', () => {
     expect(motionEditorWebUrl('m 1')).toBe('https://www.media-manipulator.com/motion/m%201');
     expect(darkroomWebUrl('en-US')).toBe('https://www.media-manipulator.com/tools/content-studio');
-    expect(darkroomWebUrl('ru-RU')).toBe('https://www.media-manipulator.com/ru/tools/content-studio');
+    expect(darkroomWebUrl('ru-RU')).toBe(
+      'https://www.media-manipulator.com/ru/tools/content-studio',
+    );
   });
 });
 
@@ -215,7 +233,7 @@ describe('History: Projects segment (MA58)', () => {
     fake.vector = [vector('m1', 'Logo', 3)];
     const { unmount } = await mountProjects();
     await screen.findByTestId('project-row-s1');
-    fireEvent.press(screen.getByTestId('projects-filter-motion'));
+    await fireEvent.press(screen.getByTestId('projects-filter-motion'));
     await waitFor(() => expect(screen.queryByTestId('project-row-s1')).toBeNull());
     expect(screen.getByTestId('project-row-m1')).toBeTruthy();
     expect(screen.queryByTestId('project-row-p1')).toBeNull();
@@ -231,17 +249,17 @@ describe('History: Projects segment (MA58)', () => {
   it('Motion: the menu has Open on the web only, which opens the editor URL', async () => {
     fake.vector = [vector('m1', 'Logo', 3)];
     await mountProjects();
-    fireEvent.press(await screen.findByTestId('project-menu-m1'));
+    await fireEvent.press(await screen.findByTestId('project-menu-m1'));
     expect(await screen.findByTestId('project-actions-sheet')).toBeTruthy();
     expect(screen.queryByTestId('project-action-export')).toBeNull();
-    fireEvent.press(screen.getByTestId('project-action-web'));
+    await fireEvent.press(screen.getByTestId('project-action-web'));
     expect(openWebPage).toHaveBeenCalledWith('https://www.media-manipulator.com/motion/m1');
   });
 
   it('Darkroom: the menu reports studio_project_opened (app_list) and offers Export, Exports, web', async () => {
     fake.studio = [studio('s1', 'Trip cut', 1)];
     await mountProjects();
-    fireEvent.press(await screen.findByTestId('project-row-s1'));
+    await fireEvent.press(await screen.findByTestId('project-row-s1'));
     expect(await screen.findByTestId('project-action-export')).toBeTruthy();
     expect(screen.getByTestId('project-action-exports')).toBeTruthy();
     expect(track).toHaveBeenCalledWith(
@@ -249,7 +267,7 @@ describe('History: Projects segment (MA58)', () => {
       { host: 'mm', surface: 'app_list' },
       expect.objectContaining({ tool_slug: 'darkroom' }),
     );
-    fireEvent.press(screen.getByTestId('project-action-web'));
+    await fireEvent.press(screen.getByTestId('project-action-web'));
     expect(openWebPage).toHaveBeenCalledWith(
       'https://www.media-manipulator.com/tools/content-studio',
     );

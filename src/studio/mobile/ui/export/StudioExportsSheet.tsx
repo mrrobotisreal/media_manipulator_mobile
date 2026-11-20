@@ -53,9 +53,7 @@ function ExportRowView({
   onAgain(r: StudioExportRow): void;
 }) {
   const { t } = useTranslation();
-  const label = row.container
-    ? outputHumanLabel(row)
-    : row.format.toUpperCase();
+  const label = row.container ? outputHumanLabel(row) : row.format.toUpperCase();
   const res =
     row.resolution > 0 ? `${row.resolution}p` : t('interface:contentStudio.exports.canvas');
   const openable = row.status === 'completed' && row.available;
@@ -82,7 +80,9 @@ function ExportRowView({
           </Text>
         ) : null}
         {row.status === 'completed' && !row.available ? (
-          <Text className="text-xs text-subtle">{t('interface:contentStudio.exports.expired')}</Text>
+          <Text className="text-xs text-subtle">
+            {t('interface:contentStudio.exports.expired')}
+          </Text>
         ) : null}
       </Pressable>
       <View className="flex-row flex-wrap gap-2">
@@ -157,10 +157,12 @@ export function StudioExportsSheet({
           <ActivityIndicator color={colors.primary} />
         ) : q.isError ? (
           <View className="gap-3" testID="studio-exports-error">
-            <Text className="text-muted-fg">
-              {t('interface:contentStudio.exports.loadFailed')}
-            </Text>
-            <Button label={t('history.retry')} variant="secondary" onPress={() => void q.refetch()} />
+            <Text className="text-muted-fg">{t('interface:contentStudio.exports.loadFailed')}</Text>
+            <Button
+              label={t('history.retry')}
+              variant="secondary"
+              onPress={() => void q.refetch()}
+            />
           </View>
         ) : rows.length === 0 ? (
           <Text className="text-muted-fg" testID="studio-exports-empty">

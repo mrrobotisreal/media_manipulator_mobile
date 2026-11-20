@@ -1,6 +1,7 @@
 import type { MmError } from '@/api/errors';
 import type { JobRecord } from '@/jobs/types';
 import type { RootState } from '@/state/store';
+import { isStudioExportOptions } from '@/jobs/starters/studioExport';
 import { quotaMetricForJob } from '@/tools/metric';
 import type { QuotaMetric } from '@/tools/types';
 import { selectAllowance } from './useAllowance';
@@ -31,8 +32,16 @@ export function quotaRefusal(
   };
 }
 
-/** `JobEngineDeps.beforeUpload` (MA12 hook): the metric follows the built options, as the API's. */
+/**
+ * `JobEngineDeps.beforeUpload` (MA12 hook): the metric follows the built options, as the API's.
+ * A Darkroom render (MA58) spends the separate `export` allowance, which `/account/me` does not
+ * meter for the phone: no local refusal, the server's 429 decides.
+ */
 export function makeBeforeUpload(getState: () => RootState, now: () => number = Date.now) {
   return async (record: JobRecord): Promise<MmError | null> =>
-    quotaRefusal(getState(), quotaMetricForJob(record.options), now());
+    quotaRefusal(
+      getState(),
+      isStudioExportOptions(record.options) ? null : quotaMetricForJob(record.options),
+      now(),
+    );
 }

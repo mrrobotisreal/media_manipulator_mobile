@@ -14,6 +14,7 @@ import { higherTierFact, higherTierValues, limitKeyForMetric, type TierFactKey }
 import { factText, useCurrentTier, useTierList } from './useTierFacts';
 import { useAccountLimitsFull } from './useAccountLimitsFull';
 import { formatLimitValue } from './valueFormat';
+import { tokenName } from '@/studio/mobile/ui/export/exportModel';
 
 /** Event props for `quota_exceeded_shown`; the scope follows the web (`metric` or `detail.error`). */
 export function exceededProps(v: LimitVariant, limit: number | undefined, toolSlug?: string) {
@@ -161,6 +162,21 @@ function Body({
     });
     const fact = higherTierFact('maxVideoSeconds', tiers, tier);
     if (fact) facts.push(factText(t, fact));
+  } else if (variant.kind === 'format') {
+    // MA58 (MA-0008): the plan fact only ("MOV exports are part of Premium"), no purchase link.
+    title = t('interface:upgradeInterstitial.format.title');
+    const plan =
+      variant.required === 'premium' || variant.required === 'pro'
+        ? t(`quota.tiers.${variant.required}`)
+        : null;
+    body = !plan
+      ? null
+      : variant.option === 'advanced'
+        ? t('interface:upgradeInterstitial.format.advanced', { plan })
+        : t('interface:upgradeInterstitial.format.bodyPlan', {
+            option: formatOptionName(variant.option),
+            plan,
+          });
   } else if (variant.kind === 'presets') {
     // MA53 (MA-0008): the neutral cap line only, no plan comparison or purchase link.
     title = t('interface:photo.presets.limitReached');
@@ -185,6 +201,11 @@ function Body({
       ))}
     </>
   );
+}
+
+/** A Darkroom output token as the user reads it (the web's CODEC_NAMES; containers upper-cased). */
+function formatOptionName(option: string): string {
+  return tokenName(option);
 }
 
 /** "Too many requests. Try again in N s." with a live countdown; Try again enables at 0. */

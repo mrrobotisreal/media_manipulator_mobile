@@ -116,7 +116,8 @@ export function ExportForm({
   const pickerChips = (
     opts: { value: string; lock: OptionLock | null }[],
     name: (v: string) => string,
-  ): ChipOption<string>[] => opts.map((o) => ({ value: o.value, label: name(o.value), locked: o.lock !== null }));
+  ): ChipOption<string>[] =>
+    opts.map((o) => ({ value: o.value, label: name(o.value), locked: o.lock !== null }));
   const lockOf = (opts: { value: string; lock: OptionLock | null }[], v: string) =>
     opts.find((o) => o.value === v)?.lock ?? null;
   const onLocked = (l: OptionLock | null) => l && reportLock(l, access);
@@ -171,7 +172,9 @@ export function ExportForm({
             options={presetChips}
             value={c.outputPreset}
             onChange={(outputPreset) => set({ outputPreset })}
-            onLockedPress={(key) => onLocked(presets.find((r) => r.preset.key === key)?.lock ?? null)}
+            onLockedPress={(key) =>
+              onLocked(presets.find((r) => r.preset.key === key)?.lock ?? null)
+            }
             testIDPrefix="studio-export-preset"
           />
         </>
@@ -353,14 +356,22 @@ export function StudioExportSheet({
 
   return (
     <Sheet visible={visible} onClose={onClose}>
-      <ScrollView style={{ maxHeight: 560 }} contentContainerClassName="gap-3" testID="studio-export-sheet">
+      <ScrollView
+        style={{ maxHeight: 560 }}
+        contentContainerClassName="gap-3"
+        testID="studio-export-sheet"
+      >
         <Text className="text-lg font-semibold">{t('interface:contentStudio.export.title')}</Text>
         {q.isLoading ? (
           <ActivityIndicator color={colors.primary} testID="studio-export-loading" />
         ) : q.isError || !q.data || !access || !shown ? (
           <View className="gap-3" testID="studio-export-options-error">
             <Text className="text-muted-fg">{t('darkroom.export.optionsFailed')}</Text>
-            <Button label={t('history.retry')} variant="secondary" onPress={() => void q.refetch()} />
+            <Button
+              label={t('history.retry')}
+              variant="secondary"
+              onPress={() => void q.refetch()}
+            />
           </View>
         ) : (
           <ExportForm

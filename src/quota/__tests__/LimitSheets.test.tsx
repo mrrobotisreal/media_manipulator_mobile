@@ -203,6 +203,45 @@ describe('LimitSheet variants', () => {
   });
 });
 
+describe('LimitSheet: Darkroom export refusals (MA58)', () => {
+  it('429 on the export allowance names exports and scopes export', async () => {
+    await show(
+      normaliseError(429, {
+        error: 'quota_exceeded',
+        tier: 'free',
+        metric: 'export',
+        limit: 30,
+        used: 31,
+        resetsAt: new Date(Date.now() + 3_600_000).toISOString(),
+      }),
+    );
+    expect(screen.getByText("You've used all 30 exports for today.")).toBeTruthy();
+    expect(events()).toEqual([
+      ['quota_exceeded_shown', { limit: 30, scope: 'export', tool_slug: 'video-compress' }],
+    ]);
+  });
+
+  it('403 format_not_in_plan states the plan fact only (no purchase link)', async () => {
+    await show(
+      normaliseError(403, {
+        error: 'format_not_in_plan',
+        message: 'MOV exports are part of Premium',
+        limitKey: 'studio_format',
+        required: 'premium',
+        option: 'mov',
+        upgradePath: '/pricing',
+      }),
+    );
+    expect(screen.getByTestId('limit-sheet-format')).toBeTruthy();
+    expect(screen.getByText("This export format isn't in your plan")).toBeTruthy();
+    expect(screen.getByText('MOV exports are part of Premium.')).toBeTruthy();
+    expect(screen.queryByText(/Upgrade|pricing/i)).toBeNull();
+    expect(events()).toEqual([
+      ['quota_exceeded_shown', { scope: 'format_not_in_plan', tool_slug: 'video-compress' }],
+    ]);
+  });
+});
+
 describe('no sales copy in any locale', () => {
   const root = join(__dirname, '../../../locales');
   const BAD =

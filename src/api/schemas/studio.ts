@@ -16,7 +16,10 @@ const studioClipSummarySchema = z
 const studioTrackSummarySchema = z
   .object({
     kind: z.string(),
-    clips: z.array(studioClipSummarySchema).nullish().transform((c) => c ?? []),
+    clips: z
+      .array(studioClipSummarySchema)
+      .nullish()
+      .transform((c) => c ?? []),
   })
   .passthrough();
 
@@ -29,7 +32,10 @@ export const studioProjectSummarySchema = z
     width: z.number().optional().default(0),
     height: z.number().optional().default(0),
     fps: z.number().optional(),
-    tracks: z.array(studioTrackSummarySchema).nullish().transform((t) => t ?? []),
+    tracks: z
+      .array(studioTrackSummarySchema)
+      .nullish()
+      .transform((t) => t ?? []),
     revision: z.number().optional(),
     createdAt: z.string().optional(),
     updatedAt: z.string().optional(),
@@ -38,7 +44,10 @@ export const studioProjectSummarySchema = z
 export type StudioProjectSummary = z.infer<typeof studioProjectSummarySchema>;
 
 export const studioProjectListSchema = z.object({
-  projects: z.array(studioProjectSummarySchema).nullish().transform((p) => p ?? []),
+  projects: z
+    .array(studioProjectSummarySchema)
+    .nullish()
+    .transform((p) => p ?? []),
 });
 
 /** `models.StudioAsset`, the list fields only (`GET /studio/projects/:id/assets`). */
@@ -53,7 +62,10 @@ export const studioAssetSummarySchema = z
 export type StudioAssetSummary = z.infer<typeof studioAssetSummarySchema>;
 
 export const studioAssetListSchema = z.object({
-  assets: z.array(studioAssetSummarySchema).nullish().transform((a) => a ?? []),
+  assets: z
+    .array(studioAssetSummarySchema)
+    .nullish()
+    .transform((a) => a ?? []),
 });
 
 // --- Output table (MM118) -------------------------------------------------------------------
@@ -78,7 +90,10 @@ const outputCodecSchema = z
   .object({
     key: z.string(),
     kind: z.string(),
-    bitrates: z.array(z.number()).nullish().transform((b) => b ?? []),
+    bitrates: z
+      .array(z.number())
+      .nullish()
+      .transform((b) => b ?? []),
     defaultBitrate: z.number().optional().default(0),
     audioCodecs: z.array(z.string()).optional(),
   })
@@ -102,7 +117,10 @@ export const studioOutputTableSchema = z
   .object({
     containers: z.array(outputContainerSchema).min(1),
     codecs: z.array(outputCodecSchema),
-    warnings: z.array(outputWarningSchema).nullish().transform((w) => w ?? []),
+    warnings: z
+      .array(outputWarningSchema)
+      .nullish()
+      .transform((w) => w ?? []),
     presets: z.array(outputPresetSchema).min(1),
     legacyFormats: z.record(z.string(), z.string()).optional().default({}),
     formats: z.array(z.string()).optional().default([]),
@@ -122,7 +140,10 @@ export const studioExportOptionsSchema = z.object({
   required: z.record(z.string(), z.string()),
   caller: z.object({
     tier: z.string(),
-    formats: z.array(z.string()).nullish().transform((f) => f ?? []),
+    formats: z
+      .array(z.string())
+      .nullish()
+      .transform((f) => f ?? []),
     advanced: z.boolean(),
   }),
 });
@@ -180,5 +201,8 @@ export const studioExportRowSchema = z
 export type StudioExportRow = z.infer<typeof studioExportRowSchema>;
 
 export const studioExportListSchema = z.object({
-  exports: z.array(studioExportRowSchema).nullish().transform((e) => e ?? []),
+  exports: z
+    .array(studioExportRowSchema)
+    .nullish()
+    .transform((e) => e ?? []),
 });

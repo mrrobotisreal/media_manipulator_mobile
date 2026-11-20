@@ -7,6 +7,7 @@ export type TierFactKey =
   | 'maxOutputHeight'
   | 'opsPerDay'
   | 'aiOpsPerDay'
+  | 'exportsPerDay'
   | 'resultRetentionHours';
 
 export type PaidTier = 'premium' | 'pro';
@@ -56,8 +57,13 @@ export function higherTierFact(
   return { limitKey, tiers: tied, value: first.value };
 }
 
-const LIMIT_OF_METRIC = { ops: 'opsPerDay', ai_ops: 'aiOpsPerDay' } as const;
-export const limitKeyForMetric = (metric: 'ops' | 'ai_ops'): TierFactKey => LIMIT_OF_METRIC[metric];
+const LIMIT_OF_METRIC = {
+  ops: 'opsPerDay',
+  ai_ops: 'aiOpsPerDay',
+  export: 'exportsPerDay',
+} as const;
+export const limitKeyForMetric = (metric: 'ops' | 'ai_ops' | 'export'): TierFactKey =>
+  LIMIT_OF_METRIC[metric];
 
 /** Per-tier values of `limitKey` for the paid tiers above `currentTier` that raise it. */
 export function higherTierValues(

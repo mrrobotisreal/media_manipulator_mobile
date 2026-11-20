@@ -23,10 +23,7 @@ import { track as realTrack } from '@/analytics/track';
 import type { JobStarter } from '@/jobs/jobEngine';
 import type { Failure } from '@/jobs/transport';
 import type { JobRecord } from '@/jobs/types';
-import {
-  durationRatioBucket,
-  type StudioExportProps,
-} from '@/studio/mobile/ui/export/exportModel';
+import { durationRatioBucket, type StudioExportProps } from '@/studio/mobile/ui/export/exportModel';
 
 export const STUDIO_EXPORT_STARTER = 'studioExport';
 /** `context.tool_slug` of every Darkroom event from the phone (design DARKROOM_MOBILE.md §8). */
@@ -53,7 +50,11 @@ export type StudioExportCall = (
   o: StudioExportJobOptions,
 ) => Promise<{ ok: true; jobId: string } | { ok: false; error: MmError }>;
 
-type Track = (name: string, props: Record<string, unknown>, context: Record<string, unknown>) => void;
+type Track = (
+  name: string,
+  props: Record<string, unknown>,
+  context: Record<string, unknown>,
+) => void;
 
 function failure(error: MmError): Failure {
   const rejected =

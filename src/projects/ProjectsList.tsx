@@ -45,7 +45,11 @@ import { Sheet } from '@/ui/components/Sheet';
 import { Num, Text } from '@/ui/components/Text';
 import { showNotice } from '@/ui/notice';
 import { colors, hitTarget } from '@/ui/tokens';
-import { darkroomWebUrl, motionEditorWebUrl, useListVectorProjectsQuery } from '@/vector/mobile/api';
+import {
+  darkroomWebUrl,
+  motionEditorWebUrl,
+  useListVectorProjectsQuery,
+} from '@/vector/mobile/api';
 import { useProjectsFilter } from './filterPref';
 import {
   filterRows,
@@ -293,7 +297,15 @@ function WebProjectRow({
   );
 }
 
-function SourceError({ label, onRetry, testID }: { label: string; onRetry(): void; testID: string }) {
+function SourceError({
+  label,
+  onRetry,
+  testID,
+}: {
+  label: string;
+  onRetry(): void;
+  testID: string;
+}) {
   const { t } = useTranslation();
   return (
     <View className="flex-row items-center gap-3 px-4 py-2" testID={testID}>
@@ -479,7 +491,9 @@ export function ProjectsList({
             />
           ) : (
             <EmptyState
-              icon={emptyKey === 'motion' ? Spline : emptyKey === 'darkroom' ? Film : SlidersHorizontal}
+              icon={
+                emptyKey === 'motion' ? Spline : emptyKey === 'darkroom' ? Film : SlidersHorizontal
+              }
               title={t(`projects.empty.${emptyKey}.title`)}
               body={t(`projects.empty.${emptyKey}.body`)}
               {...(emptyKey === 'all'
