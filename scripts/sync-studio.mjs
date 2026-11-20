@@ -77,6 +77,8 @@ export const TS_FILES = {
     'playbackSync',
     'qualityGovernor',
     'versionCheckpoint',
+    // The web's draft-recovery decision; its `StudioDraft` type import goes to the app's drafts.
+    'draftRecovery',
     'devSynthetic',
   ]),
   ...studio(
@@ -99,6 +101,7 @@ export const TEST_FILES = {
       'audioPresets.test',
       'clipTrimBound.test',
       'devSynthetic.test',
+      'draftRecovery.test',
       'duckingEnvelope.test',
       'ease.test',
       'markerLayout.test',
@@ -145,6 +148,8 @@ export const TREES = {
 export const SEAMS = {
   'lib/studio/studioBackend': 'mobile/backend',
   'lib/translator/mode': 'mobile/backend',
+  // draftRecovery type-imports `StudioDraft`; the app's MMKV drafts export the same shape.
+  'lib/studio/draftStore': 'mobile/drafts',
   // Already synced for Aperture (scripts/sync-photo-fixtures.mjs): reuse, never duplicate.
   'lib/studio/colorMath': '../photo/studioColorMath',
   'lib/studio/lutParser': '../photo/studioLutParser',
@@ -159,7 +164,6 @@ export const EXCLUDED = {
   'lib/studio/imageCache.ts': 'fetch + createImageBitmap',
   'lib/studio/frameGrab.ts': 'HTMLCanvasElement / document',
   'lib/studio/draftStore.ts': 'IndexedDB (rewritten on MMKV: src/studio/mobile/drafts.ts)',
-  'lib/studio/draftRecovery.ts': 'type-imports draftStore (IndexedDB module)',
   'lib/studio/mediaBin.ts': 'window / localStorage',
   'lib/studio/preferences.ts': 'window / localStorage',
   'lib/studio/trackHeights.ts': 'localStorage',

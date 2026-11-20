@@ -1,7 +1,7 @@
 {
   "webRepo": "media-manipulator-ui",
   "webCommit": "fd25a430c420a939651ccccf161138a838bf224b",
-  "syncedAt": "2026-11-20T01:55:04.282Z",
+  "syncedAt": "2026-11-20T02:08:50.902Z",
   "files": {
     "studioTypes.ts": "5cb8299e93f6bc7934920efcdcbbe5a0f552fa181a1cd7b6c3630d12724dac56",
     "timelineOps.ts": "c15c64e317555deaed465034fcd3f54e3ee642a77c58784e34020a1194f7c700",
@@ -29,6 +29,7 @@
     "playbackSync.ts": "0327d16254495a90fa31ab78d3ef1776072a6034a08b1a1453caedd47018ad8d",
     "qualityGovernor.ts": "65d18a1e5eca3eb5e2db4dea875d6b4d5d96a8429e3b2302df6c54f0283ddf5f",
     "versionCheckpoint.ts": "4455d1c06177c743f2bd03782263e587b520e06d0915d3fe1429b50b9bfae2df",
+    "draftRecovery.ts": "05553ae843bafb7a3a5b366beace4ffb69afc633a95f356fc629379eed04fe56",
     "devSynthetic.ts": "bf97987ebaaeaa6adc678760a6bb2f3c86005276957bf7d15575966d1b76f3aa",
     "captions/ass.ts": "993d7e1ae9d0112d64e99ca3a02407df9d484148e7ee02ef71ac55319170e340",
     "captions/units.ts": "c22af42ba802898943d502f417b7cfd888081f8854c8d4fb7424f2c98952c2c6",
@@ -41,6 +42,7 @@
     "audioPresets.test.ts": "12ba3fd6f16455029e2abbec6e5ab5fdc802fe91f8237548471dbd7952256475",
     "clipTrimBound.test.ts": "fa52b9ab4711bf6fb461947acc2343aef1a279971b23cefd73a70a8bbd682ba4",
     "devSynthetic.test.ts": "2735e86986ebb5bf68d0032fa95e96cbc151ac76923b10a1572473a08b4e2540",
+    "draftRecovery.test.ts": "03d16536050e9ecbbf6cc2b70930fe07b7ebdf91d71de04adbc86ec373fc3034",
     "duckingEnvelope.test.ts": "0ed6a53b469f51afdf3cb2b1b9f01fcf03ef512d3c200900b5d4c1f81b9ee2b3",
     "ease.test.ts": "be2394ec0bb187a78eed2944628830d9f4b053c69f2972b137bd70d902c4cd83",
     "markerLayout.test.ts": "dcd54257689c4d8b40915d1331106b9ef8d8368057f68f5f34ae79f81b40e27e",
