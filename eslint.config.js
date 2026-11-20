@@ -42,6 +42,10 @@ module.exports = defineConfig([
       'src/photo/presets/autoPreset.ts',
       'src/photo/presets/userStore.ts',
       'src/photo/fixtures/**',
+      // Copies of the web's Darkroom model/math and their vitest suites (scripts/sync-studio.mjs).
+      'src/studio/*.ts',
+      'src/studio/captions/**',
+      'src/studio/fixtures/**',
     ],
   },
   {
