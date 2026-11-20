@@ -119,13 +119,7 @@ export const TEST_FILES = {
     S,
   ),
   ...studio(
-    [
-      'captionLooks.test',
-      'effects.test',
-      'legacyRoundTrip.test',
-      'respread.test',
-      'wordEdit.test',
-    ],
+    ['captionLooks.test', 'effects.test', 'legacyRoundTrip.test', 'respread.test', 'wordEdit.test'],
     `${S}/captions`,
     'captions/',
   ),
@@ -185,7 +179,8 @@ export const EXCLUDED = {
   'lib/studio/eyedropper.ts': 'WebGL canvas bridge',
   'lib/studio/speedDialog.ts': 'web dialog store',
   'lib/studio/captions/captionLooksApi.ts': 'React Query + authedFetch',
-  'lib/studio/uploadQueue.ts': 'DOM-free but not needed: the phone uploads through the MA12 transport',
+  'lib/studio/uploadQueue.ts':
+    'DOM-free but not needed: the phone uploads through the MA12 transport',
   'lib/studio/captions/jassubPreview.ts': 'Worker / OffscreenCanvas / window (libass WASM)',
 };
 
