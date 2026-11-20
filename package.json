@@ -16,11 +16,12 @@
     "format": "prettier --write .",
     "test": "jest",
     "doctor": "expo-doctor",
-    "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor && node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main && node scripts/gen-icons.mjs --check && node scripts/sync-photo-fixtures.mjs --check --ref main",
+    "gates": "npm run typecheck && npm run lint && npm test && npx expo-doctor && node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main && node scripts/gen-icons.mjs --check && node scripts/sync-photo-fixtures.mjs --check --ref main && node scripts/sync-studio.mjs --check --ref main",
     "version:bump": "node scripts/bump-version.mjs",
     "i18n:sync": "node scripts/sync-web-i18n.mjs --ref main",
     "i18n:check": "node scripts/check-i18n.mjs && node scripts/sync-web-i18n.mjs --check --ref main",
-    "photo:sync": "node scripts/sync-photo-fixtures.mjs --ref main"
+    "photo:sync": "node scripts/sync-photo-fixtures.mjs --ref main",
+    "studio:sync": "node scripts/sync-studio.mjs --ref main"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.2",
