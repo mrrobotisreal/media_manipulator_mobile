@@ -9,6 +9,11 @@ export interface SettingsState {
   lastSaveDirUri: string | null;
   /** MA24: when the user said "Not now" to (or the OS denied) the push pre-prompt; no auto-ask for 30 days. */
   pushPrePromptDismissedAt: number | null;
+  /**
+   * MA61: Darkroom uploads over 500 MB wait for Wi-Fi (on by default, proposed). The gate is in
+   * `src/studio/mobile/assets.ts`; the Account toggle arrives with the editor screen (MA63).
+   */
+  studioWifiOnlyLargeUploads: boolean;
 }
 
 export const MAX_RECENT_TOOLS = 6;
@@ -25,6 +30,7 @@ export const initialSettingsState = (): SettingsState => ({
   lastToolIds: [],
   lastSaveDirUri: null,
   pushPrePromptDismissedAt: null,
+  studioWifiOnlyLargeUploads: true,
 });
 
 const settingsSlice = createSlice({
@@ -53,6 +59,9 @@ const settingsSlice = createSlice({
     localeSet(state, action: PayloadAction<string | null>) {
       state.locale = action.payload;
     },
+    studioWifiOnlyLargeUploadsSet(state, action: PayloadAction<boolean>) {
+      state.studioWifiOnlyLargeUploads = action.payload;
+    },
   },
 });
 
@@ -63,6 +72,7 @@ export const {
   pushPrePromptDismissed,
   saveDirSet,
   settingsReset,
+  studioWifiOnlyLargeUploadsSet,
   toolOpened,
 } = settingsSlice.actions;
 export default settingsSlice.reducer;
