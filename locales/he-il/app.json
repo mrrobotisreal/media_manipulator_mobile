@@ -1040,7 +1040,8 @@
     },
     "metricName": {
       "ops": "פעולות",
-      "ai_ops": "פעולות בינה מלאכותית"
+      "ai_ops": "פעולות בינה מלאכותית",
+      "export": "ייצואים"
     },
     "exceeded": {
       "title": "השתמשתם בכל {{limit}} ה{{metricName}} להיום.",
@@ -1446,6 +1447,44 @@
       "unavailable": "{{brand}} אינו זמין כרגע.",
       "network": "אין חיבור. בדקו את הרשת ונסו שוב.",
       "generic": "משהו השתבש. נסו שוב."
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "סינון פרויקטים",
+      "all": "הכול",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "פעולות נוספות"
+    },
+    "untitled": "פרויקט ללא שם",
+    "darkroomWebHint": "פותח את Darkroom באתר. בחרו שם את הפרויקט הזה מתוך הפרויקטים האחרונים.",
+    "empty": {
+      "all": {
+        "title": "עדיין אין פרויקטים",
+        "body": "פרויקטים שתיצרו ב-Aperture, או ב-Darkroom וב-Motion באתר, יופיעו כאן."
+      },
+      "darkroom": {
+        "title": "עדיין אין פרויקטים של Darkroom",
+        "body": "צרו פרויקט וידאו ב-Darkroom באתר והוא יופיע כאן, מוכן לייצוא."
+      },
+      "motion": {
+        "title": "עדיין אין פרויקטים של Motion",
+        "body": "צרו אנימציה ב-Motion באתר והיא תופיע כאן."
+      }
+    },
+    "loadFailed": {
+      "darkroom": "לא ניתן היה לטעון את הפרויקטים שלך ב-Darkroom.",
+      "motion": "לא ניתן היה לטעון את הפרויקטים שלך ב-Motion."
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "לא כלול בתוכנית שלך",
+      "savedVersion": "מייצא את הפרויקט כפי שנשמר לאחרונה.",
+      "optionsFailed": "לא ניתן היה לטעון את אפשרויות הייצוא.",
+      "openResult": "פתיחה"
     }
   }
 }

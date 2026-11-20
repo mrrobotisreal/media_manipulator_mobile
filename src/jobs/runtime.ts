@@ -30,6 +30,11 @@ import {
   PHOTO_EXPORT_STARTER,
   rtkExportCall,
 } from './starters/photoExport';
+import {
+  makeStudioExportStarter,
+  rtkStudioExportCall,
+  STUDIO_EXPORT_STARTER,
+} from './starters/studioExport';
 
 const KEEP_AWAKE_TAG = 'mm-upload';
 /** MMKV list of Firebase uids already counted (`activation_first_job_completed` once per uid). */
@@ -162,6 +167,8 @@ export function getJobEngine(): JobEngine {
         ...makeVoiceShiftStarter(),
         settled: trackVoiceGeneratedFor,
       },
+      // MA58: Darkroom renders from History (export and export again).
+      [STUDIO_EXPORT_STARTER]: makeStudioExportStarter(rtkStudioExportCall(dispatch)),
     },
   };
   engine = createJobEngine(deps);

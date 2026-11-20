@@ -15,7 +15,13 @@ import { canOfferMp3 } from './mp3';
 import { isShareable } from './shareable';
 import { useResultActions } from './useResultActions';
 import { useAppSelector } from '@/state/hooks';
-import { describe, type ResultDescriptor, type ResultKind } from './describe';
+import {
+  describe,
+  jobFallbackFileName,
+  jobTaskHint,
+  type ResultDescriptor,
+  type ResultKind,
+} from './describe';
 import { viewerFor } from './viewers';
 import { MetadataResultLine } from '@/metadata/ui/MetadataResultLine';
 import { EditAgainButton } from '@/photo/ui/EditAgainButton';
@@ -31,15 +37,20 @@ export interface ResultSource {
   tool?: { id: string; family: string; kind: 'image' | 'video' | 'audio' | 'pdf' };
 }
 
+export function taskOf(src: ResultSource): string | undefined {
+  return src.webTask ?? jobTaskHint(src.job);
+}
+
 /** Builds the descriptor from the server snapshot, attaching MA12's cached original when it exists. */
 export function buildDescriptor(src: ResultSource): ResultDescriptor {
   const { job } = src;
   const original = findOriginal(job.id, job.originalFile.name, job.originalFile.type);
   return describe({
     job,
-    task: src.webTask,
+    task: taskOf(src),
     mode: job.mode,
     kindHint: src.resultHint,
+    fallbackFileName: jobFallbackFileName(job),
     // Images compare (MA13); audio keeps its original for the voice A/B toggle (MA34).
     original:
       original && (original.kind === 'image' || original.kind === 'audio') ? original : undefined,
@@ -71,7 +82,7 @@ export function ResultBody({ source, surface }: { source: ResultSource; surface:
     originalMime: source.job.originalFile.type,
   });
   const haptics = useAppSelector((s) => s.settings.haptics);
-  const hints = [source.tool?.id, source.webTask, source.toolSlug];
+  const hints = [source.tool?.id, taskOf(source), source.toolSlug];
 
   return (
     <View className="gap-4" testID="result-body">
@@ -102,7 +113,7 @@ export function ResultBody({ source, surface }: { source: ResultSource; surface:
       <ActionsBar
         actions={actions}
         haptics={haptics}
-        canShareLink={isShareable(descriptor.kind, source.webTask, source.job.mode, ...hints)}
+        canShareLink={isShareable(descriptor.kind, taskOf(source), source.job.mode, ...hints)}
         canMp3={canOfferMp3(descriptor.fileName, ...hints)}
         canRunAnother={Boolean(source.tool)}
       />

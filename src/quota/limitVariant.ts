@@ -2,14 +2,17 @@ import type { MmError } from '@/api/errors';
 
 /** Which refusal sheet an `MmError` opens, or null when it has none (decision 8). */
 export type LimitVariant =
-  | { kind: 'quota'; metric: 'ops' | 'ai_ops'; limit?: number; resetsAt?: string }
+  /** MA58: `export` is the Darkroom render allowance (`exportsPerDay`). */
+  | { kind: 'quota'; metric: 'ops' | 'ai_ops' | 'export'; limit?: number; resetsAt?: string }
   | { kind: 'rate'; seconds: number }
   | { kind: 'height'; requested?: number; limit?: number }
   | { kind: 'size' }
   | { kind: 'long'; reason: string }
   | { kind: 'cap'; reason: string }
   /** MA53: 403 `photo_presets_limit {limit, used, upgradePath}` (MM103 saved-preset cap). */
-  | { kind: 'presets'; limit?: number };
+  | { kind: 'presets'; limit?: number }
+  /** MA58: 403 `format_not_in_plan {option, required, limitKey}` (a Darkroom output token or `advanced`). */
+  | { kind: 'format'; option: string; required?: string };
 
 const num = (v: unknown): number | undefined =>
   typeof v === 'number' && Number.isFinite(v) ? v : undefined;
@@ -26,7 +29,7 @@ export function limitVariantFor(error: MmError | undefined): LimitVariant | null
     case 'quota_exceeded':
       return {
         kind: 'quota',
-        metric: d.metric === 'ai_ops' ? 'ai_ops' : 'ops',
+        metric: d.metric === 'ai_ops' ? 'ai_ops' : d.metric === 'export' ? 'export' : 'ops',
         limit: num(d.limit),
         resetsAt: typeof d.resetsAt === 'string' ? d.resetsAt : undefined,
       };
@@ -40,6 +43,12 @@ export function limitVariantFor(error: MmError | undefined): LimitVariant | null
       return { kind: 'size' };
     case 'photo_presets_limit':
       return { kind: 'presets', limit: num(d.limit) };
+    case 'format_not_in_plan':
+      return {
+        kind: 'format',
+        option: typeof d.option === 'string' ? d.option : '',
+        required: typeof d.required === 'string' ? d.required : undefined,
+      };
     case 'source_limit_exceeded': {
       const reason = typeof d.reason === 'string' ? d.reason : '';
       return reason === 'video_duration' || reason === 'audio_duration'
@@ -65,6 +74,8 @@ export function exceededScope(v: LimitVariant): string | null {
       return v.reason;
     case 'presets':
       return 'photo_presets_limit';
+    case 'format':
+      return 'format_not_in_plan';
     case 'rate':
       return null;
   }

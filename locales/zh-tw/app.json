@@ -1028,7 +1028,8 @@
     },
     "metricName": {
       "ops": "操作",
-      "ai_ops": "AI 操作"
+      "ai_ops": "AI 操作",
+      "export": "匯出"
     },
     "exceeded": {
       "title": "你今天的 {{limit}} 次{{metricName}}已全部用完。",
@@ -1430,6 +1431,44 @@
       "unavailable": "{{brand}} 目前無法使用。",
       "network": "沒有網路連線。請檢查網路後再試一次。",
       "generic": "發生錯誤，請再試一次。"
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "篩選專案",
+      "all": "全部",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "更多動作"
+    },
+    "untitled": "未命名專案",
+    "darkroomWebHint": "在網頁版中開啟 Darkroom，然後從最近的專案中選擇此專案。",
+    "empty": {
+      "all": {
+        "title": "還沒有專案",
+        "body": "在 Aperture 中，或在網頁版 Darkroom 和 Motion 中建立的專案會顯示在這裡。"
+      },
+      "darkroom": {
+        "title": "還沒有 Darkroom 專案",
+        "body": "在網頁版 Darkroom 中建立影片專案後，它會顯示在這裡，隨時可以匯出。"
+      },
+      "motion": {
+        "title": "還沒有 Motion 專案",
+        "body": "在網頁版 Motion 中建立動畫後，它會顯示在這裡。"
+      }
+    },
+    "loadFailed": {
+      "darkroom": "無法載入你的 Darkroom 專案。",
+      "motion": "無法載入你的 Motion 專案。"
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "不在你的方案內",
+      "savedVersion": "依最近一次儲存的版本匯出專案。",
+      "optionsFailed": "無法載入匯出選項。",
+      "openResult": "開啟"
     }
   }
 }

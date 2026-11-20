@@ -15,8 +15,8 @@ import { pendingRecords } from '@/history/pendingMerge';
 import { useHistoryActions } from '@/history/useHistoryActions';
 import { formatDateTime, formatRetention } from '@/lib/format';
 import { useAppSelector } from '@/state/hooks';
-import { ProjectsList } from '@/photo/ui/ProjectsList';
 import { useGetPhotoCapabilitiesQuery } from '@/photo/projectsApi';
+import { ProjectsList } from '@/projects/ProjectsList';
 import { Button } from '@/ui/components/Button';
 import { EmptyState } from '@/ui/components/EmptyState';
 import { Screen } from '@/ui/components/Screen';
@@ -32,17 +32,17 @@ type Row = { type: 'entry'; entry: HistoryEntry } | { type: 'pending'; localId: 
 type Segment = 'jobs' | 'projects';
 
 /**
- * History (MA15) with MA52's "Jobs · Projects" segmented control: Projects lists the Aperture
- * projects. The control is shown while Aperture is available (`GET /photo/capabilities` enabled,
- * or not known yet), like the Tools-tab row.
+ * History (MA15) with MA52's "Jobs · Projects" segmented control. Since MA58 Projects lists
+ * Aperture, Darkroom and Motion projects (`src/projects/ProjectsList.tsx`), so the control is always
+ * shown; Aperture's source and chip follow `GET /photo/capabilities` (enabled, or not known yet).
  */
 export default function HistoryTab() {
   const { t } = useTranslation();
   const caps = useGetPhotoCapabilitiesQuery();
   const photo = !caps.data || caps.data.enabled;
   const [segment, setSegment] = useState<Segment>('jobs');
-  const seg: Segment = photo ? segment : 'jobs';
-  const segments = photo ? (
+  const seg: Segment = segment;
+  const segments = (
     <View className="px-4 pb-2">
       <Segmented
         options={[
@@ -53,12 +53,12 @@ export default function HistoryTab() {
         onChange={setSegment}
       />
     </View>
-  ) : null;
+  );
   return seg === 'projects' ? (
     <Screen edges="none">
       <Text className="px-4 pb-2 pt-3 text-xl font-semibold">{t('history.title')}</Text>
       {segments}
-      <ProjectsList onOpenTools={() => router.navigate(TOOLS_TAB)} />
+      <ProjectsList aperture={photo} onOpenTools={() => router.navigate(TOOLS_TAB)} />
     </Screen>
   ) : (
     <JobsHistory segments={segments} />

@@ -16,6 +16,8 @@
  * "MA53 photo presets" batch (`photo_preset_saved`, `photo_presets_migrated`) and emits both.
  * MA54 adds the "MA54 assistant guide" batch (the seven guide `assistant_*` names) and emits all of
  * them; the "MA55 assistant copilot" batch (`assistant_edits_*` and friends) is not mirrored yet.
+ * MA58 mirrors the "MA58 projects" batch whole (`projects_filter_changed`, `studio_project_opened`
+ * with `surface: app_list`, the four `studio_export_*` names) and emits every name.
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -131,6 +133,14 @@ export const EVENTS = {
   ASSISTANT_ACTION_CLICKED: 'assistant_action_clicked',
   ASSISTANT_LINK_CLICKED: 'assistant_link_clicked',
   ASSISTANT_FEEDBACK_GIVEN: 'assistant_feedback_given',
+
+  // --- Projects list + Darkroom export (catalog batch "MA58 projects") --------
+  PROJECTS_FILTER_CHANGED: 'projects_filter_changed',
+  STUDIO_PROJECT_OPENED: 'studio_project_opened',
+  STUDIO_EXPORT_STARTED: 'studio_export_started',
+  STUDIO_EXPORT_COMPLETED: 'studio_export_completed',
+  STUDIO_EXPORT_FAILED: 'studio_export_failed',
+  STUDIO_EXPORT_FORMAT_LOCKED: 'studio_export_format_locked',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -226,6 +236,13 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   assistant_action_clicked: PRIORITY_NORMAL,
   assistant_link_clicked: PRIORITY_NORMAL,
   assistant_feedback_given: PRIORITY_NORMAL,
+
+  projects_filter_changed: PRIORITY_NORMAL,
+  studio_project_opened: PRIORITY_HIGH,
+  studio_export_started: PRIORITY_CRITICAL,
+  studio_export_completed: PRIORITY_CRITICAL,
+  studio_export_failed: PRIORITY_CRITICAL,
+  studio_export_format_locked: PRIORITY_HIGH,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -693,6 +710,56 @@ export interface AssistantFeedbackGivenProps {
   rating: 'up' | 'down';
 }
 
+// --- Projects list + Darkroom export (MA58) ---------------------------------------------------
+// The web's studio_* props (camelCase, enums and buckets only; never the file name). `host` is
+// always `mm` on the phone; `context.tool_slug` is `darkroom`.
+
+export type ProjectsFilterProp = 'all' | 'aperture' | 'darkroom' | 'motion';
+export interface ProjectsFilterChangedProps {
+  filter: ProjectsFilterProp;
+}
+export interface StudioProjectOpenedProps {
+  host: 'mm';
+  /** Where it was opened: the History Projects list (the app has no Darkroom editor before MA61). */
+  surface: 'app_list';
+}
+export interface StudioExportStartedProps {
+  preset: string;
+  format: string;
+  container: string;
+  videoCodec: string;
+  audioCodec: string;
+  audioBitrate: number;
+  audioChannels: number;
+  mode: 'preset' | 'advanced';
+  resolution: string;
+  captionsMode: string;
+  captionAnimation: string;
+  host: 'mm';
+}
+export interface StudioExportSettledProps {
+  preset: string;
+  format: string;
+  container: string;
+  videoCodec: string;
+  audioCodec: string;
+  audioBitrate: number;
+  audioChannels: number;
+  mode: 'preset' | 'advanced';
+  resolution: string;
+  captionsMode: string;
+  captionAnimation: string;
+  host: 'mm';
+  durationRatioBucket?: string;
+}
+export interface StudioExportFormatLockedProps {
+  /** An output token, or `advanced`. */
+  option: string;
+  required: 'free' | 'premium' | 'pro';
+  tier: string;
+  host: 'mm';
+}
+
 export interface EventPropsMap {
   screen_viewed: ScreenViewedProps;
   app_opened: AppOpenedProps;
@@ -782,6 +849,13 @@ export interface EventPropsMap {
   assistant_action_clicked: AssistantActionClickedProps;
   assistant_link_clicked: AssistantLinkClickedProps;
   assistant_feedback_given: AssistantFeedbackGivenProps;
+
+  projects_filter_changed: ProjectsFilterChangedProps;
+  studio_project_opened: StudioProjectOpenedProps;
+  studio_export_started: StudioExportStartedProps;
+  studio_export_completed: StudioExportSettledProps;
+  studio_export_failed: StudioExportSettledProps;
+  studio_export_format_locked: StudioExportFormatLockedProps;
 }
 
 /**

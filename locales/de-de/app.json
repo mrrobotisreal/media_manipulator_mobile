@@ -1034,7 +1034,8 @@
     },
     "metricName": {
       "ops": "Vorgänge",
-      "ai_ops": "KI-Vorgänge"
+      "ai_ops": "KI-Vorgänge",
+      "export": "Exporte"
     },
     "exceeded": {
       "title": "Du hast heute alle {{limit}} {{metricName}} genutzt.",
@@ -1438,6 +1439,44 @@
       "unavailable": "{{brand}} ist gerade nicht verfügbar.",
       "network": "Keine Verbindung. Prüfen Sie Ihr Netzwerk und versuchen Sie es erneut.",
       "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "Projekte filtern",
+      "all": "Alle",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "Weitere Aktionen"
+    },
+    "untitled": "Unbenanntes Projekt",
+    "darkroomWebHint": "Öffnet Darkroom im Web. Wähle dort dieses Projekt aus deinen letzten Projekten.",
+    "empty": {
+      "all": {
+        "title": "Noch keine Projekte",
+        "body": "Projekte, die du in Aperture oder im Web in Darkroom und Motion erstellst, erscheinen hier."
+      },
+      "darkroom": {
+        "title": "Noch keine Darkroom-Projekte",
+        "body": "Erstelle im Web ein Videoprojekt in Darkroom, dann erscheint es hier, bereit zum Export."
+      },
+      "motion": {
+        "title": "Noch keine Motion-Projekte",
+        "body": "Erstelle im Web eine Animation in Motion, dann erscheint sie hier."
+      }
+    },
+    "loadFailed": {
+      "darkroom": "Deine Darkroom-Projekte konnten nicht geladen werden.",
+      "motion": "Deine Motion-Projekte konnten nicht geladen werden."
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "Nicht in deinem Tarif",
+      "savedVersion": "Exportiert das Projekt im zuletzt gespeicherten Stand.",
+      "optionsFailed": "Die Exportoptionen konnten nicht geladen werden.",
+      "openResult": "Öffnen"
     }
   }
 }

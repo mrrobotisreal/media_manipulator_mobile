@@ -1034,7 +1034,8 @@
     },
     "metricName": {
       "ops": "operations",
-      "ai_ops": "AI operations"
+      "ai_ops": "AI operations",
+      "export": "exports"
     },
     "exceeded": {
       "title": "You've used all {{limit}} {{metricName}} for today.",
@@ -1438,6 +1439,44 @@
       "unavailable": "{{brand}} isn't available right now.",
       "network": "No connection. Check your network and try again.",
       "generic": "Something went wrong. Please try again."
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "Filter projects",
+      "all": "All",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "More actions"
+    },
+    "untitled": "Untitled project",
+    "darkroomWebHint": "Opens Darkroom on the web. Pick this project from your recent projects there.",
+    "empty": {
+      "all": {
+        "title": "No projects yet",
+        "body": "Projects you make in Aperture, or in Darkroom and Motion on the web, appear here."
+      },
+      "darkroom": {
+        "title": "No Darkroom projects yet",
+        "body": "Make a video project in Darkroom on the web and it appears here, ready to export."
+      },
+      "motion": {
+        "title": "No Motion projects yet",
+        "body": "Make an animation in Motion on the web and it appears here."
+      }
+    },
+    "loadFailed": {
+      "darkroom": "Couldn't load your Darkroom projects.",
+      "motion": "Couldn't load your Motion projects."
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "Not on your plan",
+      "savedVersion": "Exports the project as last saved.",
+      "optionsFailed": "Couldn't load the export options.",
+      "openResult": "Open"
     }
   }
 }

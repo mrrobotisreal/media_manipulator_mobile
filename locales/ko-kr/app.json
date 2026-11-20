@@ -1028,7 +1028,8 @@
     },
     "metricName": {
       "ops": "작업",
-      "ai_ops": "AI 작업"
+      "ai_ops": "AI 작업",
+      "export": "내보내기"
     },
     "exceeded": {
       "title": "오늘 {{metricName}} {{limit}}회를 모두 사용했습니다.",
@@ -1430,6 +1431,44 @@
       "unavailable": "지금은 {{brand}}를 사용할 수 없어요.",
       "network": "연결되지 않았어요. 네트워크를 확인하고 다시 시도하세요.",
       "generic": "문제가 발생했어요. 다시 시도해 주세요."
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "프로젝트 필터",
+      "all": "전체",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "더 보기"
+    },
+    "untitled": "제목 없는 프로젝트",
+    "darkroomWebHint": "웹에서 Darkroom을 엽니다. 최근 프로젝트에서 이 프로젝트를 선택하세요.",
+    "empty": {
+      "all": {
+        "title": "아직 프로젝트가 없어요",
+        "body": "Aperture나 웹의 Darkroom, Motion에서 만든 프로젝트가 여기에 표시돼요."
+      },
+      "darkroom": {
+        "title": "아직 Darkroom 프로젝트가 없어요",
+        "body": "웹의 Darkroom에서 동영상 프로젝트를 만들면 여기에 표시되고 바로 내보낼 수 있어요."
+      },
+      "motion": {
+        "title": "아직 Motion 프로젝트가 없어요",
+        "body": "웹의 Motion에서 애니메이션을 만들면 여기에 표시돼요."
+      }
+    },
+    "loadFailed": {
+      "darkroom": "Darkroom 프로젝트를 불러오지 못했어요.",
+      "motion": "Motion 프로젝트를 불러오지 못했어요."
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "현재 요금제에 포함되지 않음",
+      "savedVersion": "마지막으로 저장된 상태의 프로젝트를 내보냅니다.",
+      "optionsFailed": "내보내기 옵션을 불러오지 못했어요.",
+      "openResult": "열기"
     }
   }
 }

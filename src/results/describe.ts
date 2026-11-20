@@ -166,6 +166,8 @@ const KIND_BY_TASK: Record<string, ResultKind> = {
   // MA50: an Aperture export is an image whatever the chosen format (jpg/png/webp/avif/tiff).
   photo_export: 'image',
   aperture: 'image',
+  // MA58: a Darkroom render is a video unless its extension says audio (mp3/wav/opus/flac).
+  studio_export: 'video',
   transcribe_video: 'transcript',
   srt_generator: 'captions',
   caption_translator: 'captions',
@@ -353,6 +355,22 @@ export function kindOfOriginal(
   if (type.startsWith('audio/')) return 'audio';
   if (type === 'application/pdf') return 'pdf';
   return kindFromExtension(extensionOf(file.name), {}) ?? 'unknown';
+}
+
+/**
+ * MA58: a Darkroom render (`options.mode` `studio_export`, set by the API's export handler) has no
+ * registry row and no `resultFileName`; its task comes from the job, and its file name (the export
+ * name with the output's extension) from `originalFile.name`.
+ */
+export function jobTaskHint(job: { options?: Record<string, unknown> }): string | undefined {
+  return job.options?.mode === 'studio_export' ? 'studio_export' : undefined;
+}
+
+export function jobFallbackFileName(job: {
+  options?: Record<string, unknown>;
+  originalFile?: { name?: string };
+}): string | undefined {
+  return jobTaskHint(job) && job.originalFile?.name ? job.originalFile.name : undefined;
 }
 
 export function describe(input: DescribeInput): ResultDescriptor {

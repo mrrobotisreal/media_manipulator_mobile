@@ -1028,7 +1028,8 @@
     },
     "metricName": {
       "ops": "処理",
-      "ai_ops": "AI処理"
+      "ai_ops": "AI処理",
+      "export": "書き出し"
     },
     "exceeded": {
       "title": "本日の{{metricName}}を{{limit}}回すべて使用しました。",
@@ -1430,6 +1431,44 @@
       "unavailable": "{{brand}}は現在ご利用いただけません。",
       "network": "接続がありません。ネットワークを確認して再試行してください。",
       "generic": "問題が発生しました。もう一度お試しください。"
+    }
+  },
+  "projects": {
+    "filter": {
+      "label": "プロジェクトを絞り込む",
+      "all": "すべて",
+      "motion": "Motion"
+    },
+    "actions": {
+      "more": "その他の操作"
+    },
+    "untitled": "無題のプロジェクト",
+    "darkroomWebHint": "Web 版の Darkroom を開きます。最近のプロジェクトからこのプロジェクトを選んでください。",
+    "empty": {
+      "all": {
+        "title": "プロジェクトはまだありません",
+        "body": "Aperture や、Web 版の Darkroom・Motion で作成したプロジェクトがここに表示されます。"
+      },
+      "darkroom": {
+        "title": "Darkroom のプロジェクトはまだありません",
+        "body": "Web 版の Darkroom で動画プロジェクトを作成すると、ここに表示され、書き出しできます。"
+      },
+      "motion": {
+        "title": "Motion のプロジェクトはまだありません",
+        "body": "Web 版の Motion でアニメーションを作成すると、ここに表示されます。"
+      }
+    },
+    "loadFailed": {
+      "darkroom": "Darkroom のプロジェクトを読み込めませんでした。",
+      "motion": "Motion のプロジェクトを読み込めませんでした。"
+    }
+  },
+  "darkroom": {
+    "export": {
+      "notOnPlan": "ご利用のプランには含まれていません",
+      "savedVersion": "最後に保存された状態のプロジェクトを書き出します。",
+      "optionsFailed": "書き出しオプションを読み込めませんでした。",
+      "openResult": "開く"
     }
   }
 }

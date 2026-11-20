@@ -11,6 +11,7 @@ export const CLIENT_ERROR_CODES = [
   'not_found',
   'bad_request',
   'forbidden',
+  'format_not_in_plan',
   'conflict',
   'server_error',
   'payload_too_large',
