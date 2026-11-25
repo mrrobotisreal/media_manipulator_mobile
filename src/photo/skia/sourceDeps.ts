@@ -97,7 +97,10 @@ export const skiaSourceDeps: SourceDeps<SkImage> = {
       );
     surface.flush();
     // Skia 3 (Graphite): a GPU snapshot is drawn by every canvas and thread, so the Skia 2 raster
-    // copy (`makeNonTextureImage`) is gone (MA60).
-    return surface.makeImageSnapshot();
+    // copy (`makeNonTextureImage`) is gone (MA60). The surface and the full-size decode go now.
+    const small = surface.makeImageSnapshot();
+    surface.dispose();
+    img.dispose();
+    return small;
   },
 };

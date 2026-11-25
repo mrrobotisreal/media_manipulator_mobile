@@ -11,6 +11,8 @@ export interface RenderPumpDeps<D, R> {
   render: (doc: D) => Promise<R>;
   publish: (result: R, doc: D) => void;
   report: (error: unknown) => void;
+  /** A finished render that will never be published (the pump stopped meanwhile): free it. */
+  discard?: (result: R) => void;
   maxAttempts?: number;
 }
 
@@ -42,7 +44,10 @@ export function createRenderPump<D, R>(deps: RenderPumpDeps<D, R>): RenderPump {
         if (d === failed && failures >= maxAttempts) continue;
         try {
           const r = await deps.render(d);
-          if (!alive) return;
+          if (!alive) {
+            deps.discard?.(r);
+            return;
+          }
           // Published even when the document moved on meanwhile: it is newer than what is shown,
           // and the loop renders the latest next.
           deps.publish(r, d);

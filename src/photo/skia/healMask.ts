@@ -6,6 +6,7 @@
  * a hard disc of ~0.99 of the diameter). The caller caps the size (50 MP). Async since
  * react-native-skia 3 (`encodeToBytes` is a promise; paths are built with `PathBuilder`).
  */
+import { disposeNow } from './lifetime';
 import { pixelBytes } from './readback';
 import type { SkiaApi } from './shaderChain';
 import type { Point } from '../tools/canvasMath';
@@ -40,7 +41,13 @@ export async function renderHealMaskPng(
     canvas.drawPath(path.build(), paint);
   }
   surface.flush();
-  const bytes = pixelBytes(await surface.makeImageSnapshot().encodeToBytes(PNG, 100));
-  if (!bytes) throw new Error('heal mask encode');
-  return bytes;
+  const snap = surface.makeImageSnapshot();
+  try {
+    const bytes = pixelBytes(await snap.encodeToBytes(PNG, 100));
+    if (!bytes) throw new Error('heal mask encode');
+    return bytes;
+  } finally {
+    // A base-size raster (up to 50 MP): released now, not when the GC gets to it (MA60).
+    disposeNow([snap, surface]);
+  }
 }

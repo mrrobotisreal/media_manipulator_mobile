@@ -24,6 +24,12 @@
  *
  * react-native-skia 3 (MA60): readback is a promise, so `render` (the dehaze light reads pixels)
  * and `readPixels` are async; every readback goes through `pixelBytes` (a Promise throws).
+ *
+ * GPU ownership (MA60, `lifetime.ts`): every surface and intermediate image has one owner. The
+ * split / geometry results and the `masks` / `detail` caches belong to the pipeline (disposed on
+ * replacement, eviction, `clear()` and `dispose()`); everything else a render bakes belongs to that
+ * render's `Scope`, which the CALLER releases once the result is no longer drawn (`Rendered.release`).
+ * A bake's surface is disposed as soon as its snapshot is taken.
  */
 import type { SkImage, SkShader, SkSurface } from 'react-native-skia';
 import { dehazeLight, featherSigma, resolveLayerMask } from '../colorMath';
@@ -40,6 +46,7 @@ import {
 } from '../webMaskPlan';
 import { DEHAZE_GRID, isDetailType, planDetail, type DetailPlan } from '../webDetailPlan';
 import { BLEND_INDEX } from '../webUniforms';
+import { Scope, disposeNow } from './lifetime';
 import { pixelBytes } from './readback';
 import { chainShaders, type SkiaApi } from './shaderChain';
 import { detailSksl, saltedSeed, seedLimbs, type DetailPass } from './shaders/detail';
@@ -115,6 +122,11 @@ export interface Rendered {
   shader: SkShader;
   width: number;
   height: number;
+  /**
+   * Disposes this render's own intermediates (not the pipeline's caches). Call it once nothing will
+   * draw `shader` again (the canvas: after a newer picture has replaced this one on screen).
+   */
+  release: () => void;
 }
 
 type Effect = ReturnType<SkiaApi['RuntimeEffect']['Make']> & object;
@@ -175,10 +187,18 @@ const IDENTITY: Geometry = {
  */
 export class PhotoPipeline {
   private readonly fx: Effects;
-  private split: { id: string; color: SkImage; alpha: SkImage } | null = null;
+  private split: { id: string; color: SkImage; alpha: SkImage; owned: boolean } | null = null;
   private geo: { key: string; color: SkImage; alpha: SkImage } | null = null;
-  private readonly masks = new KeyedCache<SkImage>(12);
-  private readonly detail = new KeyedCache<SkImage>(6);
+  /** Finished masks (keyed by mask + geometry + source, so a slider drag keeps hitting them). */
+  private readonly masks = new KeyedCache<SkImage>(12, (img) => disposeNow([img]));
+  /**
+   * Materialised detail inputs, keyed by everything upstream of the detail layer: a drag on an
+   * upstream slider makes a new key per tick, so on the GPU (a full-preview texture each, about
+   * 36 MB at 8 MP) the cap is 2 (the current input and the previous one), not the web's 6.
+   */
+  private readonly detail: KeyedCache<SkImage>;
+  /** Render scopes whose results may still be drawn; released by `Rendered.release` or `dispose`. */
+  private readonly scopes = new Set<Scope>();
   /** Counts mask computes (tests read it to prove the cache). */
   get maskComputes(): number {
     return this.masks.computes;
@@ -200,6 +220,26 @@ export class PhotoPipeline {
     } = {},
   ) {
     this.fx = effectsFor(api);
+    this.detail = new KeyedCache<SkImage>(opts.gpu ? 2 : 6, (img) => disposeNow([img]));
+  }
+
+  /** Releases every GPU object the pipeline still owns (the editor unmounted). */
+  dispose(): void {
+    for (const s of this.scopes) s.release();
+    this.scopes.clear();
+    this.masks.clear();
+    this.detail.clear();
+    this.dropGeo();
+    if (this.split) {
+      // The test fixtures pass a ready split (`source.split`), which belongs to the caller.
+      if (this.split.owned) disposeNow([this.split.color, this.split.alpha]);
+      this.split = null;
+    }
+  }
+
+  private dropGeo(): void {
+    if (this.geo) disposeNow([this.geo.color, this.geo.alpha]);
+    this.geo = null;
   }
 
   /** Forget cached masks (a brush or subject raster was decoded or replaced). */
@@ -216,7 +256,11 @@ export class PhotoPipeline {
     return s;
   }
 
-  /** Draw `shader` into a fresh w×h raster (Src blend: no blending with the cleared surface). */
+  /**
+   * Draw `shader` into a fresh w×h surface (Src blend: no blending with the cleared surface) and
+   * return its snapshot. The surface is disposed right away; the image belongs to the caller (a
+   * cache, or `own()` for the render in progress).
+   */
   private bake(shader: SkShader, w: number, h: number): SkImage {
     const s = this.surface(w, h);
     const paint = this.api.Paint();
@@ -224,7 +268,14 @@ export class PhotoPipeline {
     paint.setShader(shader);
     s.getCanvas().drawRect(this.api.XYWHRect(0, 0, w, h), paint);
     s.flush();
-    return s.makeImageSnapshot();
+    const img = s.makeImageSnapshot();
+    disposeNow([s]);
+    return img;
+  }
+
+  /** `bake` whose image belongs to `scope` (a render's intermediates). */
+  private bakeIn(scope: Scope, shader: SkShader, w: number, h: number): SkImage {
+    return scope.own(this.bake(shader, w, h));
   }
 
   private run(
@@ -239,6 +290,7 @@ export class PhotoPipeline {
 
   private splitSource(source: PipelineSource) {
     if (this.split?.id === source.id) return this.split;
+    if (this.split?.owned) disposeNow([this.split.color, this.split.alpha]);
     const w = source.image.width();
     const h = source.image.height();
     const img = exact(source.image);
@@ -256,8 +308,8 @@ export class PhotoPipeline {
         w,
         h,
       );
-    this.split = { id: source.id, color, alpha };
-    this.geo = null;
+    this.split = { id: source.id, color, alpha, owned: !source.split };
+    this.dropGeo();
     this.masks.clear();
     this.detail.clear();
     return this.split;
@@ -269,6 +321,7 @@ export class PhotoPipeline {
     if (!hasGeometry(g)) return { color: s.color, alpha: s.alpha, key: `${source.id}|id` };
     const key = `${source.id}|${JSON.stringify(g)}`;
     if (this.geo?.key === key) return this.geo;
+    this.dropGeo();
     const plan = planGeometry(g, s.color.width(), s.color.height());
     const pk = packGeometry(plan);
     const { width: w, height: h } = pk.size;
@@ -297,15 +350,25 @@ export class PhotoPipeline {
 
   /** Fold → feather → (lazy) invert/opacity. Returns the finished mask as a shader. */
   private computeMask(mask: Mask, image: SkImage): SkImage {
+    // The fold / feather intermediates die with this call; only the finished mask is cached.
+    const tmp = new Scope();
+    try {
+      return this.computeMaskIn(mask, image, tmp);
+    } finally {
+      tmp.release();
+    }
+  }
+
+  private computeMaskIn(mask: Mask, image: SkImage, tmp: Scope): SkImage {
     const w = image.width();
     const h = image.height();
     const src = exact(image);
     let prev: SkImage | null = null;
     for (const c of mask.components) {
       const pass = this.componentPass(c, prev, src, w, h);
-      if (pass) prev = pass;
+      if (pass) prev = tmp.own(pass);
     }
-    if (!prev) prev = this.bake(this.api.Shader.MakeColor(this.api.Color('black')), w, h);
+    if (!prev) prev = tmp.own(this.bake(this.api.Shader.MakeColor(this.api.Color('black')), w, h));
     const sigma = featherSigma(mask.feather, w, h);
     let m = prev;
     if (sigma >= 1e-3 && this.opts.feather === 'skia') {
@@ -315,29 +378,34 @@ export class PhotoPipeline {
       paint.setImageFilter(this.api.ImageFilter.MakeBlur(sigma, sigma, CLAMP, null));
       s.getCanvas().drawImage(prev, 0, 0, paint);
       s.flush();
-      m = s.makeImageSnapshot();
+      m = tmp.own(s.makeImageSnapshot());
+      disposeNow([s]);
     } else if (sigma >= 1e-3) {
       // Separable Gaussian on the folded mask: the taps and edge replication of `blurMask`.
       const common = { uSize: [w, h], uSigma: sigma, uOpacity: 1 };
-      const hp = this.bake(
-        this.run('d:GAUSS_H', () => detailSksl('GAUSS_H'), { ...common, uDir: [1, 0], uMode: 1 }, [
-          exact(m),
-          exact(m),
-          exact(m),
-          exact(m),
-        ]),
-        w,
-        h,
+      const hp = tmp.own(
+        this.bake(
+          this.run(
+            'd:GAUSS_H',
+            () => detailSksl('GAUSS_H'),
+            { ...common, uDir: [1, 0], uMode: 1 },
+            [exact(m), exact(m), exact(m), exact(m)],
+          ),
+          w,
+          h,
+        ),
       );
-      m = this.bake(
-        this.run('d:GAUSS_V', () => detailSksl('GAUSS_V'), { ...common, uDir: [0, 1] }, [
-          exact(hp),
-          exact(hp),
-          exact(hp),
-          exact(hp),
-        ]),
-        w,
-        h,
+      m = tmp.own(
+        this.bake(
+          this.run('d:GAUSS_V', () => detailSksl('GAUSS_V'), { ...common, uDir: [0, 1] }, [
+            exact(hp),
+            exact(hp),
+            exact(hp),
+            exact(hp),
+          ]),
+          w,
+          h,
+        ),
       );
     }
     return this.bake(
@@ -408,6 +476,7 @@ export class PhotoPipeline {
 
   /** Run a detail layer over the materialised `input` (straight colour). */
   private async runDetail(
+    scope: Scope,
     plan: DetailPlan,
     input: SkImage,
     layer: AdjustmentLayer,
@@ -439,7 +508,12 @@ export class PhotoPipeline {
       ]);
     switch (plan.kind) {
       case 'unsharp': {
-        const a = this.bake(pass('GAUSS_H', { uDir: [1, 0], uSigma: plan.sigma, uMode: 0 }), w, h);
+        const a = this.bakeIn(
+          scope,
+          pass('GAUSS_H', { uDir: [1, 0], uSigma: plan.sigma, uMode: 0 }),
+          w,
+          h,
+        );
         return pass(
           'UNSHARP_V',
           {
@@ -451,20 +525,25 @@ export class PhotoPipeline {
         );
       }
       case 'blur': {
-        const a = this.bake(pass('GAUSS_H', { uDir: [1, 0], uSigma: plan.sigma, uMode: 1 }), w, h);
+        const a = this.bakeIn(
+          scope,
+          pass('GAUSS_H', { uDir: [1, 0], uSigma: plan.sigma, uMode: 1 }),
+          w,
+          h,
+        );
         return pass('BLUR_V', { uDir: [0, 1], uSigma: plan.sigma }, exact(a));
       }
       case 'nr': {
         const p = [plan.sigmaS, plan.sigmaR, plan.chroma, plan.luma ? 1 : 0];
-        const l = this.bake(pass('NR_L', {}), w, h);
-        const ab = this.bake(pass('NR_AB', {}), w, h);
-        const bil = this.bake(pass('NR_BIL', { uP0: p }, ones, exact(l)), w, h);
-        const abH = this.bake(pass('NR_AB_H', { uP0: p }, ones, exact(ab)), w, h);
+        const l = this.bakeIn(scope, pass('NR_L', {}), w, h);
+        const ab = this.bakeIn(scope, pass('NR_AB', {}), w, h);
+        const bil = this.bakeIn(scope, pass('NR_BIL', { uP0: p }, ones, exact(l)), w, h);
+        const abH = this.bakeIn(scope, pass('NR_AB_H', { uP0: p }, ones, exact(ab)), w, h);
         return pass('NR_FIN', { uP0: p }, exact(bil), inp, exact(abH));
       }
       case 'dehaze': {
-        const darkH = this.bake(pass('DARK_H', {}), w, h);
-        const light = await this.dehazeLight(darkH, w, h, common);
+        const darkH = this.bakeIn(scope, pass('DARK_H', {}), w, h);
+        const light = await this.dehazeLight(scope, darkH, w, h, common);
         return pass('DEHAZE', { uP0: [plan.amount, light, 0, 0] }, exact(darkH));
       }
       case 'vignette':
@@ -487,6 +566,7 @@ export class PhotoPipeline {
    * preview (design §5.4 approximation).
    */
   private async dehazeLight(
+    scope: Scope,
     darkH: SkImage,
     w: number,
     h: number,
@@ -495,7 +575,8 @@ export class PhotoPipeline {
     const full = w * h <= 512 * 512;
     const gw = full ? w : DEHAZE_GRID;
     const gh = full ? h : DEHAZE_GRID;
-    const grid = this.bake(
+    const grid = this.bakeIn(
+      scope,
       this.run(
         'd:DARK_V',
         () => detailSksl('DARK_V'),
@@ -514,6 +595,26 @@ export class PhotoPipeline {
     doc: Pick<PhotoDoc, 'layers' | 'geometry' | 'masks'>,
     opts: RenderOptions = {},
   ): Promise<Rendered> {
+    const scope = new Scope();
+    this.scopes.add(scope);
+    const release = () => {
+      scope.release();
+      this.scopes.delete(scope);
+    };
+    try {
+      return { ...(await this.renderBody(scope, source, doc, opts)), release };
+    } catch (e) {
+      release();
+      throw e;
+    }
+  }
+
+  private async renderBody(
+    scope: Scope,
+    source: PipelineSource,
+    doc: Pick<PhotoDoc, 'layers' | 'geometry' | 'masks'>,
+    opts: RenderOptions,
+  ): Promise<Omit<Rendered, 'release'>> {
     const geometry = doc.geometry ?? IDENTITY;
     const g = this.geometry(source, geometry);
     const w = g.color.width();
@@ -546,8 +647,11 @@ export class PhotoPipeline {
       const plan = planDetail(layer, w, h);
       if (!plan) continue;
       const shaderIn = cur;
+      // The detail cache owns the input; a render that is still on screen holds a reference to it
+      // through its shader, so an eviction must not free it while drawn: the scope retains it
+      // (Skia ref-counts the texture; `dispose()` drops one wrapper reference, see lifetime.ts).
       const input: SkImage = curImage ?? this.detail.get(chainKey, () => this.bake(shaderIn, w, h));
-      cur = await this.runDetail(plan, input, layer, maskOf.get(layer) ?? null);
+      cur = await this.runDetail(scope, plan, input, layer, maskOf.get(layer) ?? null);
       chainKey += `|${JSON.stringify(layer)}`;
       curImage = null;
     }
@@ -577,23 +681,35 @@ export class PhotoPipeline {
     opts: RenderOptions & { width?: number; height?: number } = {},
   ): Promise<{ pixels: Uint8Array; width: number; height: number } | null> {
     const r = await this.render(source, doc, opts);
-    const w = opts.width ?? r.width;
-    const h = opts.height ?? r.height;
-    const s =
-      (this.opts.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ??
-      this.api.Surface.MakeRaster(w, h);
-    if (!s) return null;
-    const canvas = s.getCanvas();
-    canvas.scale(w / r.width, h / r.height);
-    const paint = this.api.Paint();
-    paint.setShader(r.shader);
-    canvas.drawRect(this.api.XYWHRect(0, 0, r.width, r.height), paint);
-    s.flush();
-    const px = pixelBytes(
-      await s
-        .makeImageSnapshot()
-        .readPixels(0, 0, { width: w, height: h, colorType: RGBA_8888, alphaType: UNPREMUL }),
-    );
-    return px ? { pixels: px, width: w, height: h } : null;
+    const tmp = new Scope();
+    try {
+      const w = opts.width ?? r.width;
+      const h = opts.height ?? r.height;
+      const s = tmp.own(
+        (this.opts.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ??
+          this.api.Surface.MakeRaster(w, h),
+      );
+      if (!s) return null;
+      const canvas = s.getCanvas();
+      canvas.scale(w / r.width, h / r.height);
+      const paint = this.api.Paint();
+      paint.setShader(r.shader);
+      canvas.drawRect(this.api.XYWHRect(0, 0, r.width, r.height), paint);
+      s.flush();
+      const snap = tmp.own(s.makeImageSnapshot());
+      const px = pixelBytes(
+        await snap.readPixels(0, 0, {
+          width: w,
+          height: h,
+          colorType: RGBA_8888,
+          alphaType: UNPREMUL,
+        }),
+      );
+      return px ? { pixels: px, width: w, height: h } : null;
+    } finally {
+      // The readback is done with the render: its intermediates and the readback surface go now.
+      tmp.release();
+      r.release();
+    }
   }
 }

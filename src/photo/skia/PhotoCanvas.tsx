@@ -45,6 +45,7 @@ import type { PhotoDoc } from '../photoTypes';
 import type { ViewState } from '../tools/canvasMath';
 import { actualScale, clampOffset, doubleTapTarget, fitScale, pinchTo } from '../view';
 import type { MaskView, PhotoPipeline, PipelineSource } from './pipeline';
+import { disposeLater, disposeNow } from './lifetime';
 import { createRenderPump } from './renderPump';
 
 export type CompareGesture = 'hold' | 'toggle';
@@ -146,20 +147,49 @@ export function PhotoCanvas({
       const paint = Skia.Paint();
       paint.setShader(r.shader);
       canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
-      return { picture: rec.finishRecordingAsPicture(), width: r.width, height: r.height };
+      return {
+        picture: rec.finishRecordingAsPicture(),
+        width: r.width,
+        height: r.height,
+        release: r.release,
+      };
+    };
+    // MA60 (Skia 3): what is on screen now. When a newer render replaces it, its pictures and the
+    // render's GPU intermediates are released a moment later (the UI thread may still be drawing
+    // the old picture in the frame the swap lands in); on unmount, after the same delay.
+    let shown: { pictures: SkPicture[]; release: () => void } | null = null;
+    const retire = (old: typeof shown) => {
+      if (!old) return;
+      disposeLater([...old.pictures, { dispose: old.release }]);
     };
     const pump = createRenderPump({
       get: doc.get,
       render: async (d: PhotoDoc) => {
-        const [out, prior] = await Promise.all([
+        // Both settle before either is used, so a failure of one still frees the other.
+        const [a, b] = await Promise.allSettled([
           record(d, { maskView, viewLayerId }),
           record(d, { before: true }),
         ]);
-        return { out, prior };
+        if (a.status === 'rejected' || b.status === 'rejected') {
+          for (const x of [a, b])
+            if (x.status === 'fulfilled')
+              disposeNow([x.value.picture, { dispose: x.value.release }]);
+          throw a.status === 'rejected' ? a.reason : (b as PromiseRejectedResult).reason;
+        }
+        return { out: a.value, prior: b.value };
       },
       publish: ({ out, prior }) => {
         after.value = out.picture;
         before.value = prior.picture;
+        const old = shown;
+        shown = {
+          pictures: [out.picture, prior.picture],
+          release: () => {
+            out.release();
+            prior.release();
+          },
+        };
+        retire(old);
         if (out.width !== imgW.value || out.height !== imgH.value) {
           imgW.value = out.width;
           imgH.value = out.height;
@@ -177,12 +207,22 @@ export function PhotoCanvas({
       // A render failure keeps the last picture on screen; it is reported once per document
       // (client_error + a Crashlytics non-fatal) and retried; the next document change tries again.
       report: (e) => reportClientError(e, 'manual', { stage: 'photo_render', record: true }),
+      discard: ({ out, prior }) =>
+        disposeNow([
+          out.picture,
+          prior.picture,
+          { dispose: out.release },
+          { dispose: prior.release },
+        ]),
     });
     pump.request();
     const unsub = doc.subscribe(pump.request);
     return () => {
       pump.stop();
       unsub();
+      // The next effect run publishes its own pictures; this one's go after the delay.
+      retire(shown);
+      shown = null;
     };
   }, [
     source,

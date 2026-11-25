@@ -55,6 +55,7 @@ import { maskComponentSchema, type AdjustmentLayer, type PhotoDoc } from '../pho
 import { histogram256, type Histogram256 } from '../presets/presetStore';
 import { MaskAssetStore } from '../skia/maskAssets';
 import { PhotoPipeline } from '../skia/pipeline';
+import { disposeLater, disposeNow } from '../skia/lifetime';
 import { pixelBytes } from '../skia/readback';
 import type { SkiaApi } from '../skia/shaderChain';
 import { skiaPngEncoder } from '../tools/brush';
@@ -139,6 +140,20 @@ export function useEditorWorkspace(p: WorkspaceProps) {
   const pipeline = useMemo(
     () => new PhotoPipeline(api, assets, { gpu: p.gpu, feather: p.gpu ? 'skia' : 'exact' }),
     [api, assets, p.gpu],
+  );
+  // MA60 (Skia 3): the pipeline's GPU caches go when the editor unmounts (or the pipeline is
+  // replaced). Delayed: the canvas may still draw a picture that samples them this frame.
+  useEffect(
+    () => () => {
+      setTimeout(() => pipeline.dispose(), 1000);
+    },
+    [pipeline],
+  );
+  useEffect(
+    () => () => {
+      setTimeout(() => assets.dispose(), 1000);
+    },
+    [assets],
   );
   const encodePng = useMemo(() => skiaPngEncoder(api as never), [api]);
   const [assetsRevision, setAssetsRevision] = useState(0);
@@ -493,11 +508,29 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     s.flush();
     thumbs.current.clear();
     thumbsPending.current.clear();
-    return { image: s.makeImageSnapshot(), id: `${source.id}:thumb` };
+    const image = s.makeImageSnapshot();
+    disposeNow([s]);
+    return { image, id: `${source.id}:thumb`, owned: true };
   }, [source, api, p.gpu]);
+  // The downscaled thumbnail source and the cached thumbnails belong to this hook: a new source
+  // (a heal, undo) or an unmount releases the old ones (later: the sheet may still draw them).
+  useEffect(() => {
+    const cache = thumbs.current;
+    return () => {
+      const owned = thumbSource && 'owned' in thumbSource ? thumbSource.image : null;
+      disposeLater([owned, ...cache.values()]);
+      cache.clear();
+    };
+  }, [thumbSource]);
   const thumbPipeline = useMemo(
     () => new PhotoPipeline(api, undefined, { gpu: p.gpu }),
     [api, p.gpu],
+  );
+  useEffect(
+    () => () => {
+      setTimeout(() => thumbPipeline.dispose(), 1000);
+    },
+    [thumbPipeline],
   );
   const renderThumb = useCallback(
     async (layers: AdjustmentLayer[]): Promise<SkImage | null> => {
@@ -540,7 +573,10 @@ export function useEditorWorkspace(p: WorkspaceProps) {
         .catch(() => null)
         .then((img) => {
           // A newer source (a heal, undo) cleared the cache meanwhile: drop this one.
-          if (thumbSourceRef.current !== made) return;
+          if (thumbSourceRef.current !== made) {
+            disposeNow([img]);
+            return;
+          }
           thumbsPending.current.delete(k);
           thumbs.current.set(k, img);
           setReadbackRevision((n) => n + 1);
@@ -563,15 +599,28 @@ export function useEditorWorkspace(p: WorkspaceProps) {
         const th = Math.max(1, Math.round(h * k));
         // `img` is a raster (`MakeRaster` above), so a CPU surface draws it.
         const s = api.Surface.MakeRaster(tw, th);
-        if (!s) return null;
-        s.getCanvas().drawImageRect(
-          img,
-          api.XYWHRect(0, 0, w, h),
-          api.XYWHRect(0, 0, tw, th),
-          api.Paint(),
-        );
-        s.flush();
-        const bytes = pixelBytes(await s.makeImageSnapshot().encodeToBytes(PNG_FORMAT));
+        if (!s) {
+          disposeNow([img]);
+          return null;
+        }
+        let bytes: Uint8Array | null;
+        try {
+          s.getCanvas().drawImageRect(
+            img,
+            api.XYWHRect(0, 0, w, h),
+            api.XYWHRect(0, 0, tw, th),
+            api.Paint(),
+          );
+          s.flush();
+          const snap = s.makeImageSnapshot();
+          try {
+            bytes = pixelBytes(await snap.encodeToBytes(PNG_FORMAT));
+          } finally {
+            disposeNow([snap]);
+          }
+        } finally {
+          disposeNow([s, img]);
+        }
         if (!bytes || bytes.length === 0 || bytes.length > PRESET_THUMB_MAX_BYTES) return null;
         return await io.writeMask(bytes);
       } catch {

@@ -5,6 +5,7 @@
  */
 import type { SkImage, SkPicture } from 'react-native-skia';
 import type { AdjustmentLayer } from '../photoTypes';
+import { disposeNow } from './lifetime';
 import { pixelBytes } from './readback';
 import { buildDocShader, type SkiaApi } from './shaderChain';
 
@@ -48,9 +49,12 @@ export async function renderDocPixels(
   paint.setShader(buildDocShader(api, image, layers));
   canvas.drawRect(api.XYWHRect(0, 0, image.width(), image.height()), paint);
   surface.flush();
-  return pixelBytes(
-    await surface
-      .makeImageSnapshot()
-      .readPixels(0, 0, { width, height, colorType: RGBA_8888, alphaType: UNPREMUL }),
-  );
+  const snap = surface.makeImageSnapshot();
+  try {
+    return pixelBytes(
+      await snap.readPixels(0, 0, { width, height, colorType: RGBA_8888, alphaType: UNPREMUL }),
+    );
+  } finally {
+    disposeNow([snap, surface]);
+  }
 }

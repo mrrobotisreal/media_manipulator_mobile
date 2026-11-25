@@ -17,6 +17,7 @@ import type { AlphaImage } from '../colorMath';
 import { docAssetIds } from '../maskAssets';
 import type { PhotoDoc } from '../photoTypes';
 import type { AlphaSource } from './pipeline';
+import { disposeLater, disposeNow } from './lifetime';
 import { pixelBytes } from './readback';
 import type { SkiaApi } from './shaderChain';
 
@@ -85,8 +86,18 @@ export class MaskAssetStore implements AlphaSource {
 
   /** Install a raster made on the phone (a fresh brush bake) without a decode round trip. */
   put(id: string, grey: SkImage): void {
+    const old = this.images.get(id);
     this.images.set(id, grey);
+    // A replaced raster may still be sampled by the picture on screen this frame (MA60).
+    if (old && old !== grey) disposeLater([old]);
     this.listeners.forEach((l) => l());
+  }
+
+  /** Releases every raster (the editor unmounted). */
+  dispose(): void {
+    disposeNow([...this.images.values()]);
+    this.images.clear();
+    this.alphas.clear();
   }
 
   /**
@@ -149,8 +160,11 @@ export class MaskAssetStore implements AlphaSource {
     paint.setShader(this.effect.makeShaderWithChildren([useAlpha ? 1 : 0], [img]));
     s.getCanvas().drawRect(this.api.XYWHRect(0, 0, w, h), paint);
     s.flush();
-    // Skia 3 (Graphite): a GPU snapshot is shared by every canvas; no raster copy (MA60).
-    return s.makeImageSnapshot();
+    // Skia 3 (Graphite): a GPU snapshot is shared by every canvas; no raster copy (MA60). The
+    // surface is released right away (the snapshot keeps the pixels).
+    const out = s.makeImageSnapshot();
+    disposeNow([s]);
+    return out;
   }
 
   private load(id: string, kind: 'brush' | 'subject'): Promise<SkImage | null> {
@@ -172,11 +186,13 @@ export class MaskAssetStore implements AlphaSource {
         }
         const decoded = this.api.Image.MakeFromEncoded(data);
         if (!decoded) return null;
-        const grey = await this.toGrey(
-          decoded,
-          kind,
-          kind === 'subject' ? SUBJECT_MAX_SIDE : Infinity,
-        );
+        let grey: SkImage | null;
+        try {
+          grey = await this.toGrey(decoded, kind, kind === 'subject' ? SUBJECT_MAX_SIDE : Infinity);
+        } finally {
+          // The grey raster is a new image; the decoded PNG is no longer needed.
+          disposeNow([decoded]);
+        }
         if (!grey) return null;
         // The alpha is read before the raster is announced, so `alphaOf` has it from then on.
         if (!this.alphas.has(id)) {
