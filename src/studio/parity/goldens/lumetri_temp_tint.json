@@ -1,0 +1,52 @@
+{
+  "toleranceId": "lumetri_temp_tint",
+  "description": "Lumetri temperature +40 / tint −25 (colorbalance midtone curve).",
+  "sampleFrames": [
+    15,
+    45,
+    75
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "lumetri",
+                "id": "e-lum",
+                "enabled": true,
+                "exposure": 0,
+                "contrast": 1,
+                "saturation": 1,
+                "temperature": 40,
+                "tint": -25,
+                "vibrance": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

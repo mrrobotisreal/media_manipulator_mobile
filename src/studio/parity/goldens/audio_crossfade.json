@@ -1,0 +1,71 @@
+{
+  "toleranceId": "passthrough",
+  "description": "Automatic audio crossfade: two audio-bearing clips overlap by 1s on ONE track with NO transition field - the equal-power qsin pair must appear in the export graph. Audio parity is audible-equivalence only (no numeric tolerance - see design/03-parity-tolerances.md); the untouched VIDEO frame is held to the passthrough row.",
+  "sampleFrames": [
+    45
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ]
+      },
+      {
+        "id": "t-a0",
+        "kind": "audio",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-bed",
+            "assetId": "fx-bed",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 2.5
+          },
+          {
+            "id": "c-voice",
+            "assetId": "fx-voice",
+            "streamIndex": 0,
+            "timelineStart": 1.5,
+            "sourceIn": 0,
+            "sourceOut": 2.5
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-bed": {
+      "file": "bed.m4a",
+      "kind": "audio",
+      "hasAudio": true
+    },
+    "fx-voice": {
+      "file": "voice.m4a",
+      "kind": "audio",
+      "hasAudio": true
+    }
+  }
+}

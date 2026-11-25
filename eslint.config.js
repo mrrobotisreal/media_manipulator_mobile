@@ -46,6 +46,8 @@ module.exports = defineConfig([
       'src/studio/*.ts',
       'src/studio/captions/**',
       'src/studio/fixtures/**',
+      'src/studio/compositor/**',
+      'src/studio/parity/**',
     ],
   },
   {

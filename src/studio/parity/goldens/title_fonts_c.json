@@ -1,0 +1,48 @@
+{
+  "toleranceId": "title_fonts",
+  "description": "Font-parity batch C: one text layer per shipped family (Pacifico), rendered on the timeline's black base. Bounds browser-vs-FreeType glyph rasterization per family.",
+  "sampleFrames": [
+    15,
+    60,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-title",
+            "assetId": "",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "title": {
+              "layers": [
+                {
+                  "type": "text",
+                  "text": "Pacifico 0123",
+                  "fontFamily": "Pacifico",
+                  "fontSizePx": 40,
+                  "fontWeight": 400,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.5
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {}
+}

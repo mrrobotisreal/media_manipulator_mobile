@@ -1,0 +1,39 @@
+{
+  "toleranceId": "image_hold_passthrough",
+  "description": "JPEG photo held 4 s on the base track with identity transform: the export loops the still (-loop 1 -t) and the preview samples the decoded bitmap. Also covers EXIF-free orientation and the bt709/sRGB path.",
+  "sampleFrames": [
+    15,
+    60,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-img",
+            "assetId": "fx-photo",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-photo": {
+      "file": "photo.jpg",
+      "kind": "image",
+      "hasAudio": false
+    }
+  }
+}

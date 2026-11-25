@@ -1,0 +1,57 @@
+{
+  "toleranceId": "transition_dip",
+  "description": "Dip to black over a 1s overlap: color layer ramps to full at t=2.0 (frame 60), entering clip cuts in under it. Frames sample each half + the peak.",
+  "sampleFrames": [
+    51,
+    60,
+    69
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-out",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 2.5
+          },
+          {
+            "id": "c-in",
+            "assetId": "fx-b",
+            "streamIndex": 0,
+            "timelineStart": 1.5,
+            "sourceIn": 0,
+            "sourceOut": 2.5,
+            "transitionInSeconds": 1,
+            "transition": {
+              "type": "dipToBlack",
+              "durationSeconds": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-b": {
+      "file": "srcB.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

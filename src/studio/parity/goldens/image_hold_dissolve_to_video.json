@@ -1,0 +1,57 @@
+{
+  "toleranceId": "image_hold_dissolve_to_video",
+  "description": "Video clip cross-dissolving into a held photo (image enters with a 1 s dissolve). Frame 60 samples mid-dissolve.",
+  "sampleFrames": [
+    30,
+    60,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-vid",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 2.5
+          },
+          {
+            "id": "c-img",
+            "assetId": "fx-photo",
+            "streamIndex": 0,
+            "timelineStart": 1.5,
+            "sourceIn": 0,
+            "sourceOut": 2.5,
+            "transitionInSeconds": 1,
+            "transition": {
+              "type": "crossDissolve",
+              "durationSeconds": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-photo": {
+      "file": "photo.jpg",
+      "kind": "image",
+      "hasAudio": false
+    }
+  }
+}

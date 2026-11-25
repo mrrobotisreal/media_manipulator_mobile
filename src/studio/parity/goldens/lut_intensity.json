@@ -1,0 +1,53 @@
+{
+  "toleranceId": "lut_intensity",
+  "description": "3D LUT at intensity 0.5 — linear mix(c, graded, 0.5) on both sides.",
+  "sampleFrames": [
+    15,
+    45,
+    75
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "lut",
+                "id": "e-lut",
+                "enabled": true,
+                "lutAssetId": "fx-lut",
+                "intensity": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-lut": {
+      "file": "fixture.cube",
+      "kind": "lut",
+      "hasAudio": false
+    }
+  }
+}
