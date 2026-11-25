@@ -49,6 +49,8 @@ npx eas-cli@latest build --profile preview --platform android --local      # APK
 npx eas-cli@latest build --profile production --platform android --local   # AAB for Play
 ```
 
+**arm64-only test builds (MA60, disk):** an all-ABI local build (arm64, armeabi-v7a, x86, x86_64) grew the disk by more than 10 GB before it finished native code, with Skia 3 + WebGPU. Both test phones are arm64, so device-check builds use `--profile preview-arm64` / `--profile development-arm64`. They extend `preview` / `development` (same package id, channel, environment and `APP_VARIANT`, so `adb install -r` updates the installed app) and only add `android.gradleCommand` with `-PreactNativeArchitectures=arm64-v8a` (`:app:assembleRelease` / `:app:assembleDebug`). Their APK sizes are arm64-only and not comparable with all-ABI figures. **Store builds stay on `production`** (all ABIs, AAB).
+
 `versionCode` is managed remotely by EAS (`appVersionSource: remote`); all three profiles auto-increment so a newer preview APK upgrades in place.
 Install a preview APK: `adb install -r <file>.apk`. Build output goes to the path EAS prints; delete it afterwards (disk).
 
