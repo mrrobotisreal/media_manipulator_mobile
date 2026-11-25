@@ -30,7 +30,7 @@ export interface EditorTools {
   presetThumb?: (
     key: string,
     layers: import('../photoTypes').AdjustmentLayer[],
-  ) => import('@shopify/react-native-skia').SkImage | null;
+  ) => import('react-native-skia').SkImage | null;
   /** MA53: a 96 px PNG of the photo through `layers`, as a local file uri (the account thumbnail). */
   presetThumbFile?: (layers: import('../photoTypes').AdjustmentLayer[]) => Promise<string | null>;
   /** Analytics seams (names live in the analytics mirror). `scope`: MM103's builtin | server | local. */

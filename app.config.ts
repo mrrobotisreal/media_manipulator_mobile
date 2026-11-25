@@ -152,6 +152,12 @@ export function buildConfig(
     './plugins/withWriteStorageMaxSdk28',
     // Root Kotlin Gradle plugin follows android.kotlinVersion (see the plugin header).
     './plugins/withKotlinGradlePlugin',
+    // MA60: Gradle heap + Metaspace for the Skia 3 + WebGPU release build (lintVitalAnalyzeRelease
+    // runs out of Metaspace on Expo's 512m default; see the plugin header).
+    './plugins/withGradleJvmArgs',
+    // MA60: react-native-webgpu's own plugin (minSdk >= 26, already ours; the iOS simulator's Metal
+    // API validation off, which Dawn needs). react-native-skia 3 has no config plugin.
+    'react-native-webgpu',
     // Save to Photos (MA14): add-only. No READ_MEDIA_* (granularPermissions: []), no media-location, and the
     // legacy storage permissions are blocked or capped to API <= 28 (ARCHITECTURE section 11).
     [

@@ -24,7 +24,7 @@ export function loadSkiaApi(): Promise<SkiaApi> {
         ) => Promise<unknown>;
         const CanvasKit = await init({});
         // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const { JsiSkApi } = require('@shopify/react-native-skia/lib/commonjs/skia/web') as {
+        const { JsiSkApi } = require('react-native-skia/lib/commonjs/skia/web') as {
           JsiSkApi: (ck: unknown) => SkiaApi;
         };
         return JsiSkApi(CanvasKit);

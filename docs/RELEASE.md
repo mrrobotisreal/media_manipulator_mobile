@@ -49,6 +49,8 @@ npx eas-cli@latest build --profile preview --platform android --local      # APK
 npx eas-cli@latest build --profile production --platform android --local   # AAB for Play
 ```
 
+**arm64-only test builds (MA60, disk):** an all-ABI local build (arm64, armeabi-v7a, x86, x86_64) grew the disk by more than 10 GB before it finished native code, with Skia 3 + WebGPU. Both test phones are arm64, so device-check builds use `--profile preview-arm64` / `--profile development-arm64`. They extend `preview` / `development` (same package id, channel, environment and `APP_VARIANT`, so `adb install -r` updates the installed app) and only add `android.gradleCommand` with `-PreactNativeArchitectures=arm64-v8a` (`:app:assembleRelease` / `:app:assembleDebug`). Their APK sizes are arm64-only and not comparable with all-ABI figures. MA60 (2026-11-24): `preview-arm64` APK 104,948,334 bytes (100.1 MiB), `development-arm64` APK 179,295,810 bytes (171.0 MiB); the production AAB size is not measured yet. **Store builds stay on `production`** (all ABIs, AAB).
+
 `versionCode` is managed remotely by EAS (`appVersionSource: remote`); all three profiles auto-increment so a newer preview APK upgrades in place.
 Install a preview APK: `adb install -r <file>.apk`. Build output goes to the path EAS prints; delete it afterwards (disk).
 
@@ -64,10 +66,17 @@ npx eas-cli@latest update --channel production --message "<summary>"
 ```
 
 - **Only for JS/asset-only changes.** A new/updated native module, plugin, permission or `app.config.ts` native field changes the fingerprint: ship a store build instead.
+- **`eas.json` is part of the fingerprint.** Any edit to it (even a profile no build uses) changes the runtime version of **every** profile, `production` included (verified in MA60 with `npx expo-updates fingerprint:generate --platform android`: adding the two arm64 profiles moved `d7809b12…` to `5440791f…`, with `eas.json` the only differing source). Never edit `eas.json` between a store build and the OTAs meant for it.
 - **Never OTA anything touching purchases or ads** (ADR MA-0007).
 - Verify on device: Account -> About shows the update id and channel; it changes on the second launch after publishing.
 - Rollback: `npx eas-cli@latest update:rollback-to-embedded --channel production` (back to the binary's bundle) or
   `npx eas-cli@latest update:republish --group <update-group-id> --channel production` (re-publish an earlier group). Check `eas update --help` if a name has moved.
+
+### Fingerprints (Android, runtime version)
+
+| Date       | Build                                                                                              | Fingerprint                                | Note                                                                                                                                                                                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2026-11-24 | MA60 (`react-native-skia` 3.10.2 + `react-native-webgpu` 0.22.0), branch `ma60-skia-3` @ `64644f3` | `5440791f0df4801235e886fdcfe2c869764e6a28` | A native change: no OTA published before it reaches this build. Accepted by the coordinator although it differs from the `d7809b12…` of the same native code, because the arm64 test profiles edited `eas.json` (see above); nothing was published to either hash. |
 
 ## 4. Submit
 
@@ -88,12 +97,28 @@ Goes to the **internal** testing track as a **draft** (`eas.json` `submit.produc
 
 Icons: `node scripts/gen-icons.mjs` regenerates `assets/*` from the aperture vector data in `scripts/aperture.mjs` (only needed if the mark changes).
 
-## 6. Data hygiene
+## 6. Pinned native graphics packages (MA60)
+
+`npx expo install --check` and `expo-doctor` do not track these, so a version catch-up (MA57-style) must **not** "fix" them:
+
+| Package                    | Pin                            | Why                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `react-native-skia`        | **3.10.2** exact, no caret     | Skia 3 (Graphite on Vulkan / Metal) replaced `@shopify/react-native-skia` 2.6.2 in MA60. 3.10.2 is the version MA59/MA76 validated on the S25 (video path, memory gate) and Aperture was re-verified on. Never install `@shopify/react-native-skia` beside it (same native module).                                                            |
+| `react-native-webgpu`      | **0.22.0** exact, no caret     | Darkroom/Motion's WebGPU layer and the GPU capability check (`src/gpu/capability.ts`). Validated with Skia 3.10.2 in MA59/MA76.                                                                                                                                                                                                                |
+| `react-native-webgpu-dawn` | 158.0.0 (transitive, one copy) | Both packages above must link the **same** Dawn build or the native build fails with "Dawn version mismatch". Check `npm ls react-native-webgpu-dawn` shows one copy (`deduped`). Upgrade Skia and WebGPU **together**, only to a pair whose Dawn matches, and only with a re-run of the Aperture device check (and the MA59/MA76 video bars). |
+
+- No `patch-package` patches are needed for either (MA59 recorded none); `patches/` holds only the gesture-handler backport.
+- `plugins/withGradleJvmArgs.js` sets `org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1536m`: a Skia 3 + WebGPU release build runs out of Metaspace in `lintVitalAnalyzeRelease` on Expo's default (MA76).
+- The `react-native-webgpu` config plugin is in `app.config.ts` (minSdk 26, already ours; iOS simulator Metal validation off).
+- Skia 3 declares Vulkan 1.1 as a **required** Android feature, so Play does not serve the app to devices without it; on such a device every canvas is blank (`Skia.gpu.isAvailable` false).
+- Readback is async in Skia 3 (`readPixels`, `encodeToBytes`, `encodeToBase64`, `makeRasterImage` return promises): go through `src/photo/skia/readback.ts` `pixelBytes(await …)`, never `instanceof Uint8Array` on an un-awaited value. `SkPath` is immutable: build paths with `Skia.PathBuilder`.
+
+## 7. Data hygiene
 
 Maestro and device checks use only the dedicated **Pro test account**, never Mitch's. Flows delete what they create; verify the test account's History is empty of run leftovers.
 Never run `clearState` flows on a phone with a session you want to keep.
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
 - Google sign-in `DEVELOPER_ERROR`: the build's keystore SHA-1/SHA-256 is missing from that variant's Firebase Android app (section 1.3), or `google-services.json` was not re-downloaded.
 - OTA not arriving: fingerprint mismatch (native change since the build), wrong channel, or only one launch since publishing (it applies on the second).

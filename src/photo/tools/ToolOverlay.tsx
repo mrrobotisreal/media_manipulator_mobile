@@ -16,7 +16,7 @@
  * Every gesture is ONE undo step (`gestureBegan` / `gestureEnded` around live handle drags, one
  * `mutate` for drawn components). Coordinates: normalized geometry space (`canvasMath.ts`).
  */
-import { Circle, Group, Line, Path, Rect, Skia, vec } from '@shopify/react-native-skia';
+import { Circle, Group, Line, Path, Rect, Skia, vec } from 'react-native-skia';
 import { useCallback, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Gesture } from 'react-native-gesture-handler';
 import type { SharedValue } from 'react-native-reanimated';
@@ -37,6 +37,7 @@ import {
 } from '../toolMath';
 import type { CanvasToolHost } from '../skia/PhotoCanvas';
 import { beginBrush, bakeInto, brushIndexOf, paintStroke, type BrushSession } from './brush';
+import { createPickQueue } from './pickQueue';
 import {
   gradientComponent,
   handleAngle,
@@ -70,8 +71,8 @@ export interface ToolDeps {
   tools: ToolStore;
   /** Original-pixel size of the source the doc describes. */
   sourceSize: { width: number; height: number };
-  /** RGB of the rendered preview at a normalized point (the eyedropper). */
-  readPixel: (n: Point) => { r: number; g: number; b: number } | null;
+  /** RGB of the rendered preview at a normalized point (the eyedropper; async readback on Skia 3). */
+  readPixel: (n: Point) => Promise<{ r: number; g: number; b: number } | null>;
   /** Decoded alpha of a brush PNG already in the doc (to continue painting it). */
   brushAlpha: (png: string) => AlphaImage | null;
   encodePng: PngEncoder;
@@ -117,6 +118,9 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
   const view = useRef<ViewState | null>(null);
   const drag = useRef<Drag | null>(null);
   const session = useRef<BrushSession | null>(null);
+  // Eyedropper picks apply in tap order (each waits for the previous one's async readback), so
+  // a fast tap then long-press can never land replace-after-add the wrong way round (MA60).
+  const enqueuePick = useRef(createPickQueue()).current;
   const [cropDraft, setCropDraft] = useState<CropRectN | null>(null);
   const depsRef = useRef(deps);
   depsRef.current = deps;
@@ -421,17 +425,19 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
     if (t === 'eyedropper') {
       const id = selection();
       if (!id) return dp.onRefused?.('no_layer');
-      const rgb = dp.readPixel(n);
-      if (!rgb) return;
-      const before = maskOfLayer(d, id)?.components.length ?? 0;
-      mutate(store, 'colourTarget', (dd) =>
-        pickColorTarget(dd, id, tools.get().component, rgb, long),
-      );
-      const after = maskOfLayer(docNow()!, id)?.components.length ?? 0;
-      if (after > before) {
-        tools.set({ component: after - 1 });
-        dp.onMaskAdded?.('colorRange');
-      }
+      void enqueuePick(dp.readPixel(n), (rgb) => {
+        const cur = docNow();
+        if (!rgb || !cur || !cur.layers.some((l) => l.id === id)) return;
+        // The component at apply time: a previous pick in this chain may have added one.
+        const component = tools.get().component;
+        const before = maskOfLayer(cur, id)?.components.length ?? 0;
+        mutate(store, 'colourTarget', (dd) => pickColorTarget(dd, id, component, rgb, long));
+        const after = maskOfLayer(docNow()!, id)?.components.length ?? 0;
+        if (after > before) {
+          tools.set({ component: after - 1 });
+          dp.onMaskAdded?.('colorRange');
+        }
+      });
     } else if (t === 'redEye') {
       const out = outputSizeOf(d, dp.sourceSize);
       const r = redEyeAt(d, n, tools.get().redEyeRadius, out.width, out.height);
@@ -490,25 +496,27 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
     if (st && st.kind === 'radial-new') {
       const a = S(st.a);
       const b = S(st.b);
-      const path = Skia.Path.Make();
-      path.addOval(
-        Skia.XYWHRect(
-          a.x - Math.abs(b.x - a.x),
-          a.y - Math.abs(b.y - a.y),
-          2 * Math.abs(b.x - a.x),
-          2 * Math.abs(b.y - a.y),
-        ),
-      );
+      const path = Skia.PathBuilder.Make()
+        .addOval(
+          Skia.XYWHRect(
+            a.x - Math.abs(b.x - a.x),
+            a.y - Math.abs(b.y - a.y),
+            2 * Math.abs(b.x - a.x),
+            2 * Math.abs(b.y - a.y),
+          ),
+        )
+        .build();
       items.push(<Path key="o" path={path} color={yellow} style="stroke" strokeWidth={2} />);
     }
     if (st && (st.kind === 'brush' || st.kind === 'heal') && st.pts.length > 0) {
-      const path = Skia.Path.Make();
+      const pb = Skia.PathBuilder.Make();
       const p0 = S(st.pts[0]!);
-      path.moveTo(p0.x, p0.y);
+      pb.moveTo(p0.x, p0.y);
       for (const q of st.pts.slice(1)) {
         const s = S(q);
-        path.lineTo(s.x, s.y);
+        pb.lineTo(s.x, s.y);
       }
+      const path = pb.build();
       // Diameter in source px → screen points (preview px = source px * preview scale).
       const out = outputSizeOf(docNow()!, depsRef.current.sourceSize);
       const k = (v.imageW / out.width) * v.scale;
@@ -535,11 +543,12 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
       const out = outputSizeOf(docNow()!, depsRef.current.sourceSize);
       const k = (v.imageW / out.width) * v.scale;
       depsRef.current.healStrokes.forEach((s, i) => {
-        const path = Skia.Path.Make();
+        const pb = Skia.PathBuilder.Make();
         const p0 = S(s.pts[0]!);
-        path.moveTo(p0.x, p0.y);
-        for (const q of s.pts.slice(1)) path.lineTo(S(q).x, S(q).y);
-        if (s.pts.length === 1) path.lineTo(p0.x + 0.1, p0.y);
+        pb.moveTo(p0.x, p0.y);
+        for (const q of s.pts.slice(1)) pb.lineTo(S(q).x, S(q).y);
+        if (s.pts.length === 1) pb.lineTo(p0.x + 0.1, p0.y);
+        const path = pb.build();
         items.push(
           <Path
             key={`h${i}`}
@@ -624,13 +633,13 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
     }
     if (tool === 'perspective') {
       const cs = perspCorners(docNow());
-      const path = Skia.Path.Make();
+      const pb = Skia.PathBuilder.Make();
       CORNERS.forEach((c, i) => {
         const s = S(cs[c]);
-        if (i === 0) path.moveTo(s.x, s.y);
-        else path.lineTo(s.x, s.y);
+        if (i === 0) pb.moveTo(s.x, s.y);
+        else pb.lineTo(s.x, s.y);
       });
-      path.close();
+      const path = pb.close().build();
       items.push(<Path key="pq" path={path} color={yellow} style="stroke" strokeWidth={1.5} />);
       for (const c of CORNERS) items.push(handle(`p${c}`, cs[c]));
     }

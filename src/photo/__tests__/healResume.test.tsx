@@ -4,7 +4,7 @@
  * fake fetch, an in-memory key-value store (MMKV in the app) and a scripted AppState.
  */
 import { act, renderHook, waitFor } from '@testing-library/react-native';
-import type { SkImage } from '@shopify/react-native-skia';
+import type { SkImage } from 'react-native-skia';
 import { AppState, type AppStateStatus } from 'react-native';
 import { EVENTS } from '@/analytics/events';
 import { track } from '@/analytics/track';
@@ -120,7 +120,7 @@ function setup(o: { kv: HealKv; ai: AiDeps; store?: PhotoStore; projectId?: stri
     subjectBytes: async () => null,
     baseImage,
     writeMask: async () => 'file:///cache/mask.png',
-    renderHealMask: () => new Uint8Array([1]),
+    renderHealMask: async () => new Uint8Array([1]),
     pending: o.kv,
     now: () => 1_000_000,
   };

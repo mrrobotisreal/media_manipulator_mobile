@@ -17,7 +17,8 @@
  * MA54 adds the "MA54 assistant guide" batch (the seven guide `assistant_*` names) and emits all of
  * them; the "MA55 assistant copilot" batch (`assistant_edits_*` and friends) is not mirrored yet.
  * MA58 mirrors the "MA58 projects" batch whole (`projects_filter_changed`, `studio_project_opened`
- * with `surface: app_list`, the four `studio_export_*` names) and emits every name.
+ * with `surface: app_list`, the four `studio_export_*` names) and emits every name. MA60 mirrors the
+ * "MA60 gpu capability" batch (`gpu_capability_checked`) and emits it from `src/gpu/capability.ts`.
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -141,6 +142,9 @@ export const EVENTS = {
   STUDIO_EXPORT_COMPLETED: 'studio_export_completed',
   STUDIO_EXPORT_FAILED: 'studio_export_failed',
   STUDIO_EXPORT_FORMAT_LOCKED: 'studio_export_format_locked',
+
+  // --- GPU capability (catalog batch "MA60 gpu capability") -------------------
+  GPU_CAPABILITY_CHECKED: 'gpu_capability_checked',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -243,6 +247,8 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   studio_export_completed: PRIORITY_CRITICAL,
   studio_export_failed: PRIORITY_CRITICAL,
   studio_export_format_locked: PRIORITY_HIGH,
+
+  gpu_capability_checked: PRIORITY_NORMAL,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -715,6 +721,14 @@ export interface AssistantFeedbackGivenProps {
 // always `mm` on the phone; `context.tool_slug` is `darkroom`.
 
 export type ProjectsFilterProp = 'all' | 'aperture' | 'darkroom' | 'motion';
+
+// --- GPU capability (MA60) --------------------------------------------------------------------
+// The once-per-launch WebGPU device probe (`src/gpu/capability.ts`). A bucket, never a message.
+export interface GpuCapabilityCheckedProps {
+  result: 'ok' | 'unavailable';
+  reason_bucket:
+    'none' | 'no_gpu_api' | 'no_adapter' | 'adapter_failed' | 'device_failed' | 'timeout' | 'error';
+}
 export interface ProjectsFilterChangedProps {
   filter: ProjectsFilterProp;
 }
@@ -856,6 +870,8 @@ export interface EventPropsMap {
   studio_export_completed: StudioExportSettledProps;
   studio_export_failed: StudioExportSettledProps;
   studio_export_format_locked: StudioExportFormatLockedProps;
+
+  gpu_capability_checked: GpuCapabilityCheckedProps;
 }
 
 /**

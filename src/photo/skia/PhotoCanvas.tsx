@@ -10,15 +10,13 @@
  * tool is armed), double tap Fit <-> 100 %, press-and-hold shows the original ("before"), a
  * two-finger tap toggles before/after. With a tool armed, ONE finger belongs to the tool
  * (`ToolOverlay`, drawn on top in the same transform). The canvas is always `direction: 'ltr'`.
+ *
+ * react-native-skia 3 (MA60): `pipeline.render` and `readPixels` are async (readback is a promise).
+ * Renders go through `renderPump` (latest wins: one in flight, changes meanwhile coalesce into one
+ * pending pass; a failure is reported as `client_error` and retried); the histogram tick skips
+ * while a readback is in flight.
  */
-import {
-  Canvas,
-  Group,
-  Picture,
-  Skia,
-  type SkImage,
-  type SkPicture,
-} from '@shopify/react-native-skia';
+import { Canvas, Group, Picture, Skia, type SkImage, type SkPicture } from 'react-native-skia';
 import { useCallback, useEffect, useMemo, type ReactNode } from 'react';
 import { PixelRatio, View, type LayoutChangeEvent } from 'react-native';
 import {
@@ -35,6 +33,7 @@ import {
   type SharedValue,
 } from 'react-native-reanimated';
 import { scheduleOnRN } from 'react-native-worklets';
+import { reportClientError } from '@/analytics/errorHandlers';
 import { colors } from '@/ui/tokens';
 import {
   computeHistogram64,
@@ -46,6 +45,8 @@ import type { PhotoDoc } from '../photoTypes';
 import type { ViewState } from '../tools/canvasMath';
 import { actualScale, clampOffset, doubleTapTarget, fitScale, pinchTo } from '../view';
 import type { MaskView, PhotoPipeline, PipelineSource } from './pipeline';
+import { disposeLater, disposeNow } from './lifetime';
+import { createRenderPump } from './renderPump';
 
 export type CompareGesture = 'hold' | 'toggle';
 
@@ -139,39 +140,99 @@ export function PhotoCanvas({
 
   // Re-record on every document change; the shared value hands the picture to the UI thread.
   useEffect(() => {
-    let last: PhotoDoc | null = null;
-    const record = (d: PhotoDoc, opts: Parameters<PhotoPipeline['render']>[2]) => {
-      const r = pipeline.render(source, displayDoc(d, ignoreCrop), opts);
+    const record = async (d: PhotoDoc, opts: Parameters<PhotoPipeline['render']>[2]) => {
+      const r = await pipeline.render(source, displayDoc(d, ignoreCrop), opts);
       const rec = Skia.PictureRecorder();
-      const canvas = rec.beginRecording(Skia.XYWHRect(0, 0, r.width, r.height));
       const paint = Skia.Paint();
-      paint.setShader(r.shader);
-      canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
-      return { picture: rec.finishRecordingAsPicture(), width: r.width, height: r.height };
-    };
-    const draw = () => {
-      const d = doc.get();
-      if (!d || d === last) return;
-      last = d;
-      const out = record(d, { maskView, viewLayerId });
-      after.value = out.picture;
-      before.value = record(d, { before: true }).picture;
-      if (out.width !== imgW.value || out.height !== imgH.value) {
-        imgW.value = out.width;
-        imgH.value = out.height;
-        // The output size changed (crop, rotate 90): fit again.
-        if (canvasW.value > 0) {
-          scale.value = fitScale(
-            { width: canvasW.value, height: canvasH.value },
-            { width: out.width, height: out.height },
-          );
-          tx.value = 0;
-          ty.value = 0;
-        }
+      try {
+        const canvas = rec.beginRecording(Skia.XYWHRect(0, 0, r.width, r.height));
+        paint.setShader(r.shader);
+        canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
+        return {
+          picture: rec.finishRecordingAsPicture(),
+          width: r.width,
+          height: r.height,
+          release: r.release,
+        };
+      } catch (e) {
+        r.release();
+        throw e;
+      } finally {
+        // The picture holds its own copy of the paint; the wrapper would pin the render's shader
+        // (and through it the render's textures) until a GC (MA60).
+        disposeNow([paint, rec]);
       }
     };
-    draw();
-    return doc.subscribe(draw);
+    // MA60 (Skia 3): what is on screen now. When a newer render replaces it, its pictures and the
+    // render's GPU intermediates are released a moment later (the UI thread may still be drawing
+    // the old picture in the frame the swap lands in); on unmount, after the same delay.
+    let shown: { pictures: SkPicture[]; release: () => void } | null = null;
+    const retire = (old: typeof shown) => {
+      if (!old) return;
+      disposeLater([...old.pictures, { dispose: old.release }]);
+    };
+    const pump = createRenderPump({
+      get: doc.get,
+      render: async (d: PhotoDoc) => {
+        // Both settle before either is used, so a failure of one still frees the other.
+        const [a, b] = await Promise.allSettled([
+          record(d, { maskView, viewLayerId }),
+          record(d, { before: true }),
+        ]);
+        if (a.status === 'rejected' || b.status === 'rejected') {
+          for (const x of [a, b])
+            if (x.status === 'fulfilled')
+              disposeNow([x.value.picture, { dispose: x.value.release }]);
+          throw a.status === 'rejected' ? a.reason : (b as PromiseRejectedResult).reason;
+        }
+        return { out: a.value, prior: b.value };
+      },
+      publish: ({ out, prior }) => {
+        after.value = out.picture;
+        before.value = prior.picture;
+        const old = shown;
+        shown = {
+          pictures: [out.picture, prior.picture],
+          release: () => {
+            out.release();
+            prior.release();
+          },
+        };
+        retire(old);
+        if (out.width !== imgW.value || out.height !== imgH.value) {
+          imgW.value = out.width;
+          imgH.value = out.height;
+          // The output size changed (crop, rotate 90): fit again.
+          if (canvasW.value > 0) {
+            scale.value = fitScale(
+              { width: canvasW.value, height: canvasH.value },
+              { width: out.width, height: out.height },
+            );
+            tx.value = 0;
+            ty.value = 0;
+          }
+        }
+      },
+      // A render failure keeps the last picture on screen; it is reported once per document
+      // (client_error + a Crashlytics non-fatal) and retried; the next document change tries again.
+      report: (e) => reportClientError(e, 'manual', { stage: 'photo_render', record: true }),
+      discard: ({ out, prior }) =>
+        disposeNow([
+          out.picture,
+          prior.picture,
+          { dispose: out.release },
+          { dispose: prior.release },
+        ]),
+    });
+    pump.request();
+    const unsub = doc.subscribe(pump.request);
+    return () => {
+      pump.stop();
+      unsub();
+      // The next effect run publishes its own pictures; this one's go after the delay.
+      retire(shown);
+      shown = null;
+    };
   }, [
     source,
     doc,
@@ -195,17 +256,29 @@ export function PhotoCanvas({
   useEffect(() => {
     if (!onHistogram) return;
     let last: PhotoDoc | null = null;
-    const tick = () => {
+    let busy = false;
+    let alive = true;
+    const tick = async () => {
       const d = doc.get();
-      if (!d || d === last) return;
+      if (busy || !d || d === last) return;
       last = d;
-      const size = histogramSize(imgW.value, imgH.value);
-      const px = pipeline.readPixels(source, d, size);
-      if (px) onHistogram(computeHistogram64(px.pixels));
+      busy = true;
+      try {
+        const size = histogramSize(imgW.value, imgH.value);
+        const px = await pipeline.readPixels(source, d, size);
+        if (alive && px) onHistogram(computeHistogram64(px.pixels));
+      } catch {
+        // A failed readback skips this tick; the next document change tries again.
+      } finally {
+        busy = false;
+      }
     };
-    tick();
-    const id = setInterval(tick, HISTOGRAM_INTERVAL_MS);
-    return () => clearInterval(id);
+    void tick();
+    const id = setInterval(() => void tick(), HISTOGRAM_INTERVAL_MS);
+    return () => {
+      alive = false;
+      clearInterval(id);
+    };
   }, [source, doc, pipeline, imgW, imgH, onHistogram, assetsRevision]);
 
   const fitNow = useCallback(

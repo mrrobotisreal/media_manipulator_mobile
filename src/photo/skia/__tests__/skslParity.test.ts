@@ -37,21 +37,22 @@ function rung1Only(doc: PhotoDoc): boolean {
   );
 }
 
-function render(api: SkiaApi, doc: PhotoDoc, image: string) {
+async function render(api: SkiaApi, doc: PhotoDoc, image: string) {
   const png = PNG.sync.read(readFileSync(`${FIXTURES}/images/${image}.png`));
-  const src = api.Image.MakeImage(
+  const src = api.Image.MakeRaster(
     { width: png.width, height: png.height, colorType: 4, alphaType: 3 },
     api.Data.fromBytes(new Uint8Array(png.data)),
     png.width * 4,
   );
   if (!src) throw new Error('source image');
-  const surface = api.Surface.Make(png.width, png.height);
+  const surface = api.Surface.MakeRaster(png.width, png.height);
   if (!surface) throw new Error('surface');
   const paint = api.Paint();
   paint.setShader(buildDocShader(api, src, doc.layers, 'exact'));
   surface.getCanvas().drawRect(api.XYWHRect(0, 0, png.width, png.height), paint);
   surface.flush();
-  const out = surface
+  // react-native-skia 3: readback is a promise (MA60).
+  const out = await surface
     .makeImageSnapshot()
     .readPixels(0, 0, { width: png.width, height: png.height, colorType: 4, alphaType: 3 });
   if (!(out instanceof Uint8Array)) throw new Error('readPixels');
@@ -129,9 +130,9 @@ describe('SkSL port vs the web goldens (real Skia via CanvasKit)', () => {
 
   it.each(docs.map((d) => [d.name, d.doc] as const))(
     '%s within the colour-op tolerance on all images',
-    (name, doc) => {
+    async (name, doc) => {
       for (const image of GOLDEN_IMAGES) {
-        const { out } = render(api, doc, image);
+        const { out } = await render(api, doc, image);
         const golden = PNG.sync.read(readFileSync(goldenPath(name, image)));
         const s = compare(out, new Uint8Array(golden.data));
         const label = `${name}.${image} mean=${s.mean.toFixed(3)} p99=${s.p99} max=${s.max} beyond4=${(s.beyondFraction * 100).toFixed(2)}%`;
@@ -144,26 +145,26 @@ describe('SkSL port vs the web goldens (real Skia via CanvasKit)', () => {
     },
   );
 
-  it('rung1-all-layers up to its first step op (posterize) meets the full colour-op bound', () => {
+  it('rung1-all-layers up to its first step op (posterize) meets the full colour-op bound', async () => {
     const r = parsePhotoDoc(readFileSync(`${FIXTURES}/docs/rung1-all-layers.json`, 'utf8'));
     if (!r.ok) throw new Error(r.error);
     const cut = lateStepIndex(r.doc.layers);
     expect(cut).toBeGreaterThan(10);
     const layers = r.doc.layers.slice(0, cut);
     for (const image of GOLDEN_IMAGES) {
-      const { out } = render(api, { ...r.doc, layers }, image);
+      const { out } = await render(api, { ...r.doc, layers }, image);
       const s = compare(out, toBytes(renderDocCPU({ layers }, readImage(image))));
       expect([image, s.max <= 4 && s.mean <= 1.0 && s.p99 <= 2]).toEqual([image, true]);
     }
   });
 
-  it('redEye (unmasked) matches colorMath on the chart', () => {
+  it('redEye (unmasked) matches colorMath on the chart', async () => {
     const parsed = parsePhotoDoc({
       ...newPhotoDoc(256, 256),
       layers: [{ id: 'eye', type: 'redEye' }],
     });
     if (!parsed.ok) throw new Error(parsed.error);
-    const { out } = render(api, parsed.doc, 'chart');
+    const { out } = await render(api, parsed.doc, 'chart');
     const s = compare(out, toBytes(renderDocCPU(parsed.doc, readImage('chart'))));
     expect(s.max).toBeLessThanOrEqual(1);
   });

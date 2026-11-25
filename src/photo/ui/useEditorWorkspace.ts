@@ -13,8 +13,12 @@
  *   (MA56);
  * - preset thumbnails (the photo at 256 px through each look, cached per source), Auto's
  *   256-bin histogram, the eyedropper readback, snapshots, analytics.
+ *
+ * react-native-skia 3 (MA60): pixel readback is a promise. The eyedropper and the account thumbnail
+ * await it; the Presets sheet reads Auto's histogram and the thumbnails during render, so those two
+ * stay synchronous lookups of a cache that a readback fills (null until it lands, then a re-render).
  */
-import type { SkImage } from '@shopify/react-native-skia';
+import type { SkImage } from 'react-native-skia';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AppState } from 'react-native';
 import type { MmError } from '@/api/errors';
@@ -51,6 +55,8 @@ import { maskComponentSchema, type AdjustmentLayer, type PhotoDoc } from '../pho
 import { histogram256, type Histogram256 } from '../presets/presetStore';
 import { MaskAssetStore } from '../skia/maskAssets';
 import { PhotoPipeline } from '../skia/pipeline';
+import { disposeLater, disposeNow } from '../skia/lifetime';
+import { pixelBytes } from '../skia/readback';
 import type { SkiaApi } from '../skia/shaderChain';
 import { skiaPngEncoder } from '../tools/brush';
 import { pixelAt, type Point } from '../tools/canvasMath';
@@ -72,7 +78,10 @@ export interface WorkspaceIo {
   baseImage: (projectId: string, baseRef: string) => Promise<SkImage | null>;
   /** Write PNG bytes (the heal mask; MA53 a preset thumbnail) to a local cache file; its uri. */
   writeMask: (bytes: Uint8Array) => Promise<string>;
-  renderHealMask: (strokes: { pts: Point[]; diameter: number }[], size: MaskSize) => Uint8Array;
+  renderHealMask: (
+    strokes: { pts: Point[]; diameter: number }[],
+    size: MaskSize,
+  ) => Promise<Uint8Array>;
   /** MA56: where a heal in flight is kept across an app kill (MMKV in the app). */
   pending?: HealKv;
   now?: () => number;
@@ -132,8 +141,24 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     () => new PhotoPipeline(api, assets, { gpu: p.gpu, feather: p.gpu ? 'skia' : 'exact' }),
     [api, assets, p.gpu],
   );
+  // MA60 (Skia 3): the pipeline's GPU caches go when the editor unmounts (or the pipeline is
+  // replaced). Delayed: the canvas may still draw a picture that samples them this frame.
+  useEffect(
+    () => () => {
+      setTimeout(() => pipeline.dispose(), 1000);
+    },
+    [pipeline],
+  );
+  useEffect(
+    () => () => {
+      setTimeout(() => assets.dispose(), 1000);
+    },
+    [assets],
+  );
   const encodePng = useMemo(() => skiaPngEncoder(api as never), [api]);
   const [assetsRevision, setAssetsRevision] = useState(0);
+  // Bumped when an async readback (Auto's histogram, a preset thumbnail) lands: the sheet re-reads.
+  const [, setReadbackRevision] = useState(0);
   const [subjectBusy, setSubjectBusy] = useState(false);
   const [healState, setHealState] = useState<EditorTools['healState']>({
     phase: 'idle',
@@ -198,7 +223,7 @@ export function useEditorWorkspace(p: WorkspaceProps) {
   }, [p.original, store, io]);
 
   const readPixels = useCallback(
-    (w?: number, h?: number) => {
+    async (w?: number, h?: number) => {
       const d = store.getState().doc;
       if (!d || !source) return null;
       return pipeline.readPixels(source, d, w && h ? { width: w, height: h } : {});
@@ -207,8 +232,8 @@ export function useEditorWorkspace(p: WorkspaceProps) {
   );
 
   const readPixel = useCallback(
-    (n: Point) => {
-      const r = readPixels();
+    async (n: Point) => {
+      const r = await readPixels();
       return r ? pixelAt(r.pixels, r.width, r.height, n) : null;
     },
     [readPixels],
@@ -436,7 +461,7 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     const r = await beginHeal(
       {
         ai: io.ai,
-        renderMask: async (strokes, size) => io.writeMask(io.renderHealMask(strokes, size)),
+        renderMask: async (strokes, size) => io.writeMask(await io.renderHealMask(strokes, size)),
       },
       {
         projectId: pid!,
@@ -460,28 +485,55 @@ export function useEditorWorkspace(p: WorkspaceProps) {
   }, [store, io, p, healStrokes, kv, now, resumeHeal]);
 
   // Preset thumbnails: the photo at <= 256 px through each look (cached per source + preset).
+  // On the phone (`gpu`) the source is a GPU image (Skia 3), which only a GPU surface can sample,
+  // so the thumbnail source and its pipeline are GPU too; tests keep CPU rasters.
   const thumbs = useRef(new Map<string, SkImage | null>());
+  const thumbsPending = useRef(new Set<string>());
   const thumbSource = useMemo(() => {
     if (!source) return null;
     const w = source.image.width();
     const h = source.image.height();
     const k = Math.min(1, THUMB_SIDE / Math.max(w, h));
     if (k === 1) return { image: source.image, id: `${source.id}:thumb` };
-    const s = api.Surface.Make(Math.round(w * k), Math.round(h * k));
+    const tw = Math.round(w * k);
+    const th = Math.round(h * k);
+    const s = (p.gpu ? api.Surface.MakeOffscreen(tw, th) : null) ?? api.Surface.MakeRaster(tw, th);
     if (!s) return null;
     s.getCanvas().drawImageRect(
       source.image,
       api.XYWHRect(0, 0, w, h),
-      api.XYWHRect(0, 0, Math.round(w * k), Math.round(h * k)),
+      api.XYWHRect(0, 0, tw, th),
       api.Paint(),
     );
     s.flush();
     thumbs.current.clear();
-    return { image: s.makeImageSnapshot(), id: `${source.id}:thumb` };
-  }, [source, api]);
-  const thumbPipeline = useMemo(() => new PhotoPipeline(api), [api]);
+    thumbsPending.current.clear();
+    const image = s.makeImageSnapshot();
+    disposeNow([s]);
+    return { image, id: `${source.id}:thumb`, owned: true };
+  }, [source, api, p.gpu]);
+  // The downscaled thumbnail source and the cached thumbnails belong to this hook: a new source
+  // (a heal, undo) or an unmount releases the old ones (later: the sheet may still draw them).
+  useEffect(() => {
+    const cache = thumbs.current;
+    return () => {
+      const owned = thumbSource && 'owned' in thumbSource ? thumbSource.image : null;
+      disposeLater([owned, ...cache.values()]);
+      cache.clear();
+    };
+  }, [thumbSource]);
+  const thumbPipeline = useMemo(
+    () => new PhotoPipeline(api, undefined, { gpu: p.gpu }),
+    [api, p.gpu],
+  );
+  useEffect(
+    () => () => {
+      setTimeout(() => thumbPipeline.dispose(), 1000);
+    },
+    [thumbPipeline],
+  );
   const renderThumb = useCallback(
-    (layers: AdjustmentLayer[]): SkImage | null => {
+    async (layers: AdjustmentLayer[]): Promise<SkImage | null> => {
       if (!thumbSource) return null;
       const d = store.getState().doc;
       const doc: Pick<PhotoDoc, 'layers' | 'geometry' | 'masks'> = {
@@ -495,9 +547,9 @@ export function useEditorWorkspace(p: WorkspaceProps) {
           fill: 'transparent',
         },
       };
-      const r = thumbPipeline.readPixels(thumbSource, doc);
+      const r = await thumbPipeline.readPixels(thumbSource, doc);
       return r
-        ? api.Image.MakeImage(
+        ? api.Image.MakeRaster(
             { width: r.width, height: r.height, colorType: 4, alphaType: 3 },
             api.Data.fromBytes(r.pixels),
             r.width * 4,
@@ -506,14 +558,30 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     },
     [thumbSource, thumbPipeline, store, api],
   );
+  const thumbSourceRef = useRef(thumbSource);
+  thumbSourceRef.current = thumbSource;
+  /** The cached thumbnail, or null while its readback runs (the sheet re-renders when it lands). */
   const presetThumb = useCallback(
     (key: string, layers: AdjustmentLayer[]) => {
       if (!thumbSource) return null;
       const k = `${thumbSource.id}|${key}`;
       if (thumbs.current.has(k)) return thumbs.current.get(k) ?? null;
-      const img = renderThumb(layers);
-      thumbs.current.set(k, img);
-      return img;
+      if (thumbsPending.current.has(k)) return null;
+      thumbsPending.current.add(k);
+      const made = thumbSource;
+      void renderThumb(layers)
+        .catch(() => null)
+        .then((img) => {
+          // A newer source (a heal, undo) cleared the cache meanwhile: drop this one.
+          if (thumbSourceRef.current !== made) {
+            disposeNow([img]);
+            return;
+          }
+          thumbsPending.current.delete(k);
+          thumbs.current.set(k, img);
+          setReadbackRevision((n) => n + 1);
+        });
+      return null;
     },
     [thumbSource, renderThumb],
   );
@@ -522,23 +590,37 @@ export function useEditorWorkspace(p: WorkspaceProps) {
   const presetThumbFile = useCallback(
     async (layers: AdjustmentLayer[]): Promise<string | null> => {
       try {
-        const img = renderThumb(layers);
+        const img = await renderThumb(layers);
         if (!img) return null;
         const w = img.width();
         const h = img.height();
         const k = Math.min(1, PRESET_THUMB_PX / Math.max(w, h));
         const tw = Math.max(1, Math.round(w * k));
         const th = Math.max(1, Math.round(h * k));
-        const s = api.Surface.Make(tw, th);
-        if (!s) return null;
-        s.getCanvas().drawImageRect(
-          img,
-          api.XYWHRect(0, 0, w, h),
-          api.XYWHRect(0, 0, tw, th),
-          api.Paint(),
-        );
-        s.flush();
-        const bytes = s.makeImageSnapshot().encodeToBytes(PNG_FORMAT);
+        // `img` is a raster (`MakeRaster` above), so a CPU surface draws it.
+        const s = api.Surface.MakeRaster(tw, th);
+        if (!s) {
+          disposeNow([img]);
+          return null;
+        }
+        let bytes: Uint8Array | null;
+        try {
+          s.getCanvas().drawImageRect(
+            img,
+            api.XYWHRect(0, 0, w, h),
+            api.XYWHRect(0, 0, tw, th),
+            api.Paint(),
+          );
+          s.flush();
+          const snap = s.makeImageSnapshot();
+          try {
+            bytes = pixelBytes(await snap.encodeToBytes(PNG_FORMAT));
+          } finally {
+            disposeNow([snap]);
+          }
+        } finally {
+          disposeNow([s, img]);
+        }
         if (!bytes || bytes.length === 0 || bytes.length > PRESET_THUMB_MAX_BYTES) return null;
         return await io.writeMask(bytes);
       } catch {
@@ -548,16 +630,32 @@ export function useEditorWorkspace(p: WorkspaceProps) {
     [renderThumb, api, io],
   );
 
+  // Auto's 256-bin histogram of the current doc (512 px readback), cached per doc + source.
+  const histCache = useRef<{ doc: PhotoDoc; sourceId: string; value: Histogram256 | null } | null>(
+    null,
+  );
+  const histPending = useRef<{ doc: PhotoDoc; sourceId: string } | null>(null);
+  /** The histogram of the current doc, or null while its readback runs (then a re-render). */
   const hist = useCallback((): Histogram256 | null => {
     const d = store.getState().doc;
     if (!d || !source) return null;
+    const c = histCache.current;
+    if (c && c.doc === d && c.sourceId === source.id) return c.value;
+    const pend = histPending.current;
+    if (pend && pend.doc === d && pend.sourceId === source.id) return null;
+    const job = { doc: d, sourceId: source.id };
+    histPending.current = job;
     const out = outputSizeOf(d, { width: source.image.width(), height: source.image.height() });
     const k = Math.min(1, 512 / Math.max(out.width, out.height));
-    const r = readPixels(
-      Math.max(1, Math.round(out.width * k)),
-      Math.max(1, Math.round(out.height * k)),
-    );
-    return r ? histogram256(r.pixels) : null;
+    void readPixels(Math.max(1, Math.round(out.width * k)), Math.max(1, Math.round(out.height * k)))
+      .catch(() => null)
+      .then((r) => {
+        if (histPending.current !== job) return;
+        histPending.current = null;
+        histCache.current = { ...job, value: r ? histogram256(r.pixels) : null };
+        setReadbackRevision((n) => n + 1);
+      });
+    return null;
   }, [store, source, readPixels]);
 
   const extra: EditorTools = {

@@ -13,7 +13,7 @@
  * A 403 `photo_presets_limit` opens the MA16 limit sheet with the neutral cap line (MA-0008); no
  * connection shows "You're offline; try again" (no preset outbox exists to queue into).
  */
-import { Canvas, Image as SkiaImage, type SkImage } from '@shopify/react-native-skia';
+import { Canvas, Image as SkiaImage, type SkImage } from 'react-native-skia';
 import * as DocumentPicker from 'expo-document-picker';
 import { File, Paths } from 'expo-file-system';
 import { Image } from 'expo-image';

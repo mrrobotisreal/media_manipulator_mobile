@@ -24,7 +24,7 @@ import { makeReadyStore } from '@/state/testing';
 import type { KvStorage } from '../presets/presetStore';
 
 jest.mock('lucide-react-native', () => new Proxy({}, { get: () => () => null }));
-jest.mock('@shopify/react-native-skia', () => ({ Canvas: () => null, Image: () => null }));
+jest.mock('react-native-skia', () => ({ Canvas: () => null, Image: () => null }));
 jest.mock('expo-sharing', () => ({ shareAsync: jest.fn() }));
 jest.mock('expo-document-picker', () => ({ getDocumentAsync: jest.fn() }));
 jest.mock('@/quota/QuotaChip', () => ({ QuotaChip: () => null }));

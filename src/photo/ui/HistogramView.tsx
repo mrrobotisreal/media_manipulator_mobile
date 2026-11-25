@@ -1,5 +1,5 @@
 /** The 64-bin histogram as Skia paths (RGB or one channel), with the Levels input handles marked. */
-import { Canvas, Line, Path, Skia, vec } from '@shopify/react-native-skia';
+import { Canvas, Line, Path, Skia, vec } from 'react-native-skia';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
@@ -15,15 +15,15 @@ const CH: Record<'r' | 'g' | 'b' | 'luma', string> = {
 };
 
 function binsPath(bins: number[], w: number, h: number) {
-  const p = Skia.Path.Make();
+  // SkPath is immutable on react-native-skia 3: built with PathBuilder (MA60).
+  const p = Skia.PathBuilder.Make();
   p.moveTo(0, h);
   bins.forEach((v, i) => {
     const x = ((i + 0.5) / HISTOGRAM_BINS) * w;
     p.lineTo(x, h - v * h);
   });
   p.lineTo(w, h);
-  p.close();
-  return p;
+  return p.close().build();
 }
 
 export function HistogramView({

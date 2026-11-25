@@ -1,19 +1,14 @@
 /**
  * Builds the preview shader for a document: the source image, then one runtime shader per planned
  * layer, each taking the previous one as its `uSource` child. The Skia API is injected (the app
- * passes `Skia` from `@shopify/react-native-skia`; the parity test passes the same JSI API on
+ * passes `Skia` from `react-native-skia`; the parity test passes the same JSI API on
  * CanvasKit), so this file has no native import and runs in jest.
  *
  * Effects are compiled once per layer type per API instance (`RuntimeEffect.Make` is the expensive
  * call); curve and LUT textures are cached per params object (the store shares params structurally,
  * so an untouched layer keeps its texture across slider ticks).
  */
-import type {
-  SkImage,
-  SkRuntimeEffect,
-  SkShader,
-  Skia as SkiaApiValue,
-} from '@shopify/react-native-skia';
+import type { SkImage, SkRuntimeEffect, SkShader, Skia as SkiaApiValue } from 'react-native-skia';
 import type { AdjustmentLayer } from '../photoTypes';
 import { childNames, layerSksl, type SkslLayerType } from './shaders/adjust';
 import { packSkslLayer, planSkslLayers, type RgbaTexture } from './uniforms';
@@ -66,7 +61,7 @@ function textureImage(api: SkiaApi, key: object, tex: RgbaTexture): SkImage | nu
   }
   const hit = byKey.get(key);
   if (hit) return hit;
-  const img = api.Image.MakeImage(
+  const img = api.Image.MakeRaster(
     { width: tex.width, height: tex.height, colorType: RGBA_8888, alphaType: ALPHA_OPAQUE },
     api.Data.fromBytes(tex.bytes),
     tex.width * 4,
@@ -89,14 +84,17 @@ export function sourceShader(image: SkImage, sampling: SourceSampling = 'smooth'
 /**
  * Wraps `input` in one shader per planned layer. Unplanned layers (rung 4) are skipped. `maskFor`
  * (MA51) gives a layer's finished mask as a shader (value in `.r`), or null when it has none.
+ * `own` (MA60) adopts every shader made here (the pipeline passes its render scope's `own`, so the
+ * chain is disposed with the render; a shader wrapper pins the textures it samples).
  */
 export function chainShaders(
   api: SkiaApi,
   input: SkShader,
   layers: readonly AdjustmentLayer[],
   maskFor?: (layer: AdjustmentLayer) => SkShader | null,
+  own: <T>(o: T) => T = (o) => o,
 ): SkShader {
-  const ones = api.Shader.MakeColor(api.Color('white'));
+  const ones = own(api.Shader.MakeColor(api.Color('white')));
   let cur = input;
   for (const layer of planSkslLayers(layers)) {
     const mask = maskFor?.(layer) ?? null;
@@ -106,26 +104,27 @@ export function chainShaders(
     if (packed.curves) {
       const img = textureImage(api, layer.params, packed.curves);
       if (!img) continue;
-      children.push(exactShader(img));
+      children.push(own(exactShader(img)));
     }
     if (layer.type === 'lut') {
       // No usable cube: the web treats the layer as the identity; so does the phone.
       const img = packed.lut ? textureImage(api, layer.params, packed.lut) : null;
       if (!img) continue;
-      children.push(exactShader(img));
+      children.push(own(exactShader(img)));
     }
     if (children.length !== childNames(packed.type).length) continue;
-    cur = effectFor(api, packed.type).makeShaderWithChildren(packed.uniforms, children);
+    cur = own(effectFor(api, packed.type).makeShaderWithChildren(packed.uniforms, children));
   }
   return cur;
 }
 
-/** Source + every planned layer: what the canvas paints. */
+/** Source + every planned layer: what the canvas paints. `own` adopts every shader made. */
 export function buildDocShader(
   api: SkiaApi,
   image: SkImage,
   layers: readonly AdjustmentLayer[],
   sampling: SourceSampling = 'smooth',
+  own: <T>(o: T) => T = (o) => o,
 ): SkShader {
-  return chainShaders(api, sourceShader(image, sampling), layers);
+  return chainShaders(api, own(sourceShader(image, sampling)), layers, undefined, own);
 }

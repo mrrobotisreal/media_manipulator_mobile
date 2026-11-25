@@ -140,11 +140,11 @@ describe('MA51 Skia pipeline vs the web goldens (real Skia via CanvasKit)', () =
 
   it.each(docs.map((d) => [d.name, d.doc] as const))(
     '%s within its §3.3 tolerance on all images',
-    (name, doc) => {
+    async (name, doc) => {
       const kind = kindOf(doc);
       for (const image of GOLDEN_IMAGES) {
         const pipe = new PhotoPipeline(api, brushAlphaSource(api));
-        const r = pipe.readPixels(fixtureSource(api, image), doc);
+        const r = await pipe.readPixels(fixtureSource(api, image), doc);
         if (!r) throw new Error('readPixels');
         const golden = PNG.sync.read(readFileSync(goldenPath(name, image)));
         expect([r.width, r.height]).toEqual([golden.width, golden.height]);
@@ -155,19 +155,19 @@ describe('MA51 Skia pipeline vs the web goldens (real Skia via CanvasKit)', () =
     },
   );
 
-  it('the SkSL grain hash equals colorMath.grainHash bit for bit (64 x 4 cells, five seeds)', () => {
+  it('the SkSL grain hash equals colorMath.grainHash bit for bit (64 x 4 cells, five seeds)', async () => {
     const effect = api.RuntimeEffect.Make(GRAIN_HASH_PROBE_SKSL);
     if (!effect) throw new Error('compile');
     for (const seed of [0, 7, 12345, 0xffffffff, (12345 ^ GRAIN_SALT) >>> 0]) {
-      const surface = api.Surface.Make(128, 4);
+      const surface = api.Surface.MakeRaster(128, 4);
       if (!surface) throw new Error('surface');
       const paint = api.Paint();
       paint.setShader(effect.makeShader(seedLimbs(seed)));
       surface.getCanvas().drawRect(api.XYWHRect(0, 0, 128, 4), paint);
       surface.flush();
-      const px = surface
+      const px = (await surface
         .makeImageSnapshot()
-        .readPixels(0, 0, { width: 128, height: 4, colorType: 4, alphaType: 3 }) as Uint8Array;
+        .readPixels(0, 0, { width: 128, height: 4, colorType: 4, alphaType: 3 })) as Uint8Array;
       const wrong: string[] = [];
       for (let y = 0; y < 4; y += 1)
         for (let x = 0; x < 64; x += 1) {
@@ -179,30 +179,30 @@ describe('MA51 Skia pipeline vs the web goldens (real Skia via CanvasKit)', () =
     }
   });
 
-  it('the phone feather (Skia ImageFilter.MakeBlur, ticket decision 2) matches the reference taps within 1/255 at feather 80', () => {
+  it('the phone feather (Skia ImageFilter.MakeBlur, ticket decision 2) matches the reference taps within 1/255 at feather 80', async () => {
     const d = docs.find((x) => x.name === 'masks-all-kinds')!.doc;
     const wide = {
       ...d,
       layers: d.layers.map((l) => ({ ...l, mask: { ...(l.mask as Mask), feather: 80 } })),
     } as PhotoDoc;
-    const run = (feather: 'exact' | 'skia') =>
-      new PhotoPipeline(api, brushAlphaSource(api), { feather }).readPixels(
+    const run = async (feather: 'exact' | 'skia') =>
+      (await new PhotoPipeline(api, brushAlphaSource(api), { feather }).readPixels(
         fixtureSource(api, 'photo'),
         wide,
-      )!.pixels;
-    const a = run('exact');
-    const b = run('skia');
+      ))!.pixels;
+    const a = await run('exact');
+    const b = await run('skia');
     let max = 0;
     for (let i = 0; i < a.length; i += 1)
       if (i % 4 !== 3) max = Math.max(max, Math.abs(a[i]! - b[i]!));
     expect(max).toBeLessThanOrEqual(1);
   });
 
-  it('a slider drag on a masked layer reuses the cached mask (no recompute)', () => {
+  it('a slider drag on a masked layer reuses the cached mask (no recompute)', async () => {
     const d = docs.find((x) => x.name === 'mask-gradient-tone')!.doc;
     const pipe = new PhotoPipeline(api, brushAlphaSource(api));
     const src = fixtureSource(api, 'photo');
-    pipe.render(src, d);
+    await pipe.render(src, d);
     const computes = pipe.maskComputes;
     const layer = d.layers[0]!;
     for (const v of [10, 20, 30]) {
@@ -210,7 +210,7 @@ describe('MA51 Skia pipeline vs the web goldens (real Skia via CanvasKit)', () =
         ...d,
         layers: [{ ...layer, params: { ...layer.params, shadows: v } } as typeof layer],
       };
-      pipe.render(src, next);
+      await pipe.render(src, next);
     }
     expect(pipe.maskComputes).toBe(computes);
   });

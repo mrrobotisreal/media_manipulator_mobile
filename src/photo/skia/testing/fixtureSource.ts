@@ -5,7 +5,7 @@
  */
 import { readFileSync } from 'node:fs';
 import { PNG } from 'pngjs';
-import type { SkImage } from '@shopify/react-native-skia';
+import type { SkImage } from 'react-native-skia';
 import { brushAlpha } from '../../goldens';
 import type { AlphaSource, PipelineSource } from '../pipeline';
 import type { SkiaApi } from '../shaderChain';
@@ -19,12 +19,12 @@ export function rgbaImage(
   bytes: Uint8Array,
   opaque = false,
 ): SkImage {
-  const img = api.Image.MakeImage(
+  const img = api.Image.MakeRaster(
     { width, height, colorType: 4, alphaType: opaque ? 1 : 3 },
     api.Data.fromBytes(bytes),
     width * 4,
   );
-  if (!img) throw new Error('MakeImage');
+  if (!img) throw new Error('MakeRaster');
   return img;
 }
 

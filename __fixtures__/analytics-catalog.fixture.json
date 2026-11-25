@@ -83,6 +83,10 @@
     "priority": 1,
     "props": ["file_extension", "size_bytes", "file_size_mb", "media_kind", "source"]
   },
+  "gpu_capability_checked": {
+    "priority": 2,
+    "props": ["result", "reason_bucket"]
+  },
   "history_item_reopened": {
     "priority": 2,
     "props": ["kind", "age_bucket", "source"]
@@ -285,11 +289,39 @@
   },
   "studio_export_completed": {
     "priority": 0,
-    "props": ["preset", "format", "container", "videoCodec", "audioCodec", "audioBitrate", "audioChannels", "mode", "resolution", "captionsMode", "durationRatioBucket", "host", "captionAnimation"]
+    "props": [
+      "preset",
+      "format",
+      "container",
+      "videoCodec",
+      "audioCodec",
+      "audioBitrate",
+      "audioChannels",
+      "mode",
+      "resolution",
+      "captionsMode",
+      "durationRatioBucket",
+      "host",
+      "captionAnimation"
+    ]
   },
   "studio_export_failed": {
     "priority": 0,
-    "props": ["preset", "format", "container", "videoCodec", "audioCodec", "audioBitrate", "audioChannels", "mode", "resolution", "captionsMode", "durationRatioBucket", "host", "captionAnimation"]
+    "props": [
+      "preset",
+      "format",
+      "container",
+      "videoCodec",
+      "audioCodec",
+      "audioBitrate",
+      "audioChannels",
+      "mode",
+      "resolution",
+      "captionsMode",
+      "durationRatioBucket",
+      "host",
+      "captionAnimation"
+    ]
   },
   "studio_export_format_locked": {
     "priority": 1,
@@ -297,7 +329,20 @@
   },
   "studio_export_started": {
     "priority": 0,
-    "props": ["preset", "format", "container", "videoCodec", "audioCodec", "audioBitrate", "audioChannels", "mode", "resolution", "captionsMode", "host", "captionAnimation"]
+    "props": [
+      "preset",
+      "format",
+      "container",
+      "videoCodec",
+      "audioCodec",
+      "audioBitrate",
+      "audioChannels",
+      "mode",
+      "resolution",
+      "captionsMode",
+      "host",
+      "captionAnimation"
+    ]
   },
   "studio_project_opened": {
     "priority": 1,
