@@ -5,7 +5,7 @@
  * neighbour is refused (`dragCurvePoint` clamps it short; a notice says so once per drag). Tap the
  * graph to add a point. The graph is always `direction: 'ltr'` (input on x, left = black).
  */
-import { Canvas, Circle, Path, Skia } from '@shopify/react-native-skia';
+import { Canvas, Circle, Path, Skia } from 'react-native-skia';
 import { useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, type LayoutChangeEvent } from 'react-native';
@@ -62,8 +62,9 @@ export function CurvesSheet({ onRefused }: { onRefused?: () => void }) {
   const points = curvePoints(doc, ch);
 
   const path = useMemo(() => {
-    const p = Skia.Path.Make();
-    if (size <= 0) return p;
+    // SkPath is immutable on react-native-skia 3: built with PathBuilder (MA60).
+    const p = Skia.PathBuilder.Make();
+    if (size <= 0) return p.build();
     const lut = buildCurveLut(points);
     lut.forEach((v, i) => {
       const x = (i / 255) * size;
@@ -71,7 +72,7 @@ export function CurvesSheet({ onRefused }: { onRefused?: () => void }) {
       if (i === 0) p.moveTo(x, y);
       else p.lineTo(x, y);
     });
-    return p;
+    return p.build();
   }, [points, size]);
 
   const toUnit = (x: number, y: number) => ({

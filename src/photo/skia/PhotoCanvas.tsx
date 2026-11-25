@@ -10,15 +10,12 @@
  * tool is armed), double tap Fit <-> 100 %, press-and-hold shows the original ("before"), a
  * two-finger tap toggles before/after. With a tool armed, ONE finger belongs to the tool
  * (`ToolOverlay`, drawn on top in the same transform). The canvas is always `direction: 'ltr'`.
+ *
+ * react-native-skia 3 (MA60): `pipeline.render` and `readPixels` are async (readback is a promise).
+ * Each document change takes a generation number and only the newest render publishes its picture;
+ * the histogram tick skips while a readback is in flight.
  */
-import {
-  Canvas,
-  Group,
-  Picture,
-  Skia,
-  type SkImage,
-  type SkPicture,
-} from '@shopify/react-native-skia';
+import { Canvas, Group, Picture, Skia, type SkImage, type SkPicture } from 'react-native-skia';
 import { useCallback, useEffect, useMemo, type ReactNode } from 'react';
 import { PixelRatio, View, type LayoutChangeEvent } from 'react-native';
 import {
@@ -140,8 +137,10 @@ export function PhotoCanvas({
   // Re-record on every document change; the shared value hands the picture to the UI thread.
   useEffect(() => {
     let last: PhotoDoc | null = null;
-    const record = (d: PhotoDoc, opts: Parameters<PhotoPipeline['render']>[2]) => {
-      const r = pipeline.render(source, displayDoc(d, ignoreCrop), opts);
+    let generation = 0;
+    let alive = true;
+    const record = async (d: PhotoDoc, opts: Parameters<PhotoPipeline['render']>[2]) => {
+      const r = await pipeline.render(source, displayDoc(d, ignoreCrop), opts);
       const rec = Skia.PictureRecorder();
       const canvas = rec.beginRecording(Skia.XYWHRect(0, 0, r.width, r.height));
       const paint = Skia.Paint();
@@ -149,13 +148,19 @@ export function PhotoCanvas({
       canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
       return { picture: rec.finishRecordingAsPicture(), width: r.width, height: r.height };
     };
-    const draw = () => {
+    const draw = async () => {
       const d = doc.get();
       if (!d || d === last) return;
       last = d;
-      const out = record(d, { maskView, viewLayerId });
+      const mine = ++generation;
+      const [out, prior] = await Promise.all([
+        record(d, { maskView, viewLayerId }),
+        record(d, { before: true }),
+      ]);
+      // A newer document (or an unmount) superseded this render while it awaited a readback.
+      if (!alive || mine !== generation) return;
       after.value = out.picture;
-      before.value = record(d, { before: true }).picture;
+      before.value = prior.picture;
       if (out.width !== imgW.value || out.height !== imgH.value) {
         imgW.value = out.width;
         imgH.value = out.height;
@@ -170,8 +175,15 @@ export function PhotoCanvas({
         }
       }
     };
-    draw();
-    return doc.subscribe(draw);
+    const run = () => {
+      draw().catch(() => undefined);
+    };
+    run();
+    const unsub = doc.subscribe(run);
+    return () => {
+      alive = false;
+      unsub();
+    };
   }, [
     source,
     doc,
@@ -195,17 +207,29 @@ export function PhotoCanvas({
   useEffect(() => {
     if (!onHistogram) return;
     let last: PhotoDoc | null = null;
-    const tick = () => {
+    let busy = false;
+    let alive = true;
+    const tick = async () => {
       const d = doc.get();
-      if (!d || d === last) return;
+      if (busy || !d || d === last) return;
       last = d;
-      const size = histogramSize(imgW.value, imgH.value);
-      const px = pipeline.readPixels(source, d, size);
-      if (px) onHistogram(computeHistogram64(px.pixels));
+      busy = true;
+      try {
+        const size = histogramSize(imgW.value, imgH.value);
+        const px = await pipeline.readPixels(source, d, size);
+        if (alive && px) onHistogram(computeHistogram64(px.pixels));
+      } catch {
+        // A failed readback skips this tick; the next document change tries again.
+      } finally {
+        busy = false;
+      }
     };
-    tick();
-    const id = setInterval(tick, HISTOGRAM_INTERVAL_MS);
-    return () => clearInterval(id);
+    void tick();
+    const id = setInterval(() => void tick(), HISTOGRAM_INTERVAL_MS);
+    return () => {
+      alive = false;
+      clearInterval(id);
+    };
   }, [source, doc, pipeline, imgW, imgH, onHistogram, assetsRevision]);
 
   const fitNow = useCallback(

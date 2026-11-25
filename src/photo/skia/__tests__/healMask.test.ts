@@ -12,7 +12,7 @@ jest.setTimeout(60_000);
 
 it('renders strokes white on black at the base size', async () => {
   const api = await loadSkiaApi();
-  const bytes = renderHealMaskPng(
+  const bytes = await renderHealMaskPng(
     api,
     [
       { pts: [{ x: 100, y: 100 }], diameter: 40 },

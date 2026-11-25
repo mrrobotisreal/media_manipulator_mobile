@@ -92,26 +92,30 @@ export function brushIndexOf(doc: PhotoDoc, layerId: string, selected: number): 
 }
 
 /**
- * Skia PNG encoder for the phone: RGBA bytes → `Image.MakeImage` → `encodeToBase64()` (the ticket's
- * `makeImageSnapshot().encodeToBase64()` without the extra surface).
+ * Skia PNG encoder for the phone: RGBA bytes → `Image.MakeRaster` → `encodeToBase64()` (the ticket's
+ * `makeImageSnapshot().encodeToBase64()` without the extra surface). On react-native-skia 3 the
+ * encode is a promise (MA60): it is awaited, and anything but a string is an error, never a
+ * `data:` URI around "[object Promise]".
  */
 export function skiaPngEncoder(api: {
-  Image: { MakeImage: (...a: never[]) => { encodeToBase64(): string } | null };
+  Image: { MakeRaster: (...a: never[]) => { encodeToBase64(): Promise<string> } | null };
   Data: { fromBytes: (b: Uint8Array) => unknown };
 }): PngEncoder {
   return async (rgba, width, height) => {
     const img = (
-      api.Image.MakeImage as unknown as (
+      api.Image.MakeRaster as unknown as (
         info: object,
         data: unknown,
         rowBytes: number,
-      ) => { encodeToBase64(): string } | null
+      ) => { encodeToBase64(): Promise<string> } | null
     )(
       { width, height, colorType: 4, alphaType: 3 },
       api.Data.fromBytes(new Uint8Array(rgba.buffer, rgba.byteOffset, rgba.byteLength)),
       width * 4,
     );
     if (!img) throw new Error('brush encode');
-    return `data:image/png;base64,${img.encodeToBase64()}`;
+    const b64: unknown = await img.encodeToBase64();
+    if (typeof b64 !== 'string' || b64.length === 0) throw new Error('brush encode');
+    return `data:image/png;base64,${b64}`;
   };
 }

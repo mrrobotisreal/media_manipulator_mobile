@@ -1,19 +1,14 @@
 /**
  * Builds the preview shader for a document: the source image, then one runtime shader per planned
  * layer, each taking the previous one as its `uSource` child. The Skia API is injected (the app
- * passes `Skia` from `@shopify/react-native-skia`; the parity test passes the same JSI API on
+ * passes `Skia` from `react-native-skia`; the parity test passes the same JSI API on
  * CanvasKit), so this file has no native import and runs in jest.
  *
  * Effects are compiled once per layer type per API instance (`RuntimeEffect.Make` is the expensive
  * call); curve and LUT textures are cached per params object (the store shares params structurally,
  * so an untouched layer keeps its texture across slider ticks).
  */
-import type {
-  SkImage,
-  SkRuntimeEffect,
-  SkShader,
-  Skia as SkiaApiValue,
-} from '@shopify/react-native-skia';
+import type { SkImage, SkRuntimeEffect, SkShader, Skia as SkiaApiValue } from 'react-native-skia';
 import type { AdjustmentLayer } from '../photoTypes';
 import { childNames, layerSksl, type SkslLayerType } from './shaders/adjust';
 import { packSkslLayer, planSkslLayers, type RgbaTexture } from './uniforms';
@@ -66,7 +61,7 @@ function textureImage(api: SkiaApi, key: object, tex: RgbaTexture): SkImage | nu
   }
   const hit = byKey.get(key);
   if (hit) return hit;
-  const img = api.Image.MakeImage(
+  const img = api.Image.MakeRaster(
     { width: tex.width, height: tex.height, colorType: RGBA_8888, alphaType: ALPHA_OPAQUE },
     api.Data.fromBytes(tex.bytes),
     tex.width * 4,

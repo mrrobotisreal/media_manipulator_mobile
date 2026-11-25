@@ -30,7 +30,7 @@ import { EditorProvider, type EditorTools } from '../ui/EditorContext';
 import { PresetMigrationSheet, PresetsSheet } from '../ui/sheets/PresetsSheet';
 
 jest.mock('lucide-react-native', () => new Proxy({}, { get: () => () => null }));
-jest.mock('@shopify/react-native-skia', () => ({ Canvas: () => null, Image: () => null }));
+jest.mock('react-native-skia', () => ({ Canvas: () => null, Image: () => null }));
 jest.mock('expo-image', () => ({ Image: () => null }));
 jest.mock('expo-sharing', () => ({ shareAsync: jest.fn() }));
 jest.mock('expo-document-picker', () => ({ getDocumentAsync: jest.fn() }));

@@ -14,7 +14,7 @@ describe('render helpers on real Skia', () => {
   it('reads back a downscaled adjusted image the histogram can use', async () => {
     const api = await loadSkiaApi();
     const png = PNG.sync.read(readFileSync(`${__dirname}/../../fixtures/images/chart.png`));
-    const img = api.Image.MakeImage(
+    const img = api.Image.MakeRaster(
       { width: png.width, height: png.height, colorType: 4, alphaType: 3 },
       api.Data.fromBytes(new Uint8Array(png.data)),
       png.width * 4,
@@ -25,7 +25,7 @@ describe('render helpers on real Skia', () => {
       layers: [{ id: 'i', type: 'invert' }],
     });
     if (!doc.ok) throw new Error(doc.error);
-    const px = renderDocPixels(api, img, doc.doc.layers, 64, 64)!;
+    const px = (await renderDocPixels(api, img, doc.doc.layers, 64, 64))!;
     expect(px).toHaveLength(64 * 64 * 4);
     const h = computeHistogram64(px);
     expect(h.count).toBeGreaterThan(0);

@@ -7,12 +7,17 @@
  * Subject PNGs are cached on disk under `cache/photo/<projectId>/masks/` (ticket decision 3) and
  * decoded at most `SUBJECT_MAX_SIDE` on the long side (the pipeline samples masks bilinear in
  * normalized coordinates, so any size works). The Skia API and the file I/O are injected.
+ *
+ * react-native-skia 3 (MA60): readback is a promise, so the alpha rule (`hasTransparency`) and the
+ * 8-bit alpha `alphaOf` returns are read once, asynchronously, while a raster loads; `alphaOf`
+ * itself stays synchronous (the brush reads it at gesture start) and only reads that cache.
  */
-import type { SkImage } from '@shopify/react-native-skia';
+import type { SkImage } from 'react-native-skia';
 import type { AlphaImage } from '../colorMath';
 import { docAssetIds } from '../maskAssets';
 import type { PhotoDoc } from '../photoTypes';
 import type { AlphaSource } from './pipeline';
+import { pixelBytes } from './readback';
 import type { SkiaApi } from './shaderChain';
 
 export const SUBJECT_MAX_SIDE = 2048;
@@ -29,12 +34,19 @@ float4 main(float2 p) {
 }
 `;
 
-/** Any pixel with alpha < 255 (the web's rule for subject PNGs: alpha if transparent, else red). */
-function hasTransparency(img: SkImage): boolean {
+/** RGBA8 (unpremultiplied) of a whole image, or null when Skia reads nothing. */
+async function rgbaOf(img: SkImage): Promise<Uint8Array | null> {
   const w = img.width();
   const h = img.height();
-  const px = img.readPixels(0, 0, { width: w, height: h, colorType: 4, alphaType: 3 });
-  if (!(px instanceof Uint8Array)) return false;
+  return pixelBytes(
+    await img.readPixels(0, 0, { width: w, height: h, colorType: 4, alphaType: 3 }),
+  );
+}
+
+/** Any pixel with alpha < 255 (the web's rule for subject PNGs: alpha if transparent, else red). */
+export async function hasTransparency(img: SkImage): Promise<boolean> {
+  const px = await rgbaOf(img);
+  if (!px) return false;
   for (let i = 3; i < px.length; i += 4) if (px[i] !== 255) return true;
   return false;
 }
@@ -77,21 +89,23 @@ export class MaskAssetStore implements AlphaSource {
     this.listeners.forEach((l) => l());
   }
 
-  /** The 8-bit alpha of a loaded raster (brush continuation, crop re-map), read back once. */
+  /**
+   * The 8-bit alpha of a loaded raster (brush continuation, crop re-map). Read back once, while the
+   * raster loads (`load`), or given by `putAlpha`; null until then.
+   */
   alphaOf(id: string): AlphaImage | null {
-    const hit = this.alphas.get(id);
-    if (hit) return hit;
-    const img = this.images.get(id);
-    if (!img) return null;
+    return this.alphas.get(id) ?? null;
+  }
+
+  /** Read a grey raster's `.r` back as the 8-bit alpha (async on Skia 3). */
+  private async readAlpha(img: SkImage): Promise<AlphaImage | null> {
+    const px = await rgbaOf(img);
+    if (!px) return null;
     const w = img.width();
     const h = img.height();
-    const px = img.readPixels(0, 0, { width: w, height: h, colorType: 4, alphaType: 3 });
-    if (!(px instanceof Uint8Array)) return null;
     const alpha = new Uint8Array(w * h);
     for (let i = 0; i < alpha.length; i += 1) alpha[i] = px[i * 4]!;
-    const a = { width: w, height: h, alpha };
-    this.alphas.set(id, a);
-    return a;
+    return { width: w, height: h, alpha };
   }
 
   /** A brush baked on the phone: install its raster from the alpha (no PNG decode). */
@@ -102,7 +116,7 @@ export class MaskAssetStore implements AlphaSource {
       rgba[i * 4] = rgba[i * 4 + 1] = rgba[i * 4 + 2] = v;
       rgba[i * 4 + 3] = 255;
     }
-    const img = this.api.Image.MakeImage(
+    const img = this.api.Image.MakeRaster(
       { width: a.width, height: a.height, colorType: 4, alphaType: ALPHA_OPAQUE },
       this.api.Data.fromBytes(rgba),
       a.width * 4,
@@ -113,7 +127,11 @@ export class MaskAssetStore implements AlphaSource {
   }
 
   /** Grey raster of an encoded PNG: alpha for brushes; for subjects alpha when the PNG has any. */
-  toGrey(encoded: SkImage, kind: 'brush' | 'subject', maxSide = Infinity): SkImage | null {
+  async toGrey(
+    encoded: SkImage,
+    kind: 'brush' | 'subject',
+    maxSide = Infinity,
+  ): Promise<SkImage | null> {
     if (!this.effect) this.effect = this.api.RuntimeEffect.Make(GREY_SKSL);
     if (!this.effect) return null;
     const w0 = encoded.width();
@@ -121,18 +139,18 @@ export class MaskAssetStore implements AlphaSource {
     const k = Math.min(1, maxSide / Math.max(w0, h0));
     const w = Math.max(1, Math.round(w0 * k));
     const h = Math.max(1, Math.round(h0 * k));
-    const useAlpha = kind === 'brush' || hasTransparency(encoded);
+    const useAlpha = kind === 'brush' || (await hasTransparency(encoded));
     const img = encoded.makeShaderOptions(0, 0, k < 1 ? 1 : 0, 0, this.api.Matrix().scale(k, k));
     const s =
-      (this.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ?? this.api.Surface.Make(w, h);
+      (this.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ?? this.api.Surface.MakeRaster(w, h);
     if (!s) return null;
     const paint = this.api.Paint();
     paint.setBlendMode(BLEND_SRC);
     paint.setShader(this.effect.makeShaderWithChildren([useAlpha ? 1 : 0], [img]));
     s.getCanvas().drawRect(this.api.XYWHRect(0, 0, w, h), paint);
     s.flush();
-    const out = s.makeImageSnapshot();
-    return this.gpu ? (out.makeNonTextureImage() ?? out) : out;
+    // Skia 3 (Graphite): a GPU snapshot is shared by every canvas; no raster copy (MA60).
+    return s.makeImageSnapshot();
   }
 
   private load(id: string, kind: 'brush' | 'subject'): Promise<SkImage | null> {
@@ -152,10 +170,20 @@ export class MaskAssetStore implements AlphaSource {
           if (!bytes) return null;
           data = this.api.Data.fromBytes(bytes);
         }
-        const decoded = this.api.Image.MakeImageFromEncoded(data);
+        const decoded = this.api.Image.MakeFromEncoded(data);
         if (!decoded) return null;
-        const grey = this.toGrey(decoded, kind, kind === 'subject' ? SUBJECT_MAX_SIDE : Infinity);
-        if (grey) this.put(id, grey);
+        const grey = await this.toGrey(
+          decoded,
+          kind,
+          kind === 'subject' ? SUBJECT_MAX_SIDE : Infinity,
+        );
+        if (!grey) return null;
+        // The alpha is read before the raster is announced, so `alphaOf` has it from then on.
+        if (!this.alphas.has(id)) {
+          const a = await this.readAlpha(grey);
+          if (a) this.alphas.set(id, a);
+        }
+        this.put(id, grey);
         return grey;
       } catch {
         return null;

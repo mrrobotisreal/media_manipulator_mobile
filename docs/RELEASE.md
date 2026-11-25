@@ -88,12 +88,28 @@ Goes to the **internal** testing track as a **draft** (`eas.json` `submit.produc
 
 Icons: `node scripts/gen-icons.mjs` regenerates `assets/*` from the aperture vector data in `scripts/aperture.mjs` (only needed if the mark changes).
 
-## 6. Data hygiene
+## 6. Pinned native graphics packages (MA60)
+
+`npx expo install --check` and `expo-doctor` do not track these, so a version catch-up (MA57-style) must **not** "fix" them:
+
+| Package                    | Pin                            | Why                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `react-native-skia`        | **3.10.2** exact, no caret     | Skia 3 (Graphite on Vulkan / Metal) replaced `@shopify/react-native-skia` 2.6.2 in MA60. 3.10.2 is the version MA59/MA76 validated on the S25 (video path, memory gate) and Aperture was re-verified on. Never install `@shopify/react-native-skia` beside it (same native module).                                                            |
+| `react-native-webgpu`      | **0.22.0** exact, no caret     | Darkroom/Motion's WebGPU layer and the GPU capability check (`src/gpu/capability.ts`). Validated with Skia 3.10.2 in MA59/MA76.                                                                                                                                                                                                                |
+| `react-native-webgpu-dawn` | 158.0.0 (transitive, one copy) | Both packages above must link the **same** Dawn build or the native build fails with "Dawn version mismatch". Check `npm ls react-native-webgpu-dawn` shows one copy (`deduped`). Upgrade Skia and WebGPU **together**, only to a pair whose Dawn matches, and only with a re-run of the Aperture device check (and the MA59/MA76 video bars). |
+
+- No `patch-package` patches are needed for either (MA59 recorded none); `patches/` holds only the gesture-handler backport.
+- `plugins/withGradleJvmArgs.js` sets `org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1536m`: a Skia 3 + WebGPU release build runs out of Metaspace in `lintVitalAnalyzeRelease` on Expo's default (MA76).
+- The `react-native-webgpu` config plugin is in `app.config.ts` (minSdk 26, already ours; iOS simulator Metal validation off).
+- Skia 3 declares Vulkan 1.1 as a **required** Android feature, so Play does not serve the app to devices without it; on such a device every canvas is blank (`Skia.gpu.isAvailable` false).
+- Readback is async in Skia 3 (`readPixels`, `encodeToBytes`, `encodeToBase64`, `makeRasterImage` return promises): go through `src/photo/skia/readback.ts` `pixelBytes(await …)`, never `instanceof Uint8Array` on an un-awaited value. `SkPath` is immutable: build paths with `Skia.PathBuilder`.
+
+## 7. Data hygiene
 
 Maestro and device checks use only the dedicated **Pro test account**, never Mitch's. Flows delete what they create; verify the test account's History is empty of run leftovers.
 Never run `clearState` flows on a phone with a session you want to keep.
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
 - Google sign-in `DEVELOPER_ERROR`: the build's keystore SHA-1/SHA-256 is missing from that variant's Firebase Android app (section 1.3), or `google-services.json` was not re-downloaded.
 - OTA not arriving: fingerprint mismatch (native change since the build), wrong channel, or only one launch since publishing (it applies on the second).

@@ -18,6 +18,7 @@ Expo SDK 57 / React Native dev-client app. Read `CONTEXT.md`, then the planning 
 - User-visible strings: every new string goes through `t()` and into all 18 `locales/<code>/app.json` in the same commit (reuse a web key from `interface|error|accessibility` first; `npm run gates` enforces it). Never edit `src/i18n/generated/` (run `npm run i18n:sync`). Use logical styles (`start`/`end`, `ms`/`me`, `ps`/`pe`), never left/right (a test enforces it).
 - Use `Text`/`Button` from `src/ui/components`, not react-native's (lint-enforced in `app/` and `src/features`).
 - `useFrameworks: 'static'` (iOS) is react-native-firebase's requirement; keep it.
+- **Pinned, exact (MA60):** `react-native-skia` 3.10.2 and `react-native-webgpu` 0.22.0, sharing ONE `react-native-webgpu-dawn` (158.0.0; `npm ls react-native-webgpu-dawn` must show it deduped). `expo-doctor` / `expo install --check` do not track them: never bump or "fix" them in a version catch-up, never re-add `@shopify/react-native-skia`. Upgrade both together, only with matching Dawn and an Aperture device re-check (`docs/RELEASE.md` §6). Skia 3 readback is async: `pixelBytes(await …)` from `src/photo/skia/readback.ts`; paths via `Skia.PathBuilder`.
 - App ids: `com.mediamanipulator.app` (Android and iOS), never `com.media_manipulator.app` / `com.media-manipulator.app`.
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 - Merge green work to `main` before the final report (merge-on-completion).

@@ -19,9 +19,13 @@
  * - a detail layer materialises its input (a raster) and runs its multi-pass chain.
  *
  * Everything returns shaders/images in output pixel space (0,0)-(w,h). Surfaces are CPU rasters
- * (`Surface.Make`) for exact readback; the canvas draws the final shader.
+ * (`Surface.MakeRaster`) for exact readback in tests, GPU offscreen surfaces on the phone; the
+ * canvas draws the final shader.
+ *
+ * react-native-skia 3 (MA60): readback is a promise, so `render` (the dehaze light reads pixels)
+ * and `readPixels` are async; every readback goes through `pixelBytes` (a Promise throws).
  */
-import type { SkImage, SkShader, SkSurface } from '@shopify/react-native-skia';
+import type { SkImage, SkShader, SkSurface } from 'react-native-skia';
 import { dehazeLight, featherSigma, resolveLayerMask } from '../colorMath';
 import type { AdjustmentLayer, Geometry, Mask, MaskComponent, PhotoDoc } from '../photoTypes';
 import {
@@ -36,6 +40,7 @@ import {
 } from '../webMaskPlan';
 import { DEHAZE_GRID, isDetailType, planDetail, type DetailPlan } from '../webDetailPlan';
 import { BLEND_INDEX } from '../webUniforms';
+import { pixelBytes } from './readback';
 import { chainShaders, type SkiaApi } from './shaderChain';
 import { detailSksl, saltedSeed, seedLimbs, type DetailPass } from './shaders/detail';
 import {
@@ -57,6 +62,28 @@ const UNPREMUL = 3;
 const BLEND_SRC = 1;
 
 export type MaskView = 'off' | 'overlay' | 'alpha';
+
+/** The dehaze default when the dark-channel grid cannot be read back (the web's fallback). */
+export const DEHAZE_LIGHT_FALLBACK = 0.05;
+
+/**
+ * Atmospheric light from a baked dark-channel grid (`.r` = dark channel): its readback (async on
+ * Skia 3) fed to `colorMath.dehazeLight`; `DEHAZE_LIGHT_FALLBACK` when nothing could be read.
+ */
+export async function gridDehazeLight(grid: SkImage, gw: number, gh: number): Promise<number> {
+  const px = pixelBytes(
+    await grid.readPixels(0, 0, {
+      width: gw,
+      height: gh,
+      colorType: RGBA_8888,
+      alphaType: UNPREMUL,
+    }),
+  );
+  if (!px) return DEHAZE_LIGHT_FALLBACK;
+  const vals = new Float64Array(gw * gh);
+  for (let i = 0; i < vals.length; i += 1) vals[i] = px[i * 4]! / 255;
+  return dehazeLight(vals);
+}
 
 /** Decoded brush / subject rasters, keyed by the brush PNG data URI or the subject `maskRef`. */
 export interface AlphaSource {
@@ -158,9 +185,10 @@ export class PhotoPipeline {
   }
 
   /**
-   * `gpu` (the phone): bakes on an offscreen GPU surface and copies the result to a raster image
-   * (`makeNonTextureImage`), because the canvas draws on another thread's context and cannot
-   * sample a texture made here (MA50's `downscale` does the same). Tests use CPU rasters.
+   * `gpu` (the phone): bakes on an offscreen GPU surface. On Skia 3 (Graphite) a GPU image is
+   * shared by every canvas and thread, so the Skia 2 raster copy (`makeNonTextureImage`) is gone;
+   * the readback (`readPixels`) draws on a GPU surface too, because a CPU raster canvas cannot
+   * sample a GPU image. Tests use CPU rasters.
    */
   constructor(
     private readonly api: SkiaApi,
@@ -182,7 +210,8 @@ export class PhotoPipeline {
 
   private surface(w: number, h: number): SkSurface {
     const s =
-      (this.opts.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ?? this.api.Surface.Make(w, h);
+      (this.opts.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ??
+      this.api.Surface.MakeRaster(w, h);
     if (!s) throw new Error(`surface ${w}x${h}`);
     return s;
   }
@@ -195,8 +224,7 @@ export class PhotoPipeline {
     paint.setShader(shader);
     s.getCanvas().drawRect(this.api.XYWHRect(0, 0, w, h), paint);
     s.flush();
-    const img = s.makeImageSnapshot();
-    return this.opts.gpu ? (img.makeNonTextureImage() ?? img) : img;
+    return s.makeImageSnapshot();
   }
 
   private run(
@@ -287,8 +315,7 @@ export class PhotoPipeline {
       paint.setImageFilter(this.api.ImageFilter.MakeBlur(sigma, sigma, CLAMP, null));
       s.getCanvas().drawImage(prev, 0, 0, paint);
       s.flush();
-      const img = s.makeImageSnapshot();
-      m = this.opts.gpu ? (img.makeNonTextureImage() ?? img) : img;
+      m = s.makeImageSnapshot();
     } else if (sigma >= 1e-3) {
       // Separable Gaussian on the folded mask: the taps and edge replication of `blurMask`.
       const common = { uSize: [w, h], uSigma: sigma, uOpacity: 1 };
@@ -380,12 +407,12 @@ export class PhotoPipeline {
   }
 
   /** Run a detail layer over the materialised `input` (straight colour). */
-  private runDetail(
+  private async runDetail(
     plan: DetailPlan,
     input: SkImage,
     layer: AdjustmentLayer,
     mask: SkImage | null,
-  ): SkShader {
+  ): Promise<SkShader> {
     const w = input.width();
     const h = input.height();
     const inp = exact(input);
@@ -437,7 +464,7 @@ export class PhotoPipeline {
       }
       case 'dehaze': {
         const darkH = this.bake(pass('DARK_H', {}), w, h);
-        const light = this.dehazeLight(darkH, w, h, common);
+        const light = await this.dehazeLight(darkH, w, h, common);
         return pass('DEHAZE', { uP0: [plan.amount, light, 0, 0] }, exact(darkH));
       }
       case 'vignette':
@@ -459,7 +486,12 @@ export class PhotoPipeline {
    * count use every pixel (= `colorMath.dehaze`); larger ones a DEHAZE_GRID² sample like the web
    * preview (design §5.4 approximation).
    */
-  private dehazeLight(darkH: SkImage, w: number, h: number, common: Record<string, unknown>) {
+  private async dehazeLight(
+    darkH: SkImage,
+    w: number,
+    h: number,
+    common: Record<string, unknown>,
+  ): Promise<number> {
     const full = w * h <= 512 * 512;
     const gw = full ? w : DEHAZE_GRID;
     const gh = full ? h : DEHAZE_GRID;
@@ -473,24 +505,15 @@ export class PhotoPipeline {
       gw,
       gh,
     );
-    const px = grid.readPixels(0, 0, {
-      width: gw,
-      height: gh,
-      colorType: RGBA_8888,
-      alphaType: UNPREMUL,
-    });
-    if (!(px instanceof Uint8Array)) return 0.05;
-    const vals = new Float64Array(gw * gh);
-    for (let i = 0; i < vals.length; i += 1) vals[i] = px[i * 4]! / 255;
-    return dehazeLight(vals);
+    return gridDehazeLight(grid, gw, gh);
   }
 
   /** The whole document as one premultiplied shader at the geometry-corrected size. */
-  render(
+  async render(
     source: PipelineSource,
     doc: Pick<PhotoDoc, 'layers' | 'geometry' | 'masks'>,
     opts: RenderOptions = {},
-  ): Rendered {
+  ): Promise<Rendered> {
     const geometry = doc.geometry ?? IDENTITY;
     const g = this.geometry(source, geometry);
     const w = g.color.width();
@@ -524,7 +547,7 @@ export class PhotoPipeline {
       if (!plan) continue;
       const shaderIn = cur;
       const input: SkImage = curImage ?? this.detail.get(chainKey, () => this.bake(shaderIn, w, h));
-      cur = this.runDetail(plan, input, layer, maskOf.get(layer) ?? null);
+      cur = await this.runDetail(plan, input, layer, maskOf.get(layer) ?? null);
       chainKey += `|${JSON.stringify(layer)}`;
       curImage = null;
     }
@@ -548,15 +571,17 @@ export class PhotoPipeline {
   }
 
   /** Render to an RGBA8 raster (unpremultiplied) at `width`×`height` (default: output size). */
-  readPixels(
+  async readPixels(
     source: PipelineSource,
     doc: Pick<PhotoDoc, 'layers' | 'geometry' | 'masks'>,
     opts: RenderOptions & { width?: number; height?: number } = {},
-  ): { pixels: Uint8Array; width: number; height: number } | null {
-    const r = this.render(source, doc, opts);
+  ): Promise<{ pixels: Uint8Array; width: number; height: number } | null> {
+    const r = await this.render(source, doc, opts);
     const w = opts.width ?? r.width;
     const h = opts.height ?? r.height;
-    const s = this.api.Surface.Make(w, h);
+    const s =
+      (this.opts.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ??
+      this.api.Surface.MakeRaster(w, h);
     if (!s) return null;
     const canvas = s.getCanvas();
     canvas.scale(w / r.width, h / r.height);
@@ -564,9 +589,11 @@ export class PhotoPipeline {
     paint.setShader(r.shader);
     canvas.drawRect(this.api.XYWHRect(0, 0, r.width, r.height), paint);
     s.flush();
-    const px = s
-      .makeImageSnapshot()
-      .readPixels(0, 0, { width: w, height: h, colorType: RGBA_8888, alphaType: UNPREMUL });
-    return px instanceof Uint8Array ? { pixels: px, width: w, height: h } : null;
+    const px = pixelBytes(
+      await s
+        .makeImageSnapshot()
+        .readPixels(0, 0, { width: w, height: h, colorType: RGBA_8888, alphaType: UNPREMUL }),
+    );
+    return px ? { pixels: px, width: w, height: h } : null;
   }
 }

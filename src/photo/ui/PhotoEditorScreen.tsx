@@ -5,7 +5,7 @@
  * B&W · More · Layers). The chrome follows the locale's direction; the canvas and the graphs are
  * always LTR.
  */
-import { Skia, type SkImage } from '@shopify/react-native-skia';
+import { Skia, type SkImage } from 'react-native-skia';
 import { File, Paths } from 'expo-file-system';
 import { router, type Href } from 'expo-router';
 import { usePreventRemove } from 'expo-router/react-navigation';

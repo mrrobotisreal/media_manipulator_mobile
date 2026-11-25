@@ -3,7 +3,7 @@
  * route is owner-only, so the request carries `buildHeaders()` (the one header builder); the file
  * lands in `cache/photo/<projectId>/proxy` and is decoded from there.
  */
-import { Skia, type SkImage } from '@shopify/react-native-skia';
+import { Skia, type SkImage } from 'react-native-skia';
 import { Directory, File, Paths } from 'expo-file-system';
 import { buildHeaders } from '@/api/baseQuery';
 import { API_BASE_URL } from '@/api/config';
@@ -13,7 +13,7 @@ export const photoCacheDir = (projectId: string) => new Directory(Paths.cache, '
 
 async function decodeFile(uri: string): Promise<SkImage | null> {
   const data = await Skia.Data.fromURI(uri);
-  return Skia.Image.MakeImageFromEncoded(data);
+  return Skia.Image.MakeFromEncoded(data);
 }
 
 /**
@@ -96,7 +96,8 @@ export const skiaSourceDeps: SourceDeps<SkImage> = {
         paint,
       );
     surface.flush();
-    // A raster copy: the offscreen surface's GPU texture is not shared across Skia views.
-    return surface.makeImageSnapshot().makeNonTextureImage();
+    // Skia 3 (Graphite): a GPU snapshot is drawn by every canvas and thread, so the Skia 2 raster
+    // copy (`makeNonTextureImage`) is gone (MA60).
+    return surface.makeImageSnapshot();
   },
 };
