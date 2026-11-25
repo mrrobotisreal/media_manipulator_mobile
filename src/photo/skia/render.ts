@@ -5,7 +5,7 @@
  */
 import type { SkImage, SkPicture } from 'react-native-skia';
 import type { AdjustmentLayer } from '../photoTypes';
-import { disposeNow } from './lifetime';
+import { Scope, disposeNow } from './lifetime';
 import { pixelBytes } from './readback';
 import { buildDocShader, type SkiaApi } from './shaderChain';
 
@@ -24,9 +24,16 @@ export function recordDocPicture(
   const rec = api.PictureRecorder();
   const canvas = rec.beginRecording(api.XYWHRect(0, 0, w, h));
   const paint = api.Paint();
-  paint.setShader(buildDocShader(api, image, before ? [] : layers));
-  canvas.drawRect(api.XYWHRect(0, 0, w, h), paint);
-  return rec.finishRecordingAsPicture();
+  // The picture keeps what it draws natively; the JS wrappers go now (MA60).
+  const made = new Scope();
+  try {
+    paint.setShader(buildDocShader(api, image, before ? [] : layers, 'smooth', (o) => made.own(o)));
+    canvas.drawRect(api.XYWHRect(0, 0, w, h), paint);
+    return rec.finishRecordingAsPicture();
+  } finally {
+    made.release();
+    disposeNow([paint, rec]);
+  }
 }
 
 /**
@@ -46,7 +53,8 @@ export async function renderDocPixels(
   const canvas = surface.getCanvas();
   canvas.scale(width / image.width(), height / image.height());
   const paint = api.Paint();
-  paint.setShader(buildDocShader(api, image, layers));
+  const made = new Scope();
+  paint.setShader(buildDocShader(api, image, layers, 'smooth', (o) => made.own(o)));
   canvas.drawRect(api.XYWHRect(0, 0, image.width(), image.height()), paint);
   surface.flush();
   const snap = surface.makeImageSnapshot();
@@ -55,6 +63,7 @@ export async function renderDocPixels(
       await snap.readPixels(0, 0, { width, height, colorType: RGBA_8888, alphaType: UNPREMUL }),
     );
   } finally {
-    disposeNow([snap, surface]);
+    made.release();
+    disposeNow([paint, snap, surface]);
   }
 }

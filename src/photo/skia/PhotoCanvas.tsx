@@ -143,16 +143,25 @@ export function PhotoCanvas({
     const record = async (d: PhotoDoc, opts: Parameters<PhotoPipeline['render']>[2]) => {
       const r = await pipeline.render(source, displayDoc(d, ignoreCrop), opts);
       const rec = Skia.PictureRecorder();
-      const canvas = rec.beginRecording(Skia.XYWHRect(0, 0, r.width, r.height));
       const paint = Skia.Paint();
-      paint.setShader(r.shader);
-      canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
-      return {
-        picture: rec.finishRecordingAsPicture(),
-        width: r.width,
-        height: r.height,
-        release: r.release,
-      };
+      try {
+        const canvas = rec.beginRecording(Skia.XYWHRect(0, 0, r.width, r.height));
+        paint.setShader(r.shader);
+        canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
+        return {
+          picture: rec.finishRecordingAsPicture(),
+          width: r.width,
+          height: r.height,
+          release: r.release,
+        };
+      } catch (e) {
+        r.release();
+        throw e;
+      } finally {
+        // The picture holds its own copy of the paint; the wrapper would pin the render's shader
+        // (and through it the render's textures) until a GC (MA60).
+        disposeNow([paint, rec]);
+      }
     };
     // MA60 (Skia 3): what is on screen now. When a newer render replaces it, its pictures and the
     // render's GPU intermediates are released a moment later (the UI thread may still be drawing

@@ -84,14 +84,17 @@ export function sourceShader(image: SkImage, sampling: SourceSampling = 'smooth'
 /**
  * Wraps `input` in one shader per planned layer. Unplanned layers (rung 4) are skipped. `maskFor`
  * (MA51) gives a layer's finished mask as a shader (value in `.r`), or null when it has none.
+ * `own` (MA60) adopts every shader made here (the pipeline passes its render scope's `own`, so the
+ * chain is disposed with the render; a shader wrapper pins the textures it samples).
  */
 export function chainShaders(
   api: SkiaApi,
   input: SkShader,
   layers: readonly AdjustmentLayer[],
   maskFor?: (layer: AdjustmentLayer) => SkShader | null,
+  own: <T>(o: T) => T = (o) => o,
 ): SkShader {
-  const ones = api.Shader.MakeColor(api.Color('white'));
+  const ones = own(api.Shader.MakeColor(api.Color('white')));
   let cur = input;
   for (const layer of planSkslLayers(layers)) {
     const mask = maskFor?.(layer) ?? null;
@@ -101,26 +104,27 @@ export function chainShaders(
     if (packed.curves) {
       const img = textureImage(api, layer.params, packed.curves);
       if (!img) continue;
-      children.push(exactShader(img));
+      children.push(own(exactShader(img)));
     }
     if (layer.type === 'lut') {
       // No usable cube: the web treats the layer as the identity; so does the phone.
       const img = packed.lut ? textureImage(api, layer.params, packed.lut) : null;
       if (!img) continue;
-      children.push(exactShader(img));
+      children.push(own(exactShader(img)));
     }
     if (children.length !== childNames(packed.type).length) continue;
-    cur = effectFor(api, packed.type).makeShaderWithChildren(packed.uniforms, children);
+    cur = own(effectFor(api, packed.type).makeShaderWithChildren(packed.uniforms, children));
   }
   return cur;
 }
 
-/** Source + every planned layer: what the canvas paints. */
+/** Source + every planned layer: what the canvas paints. `own` adopts every shader made. */
 export function buildDocShader(
   api: SkiaApi,
   image: SkImage,
   layers: readonly AdjustmentLayer[],
   sampling: SourceSampling = 'smooth',
+  own: <T>(o: T) => T = (o) => o,
 ): SkShader {
-  return chainShaders(api, sourceShader(image, sampling), layers);
+  return chainShaders(api, own(sourceShader(image, sampling)), layers, undefined, own);
 }

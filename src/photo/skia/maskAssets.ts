@@ -151,20 +151,24 @@ export class MaskAssetStore implements AlphaSource {
     const w = Math.max(1, Math.round(w0 * k));
     const h = Math.max(1, Math.round(h0 * k));
     const useAlpha = kind === 'brush' || (await hasTransparency(encoded));
-    const img = encoded.makeShaderOptions(0, 0, k < 1 ? 1 : 0, 0, this.api.Matrix().scale(k, k));
     const s =
       (this.gpu ? this.api.Surface.MakeOffscreen(w, h) : null) ?? this.api.Surface.MakeRaster(w, h);
     if (!s) return null;
+    const img = encoded.makeShaderOptions(0, 0, k < 1 ? 1 : 0, 0, this.api.Matrix().scale(k, k));
+    const grey = this.effect.makeShaderWithChildren([useAlpha ? 1 : 0], [img]);
     const paint = this.api.Paint();
-    paint.setBlendMode(BLEND_SRC);
-    paint.setShader(this.effect.makeShaderWithChildren([useAlpha ? 1 : 0], [img]));
-    s.getCanvas().drawRect(this.api.XYWHRect(0, 0, w, h), paint);
-    s.flush();
-    // Skia 3 (Graphite): a GPU snapshot is shared by every canvas; no raster copy (MA60). The
-    // surface is released right away (the snapshot keeps the pixels).
-    const out = s.makeImageSnapshot();
-    disposeNow([s]);
-    return out;
+    try {
+      paint.setBlendMode(BLEND_SRC);
+      paint.setShader(grey);
+      s.getCanvas().drawRect(this.api.XYWHRect(0, 0, w, h), paint);
+      s.flush();
+      // Skia 3 (Graphite): a GPU snapshot is shared by every canvas; no raster copy (MA60). The
+      // surface, the paint and the shaders (which pin the decoded PNG) go right away; the
+      // snapshot keeps the pixels.
+      return s.makeImageSnapshot();
+    } finally {
+      disposeNow([paint, grey, img, s]);
+    }
   }
 
   private load(id: string, kind: 'brush' | 'subject'): Promise<SkImage | null> {
