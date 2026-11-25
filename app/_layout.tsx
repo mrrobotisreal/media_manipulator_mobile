@@ -14,6 +14,7 @@ import { Component, useEffect, type ErrorInfo, type ReactNode } from 'react';
 import { AnalyticsHost } from '@/analytics/AnalyticsHost';
 import { reportClientError } from '@/analytics/errorHandlers';
 import { startCrashReporting } from '@/analytics/runtime';
+import { checkGpuCapability } from '@/gpu/capability';
 import { getJobEngine } from '@/jobs/runtime';
 import { isTerminal } from '@/jobs/types';
 import { startAuth } from '@/auth/gate';
@@ -112,6 +113,19 @@ function JobEngineHost() {
   return null;
 }
 
+/**
+ * MA60: the GPU capability check (one WebGPU device attempt per launch, cached per app version) for
+ * the GPU editors. Started after the account is ready so `gpu_capability_checked` carries the
+ * session; a failure is a result (`unavailable`), never a throw. Aperture does not depend on it.
+ */
+function GpuCapabilityHost() {
+  const ready = useAppSelector((s) => s.auth.status === 'ready');
+  useEffect(() => {
+    if (ready) void checkGpuCapability().catch(() => undefined);
+  }, [ready]);
+  return null;
+}
+
 /** Applies `settings.locale` once persisted settings are rehydrated. */
 function LocaleApplier() {
   useApplyLocale();
@@ -148,6 +162,7 @@ export default function RootLayout() {
                     <ShareIntentRouter />
                     <IntakeCacheSweeper />
                     <JobEngineHost />
+                    <GpuCapabilityHost />
                     <PushHost />
                     <Stack
                       screenOptions={{
