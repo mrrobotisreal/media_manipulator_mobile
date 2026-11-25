@@ -1,0 +1,5 @@
+# eas.json describes how a build is made (profiles, channels, Gradle command, ABIs), not what is in
+# the app. Anything in it that changes the app goes through app.config.ts, which stays in the
+# fingerprint. Without this line any eas.json edit changes every profile's runtime version
+# (docs/RELEASE.md section 3). Decided by Mitch 2026-11-25.
+eas.json
