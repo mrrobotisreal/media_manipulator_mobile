@@ -66,10 +66,17 @@ npx eas-cli@latest update --channel production --message "<summary>"
 ```
 
 - **Only for JS/asset-only changes.** A new/updated native module, plugin, permission or `app.config.ts` native field changes the fingerprint: ship a store build instead.
+- **`eas.json` is part of the fingerprint.** Any edit to it (even a profile no build uses) changes the runtime version of **every** profile, `production` included (verified in MA60 with `npx expo-updates fingerprint:generate --platform android`: adding the two arm64 profiles moved `d7809b12…` to `5440791f…`, with `eas.json` the only differing source). Never edit `eas.json` between a store build and the OTAs meant for it.
 - **Never OTA anything touching purchases or ads** (ADR MA-0007).
 - Verify on device: Account -> About shows the update id and channel; it changes on the second launch after publishing.
 - Rollback: `npx eas-cli@latest update:rollback-to-embedded --channel production` (back to the binary's bundle) or
   `npx eas-cli@latest update:republish --group <update-group-id> --channel production` (re-publish an earlier group). Check `eas update --help` if a name has moved.
+
+### Fingerprints (Android, runtime version)
+
+| Date       | Build                                                                                              | Fingerprint                                | Note                                                                                                                                                                                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2026-11-24 | MA60 (`react-native-skia` 3.10.2 + `react-native-webgpu` 0.22.0), branch `ma60-skia-3` @ `64644f3` | `5440791f0df4801235e886fdcfe2c869764e6a28` | A native change: no OTA published before it reaches this build. Accepted by the coordinator although it differs from the `d7809b12…` of the same native code, because the arm64 test profiles edited `eas.json` (see above); nothing was published to either hash. |
 
 ## 4. Submit
 
