@@ -37,6 +37,7 @@ import {
 } from '../toolMath';
 import type { CanvasToolHost } from '../skia/PhotoCanvas';
 import { beginBrush, bakeInto, brushIndexOf, paintStroke, type BrushSession } from './brush';
+import { createPickQueue } from './pickQueue';
 import {
   gradientComponent,
   handleAngle,
@@ -117,6 +118,9 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
   const view = useRef<ViewState | null>(null);
   const drag = useRef<Drag | null>(null);
   const session = useRef<BrushSession | null>(null);
+  // Eyedropper picks apply in tap order (each waits for the previous one's async readback), so
+  // a fast tap then long-press can never land replace-after-add the wrong way round (MA60).
+  const enqueuePick = useRef(createPickQueue()).current;
   const [cropDraft, setCropDraft] = useState<CropRectN | null>(null);
   const depsRef = useRef(deps);
   depsRef.current = deps;
@@ -421,21 +425,19 @@ export function useToolOverlay(deps: ToolDeps, revision: number): CanvasToolHost
     if (t === 'eyedropper') {
       const id = selection();
       if (!id) return dp.onRefused?.('no_layer');
-      const component = tools.get().component;
-      void dp
-        .readPixel(n)
-        .catch(() => null)
-        .then((rgb) => {
-          const cur = docNow();
-          if (!rgb || !cur || !cur.layers.some((l) => l.id === id)) return;
-          const before = maskOfLayer(cur, id)?.components.length ?? 0;
-          mutate(store, 'colourTarget', (dd) => pickColorTarget(dd, id, component, rgb, long));
-          const after = maskOfLayer(docNow()!, id)?.components.length ?? 0;
-          if (after > before) {
-            tools.set({ component: after - 1 });
-            dp.onMaskAdded?.('colorRange');
-          }
-        });
+      void enqueuePick(dp.readPixel(n), (rgb) => {
+        const cur = docNow();
+        if (!rgb || !cur || !cur.layers.some((l) => l.id === id)) return;
+        // The component at apply time: a previous pick in this chain may have added one.
+        const component = tools.get().component;
+        const before = maskOfLayer(cur, id)?.components.length ?? 0;
+        mutate(store, 'colourTarget', (dd) => pickColorTarget(dd, id, component, rgb, long));
+        const after = maskOfLayer(docNow()!, id)?.components.length ?? 0;
+        if (after > before) {
+          tools.set({ component: after - 1 });
+          dp.onMaskAdded?.('colorRange');
+        }
+      });
     } else if (t === 'redEye') {
       const out = outputSizeOf(d, dp.sourceSize);
       const r = redEyeAt(d, n, tools.get().redEyeRadius, out.width, out.height);

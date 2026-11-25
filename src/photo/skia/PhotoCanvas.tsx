@@ -12,8 +12,9 @@
  * (`ToolOverlay`, drawn on top in the same transform). The canvas is always `direction: 'ltr'`.
  *
  * react-native-skia 3 (MA60): `pipeline.render` and `readPixels` are async (readback is a promise).
- * Each document change takes a generation number and only the newest render publishes its picture;
- * the histogram tick skips while a readback is in flight.
+ * Renders go through `renderPump` (latest wins: one in flight, changes meanwhile coalesce into one
+ * pending pass; a failure is reported as `client_error` and retried); the histogram tick skips
+ * while a readback is in flight.
  */
 import { Canvas, Group, Picture, Skia, type SkImage, type SkPicture } from 'react-native-skia';
 import { useCallback, useEffect, useMemo, type ReactNode } from 'react';
@@ -32,6 +33,7 @@ import {
   type SharedValue,
 } from 'react-native-reanimated';
 import { scheduleOnRN } from 'react-native-worklets';
+import { reportClientError } from '@/analytics/errorHandlers';
 import { colors } from '@/ui/tokens';
 import {
   computeHistogram64,
@@ -43,6 +45,7 @@ import type { PhotoDoc } from '../photoTypes';
 import type { ViewState } from '../tools/canvasMath';
 import { actualScale, clampOffset, doubleTapTarget, fitScale, pinchTo } from '../view';
 import type { MaskView, PhotoPipeline, PipelineSource } from './pipeline';
+import { createRenderPump } from './renderPump';
 
 export type CompareGesture = 'hold' | 'toggle';
 
@@ -136,9 +139,6 @@ export function PhotoCanvas({
 
   // Re-record on every document change; the shared value hands the picture to the UI thread.
   useEffect(() => {
-    let last: PhotoDoc | null = null;
-    let generation = 0;
-    let alive = true;
     const record = async (d: PhotoDoc, opts: Parameters<PhotoPipeline['render']>[2]) => {
       const r = await pipeline.render(source, displayDoc(d, ignoreCrop), opts);
       const rec = Skia.PictureRecorder();
@@ -148,40 +148,40 @@ export function PhotoCanvas({
       canvas.drawRect(Skia.XYWHRect(0, 0, r.width, r.height), paint);
       return { picture: rec.finishRecordingAsPicture(), width: r.width, height: r.height };
     };
-    const draw = async () => {
-      const d = doc.get();
-      if (!d || d === last) return;
-      last = d;
-      const mine = ++generation;
-      const [out, prior] = await Promise.all([
-        record(d, { maskView, viewLayerId }),
-        record(d, { before: true }),
-      ]);
-      // A newer document (or an unmount) superseded this render while it awaited a readback.
-      if (!alive || mine !== generation) return;
-      after.value = out.picture;
-      before.value = prior.picture;
-      if (out.width !== imgW.value || out.height !== imgH.value) {
-        imgW.value = out.width;
-        imgH.value = out.height;
-        // The output size changed (crop, rotate 90): fit again.
-        if (canvasW.value > 0) {
-          scale.value = fitScale(
-            { width: canvasW.value, height: canvasH.value },
-            { width: out.width, height: out.height },
-          );
-          tx.value = 0;
-          ty.value = 0;
+    const pump = createRenderPump({
+      get: doc.get,
+      render: async (d: PhotoDoc) => {
+        const [out, prior] = await Promise.all([
+          record(d, { maskView, viewLayerId }),
+          record(d, { before: true }),
+        ]);
+        return { out, prior };
+      },
+      publish: ({ out, prior }) => {
+        after.value = out.picture;
+        before.value = prior.picture;
+        if (out.width !== imgW.value || out.height !== imgH.value) {
+          imgW.value = out.width;
+          imgH.value = out.height;
+          // The output size changed (crop, rotate 90): fit again.
+          if (canvasW.value > 0) {
+            scale.value = fitScale(
+              { width: canvasW.value, height: canvasH.value },
+              { width: out.width, height: out.height },
+            );
+            tx.value = 0;
+            ty.value = 0;
+          }
         }
-      }
-    };
-    const run = () => {
-      draw().catch(() => undefined);
-    };
-    run();
-    const unsub = doc.subscribe(run);
+      },
+      // A render failure keeps the last picture on screen; it is reported once per document
+      // (client_error + a Crashlytics non-fatal) and retried; the next document change tries again.
+      report: (e) => reportClientError(e, 'manual', { stage: 'photo_render', record: true }),
+    });
+    pump.request();
+    const unsub = doc.subscribe(pump.request);
     return () => {
-      alive = false;
+      pump.stop();
       unsub();
     };
   }, [
