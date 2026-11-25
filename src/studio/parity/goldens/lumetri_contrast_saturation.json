@@ -1,0 +1,52 @@
+{
+  "toleranceId": "lumetri_contrast_saturation",
+  "description": "Lumetri contrast 1.4 / saturation 0.6 (eq-equivalent tail stage).",
+  "sampleFrames": [
+    15,
+    45,
+    75
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "lumetri",
+                "id": "e-lum",
+                "enabled": true,
+                "exposure": 0,
+                "contrast": 1.4,
+                "saturation": 0.6,
+                "temperature": 0,
+                "tint": 0,
+                "vibrance": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

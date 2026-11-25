@@ -1,0 +1,42 @@
+{
+  "toleranceId": "speed_freeze",
+  "description": "Freeze frame: the source frame at 1.5 s held for 2 s (60 frames).",
+  "sampleFrames": [
+    5,
+    30,
+    55
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 1.5,
+            "sourceOut": 3.5,
+            "freeze": {
+              "sourceTime": 1.5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

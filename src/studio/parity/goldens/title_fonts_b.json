@@ -1,0 +1,125 @@
+{
+  "toleranceId": "title_fonts",
+  "description": "Font-parity batch B: one text layer per shipped family (Bebas Neue, Anton, Playfair Display, Merriweather, Lora, JetBrains Mono, Space Mono, Dancing Script), rendered on the timeline's black base. Bounds browser-vs-FreeType glyph rasterization per family.",
+  "sampleFrames": [
+    15,
+    60,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-title",
+            "assetId": "",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "title": {
+              "layers": [
+                {
+                  "type": "text",
+                  "text": "Bebas Neue 0123",
+                  "fontFamily": "Bebas Neue",
+                  "fontSizePx": 37,
+                  "fontWeight": 400,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.0625
+                },
+                {
+                  "type": "text",
+                  "text": "Anton 0123",
+                  "fontFamily": "Anton",
+                  "fontSizePx": 37,
+                  "fontWeight": 400,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.1875
+                },
+                {
+                  "type": "text",
+                  "text": "Playfair Display 0123",
+                  "fontFamily": "Playfair Display",
+                  "fontSizePx": 37,
+                  "fontWeight": 700,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.3125
+                },
+                {
+                  "type": "text",
+                  "text": "Merriweather 0123",
+                  "fontFamily": "Merriweather",
+                  "fontSizePx": 37,
+                  "fontWeight": 400,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.4375
+                },
+                {
+                  "type": "text",
+                  "text": "Lora 0123",
+                  "fontFamily": "Lora",
+                  "fontSizePx": 37,
+                  "fontWeight": 700,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.5625
+                },
+                {
+                  "type": "text",
+                  "text": "JetBrains Mono 0123",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSizePx": 37,
+                  "fontWeight": 400,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.6875
+                },
+                {
+                  "type": "text",
+                  "text": "Space Mono 0123",
+                  "fontFamily": "Space Mono",
+                  "fontSizePx": 37,
+                  "fontWeight": 700,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.8125
+                },
+                {
+                  "type": "text",
+                  "text": "Dancing Script 0123",
+                  "fontFamily": "Dancing Script",
+                  "fontSizePx": 37,
+                  "fontWeight": 400,
+                  "fillColor": "#FFFFFF",
+                  "align": "center",
+                  "x": 0.5,
+                  "y": 0.9375
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {}
+}

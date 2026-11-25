@@ -1,0 +1,57 @@
+{
+  "toleranceId": "transition_wipe",
+  "description": "Wipe from the left over a 1s overlap: the entering clip's revealed region grows left->right (animated crop in the export, canvas-space mask in the shader).",
+  "sampleFrames": [
+    51,
+    60,
+    69
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-out",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 2.5
+          },
+          {
+            "id": "c-in",
+            "assetId": "fx-b",
+            "streamIndex": 0,
+            "timelineStart": 1.5,
+            "sourceIn": 0,
+            "sourceOut": 2.5,
+            "transitionInSeconds": 1,
+            "transition": {
+              "type": "wipeLeft",
+              "durationSeconds": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-b": {
+      "file": "srcB.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "toleranceId": "image_hold_transform",
+  "description": "Held photo with static scale 0.6, rotation 20 deg and an animated position keyframe (still-image clips take the same transform path as video).",
+  "sampleFrames": [
+    15,
+    60,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-img",
+            "assetId": "fx-photo",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 0.6,
+              "rotationDeg": 20
+            },
+            "keyframes": {
+              "positionX": [
+                {
+                  "t": 0,
+                  "value": -0.2,
+                  "ease": "linear"
+                },
+                {
+                  "t": 4,
+                  "value": 0.2,
+                  "ease": "linear"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-photo": {
+      "file": "photo.jpg",
+      "kind": "image",
+      "hasAudio": false
+    }
+  }
+}

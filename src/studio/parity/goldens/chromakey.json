@@ -1,0 +1,71 @@
+{
+  "toleranceId": "chromakey",
+  "description": "Green-screen fixture keyed over a base clip (UV-distance key; edge fringe bounded).",
+  "sampleFrames": [
+    15,
+    45,
+    75
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-base",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ]
+      },
+      {
+        "id": "t-v1",
+        "kind": "video",
+        "index": 1,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-key",
+            "assetId": "fx-green",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "chromakey",
+                "id": "e-key",
+                "enabled": true,
+                "keyColor": "#00FF00",
+                "similarity": 0.25,
+                "blend": 0.15,
+                "despill": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-green": {
+      "file": "green.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "toleranceId": "speed_reverse",
+  "description": "Reverse at 1x: the preview plays the reversed proxy forward with mirrored source time; the export trims then applies reverse.",
+  "sampleFrames": [
+    15,
+    60,
+    100
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "reverse": true
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false,
+      "reversedFile": "srcA_rev.mp4"
+    }
+  }
+}

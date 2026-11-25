@@ -1,0 +1,108 @@
+{
+  "toleranceId": "effect_stack_first_per_type",
+  "description": "Policy check: duplicate same-type effects must render identically to the first-enabled-only EDL. Compared WITHIN each pipeline (project vs projectRef), not across pipelines.",
+  "sampleFrames": [
+    45
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "lumetri",
+                "id": "e-dis",
+                "enabled": false,
+                "exposure": 2,
+                "contrast": 1,
+                "saturation": 1,
+                "temperature": 0,
+                "tint": 0,
+                "vibrance": 0
+              },
+              {
+                "type": "lumetri",
+                "id": "e-first",
+                "enabled": true,
+                "exposure": 0.5,
+                "contrast": 1,
+                "saturation": 1,
+                "temperature": 0,
+                "tint": 0,
+                "vibrance": 0
+              },
+              {
+                "type": "lumetri",
+                "id": "e-dup",
+                "enabled": true,
+                "exposure": -1,
+                "contrast": 1,
+                "saturation": 1,
+                "temperature": 0,
+                "tint": 0,
+                "vibrance": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "projectRef": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "lumetri",
+                "id": "e-first",
+                "enabled": true,
+                "exposure": 0.5,
+                "contrast": 1,
+                "saturation": 1,
+                "temperature": 0,
+                "tint": 0,
+                "vibrance": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

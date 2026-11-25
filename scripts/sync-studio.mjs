@@ -88,6 +88,17 @@ export const TS_FILES = {
   ),
   // A full v3 project the web's Medi op tests share (pure; imports only the model's types).
   'lib/assistant/ops/studioFixture.ts': 'fixtures/studioFixture.ts',
+  // MA62: the web's WebGL2 compositor, as a TEST-ONLY reference. Never imported by app code (the
+  // phone's compositor is the SkSL port in mobile/skia/compositor/); the parity suite runs it on a
+  // recording fake WebGL2 context to read the uniforms and quad geometry the web sets. Nothing in it
+  // touches the DOM at import time.
+  'lib/studio/glCompositor.ts': 'compositor/glCompositor.ts',
+  // MA62: EDL -> compositor layers at one instant: the web's mirror of the editor's `buildGLLayer`
+  // (preview-surface.tsx, not importable). DOM-free; its GLCompositor import is type-only and its
+  // one call is `comp.hasLut(id)`. The phone builds its layers with this copy.
+  'parity-harness/capture/buildLayers.ts': 'compositor/buildLayers.ts',
+  // MA62: the parity harness's pure comparator (PSNR, mean CIEDE2000, noise-floor calibration).
+  'parity-harness/imageMetrics.ts': 'parity/imageMetrics.ts',
 };
 
 /**
@@ -126,6 +137,7 @@ export const TEST_FILES = {
     `${S}/captions`,
     'captions/',
   ),
+  'parity-harness/imageMetrics.test.ts': 'parity/imageMetrics.test.ts',
 };
 
 /** Byte-copied single files (catalogs and vitest fixtures). */
@@ -133,12 +145,17 @@ export const RAW_FILES = {
   'lib/studio/captions/captionsCatalog.json': 'captions/captionsCatalog.json',
   'lib/studio/ease.fixtures.json': 'ease.fixtures.json',
   'lib/studio/trackAudibility.fixture.json': 'trackAudibility.fixture.json',
+  // MA62: the harness's deterministic fixture LUT (the lut_* scenarios reference it).
+  'parity-harness/fixtures/fixture.cube': 'parity/fixture.cube',
 };
 
 /** Directory trees copied byte for byte: web dir -> app dir. */
 export const TREES = {
   // The Go/TS ASS golden pairs (cue JSON + expected .ass), checked by an app jest suite.
   'lib/studio/captions/goldens': 'captions/goldens',
+  // MA62: the parity scenarios (golden EDLs + sample frames per tolerance row); the compositor
+  // parity suite builds its layers from them.
+  'parity-harness/goldens': 'parity/goldens',
 };
 
 /**
@@ -160,7 +177,6 @@ export const EXCLUDED = {
   'lib/studio/studioBackend.ts': 'authedFetch, Firebase, analytics, fetch (replaced by the seam)',
   'lib/studio/studioBackendProvider.tsx': 'React context over studioBackend',
   'lib/studio/studioBackend.selfcheck.ts': 'studioBackend + the CreaTV embed protocol',
-  'lib/studio/glCompositor.ts': 'WebGL2 / HTMLCanvasElement (ported to SkSL in MA62)',
   'lib/studio/imageCache.ts': 'fetch + createImageBitmap',
   'lib/studio/frameGrab.ts': 'HTMLCanvasElement / document',
   'lib/studio/draftStore.ts': 'IndexedDB (rewritten on MMKV: src/studio/mobile/drafts.ts)',

@@ -1,0 +1,65 @@
+{
+  "toleranceId": "keyframe_transform",
+  "description": "Animated position + scale + rotation + opacity (part 15): eased lanes evaluated by the shared curve contract on both sides.",
+  "sampleFrames": [
+    15,
+    45,
+    75,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "keyframes": {
+              "positionX": [
+                { "t": 0, "value": -0.25, "ease": "easeBoth" },
+                { "t": 4, "value": 0.25, "ease": "linear" }
+              ],
+              "positionY": [
+                { "t": 0.5, "value": -0.1, "ease": "linear" },
+                { "t": 3.5, "value": 0.1, "ease": "linear" }
+              ],
+              "scale": [
+                { "t": 0, "value": 0.4, "ease": "easeIn" },
+                { "t": 2, "value": 0.8, "ease": "easeOut" },
+                { "t": 4, "value": 0.5, "ease": "linear" }
+              ],
+              "rotation": [
+                { "t": 0, "value": -30, "ease": "linear" },
+                { "t": 4, "value": 30, "ease": "linear" }
+              ],
+              "opacity": [
+                { "t": 0, "value": 0.3, "ease": "easeOut" },
+                { "t": 2, "value": 1, "ease": "hold" },
+                { "t": 3, "value": 0.6, "ease": "linear" },
+                { "t": 4, "value": 1, "ease": "linear" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

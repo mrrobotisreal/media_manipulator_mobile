@@ -1,0 +1,86 @@
+{
+  "toleranceId": "passthrough",
+  "description": "Audio-ducking scene: voice clip ducks the bed via sidechaincompress. Audio parity is audible-equivalence only (no numeric tolerance — see design/03-parity-tolerances.md); this golden proves the ducking export graph renders end-to-end, and its untouched VIDEO frames are held to the passthrough row.",
+  "sampleFrames": [
+    45
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ]
+      },
+      {
+        "id": "t-bed",
+        "kind": "audio",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-bed",
+            "assetId": "fx-bed",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ]
+      },
+      {
+        "id": "t-voice",
+        "kind": "audio",
+        "index": 1,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-voice",
+            "assetId": "fx-voice",
+            "streamIndex": 0,
+            "timelineStart": 1,
+            "sourceIn": 0,
+            "sourceOut": 2
+          }
+        ]
+      }
+    ],
+    "audio": {
+      "duckingEnabled": true,
+      "duckVoiceTrackId": "t-voice",
+      "duckAmountDb": 12,
+      "duckAttackMs": 50,
+      "duckReleaseMs": 250
+    }
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-bed": {
+      "file": "bed.m4a",
+      "kind": "audio",
+      "hasAudio": true
+    },
+    "fx-voice": {
+      "file": "voice.m4a",
+      "kind": "audio",
+      "hasAudio": true
+    }
+  }
+}

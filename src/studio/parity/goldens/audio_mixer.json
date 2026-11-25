@@ -1,0 +1,117 @@
+{
+  "toleranceId": "passthrough",
+  "description": "Audio-mixer scene (part 19): two audio tracks with track gain/pan, 3-band EQ and compressor (Voice clarity preset values) plus a master gain. Audio parity is audible-equivalence only (BiquadFilter/DynamicsCompressorNode vs ffmpeg lowshelf/equalizer/highshelf/acompressor differ subtly; see design/03-parity-tolerances.md 'Audio mixer'); this golden proves the mixer export graph renders end-to-end and its untouched VIDEO frames are held to the passthrough row.",
+  "sampleFrames": [
+    45
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ]
+      },
+      {
+        "id": "t-bed",
+        "kind": "audio",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-bed",
+            "assetId": "fx-bed",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4
+          }
+        ],
+        "gain": 0.7,
+        "pan": -0.3,
+        "effects": {
+          "eq": {
+            "lowGainDb": 1,
+            "midGainDb": -3,
+            "highGainDb": 1
+          },
+          "compressor": {
+            "thresholdDb": -18,
+            "ratio": 2,
+            "attackMs": 30,
+            "releaseMs": 400,
+            "makeupDb": 1
+          }
+        }
+      },
+      {
+        "id": "t-voice",
+        "kind": "audio",
+        "index": 1,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-voice",
+            "assetId": "fx-voice",
+            "streamIndex": 0,
+            "timelineStart": 1,
+            "sourceIn": 0,
+            "sourceOut": 2
+          }
+        ],
+        "gain": 1.2,
+        "effects": {
+          "eq": {
+            "lowGainDb": -4,
+            "midGainDb": 2,
+            "highGainDb": 3
+          },
+          "compressor": {
+            "thresholdDb": -22,
+            "ratio": 3,
+            "attackMs": 8,
+            "releaseMs": 180,
+            "makeupDb": 3
+          }
+        }
+      }
+    ],
+    "audio": {
+      "duckingEnabled": false,
+      "duckAmountDb": 9,
+      "duckAttackMs": 120,
+      "duckReleaseMs": 400,
+      "masterGain": 0.8
+    }
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    },
+    "fx-bed": {
+      "file": "bed.m4a",
+      "kind": "audio",
+      "hasAudio": true
+    },
+    "fx-voice": {
+      "file": "voice.m4a",
+      "kind": "audio",
+      "hasAudio": true
+    }
+  }
+}

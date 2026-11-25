@@ -1,0 +1,82 @@
+{
+  "toleranceId": "keyframe_lumetri",
+  "description": "Animated Lumetri color (part 15): exposure/contrast/saturation/temperature/tint/vibrance lanes driven by the sendcmd sidecar on export and per-frame uniforms in preview.",
+  "sampleFrames": [
+    15,
+    45,
+    75,
+    105
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "effects": [
+              {
+                "type": "lumetri",
+                "id": "e-lum",
+                "enabled": true,
+                "exposure": 0,
+                "contrast": 1,
+                "saturation": 1,
+                "temperature": 0,
+                "tint": 0,
+                "vibrance": 0
+              }
+            ],
+            "keyframes": {
+              "effects": {
+                "e-lum.exposure": [
+                  { "t": 0, "value": -0.5, "ease": "easeBoth" },
+                  { "t": 4, "value": 0.5, "ease": "linear" }
+                ],
+                "e-lum.contrast": [
+                  { "t": 0, "value": 1, "ease": "linear" },
+                  { "t": 2, "value": 1.4, "ease": "hold" },
+                  { "t": 3, "value": 1.1, "ease": "linear" }
+                ],
+                "e-lum.saturation": [
+                  { "t": 0.5, "value": 0.4, "ease": "easeIn" },
+                  { "t": 3.5, "value": 1.4, "ease": "linear" }
+                ],
+                "e-lum.temperature": [
+                  { "t": 0, "value": -40, "ease": "linear" },
+                  { "t": 4, "value": 40, "ease": "linear" }
+                ],
+                "e-lum.tint": [
+                  { "t": 1, "value": 25, "ease": "easeOut" },
+                  { "t": 3, "value": -25, "ease": "linear" }
+                ],
+                "e-lum.vibrance": [
+                  { "t": 0, "value": 0, "ease": "linear" },
+                  { "t": 4, "value": 1, "ease": "linear" }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}

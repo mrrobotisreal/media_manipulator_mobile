@@ -1,0 +1,45 @@
+{
+  "toleranceId": "transform_position_scale",
+  "description": "Position offset + downscale (no rotation).",
+  "sampleFrames": [
+    15,
+    45,
+    75
+  ],
+  "project": {
+    "fps": 30,
+    "width": 640,
+    "height": 360,
+    "tracks": [
+      {
+        "id": "t-v0",
+        "kind": "video",
+        "index": 0,
+        "muted": false,
+        "clips": [
+          {
+            "id": "c-main",
+            "assetId": "fx-a",
+            "streamIndex": 0,
+            "timelineStart": 0,
+            "sourceIn": 0,
+            "sourceOut": 4,
+            "transform": {
+              "x": 0.15,
+              "y": -0.1,
+              "scale": 0.5,
+              "rotationDeg": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "assets": {
+    "fx-a": {
+      "file": "srcA.mp4",
+      "kind": "video",
+      "hasAudio": false
+    }
+  }
+}
