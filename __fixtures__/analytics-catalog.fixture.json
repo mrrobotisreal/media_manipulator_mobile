@@ -344,9 +344,33 @@
       "captionAnimation"
     ]
   },
+  "studio_perf_sample": {
+    "priority": 3,
+    "props": [
+      "fpsBucket",
+      "droppedFrameRatioBucket",
+      "seekLatencyP95Bucket",
+      "saveRttBucket",
+      "webglFallback",
+      "ttiMsBucket",
+      "qualityLevel",
+      "degradeActivations",
+      "resyncSeeks",
+      "stuckRecoveries",
+      "host",
+      "slots",
+      "safeMode",
+      "deviceClass",
+      "jsHeapMbBucket"
+    ]
+  },
   "studio_project_opened": {
     "priority": 1,
     "props": ["host", "surface"]
+  },
+  "studio_safe_mode_entered": {
+    "priority": 2,
+    "props": ["reason"]
   },
   "subscription_status_viewed": {
     "priority": 0,

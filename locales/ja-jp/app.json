@@ -1469,6 +1469,10 @@
       "savedVersion": "最後に保存された状態のプロジェクトを書き出します。",
       "optionsFailed": "書き出しオプションを読み込めませんでした。",
       "openResult": "開く"
+    },
+    "preview": {
+      "simplified": "簡易プレビュー",
+      "approximate": "おおよそのプレビュー"
     }
   }
 }

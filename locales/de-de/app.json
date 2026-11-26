@@ -1477,6 +1477,10 @@
       "savedVersion": "Exportiert das Projekt im zuletzt gespeicherten Stand.",
       "optionsFailed": "Die Exportoptionen konnten nicht geladen werden.",
       "openResult": "Öffnen"
+    },
+    "preview": {
+      "simplified": "Vereinfachte Vorschau",
+      "approximate": "Ungefähre Vorschau"
     }
   }
 }

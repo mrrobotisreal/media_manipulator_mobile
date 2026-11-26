@@ -1469,6 +1469,10 @@
       "savedVersion": "마지막으로 저장된 상태의 프로젝트를 내보냅니다.",
       "optionsFailed": "내보내기 옵션을 불러오지 못했어요.",
       "openResult": "열기"
+    },
+    "preview": {
+      "simplified": "간소화된 미리보기",
+      "approximate": "대략적인 미리보기"
     }
   }
 }

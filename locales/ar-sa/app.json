@@ -1509,6 +1509,10 @@
       "savedVersion": "يصدّر المشروع كما حُفظ آخر مرة.",
       "optionsFailed": "تعذّر تحميل خيارات التصدير.",
       "openResult": "فتح"
+    },
+    "preview": {
+      "simplified": "معاينة مبسّطة",
+      "approximate": "معاينة تقريبية"
     }
   }
 }

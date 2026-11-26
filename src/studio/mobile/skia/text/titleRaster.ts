@@ -27,6 +27,7 @@ import type {
   SkImage,
   SkParagraph,
   SkPaint,
+  SkSurface,
   SkTypefaceFontProvider,
 } from 'react-native-skia';
 import { layoutTitleText, lineExtent } from '../../../titleRaster';
@@ -75,8 +76,11 @@ export function middleBaselineOffset(family: string, weight: number, px: number)
 export interface TitleRasterDeps {
   api: SkiaApi;
   fonts: SkTypefaceFontProvider;
-  /** An offscreen surface (GPU on the phone, raster in jest). */
-  makeSurface(w: number, h: number): ReturnType<SkiaApi['Surface']['MakeRaster']>;
+  /**
+   * A surface of w x h to draw into, BORROWED: the caller keeps one per size and disposes it
+   * (`RasterSurface`), so rastering does not churn GPU textures. The result is a snapshot copy.
+   */
+  surface(w: number, h: number): SkSurface | null;
   /** Paragraphs made while rastering (the leak test's probe). */
   onParagraph?: (p: SkParagraph) => void;
 }
@@ -303,7 +307,7 @@ export function rasterTitleImage(
   rasterH: number,
   projectW: number,
 ): SkImage | null {
-  const surface = deps.makeSurface(rasterW, rasterH);
+  const surface = deps.surface(rasterW, rasterH);
   if (!surface) return null;
   const own: Owned[] = [];
   try {
@@ -319,10 +323,35 @@ export function rasterTitleImage(
     return surface.makeImageSnapshot();
   } finally {
     disposeAll(own);
+  }
+}
+
+/** One reusable surface per size (title and caption rasters), disposed by its owner. */
+export class RasterSurface {
+  private readonly make: (w: number, h: number) => SkSurface | null;
+  private s: SkSurface | null = null;
+  private w = 0;
+  private h = 0;
+
+  constructor(make: (w: number, h: number) => SkSurface | null) {
+    this.make = make;
+  }
+
+  get(w: number, h: number): SkSurface | null {
+    if (this.s && this.w === w && this.h === h) return this.s;
+    this.dispose();
+    this.s = this.make(w, h);
+    this.w = w;
+    this.h = h;
+    return this.s;
+  }
+
+  dispose(): void {
     try {
-      surface.dispose();
+      this.s?.dispose();
     } catch {
       // already disposed
     }
+    this.s = null;
   }
 }

@@ -138,6 +138,14 @@ export class LayerChain {
   top: SkShader | null = null;
   /** Shaders made over the chain's lifetime (the tests' "no rebuild per frame" probe). */
   made = 0;
+  /** The inputs of the last `update` (identical inputs: nothing to plan, MA62 S4). */
+  private lastLayer: CompLayer | null = null;
+  private lastSrc: SkImage | null = null;
+  private lastLut: SkImage | null = null;
+  private lastW = 0;
+  private lastH = 0;
+  /** The full-canvas rect, cached per size (a plain object: no host object per frame). */
+  private rect = { x: 0, y: 0, width: 0, height: 0 };
 
   constructor(api: SkiaApi, retire: (o: Disposable) => void, cache: EffectCache) {
     this.api = api;
@@ -183,10 +191,30 @@ export class LayerChain {
    * cache) or null. Returns false when the layer draws nothing (degenerate quad).
    */
   update(layer: CompLayer, src: LayerSource, W: number, H: number, lut: { image: SkImage; size: number; cols: number } | null): boolean {
+    // The preview reuses the layer objects while nothing at the playhead animates: then the chain
+    // is already right and planning it again would only allocate (decision 0).
+    const srcImage = src.kind === 'image' ? src.image : null;
+    const lutImage = lut ? lut.image : null;
+    if (
+      layer === this.lastLayer &&
+      srcImage === this.lastSrc &&
+      lutImage === this.lastLut &&
+      W === this.lastW &&
+      H === this.lastH &&
+      this.top
+    ) {
+      return true;
+    }
+    this.lastLayer = layer;
+    this.lastSrc = srcImage;
+    this.lastLut = lutImage;
+    this.lastW = W;
+    this.lastH = H;
     const source = this.setSource(src, layer);
     const want = source ? planLayer(layer, W, H, lut) : null;
     if (!source || !want) {
       this.top = null;
+      this.lastLayer = null;
       return false;
     }
     // The first stage that differs (or whose input changed) and everything above it is remade.
@@ -234,12 +262,13 @@ export class LayerChain {
   draw(canvas: SkCanvas, W: number, H: number): void {
     const top = this.top;
     if (!top) return;
-    const rect = this.api.XYWHRect(0, 0, W, H);
+    const rect = this.rect;
+    if (rect.width !== W || rect.height !== H) this.rect = { x: 0, y: 0, width: W, height: H };
     const mode = this.blendMode ?? 'normal';
     if (mode !== 'addition') {
       this.paint.setShader(top);
       this.paint.setBlendMode(SKIA_BLEND_FOR[mode]);
-      canvas.drawRect(rect, this.paint);
+      canvas.drawRect(this.rect, this.paint);
       return;
     }
     // addition: b + a * (min(b + c, 1) - b), see shaders/blend.ts.
@@ -258,9 +287,9 @@ export class LayerChain {
     }
     this.addPaint.setShader(this.opaqueShader);
     this.maskPaint!.setShader(top);
-    canvas.saveLayer(null, rect, null, SAVE_LAYER_INIT_WITH_PREVIOUS);
-    canvas.drawRect(rect, this.addPaint);
-    canvas.drawRect(rect, this.maskPaint!);
+    canvas.saveLayer(null, this.rect, null, SAVE_LAYER_INIT_WITH_PREVIOUS);
+    canvas.drawRect(this.rect, this.addPaint);
+    canvas.drawRect(this.rect, this.maskPaint!);
     canvas.restore();
   }
 
@@ -278,6 +307,7 @@ export class LayerChain {
     this.lutShaderCache = null;
     this.opaqueShader = null;
     this.top = null;
+    this.lastLayer = null;
   }
 }
 
@@ -297,6 +327,8 @@ export class Compositor {
   private retired: { o: Disposable; at: number }[] = [];
   private frame = 0;
   private bg: SkPaint | null = null;
+  private seen = new Set<string>();
+  private bgRect = { x: 0, y: 0, width: 0, height: 0 };
 
   constructor(api: SkiaApi) {
     this.api = api;
@@ -341,8 +373,10 @@ export class Compositor {
       this.bg.setColor(this.api.Color('black'));
       this.bg.setBlendMode(SK_BLEND.Src);
     }
-    canvas.drawRect(this.api.XYWHRect(0, 0, W, H), this.bg);
-    const seen = new Set<string>();
+    if (this.bgRect.width !== W || this.bgRect.height !== H) this.bgRect = { x: 0, y: 0, width: W, height: H };
+    canvas.drawRect(this.bgRect, this.bg);
+    const seen = this.seen;
+    seen.clear();
     for (const f of layers) {
       if (!f.source) continue;
       seen.add(f.key);

@@ -96,14 +96,31 @@ function setup() {
 }
 
 describe('title raster lifetimes (counting proxy)', () => {
-  it('no paragraph, paint or surface outlives a raster; one image per title clip', async () => {
+  it('only titles near the playhead are rastered; the rest are released', async () => {
+    const { c, fonts, comp, rasters } = setup();
+    await fonts.ensure(['Montserrat']);
+    // Clips at 0-3, 3-6, 6-9, 9-12 s; window [t - 1, t + 3].
+    const doc = tracks({ a: 'A', b: 'B', c: 'C', d: 'D' });
+    rasters.sync(doc, 160, 90, 640, fonts.version, 0.5);
+    expect(Object.keys(rasters.images()).sort()).toEqual(['a', 'b']);
+    rasters.sync(doc, 160, 90, 640, fonts.version, 8);
+    expect(Object.keys(rasters.images()).sort()).toEqual(['c', 'd']);
+    for (let k = 0; k < RETIRE_FRAMES; k += 1) comp.endFrame();
+    expect(c.live().images).toBe(2);
+    rasters.dispose();
+    comp.dispose();
+    fonts.dispose();
+    expect(c.total()).toBe(0);
+  });
+
+  it('no paragraph or paint outlives a raster; one image per title clip; one reused surface', async () => {
     const { c, fonts, comp, rasters, paragraphs } = setup();
     await fonts.ensure(['Montserrat']);
     rasters.sync(tracks({ t1: 'One\nTwo', t2: 'Three' }), 320, 180, 640, fonts.version);
     expect(rasters.rastered).toBe(2);
     expect(paragraphs.size).toBe(0);
     expect(c.live()).toEqual({
-      surfaces: 0,
+      surfaces: 1, // the raster surface, reused for every title of this size
       images: 2,
       pictures: 0,
       shaders: 0,

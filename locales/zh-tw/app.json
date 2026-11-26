@@ -1469,6 +1469,10 @@
       "savedVersion": "依最近一次儲存的版本匯出專案。",
       "optionsFailed": "無法載入匯出選項。",
       "openResult": "開啟"
+    },
+    "preview": {
+      "simplified": "簡化預覽",
+      "approximate": "近似預覽"
     }
   }
 }

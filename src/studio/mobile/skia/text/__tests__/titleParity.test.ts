@@ -74,13 +74,9 @@ function over(raster: Uint8Array, under: Rgba | null): Rgba {
 }
 
 async function phoneRaster(title: StudioTitle): Promise<Uint8Array> {
-  const img = rasterTitleImage(
-    { api, fonts: fonts.provider, makeSurface: (w, h) => api.Surface.MakeRaster(w, h) },
-    title,
-    W,
-    H,
-    W,
-  );
+  const surface = api.Surface.MakeRaster(W, H);
+  const img = rasterTitleImage({ api, fonts: fonts.provider, surface: () => surface }, title, W, H, W);
+  surface?.dispose();
   if (!img) throw new Error('raster');
   const px = (await img.readPixels(0, 0, {
     width: W,

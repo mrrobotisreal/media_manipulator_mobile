@@ -1469,6 +1469,10 @@
       "savedVersion": "Xuất dự án theo phiên bản được lưu gần nhất.",
       "optionsFailed": "Không thể tải các tùy chọn xuất.",
       "openResult": "Mở"
+    },
+    "preview": {
+      "simplified": "Xem trước rút gọn",
+      "approximate": "Xem trước gần đúng"
     }
   }
 }

@@ -1469,6 +1469,10 @@
       "savedVersion": "按最近一次保存的版本导出项目。",
       "optionsFailed": "无法加载导出选项。",
       "openResult": "打开"
+    },
+    "preview": {
+      "simplified": "简化预览",
+      "approximate": "近似预览"
     }
   }
 }
