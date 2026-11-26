@@ -19,6 +19,9 @@
  * MA58 mirrors the "MA58 projects" batch whole (`projects_filter_changed`, `studio_project_opened`
  * with `surface: app_list`, the four `studio_export_*` names) and emits every name. MA60 mirrors the
  * "MA60 gpu capability" batch (`gpu_capability_checked`) and emits it from `src/gpu/capability.ts`.
+ * MA62 mirrors the "MA62 darkroom" batch (`studio_perf_sample` with the web's props plus the app's
+ * `slots` / `safeMode` / `deviceClass` / `jsHeapMbBucket`, and `studio_safe_mode_entered`) and emits
+ * both from the Darkroom preview (`src/studio/mobile/skia/perf.ts`).
  *
  * Priorities MUST equal the catalog (the server re-stamps them; here they order the flush).
  * Properties: enums, buckets, counts and ids only. Never a file name, email or display name.
@@ -145,6 +148,10 @@ export const EVENTS = {
 
   // --- GPU capability (catalog batch "MA60 gpu capability") -------------------
   GPU_CAPABILITY_CHECKED: 'gpu_capability_checked',
+
+  // --- Darkroom preview (catalog batch "MA62 darkroom") -----------------------
+  STUDIO_PERF_SAMPLE: 'studio_perf_sample',
+  STUDIO_SAFE_MODE_ENTERED: 'studio_safe_mode_entered',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -249,6 +256,9 @@ export const EVENT_PRIORITY: Record<EventName, Priority> = {
   studio_export_format_locked: PRIORITY_HIGH,
 
   gpu_capability_checked: PRIORITY_NORMAL,
+
+  studio_perf_sample: PRIORITY_LOW,
+  studio_safe_mode_entered: PRIORITY_NORMAL,
 };
 
 export type PropertyValue = string | number | boolean | null | undefined;
@@ -729,6 +739,31 @@ export interface GpuCapabilityCheckedProps {
   reason_bucket:
     'none' | 'no_gpu_api' | 'no_adapter' | 'adapter_failed' | 'device_failed' | 'timeout' | 'error';
 }
+// --- Darkroom preview (MA62) ------------------------------------------------------------------
+// `studio_perf_sample`: the web's shape (ADR ws/0003; buckets from the web's `lib/analytics/buckets.ts`,
+// copied in `src/studio/mobile/skia/perf.ts`) plus the app's four. Aggregated every 60 s while playing.
+export interface StudioPerfSampleProps {
+  host: 'mm';
+  fpsBucket?: string;
+  droppedFrameRatioBucket?: string;
+  seekLatencyP95Bucket?: string;
+  /** The phone's GPU editors are unavailable (the web's WebGL fallback). */
+  webglFallback?: boolean;
+  /** Seek-only drift corrections in the window (bucketed count). */
+  resyncSeeks?: string;
+  /** Video slots marked failed after 3 s without a frame (bucketed count). */
+  stuckRecoveries?: string;
+  /** The most decoding video slots during the window, 0..4. */
+  slots: number;
+  /** The window ended in the simplified single-slot preview. */
+  safeMode: boolean;
+  deviceClass: 'low' | 'mid' | 'high' | 'unknown';
+  /** The JS runtime's Hermes heap (not process PSS: no native module reads that). */
+  jsHeapMbBucket?: '<64' | '64-128' | '128-256' | '256-512' | '512+';
+}
+export interface StudioSafeModeEnteredProps {
+  reason: 'gpu_unavailable' | 'low_fps' | 'user_toggle';
+}
 export interface ProjectsFilterChangedProps {
   filter: ProjectsFilterProp;
 }
@@ -872,6 +907,8 @@ export interface EventPropsMap {
   studio_export_format_locked: StudioExportFormatLockedProps;
 
   gpu_capability_checked: GpuCapabilityCheckedProps;
+  studio_perf_sample: StudioPerfSampleProps;
+  studio_safe_mode_entered: StudioSafeModeEnteredProps;
 }
 
 /**

@@ -296,6 +296,24 @@ function makeSource(web, ref) {
   };
 }
 
+/**
+ * MA62 S4: copies that run on the Reanimated UI runtime, inside the preview's `useFrameCallback`
+ * (ticket decision 2: every frame asks the copied resolver which clips are active, their transition
+ * state and keyframe values). They get a file-level `'worklet';` directive after the header, so the
+ * Worklets Babel plugin turns every top-level function into a worklet; the web text is unchanged.
+ * Only these are needed: `buildLayers` -> `previewEngine` -> `speed` / `ease` (the URL helpers in
+ * `previewEngine` are never called on the UI runtime, so their backend import is never captured).
+ * Titles and captions are laid out on the JS thread when the document changes, never per frame,
+ * so `titleRaster` / `titleFonts` (which also hold canvas / `document` helpers a worklet would
+ * capture) and the caption files stay plain.
+ */
+export const WORKLET_FILES = new Set([
+  'previewEngine.ts',
+  'speed.ts',
+  'ease.ts',
+  'compositor/buildLayers.ts',
+]);
+
 export function transformTs(src, webPath, appPath) {
   let text = src.toString('utf8');
   text = text.replace(/(from |import\()'([^']+)'/g, (whole, lead, spec) => {
@@ -310,6 +328,9 @@ export function transformTs(src, webPath, appPath) {
     '// (npm run studio:sync). The web repo is the source of the Darkroom model and math (ADR MA-0012);',
     '// it is type-checked and linted there, under its own settings (eslint.config.js ignores these).',
     '// @ts-nocheck',
+    ...(WORKLET_FILES.has(appPath)
+      ? ["'worklet'; // MA62: runs on the UI runtime (scripts/sync-studio.mjs WORKLET_FILES)"]
+      : []),
     '',
   ].join('\n');
   return Buffer.from(header + text, 'utf8');

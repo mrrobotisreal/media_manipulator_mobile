@@ -1485,6 +1485,10 @@
       "savedVersion": "Exporta el proyecto tal como se guardó por última vez.",
       "optionsFailed": "No se han podido cargar las opciones de exportación.",
       "openResult": "Abrir"
+    },
+    "preview": {
+      "simplified": "Vista previa simplificada",
+      "approximate": "Vista previa aproximada"
     }
   }
 }

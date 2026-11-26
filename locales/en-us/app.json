@@ -1477,6 +1477,10 @@
       "savedVersion": "Exports the project as last saved.",
       "optionsFailed": "Couldn't load the export options.",
       "openResult": "Open"
+    },
+    "preview": {
+      "simplified": "Simplified preview",
+      "approximate": "Approximate preview"
     }
   }
 }

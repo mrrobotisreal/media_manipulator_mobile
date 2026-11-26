@@ -192,6 +192,7 @@ export interface RgbaTexture {
 
 /** The parsed cube as N slices of N x N (slice = blue index), `cols` slices per atlas row. */
 export function lutAtlas(lut: ParsedLut): RgbaTexture & { size: number; cols: number } {
+  'worklet';
   const n = lut.size;
   const cols = Math.ceil(Math.sqrt(n));
   const rows = Math.ceil(n / cols);

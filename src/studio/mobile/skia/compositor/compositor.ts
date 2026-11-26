@@ -1,3 +1,4 @@
+'worklet';
 /**
  * The Darkroom preview compositor on Skia (ticket MA62 decision 6), the port of the web's
  * `GLCompositor.composite` (media-manipulator-ui `lib/studio/glCompositor.ts`, UI commit e9820f7):
@@ -5,8 +6,8 @@
  * blended onto the composite so far.
  *
  * GPU object ownership (decision 0, MA60's rule: every shader, paint and image is disposed by hand):
- * - **Effects** are compiled once per Skia API instance (`effectFor`), shared, never disposed
- *   (like Aperture's `shaderChain.ts`).
+ * - **Effects** are compiled once per compositor (`effectFor` with the compositor's cache), never
+ *   disposed (like Aperture's `shaderChain.ts`).
  * - **One `LayerChain` per clip** owns that clip's shaders and its paint. In RN Skia 3 a runtime
  *   shader's uniforms are fixed when it is made (`makeShaderWithChildren` bakes them in), so
  *   "update uniforms" means: on `update(layer)` the chain re-packs each stage and remakes only the
@@ -17,12 +18,19 @@
  *   `RETIRE_FRAMES` frames ago.
  * - **The source** is an image the caller owns (a slot's video texture image from
  *   `gpuFrameSink.ts`, MA76: one per slot), wrapped in one image shader per chain and re-made only
- *   when the image object changes (a resize).
+ *   when the image object changes (a resize). A title clip's raster (MA62 S3, `text/titleRasters.ts`)
+ *   is such an image too, like the web's uploaded title canvas.
  * - LUT atlases are images cached per LUT key and disposed with the compositor.
  * - `dispose()` releases everything (unmount); counting leak test: `__tests__/compositorLifetime`.
  *
  * Pure apart from the injected Skia API (the app passes `Skia`; jest passes CanvasKit), so the same
  * code runs in the parity tests. Drawing goes onto any `SkCanvas` (the preview records a picture).
+ *
+ * MA62 S4: the file is a worklet file (`'worklet'` above): `<StudioPreview>` builds and drives the
+ * compositor on the Reanimated UI runtime. So nothing here may capture module state the Worklets
+ * serializer cannot copy (no module-level WeakMap / Map: the effect cache lives on the compositor),
+ * the classes avoid TypeScript parameter properties (the worklet class transform rejects them) and
+ * nothing extends `Error`.
  */
 import type {
   SkCanvas,
@@ -62,28 +70,24 @@ const disposeOne = (o: Disposable | null | undefined) => {
   }
 };
 
-export class ShaderCompileError extends Error {
-  constructor(readonly stage: StageId) {
-    super(`SkSL for the ${stage} stage did not compile`);
-    this.name = 'ShaderCompileError';
-  }
+/** A stage's SkSL failed to compile (`error.name === 'ShaderCompileError'`, `error.stage`). */
+export function shaderCompileError(stage: StageId): Error & { stage: StageId } {
+  const e = new Error(`SkSL for the ${stage} stage did not compile`) as Error & { stage: StageId };
+  e.name = 'ShaderCompileError';
+  e.stage = stage;
+  return e;
 }
 
-const effects = new WeakMap<object, Map<StageId, SkRuntimeEffect>>();
+export type EffectCache = Map<StageId, SkRuntimeEffect>;
 
-/** The compiled effect for a stage (cached per API instance, never disposed). */
-export function effectFor(api: SkiaApi, stage: StageId): SkRuntimeEffect {
-  let byStage = effects.get(api);
-  if (!byStage) {
-    byStage = new Map();
-    effects.set(api, byStage);
-  }
-  let e = byStage.get(stage);
+/** The compiled effect for a stage, from `cache` (one per compositor; effects are never disposed). */
+export function effectFor(api: SkiaApi, stage: StageId, cache: EffectCache): SkRuntimeEffect {
+  let e = cache.get(stage);
   if (!e) {
     const made = api.RuntimeEffect.Make(STAGES[stage].sksl);
-    if (!made) throw new ShaderCompileError(stage);
+    if (!made) throw shaderCompileError(stage);
     e = made;
-    byStage.set(stage, e);
+    cache.set(stage, e);
   }
   return e;
 }
@@ -112,6 +116,9 @@ interface StageSlot {
  * `Compositor` (keyed by clip id).
  */
 export class LayerChain {
+  private readonly api: SkiaApi;
+  private readonly retire: (o: Disposable) => void;
+  private readonly cache: EffectCache;
   private sourceImage: SkImage | null = null;
   private sourceShader: SkShader | null = null;
   private solidKey = '';
@@ -131,18 +138,26 @@ export class LayerChain {
   top: SkShader | null = null;
   /** Shaders made over the chain's lifetime (the tests' "no rebuild per frame" probe). */
   made = 0;
+  /** The inputs of the last `update` (identical inputs: nothing to plan, MA62 S4). */
+  private lastLayer: CompLayer | null = null;
+  private lastSrc: SkImage | null = null;
+  private lastLut: SkImage | null = null;
+  private lastW = 0;
+  private lastH = 0;
+  /** The full-canvas rect, cached per size (a plain object: no host object per frame). */
+  private rect = { x: 0, y: 0, width: 0, height: 0 };
 
-  constructor(
-    private readonly api: SkiaApi,
-    private readonly retire: (o: Disposable) => void,
-  ) {
+  constructor(api: SkiaApi, retire: (o: Disposable) => void, cache: EffectCache) {
+    this.api = api;
+    this.retire = retire;
+    this.cache = cache;
     this.paint = api.Paint();
     this.paint.setAntiAlias(false);
   }
 
   private make(stage: StageId, floats: number[], children: SkShader[]): SkShader {
     this.made += 1;
-    return effectFor(this.api, stage).makeShaderWithChildren(floats, children);
+    return effectFor(this.api, stage, this.cache).makeShaderWithChildren(floats, children);
   }
 
   private setSource(src: LayerSource, layer: CompLayer): SkShader | null {
@@ -176,10 +191,30 @@ export class LayerChain {
    * cache) or null. Returns false when the layer draws nothing (degenerate quad).
    */
   update(layer: CompLayer, src: LayerSource, W: number, H: number, lut: { image: SkImage; size: number; cols: number } | null): boolean {
+    // The preview reuses the layer objects while nothing at the playhead animates: then the chain
+    // is already right and planning it again would only allocate (decision 0).
+    const srcImage = src.kind === 'image' ? src.image : null;
+    const lutImage = lut ? lut.image : null;
+    if (
+      layer === this.lastLayer &&
+      srcImage === this.lastSrc &&
+      lutImage === this.lastLut &&
+      W === this.lastW &&
+      H === this.lastH &&
+      this.top
+    ) {
+      return true;
+    }
+    this.lastLayer = layer;
+    this.lastSrc = srcImage;
+    this.lastLut = lutImage;
+    this.lastW = W;
+    this.lastH = H;
     const source = this.setSource(src, layer);
     const want = source ? planLayer(layer, W, H, lut) : null;
     if (!source || !want) {
       this.top = null;
+      this.lastLayer = null;
       return false;
     }
     // The first stage that differs (or whose input changed) and everything above it is remade.
@@ -227,12 +262,13 @@ export class LayerChain {
   draw(canvas: SkCanvas, W: number, H: number): void {
     const top = this.top;
     if (!top) return;
-    const rect = this.api.XYWHRect(0, 0, W, H);
+    const rect = this.rect;
+    if (rect.width !== W || rect.height !== H) this.rect = { x: 0, y: 0, width: W, height: H };
     const mode = this.blendMode ?? 'normal';
     if (mode !== 'addition') {
       this.paint.setShader(top);
       this.paint.setBlendMode(SKIA_BLEND_FOR[mode]);
-      canvas.drawRect(rect, this.paint);
+      canvas.drawRect(this.rect, this.paint);
       return;
     }
     // addition: b + a * (min(b + c, 1) - b), see shaders/blend.ts.
@@ -251,9 +287,9 @@ export class LayerChain {
     }
     this.addPaint.setShader(this.opaqueShader);
     this.maskPaint!.setShader(top);
-    canvas.saveLayer(null, rect, null, SAVE_LAYER_INIT_WITH_PREVIOUS);
-    canvas.drawRect(rect, this.addPaint);
-    canvas.drawRect(rect, this.maskPaint!);
+    canvas.saveLayer(null, this.rect, null, SAVE_LAYER_INIT_WITH_PREVIOUS);
+    canvas.drawRect(this.rect, this.addPaint);
+    canvas.drawRect(this.rect, this.maskPaint!);
     canvas.restore();
   }
 
@@ -271,6 +307,7 @@ export class LayerChain {
     this.lutShaderCache = null;
     this.opaqueShader = null;
     this.top = null;
+    this.lastLayer = null;
   }
 }
 
@@ -283,13 +320,19 @@ export interface FrameLayer {
 }
 
 export class Compositor {
+  private readonly api: SkiaApi;
+  private readonly effects: EffectCache = new Map();
   private chains = new Map<string, LayerChain>();
   private luts = new Map<string, { image: SkImage; size: number; cols: number }>();
   private retired: { o: Disposable; at: number }[] = [];
   private frame = 0;
   private bg: SkPaint | null = null;
+  private seen = new Set<string>();
+  private bgRect = { x: 0, y: 0, width: 0, height: 0 };
 
-  constructor(private readonly api: SkiaApi) {}
+  constructor(api: SkiaApi) {
+    this.api = api;
+  }
 
   /** The web's `loadLut` / `hasLut`: a parsed cube as an atlas image, cached per key. */
   loadLut(key: string, lut: ParsedLut): void {
@@ -307,9 +350,18 @@ export class Compositor {
     return this.luts.has(key);
   }
 
-  private retire = (o: Disposable) => {
-    this.retired.push({ o, at: this.frame });
-  };
+  /**
+   * Hands `o` to the compositor to dispose `RETIRE_FRAMES` frames from now (a replaced frame
+   * picture the canvas may still be drawing, a title picture whose clip changed).
+   */
+  retire(o: Disposable | null | undefined): void {
+    if (o) this.retired.push({ o, at: this.frame });
+  }
+
+  /** The compiled effect of a stage (the parity suite pins the uniform layouts through this). */
+  effect(stage: StageId): SkRuntimeEffect {
+    return effectFor(this.api, stage, this.effects);
+  }
 
   /**
    * Draws the layers (bottom to top) onto `canvas` at W x H: opaque black, then each layer through
@@ -321,14 +373,16 @@ export class Compositor {
       this.bg.setColor(this.api.Color('black'));
       this.bg.setBlendMode(SK_BLEND.Src);
     }
-    canvas.drawRect(this.api.XYWHRect(0, 0, W, H), this.bg);
-    const seen = new Set<string>();
+    if (this.bgRect.width !== W || this.bgRect.height !== H) this.bgRect = { x: 0, y: 0, width: W, height: H };
+    canvas.drawRect(this.bgRect, this.bg);
+    const seen = this.seen;
+    seen.clear();
     for (const f of layers) {
       if (!f.source) continue;
       seen.add(f.key);
       let chain = this.chains.get(f.key);
       if (!chain) {
-        chain = new LayerChain(this.api, this.retire);
+        chain = new LayerChain(this.api, (o) => this.retire(o), this.effects);
         this.chains.set(f.key, chain);
       }
       const lut = f.layer.lut ? (this.luts.get(f.layer.lut.key) ?? null) : null;

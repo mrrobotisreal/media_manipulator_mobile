@@ -94,6 +94,79 @@ function bilinear(img: Rgba, x: number, y: number): [number, number, number, num
 }
 
 /**
+ * MA62 S3 (transitions): the web's draw calls for one frame, rasterised by GL's rule and composited
+ * bottom to top over opaque black with the BLEND SPEC (normal blend), exactly what the web's
+ * fragment shader does with the switches transitions use and nothing else:
+ * - `uHasSolid` (a dip's colour layer): `c = uSolidColor`, `a = 1 * uOpacity`, full-canvas quad;
+ * - `uHasWipe`: `a = 0` where the pixel centre's canvas fraction (top-left origin, the GLSL's
+ *   flipped `gl_FragCoord`) is outside `[uWipe.x, 1 - uWipe.z] x [uWipe.y, 1 - uWipe.w]`;
+ * - otherwise the source sampled bilinearly at the affine UV (`referenceGeometry`'s rule).
+ * `sources[i]` is draw i's source image (ignored for a solid draw). No colour stage is set by any
+ * transition scenario, so none is applied here (the parity suite asserts the web set none).
+ */
+export function referenceDraws(draws: readonly WebDraw[], sources: readonly (Rgba | null)[], W: number, H: number): Rgba {
+  const out = new Uint8Array(W * H * 4);
+  const acc = new Float64Array(W * H * 3);
+  draws.forEach((draw, di) => {
+    const u = draw.uniforms;
+    const solid = u.uHasSolid?.[0] === 1 ? u.uSolidColor! : null;
+    const src = sources[di] ?? null;
+    const opacity = clamp01(u.uOpacity?.[0] ?? 1);
+    const wipe = u.uHasWipe?.[0] === 1 ? u.uWipe! : null;
+    const px = (i: number): [number, number] => [
+      ((draw.positions[i * 2]! + 1) / 2) * W,
+      ((1 - draw.positions[i * 2 + 1]!) / 2) * H,
+    ];
+    const tl = px(0);
+    const bl = px(1);
+    const tr = px(2);
+    const ex = [tr[0] - tl[0], tr[1] - tl[1]];
+    const ey = [bl[0] - tl[0], bl[1] - tl[1]];
+    const det = ex[0]! * ey[1]! - ey[0]! * ex[1]!;
+    const u0 = draw.uvs[0]!;
+    const v0 = draw.uvs[1]!;
+    const u1 = draw.uvs[4]!;
+    const v1 = draw.uvs[3]!;
+    for (let y = 0; y < H; y += 1) {
+      for (let x = 0; x < W; x += 1) {
+        const dx = x + 0.5 - tl[0];
+        const dy = y + 0.5 - tl[1];
+        const qx = (dx * ey[1]! - dy * ey[0]!) / det;
+        const qy = (ex[0]! * dy - ex[1]! * dx) / det;
+        if (qx < 0 || qx > 1 || qy < 0 || qy > 1) continue;
+        let c: [number, number, number];
+        let a: number;
+        if (solid) {
+          c = [solid[0]!, solid[1]!, solid[2]!];
+          a = opacity;
+        } else {
+          if (!src) continue;
+          const s = bilinear(src, (u0 + (u1 - u0) * qx) * src.width, (v0 + (v1 - v0) * qy) * src.height);
+          // The texture holds straight colour (the web uploads unpremultiplied RGBA).
+          c = [s[0], s[1], s[2]];
+          a = s[3] * opacity;
+        }
+        if (wipe) {
+          const fx = (x + 0.5) / W;
+          const fy = (y + 0.5) / H;
+          if (fx < wipe[0]! || fx > 1 - wipe[2]! || fy < wipe[1]! || fy > 1 - wipe[3]!) a = 0;
+        }
+        a = clamp01(a);
+        const o = (y * W + x) * 3;
+        for (let k = 0; k < 3; k += 1) acc[o + k] = acc[o + k]! + (clamp01(c[k]!) - acc[o + k]!) * a;
+      }
+    }
+  });
+  for (let p = 0; p < W * H; p += 1) {
+    out[p * 4] = to8(acc[p * 3]!);
+    out[p * 4 + 1] = to8(acc[p * 3 + 1]!);
+    out[p * 4 + 2] = to8(acc[p * 3 + 2]!);
+    out[p * 4 + 3] = 255;
+  }
+  return { width: W, height: H, data: out };
+}
+
+/**
  * One web draw call rasterised over opaque black (normal blend): the quad from `draw.positions`
  * (clip space, TL BL TR BR) covers the pixels whose centre maps inside it, the UV is the affine
  * interpolation of `draw.uvs`, the source is sampled bilinearly, and the colour lands with
