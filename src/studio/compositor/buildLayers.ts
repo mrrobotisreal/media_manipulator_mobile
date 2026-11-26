@@ -2,6 +2,7 @@
 // (npm run studio:sync). The web repo is the source of the Darkroom model and math (ADR MA-0012);
 // it is type-checked and linted there, under its own settings (eslint.config.js ignores these).
 // @ts-nocheck
+'worklet'; // MA62: runs on the UI runtime (scripts/sync-studio.mjs WORKLET_FILES)
 import type { GLCompositor, GLLayer } from './glCompositor';
 import {
   clipTransitionState,

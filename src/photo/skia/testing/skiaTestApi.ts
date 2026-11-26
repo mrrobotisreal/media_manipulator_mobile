@@ -7,6 +7,13 @@
 import type { SkiaApi } from '../shaderChain';
 
 let cached: Promise<SkiaApi> | null = null;
+let canvasKit: unknown = null;
+
+/** The raw CanvasKit instance behind `loadSkiaApi()` (MA62: its Canvas2D emulation runs the web's title raster). */
+export async function loadCanvasKit(): Promise<unknown> {
+  await loadSkiaApi();
+  return canvasKit;
+}
 
 export function loadSkiaApi(): Promise<SkiaApi> {
   if (!cached) {
@@ -23,6 +30,7 @@ export function loadSkiaApi(): Promise<SkiaApi> {
           o: object,
         ) => Promise<unknown>;
         const CanvasKit = await init({});
+        canvasKit = CanvasKit;
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         const { JsiSkApi } = require('react-native-skia/lib/commonjs/skia/web') as {
           JsiSkApi: (ck: unknown) => SkiaApi;

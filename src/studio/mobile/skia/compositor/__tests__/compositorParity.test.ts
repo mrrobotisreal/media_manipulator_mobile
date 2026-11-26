@@ -30,7 +30,7 @@ import { meanDeltaE, psnr } from '../../../../parity/imageMetrics';
 import { parityTolerance } from '../../../../parityTolerances';
 import { parseCubeLut, type ParsedLut } from '../../../../../photo/studioLutParser';
 import { blendChannel } from '../../../../../photo/studioColorMath';
-import { Compositor, effectFor, type FrameLayer, type SkiaApi } from '../compositor';
+import { Compositor, type FrameLayer, type SkiaApi } from '../compositor';
 import { BLEND_INDEX } from '../shaders/blend';
 import { STAGE_IDS, STAGES } from '../shaders/stages';
 import { layerQuad, lutAtlas, planLayer, type CompLayer } from '../uniforms';
@@ -83,7 +83,7 @@ beforeAll(async () => {
 
 describe('every stage compiles with the uniform layout the packer fills', () => {
   it.each(STAGE_IDS)('%s', (id) => {
-    const e = effectFor(api, id);
+    const e = new Compositor(api).effect(id);
     expect([id, e.getUniformFloatCount()]).toEqual([id, STAGES[id].uniformFloats]);
   });
 });
@@ -313,7 +313,7 @@ export const TOLERANCE_TABLE = [
   { stage: 'lut', row: 'lut_full, lut_intensity', golden: 'web CPU reference sampleLut3D (export lattice; see lut.ts deviation)' },
   { stage: 'chromakey', row: 'chromakey', golden: 'VISUAL ONLY: the web has no CPU reference; invariants tested' },
   { stage: 'alpha (opacity, straight-alpha source)', row: 'opacity_dissolve, image_alpha_over_video', golden: 'BLEND SPEC over the CPU reference' },
-  { stage: 'alpha (wipe mask)', row: 'transition_wipe', golden: 'uniforms only in S2 (wipe pixels are S3 transitions)' },
+  { stage: 'alpha (wipe mask)', row: 'transition_wipe', golden: 'S3: pixels vs the web GLCompositor draws (transitionParity.test.ts); the mask edge is pixel-identical' },
   { stage: 'blend (7 Skia BlendModes + addition)', row: 'blend_*', golden: 'web CPU reference blendChannel via the BLEND SPEC' },
 ] as const;
 
